@@ -1,0 +1,13 @@
+﻿full_code,market_norm,event_date,expected_kind,official_match_count,expected_kind_match,official_sources,source_coverage_complete,control_status
+1529,TWSE,2018-12-24,減資,0,False,,False,控制組查核不完整
+3095,TPEX,2022-10-31,減資,1,True,TPEx減資,True,控制組成功命中
+2364,TWSE,2021-10-08,減資,1,True,TWSE減資,True,控制組成功命中
+6246,TPEX,2016-10-31,減資,1,True,TPEx減資,True,控制組成功命中
+6259,TPEX,2020-09-21,減資,1,True,TPEx減資,True,控制組成功命中
+2496,TWSE,2016-09-12,減資,0,False,,True,控制組未命中；來源完整
+6103,TPEX,2023-03-08,減資,1,True,TPEx減資,True,控制組成功命中
+8101,TWSE,2024-11-19,減資,0,False,,True,控制組未命中；來源完整
+8077,TPEX,2023-02-13,減資,1,True,TPEx減資,True,控制組成功命中
+2342,TWSE,2017-10-06,減資,1,True,TWSE減資,True,控制組成功命中
+4198,TPEX,2022-08-15,減資,1,True,TPEx減資,True,控制組成功命中
+4303,TPEX,2017-10-06,減資,1,True,TPEx減資,True,控制組成功命中
