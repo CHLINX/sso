@@ -1,0 +1,68 @@
+name: Read public SSO ZIP summaries (temporary branch only)
+
+on:
+  push:
+    branches:
+      - "tmp/colab-argparse-zip-audit-20261101"
+    paths:
+      - ".github/workflows/read-sso-zip-summaries.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Download public ZIPs and print compact summaries
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python - <<'PY'
+          import io, json, urllib.request, zipfile
+          from pathlib import PurePosixPath
+
+          base = "https://raw.githubusercontent.com/CHLINX/sso/main/"
+          targets = [
+              "SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip",
+              "SSO_v2.53_排序與統計口徑稽核_20261029_033422.zip",
+              "SSO_v2.54_排名分數與分位方向稽核_20261029_040349.zip",
+              "SSO_v2.55_逐筆績效與統計口徑稽核結果_20261029_045750.zip",
+              "SSO_v2.56_實際淨報酬與分層核算結果_20261029_055725.zip",
+              "SSO_v2.57_條件式交易模式回溯核驗結果_20261029_062605.zip",
+              "SSO_v2.58_候選排除門檻拆解結果_20261029_075004.zip",
+              "SSO_v2.59_時間切分穩定性診斷結果_20261029_080204.zip",
+              "SSO_v2.60_訊號日層級穩定性診斷結果_20261029_082147.zip",
+              "SSO_v2.61_訊號日極端日穩健性診斷結果_20261029_084332.zip",
+              "SSO_v2.62_前瞻影子驗證規格封存結果_20261029_165713.zip",
+          ]
+          max_text = 12000
+          for name in targets:
+              url = base + urllib.request.quote(name)
+              print("\\n" + "=" * 88)
+              print("ZIP:", name)
+              try:
+                  req = urllib.request.Request(url, headers={"User-Agent": "SSO-ZIP-Audit/1.0"})
+                  with urllib.request.urlopen(req, timeout=60) as response:
+                      data = response.read()
+                  print("ZIP_BYTES:", len(data))
+                  with zipfile.ZipFile(io.BytesIO(data)) as zf:
+                      infos = zf.infolist()
+                      print("ENTRY_COUNT:", len(infos))
+                      for info in infos:
+                          print("ENTRY:", info.filename, "bytes=", info.file_size)
+                      candidates = [i for i in infos if PurePosixPath(i.filename).suffix.lower() in {".txt", ".md", ".json", ".csv"}]
+                      for info in candidates:
+                          suffix = PurePosixPath(info.filename).suffix.lower()
+                          if suffix in {".txt", ".md", ".json"} or info.file_size <= 30000:
+                              raw = zf.read(info.filename)
+                              text = raw.decode("utf-8-sig", errors="replace")
+                              print("--- FILE:", info.filename, "bytes=", info.file_size, "---")
+                              print(text[:max_text])
+                              if len(text) > max_text:
+                                  print("[TRUNCATED: text summary capped at", max_text, "characters]")
+              except Exception as e:
+                  print("ERROR:", type(e).__name__, str(e)[:500])
+          PY
