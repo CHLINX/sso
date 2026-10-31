@@ -1,0 +1,7 @@
+﻿market,action_kind,matched_events,abs_raw_ge_100,abs_adjusted_le_10,abs_adjusted_gt_10
+TPEX,減資,135,32,134,1
+TPEX,除權息,48,0,48,0
+TPEX,面額變更,14,0,12,2
+TWSE,減資,142,36,141,1
+TWSE,除權息,38,0,37,1
+TWSE,面額變更,10,0,9,1
