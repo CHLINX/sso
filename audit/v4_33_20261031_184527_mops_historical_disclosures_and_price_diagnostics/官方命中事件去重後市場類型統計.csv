@@ -1,0 +1,7 @@
+﻿market,action_kind,logical_event_rows,abs_raw_ge_100,within_10_with_tolerance,over_10_beyond_tolerance,boundary_10
+TPEX,減資,135,32,135,0,3
+TPEX,除權息,48,0,48,0,0
+TPEX,面額變更,14,0,14,0,2
+TWSE,減資,141,35,141,0,2
+TWSE,除權息,38,0,38,0,1
+TWSE,面額變更,10,0,10,0,2
