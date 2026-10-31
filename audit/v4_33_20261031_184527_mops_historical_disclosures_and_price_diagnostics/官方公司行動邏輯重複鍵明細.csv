@@ -1,0 +1,3 @@
+﻿trade_date,market_norm,full_code,security_name,action_kind,official_event_date,source_tag,official_reference_price,event_close,logical_row_count,dedup_decision
+2016-07-14,TWSE,5906,台南-KY,減資,2016-07-14,TWSE減資,5.68,6.24,2,同一邏輯事件且參考價一致；分析統計僅計一次，原始明細不刪除。
+2016-07-14,TWSE,5906,台南-KY,減資,2016-07-14,TWSE減資,5.68,6.24,2,同一邏輯事件且參考價一致；分析統計僅計一次，原始明細不刪除。
