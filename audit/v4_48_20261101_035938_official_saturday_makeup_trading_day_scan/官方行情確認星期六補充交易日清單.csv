@@ -1,0 +1,12 @@
+日期,市場,來源證據,有效行情列數,證券代號數,API查詢狀態,官方API端點
+2016-01-30,TWSE,官方全市場歷史日行情有效資料列,932,932,DATA_OK,https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20160130&type=ALLBUT0999&response=json
+2016-01-30,TPEX,官方全市場歷史日行情有效資料列,715,715,DATA_OK,https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&d=105%2F01%2F30&se=EW&o=json
+2016-06-04,TWSE,官方全市場歷史日行情有效資料列,933,933,DATA_OK,https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20160604&type=ALLBUT0999&response=json
+2016-06-04,TPEX,官方全市場歷史日行情有效資料列,719,719,DATA_OK,https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&d=105%2F06%2F04&se=EW&o=json
+2016-09-10,TWSE,官方全市場歷史日行情有效資料列,940,940,DATA_OK,https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20160910&type=ALLBUT0999&response=json
+2016-09-10,TPEX,官方全市場歷史日行情有效資料列,719,719,DATA_OK,https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&d=105%2F09%2F10&se=EW&o=json
+2017-02-18,TPEX,官方全市場歷史日行情有效資料列,733,733,DATA_OK,https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&d=106%2F02%2F18&se=EW&o=json
+2017-06-03,TPEX,官方全市場歷史日行情有效資料列,741,741,DATA_OK,https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&d=106%2F06%2F03&se=EW&o=json
+2017-09-30,TPEX,官方全市場歷史日行情有效資料列,741,741,DATA_OK,https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&d=106%2F09%2F30&se=EW&o=json
+2018-03-31,TPEX,官方全市場歷史日行情有效資料列,767,767,DATA_OK,https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&d=107%2F03%2F31&se=EW&o=json
+2018-12-22,TPEX,官方全市場歷史日行情有效資料列,797,797,DATA_OK,https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&d=107%2F12%2F22&se=EW&o=json
