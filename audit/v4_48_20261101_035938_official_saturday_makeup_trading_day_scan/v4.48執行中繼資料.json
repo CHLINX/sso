@@ -1,0 +1,50 @@
+{
+  "version": "4.48",
+  "start_date": "2016-01-01",
+  "end_date": "2026-10-28",
+  "weekday_candidate_count": 2824,
+  "saturday_candidate_count": 565,
+  "confirmed_saturday_dates": [
+    "2016-01-30",
+    "2016-06-04",
+    "2016-09-10",
+    "2017-02-18",
+    "2017-06-03",
+    "2017-09-30",
+    "2018-03-31",
+    "2018-12-22"
+  ],
+  "market_status_counts": {
+    "TWSE": {
+      "DATA_OK": 3,
+      "VALID_EMPTY_RESPONSE": 54,
+      "INVALID_JSON": 0,
+      "INVALID_SCHEMA": 0,
+      "HTTP_ERROR": 508,
+      "NETWORK_ERROR": 0
+    },
+    "TPEX": {
+      "DATA_OK": 8,
+      "VALID_EMPTY_RESPONSE": 557,
+      "INVALID_JSON": 0,
+      "INVALID_SCHEMA": 0,
+      "HTTP_ERROR": 0,
+      "NETWORK_ERROR": 0
+    }
+  },
+  "known_v446_makeup_saturdays": [
+    "2016-01-30",
+    "2016-06-04",
+    "2016-09-10",
+    "2017-02-18",
+    "2017-06-03",
+    "2017-09-30",
+    "2018-03-31",
+    "2018-12-22"
+  ],
+  "official_endpoints": {
+    "TWSE": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+    "TPEX": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php"
+  },
+  "warning": "This is a Saturday-supplement audit, not a final complete trading calendar."
+}
