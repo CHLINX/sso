@@ -1,0 +1,34 @@
+看股最速適 v4.48｜官方星期六補行交易日全市場行情掃描
+==============================================================================
+產生時間：2026-11-01T03:59:38
+掃描日期範圍：2016-01-01 至 2026-10-28
+週一至週五沿用候選日期數：2824（本版未重新核驗平日開休市）
+星期六候選日期數：565
+官方行情確認之星期六日期數（至少一市場）：8
+官方行情確認之市場-日期筆數：11
+
+各市場API查詢狀態：
+TWSE: DATA_OK=3, VALID_EMPTY_RESPONSE=54, INVALID_JSON=0, INVALID_SCHEMA=0, HTTP_ERROR=508, NETWORK_ERROR=0
+TPEX: DATA_OK=8, VALID_EMPTY_RESPONSE=557, INVALID_JSON=0, INVALID_SCHEMA=0, HTTP_ERROR=0, NETWORK_ERROR=0
+
+v4.46已知八個補行星期六重新核驗：
+2016-01-30｜TWSE=DATA_OK(932)｜TPEx=DATA_OK(715)｜至少一市場確認=True
+2016-06-04｜TWSE=DATA_OK(933)｜TPEx=DATA_OK(719)｜至少一市場確認=True
+2016-09-10｜TWSE=DATA_OK(940)｜TPEx=DATA_OK(719)｜至少一市場確認=True
+2017-02-18｜TWSE=HTTP_ERROR(0)｜TPEx=DATA_OK(733)｜至少一市場確認=True
+2017-06-03｜TWSE=HTTP_ERROR(0)｜TPEx=DATA_OK(741)｜至少一市場確認=True
+2017-09-30｜TWSE=HTTP_ERROR(0)｜TPEx=DATA_OK(741)｜至少一市場確認=True
+2018-03-31｜TWSE=HTTP_ERROR(0)｜TPEx=DATA_OK(767)｜至少一市場確認=True
+2018-12-22｜TWSE=HTTP_ERROR(0)｜TPEx=DATA_OK(797)｜至少一市場確認=True
+
+判讀限制：
+1. DATA_OK 僅表示官方全市場日行情回傳可辨識證券代號與收盤價，且至少有一筆有效資料列；這是該市場該日有行情的直接證據。
+2. VALID_EMPTY_RESPONSE 只表示官方端點回傳可辨識的空資料／無資料結果，不單憑此狀態推定休市。
+3. INVALID_JSON、INVALID_SCHEMA、HTTP_ERROR、NETWORK_ERROR 均屬未確認，不得視為無行情或休市。
+4. 本版只掃描星期六，用來補上 v2.8 freq='B' 未涵蓋的週六候選日；沒有重新查詢平日，也沒有建立最終完整官方交易日曆。
+5. v2.8的週一至週五日期列僅沿用作為候選查詢日期，不代表每一日都必然是交易日。下一階段仍需核驗平日休市日及歷史API失敗日期。
+6. 所有 v2.8、v4.46、v4.47 來源資料均唯讀；本版只新增報告，不修改行情、報酬、成交量、DuckDB或既有報告。
+
+官方來源端點：
+https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=YYYYMMDD&type=ALLBUT0999&response=json
+https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&d=民國年/MM/DD&se=EW&o=json
