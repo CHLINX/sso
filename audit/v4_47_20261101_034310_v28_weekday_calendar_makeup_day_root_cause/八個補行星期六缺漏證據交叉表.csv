@@ -1,0 +1,9 @@
+﻿saturday_trading_date,official_calendar_evidence,v28_total_rows,v28_unique_security_codes,target_affected_stocks,target_stocks_found,target_stocks_missing,v28_query_log_rows,v28_query_states,evidence_interpretation
+2016-01-30,2016-01-12證交所公告之補行交易日（同期報導）,0,0,1,0,1,0,,"v4.46已完成全4,501,058列掃描；0列代表該日期在v2.8總表不存在，不是本版未查到。"
+2016-06-04,2016年週六補行交易日（中央社報導）,0,0,2,0,2,0,,"v4.46已完成全4,501,058列掃描；0列代表該日期在v2.8總表不存在，不是本版未查到。"
+2016-09-10,2016年週六補行交易日（中央社報導）,0,0,3,0,3,0,,"v4.46已完成全4,501,058列掃描；0列代表該日期在v2.8總表不存在，不是本版未查到。"
+2017-02-18,TPEx 2017年度開休市日期表：Additional Trading Days on Saturday,0,0,5,0,5,0,,"v4.46已完成全4,501,058列掃描；0列代表該日期在v2.8總表不存在，不是本版未查到。"
+2017-06-03,TPEx 2017年度開休市日期表：Additional Trading Days on Saturday,0,0,1,0,1,0,,"v4.46已完成全4,501,058列掃描；0列代表該日期在v2.8總表不存在，不是本版未查到。"
+2017-09-30,TPEx 2017年度開休市日期表：Additional Trading Days on Saturday,0,0,2,0,2,0,,"v4.46已完成全4,501,058列掃描；0列代表該日期在v2.8總表不存在，不是本版未查到。"
+2018-03-31,TPEx 2018年度開休市日期表：Additional Trading Days on Saturday,0,0,17,0,17,0,,"v4.46已完成全4,501,058列掃描；0列代表該日期在v2.8總表不存在，不是本版未查到。"
+2018-12-22,TPEx 2018年度開休市日期表：Additional Trading Days on Saturday,0,0,4,0,4,0,,"v4.46已完成全4,501,058列掃描；0列代表該日期在v2.8總表不存在，不是本版未查到。"
