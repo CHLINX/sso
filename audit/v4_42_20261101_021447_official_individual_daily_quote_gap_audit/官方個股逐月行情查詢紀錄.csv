@@ -1,0 +1,48 @@
+﻿market,full_code,query_month,request_url,http_state,parse_state,response_stat,response_bytes,official_rows_parsed,error_detail
+TPEX,2740,2024-11,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=113%2F11&stkno=2740,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,2740,2024-12,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=113%2F12&stkno=2740,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3067,2021-11,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=110%2F11&stkno=3067,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3067,2021-12,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=110%2F12&stkno=3067,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3073,2020-08,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=109%2F08&stkno=3073,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3073,2020-09,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=109%2F09&stkno=3073,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3073,2020-10,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=109%2F10&stkno=3073,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3073,2020-11,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=109%2F11&stkno=3073,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3073,2020-12,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=109%2F12&stkno=3073,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3073,2021-01,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=110%2F01&stkno=3073,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3073,2021-02,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=110%2F02&stkno=3073,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3085,2026-09,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=115%2F09&stkno=3085,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3085,2026-10,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=115%2F10&stkno=3085,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3219,2018-12,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=107%2F12&stkno=3219,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3219,2019-01,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=108%2F01&stkno=3219,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3219,2020-02,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=109%2F02&stkno=3219,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3219,2020-03,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=109%2F03&stkno=3219,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3219,2020-04,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=109%2F04&stkno=3219,INVALID_JSON_HTTP_200,REQUEST_FAILED,,9954,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3219,2020-05,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=109%2F05&stkno=3219,INVALID_JSON_HTTP_200,REQUEST_FAILED,,9954,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3219,2020-06,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=109%2F06&stkno=3219,INVALID_JSON_HTTP_200,REQUEST_FAILED,,9954,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3219,2020-07,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=109%2F07&stkno=3219,INVALID_JSON_HTTP_200,REQUEST_FAILED,,9954,0,Expecting value: line 1 column 1 (char 0)
+TPEX,3219,2020-08,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=109%2F08&stkno=3219,INVALID_JSON_HTTP_200,REQUEST_FAILED,,9954,0,Expecting value: line 1 column 1 (char 0)
+TPEX,4806,2025-09,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=114%2F09&stkno=4806,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,4806,2025-10,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=114%2F10&stkno=4806,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,5205,2021-04,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=110%2F04&stkno=5205,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,5205,2021-05,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=110%2F05&stkno=5205,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,5345,2019-09,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=108%2F09&stkno=5345,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,5345,2019-10,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=108%2F10&stkno=5345,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,6198,2020-11,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=109%2F11&stkno=6198,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,6198,2020-12,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=109%2F12&stkno=6198,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,6222,2016-06,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=105%2F06&stkno=6222,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,6222,2016-07,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=105%2F07&stkno=6222,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,6222,2016-08,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=105%2F08&stkno=6222,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,6222,2016-09,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=105%2F09&stkno=6222,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,6222,2016-10,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=105%2F10&stkno=6222,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,6222,2016-11,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=105%2F11&stkno=6222,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,6222,2016-12,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=105%2F12&stkno=6222,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,6222,2017-01,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=106%2F01&stkno=6222,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,8067,2019-11,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=108%2F11&stkno=8067,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TPEX,8067,2019-12,https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?d=108%2F12&stkno=8067,INVALID_JSON_HTTP_200,REQUEST_FAILED,,11068,0,Expecting value: line 1 column 1 (char 0)
+TWSE,1418,2017-11,https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20171101&stockNo=1418&response=json,HTTP_200,DATA_OK,OK,2012,15,
+TWSE,1538,2024-12,https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20241201&stockNo=1538&response=json,HTTP_200,DATA_OK,OK,2002,15,
+TWSE,2314,2016-09,https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20160901&stockNo=2314&response=json,HTTP_200,DATA_OK,OK,2034,13,
+TWSE,2323,2019-09,https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20190901&stockNo=2323&response=json,HTTP_200,DATA_OK,OK,1946,12,
+TWSE,2323,2019-10,https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20191001&stockNo=2323&response=json,HTTP_200,DATA_OK,OK,2784,21,
+TWSE,2434,2017-09,https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20170901&stockNo=2434&response=json,HTTP_200,DATA_OK,OK,1999,14,
+TWSE,2434,2017-10,https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=20171001&stockNo=2434&response=json,HTTP_200,DATA_OK,OK,2467,19,
