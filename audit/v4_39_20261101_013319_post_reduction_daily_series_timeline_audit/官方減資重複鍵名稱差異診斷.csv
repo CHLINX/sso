@@ -1,0 +1,2 @@
+﻿market,full_code,action_date,source_variant_rows,security_name_variants,same_pre_suspension_close_and_reference,same_action_reason,diagnosis,note
+TWSE,5906,2016-07-14,2,F-台南；台南-KY,True,True,僅證券名稱不同，停買前收盤價、恢復參考價及減資原因一致；屬名稱差異候選，非價格欄位衝突,本版只做診斷，不回寫或變更 v4.38 的重複鍵判定。
