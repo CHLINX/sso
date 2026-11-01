@@ -1,0 +1,189 @@
+﻿record_type,line_start,line_end,contains_freq_B,source_excerpt,context
+FUNCTION_DEFINITION,520,521,True,"def make_weekdays(start: pd.Timestamp, end: pd.Timestamp) -> list[date]:
+    return [d.date() for d in pd.date_range(start=start, end=end, freq='B')]","516:         row['官方原始回應檔'] = str(cache_file)
+517:         row['使用端點'] = used_endpoint
+518:     return meta, rows, schemas
+519: 
+520: def make_weekdays(start: pd.Timestamp, end: pd.Timestamp) -> list[date]:
+521:     return [d.date() for d in pd.date_range(start=start, end=end, freq='B')]
+522: 
+523: 
+524: def main():"
+FUNCTION_CALL,537,537,False,"days = make_weekdays(start_date, end_date)","531:     # based on the legacy Yahoo-derived files. Those files are used only to locate the run
+532:     # folder and inspect date-column metadata; their OHLCV values are never used.
+533:     start_date = pd.Timestamp(FIXED_START_DATE)
+534:     taipei_today = now_taipei().date()
+535:     safe_end = pd.Timestamp(taipei_today - timedelta(days=1))
+536:     end_date = safe_end
+537:     days = make_weekdays(start_date, end_date)
+538:     if not markets:
+539:         raise ValueError('股票池中無法辨識上市/上櫃市場。請檢查股票池中的 Yahoo代號或市場欄位。')
+540: 
+541:     out_dir = run_root / f'SFAS_官方市場行情資料底稿_v2.8_{STAMP}'
+542:     out_dir.mkdir(parents=True, exist_ok=False)
+543:     data_dir = out_dir / '官方歷史行情'"
+DATE_LOOP_CANDIDATE,112,119,False,for root in ROOT_CANDIDATES:,"107:     return None
+108: 
+109: 
+110: def locate_run_and_root() -> tuple[Path, Path]:
+111:     candidates = []
+112:     for root in ROOT_CANDIDATES:
+113:         direct = root / RUN_SUBDIR
+114:         if direct.exists() and (direct / POOL_FILE).exists():
+115:             candidates.append((root, direct))
+116:         elif root.exists():
+117:             for run in root.glob('分析重跑_v1.2_*'):"
+DATE_LOOP_CANDIDATE,117,119,False,for run in root.glob('分析重跑_v1.2_*'):,"112:     for root in ROOT_CANDIDATES:
+113:         direct = root / RUN_SUBDIR
+114:         if direct.exists() and (direct / POOL_FILE).exists():
+115:             candidates.append((root, direct))
+116:         elif root.exists():
+117:             for run in root.glob('分析重跑_v1.2_*'):
+118:                 if run.is_dir() and (run / POOL_FILE).exists() and (run / HISTORY_DIR).exists():
+119:                     candidates.append((root, run))
+120:     if not candidates:
+121:         raise FileNotFoundError(
+122:             f'找不到同時包含 {POOL_FILE} 與 {HISTORY_DIR} 的分析資料夾；請確認 Google Drive 已掛載。'"
+DATE_LOOP_CANDIDATE,184,211,False,"for idx, file in enumerate(files, 1):","179:     if not files:
+180:         raise FileNotFoundError(f'歷史行情資料夾沒有 CSV：{history_dir}')
+181:     all_dates = []
+182:     no_date_files = []
+183:     # Read date columns only. Existing OHLCV values are not used as data-source values.
+184:     for idx, file in enumerate(files, 1):
+185:         try:
+186:             header = read_csv_flexible(file, nrows=0)
+187:             cols = list(header.columns)
+188:             dcol = find_col(cols, ['日期', '交易日期', 'date', 'datetime', 'time'], ('交易日期', 'date', 'datetime'))
+189:             if dcol is None and cols:"
+DATE_LOOP_CANDIDATE,242,246,False,"for hk in ('fields', 'headers', 'columns', 'columnNames'):","237:     def walk(obj):
+238:         if isinstance(obj, dict):
+239:             title = str(obj.get('title') or obj.get('tableTitle') or obj.get('name') or '')
+240:             headers = None
+241:             rows = None
+242:             for hk in ('fields', 'headers', 'columns', 'columnNames'):
+243:                 candidate = obj.get(hk)
+244:                 if isinstance(candidate, list) and candidate and all(not isinstance(x, (dict, list)) for x in candidate):
+245:                     headers = [str(x).strip() for x in candidate]
+246:                     break
+247:             for rk in ('data', 'aaData', 'rows', 'records', 'result'):"
+DATE_LOOP_CANDIDATE,247,251,False,"for rk in ('data', 'aaData', 'rows', 'records', 'result'):","242:             for hk in ('fields', 'headers', 'columns', 'columnNames'):
+243:                 candidate = obj.get(hk)
+244:                 if isinstance(candidate, list) and candidate and all(not isinstance(x, (dict, list)) for x in candidate):
+245:                     headers = [str(x).strip() for x in candidate]
+246:                     break
+247:             for rk in ('data', 'aaData', 'rows', 'records', 'result'):
+248:                 candidate = obj.get(rk)
+249:                 if isinstance(candidate, list):
+250:                     rows = candidate
+251:                     break
+252:             if headers is not None and rows is not None and id(obj) not in seen:"
+DATE_LOOP_CANDIDATE,415,470,False,"for endpoint_name, base_url, params in candidates:","410:                 sess.get('https://www.twse.com.tw/zh/trading/historical/fmtqik.html', timeout=TIMEOUT)
+411:             except Exception:
+412:                 pass
+413:             setattr(sess, '_sfas_twse_warmed', True)
+414: 
+415:         for endpoint_name, base_url, params in candidates:
+416:             query_url = base_url + '?' + urlencode(params)
+417:             used_endpoint = endpoint_name
+418:             endpoint_success = False
+419:             attempts = REQUEST_RETRIES + 1
+420:             for attempt in range(attempts):"
+DATE_LOOP_CANDIDATE,420,463,False,for attempt in range(attempts):,"415:         for endpoint_name, base_url, params in candidates:
+416:             query_url = base_url + '?' + urlencode(params)
+417:             used_endpoint = endpoint_name
+418:             endpoint_success = False
+419:             attempts = REQUEST_RETRIES + 1
+420:             for attempt in range(attempts):
+421:                 resp = None
+422:                 try:
+423:                     headers = {
+424:                         'Referer': 'https://www.twse.com.tw/zh/trading/historical/fmtqik.html'
+425:                         if market == 'TWSE' else 'https://www.tpex.org.tw/zh-tw/mainboard/trading/info/daily-indices.html',"
+DATE_LOOP_CANDIDATE,510,517,False,for row in rows:,"505:         '解析資料表數': total_tables, '查詢網址': default_query_url, '實際回應網址': actual_url,
+506:         '使用端點': used_endpoint, '原始回應檔': str(cache_file), '回應SHA256': digest,
+507:         '回應位元組數': len(content), '查詢時間': started,
+508:         '使用快取': '是' if from_cache else '否', '錯誤': error,
+509:     }
+510:     for row in rows:
+511:         row['日期'] = day.isoformat()
+512:         row['資料源'] = market + ' 官方每日市場行情'
+513:         row['查詢網址'] = actual_url
+514:         row['查詢時間'] = started
+515:         row['回應SHA256'] = digest"
+DATE_LOOP_CANDIDATE,601,616,False,for day in days:,"596:     schemas_all = []
+597:     all_records = []
+598:     markets_to_query = sorted(markets)
+599:     total_queries = len(days) * len(markets_to_query)
+600:     completed = 0
+601:     for day in days:
+602:         for market in markets_to_query:
+603:             completed += 1
+604:             log(f'官方來源查詢 {completed}/{total_queries}：{market} {day:%Y-%m-%d}', log_path)
+605:             meta, rows, schemas = fetch_market_day(sess, market, day, cache_dir, code_set)
+606:             daily_logs.append(meta)"
+DATE_LOOP_CANDIDATE,602,616,False,for market in markets_to_query:,"597:     all_records = []
+598:     markets_to_query = sorted(markets)
+599:     total_queries = len(days) * len(markets_to_query)
+600:     completed = 0
+601:     for day in days:
+602:         for market in markets_to_query:
+603:             completed += 1
+604:             log(f'官方來源查詢 {completed}/{total_queries}：{market} {day:%Y-%m-%d}', log_path)
+605:             meta, rows, schemas = fetch_market_day(sess, market, day, cache_dir, code_set)
+606:             daily_logs.append(meta)
+607:             all_records.extend(rows)"
+DATE_LOOP_CANDIDATE,608,610,False,for schema in schemas:,"603:             completed += 1
+604:             log(f'官方來源查詢 {completed}/{total_queries}：{market} {day:%Y-%m-%d}', log_path)
+605:             meta, rows, schemas = fetch_market_day(sess, market, day, cache_dir, code_set)
+606:             daily_logs.append(meta)
+607:             all_records.extend(rows)
+608:             for schema in schemas:
+609:                 schema.update({'日期': day.isoformat(), '查詢網址': meta.get('查詢網址', '')})
+610:                 schemas_all.append(schema)
+611:             log(f""  狀態={meta['查詢狀態']}；股票池命中={meta['市場池命中列數']}；HTTP={meta['HTTP狀態碼']}；快取={meta['使用快取']}；{meta['錯誤']}"", log_path)
+612:             if meta['查詢狀態'] in ('REQUEST_ERROR', 'HTTP_ERROR', 'JSON_PARSE_ERROR', 'NO_PARSEABLE_TABLE'):
+613:                 # Do not abort on a single failed date; preserve errors and continue."
+DATE_LOOP_CANDIDATE,647,650,False,for market in markets_to_query:,"642:     coverage_rows = []
+643:     no_row_rows = []
+644:     expected_market_days = {}
+645:     successful_market_days = {}
+646:     daily_log_df = pd.DataFrame(daily_logs)
+647:     for market in markets_to_query:
+648:         mlog = daily_log_df[daily_log_df['市場'] == market] if not daily_log_df.empty else pd.DataFrame()
+649:         expected_market_days[market] = len(mlog)
+650:         successful_market_days[market] = int(mlog['查詢狀態'].isin(['OK', 'TABLE_FOUND_NO_UNIVERSE_ROWS']).sum()) if not mlog.empty else 0
+651:     universe_keys = universe[['股票代號', '市場', '股票名稱_股票池']].drop_duplicates()
+652:     official_keys = set(zip(raw_df.get('市場', pd.Series(dtype=str)).astype(str), raw_df.get('股票代號', pd.Series(dtype=str)).astype(str))) if not raw_df.empty else set()"
+DATE_LOOP_CANDIDATE,654,655,False,for item in daily_logs:,"649:         expected_market_days[market] = len(mlog)
+650:         successful_market_days[market] = int(mlog['查詢狀態'].isin(['OK', 'TABLE_FOUND_NO_UNIVERSE_ROWS']).sum()) if not mlog.empty else 0
+651:     universe_keys = universe[['股票代號', '市場', '股票名稱_股票池']].drop_duplicates()
+652:     official_keys = set(zip(raw_df.get('市場', pd.Series(dtype=str)).astype(str), raw_df.get('股票代號', pd.Series(dtype=str)).astype(str))) if not raw_df.empty else set()
+653:     market_status_by_day = {}
+654:     for item in daily_logs:
+655:         market_status_by_day[(item['市場'], item['日期'])] = item['查詢狀態']
+656:     for _, urow in universe_keys.iterrows():
+657:         code = str(urow['股票代號'])
+658:         market = str(urow['市場'])
+659:         if market not in ['TWSE', 'TPEx']:"
+DATE_LOOP_CANDIDATE,656,676,False,"for _, urow in universe_keys.iterrows():","651:     universe_keys = universe[['股票代號', '市場', '股票名稱_股票池']].drop_duplicates()
+652:     official_keys = set(zip(raw_df.get('市場', pd.Series(dtype=str)).astype(str), raw_df.get('股票代號', pd.Series(dtype=str)).astype(str))) if not raw_df.empty else set()
+653:     market_status_by_day = {}
+654:     for item in daily_logs:
+655:         market_status_by_day[(item['市場'], item['日期'])] = item['查詢狀態']
+656:     for _, urow in universe_keys.iterrows():
+657:         code = str(urow['股票代號'])
+658:         market = str(urow['市場'])
+659:         if market not in ['TWSE', 'TPEx']:
+660:             coverage_rows.append({'股票代號': code, '股票名稱': urow['股票名稱_股票池'], '市場': market, '官方資料列數': 0, '首筆官方日期': '', '末筆官方日期': '', '官方報表可解析日期數': 0, '報表已查詢但未出現日期數': 0, '狀態': '市場未判定；未查詢'})
+661:             continue"
+DATE_LOOP_CANDIDATE,673,676,False,for d in missing_dates:,"668:             '官方資料列數': len(rows_for), '首筆官方日期': rows_for['日期'].min() if not rows_for.empty else '',
+669:             '末筆官方日期': rows_for['日期'].max() if not rows_for.empty else '',
+670:             '官方報表可解析日期數': len(market_dates), '報表已查詢但未出現日期數': len(missing_dates),
+671:             '狀態': '有官方資料' if not rows_for.empty else '區間內未取得官方個股資料；需核對市場/掛牌狀態/API解析',
+672:         })
+673:         for d in missing_dates:
+674:             no_row_rows.append({'股票代號': code, '股票名稱': urow['股票名稱_股票池'], '市場': market, '日期': d,
+675:                                 '官方當日查詢狀態': market_status_by_day.get((market, d), ''),
+676:                                 '判讀限制': '當日市場報表可解析但未出現此股票；不直接判定為缺漏或停牌，需再核對個股狀態。'})
+677:     coverage_df = pd.DataFrame(coverage_rows)
+678:     coverage_df.to_csv(out_dir / '各股票官方資料覆蓋摘要.csv', index=False, encoding='utf-8-sig')"
