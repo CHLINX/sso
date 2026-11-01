@@ -1,0 +1,33 @@
+﻿看股最速適 v4.42｜官方個股日行情與來源缺漏核驗
+================================================================================================
+產生時間：2026-11-01T02:14:46
+唯讀 v4.35：/content/drive/MyDrive/看股最速適/看股最速適_未命中事件行情序列與停復牌換股日期交叉核對_v4_35_20261031_190119
+唯讀 v4.41：/content/drive/MyDrive/看股最速適/看股最速適_公司行動時序缺口與報酬基準可用性核驗_v4_41_20261101_015653
+優先事件：17；唯一股票月份API查詢：47；成功解析：7；未成功／格式待核：40。
+官方個股日行情列：13；事件日OHLCV完全吻合：5；v4.35來源漏列但官方有日行情：1；同日欄位差異：0。
+官方資料顯示事件日前仍有有效OHLC的事件：1。
+查詢範圍以 v4.41 優先事件的前收日期、公司行動日期、停買／復牌／新股上櫃日期中不晚於事件日的最早日期為起點，至事件日止。
+官方個股日行情未回傳某日列，不能直接判定停牌、休市或無成交；只有同一股票月份的端點回應完整且解析成功時，才可描述為端點該月沒有回傳該日列。
+HTTP錯誤、JSON格式錯誤、欄位無法解析及空回應均與無成交分開，不得視為零成交或無行情證據。
+本版比較的是官方原始OHLCV與 v4.35 原始逐日行情，不作還原、調整、補值或覆寫。
+若事件日前已有官方有效OHLC，表示事件日不是該查詢範圍內第一筆官方有效行情；報酬仍須依事件類型與公司行動基準另行定義。
+官方來源：TWSE 個股日成交資料自2010-01-04起；TPEx個股日成交資訊頁標示自1994年1月起。實際查詢仍以各API當次回應與查詢狀態為準。
+
+逐事件結果：
+2017-11-28 1418 東華｜月份查詢 1｜API ALL_MONTH_RESPONSES_PARSED｜官方事件日行情 EVENT_DATE_OFFICIAL_OHLCV_MATCH｜事件日前有效OHLC 0列｜首筆 未取得｜最近前筆 2017-11-15｜v4.35漏列 0列｜來源差異日期 無
+2020-12-01 6198 凌泰｜月份查詢 2｜API INCOMPLETE_OR_UNVERIFIED_MONTH_RESPONSES｜官方事件日行情 EVENT_DATE_NOT_RETURNED_BY_OFFICIAL_MONTHLY_ENDPOINT｜事件日前有效OHLC 0列｜首筆 未取得｜最近前筆 未取得｜v4.35漏列 0列｜來源差異日期 無
+2016-09-29 2314 台揚｜月份查詢 1｜API ALL_MONTH_RESPONSES_PARSED｜官方事件日行情 EVENT_DATE_OFFICIAL_OHLCV_MATCH｜事件日前有效OHLC 0列｜首筆 未取得｜最近前筆 2016-09-14｜v4.35漏列 0列｜來源差異日期 無
+2025-10-07 4806 桂田文創｜月份查詢 2｜API INCOMPLETE_OR_UNVERIFIED_MONTH_RESPONSES｜官方事件日行情 EVENT_DATE_NOT_RETURNED_BY_OFFICIAL_MONTHLY_ENDPOINT｜事件日前有效OHLC 0列｜首筆 未取得｜最近前筆 未取得｜v4.35漏列 0列｜來源差異日期 無
+2017-01-09 6222 上揚｜月份查詢 8｜API INCOMPLETE_OR_UNVERIFIED_MONTH_RESPONSES｜官方事件日行情 EVENT_DATE_NOT_RETURNED_BY_OFFICIAL_MONTHLY_ENDPOINT｜事件日前有效OHLC 0列｜首筆 未取得｜最近前筆 未取得｜v4.35漏列 0列｜來源差異日期 無
+2021-05-03 5205 中茂｜月份查詢 2｜API INCOMPLETE_OR_UNVERIFIED_MONTH_RESPONSES｜官方事件日行情 EVENT_DATE_NOT_RETURNED_BY_OFFICIAL_MONTHLY_ENDPOINT｜事件日前有效OHLC 0列｜首筆 未取得｜最近前筆 未取得｜v4.35漏列 0列｜來源差異日期 無
+2019-10-01 5345 天揚｜月份查詢 2｜API INCOMPLETE_OR_UNVERIFIED_MONTH_RESPONSES｜官方事件日行情 EVENT_DATE_NOT_RETURNED_BY_OFFICIAL_MONTHLY_ENDPOINT｜事件日前有效OHLC 0列｜首筆 未取得｜最近前筆 未取得｜v4.35漏列 0列｜來源差異日期 無
+2024-12-31 1538 正峰｜月份查詢 1｜API ALL_MONTH_RESPONSES_PARSED｜官方事件日行情 EVENT_DATE_OFFICIAL_OHLCV_MATCH｜事件日前有效OHLC 0列｜首筆 未取得｜最近前筆 2024-12-18｜v4.35漏列 0列｜來源差異日期 無
+2021-02-19 3073 天方能源｜月份查詢 7｜API INCOMPLETE_OR_UNVERIFIED_MONTH_RESPONSES｜官方事件日行情 EVENT_DATE_NOT_RETURNED_BY_OFFICIAL_MONTHLY_ENDPOINT｜事件日前有效OHLC 0列｜首筆 未取得｜最近前筆 未取得｜v4.35漏列 0列｜來源差異日期 無
+2017-10-02 2434 統懋｜月份查詢 2｜API ALL_MONTH_RESPONSES_PARSED｜官方事件日行情 EVENT_DATE_OFFICIAL_OHLCV_MATCH｜事件日前有效OHLC 1列｜首筆 2017-09-30｜最近前筆 2017-09-30｜v4.35漏列 1列｜來源差異日期 無
+2021-12-17 3067 全域｜月份查詢 2｜API INCOMPLETE_OR_UNVERIFIED_MONTH_RESPONSES｜官方事件日行情 EVENT_DATE_NOT_RETURNED_BY_OFFICIAL_MONTHLY_ENDPOINT｜事件日前有效OHLC 0列｜首筆 未取得｜最近前筆 未取得｜v4.35漏列 0列｜來源差異日期 無
+2019-01-04 3219 倚強｜月份查詢 2｜API INCOMPLETE_OR_UNVERIFIED_MONTH_RESPONSES｜官方事件日行情 EVENT_DATE_NOT_RETURNED_BY_OFFICIAL_MONTHLY_ENDPOINT｜事件日前有效OHLC 0列｜首筆 未取得｜最近前筆 未取得｜v4.35漏列 0列｜來源差異日期 無
+2019-10-01 2323 中環｜月份查詢 2｜API ALL_MONTH_RESPONSES_PARSED｜官方事件日行情 EVENT_DATE_OFFICIAL_OHLCV_MATCH｜事件日前有效OHLC 0列｜首筆 未取得｜最近前筆 2019-09-18｜v4.35漏列 0列｜來源差異日期 無
+2026-10-13 3085 新零售｜月份查詢 2｜API INCOMPLETE_OR_UNVERIFIED_MONTH_RESPONSES｜官方事件日行情 EVENT_DATE_NOT_RETURNED_BY_OFFICIAL_MONTHLY_ENDPOINT｜事件日前有效OHLC 0列｜首筆 未取得｜最近前筆 未取得｜v4.35漏列 0列｜來源差異日期 無
+2024-12-06 2740 天蔥｜月份查詢 2｜API INCOMPLETE_OR_UNVERIFIED_MONTH_RESPONSES｜官方事件日行情 EVENT_DATE_NOT_RETURNED_BY_OFFICIAL_MONTHLY_ENDPOINT｜事件日前有效OHLC 0列｜首筆 未取得｜最近前筆 未取得｜v4.35漏列 0列｜來源差異日期 無
+2019-12-05 8067 志旭｜月份查詢 2｜API INCOMPLETE_OR_UNVERIFIED_MONTH_RESPONSES｜官方事件日行情 EVENT_DATE_NOT_RETURNED_BY_OFFICIAL_MONTHLY_ENDPOINT｜事件日前有效OHLC 0列｜首筆 未取得｜最近前筆 未取得｜v4.35漏列 0列｜來源差異日期 無
+2020-08-24 3219 倚強股份｜月份查詢 7｜API INCOMPLETE_OR_UNVERIFIED_MONTH_RESPONSES｜官方事件日行情 EVENT_DATE_NOT_RETURNED_BY_OFFICIAL_MONTHLY_ENDPOINT｜事件日前有效OHLC 0列｜首筆 未取得｜最近前筆 未取得｜v4.35漏列 0列｜來源差異日期 無
