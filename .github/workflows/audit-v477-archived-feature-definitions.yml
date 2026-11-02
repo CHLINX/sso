@@ -1,0 +1,106 @@
+name: Trace archived SSO feature definitions
+on:
+  push:
+    branches:
+      - audit/v477-feature-trace-20261102
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Download and inspect archived model outputs
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, gzip, hashlib, io, json, urllib.request, zipfile
+
+          archives = [
+              ("v2.45", "SSO_v2.45_樣本外校準門檻與公司名稱結果.zip", 20731287),
+              ("v2.48.1", "SSO_v2.48.1_樣本外校準門檻與公司名稱結果.zip", 21010200),
+              ("v2.50", "SSO_v2.50_日成交量特徵與500日檢查點結果.zip", 21654521),
+              ("v2.51-no-volume", "SSO_v2.51_量能消融_停用量能特徵與配對比較結果.zip", 21011289),
+          ]
+
+          feature_keys = [
+              "ret5_rank","ret20_rank","ret60_rank","dist_ma20_rank","dist_ma60_rank",
+              "range_pos20_rank","lowvol20_rank","source_factor_rank",
+              "ret5_abs_scaled","ret20_abs_scaled","ret60_abs_scaled",
+              "dist_ma20_abs_scaled","dist_ma60_abs_scaled",
+              "market_median_ret5","market_median_ret20","market_median_ret60",
+              "market_breadth_pos_ret5","market_breadth_pos_ret20","market_breadth_pos_ret60",
+              "market_breadth_above_ma20","market_breadth_above_ma60",
+              "ret5_rank_x_market_breadth","ret20_rank_x_market_breadth",
+              "ret60_rank_x_market_breadth",
+              "volume_rel_20","volume_trend_5_20","volume_rank","ret5_x_volume_rel"
+          ]
+
+          def read_text(zf, name, max_bytes=120000):
+              raw = zf.read(name)
+              if name.lower().endswith(".gz"):
+                  raw = gzip.decompress(raw)
+              return raw[:max_bytes].decode("utf-8-sig", errors="replace"), len(raw)
+
+          def inspect_csv(zf, name):
+              raw = zf.read(name)
+              if name.lower().endswith(".gz"):
+                  raw = gzip.decompress(raw)
+              txt = raw[:500000].decode("utf-8-sig", errors="replace")
+              reader = csv.reader(io.StringIO(txt))
+              rows = []
+              for _, row in zip(range(3), reader):
+                  rows.append(row)
+              if not rows:
+                  print("CSV_EMPTY")
+                  return
+              header = rows[0]
+              hits = [x for x in feature_keys if any(x.lower() in h.lower() for h in header)]
+              print("CSV_HEADER|" + json.dumps(header, ensure_ascii=False))
+              print("CSV_FEATURE_HEADER_HITS|" + json.dumps(hits, ensure_ascii=False))
+              for i, row in enumerate(rows[1:], 1):
+                  print(f"CSV_SAMPLE_{i}|" + json.dumps(row, ensure_ascii=False)[:5000])
+
+          for version, filename, expected in archives:
+              url = "https://raw.githubusercontent.com/CHLINX/sso/main/" + urllib.parse.quote(filename)
+              req = urllib.request.Request(url, headers={"User-Agent":"SSO-feature-trace/1.0"})
+              print("\n" + "="*100)
+              print(f"ARCHIVE|{version}|{filename}")
+              with urllib.request.urlopen(req, timeout=120) as response:
+                  data = response.read()
+              print(f"VERIFY|expected={expected}|downloaded={len(data)}|size_match={len(data)==expected}|sha256={hashlib.sha256(data).hexdigest()}|zip={zipfile.is_zipfile(io.BytesIO(data))}")
+              if len(data) != expected:
+                  raise RuntimeError("Archive size mismatch: " + filename)
+              zf = zipfile.ZipFile(io.BytesIO(data))
+              bad = zf.testzip()
+              print(f"CRC|{'PASS' if bad is None else 'FAIL:'+str(bad)}")
+              if bad is not None:
+                  raise RuntimeError("CRC failed: " + filename)
+
+              infos = [i for i in zf.infolist() if not i.is_dir()]
+              print(f"MEMBER_COUNT|{len(infos)}")
+              binary = []
+              for info in infos:
+                  name = info.filename
+                  low = name.lower()
+                  print(f"MEMBER|{name}|{info.file_size}")
+                  if low.endswith((".pkl",".pickle",".joblib",".cbm",".pt",".pth",".onnx",".h5",".keras")):
+                      binary.append(name)
+                  if low.endswith((".txt",".md",".json",".yaml",".yml",".ini",".toml",".cfg")):
+                      text, total = read_text(zf, name)
+                      print(f"TEXT_FILE|{name}|bytes={total}")
+                      print("TEXT_BEGIN")
+                      print(text[:25000])
+                      if len(text) > 25000:
+                          print("TEXT_TRUNCATED")
+                      print("TEXT_END")
+                  elif low.endswith((".csv",".csv.gz")):
+                      print(f"CSV_FILE|{name}|bytes={info.file_size}")
+                      try:
+                          inspect_csv(zf, name)
+                      except Exception as exc:
+                          print(f"CSV_INSPECTION_ERROR|{name}|{type(exc).__name__}|{exc}")
+
+              print("MODEL_BINARY_MEMBERS|" + json.dumps(binary, ensure_ascii=False))
+          print("\nFEATURE_ARCHIVE_TRACE_COMPLETE|main_read_only=true|model_retraining=false")
+          PY
