@@ -1,0 +1,136 @@
+name: Inspect SSO original ten-stock strategy archives
+on:
+  push:
+    branches:
+      - audit/v476-original-ten-stock-20261102
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: List main ZIP files and inspect strategy archives
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, io, json, re, time, urllib.request, urllib.parse, zipfile
+          from pathlib import PurePosixPath
+
+          API = "https://api.github.com/repos/CHLINX/sso/git/trees/main?recursive=1"
+          headers = {"User-Agent": "SSO-v4.76-archive-audit/1.0", "Accept": "application/vnd.github+json"}
+          req = urllib.request.Request(API, headers=headers)
+          with urllib.request.urlopen(req, timeout=60) as r:
+              tree_doc = json.loads(r.read().decode("utf-8"))
+          tree = tree_doc.get("tree", [])
+          zips = sorted((x for x in tree if x.get("type") == "blob" and x.get("path","").lower().endswith(".zip")),
+                        key=lambda x: x["path"])
+          print("=== REPOSITORY ===")
+          print("repository=CHLINX/sso; inspected_ref=main; default_branch=main; visibility=public")
+          print(f"tree_entries={len(tree)}; tree_truncated={tree_doc.get('truncated')}; zip_count={len(zips)}")
+          print("=== ALL ZIP FILES ON MAIN: path | bytes ===")
+          for x in zips:
+              print(f"ZIP|{x['path']}|{x.get('size',0)}")
+          print("=== SOURCE CODE / NOTEBOOK CANDIDATES ===")
+          code_candidates = [x for x in tree if x.get("type") == "blob" and
+              x.get("path","").lower().endswith((".py",".ipynb",".r",".jl")) and
+              re.search(r"(sso|stock|strategy|選股|十檔|v2[._-]?(40|45|51))", x.get("path",""), re.I)]
+          for x in code_candidates[:150]:
+              print(f"SOURCE|{x['path']}|{x.get('size',0)}")
+          if len(code_candidates) > 150:
+              print(f"SOURCE_CANDIDATES_TRUNCATED|total={len(code_candidates)}")
+
+          pattern = re.compile(r"v2[._-]?(40|45|51|56|57|58|59|60|61|62)", re.I)
+          selected = [x for x in zips if pattern.search(PurePosixPath(x["path"]).name)]
+          print("=== SELECTED ARCHIVES ===")
+          print(f"selected_count={len(selected)}")
+          for x in selected:
+              print(f"SELECTED|{x['path']}|{x.get('size',0)}")
+
+          base = "https://raw.githubusercontent.com/CHLINX/sso/main/"
+          for idx, meta in enumerate(selected, 1):
+              path = meta["path"]
+              expected = int(meta.get("size", 0))
+              url = base + urllib.parse.quote(path, safe="/")
+              t0 = time.time()
+              req = urllib.request.Request(url, headers={"User-Agent":"SSO-v4.76-archive-audit/1.0"})
+              with urllib.request.urlopen(req, timeout=120) as r:
+                  data = r.read()
+              print(f"\n=== ARCHIVE {idx}/{len(selected)}: {path} ===")
+              print(f"repository_bytes={expected}; downloaded_bytes={len(data)}; size_match={len(data)==expected}; download_seconds={time.time()-t0:.2f}; is_zip={zipfile.is_zipfile(io.BytesIO(data))}")
+              if not zipfile.is_zipfile(io.BytesIO(data)):
+                  print("ARCHIVE_ERROR|invalid_zip")
+                  continue
+              zf = zipfile.ZipFile(io.BytesIO(data))
+              infos = [i for i in zf.infolist() if not i.is_dir()]
+              bad = zf.testzip()
+              print(f"member_count={len(infos)}; uncompressed_bytes={sum(i.file_size for i in infos)}; crc_test={'PASS' if bad is None else 'FAIL:'+str(bad)}")
+              for i in infos:
+                  print(f"MEMBER|{i.filename}|{i.file_size}")
+              # Strategy report text: extract rule-bearing lines, not entire long logs.
+              for i in infos:
+                  low = i.filename.lower()
+                  if low.endswith((".txt",".md")) and i.file_size <= 250_000:
+                      raw = zf.read(i).decode("utf-8-sig", errors="replace")
+                      if re.search(r"(v2\.45|v2\.51|v2\.62|影子驗證規格|核心分析修正說明)", i.filename, re.I):
+                          print(f"--- RULE TEXT {i.filename} ---")
+                          lines = raw.splitlines()
+                          keys = re.compile(r"(目的|特徵欄位|特徵|標籤|持有期間|成本|lookback|校準|模型|訓練|訊號|區段|選取|選股|前瞻|影子|驗證|OOS|樣本外|同時買進|等權|門檻|限制|不.*視為|不可|不得|勿|未.*放行)", re.I)
+                          shown = 0
+                          for ln, line in enumerate(lines, 1):
+                              if keys.search(line):
+                                  print(f"TEXT|L{ln}|{line[:420]}")
+                                  shown += 1
+                                  if shown >= 100:
+                                      print("TEXT_LINES_CAPPED|100")
+                                      break
+                          if shown == 0:
+                              print(raw[:12000])
+              # Settings JSON is authoritative for stored field names/values.
+              for i in infos:
+                  if i.filename.lower().endswith(".json") and i.file_size <= 100_000:
+                      raw = zf.read(i).decode("utf-8-sig", errors="replace")
+                      try:
+                          obj = json.loads(raw)
+                      except Exception:
+                          continue
+                      print(f"--- SETTINGS JSON {i.filename} ---")
+                      # Print only fields that establish feature, label, time, cost and source definitions.
+                      def walk(o, prefix=""):
+                          if isinstance(o, dict):
+                              for k,v in o.items():
+                                  p = (prefix + "." + str(k)).strip(".")
+                                  if isinstance(v, (dict,list)):
+                                      walk(v,p)
+                                  elif re.search(r"(特徵|欄位|持有|H$|lookback|校準|更新|成本|slip|fee|tax|資料|日期|區段|標籤|label|模型|版本|檔數|股票數|市場日)", str(k), re.I):
+                                      print(f"JSON|{p}|{str(v)[:500]}")
+                          elif isinstance(o,list):
+                              for j,v in enumerate(o):
+                                  if isinstance(v,(dict,list)):
+                                      walk(v, f"{prefix}[{j}]")
+                                  else:
+                                      print(f"JSON|{prefix}[{j}]|{str(v)[:300]}")
+                      walk(obj)
+              # Small/medium CSVs: inspect schemas and 2 records; avoid printing large detail tables.
+              for i in infos:
+                  if not i.filename.lower().endswith(".csv") or i.file_size > 2_000_000:
+                      continue
+                  if not re.search(r"(總結|summary|候選|分級|分類機率|配對|規格|前10|最新10|個股獨立|樣本外|校準)", i.filename, re.I):
+                      continue
+                  try:
+                      with zf.open(i) as bf:
+                          txt = io.TextIOWrapper(bf, encoding="utf-8-sig", errors="replace", newline="")
+                          rd = csv.reader(txt)
+                          header = next(rd, [])
+                          sample = []
+                          for row in rd:
+                              if len(sample) < 2:
+                                  sample.append(row)
+                      print(f"--- CSV {i.filename} ---")
+                      print(f"columns={len(header)}; HEADER|" + "|".join(header[:90]))
+                      for row in sample:
+                          print("SAMPLE|" + "|".join(row[:35]))
+                  except Exception as e:
+                      print(f"CSV_READ_ERROR|{i.filename}|{type(e).__name__}|{e}")
+          print("\nAUDIT_COMPLETE|main_read_only=true|temporary_branch_only=true|main_modified=false")
+          PY
