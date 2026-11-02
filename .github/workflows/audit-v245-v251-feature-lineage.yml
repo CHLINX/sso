@@ -1,0 +1,125 @@
+name: Audit v2.45-v2.51 feature lineage
+on:
+  push:
+    branches:
+      - audit/v477-feature-lineage-20261102
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Read archived strategy outputs without changing main
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, gzip, io, json, re, urllib.request, urllib.parse, zipfile, hashlib
+
+          archives = [
+              ("v2.45", "SSO_v2.45_樣本外校準門檻與公司名稱結果.zip", 20731287),
+              ("v2.46", "SSO_v2.46_欄位補充_不重跑模型結果.zip", 21125807),
+              ("v2.47", "SSO_v2.47_產業及市場別補正_不重跑模型結果.zip", 21322689),
+              ("v2.48.1", "SSO_v2.48.1_樣本外校準門檻與公司名稱結果.zip", 21010200),
+              ("v2.50", "SSO_v2.50_日成交量特徵與500日檢查點結果.zip", 21654521),
+              ("v2.51-individual", "SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip", 23606997),
+              ("v2.51-no-volume", "SSO_v2.51_量能消融_停用量能特徵與配對比較結果.zip", 21011289),
+          ]
+
+          features = [
+              "ret5_rank","ret20_rank","ret60_rank","dist_ma20_rank","dist_ma60_rank",
+              "range_pos20_rank","lowvol20_rank","source_factor_rank",
+              "ret5_abs_scaled","ret20_abs_scaled","ret60_abs_scaled",
+              "dist_ma20_abs_scaled","dist_ma60_abs_scaled",
+              "market_median_ret5","market_median_ret20","market_median_ret60",
+              "market_breadth_pos_ret5","market_breadth_pos_ret20","market_breadth_pos_ret60",
+              "market_breadth_above_ma20","market_breadth_above_ma60",
+              "ret5_rank_x_market_breadth","ret20_rank_x_market_breadth","ret60_rank_x_market_breadth"
+          ]
+          feature_set=set(features)
+          name_focus=re.compile(r"(feature|特徵|factor|因子|model|模型|config|設定|param|參數|strategy|策略|summary|摘要|importance|重要性|candidate|候選|top.?10|threshold|門檻|ablation|消融|calibrat|校準|manifest|readme|report|報告)", re.I)
+          text_ext=(".csv",".csv.gz",".txt",".md",".json",".yaml",".yml",".ini",".cfg",".log",".tsv")
+          total_hits={f:0 for f in features}
+
+          def decode_member(raw, name):
+              if name.lower().endswith(".gz"):
+                  try: raw=gzip.decompress(raw)
+                  except Exception: return None
+              for enc in ("utf-8-sig","utf-8","cp950","big5"):
+                  try: return raw.decode(enc)
+                  except Exception: pass
+              return raw.decode("utf-8", errors="replace")
+
+          def scan_csv(text, name):
+              try:
+                  reader=csv.reader(io.StringIO(text))
+                  rows=reader
+                  header=next(rows, [])
+              except Exception:
+                  return
+              hits=[]
+              n=0
+              for ri,row in enumerate(rows, start=2):
+                  joined=" | ".join(str(x) for x in row)
+                  present=[f for f in features if f in joined]
+                  if present:
+                      n+=len(present)
+                      for f in present: total_hits[f]+=1
+                      if len(hits)<18:
+                          hits.append((ri,present,row[:12]))
+              interesting_header=any(x in feature_set for x in header) or any(re.search(r"feature|特徵|因子|factor|importance|重要性|model|模型|formula|公式|column|欄位",x,re.I) for x in header)
+              if interesting_header or hits or name_focus.search(name):
+                  print("CSV|" + name)
+                  print("CSV_HEADER|" + json.dumps(header,ensure_ascii=False)[:5000])
+                  if n: print(f"CSV_FEATURE_HITS|{n}")
+                  for ri,present,row in hits:
+                      print("CSV_MATCH_ROW|" + str(ri) + "|" + ",".join(present) + "|" + json.dumps(row,ensure_ascii=False)[:1800])
+
+          for version, filename, expected in archives:
+              url="https://raw.githubusercontent.com/CHLINX/sso/main/"+urllib.parse.quote(filename,safe="")
+              print(f"\n######## ARCHIVE {version} ########")
+              req=urllib.request.Request(url,headers={"User-Agent":"SSO-v477-feature-lineage-audit/1.0"})
+              with urllib.request.urlopen(req,timeout=180) as resp:
+                  data=resp.read()
+              print(f"DOWNLOAD|{filename}|expected={expected}|actual={len(data)}|size_match={len(data)==expected}|sha256={hashlib.sha256(data).hexdigest()}")
+              if len(data)!=expected: raise RuntimeError("Archive size mismatch: "+filename)
+              bio=io.BytesIO(data)
+              if not zipfile.is_zipfile(bio): raise RuntimeError("Not ZIP: "+filename)
+              zf=zipfile.ZipFile(bio)
+              infos=[x for x in zf.infolist() if not x.is_dir()]
+              bad=zf.testzip()
+              print(f"ZIP_INTEGRITY|members={len(infos)}|uncompressed={sum(x.file_size for x in infos)}|crc={'PASS' if bad is None else 'FAIL:'+str(bad)}")
+              if bad: raise RuntimeError("CRC failure: "+filename)
+              for info in infos:
+                  n=info.filename
+                  print(f"MEMBER|{n}|{info.file_size}")
+                  low=n.lower()
+                  if not low.endswith(text_ext): continue
+                  if info.file_size>25000000: 
+                      print("TEXT_SCAN_SKIPPED|member_over_25MB")
+                      continue
+                  raw=zf.read(info)
+                  txt=decode_member(raw,n)
+                  if txt is None: 
+                      print("TEXT_DECODE_SKIPPED|gzip_decode_failed")
+                      continue
+                  # Always scan exact feature tokens in all readable text members.
+                  member_hits=[f for f in features if f in txt]
+                  if member_hits:
+                      for f in member_hits: total_hits[f]+=txt.count(f)
+                      print("FEATURE_NAME_HITS|" + n + "|" + json.dumps(member_hits,ensure_ascii=False))
+                  if low.endswith((".csv",".csv.gz",".tsv")):
+                      scan_csv(txt,n)
+                  elif name_focus.search(n) or member_hits:
+                      cleaned=txt.replace("\r","")
+                      print("TEXT_EVIDENCE_BEGIN|" + n)
+                      print(cleaned[:15000])
+                      if len(cleaned)>15000: print("[TEXT_TRUNCATED]")
+                      print("TEXT_EVIDENCE_END|" + n)
+              zf.close()
+
+          print("\n######## FEATURE TOKEN SUMMARY ########")
+          for f in features:
+              print(f"FEATURE_TOKEN|{f}|occurrences={total_hits[f]}")
+          print("AUDIT_COMPLETE|archives=7|main_read_only=true|model_not_retrained=true")
+          PY
