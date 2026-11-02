@@ -1,0 +1,53 @@
+name: Inspect SSO ranking and quantile audit archives
+on:
+  push:
+    branches:
+      - audit/v477-ranking-direction-20261102
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download and inspect small audit ZIPs
+        shell: bash
+        run: |
+          python - <<'PY'
+          import io, zipfile, urllib.request, urllib.parse, hashlib, csv, json
+
+          items = [
+            ("v2.53", "SSO_v2.53_排序與統計口徑稽核_20261029_033422.zip", 17116),
+            ("v2.54", "SSO_v2.54_排名分數與分位方向稽核_20261029_040349.zip", 10953),
+            ("v2.55", "SSO_v2.55_逐筆績效與統計口徑稽核結果_20261029_045750.zip", 6392),
+            ("v2.56", "SSO_v2.56_實際淨報酬與分層核算結果_20261029_055725.zip", 17713),
+          ]
+          for version, filename, expected in items:
+            print("\n" + "="*90)
+            url = "https://raw.githubusercontent.com/CHLINX/sso/main/" + urllib.parse.quote(filename)
+            req = urllib.request.Request(url, headers={"User-Agent":"SSO-ranking-audit/1.0"})
+            data = urllib.request.urlopen(req, timeout=90).read()
+            print(f"ARCHIVE|{version}|{filename}|expected={expected}|actual={len(data)}|sha256={hashlib.sha256(data).hexdigest()}")
+            if len(data) != expected:
+              raise RuntimeError("size mismatch " + filename)
+            z = zipfile.ZipFile(io.BytesIO(data))
+            if z.testzip() is not None:
+              raise RuntimeError("CRC failed " + filename)
+            print(f"CRC|PASS|members={len(z.infolist())}")
+            for info in z.infolist():
+              if info.is_dir(): continue
+              print(f"MEMBER|{info.filename}|{info.file_size}")
+              raw = z.read(info.filename)
+              low=info.filename.lower()
+              if low.endswith((".txt",".md",".json",".csv")):
+                text=raw.decode("utf-8-sig",errors="replace")
+                print("CONTENT_BEGIN|" + info.filename)
+                if low.endswith(".csv"):
+                  rows=list(csv.reader(io.StringIO(text)))
+                  print("CSV_ROWS|" + str(max(0,len(rows)-1)))
+                  for row in rows[:16]:
+                    print("CSV|" + json.dumps(row,ensure_ascii=False)[:3000])
+                else:
+                  print(text[:18000])
+                print("CONTENT_END|" + info.filename)
+          print("\nRANKING_AUDIT_COMPLETE|main_read_only=true")
+          PY
