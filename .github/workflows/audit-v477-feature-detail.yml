@@ -1,0 +1,106 @@
+name: Extract v477 feature definitions and correction notes
+on:
+  push:
+    branches:
+      - audit/v477-feature-lineage-20261102
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Extract focused strategy metadata from main archives
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, gzip, io, json, urllib.request, urllib.parse, zipfile, re
+
+          sources = [
+              ("v2.45","SSO_v2.45_樣本外校準門檻與公司名稱結果.zip"),
+              ("v2.48.1","SSO_v2.48.1_樣本外校準門檻與公司名稱結果.zip"),
+              ("v2.50","SSO_v2.50_日成交量特徵與500日檢查點結果.zip"),
+              ("v2.51-individual","SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip"),
+              ("v2.51-no-volume","SSO_v2.51_量能消融_停用量能特徵與配對比較結果.zip")
+          ]
+          report_needles = [
+              "特徵欄位","ret5_rank","ret5_abs_scaled","market_median_ret",
+              "market_breadth","市場廣度","abs_scaled","縮放","標準化",
+              "橫斷面","排名母體","RANK_FEATURES","feature_columns",
+              "特徵公式","計算公式","20根有效K棒報酬波動率"
+          ]
+          def txt_decode(b,name):
+              if name.lower().endswith(".gz"):
+                  b=gzip.decompress(b)
+              for e in ("utf-8-sig","utf-8","cp950","big5"):
+                  try:return b.decode(e)
+                  except:pass
+              return b.decode("utf-8",errors="replace")
+
+          def excerpts(name, text):
+              positions=[]
+              for needle in report_needles:
+                  start=0
+                  while True:
+                      p=text.find(needle,start)
+                      if p<0:break
+                      positions.append((p,needle));start=p+len(needle)
+              positions.sort()
+              emitted=[]
+              last=-1
+              for p,needle in positions:
+                  if p<last: continue
+                  a=max(0,p-500);b=min(len(text),p+900)
+                  emitted.append((needle,a,b))
+                  last=b
+                  if len(emitted)>=35:break
+              print(f"EXCERPT_COUNT|{name}|{len(emitted)}|matches={len(positions)}|chars={len(text)}")
+              for i,(needle,a,b) in enumerate(emitted,1):
+                  print(f"EXCERPT|{name}|{i}|needle={needle}|offset={a}:{b}")
+                  print(text[a:b].replace("\r",""))
+                  print("END_EXCERPT")
+
+          for ver,filename in sources:
+              url="https://raw.githubusercontent.com/CHLINX/sso/main/"+urllib.parse.quote(filename,safe="")
+              with urllib.request.urlopen(urllib.request.Request(url,headers={"User-Agent":"SSO-v477-detail/1.0"}),timeout=180) as r:
+                  data=r.read()
+              z=zipfile.ZipFile(io.BytesIO(data))
+              print(f"\n===== ARCHIVE {ver} members={len([i for i in z.infolist() if not i.is_dir()])} =====")
+              for info in z.infolist():
+                  if info.is_dir():continue
+                  n=info.filename
+                  low=n.lower()
+                  wanted=(
+                      low.endswith(".json") and ("來源品質與執行設定" in n)
+                  ) or (
+                      low.endswith(".txt") and (
+                          "核心分析修正說明" in n or
+                          "v2.50_vs_v2.51_個股獨立評估" in n
+                      )
+                  ) or (
+                      low.endswith(".csv") and (
+                          "最新達標獲利候選最多10檔" in n or
+                          "最新10檔獲利可能性排行" in n
+                      )
+                  )
+                  if ver=="v2.45" and low.endswith(".txt") and "樣本外校準門檻與公司名稱報告" in n:
+                      wanted=True
+                  if ver in ("v2.48.1","v2.51-no-volume") and low.endswith(".txt") and "樣本外校準門檻與公司名稱報告" in n:
+                      wanted=True
+                  if not wanted:continue
+                  raw=z.read(info)
+                  text=txt_decode(raw,n)
+                  print(f"\n--- TARGET {ver}|{n}|bytes={info.file_size} ---")
+                  if low.endswith(".json"):
+                      obj=json.loads(text)
+                      print(json.dumps(obj,ensure_ascii=False,indent=2))
+                  elif low.endswith(".csv"):
+                      print(text[:14000])
+                      if len(text)>14000:print("[CSV_TRUNCATED]")
+                  elif len(text)<12000:
+                      print(text)
+                  else:
+                      excerpts(n,text)
+              z.close()
+          print("\nFOCUSED_EXTRACT_COMPLETE|read_only_main=true")
+          PY
