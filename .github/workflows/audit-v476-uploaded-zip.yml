@@ -1,0 +1,87 @@
+name: Inspect uploaded SSO v4.76 compatibility ZIP
+on:
+  push:
+    branches:
+      - audit/v476-zip-content-20261102
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Download and extract v4.76 ZIP
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, io, json, urllib.request, urllib.parse, zipfile, hashlib
+
+          branch = "uploads/file-batch-20261102-144356"
+          path = "audit_uploads/v4.76_20261102/看股最速適_原十檔策略來源與修正資料相容性盤點_v4.76_20261102_141626.zip"
+          expected_size = 12879
+          url = "https://raw.githubusercontent.com/CHLINX/sso/" + branch + "/" + urllib.parse.quote(path, safe="/")
+
+          req = urllib.request.Request(url, headers={"User-Agent":"SSO-v4.76-ZIP-inspector/1.0"})
+          with urllib.request.urlopen(req, timeout=90) as response:
+              data = response.read()
+
+          print("=== SOURCE VERIFICATION ===")
+          print("repository=CHLINX/sso")
+          print("source_branch=" + branch)
+          print("source_path=" + path)
+          print(f"expected_size={expected_size}; downloaded_size={len(data)}; size_match={len(data)==expected_size}")
+          print("sha256=" + hashlib.sha256(data).hexdigest())
+          print("is_zip=" + str(zipfile.is_zipfile(io.BytesIO(data))))
+          if len(data) != expected_size:
+              raise RuntimeError("Uploaded ZIP byte size does not match the provided upload log.")
+          if not zipfile.is_zipfile(io.BytesIO(data)):
+              raise RuntimeError("Downloaded source is not a ZIP archive.")
+
+          zf = zipfile.ZipFile(io.BytesIO(data))
+          infos = [i for i in zf.infolist() if not i.is_dir()]
+          bad = zf.testzip()
+          print(f"=== ZIP INTEGRITY ===\nmembers={len(infos)}; uncompressed_bytes={sum(i.file_size for i in infos)}; crc_test={'PASS' if bad is None else 'FAIL:'+str(bad)}")
+          if bad is not None:
+              raise RuntimeError("ZIP CRC integrity test failed.")
+
+          for info in infos:
+              print(f"\n=== MEMBER {info.filename} ===")
+              print(f"size={info.file_size}; compressed={info.compress_size}")
+              raw = zf.read(info)
+              lower = info.filename.lower()
+
+              if lower.endswith((".txt", ".md")):
+                  text = raw.decode("utf-8-sig", errors="replace")
+                  print("----- FULL TEXT BEGIN -----")
+                  print(text[:30000])
+                  if len(text) > 30000:
+                      print("[TEXT TRUNCATED AT 30000 CHARACTERS]")
+                  print("----- FULL TEXT END -----")
+
+              elif lower.endswith(".json"):
+                  try:
+                      obj = json.loads(raw.decode("utf-8-sig", errors="replace"))
+                      print("----- JSON BEGIN -----")
+                      print(json.dumps(obj, ensure_ascii=False, indent=2)[:30000])
+                      print("----- JSON END -----")
+                  except Exception as exc:
+                      print("JSON_DECODE_ERROR|" + repr(exc))
+                      print(raw[:2000].decode("utf-8", errors="replace"))
+
+              elif lower.endswith(".csv"):
+                  text = raw.decode("utf-8-sig", errors="replace")
+                  reader = csv.reader(io.StringIO(text))
+                  rows = list(reader)
+                  print(f"csv_rows_excluding_header={max(0,len(rows)-1)}; columns={len(rows[0]) if rows else 0}")
+                  if rows:
+                      print("HEADER|" + json.dumps(rows[0], ensure_ascii=False))
+                      for index, row in enumerate(rows[1:], start=1):
+                          print(f"ROW{index}|" + json.dumps(row, ensure_ascii=False)[:3000])
+                  if len(rows) > 301:
+                      print(f"[CSV ROWS CAPPED: printed 300 of {len(rows)-1}]")
+
+              else:
+                  print("BINARY_OR_UNSUPPORTED_MEMBER|" + info.filename)
+
+          print("\nV476_ZIP_INSPECTION_COMPLETE|downloaded=true|crc=PASS|source_branch_read_only=true|main_modified=false")
+          PY
