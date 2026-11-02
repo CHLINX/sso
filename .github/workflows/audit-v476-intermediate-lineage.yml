@@ -1,0 +1,70 @@
+name: Inspect SSO intermediate strategy lineage archives
+on:
+  push:
+    branches:
+      - audit/v476-original-ten-stock-20261102
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Inspect intermediate feature and strategy archives
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, io, json, re, time, urllib.request, urllib.parse, zipfile
+          API="https://api.github.com/repos/CHLINX/sso/git/trees/main?recursive=1"
+          h={"User-Agent":"SSO-v4.76-lineage-audit/1.0","Accept":"application/vnd.github+json"}
+          with urllib.request.urlopen(urllib.request.Request(API,headers=h),timeout=60) as r:
+              tree=json.loads(r.read().decode())["tree"]
+          targets=("v2.46_","v2.47_","v2.48.1_","v2.50_")
+          files=[x for x in tree if x.get("type")=="blob" and x.get("path","").endswith(".zip")
+                 and any(t in x["path"] for t in targets)]
+          print(f"source=CHLINX/sso@main; selected={len(files)}")
+          for x in files:
+              print(f"ARCHIVE|{x['path']}|{x['size']}")
+          base="https://raw.githubusercontent.com/CHLINX/sso/main/"
+          for x in files:
+              path=x["path"]; expected=int(x["size"])
+              url=base+urllib.parse.quote(path,safe="/")
+              t=time.time()
+              with urllib.request.urlopen(urllib.request.Request(url,headers=h),timeout=120) as r: data=r.read()
+              print(f"\n=== {path} ===")
+              print(f"SIZE|expected={expected}|downloaded={len(data)}|match={expected==len(data)}|seconds={time.time()-t:.2f}|zip={zipfile.is_zipfile(io.BytesIO(data))}")
+              if not zipfile.is_zipfile(io.BytesIO(data)): continue
+              z=zipfile.ZipFile(io.BytesIO(data)); infos=[i for i in z.infolist() if not i.is_dir()]
+              bad=z.testzip()
+              print(f"CHECK|members={len(infos)}|uncompressed={sum(i.file_size for i in infos)}|crc={'PASS' if bad is None else bad}")
+              for i in infos: print(f"MEMBER|{i.filename}|{i.file_size}")
+              for i in infos:
+                  if i.filename.lower().endswith((".txt",".md")) and i.file_size<180000:
+                      s=z.read(i).decode("utf-8-sig",errors="replace")
+                      print(f"--- TEXT {i.filename} ---")
+                      lines=s.splitlines()
+                      pat=re.compile(r"(v2\.|主要目的|研究目的|特徵欄位|特徵|標籤|持有期間|lookback|校準|模型|訓練|訊號|區段|候選|選股|量能|成本|H=|H\[|正式策略|樣本外|OOS|不.*入模|唯一.*差異)",re.I)
+                      n=0
+                      for j,line in enumerate(lines,1):
+                          if pat.search(line):
+                              print(f"TEXT|L{j}|{line[:450]}"); n+=1
+                              if n>=45: print("TEXT_CAPPED|45"); break
+              for i in infos:
+                  if i.filename.lower().endswith(".json") and i.file_size<60000:
+                      try: obj=json.loads(z.read(i).decode("utf-8-sig",errors="replace"))
+                      except Exception: continue
+                      print(f"--- JSON {i.filename} ---")
+                      def walk(o,p=""):
+                          if isinstance(o,dict):
+                              for k,v in o.items():
+                                  q=(p+"."+str(k)).strip(".")
+                                  if isinstance(v,(dict,list)): walk(v,q)
+                                  elif re.search(r"(特徵|欄位|H$|持有|lookback|校準|更新|成本|slip|fee|tax|程式版本|量能|區段|資料起日|資料迄日)",str(k),re.I):
+                                      print(f"JSON|{q}|{str(v)[:400]}")
+                          elif isinstance(o,list):
+                              for j,v in enumerate(o):
+                                  if isinstance(v,(dict,list)): walk(v,f"{p}[{j}]")
+                                  else: print(f"JSON|{p}[{j}]|{str(v)[:300]}")
+                      walk(obj)
+          print("\nLINEAGE_ARCHIVE_AUDIT_DONE|main_read_only=true|main_modified=false")
+          PY
