@@ -1,0 +1,113 @@
+name: Inspect SSO v2.45-v2.62 historical evidence
+on:
+  push:
+    branches:
+      - audit/read-v480-historical-evidence-20261103
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Inspect historical archives read-only
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, hashlib, io, json, re, urllib.request, zipfile
+          from collections import Counter
+
+          commit = "aaabc2433fb5df2bb68af06461178305d6bd30d1"
+          repo = "https://raw.githubusercontent.com/CHLINX/sso/" + commit + "/"
+          archives = [
+            ("v2.45","SSO_v2.45_樣本外校準門檻與公司名稱結果.zip",20731287),
+            ("v2.46","SSO_v2.46_欄位補充_不重跑模型結果.zip",21125807),
+            ("v2.47","SSO_v2.47_產業及市場別補正_不重跑模型結果.zip",21322689),
+            ("v2.48.1","SSO_v2.48.1_樣本外校準門檻與公司名稱結果.zip",21010200),
+            ("v2.50","SSO_v2.50_日成交量特徵與500日檢查點結果.zip",21654521),
+            ("v2.51-individual","SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip",23606997),
+            ("v2.51-no-volume","SSO_v2.51_量能消融_停用量能特徵與配對比較結果.zip",21011289),
+            ("v2.53","SSO_v2.53_排序與統計口徑稽核_20261029_033422.zip",17116),
+            ("v2.54","SSO_v2.54_排名分數與分位方向稽核_20261029_040349.zip",10953),
+            ("v2.55","SSO_v2.55_逐筆績效與統計口徑稽核結果_20261029_045750.zip",6392),
+            ("v2.56","SSO_v2.56_實際淨報酬與分層核算結果_20261029_055725.zip",17713),
+            ("v2.57","SSO_v2.57_條件式交易模式回溯核驗結果_20261029_062605.zip",12721426),
+            ("v2.58","SSO_v2.58_候選排除門檻拆解結果_20261029_075004.zip",2229698),
+            ("v2.59","SSO_v2.59_時間切分穩定性診斷結果_20261029_080204.zip",225716),
+            ("v2.60","SSO_v2.60_訊號日層級穩定性診斷結果_20261029_082147.zip",589833),
+            ("v2.61","SSO_v2.61_訊號日極端日穩健性診斷結果_20261029_084332.zip",29432),
+            ("v2.62","SSO_v2.62_前瞻影子驗證規格封存結果_20261029_165713.zip",9039),
+          ]
+          FEATURES = [
+            "ret5_rank","ret20_rank","ret60_rank","dist_ma20_rank","dist_ma60_rank","range_pos20_rank","lowvol20_rank","source_factor_rank",
+            "ret5_abs_scaled","ret20_abs_scaled","ret60_abs_scaled","dist_ma20_abs_scaled","dist_ma60_abs_scaled",
+            "market_median_ret5","market_median_ret20","market_median_ret60",
+            "market_breadth_pos_ret5","market_breadth_pos_ret20","market_breadth_pos_ret60",
+            "market_breadth_above_ma20","market_breadth_above_ma60",
+            "ret5_rank_x_market_breadth","ret20_rank_x_market_breadth","ret60_rank_x_market_breadth"
+          ]
+          rx = re.compile(r"公式|計算|rank|percentile|quantile|scaled|abs_scaled|breadth|median|排名|分位|方向|標準化|正規化|市場廣度|中位數|交互|交乘|排名方向|tie|average|ascending|descending", re.I)
+          total_bytes = 0
+          for ai,(ver,filename,expected) in enumerate(archives,1):
+            url = repo + urllib.parse.quote(filename)
+            req = urllib.request.Request(url,headers={"User-Agent":"CHLINX-SSO-v480-read-only-audit/1.0"})
+            print(f"\\nARCHIVE_BEGIN|{ai}/{len(archives)}|{ver}|{filename}|expected={expected}",flush=True)
+            with urllib.request.urlopen(req,timeout=240) as response:
+              raw=response.read()
+            total_bytes += len(raw)
+            sha=hashlib.sha256(raw).hexdigest()
+            print(f"ARCHIVE_VERIFY|{ver}|bytes={len(raw)}|size_ok={len(raw)==expected}|sha256={sha}|zip={zipfile.is_zipfile(io.BytesIO(raw))}",flush=True)
+            if len(raw)!=expected or not zipfile.is_zipfile(io.BytesIO(raw)):
+              raise RuntimeError(f"Archive mismatch: {ver}")
+            zf=zipfile.ZipFile(io.BytesIO(raw))
+            bad=zf.testzip()
+            members=[x for x in zf.infolist() if not x.is_dir()]
+            print(f"ARCHIVE_CRC|{ver}|{'PASS' if bad is None else 'FAIL:'+str(bad)}|members={len(members)}|uncompressed={sum(x.file_size for x in members)}",flush=True)
+            if bad is not None: raise RuntimeError(f"CRC failure {ver}: {bad}")
+            for info in members:
+              name=info.filename
+              low=name.lower()
+              ext=low.rsplit(".",1)[-1] if "." in low else ""
+              if ext in ("py","ipynb","r","sql","pkl","pickle","joblib","onnx","pt","pth","h5","cbm","json","yaml","yml"):
+                print(f"NONCSV_MEMBER|{ver}|{name}|{info.file_size}",flush=True)
+              if ext in ("txt","md","json","yaml","yml","py","r","sql"):
+                try: txt=zf.read(name).decode("utf-8-sig",errors="replace")
+                except Exception as exc:
+                  print(f"TEXT_ERROR|{ver}|{name}|{exc}",flush=True); continue
+                exact=[f for f in FEATURES if f in txt]
+                hits=[]
+                for li,line in enumerate(txt.splitlines(),1):
+                  if rx.search(line):
+                    hits.append((li,line[:450]))
+                is_priority = bool(exact or hits or any(k in low for k in ("readme","report","summary","feature","factor","rank","model","說明","報告","摘要","公式","特徵","規格")))
+                if is_priority:
+                  print(f"TEXT_EVIDENCE|{ver}|{name}|chars={len(txt)}|exact_feature_names={json.dumps(exact,ensure_ascii=False)}|matched_lines={len(hits)}",flush=True)
+                  for li,line in hits[:100]:
+                    print(f"TEXT_LINE|{ver}|{name}|{li}|{line}",flush=True)
+              if ext=="csv":
+                try:
+                  text=zf.open(name)
+                  import io as _io
+                  stream=_io.TextIOWrapper(text,encoding="utf-8-sig",errors="replace",newline="")
+                  reader=csv.reader(stream)
+                  header=next(reader,[])
+                  if not header: continue
+                  intersection=[f for f in FEATURES if f in header]
+                  name_priority=bool(re.search(r"feature|factor|rank|score|candidate|signal|model|特徵|因子|排名|分數|候選|訊號|統計",name,re.I))
+                  if not (intersection or name_priority): continue
+                  n=0; samples=[]
+                  for row in reader:
+                    n+=1
+                    if len(samples)<2: samples.append(row)
+                    if n%500000==0: print(f"CSV_PROGRESS|{ver}|{name}|rows={n}",flush=True)
+                  print(f"CSV_EVIDENCE|{ver}|{name}|rows={n}|columns={len(header)}|exact_feature_columns={len(intersection)}|features={json.dumps(intersection,ensure_ascii=False)}",flush=True)
+                  print(f"CSV_HEADER|{ver}|{name}|{json.dumps(header,ensure_ascii=False)}",flush=True)
+                  for si,row in enumerate(samples,1):
+                    print(f"CSV_SAMPLE_{si}|{ver}|{name}|{json.dumps(row,ensure_ascii=False)[:2500]}",flush=True)
+                except Exception as exc:
+                  print(f"CSV_ERROR|{ver}|{name}|{type(exc).__name__}|{exc}",flush=True)
+                  raise
+            zf.close()
+            print(f"ARCHIVE_COMPLETE|{ver}",flush=True)
+          print(f"V480_PUBLIC_ARCHIVE_AUDIT_COMPLETE|archives={len(archives)}|downloaded_bytes={total_bytes}|all_sources_read_only=true|model_retrained=false|backtest=false",flush=True)
+          PY
