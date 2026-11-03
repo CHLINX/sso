@@ -1,0 +1,118 @@
+name: Read v4.78 result ZIP and v4.77 source ZIP
+on:
+  push:
+    branches:
+      - audit/read-v478-20261103
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Download and inspect published ZIP files
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, gzip, hashlib, io, json, urllib.parse, urllib.request, zipfile
+          from collections import deque
+
+          base = "https://raw.githubusercontent.com/CHLINX/sso/uploads/v4.78-batch-20261103-082428/"
+          archives = [
+              ("v4.77", "audit_uploads/v4.77_20261102/看股最速適_原十檔24特徵公式追溯與重建可行性核驗_v4.77_20261103_000912.zip", 28484),
+              ("v4.78", "audit_uploads/v4.78_20261103/看股最速適_原十檔24特徵候選公式重建與來源資料核對_v4.78_20261103_082234.zip", 3125565),
+          ]
+
+          def decode_text(raw, name):
+              if name.lower().endswith(".gz"):
+                  raw = gzip.decompress(raw)
+              for enc in ("utf-8-sig", "utf-8", "cp950", "big5"):
+                  try:
+                      return raw.decode(enc)
+                  except Exception:
+                      pass
+              return raw.decode("utf-8", errors="replace")
+
+          for version, relpath, expected_size in archives:
+              url = base + urllib.parse.quote(relpath, safe="/")
+              req = urllib.request.Request(url, headers={"User-Agent": "CHLINX-v478-archive-audit/1.0"})
+              print("\n" + "=" * 100, flush=True)
+              print(f"ARCHIVE_BEGIN|{version}|{relpath}", flush=True)
+              with urllib.request.urlopen(req, timeout=180) as response:
+                  data = response.read()
+              digest = hashlib.sha256(data).hexdigest()
+              print(f"DOWNLOAD_VERIFY|version={version}|expected={expected_size}|actual={len(data)}|size_match={len(data)==expected_size}|sha256={digest}|zip={zipfile.is_zipfile(io.BytesIO(data))}", flush=True)
+              if len(data) != expected_size or not zipfile.is_zipfile(io.BytesIO(data)):
+                  raise RuntimeError(f"{version} archive size/format mismatch")
+              zf = zipfile.ZipFile(io.BytesIO(data))
+              bad = zf.testzip()
+              print(f"ZIP_CRC|version={version}|result={'PASS' if bad is None else 'FAIL:'+str(bad)}|members={len([x for x in zf.infolist() if not x.is_dir()])}|uncompressed_bytes={sum(x.file_size for x in zf.infolist() if not x.is_dir())}", flush=True)
+              if bad is not None:
+                  raise RuntimeError(f"{version} ZIP CRC failure: {bad}")
+
+              infos = [x for x in zf.infolist() if not x.is_dir()]
+              for info in infos:
+                  print(f"MEMBER|{version}|{info.filename}|{info.file_size}", flush=True)
+
+              # First, expose manifest and narrative reports.
+              for info in infos:
+                  name = info.filename
+                  low = name.lower()
+                  if low.endswith((".json", ".txt", ".md")):
+                      raw = zf.read(name)
+                      try:
+                          text = decode_text(raw, name)
+                      except Exception as exc:
+                          print(f"TEXT_READ_ERROR|{version}|{name}|{type(exc).__name__}|{exc}", flush=True)
+                          continue
+                      if low.endswith(".json"):
+                          try:
+                              text = json.dumps(json.loads(text), ensure_ascii=False, indent=2)
+                          except Exception:
+                              pass
+                      limit = 24000 if low.endswith((".txt", ".md")) else 30000
+                      print(f"TEXT_BEGIN|{version}|{name}|chars={len(text)}", flush=True)
+                      print(text[:limit], flush=True)
+                      if len(text) > limit:
+                          print(f"TEXT_TRUNCATED|{version}|{name}|remaining_chars={len(text)-limit}", flush=True)
+                      print(f"TEXT_END|{version}|{name}", flush=True)
+
+              # Then inspect every CSV's columns and count rows; keep bounded samples.
+              for info in infos:
+                  name = info.filename
+                  low = name.lower()
+                  if not low.endswith((".csv", ".csv.gz", ".tsv", ".tsv.gz")):
+                      continue
+                  raw = zf.read(name)
+                  try:
+                      if low.endswith(".gz"):
+                          raw = gzip.decompress(raw)
+                      text_stream = io.TextIOWrapper(io.BytesIO(raw), encoding="utf-8-sig", errors="replace", newline="")
+                      delimiter = "\t" if ".tsv" in low else ","
+                      reader = csv.reader(text_stream, delimiter=delimiter)
+                      header = next(reader, [])
+                      first = []
+                      last = deque(maxlen=3)
+                      count = 0
+                      for row in reader:
+                          count += 1
+                          if len(first) < 3:
+                              first.append(row)
+                          last.append(row)
+                          if count % 250000 == 0:
+                              print(f"CSV_PROGRESS|{version}|{name}|rows={count:,}", flush=True)
+                      print(f"CSV_SUMMARY|{version}|{name}|rows={count}|columns={len(header)}|raw_bytes={len(raw)}", flush=True)
+                      print("CSV_HEADER|" + json.dumps(header, ensure_ascii=False), flush=True)
+                      if any(k in name for k in ("24", "特徵", "候選", "核對", "樣本", "公式")) or version == "v4.77":
+                          for i, row in enumerate(first, 1):
+                              print(f"CSV_FIRST_{i}|" + json.dumps(row, ensure_ascii=False)[:6000], flush=True)
+                          for i, row in enumerate(last, 1):
+                              print(f"CSV_LAST_{i}|" + json.dumps(row, ensure_ascii=False)[:6000], flush=True)
+                  except Exception as exc:
+                      print(f"CSV_READ_ERROR|{version}|{name}|{type(exc).__name__}|{exc}", flush=True)
+                      raise
+              zf.close()
+              print(f"ARCHIVE_COMPLETE|{version}|sha256={digest}", flush=True)
+
+          print("\nV478_ARCHIVE_INSPECTION_COMPLETE|main_untouched=true|source_zip_read_only=true|model_retrained=false|backtest=false", flush=True)
+          PY
