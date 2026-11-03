@@ -1,0 +1,42 @@
+name: Read v4.83 detailed feature and history clues
+on:
+  push:
+    branches:
+      - audit/v4.83-git-history-v2481-20261103_023738
+    paths:
+      - .github/workflows/read-v483-details.yml
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/v4.83-git-history-v2481-20261103_023738
+          sparse-checkout: |
+            audit_uploads/v4.83_20261103_023738
+          sparse-checkout-cone-mode: false
+      - name: Print complete feature and history clues
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, io, zipfile, pathlib, json
+          p=pathlib.Path("audit_uploads/v4.83_20261103_023738/看股最速適_GitHub完整歷史與v2481輸入追查_v4.83_20261103_023738.zip")
+          with zipfile.ZipFile(p) as z:
+              for target in ["04_Git歷史原始程式模型與矩陣候選.csv","06_v2481_ZIP成員索引.csv","08_v2481_JSON與報告文字線索.csv"]:
+                  raw=z.read(target)
+                  txt=raw.decode("utf-8-sig")
+                  rows=list(csv.reader(io.StringIO(txt)))
+                  print("\n###",target,"ROWS",len(rows)-1)
+                  for row in rows:
+                      print(json.dumps(row,ensure_ascii=False))
+              for target in ["GitHub歷史追查摘要.json","v2481_ZIP追查摘要.json","v2481_來源品質與執行設定JSON.json","執行摘要.txt"]:
+                  print("\n###",target)
+                  raw=z.read(target).decode("utf-8-sig",errors="replace")
+                  if target.endswith(".json"):
+                      try: raw=json.dumps(json.loads(raw),ensure_ascii=False,indent=2)
+                      except: pass
+                  print(raw[:22000])
+          PY
