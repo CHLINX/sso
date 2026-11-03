@@ -1,0 +1,112 @@
+name: Read v4.79 source trace report ZIP
+on:
+  push:
+    branches:
+      - audit/read-v479-20261103
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Download and inspect v4.79 report ZIP
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, gzip, hashlib, io, json, urllib.parse, urllib.request, zipfile
+          from collections import Counter, deque
+
+          base = "https://raw.githubusercontent.com/CHLINX/sso/audit/v4.79-source-trace-20261103_083315/"
+          relpath = "audit_uploads/v4.79_20261103/看股最速適_24項原始特徵程式與歷史數值來源追查_v4.79_20261103_083315.zip"
+          expected_size = 13614
+          url = base + urllib.parse.quote(relpath, safe="/")
+          req = urllib.request.Request(url, headers={"User-Agent": "CHLINX-v479-report-audit/1.0"})
+          print("V479_REPORT_INSPECTION_BEGIN", flush=True)
+          with urllib.request.urlopen(req, timeout=180) as response:
+              data = response.read()
+          digest = hashlib.sha256(data).hexdigest()
+          valid_zip = zipfile.is_zipfile(io.BytesIO(data))
+          print(f"DOWNLOAD_VERIFY|expected_bytes={expected_size}|actual_bytes={len(data)}|size_match={len(data)==expected_size}|sha256={digest}|zip={valid_zip}", flush=True)
+          if len(data) != expected_size or not valid_zip:
+              raise RuntimeError("v4.79 ZIP size or format mismatch")
+          zf = zipfile.ZipFile(io.BytesIO(data))
+          bad = zf.testzip()
+          files = [x for x in zf.infolist() if not x.is_dir()]
+          print(f"ZIP_CRC|result={'PASS' if bad is None else 'FAIL:'+str(bad)}|members={len(files)}|uncompressed_bytes={sum(x.file_size for x in files)}", flush=True)
+          if bad is not None:
+              raise RuntimeError(f"ZIP CRC failure: {bad}")
+          for info in files:
+              print(f"MEMBER|{info.filename}|{info.file_size}", flush=True)
+
+          def read_text(raw, name):
+              if name.lower().endswith(".gz"):
+                  raw = gzip.decompress(raw)
+              for enc in ("utf-8-sig", "utf-8", "cp950", "big5"):
+                  try:
+                      return raw.decode(enc)
+                  except Exception:
+                      pass
+              return raw.decode("utf-8", errors="replace")
+
+          for info in files:
+              low = info.filename.lower()
+              if low.endswith((".json", ".txt", ".md")):
+                  txt = read_text(zf.read(info.filename), info.filename)
+                  if low.endswith(".json"):
+                      try:
+                          txt = json.dumps(json.loads(txt), ensure_ascii=False, indent=2)
+                      except Exception:
+                          pass
+                  limit = 22000
+                  print(f"TEXT_BEGIN|{info.filename}|chars={len(txt)}", flush=True)
+                  print(txt[:limit], flush=True)
+                  if len(txt) > limit:
+                      print(f"TEXT_TRUNCATED|remaining_chars={len(txt)-limit}", flush=True)
+                  print(f"TEXT_END|{info.filename}", flush=True)
+
+          keywords = ("24", "特徵", "feature", "factor", "模型", "公式", "notebook", "candidate", "source")
+          for info in files:
+              name = info.filename
+              low = name.lower()
+              if not low.endswith((".csv", ".csv.gz", ".tsv", ".tsv.gz")):
+                  continue
+              raw = zf.read(name)
+              if low.endswith(".gz"):
+                  raw = gzip.decompress(raw)
+              stream = io.TextIOWrapper(io.BytesIO(raw), encoding="utf-8-sig", errors="replace", newline="")
+              delimiter = "\t" if ".tsv" in low else ","
+              reader = csv.reader(stream, delimiter=delimiter)
+              header = next(reader, [])
+              count = 0
+              first = []
+              last = deque(maxlen=3)
+              matching = []
+              ext_counts = Counter()
+              for row in reader:
+                  count += 1
+                  if len(first) < 3:
+                      first.append(row)
+                  last.append(row)
+                  line = " | ".join(str(x) for x in row)
+                  if any(k.lower() in line.lower() for k in keywords) and len(matching) < 80:
+                      matching.append(row)
+                  if row:
+                      token = str(row[0]).lower().rsplit(".", 1)[-1]
+                      ext_counts[token] += 1
+                  if count % 250000 == 0:
+                      print(f"CSV_PROGRESS|{name}|rows={count:,}", flush=True)
+              print(f"CSV_SUMMARY|{name}|rows={count}|columns={len(header)}|raw_bytes={len(raw)}", flush=True)
+              print("CSV_HEADER|" + json.dumps(header, ensure_ascii=False), flush=True)
+              if "原始程式" in name or "ZIP封存" in name or "24項特徵" in name or "含24項" in name or "GitHub封存" in name:
+                  for i, row in enumerate(first, 1):
+                      print(f"CSV_FIRST_{i}|" + json.dumps(row, ensure_ascii=False)[:4000], flush=True)
+                  for i, row in enumerate(matching[:80], 1):
+                      print(f"CSV_MATCH_{i}|" + json.dumps(row, ensure_ascii=False)[:4000], flush=True)
+                  if ext_counts:
+                      print("CSV_FIRST_COLUMN_EXTENSION_COUNTS|" + json.dumps(ext_counts.most_common(30), ensure_ascii=False), flush=True)
+                  for i, row in enumerate(last, 1):
+                      print(f"CSV_LAST_{i}|" + json.dumps(row, ensure_ascii=False)[:4000], flush=True)
+          zf.close()
+          print("V479_REPORT_INSPECTION_COMPLETE|source_read_only=true|main_untouched=true|model_retrained=false|backtest=false", flush=True)
+          PY
