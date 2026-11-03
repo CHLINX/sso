@@ -1,0 +1,143 @@
+name: SSO v4.84.9.2 diagnostic ZIP reader
+
+on:
+  push:
+    branches:
+      - "audit/v4.84.9.2-pair-audit-20261103_142251"
+    paths:
+      - "audit_uploads/v4.84.9.2_20261103_142251/**"
+      - ".github/workflows/v4_84_9_2_pair_reader_20261103_142251.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sso-v4-84-9-2-diagnostic-20261103_142251
+  cancel-in-progress: false
+
+jobs:
+  read-diagnostic-zip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout existing audit branch
+        uses: actions/checkout@v4
+        with:
+          ref: "audit/v4.84.9.2-pair-audit-20261103_142251"
+          persist-credentials: true
+
+      - name: Reassemble and verify uploaded diagnostic ZIP
+        env:
+          MANIFEST_PATH: "audit_uploads/v4.84.9.2_20261103_142251/ZIP_PARTS_MANIFEST.json"
+          READOUT_PATH: "audit_readout/v4.84.9.2_20261103_142251"
+        run: |
+          python - <<'PY'
+          import csv
+          import hashlib
+          import io
+          import json
+          import zipfile
+          from pathlib import Path
+
+          manifest_path = Path(__import__("os").environ["MANIFEST_PATH"])
+          readout_dir = Path(__import__("os").environ["READOUT_PATH"])
+          manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+          archive = Path("/tmp/sso_v48492_diagnostic.zip")
+
+          digest = hashlib.sha256()
+          total = 0
+          with archive.open("wb") as out:
+              for item in manifest["parts"]:
+                  part = Path(item["repo_path"])
+                  data = part.read_bytes()
+                  if len(data) != int(item["size_bytes"]):
+                      raise RuntimeError(f"PART_SIZE_MISMATCH: {part}")
+                  part_sha = hashlib.sha256(data).hexdigest()
+                  if part_sha != item["sha256"]:
+                      raise RuntimeError(f"PART_SHA256_MISMATCH: {part}")
+                  out.write(data)
+                  digest.update(data)
+                  total += len(data)
+                  print(f"PART_OK {part.name} bytes={len(data)} sha256={part_sha}")
+
+          if total != int(manifest["zip_size_bytes"]):
+              raise RuntimeError("ZIP_SIZE_MISMATCH")
+          if digest.hexdigest() != manifest["zip_sha256"]:
+              raise RuntimeError("ZIP_SHA256_MISMATCH")
+
+          print(f"ZIP_SIZE_BYTES={total}")
+          print(f"ZIP_SHA256={digest.hexdigest()}")
+
+          readout_dir.mkdir(parents=True, exist_ok=True)
+          sections = []
+          inventory = []
+
+          with zipfile.ZipFile(archive, "r") as zf:
+              bad = zf.testzip()
+              if bad:
+                  raise RuntimeError(f"ZIP_CRC_FAILED: {bad}")
+
+              print(f"ZIP_CRC=PASS MEMBER_COUNT={len(zf.infolist())}")
+
+              for info in zf.infolist():
+                  name = info.filename
+                  data = zf.read(name)
+                  inventory.append({
+                      "name": name,
+                      "size_bytes": info.file_size,
+                      "compressed_bytes": info.compress_size
+                  })
+
+                  print("\n" + "=" * 78)
+                  print("MEMBER:", name)
+                  print("SIZE:", info.file_size)
+
+                  if name.lower().endswith(".json"):
+                      obj = json.loads(data.decode("utf-8-sig"))
+                      rendered = json.dumps(obj, ensure_ascii=False, indent=2)
+                  elif name.lower().endswith(".csv"):
+                      text = data.decode("utf-8-sig", errors="replace")
+                      rows = list(csv.reader(io.StringIO(text)))
+                      rendered = "\n".join(
+                          " | ".join(row) for row in rows[:100]
+                      )
+                      print("CSV_ROWS_SHOWN:", min(len(rows), 100))
+                  else:
+                      rendered = data.decode("utf-8-sig", errors="replace")
+
+                  sections.append(f"===== {name} =====\n{rendered}")
+                  print(rendered[:20000])
+                  if len(rendered) > 20000:
+                      print("[LOG_TRUNCATED; full readout is committed on this audit branch]")
+
+          summary = {
+              "version": "v4.84.9.2",
+              "zip_crc": "PASS",
+              "zip_sha256": digest.hexdigest(),
+              "zip_size_bytes": total,
+              "member_count": len(inventory),
+              "inventory": inventory,
+              "status": "READOUT_COMPLETED"
+          }
+
+          (readout_dir / "00_Actions讀取摘要.json").write_text(
+              json.dumps(summary, ensure_ascii=False, indent=2),
+              encoding="utf-8"
+          )
+          (readout_dir / "01_診斷ZIP全文摘要.txt").write_text(
+              "\n\n".join(sections),
+              encoding="utf-8"
+          )
+          print("DIAGNOSTIC_ZIP_READOUT_COMPLETED")
+          PY
+
+      - name: Commit readout to the same audit branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "audit_readout/v4.84.9.2_20261103_142251"
+          if git diff --cached --quiet; then
+            echo "No readout changes."
+          else
+            git commit -m "Read SSO v4.84.9.2 diagnostic ZIP"
+            git push origin "HEAD:refs/heads/audit/v4.84.9.2-pair-audit-20261103_142251"
+          fi
