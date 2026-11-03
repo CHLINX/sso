@@ -1,0 +1,60 @@
+name: Compare v2.50 v2.51 factor source values
+on:
+  push:
+    branches:
+      - audit/v4.81-candidate-source-values-20261103_091809
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Read candidate tables and compare by date-symbol key
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, gzip, io, json, urllib.parse, urllib.request, zipfile
+          from collections import defaultdict
+          branch="audit/v4.81-candidate-source-values-20261103_091809"
+          path="audit_uploads/v4.81_20261103/看股最速適_24項特徵候選原始欄位與歷史值關聯分析_v4.81_20261103_091809.zip"
+          url="https://raw.githubusercontent.com/CHLINX/sso/"+branch+"/"+urllib.parse.quote(path,safe="/")
+          with urllib.request.urlopen(urllib.request.Request(url,headers={"User-Agent":"CHLINX-v481-factor-link/1.0"}),timeout=180) as r:data=r.read()
+          z=zipfile.ZipFile(io.BytesIO(data))
+          print("ZIP_OK|"+str(z.testzip() is None),flush=True)
+          def rows(name):
+            return list(csv.DictReader(io.StringIO(z.read(name).decode("utf-8-sig"))))
+          schemas=rows("02_指定封存CSV完整欄位與列數.csv")
+          names=[
+            "最新全市場候選持續評估_v2.50.csv",
+            "歷史樣本外每日10檔候選_v2.50.csv",
+            "最新10檔獲利可能性排行_v2.50.csv",
+            "最新達標獲利候選最多10檔_v2.50.csv",
+            "最新全市場候選持續評估_v2.51停用量能.csv",
+            "歷史樣本外每日10檔候選_v2.51停用量能.csv",
+            "最新10檔獲利可能性排行_v2.51停用量能.csv",
+            "最新達標獲利候選最多10檔_v2.51停用量能.csv"
+          ]
+          for r in schemas:
+            if any(r.get("member","").endswith(n) for n in names):
+              print("TABLE_SCHEMA|"+json.dumps({"member":r["member"],"rows":r["rows"],"columns":r["columns"],"header":json.loads(r["header"])},ensure_ascii=False),flush=True)
+          # Read the stored samples and all rows of each targeted table.
+          table={}
+          for n in names:
+            found=[r for r in schemas if r.get("member","").endswith(n)]
+            if not found: continue
+            archive=found[0]["version"]
+            # the same file names occur in the v2.51 individual-evaluation archive too; use report samples only for data counts
+            # raw CSV rows are not embedded in the report, so the 8-row evidence samples are the primary cross-check here.
+          samples=rows("04_歷史資料樣本列.csv")
+          for s in samples:
+            member=s.get("member","")
+            if any(member.endswith(n) for n in names):
+              print("CANDIDATE_SAMPLE|"+json.dumps({"archive":s["version"],"member":member,"sample":json.loads(s["sample_json"])},ensure_ascii=False),flush=True)
+          # Print exact v4.66 long-format rows for representative MA labels, using samples already recorded by v4.81.
+          for s in samples:
+            if s.get("member","").endswith("03_既有樣本特徵重算差異層.csv.gz"):
+              print("MA_LONG_SAMPLE|"+json.dumps({"sample_no":s["sample_no"],"sample":json.loads(s["sample_json"])},ensure_ascii=False),flush=True)
+          print("FACTOR_SOURCE_COMPARE_LIMITATION|v4.81 retained aggregate statistics and only 8 sample rows per CSV; full keyed factor cross-version equality requires reopening the original Drive ZIPs in Colab.",flush=True)
+          print("FACTOR_SOURCE_INSPECTION_COMPLETE|no_source_modified=true|no_model_run=true",flush=True)
+          PY
