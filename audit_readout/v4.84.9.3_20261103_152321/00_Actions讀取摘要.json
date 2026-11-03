@@ -1,0 +1,21 @@
+{
+  "version": "v4.84.9.3",
+  "stamp": "20261103_152321",
+  "zip_crc": "PASS",
+  "zip_size_bytes": 784,
+  "zip_sha256": "0d6e2371d1fe166ea13fcfa81badb6bd92b5ca16d0b01ab007271fe398734867",
+  "member_count": 2,
+  "inventory": [
+    {
+      "name": "EXECUTION_ERROR.txt",
+      "size_bytes": 793,
+      "compressed_bytes": 412
+    },
+    {
+      "name": "PARTIAL_SOURCE_PATHS.txt",
+      "size_bytes": 124,
+      "compressed_bytes": 112
+    }
+  ],
+  "status": "READOUT_COMPLETED"
+}

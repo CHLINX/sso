@@ -1,0 +1,22 @@
+===== EXECUTION_ERROR.txt =====
+版本：v4.84.9.3
+時間：20261103_152321
+錯誤：LZMAError: Input format not supported by decoder
+
+Traceback (most recent call last):
+  File "/tmp/ipykernel_421/2271278396.py", line 1102, in <cell line: 0>
+    RESULT = main()
+  File "/tmp/ipykernel_421/2271278396.py", line 974, in main
+    v469_script,v470_script,v469_source_sha,v470_source_sha = load_embedded_sources()
+                                                              ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/tmp/ipykernel_421/2271278396.py", line 244, in load_embedded_sources
+    v469_bytes = lzma.decompress(base64.b85decode("".join(V469_SOURCE_B85.split()).encode("ascii")))
+  File "/usr/lib/python3.13/lzma.py", line 351, in decompress
+    res = decomp.decompress(data)
+_lzma.LZMAError: Input format not supported by decoder
+
+
+===== PARTIAL_SOURCE_PATHS.txt =====
+v4.69 local output: None
+v4.70.1 local output: None
+所有 /content/.work 暫存分片均不會複製至 Drive 或上傳。
