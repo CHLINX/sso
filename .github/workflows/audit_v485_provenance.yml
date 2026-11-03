@@ -1,0 +1,108 @@
+name: Audit SSO result archive execution provenance
+on:
+  push:
+    branches:
+      - "audit/v4.85-calibration-evidence-20261103"
+    paths:
+      - ".github/workflows/audit_v485_provenance.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect-provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout isolated audit branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          persist-credentials: false
+      - name: Inspect archive metadata and execution fingerprints
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, io, json, re, time, urllib.parse, urllib.request, zipfile
+          from pathlib import Path
+
+          REPO = "CHLINX/sso"
+          ARCHIVES = [
+              ("v2.48.1", "SSO_v2.48.1_樣本外校準門檻與公司名稱結果.zip", 21010200, "a100ed331990bb82940adcb71a1bbb7cc78acc5e"),
+              ("v2.50", "SSO_v2.50_日成交量特徵與500日檢查點結果.zip", 21654521, "2ae5b146d767c5f54310ca7d53d986f56ae1c56f"),
+              ("v2.51_individual", "SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip", 23606997, "d5196aeed4bffe6386dd456fce46be9338c60a51"),
+              ("v2.51_ablation", "SSO_v2.51_量能消融_停用量能特徵與配對比較結果.zip", 21011289, "103335910c03a9a30099715b4362fed5672d0cd3"),
+          ]
+          ROOT=Path("/tmp/sso_provenance")
+          ROOT.mkdir(parents=True,exist_ok=True)
+
+          def git_blob_sha(data):
+              return hashlib.sha1(b"blob " + str(len(data)).encode() + bytes([0]) + data).hexdigest()
+
+          def interesting(obj):
+              keys=("程式版本","source_fingerprint","SOURCE_FINGERPRINT","來源","Notebook","revision","fingerprint","執行時間","執行日期","HORIZONS","持有期","CALIBRATION","LOOKBACK","REFIT","MIN_","OOS_GATE","候選","校準方式","校準方向","模型")
+              out={}
+              def walk(x,prefix=""):
+                  if isinstance(x,dict):
+                      for k,v in x.items():
+                          p=f"{prefix}.{k}" if prefix else str(k)
+                          if any(t.lower() in str(k).lower() for t in keys):
+                              if isinstance(v,(str,int,float,bool)) or v is None:
+                                  out[p]=v
+                              elif isinstance(v,list) and len(v)<=30:
+                                  out[p]=v
+                              elif isinstance(v,dict) and len(v)<=30:
+                                  out[p]=v
+                          if isinstance(v,(dict,list)):
+                              walk(v,p)
+                  elif isinstance(x,list):
+                      for i,v in enumerate(x[:100]):
+                          if isinstance(v,(dict,list)): walk(v,f"{prefix}[{i}]")
+              walk(obj)
+              return out
+
+          total=time.time()
+          for i,(label,filename,expected_size,expected_blob) in enumerate(ARCHIVES,1):
+              print(f"\\n===== PROVENANCE {i}/{len(ARCHIVES)} {label} =====",flush=True)
+              url=f"https://raw.githubusercontent.com/{REPO}/main/{urllib.parse.quote(filename)}"
+              req=urllib.request.Request(url,headers={"User-Agent":"SSO-read-only-provenance-audit"})
+              target=ROOT/filename
+              data_parts=[]
+              size=0
+              with urllib.request.urlopen(req,timeout=120) as response:
+                  while True:
+                      block=response.read(1024*1024)
+                      if not block: break
+                      data_parts.append(block); size+=len(block)
+                      print(f"DOWNLOAD {label}: {size:,}/{expected_size:,} bytes ({size/expected_size:.1%})",flush=True)
+              data=b"".join(data_parts)
+              blob=git_blob_sha(data)
+              if size!=expected_size or blob!=expected_blob:
+                  raise RuntimeError(f"Integrity mismatch {label}: {size=} {blob=}")
+              print(f"INTEGRITY_OK {label}; ZIP_SHA256={hashlib.sha256(data).hexdigest()}",flush=True)
+              with zipfile.ZipFile(io.BytesIO(data)) as z:
+                  bad=z.testzip()
+                  if bad: raise RuntimeError(f"CRC failure {label}: {bad}")
+                  meta=[n for n in z.namelist() if n.lower().endswith((".json",".txt",".md"))]
+                  print(f"METADATA_FILES={len(meta)}",flush=True)
+                  for name in meta:
+                      info=z.getinfo(name)
+                      if info.file_size>2_000_000:
+                          print(f"META_SKIP_LARGE {name} bytes={info.file_size:,}",flush=True)
+                          continue
+                      if name.lower().endswith(".json"):
+                          try:
+                              obj=json.loads(z.read(name).decode("utf-8-sig",errors="replace"))
+                          except Exception:
+                              continue
+                          picked=interesting(obj)
+                          if picked or re.search(r"來源品質|執行設定|summary|diagnostic|model|calibrat|run",name,re.I):
+                              print("JSON_META "+name+" "+json.dumps(picked,ensure_ascii=False,default=str),flush=True)
+                      elif re.search(r"摘要|summary|readme|執行|結果|report",name,re.I):
+                          raw=z.read(name).decode("utf-8-sig",errors="replace")
+                          print(f"TEXT_META {name} chars={len(raw)}")
+                          print(raw[:5000])
+                  print(f"PROVENANCE_COMPLETE {label}",flush=True)
+          print(f"ALL_PROVENANCE_INSPECTION_COMPLETE elapsed={time.time()-total:.1f}s",flush=True)
+          PY
