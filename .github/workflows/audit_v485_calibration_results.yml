@@ -1,0 +1,115 @@
+name: Audit SSO calibration direction evidence
+on:
+  push:
+    branches:
+      - "audit/v4.85-calibration-evidence-20261103"
+    paths:
+      - ".github/workflows/audit_v485_calibration_results.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect-calibration-results:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout isolated audit branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          persist-credentials: false
+
+      - name: Download and inventory existing result ZIPs
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import csv, gzip, hashlib, io, json, re, time, urllib.request, zipfile
+          from pathlib import Path
+
+          REPO = "CHLINX/sso"
+          FILES = [
+              ("v2.48.1", "SSO_v2.48.1_樣本外校準門檻與公司名稱結果.zip", 21010200, "a100ed331990bb82940adcb71a1bbb7cc78acc5e"),
+              ("v2.50", "SSO_v2.50_日成交量特徵與500日檢查點結果.zip", 21654521, "2ae5b146d767c5f54310ca7d53d986f56ae1c56f"),
+              ("v2.51_individual", "SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip", 23606997, "d5196aeed4bffe6386dd456fce46be9338c60a51"),
+              ("v2.51_ablation", "SSO_v2.51_量能消融_停用量能特徵與配對比較結果.zip", 21011289, "103335910c03a9a30099715b4362fed5672d0cd3"),
+          ]
+          OUT = Path("/tmp/sso_calibration_audit")
+          OUT.mkdir(parents=True, exist_ok=True)
+          HEADER_KEYS = [
+              "校準方向受支持", "機率校準斜率", "機率校準截距",
+              "分類模型已收斂", "機率校準已收斂", "模型校準樣本數",
+              "模型訓練樣本數", "校準期實際淨獲利率",
+              "估計淨獲利機率_校準", "符合獲利候選條件",
+              "候選狀態", "預測淨報酬", "持有期間H", "訊號日期",
+          ]
+          NAME_RE = re.compile(r"校準|模型|候選|逐筆|預測|診斷|summary|diagnostic|probability|oos|trade|獲利", re.I)
+
+          def git_blob_sha(data):
+              return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\\0" + data).hexdigest()
+
+          def csv_header(zf, name):
+              raw = zf.open(name)
+              if name.lower().endswith(".gz"):
+                  raw = gzip.GzipFile(fileobj=raw)
+              wrapper = io.TextIOWrapper(raw, encoding="utf-8-sig", errors="replace", newline="")
+              try:
+                  return next(csv.reader(wrapper), [])
+              finally:
+                  wrapper.close()
+
+          overall_start = time.time()
+          for idx, (label, filename, expected_size, expected_blob) in enumerate(FILES, 1):
+              print(f"\\n===== [{idx}/{len(FILES)}] {label} =====", flush=True)
+              url = f"https://raw.githubusercontent.com/{REPO}/main/{urllib.parse.quote(filename)}"
+              req = urllib.request.Request(url, headers={"User-Agent": "SSO-read-only-calibration-audit"})
+              target = OUT / filename
+              digest = hashlib.sha256()
+              total = 0
+              start = time.time()
+              with urllib.request.urlopen(req, timeout=90) as response, target.open("wb") as f:
+                  while True:
+                      block = response.read(1024 * 1024)
+                      if not block:
+                          break
+                      f.write(block)
+                      digest.update(block)
+                      total += len(block)
+                      elapsed = max(time.time() - start, 1e-6)
+                      print(f"DOWNLOAD {label}: {total:,}/{expected_size:,} bytes ({total/expected_size:.1%}), {total/elapsed/1024/1024:.2f} MiB/s", flush=True)
+              data = target.read_bytes()
+              blob_sha = git_blob_sha(data)
+              print(f"SIZE={total}; EXPECTED_SIZE={expected_size}; SIZE_OK={total == expected_size}", flush=True)
+              print(f"GIT_BLOB_SHA={blob_sha}; EXPECTED_GIT_BLOB_SHA={expected_blob}; BLOB_OK={blob_sha == expected_blob}", flush=True)
+              print(f"ZIP_SHA256={digest.hexdigest()}", flush=True)
+              if total != expected_size or blob_sha != expected_blob:
+                  raise RuntimeError(f"Integrity verification failed for {filename}")
+
+              with zipfile.ZipFile(io.BytesIO(data)) as zf:
+                  bad = zf.testzip()
+                  if bad:
+                      raise RuntimeError(f"ZIP CRC failure: {bad}")
+                  infos = zf.infolist()
+                  csv_infos = [i for i in infos if i.filename.lower().endswith((".csv", ".csv.gz"))]
+                  print(f"ZIP_CRC=PASS; FILES={len(infos)}; CSV_FILES={len(csv_infos)}", flush=True)
+                  selected = []
+                  for info in csv_infos:
+                      if NAME_RE.search(info.filename):
+                          try:
+                              header = csv_header(zf, info.filename)
+                          except Exception as exc:
+                              print(f"HEADER_READ_ERROR {info.filename}: {type(exc).__name__}: {exc}", flush=True)
+                              continue
+                          matches = [k for k in HEADER_KEYS if k in header]
+                          selected.append((info.filename, info.file_size, header, matches))
+                  print(f"RELEVANT_CSV_FILES={len(selected)}", flush=True)
+                  for name, size, header, matches in selected:
+                      print(f"CSV {name} | uncompressed_bytes={size:,}", flush=True)
+                      print("KEY_FIELDS=" + (";".join(matches) if matches else "(none of target fields)"), flush=True)
+                      if matches:
+                          print("HEADER=" + json.dumps(header, ensure_ascii=False), flush=True)
+                  print(f"ZIP_INVENTORY_COMPLETE {label}", flush=True)
+
+          print(f"ALL_RESULT_ZIPS_VERIFIED_AND_INVENTORIED elapsed_seconds={time.time()-overall_start:.1f}", flush=True)
+          PY
