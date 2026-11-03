@@ -43,27 +43,29 @@ jobs:
               names=z.namelist()
               print(f"ZIP_CRC=PASS; FILE_COUNT={len(names)}")
               for n in names: print("FILE",n,z.getinfo(n).file_size)
-              def show(name, cap=15000):
+              def show(name, chunk=12000):
                   raw=z.read(name).decode("utf-8-sig",errors="replace")
-                  print(f"\n<<<{name}_BEGIN>>>")
-                  if len(raw)<=cap:
-                      print(raw)
-                  else:
-                      half=cap//2
-                      print(raw[:half])
-                      print(f"\n...[TRUNCATED_FOR_LOG: total_chars={len(raw)}]...\n")
-                      print(raw[-half:])
+                  print(f"\\n<<<{name}_BEGIN; chars={len(raw):,}>>>")
+                  for i in range(0,len(raw),chunk):
+                      print(f"\\n--- PART {i//chunk+1}/{(len(raw)+chunk-1)//chunk} ---")
+                      print(raw[i:i+chunk])
                   print(f"<<<{name}_END>>>")
               for n in names:
-                  if n.endswith("04_24因子來源行索引.csv"):
-                      show(n, cap=12000)
-                  elif n.endswith("01_來源完整性.json"):
-                      show(n, cap=7000)
+                  if n.endswith("01_來源完整性.json"):
+                      show(n,chunk=6000)
                   elif n.endswith("02_特徵計算原始碼上下文.txt"):
-                      show(n, cap=18000)
+                      show(n,chunk=12000)
                   elif n.endswith("03_模型訓練校準原始碼上下文.txt"):
-                      show(n, cap=18000)
+                      show(n,chunk=12000)
+                  elif n.endswith("04_24因子來源行索引.csv"):
+                      show(n,chunk=6000)
+                  elif n.endswith("05_相關原始程式碼cells.txt"):
+                      show(n,chunk=12000)
                   elif n.endswith("06_執行摘要.txt"):
-                      show(n, cap=5000)
+                      show(n,chunk=6000)
+                  elif n.endswith("07_特徵與模型命中索引.json"):
+                      show(n,chunk=6000)
+                  elif n.endswith("05_完整擷取報告.txt"):
+                      print("FULL_REPORT_PRESENT",n,"chars",len(z.read(n)))
           print("SSO_SOURCE_CONTEXT_READ_COMPLETE")
           PY
