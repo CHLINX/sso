@@ -1,0 +1,1 @@
+Trigger expanded read-only categorization of existing trash and manual-review candidates.
