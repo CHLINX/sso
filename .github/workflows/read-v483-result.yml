@@ -1,0 +1,56 @@
+name: Read v4.83 Git history and v2.48.1 input trace reports
+on:
+  push:
+    branches:
+      - audit/v4.83-git-history-v2481-20261103_023738
+    paths:
+      - .github/workflows/read-v483-result.yml
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: audit/v4.83-git-history-v2481-20261103_023738
+          sparse-checkout: |
+            audit_uploads/v4.83_20261103_023738
+          sparse-checkout-cone-mode: false
+      - name: Inspect v4.83 report ZIP
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, io, json, zipfile, pathlib
+          p = pathlib.Path("audit_uploads/v4.83_20261103_023738/看股最速適_GitHub完整歷史與v2481輸入追查_v4.83_20261103_023738.zip")
+          print("ZIP_PATH", p)
+          print("ZIP_BYTES", p.stat().st_size)
+          with zipfile.ZipFile(p) as z:
+              infos = z.infolist()
+              print("ZIP_MEMBERS", len(infos))
+              for i in infos:
+                  print("MEMBER", i.file_size, i.filename)
+              for i in infos:
+                  n=i.filename
+                  raw=z.read(n)
+                  if n.lower().endswith((".txt",".md")):
+                      print("\n### TEXT", n)
+                      print(raw.decode("utf-8-sig", errors="replace")[:18000])
+                  elif n.lower().endswith(".json"):
+                      print("\n### JSON", n)
+                      try: print(json.dumps(json.loads(raw.decode("utf-8-sig")),ensure_ascii=False,indent=2)[:18000])
+                      except Exception: print(raw[:18000].decode("utf-8",errors="replace"))
+                  elif n.lower().endswith(".csv"):
+                      text=None
+                      for enc in ("utf-8-sig","utf-8","cp950"):
+                          try: text=raw.decode(enc); break
+                          except UnicodeDecodeError: pass
+                      if text is None: continue
+                      rows=list(csv.reader(io.StringIO(text)))
+                      print("\n### CSV", n, "ROWS", max(0,len(rows)-1), "BYTES",len(raw))
+                      if rows:
+                          print("HEADER",json.dumps(rows[0],ensure_ascii=False))
+                          for row in rows[1: min(len(rows),9)]:
+                              print("ROW",json.dumps(row,ensure_ascii=False))
+          PY
