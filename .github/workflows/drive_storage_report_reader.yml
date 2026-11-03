@@ -1,0 +1,168 @@
+name: Read Google Drive storage audit report
+on:
+  push:
+    branches:
+      - "audit/drive-storage-report-20261103"
+    paths:
+      - "audit_uploads/drive_storage_report_20261103/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout audit branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - name: Verify and analyze Drive report ZIP
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import csv, io, json, hashlib, zipfile, re
+          from pathlib import Path
+          from collections import defaultdict
+
+          candidates=sorted(Path("audit_uploads/drive_storage_report_20261103").glob("*.zip"))
+          if not candidates:
+              raise SystemExit("No Drive report ZIP found in audit_uploads/drive_storage_report_20261103")
+          p=candidates[-1]
+          data=p.read_bytes()
+          print(f"REPORT_ZIP={p}")
+          print(f"ZIP_BYTES={len(data):,}")
+          print(f"ZIP_SHA256={hashlib.sha256(data).hexdigest()}")
+          with zipfile.ZipFile(io.BytesIO(data)) as z:
+              bad=z.testzip()
+              if bad: raise RuntimeError(f"ZIP CRC failed: {bad}")
+              infos=z.infolist()
+              print(f"ZIP_CRC=PASS; ZIP_ENTRIES={len(infos)}")
+              for info in infos:
+                  print(f"ZIP_FILE | {info.file_size:,} bytes | {info.filename}")
+              csvs=[]
+              texts=[]
+              for info in infos:
+                  if info.is_dir(): continue
+                  raw=z.read(info.filename)
+                  if info.filename.lower().endswith(".csv"):
+                      text=raw.decode("utf-8-sig",errors="replace")
+                      sample=text[:8192]
+                      try:
+                          dialect=csv.Sniffer().sniff(sample, delimiters=",;\t|")
+                      except Exception:
+                          dialect=csv.excel
+                      rows=list(csv.DictReader(io.StringIO(text),dialect=dialect))
+                      headers=list(rows[0].keys()) if rows else []
+                      csvs.append((info.filename,headers,rows))
+                      print(f"CSV_META | {info.filename} | rows={len(rows):,} | columns={len(headers)} | header={headers}")
+                  elif info.filename.lower().endswith((".txt",".json")):
+                      text=raw.decode("utf-8-sig",errors="replace")
+                      texts.append((info.filename,text))
+                      print(f"TEXT_META | {info.filename} | chars={len(text):,}")
+              def norm(x):
+                  return re.sub(r"[^a-z0-9\u4e00-\u9fff]+","",str(x or "").lower())
+              def pick(headers, patterns):
+                  for h in headers:
+                      nh=norm(h)
+                      if any(norm(p) in nh for p in patterns):
+                          return h
+                  return None
+              def to_int(v):
+                  try:
+                      return int(float(str(v).replace(",","").strip()))
+                  except Exception:
+                      return 0
+              def show_rows(title, rows, limit=30):
+                  print(f"\n<<<{title}_BEGIN>>>")
+                  print(f"ROWS={len(rows)}; DISPLAY_LIMIT={limit}")
+                  for r in rows[:limit]:
+                      print(json.dumps(r,ensure_ascii=False,default=str))
+                  if len(rows)>limit: print(f"... OMITTED {len(rows)-limit} ROWS FROM LOG ...")
+                  print(f"<<<{title}_END>>>")
+
+              # Largest files and duplicate rows: infer tables from actual column names and filenames.
+              largest_candidates=[]
+              duplicate_candidates=[]
+              trash_candidates=[]
+              folder_candidates=[]
+              for name,headers,rows in csvs:
+                  nh=" ".join(norm(h) for h in headers)
+                  nn=norm(name)
+                  size_col=pick(headers,["sizebytes","filesize","容量bytes","檔案大小","大小bytes","size"])
+                  path_col=pick(headers,["fullpath","filepath","路徑","檔案路徑","path"])
+                  name_col=pick(headers,["filename","檔名","名稱","name"])
+                  md5_col=pick(headers,["md5","checksum"])
+                  if size_col and (path_col or name_col):
+                      enriched=[]
+                      for r in rows:
+                          enriched.append((to_int(r.get(size_col)),r))
+                      if enriched:
+                          largest_candidates.append((name,enriched))
+                  if md5_col and size_col:
+                      duplicate_candidates.append((name,md5_col,size_col,path_col,name_col,rows))
+                  if "trash" in nn or "垃圾桶" in name or "回收" in name:
+                      trash_candidates.append((name,rows))
+                  if ("folder" in nn or "資料夾" in name) and rows:
+                      folder_candidates.append((name,rows))
+
+              print("\n===== TOP LARGEST FILES =====")
+              seen=set()
+              merged=[]
+              for name,items in largest_candidates:
+                  for sz,r in items:
+                      key=(str(r),name)
+                      if key not in seen:
+                          seen.add(key); merged.append((sz,name,r))
+              merged.sort(key=lambda x:x[0],reverse=True)
+              print(f"LARGEST_FILE_ROWS={len(merged):,}")
+              for sz,name,r in merged[:100]:
+                  print(f"FILE | {sz:,} bytes | {name} | {json.dumps(r,ensure_ascii=False,default=str)}")
+
+              print("\n===== MD5 DUPLICATE ANALYSIS =====")
+              total_groups=0; total_duplicate_rows=0; reclaimable=0
+              group_rank=[]
+              for name,md5_col,size_col,path_col,name_col,rows in duplicate_candidates:
+                  groups=defaultdict(list)
+                  for r in rows:
+                      md5=str(r.get(md5_col,"")).strip().lower()
+                      sz=to_int(r.get(size_col))
+                      if md5 and sz>0: groups[md5].append((sz,r))
+                  dups=[]
+                  for md5,items in groups.items():
+                      if len(items)>1:
+                          items.sort(key=lambda x:x[0],reverse=True)
+                          extra=sum(x[0] for x in items[1:])
+                          total_groups+=1
+                          total_duplicate_rows+=len(items)
+                          reclaimable+=extra
+                          dups.append((extra,md5,items))
+                  dups.sort(key=lambda x:x[0],reverse=True)
+                  print(f"DUP_TABLE | {name} | groups={len(dups):,} | duplicate_rows={sum(len(x[2]) for x in dups):,}")
+                  for extra,md5,items in dups[:100]:
+                      print(f"DUP_GROUP | extra_bytes_est={extra:,} | md5={md5} | count={len(items)}")
+                      for sz,r in items[:10]:
+                          loc=(r.get(path_col) if path_col else None) or (r.get(name_col) if name_col else None) or r
+                          print(f"  MEMBER | {sz:,} bytes | {loc}")
+              print(f"DUP_TOTAL | groups={total_groups:,} | duplicate_rows={total_duplicate_rows:,} | estimated_reclaimable_bytes={reclaimable:,}")
+
+              print("\n===== TRASH CONTENT =====")
+              for name,rows in trash_candidates:
+                  print(f"TRASH_TABLE | {name} | rows={len(rows)}")
+                  show_rows("TRASH_"+name,rows,limit=100)
+
+              print("\n===== FOLDER TABLES =====")
+              for name,rows in folder_candidates:
+                  print(f"FOLDER_TABLE | {name} | rows={len(rows)}")
+                  show_rows("FOLDERS_"+name,rows,limit=80)
+
+              print("\n===== SUMMARY TEXT / JSON =====")
+              for name,text in texts:
+                  print(f"\n<<<TEXT:{name}:BEGIN>>>")
+                  print(text[:12000])
+                  if len(text)>12000: print(f"... OMITTED {len(text)-12000} chars ...")
+                  print(f"<<<TEXT:{name}:END>>>")
+              print("\nDRIVE_AUDIT_READ_COMPLETE")
+          PY
