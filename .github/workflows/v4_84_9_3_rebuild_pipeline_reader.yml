@@ -1,0 +1,158 @@
+name: SSO v4.84.9.3 integrated rebuild audit reader
+
+on:
+  push:
+    branches:
+      - "audit/v4.84.9.3-rebuild-pipeline"
+    paths:
+      - "audit_uploads/v4.84.9.3_*/ZIP_PARTS_MANIFEST.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sso-v4-84-9-3-rebuild-reader
+  cancel-in-progress: false
+
+jobs:
+  read-audit-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout pipeline audit branch
+        uses: actions/checkout@v4
+        with:
+          ref: "audit/v4.84.9.3-rebuild-pipeline"
+          persist-credentials: true
+
+      - name: Verify, reassemble and read integrated audit ZIP
+        run: |
+          python - <<'PY'
+          import csv, gzip, hashlib, io, json, zipfile
+          from pathlib import Path
+
+          manifests = sorted(
+              Path("audit_uploads").glob("v4.84.9.3_*/ZIP_PARTS_MANIFEST.json"),
+              key=lambda p: p.stat().st_mtime,
+              reverse=True
+          )
+          if not manifests:
+              raise RuntimeError("No v4.84.9.3 ZIP_PARTS_MANIFEST.json found")
+
+          manifest_path = manifests[0]
+          manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+          stamp = manifest["stamp"]
+          readout = Path(manifest["readout_repo_path"])
+          archive = Path("/tmp/sso_v48493_audit.zip")
+          readout.mkdir(parents=True, exist_ok=True)
+
+          digest = hashlib.sha256()
+          total = 0
+          with archive.open("wb") as out:
+              for part in manifest["parts"]:
+                  p = Path(part["repo_path"])
+                  data = p.read_bytes()
+                  if len(data) != int(part["size_bytes"]):
+                      raise RuntimeError(f"PART_SIZE_MISMATCH: {p}")
+                  part_sha = hashlib.sha256(data).hexdigest()
+                  if part_sha != part["sha256"]:
+                      raise RuntimeError(f"PART_SHA256_MISMATCH: {p}")
+                  out.write(data)
+                  digest.update(data)
+                  total += len(data)
+                  print(f"PART_OK {p.name} bytes={len(data)} sha256={part_sha}")
+
+          if total != int(manifest["zip_size_bytes"]):
+              raise RuntimeError("ZIP_SIZE_MISMATCH")
+          if digest.hexdigest() != manifest["zip_sha256"]:
+              raise RuntimeError("ZIP_SHA256_MISMATCH")
+
+          print("ZIP_SIZE_BYTES=", total)
+          print("ZIP_SHA256=", digest.hexdigest())
+
+          summaries = []
+          inventory = []
+
+          with zipfile.ZipFile(archive, "r") as zf:
+              bad = zf.testzip()
+              if bad:
+                  raise RuntimeError("ZIP_CRC_FAILED: " + str(bad))
+
+              infos = zf.infolist()
+              print("ZIP_CRC=PASS MEMBERS=", len(infos))
+
+              for info in infos:
+                  name = info.filename
+                  inventory.append({
+                      "name": name,
+                      "size_bytes": info.file_size,
+                      "compressed_bytes": info.compress_size
+                  })
+                  print("\n" + "=" * 76)
+                  print("MEMBER:", name, "SIZE:", info.file_size)
+
+                  lower = name.lower()
+                  if lower.endswith(".csv.gz"):
+                      with zf.open(name) as raw:
+                          with gzip.GzipFile(fileobj=raw, mode="rb") as gz:
+                              text = io.TextIOWrapper(gz, encoding="utf-8-sig", errors="replace")
+                              rows = []
+                              reader = csv.reader(text)
+                              for i, row in enumerate(reader):
+                                  rows.append(row)
+                                  if i >= 5:
+                                      break
+                      rendered = "\n".join(" | ".join(row) for row in rows)
+                  elif lower.endswith(".csv"):
+                      data = zf.read(name).decode("utf-8-sig", errors="replace")
+                      rows = list(csv.reader(io.StringIO(data)))
+                      rendered = "\n".join(" | ".join(row) for row in rows[:20])
+                  elif lower.endswith(".json"):
+                      rendered = json.dumps(
+                          json.loads(zf.read(name).decode("utf-8-sig")),
+                          ensure_ascii=False,
+                          indent=2
+                      )
+                  elif lower.endswith((".txt", ".md")):
+                      rendered = zf.read(name).decode("utf-8-sig", errors="replace")
+                  else:
+                      continue
+
+                  summaries.append(f"===== {name} =====\n{rendered}")
+                  print(rendered[:12000])
+                  if len(rendered) > 12000:
+                      print("[TRUNCATED IN JOB LOG; SUMMARY FILE PRESERVED]")
+
+          payload = {
+              "version": "v4.84.9.3",
+              "stamp": stamp,
+              "zip_crc": "PASS",
+              "zip_size_bytes": total,
+              "zip_sha256": digest.hexdigest(),
+              "member_count": len(inventory),
+              "inventory": inventory,
+              "status": "READOUT_COMPLETED"
+          }
+
+          (readout / "00_Actions讀取摘要.json").write_text(
+              json.dumps(payload, ensure_ascii=False, indent=2),
+              encoding="utf-8"
+          )
+          (readout / "01_稽核ZIP內容摘要.txt").write_text(
+              "\n\n".join(summaries),
+              encoding="utf-8"
+          )
+          print("SSO_V4_84_9_3_READOUT_COMPLETED")
+          PY
+
+      - name: Commit readout to audit branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "audit_readout/v4.84.9.3_"
+          git add audit_readout/
+          if git diff --cached --quiet; then
+            echo "No readout changes."
+          else
+            git commit -m "Add SSO v4.84.9.3 integrated audit readout"
+            git push origin "HEAD:refs/heads/audit/v4.84.9.3-rebuild-pipeline"
+          fi
