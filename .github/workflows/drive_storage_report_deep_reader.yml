@@ -1,0 +1,119 @@
+name: Deep read Google Drive storage audit
+on:
+  push:
+    branches:
+      - "audit/drive-storage-report-20261103"
+    paths:
+      - "audit_uploads/drive_storage_report_20261103/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deep-inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - name: Validate and analyze exact duplicate groups
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import csv, io, json, hashlib, zipfile
+          from pathlib import Path
+          from collections import defaultdict, Counter
+
+          files=sorted(Path("audit_uploads/drive_storage_report_20261103").glob("*.zip"))
+          if not files: raise SystemExit("ZIP not found")
+          zpath=files[-1]
+          raw=zpath.read_bytes()
+          print("ZIP",zpath,"BYTES",len(raw),"SHA256",hashlib.sha256(raw).hexdigest())
+          with zipfile.ZipFile(io.BytesIO(raw)) as z:
+              bad=z.testzip()
+              if bad: raise SystemExit("CRC FAIL "+bad)
+              print("ZIP_CRC_PASS", "ENTRIES",len(z.infolist()))
+              def readcsv(member):
+                  text=z.read(member).decode("utf-8-sig")
+                  return list(csv.DictReader(io.StringIO(text)))
+              def n(v):
+                  try:return int(float(str(v or "0").replace(",","").strip()))
+                  except:return 0
+              dup=readcsv("03_MD5完全相同重複檔案.csv")
+              groups=defaultdict(list)
+              for r in dup:
+                  groups[str(r.get("md5Checksum","")).strip().lower()].append(r)
+              metrics=[]
+              mismatch=[]
+              for md5,items in groups.items():
+                  if not md5: continue
+                  declared=max([n(x.get("duplicate_count")) for x in items] or [0])
+                  if declared and declared!=len(items):
+                      mismatch.append((md5,len(items),declared))
+                  first=items[0]
+                  paths=[str(x.get("path","")) for x in items]
+                  protected=any(str(x.get("protected_reason","")).strip() for x in items)
+                  roots=set()
+                  for p in paths:
+                      if "/看股最速適/" in p: roots.add("SSO")
+                      elif "/巡田最速適/" in p: roots.add("FRO")
+                      else: roots.add("OTHER")
+                  if "FRO" in roots: category="FRO_PROTECTED"
+                  elif protected: category="PROTECTED"
+                  elif roots=={"SSO"}: category="SSO_UNPROTECTED_DUPLICATES"
+                  elif len(roots)>1: category="MIXED_ROOT"
+                  else: category="OTHER"
+                  savings=n(first.get("potential_saving_if_one_copy_kept"))
+                  if not savings:
+                      sizes=sorted([n(x.get("size_bytes")) for x in items],reverse=True)
+                      savings=sum(sizes[1:])
+                  metrics.append({"md5":md5,"copies":len(items),"declared":declared,
+                                  "saving":savings,"category":category,"paths":paths,
+                                  "name":first.get("name","")})
+              print("\n=== DUPLICATE CSV VALIDATION ===")
+              print("duplicate_csv_rows",len(dup),"unique_md5_groups",len(metrics),
+                    "declared_count_mismatch_groups",len(mismatch))
+              if mismatch[:10]: print("MISMATCH_SAMPLE",json.dumps(mismatch[:10],ensure_ascii=False))
+              print("copy_count_distribution",json.dumps(Counter(x["copies"] for x in metrics),ensure_ascii=False))
+              print("group_savings_one_per_md5",
+                    sum(x["saving"] for x in metrics))
+              for cat in ["SSO_UNPROTECTED_DUPLICATES","PROTECTED","FRO_PROTECTED","MIXED_ROOT","OTHER"]:
+                  subset=[x for x in metrics if x["category"]==cat]
+                  print("CATEGORY",cat,"groups",len(subset),"file_rows",sum(x["copies"] for x in subset),
+                        "estimated_reclaimable_bytes",sum(x["saving"] for x in subset))
+              print("\n=== TOP 30 UNPROTECTED SSO DUPLICATE GROUPS ===")
+              safe=sorted([x for x in metrics if x["category"]=="SSO_UNPROTECTED_DUPLICATES"],
+                          key=lambda x:x["saving"],reverse=True)
+              for x in safe[:30]:
+                  print("CANDIDATE_GROUP",x["saving"],"bytes",x["copies"],"copies",x["name"],"md5",x["md5"])
+                  for p in x["paths"][:8]: print("  PATH",p)
+              trash=readcsv("04_垃圾桶本人檔案.csv")
+              trash_bytes=sum(n(x.get("size_bytes")) for x in trash)
+              print("\n=== TRASH ===")
+              print("trash_rows",len(trash),"sum_bytes",trash_bytes)
+              for x in sorted(trash,key=lambda r:n(r.get("size_bytes")),reverse=True)[:20]:
+                  print("TRASH_FILE",n(x.get("size_bytes")),x.get("name"),x.get("path"))
+              temp=readcsv("05_疑似暫存備份人工檢視.csv")
+              temp_status=Counter(x.get("status","") for x in temp)
+              print("\n=== TEMP / BACKUP REVIEW TABLE ===")
+              print("rows",len(temp),"status_counts",json.dumps(temp_status,ensure_ascii=False))
+              t_groups=defaultdict(list)
+              for r in temp:
+                  t_groups[str(r.get("status",""))].append(r)
+              for status,items in t_groups.items():
+                  print("TEMP_STATUS",status,"rows",len(items),
+                        "bytes",sum(n(x.get("size_bytes")) for x in items))
+              print("\n=== LARGE WORK FILES / CURRENTLY KNOWN RESTRICTIONS ===")
+              top=readcsv("01_本人擁有最大檔案.csv")
+              for r in top:
+                  p=str(r.get("path",""))
+                  if "/.work/" in p:
+                      print("WORK_FILE",n(r.get("size_bytes")),r.get("name"),"md5",r.get("md5Checksum"),p)
+              print("\n=== ANALYSIS GUARDRAILS ===")
+              print("A duplicate group is only a content-identical set; choose one verified keeper before any deletion.")
+              print("Never include any FRO path or protected_reason item in SSO cleanup.")
+              print("Nested folder totals are not additive.")
+              print("DRIVE_STORAGE_DEEP_READ_COMPLETE")
+          PY
