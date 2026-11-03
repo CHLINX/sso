@@ -1,0 +1,108 @@
+name: Read v4.80 report evidence tables
+on:
+  push:
+    branches:
+      - audit/read-v480-reports-20261103
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Extract and summarize v4.80 report ZIP
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, io, json, urllib.parse, urllib.request, zipfile
+          from collections import Counter, defaultdict
+
+          branch="audit/v4.80-historical-evidence-20261103_085933"
+          path="audit_uploads/v4.80_20261103/看股最速適_24項特徵歷史輸出與公式來源深度追查_v4.80_20261103_085933.zip"
+          url="https://raw.githubusercontent.com/CHLINX/sso/"+branch+"/"+urllib.parse.quote(path,safe="/")
+          req=urllib.request.Request(url,headers={"User-Agent":"CHLINX-v480-report-reader/1.0"})
+          with urllib.request.urlopen(req,timeout=180) as r: data=r.read()
+          print(f"REPORT_ZIP|bytes={len(data)}|zip={zipfile.is_zipfile(io.BytesIO(data))}",flush=True)
+          z=zipfile.ZipFile(io.BytesIO(data))
+          bad=z.testzip()
+          print(f"REPORT_CRC|{'PASS' if bad is None else 'FAIL:'+str(bad)}|members={len(z.namelist())}",flush=True)
+          if bad: raise RuntimeError(bad)
+
+          def readcsv(s):
+            return list(csv.DictReader(io.StringIO(s.decode("utf-8-sig"))))
+          def readjson(name):
+            return json.loads(z.read(name).decode("utf-8-sig"))
+
+          manifest=readjson("v4.80_manifest.json")
+          print("MANIFEST_SUMMARY|"+json.dumps({k:manifest.get(k) for k in [
+            "drive_archives_from_v479_manifest","public_archives_expected","public_archives_verified",
+            "archive_members_scanned","source_code_members_found","model_binary_members_found",
+            "csv_members_examined","csv_members_with_exact_feature_columns",
+            "csv_members_with_actual_exact_feature_values","feature_evidence_status_counts",
+            "features_with_actual_numeric_values","features_with_code_lines","all_24_original_formulas_confirmed",
+            "drive_sources_read_only","github_main_modified","limitations"
+          ]},ensure_ascii=False),flush=True)
+
+          features=readcsv("01_24項特徵逐項證據狀態.csv")
+          print(f"FEATURE_STATUS_ROWS|{len(features)}",flush=True)
+          for r in features:
+            print("FEATURE|"+r["feature"]+"|"+r["evidence_status"]+
+              "|text_refs="+str(len(json.loads(r["text_refs"] or "[]")))+
+              "|code_refs="+str(len(json.loads(r["code_line_refs"] or "[]")))+
+              "|numeric_refs="+str(len(json.loads(r["numeric_value_refs"] or "[]")))+
+              "|header_refs="+str(len(json.loads(r["header_only_refs"] or "[]"))),flush=True)
+
+          public=readcsv("06_GitHub公開封存核驗.csv")
+          for r in public:
+            if r["version"] in ("v2.50","v2.48.1","v2.51_individual","v2.51_no_volume"):
+              print("PUBLIC_ARCHIVE|"+json.dumps(r,ensure_ascii=False),flush=True)
+
+          cr=readcsv("04_CSV欄位列數與數值樣本.csv")
+          print(f"CSV_REPORT_ROWS|{len(cr)}",flush=True)
+          counts=Counter()
+          related_counts=Counter()
+          rows_with_related=[]
+          exact=[]
+          data_with_related=[]
+          for r in cr:
+            n=r.get("rows_counted","")
+            if n not in ("", "NOT_SCANNED_UNRELATED_HEADER"):
+              try: counts["rows_scanned"] += int(n)
+              except: pass
+            rel=json.loads(r.get("related_columns") or "[]")
+            for c in rel: related_counts[c]+=1
+            if int(r.get("exact_feature_columns") or 0)>0: exact.append(r)
+            if rel:
+              rows_with_related.append(r)
+              try:
+                if int(n)>0: data_with_related.append(r)
+              except: pass
+          print("CSV_COVERAGE|"+json.dumps({
+            "rows":len(cr),"exact_feature_header_rows":len(exact),
+            "rows_with_related_columns":len(rows_with_related),
+            "related_columns_with_data_rows":len(data_with_related),
+            "cumulative_scanned_rows_on_candidate_tables":counts["rows_scanned"],
+            "top_related_columns":related_counts.most_common(100)
+          },ensure_ascii=False),flush=True)
+          for r in rows_with_related:
+            rel=json.loads(r["related_columns"])
+            try: n=int(r["rows_counted"])
+            except: n=-1
+            if n>0 and (any(k in r["member"].lower() for k in ("特徵","候選","模型","排行","逐筆","交易","成交","因子","補行","patch")) or any(k in c.lower() for c in rel for k in ("ret","return","moment","vol","factor","range","ma","scaled","breadth","median"))):
+              sample=json.loads(r.get("samples_related_columns") or "[]")
+              print("RELATED_DATA|"+json.dumps({
+                "version":r["version"],"member":r["member"],"rows":n,"columns":int(r["columns"]),
+                "related":rel[:70],"samples":sample[:2]
+              },ensure_ascii=False)[:7000],flush=True)
+
+          members=readcsv("03_封存成員深度盤點.csv")
+          bytype=Counter(r.get("member_type","") for r in members)
+          print("MEMBER_TYPES|"+json.dumps(bytype,ensure_ascii=False),flush=True)
+          textrows=readcsv("05_歷史文字與程式公式線索.csv")
+          keys=("ret5_abs_scaled","market_breadth","source_factor_rank","lowvol20_rank","dist_ma20_rank","range_pos20_rank","排名方向","平手","percentile","quantile","zscore","ddof")
+          hits=[r for r in textrows if any(k.lower() in r.get("excerpt","").lower() for k in keys)]
+          print(f"TEXT_EVIDENCE_MATCHES|{len(hits)}",flush=True)
+          for r in hits[:120]:
+            print("TEXT_EVIDENCE|"+json.dumps({k:r.get(k) for k in ("version","member","line_no","evidence_type","matched_terms","excerpt")},ensure_ascii=False)[:1800],flush=True)
+          print("V480_REPORT_REVIEW_COMPLETE|source_read_only=true|main_untouched=true|model_retrained=false|backtest=false",flush=True)
+          PY
