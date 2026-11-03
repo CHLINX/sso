@@ -1,0 +1,25 @@
+{
+  "version": "v4.84.9.2",
+  "zip_crc": "PASS",
+  "zip_sha256": "24364aef5ee35ec51567c9f127e7ab8f1ea0f280fab508427ad45c6e4ffa203f",
+  "zip_size_bytes": 3515,
+  "member_count": 3,
+  "inventory": [
+    {
+      "name": "00_正式來源與暫存檔盤點.csv",
+      "size_bytes": 12520,
+      "compressed_bytes": 1246
+    },
+    {
+      "name": "01_v4701正式來源診斷.json",
+      "size_bytes": 1847,
+      "compressed_bytes": 959
+    },
+    {
+      "name": "README_來源診斷.txt",
+      "size_bytes": 1750,
+      "compressed_bytes": 878
+    }
+  ],
+  "status": "READOUT_COMPLETED"
+}
