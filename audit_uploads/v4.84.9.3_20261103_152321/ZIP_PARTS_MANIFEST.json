@@ -1,0 +1,15 @@
+{
+  "version": "v4.84.9.3",
+  "stamp": "20261103_152321",
+  "zip_filename": "看股最速適_v4.84.9.3_整合重建與逐筆配對_20261103_152321.zip",
+  "zip_size_bytes": 784,
+  "zip_sha256": "0d6e2371d1fe166ea13fcfa81badb6bd92b5ca16d0b01ab007271fe398734867",
+  "readout_repo_path": "audit_readout/v4.84.9.3_20261103_152321",
+  "parts": [
+    {
+      "repo_path": "audit_uploads/v4.84.9.3_20261103_152321/看股最速適_v4.84.9.3_整合重建與逐筆配對_20261103_152321.zip.part0001",
+      "size_bytes": 784,
+      "sha256": "0d6e2371d1fe166ea13fcfa81badb6bd92b5ca16d0b01ab007271fe398734867"
+    }
+  ]
+}
