@@ -1,0 +1,54 @@
+name: Read v4.82 corrected evidence reports
+on:
+  push:
+    branches:
+      - audit/v4.82-corrected-evidence-20261103_093702
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Extract corrected evidence and source search results
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, io, json, urllib.parse, urllib.request, zipfile
+          from collections import Counter
+          branch="audit/v4.82-corrected-evidence-20261103_093702"
+          path="audit_uploads/v4.82_20261103/看股最速適_24項特徵證據修正與原始程式追查_v4.82_20261103_093702.zip"
+          url="https://raw.githubusercontent.com/CHLINX/sso/"+branch+"/"+urllib.parse.quote(path,safe="/")
+          req=urllib.request.Request(url,headers={"User-Agent":"CHLINX-v482-report-reader/1.0"})
+          with urllib.request.urlopen(req,timeout=180) as r:data=r.read()
+          z=zipfile.ZipFile(io.BytesIO(data));bad=z.testzip()
+          print(f"ZIP|bytes={len(data)}|crc={'PASS' if bad is None else 'FAIL:'+str(bad)}|members={len(z.namelist())}",flush=True)
+          if bad: raise RuntimeError(bad)
+          print("DUPLICATES|"+json.dumps([n for n in set(z.namelist()) if z.namelist().count(n)>1],ensure_ascii=False),flush=True)
+          def rcsv(n): return list(csv.DictReader(io.StringIO(z.read(n).decode("utf-8-sig"))))
+          def rjson(n): return json.loads(z.read(n).decode("utf-8-sig"))
+          m=rjson("v4.82_manifest.json")
+          print("MANIFEST|"+json.dumps(m,ensure_ascii=False),flush=True)
+          for r in rcsv("01_24項特徵正確證據分級.csv"):
+            print("FEATURE|"+json.dumps(r,ensure_ascii=False),flush=True)
+          for r in rcsv("03_MA20_MA60重算差異逐列核對摘要.csv"):
+            print("MA_SUMMARY|"+json.dumps(r,ensure_ascii=False),flush=True)
+          for r in rcsv("04_MA20_MA60差異層代表資料列.csv")[:40]:
+            print("MA_SAMPLE|"+json.dumps(r,ensure_ascii=False),flush=True)
+          for r in rcsv("05_v250_v251候選因子同鍵比較.csv"):
+            print("FACTOR_COMPARE|"+json.dumps(r,ensure_ascii=False),flush=True)
+          for r in rcsv("06_v250_v251因子差異代表資料列.csv")[:30]:
+            print("FACTOR_DIFF_SAMPLE|"+json.dumps(r,ensure_ascii=False),flush=True)
+          code=rcsv("07_原始程式與Notebook檔案命中.csv")
+          print(f"CODE_FILES|{len(code)}",flush=True)
+          for r in code:
+            print("CODE_FILE|"+json.dumps(r,ensure_ascii=False),flush=True)
+          hits=rcsv("08_原始程式與Notebook命中程式行.csv")
+          print(f"CODE_HIT_LINES|{len(hits)}",flush=True)
+          for r in hits:
+            terms=(r.get("matched_terms") or "").lower()
+            excerpt=(r.get("excerpt") or "").lower()
+            if any(k in terms+" "+excerpt for k in ["ret5_rank","ret20_rank","ret60_rank","dist_ma20_rank","dist_ma60_rank","range_pos20_rank","lowvol20_rank","source_factor_rank","ret5_abs_scaled","market_breadth","rankdata","percentile","quantile","zscore","abs_scaled","rank_method","tie_method","feature_names"]):
+              print("CODE_HIT|"+json.dumps(r,ensure_ascii=False),flush=True)
+          print("V482_REPORT_REVIEW_COMPLETE|source_read_only=true|main_untouched=true|retrain=false|backtest=false",flush=True)
+          PY
