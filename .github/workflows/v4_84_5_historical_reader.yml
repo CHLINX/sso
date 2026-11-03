@@ -1,0 +1,54 @@
+name: Read SSO v4.84.5 historical audit ZIP
+on:
+  push:
+    branches:
+      - "audit/v4.84.5-report-20261103_060012_1c9c61"
+    paths:
+      - ".github/workflows/v4_84_5_historical_reader.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  read-history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Download and inspect historical ZIP
+        env:
+          ZIP_URL: "https://raw.githubusercontent.com/CHLINX/sso/audit/v4.84.5-report-20261103_060012_1c9c61/audit_uploads/v4.84.5_20261103_060012_1c9c61/%E7%9C%8B%E8%82%A1%E6%9C%80%E9%80%9F%E9%81%A9_GoogleDriveNotebook%E7%89%88%E6%9C%AC%E8%BF%BD%E6%9F%A5_v4.84.5_20261103_060011.zip"
+          EXPECTED_SHA256: "df40e885ef58463e4dbd2a38035ddf6410808e76"
+          TARGET_REVISION: "0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"
+        run: |
+          python - <<'PY'
+          import os, urllib.request, zipfile, hashlib, io, csv
+          data=urllib.request.urlopen(os.environ["ZIP_URL"],timeout=60).read()
+          digest=hashlib.sha256(data).hexdigest()
+          print(f"DOWNLOAD bytes={len(data):,} sha256={digest}")
+          if digest != os.environ["EXPECTED_SHA256"]: raise RuntimeError("SHA256 mismatch")
+          z=zipfile.ZipFile(io.BytesIO(data))
+          bad=z.testzip()
+          if bad: raise RuntimeError("CRC failure "+bad)
+          print("CRC PASS; FILES",len(z.namelist()))
+          for n in z.namelist(): print("FILE",n,z.getinfo(n).file_size)
+          target=os.environ["TARGET_REVISION"]
+          for name in z.namelist():
+              if not name.lower().endswith((".csv",".txt",".json")): continue
+              raw=z.read(name).decode("utf-8-sig",errors="replace")
+              if target in raw or name.startswith(("05_","06_","07_")):
+                  print(f"\n<<<FILE_BEGIN:{name}>>>")
+                  if name.endswith(".csv"):
+                      rows=list(csv.reader(io.StringIO(raw)))
+                      print("CSV_ROWS",len(rows)-1)
+                      if rows:
+                          print("CSV_HEADER",rows[0])
+                          for row in rows[1:]:
+                              line=" | ".join(row)
+                              if target in line or name.startswith(("05_","06_","07_")):
+                                  print(line)
+                  else:
+                      print(raw)
+                  print(f"<<<FILE_END:{name}>>>")
+          print("HISTORICAL_READOUT_COMPLETE")
+          PY
