@@ -47,7 +47,7 @@ jobs:
           NAME_RE = re.compile(r"校準|模型|候選|逐筆|預測|診斷|summary|diagnostic|probability|oos|trade|獲利", re.I)
 
           def git_blob_sha(data):
-              return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\\0" + data).hexdigest()
+              return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
 
           def csv_header(zf, name):
               raw = zf.open(name)
