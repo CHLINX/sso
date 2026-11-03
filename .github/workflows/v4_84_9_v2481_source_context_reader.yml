@@ -1,0 +1,69 @@
+name: Read SSO v2.48.1 source context ZIP
+on:
+  push:
+    branches:
+      - "audit/v4.84.9-v2481-original-context-20261103"
+    paths:
+      - "audit_uploads/v4.84.9_v2481_source_context/*.zip"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  read-source-context:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout audit branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - name: Verify ZIP and extract code excerpts
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          ZIP_PATH="$(git diff-tree --no-commit-id --name-only -r "$GITHUB_SHA" | grep '^audit_uploads/v4.84.9_v2481_source_context/.*\.zip$' | tail -n 1 || true)"
+          if [ -z "$ZIP_PATH" ]; then
+            ZIP_PATH="$(git ls-tree -r --name-only HEAD | grep '^audit_uploads/v4.84.9_v2481_source_context/.*\.zip$' | sort | tail -n 1)"
+          fi
+          test -n "$ZIP_PATH"
+          echo "ZIP_PATH=$ZIP_PATH"
+          python - "$ZIP_PATH" <<'PY'
+          import sys, zipfile, hashlib, csv, io, json
+          from pathlib import Path
+          p=Path(sys.argv[1])
+          data=p.read_bytes()
+          print(f"ZIP_BYTES={len(data):,}")
+          print(f"ZIP_SHA256={hashlib.sha256(data).hexdigest()}")
+          with zipfile.ZipFile(io.BytesIO(data)) as z:
+              bad=z.testzip()
+              if bad: raise RuntimeError("CRC failure: "+bad)
+              names=z.namelist()
+              print(f"ZIP_CRC=PASS; FILE_COUNT={len(names)}")
+              for n in names: print("FILE",n,z.getinfo(n).file_size)
+              def show(name, cap=15000):
+                  raw=z.read(name).decode("utf-8-sig",errors="replace")
+                  print(f"\n<<<{name}_BEGIN>>>")
+                  if len(raw)<=cap:
+                      print(raw)
+                  else:
+                      half=cap//2
+                      print(raw[:half])
+                      print(f"\n...[TRUNCATED_FOR_LOG: total_chars={len(raw)}]...\n")
+                      print(raw[-half:])
+                  print(f"<<<{name}_END>>>")
+              for n in names:
+                  if n.endswith("04_24因子來源行索引.csv"):
+                      show(n, cap=12000)
+                  elif n.endswith("01_來源完整性.json"):
+                      show(n, cap=7000)
+                  elif n.endswith("02_特徵計算原始碼上下文.txt"):
+                      show(n, cap=18000)
+                  elif n.endswith("03_模型訓練校準原始碼上下文.txt"):
+                      show(n, cap=18000)
+                  elif n.endswith("06_執行摘要.txt"):
+                      show(n, cap=5000)
+          print("SSO_SOURCE_CONTEXT_READ_COMPLETE")
+          PY
