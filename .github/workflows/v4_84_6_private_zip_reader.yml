@@ -1,0 +1,56 @@
+name: Read SSO v4.84.6 ZIP audit
+on:
+  push:
+    branches:
+      - "audit/v4.84.6-private-formula-model-4861d22e35e7"
+    paths:
+      - "audit_uploads/v4.84.6_4861d22e35e7/**"
+      - ".github/workflows/v4_84_6_private_zip_reader.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  read-zip:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Download and inspect ZIP
+        env:
+          ZIP_URL: "https://raw.githubusercontent.com/CHLINX/sso/audit/v4.84.6-private-formula-model-4861d22e35e7/audit_uploads/v4.84.6_4861d22e35e7/%E7%9C%8B%E8%82%A1%E6%9C%80%E9%80%9F%E9%81%A9_v4.84.6_%E7%A7%81%E4%BA%BA%E5%85%AC%E5%BC%8F%E6%A8%A1%E5%9E%8B%E6%AF%94%E5%B0%8D_20261103_150739.zip"
+          EXPECTED_SHA256: "4861d22e35e73a18269091acc16a91ebf3aeaddaf3f933e3437627f2a1fcdf6e"
+        run: |
+          python - <<'PY'
+          import os, urllib.request, zipfile, hashlib, io, csv, json, sys
+          url=os.environ["ZIP_URL"]
+          expected=os.environ["EXPECTED_SHA256"]
+          print("SSO v4.84.6 ZIP readout")
+          data=urllib.request.urlopen(url, timeout=60).read()
+          digest=hashlib.sha256(data).hexdigest()
+          print(f"Downloaded bytes={len(data):,}; SHA256={digest}")
+          if digest != expected:
+              raise SystemExit("SHA256 mismatch")
+          z=zipfile.ZipFile(io.BytesIO(data))
+          bad=z.testzip()
+          if bad: raise RuntimeError("CRC failure: "+bad)
+          names=z.namelist()
+          print(f"CRC=PASS; file_count={len(names)}")
+          for n in names: print("FILE",n,z.getinfo(n).file_size)
+          print("\n<<<SUMMARY_TXT_BEGIN>>>")
+          print(z.read("08_v4.84.6_執行摘要.txt").decode("utf-8-sig"))
+          print("<<<SUMMARY_TXT_END>>>")
+          print("\n<<<VERSION_JSON_BEGIN>>>")
+          print(z.read("07_v4.84.6_分析摘要.json").decode("utf-8-sig"))
+          print("<<<VERSION_JSON_END>>>")
+          print("\n<<<FACTOR_DIFF_BEGIN>>>")
+          print(z.read("05_24因子跨版本公式差異摘要.csv").decode("utf-8-sig"))
+          print("<<<FACTOR_DIFF_END>>>")
+          print("\n<<<FAILURES_BEGIN>>>")
+          print(z.read("06_無法讀取或解析的版本.csv").decode("utf-8-sig"))
+          print("<<<FAILURES_END>>>")
+          print("\n<<<ALL_SNIPPETS_BEGIN>>>")
+          print(z.read("09_私人公式與模型程式片段全文.txt").decode("utf-8-sig"))
+          print("<<<ALL_SNIPPETS_END>>>")
+          print("READOUT_COMPLETE")
+          PY
