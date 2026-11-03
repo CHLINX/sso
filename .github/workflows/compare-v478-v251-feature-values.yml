@@ -1,0 +1,149 @@
+name: Compare v4.78 candidate formulas with archived v2.51 feature values
+on:
+  push:
+    branches:
+      - audit/read-v478-20261103
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Download archived v2.51 and v4.78 ZIPs and compare overlapping rows
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, gzip, hashlib, io, json, math, urllib.parse, urllib.request, zipfile
+          from collections import defaultdict
+
+          urls = {
+              "v2.51": ("https://raw.githubusercontent.com/CHLINX/sso/main/SSO_v2.51_量能消融_停用量能特徵與配對比較結果.zip", 21011289, "e472aa8a1f6a79bd2511e5209a5ab8a3e74e5d52d93f9196bc80617b59373949"),
+              "v4.78": ("https://raw.githubusercontent.com/CHLINX/sso/uploads/v4.78-batch-20261103-082428/audit_uploads/v4.78_20261103/" + urllib.parse.quote("看股最速適_原十檔24特徵候選公式重建與來源資料核對_v4.78_20261103_082234.zip", safe=""), 3125565, "32b32a0637814e00572d0583803dc5a3f31c6893a51380cdbbe58e28729dd5ce"),
+          }
+
+          archives = {}
+          for version, (url, expected, expected_sha) in urls.items():
+              print(f"DOWNLOAD_BEGIN|{version}|expected={expected}", flush=True)
+              with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent":"CHLINX-v478-crosscheck/1.0"}), timeout=240) as r:
+                  data = r.read()
+              sha = hashlib.sha256(data).hexdigest()
+              print(f"DOWNLOAD_VERIFY|{version}|bytes={len(data)}|expected={expected}|sha256={sha}|sha_match={sha==expected_sha}", flush=True)
+              if len(data) != expected or sha != expected_sha:
+                  raise RuntimeError(f"{version} ZIP identity mismatch")
+              z = zipfile.ZipFile(io.BytesIO(data))
+              bad = z.testzip()
+              print(f"ZIP_CRC|{version}|{'PASS' if bad is None else 'FAIL:'+str(bad)}|members={len(z.infolist())}", flush=True)
+              if bad:
+                  raise RuntimeError(f"{version} ZIP CRC failure")
+              archives[version] = z
+
+          v251 = archives["v2.51"]
+          v478 = archives["v4.78"]
+          members = v251.namelist()
+          targets = [n for n in members if any(k in n for k in ("最新達標獲利候選最多10檔", "來源品質與執行設定", "核心分析修正說明"))]
+          print("V251_TARGET_MEMBERS|" + json.dumps([(n, v251.getinfo(n).file_size) for n in targets], ensure_ascii=False), flush=True)
+
+          candidate_member = next((n for n in targets if "最新達標獲利候選最多10檔" in n and n.lower().endswith(".csv")), None)
+          if candidate_member is None:
+              raise RuntimeError("v2.51 latest eligible candidate CSV not found")
+
+          def rows_from_zip(z, name):
+              raw = z.read(name)
+              if name.lower().endswith(".gz"):
+                  raw = gzip.decompress(raw)
+              reader = csv.DictReader(io.StringIO(raw.decode("utf-8-sig"), newline=""))
+              rows = list(reader)
+              return reader.fieldnames or [], rows
+
+          h251, rows251 = rows_from_zip(v251, candidate_member)
+          print(f"V251_CANDIDATE_CSV|{candidate_member}|rows={len(rows251)}|columns={len(h251)}", flush=True)
+          print("V251_CANDIDATE_HEADER|" + json.dumps(h251, ensure_ascii=False), flush=True)
+          for i, row in enumerate(rows251, 1):
+              print("V251_CANDIDATE_ROW|" + str(i) + "|" + json.dumps(row, ensure_ascii=False), flush=True)
+
+          # Extract the v4.78 five-day sample and retain all columns for natural-key matching.
+          sample_member = next(n for n in v478.namelist() if n.startswith("05_最近五個市場日24特徵候選計算樣本"))
+          h478, rows478 = rows_from_zip(v478, sample_member)
+          print(f"V478_SAMPLE|{sample_member}|rows={len(rows478)}|columns={len(h478)}", flush=True)
+          print("V478_SAMPLE_DATE_RANGE|" + ",".join(sorted(set(r.get("日期文字","") for r in rows478))), flush=True)
+
+          def norm(v):
+              return (v or "").strip()
+
+          def key251(r):
+              return (norm(r.get("訊號日期") or r.get("signal_date") or r.get("日期文字")),
+                      norm(r.get("市場")), norm(r.get("股票代號")), norm(r.get("價格研究區段") or r.get("segment")))
+          def key478(r):
+              return (norm(r.get("日期文字")), norm(r.get("市場")), norm(r.get("股票代號")), norm(r.get("價格研究區段")))
+
+          ix = defaultdict(list)
+          for r in rows478:
+              ix[key478(r)].append(r)
+
+          matched = []
+          for r in rows251:
+              k = key251(r)
+              for s in ix.get(k, []):
+                  matched.append((r,s,k))
+          print(f"NATURAL_KEY_MATCH|v251_rows={len(rows251)}|matched_pairs={len(matched)}|distinct_keys={len(set(x[2] for x in matched))}", flush=True)
+
+          feature_names = [
+              "ret5_rank","ret20_rank","ret60_rank","dist_ma20_rank","dist_ma60_rank","range_pos20_rank","lowvol20_rank","source_factor_rank",
+              "ret5_abs_scaled","ret20_abs_scaled","ret60_abs_scaled","dist_ma20_abs_scaled","dist_ma60_abs_scaled",
+              "market_median_ret5","market_median_ret20","market_median_ret60",
+              "market_breadth_pos_ret5","market_breadth_pos_ret20","market_breadth_pos_ret60","market_breadth_above_ma20","market_breadth_above_ma60",
+              "ret5_rank_x_market_breadth","ret20_rank_x_market_breadth","ret60_rank_x_market_breadth"
+          ]
+          candidate_map = {
+              "ret5_rank":["ret5_rank__all_market__ascending","ret5_rank__all_market__descending","ret5_rank__by_market__ascending","ret5_rank__by_market__descending"],
+              "ret20_rank":["ret20_rank__all_market__ascending","ret20_rank__all_market__descending","ret20_rank__by_market__ascending","ret20_rank__by_market__descending"],
+              "ret60_rank":["ret60_rank__all_market__ascending","ret60_rank__all_market__descending","ret60_rank__by_market__ascending","ret60_rank__by_market__descending"],
+              "dist_ma20_rank":["dist_ma20_rank__all_market__ascending","dist_ma20_rank__all_market__descending","dist_ma20_rank__by_market__ascending","dist_ma20_rank__by_market__descending"],
+              "dist_ma60_rank":["dist_ma60_rank__all_market__ascending","dist_ma60_rank__all_market__descending","dist_ma60_rank__by_market__ascending","dist_ma60_rank__by_market__descending"],
+              "range_pos20_rank":["range_pos20_include_current_rank__all_market__ascending","range_pos20_include_current_rank__all_market__descending","range_pos20_include_current_rank__by_market__ascending","range_pos20_include_current_rank__by_market__descending","range_pos20_exclude_current_rank__all_market__ascending","range_pos20_exclude_current_rank__all_market__descending","range_pos20_exclude_current_rank__by_market__ascending","range_pos20_exclude_current_rank__by_market__descending"],
+              "lowvol20_rank":["lowvol20_candidate_rank__all_market__ascending","lowvol20_candidate_rank__all_market__descending","lowvol20_candidate_rank__by_market__ascending","lowvol20_candidate_rank__by_market__descending"],
+              "source_factor_rank":["source_factor_rank__all_market__ascending","source_factor_rank__all_market__descending","source_factor_rank__by_market__ascending","source_factor_rank__by_market__descending"],
+          }
+          for base in ["ret5","ret20","ret60","dist_ma20","dist_ma60"]:
+              candidate_map[base+"_abs_scaled"]=[base+"_abs_scaled__raw",base+"_abs_scaled__percent_x100",base+"_abs_scaled__zscore_all_market",base+"_abs_scaled__zscore_by_market"]
+          for period in ["5","20","60"]:
+              candidate_map["market_median_ret"+period]=["market_median_ret"+period+"__all_market","market_median_ret"+period+"__by_market"]
+              candidate_map["market_breadth_pos_ret"+period]=["market_breadth_pos_ret"+period+"__all_market","market_breadth_pos_ret"+period+"__by_market"]
+          for period in ["20","60"]:
+              candidate_map["market_breadth_above_ma"+period]=["market_breadth_above_ma"+period+"__all_market","market_breadth_above_ma"+period+"__by_market"]
+          candidate_map["ret5_rank_x_market_breadth"]=["ret5_rank_x_pos_breadth__all_market","ret5_rank_x_pos_breadth__by_market"]
+          candidate_map["ret20_rank_x_market_breadth"]=["ret20_rank_x_pos_breadth__all_market","ret20_rank_x_above_ma_breadth__all_market","ret20_rank_x_pos_breadth__by_market","ret20_rank_x_above_ma_breadth__by_market"]
+          candidate_map["ret60_rank_x_market_breadth"]=["ret60_rank_x_pos_breadth__all_market","ret60_rank_x_above_ma_breadth__all_market","ret60_rank_x_pos_breadth__by_market","ret60_rank_x_above_ma_breadth__by_market"]
+
+          # Comparison is only performed for matching rows and numeric values; no inference from missing entries.
+          for feature in feature_names:
+              valid = []
+              for old, new, k in matched:
+                  try:
+                      original = float(old.get(feature, ""))
+                  except Exception:
+                      continue
+                  for candidate in candidate_map.get(feature, []):
+                      try:
+                          value = float(new.get(candidate, ""))
+                      except Exception:
+                          continue
+                      if math.isfinite(original) and math.isfinite(value):
+                          valid.append((abs(original-value), candidate, original, value, k))
+              per = defaultdict(list)
+              for err, cand, orig, val, k in valid:
+                  per[cand].append(err)
+              if not valid:
+                  print(f"FEATURE_COMPARE|{feature}|no_numeric_matched_values", flush=True)
+                  continue
+              for cand, errs in sorted(per.items()):
+                  errs.sort()
+                  n=len(errs)
+                  mae=sum(errs)/n
+                  p95=errs[min(n-1, math.ceil(.95*n)-1)]
+                  within=sum(x<=1e-3 for x in errs)/n
+                  print(f"FEATURE_COMPARE|{feature}|candidate={cand}|n={n}|MAE={mae:.12g}|P95_abs_error={p95:.12g}|within_0.001={within:.6%}", flush=True)
+
+          print("V251_V478_CROSSCHECK_COMPLETE|read_only=true|main_untouched=true|model_retrained=false|backtest=false", flush=True)
+          PY
