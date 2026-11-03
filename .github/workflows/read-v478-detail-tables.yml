@@ -1,0 +1,46 @@
+name: Extract full v4.78 formula and validation tables
+on:
+  push:
+    branches:
+      - audit/read-v478-20261103
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Print complete small audit tables from published ZIP
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, gzip, hashlib, io, json, urllib.parse, urllib.request, zipfile
+
+          rel = "audit_uploads/v4.78_20261103/看股最速適_原十檔24特徵候選公式重建與來源資料核對_v4.78_20261103_082234.zip"
+          url = "https://raw.githubusercontent.com/CHLINX/sso/uploads/v4.78-batch-20261103-082428/" + urllib.parse.quote(rel, safe="/")
+          with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent":"CHLINX-v478-detail/1.0"}), timeout=180) as r:
+              data = r.read()
+          print(f"VERIFY|bytes={len(data)}|sha256={hashlib.sha256(data).hexdigest()}|expected=3125565", flush=True)
+          if len(data) != 3125565:
+              raise RuntimeError("ZIP size mismatch")
+          z = zipfile.ZipFile(io.BytesIO(data))
+          if z.testzip() is not None:
+              raise RuntimeError("ZIP CRC failure")
+
+          targets = [
+              "01_24項特徵候選公式與未確認參數.csv",
+              "02_v4.70.1五項已驗證特徵候選公式一致性.csv",
+              "03_來源資料盤點與欄位映射.csv",
+              "04_v4.64星期六補行情ZIP成員盤點.csv",
+              "06_最近五日市場橫斷面母體列數.csv",
+          ]
+          for name in targets:
+              text = z.read(name).decode("utf-8-sig")
+              rows = list(csv.reader(io.StringIO(text)))
+              print("\nTABLE_BEGIN|" + name + f"|rows={len(rows)-1}|cols={len(rows[0])}", flush=True)
+              for i, row in enumerate(rows):
+                  print("ROW|" + name + "|" + str(i) + "|" + json.dumps(row, ensure_ascii=False), flush=True)
+              print("TABLE_END|" + name, flush=True)
+
+          print("DETAIL_TABLES_COMPLETE|read_only=true|main_untouched=true", flush=True)
+          PY
