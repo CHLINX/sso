@@ -15,7 +15,7 @@ jobs:
         run: |
           python - <<'PY'
           import csv, io, json, urllib.parse, urllib.request, zipfile
-          from collections import Counter, defaultdict
+          from collections import Counter
 
           branch="audit/v4.80-historical-evidence-20261103_085933"
           path="audit_uploads/v4.80_20261103/看股最速適_24項特徵歷史輸出與公式來源深度追查_v4.80_20261103_085933.zip"
@@ -23,13 +23,12 @@ jobs:
           req=urllib.request.Request(url,headers={"User-Agent":"CHLINX-v480-report-reader/1.0"})
           with urllib.request.urlopen(req,timeout=180) as r: data=r.read()
           print(f"REPORT_ZIP|bytes={len(data)}|zip={zipfile.is_zipfile(io.BytesIO(data))}",flush=True)
-          z=zipfile.ZipFile(io.BytesIO(data))
-          bad=z.testzip()
+          z=zipfile.ZipFile(io.BytesIO(data)); bad=z.testzip()
           print(f"REPORT_CRC|{'PASS' if bad is None else 'FAIL:'+str(bad)}|members={len(z.namelist())}",flush=True)
           if bad: raise RuntimeError(bad)
 
-          def readcsv(s):
-            return list(csv.DictReader(io.StringIO(s.decode("utf-8-sig"))))
+          def readcsv(name):
+            return list(csv.DictReader(io.StringIO(z.read(name).decode("utf-8-sig"))))
           def readjson(name):
             return json.loads(z.read(name).decode("utf-8-sig"))
 
@@ -59,45 +58,31 @@ jobs:
 
           cr=readcsv("04_CSV欄位列數與數值樣本.csv")
           print(f"CSV_REPORT_ROWS|{len(cr)}",flush=True)
-          counts=Counter()
-          related_counts=Counter()
-          rows_with_related=[]
-          exact=[]
-          data_with_related=[]
+          scanned_rows=0; related_counts=Counter(); rows_with_related=0; data_with_related=0; exact_rows=0
           for r in cr:
             n=r.get("rows_counted","")
-            if n not in ("", "NOT_SCANNED_UNRELATED_HEADER"):
-              try: counts["rows_scanned"] += int(n)
-              except: pass
+            try:
+              ni=int(n); scanned_rows+=ni
+            except Exception: ni=-1
             rel=json.loads(r.get("related_columns") or "[]")
-            for c in rel: related_counts[c]+=1
-            if int(r.get("exact_feature_columns") or 0)>0: exact.append(r)
+            if int(r.get("exact_feature_columns") or 0)>0: exact_rows+=1
             if rel:
-              rows_with_related.append(r)
-              try:
-                if int(n)>0: data_with_related.append(r)
-              except: pass
+              rows_with_related+=1
+              for c in rel: related_counts[c]+=1
+              if ni>0:
+                data_with_related+=1
+                print("RELATED_DATA|"+json.dumps({
+                  "version":r["version"],"member":r["member"],"rows":ni,"columns":int(r["columns"]),
+                  "related":rel[:70],"samples":json.loads(r.get("samples_related_columns") or "[]")[:2]
+                },ensure_ascii=False)[:6500],flush=True)
           print("CSV_COVERAGE|"+json.dumps({
-            "rows":len(cr),"exact_feature_header_rows":len(exact),
-            "rows_with_related_columns":len(rows_with_related),
-            "related_columns_with_data_rows":len(data_with_related),
-            "cumulative_scanned_rows_on_candidate_tables":counts["rows_scanned"],
+            "rows":len(cr),"exact_feature_header_rows":exact_rows,"rows_with_related_columns":rows_with_related,
+            "related_columns_with_data_rows":data_with_related,"cumulative_scanned_rows_on_candidate_tables":scanned_rows,
             "top_related_columns":related_counts.most_common(100)
           },ensure_ascii=False),flush=True)
-          for r in rows_with_related:
-            rel=json.loads(r["related_columns"])
-            try: n=int(r["rows_counted"])
-            except: n=-1
-            if n>0 and (any(k in r["member"].lower() for k in ("特徵","候選","模型","排行","逐筆","交易","成交","因子","補行","patch")) or any(k in c.lower() for c in rel for k in ("ret","return","moment","vol","factor","range","ma","scaled","breadth","median"))):
-              sample=json.loads(r.get("samples_related_columns") or "[]")
-              print("RELATED_DATA|"+json.dumps({
-                "version":r["version"],"member":r["member"],"rows":n,"columns":int(r["columns"]),
-                "related":rel[:70],"samples":sample[:2]
-              },ensure_ascii=False)[:7000],flush=True)
 
           members=readcsv("03_封存成員深度盤點.csv")
-          bytype=Counter(r.get("member_type","") for r in members)
-          print("MEMBER_TYPES|"+json.dumps(bytype,ensure_ascii=False),flush=True)
+          print("MEMBER_TYPES|"+json.dumps(Counter(r.get("member_type","") for r in members),ensure_ascii=False),flush=True)
           textrows=readcsv("05_歷史文字與程式公式線索.csv")
           keys=("ret5_abs_scaled","market_breadth","source_factor_rank","lowvol20_rank","dist_ma20_rank","range_pos20_rank","排名方向","平手","percentile","quantile","zscore","ddof")
           hits=[r for r in textrows if any(k.lower() in r.get("excerpt","").lower() for k in keys)]
