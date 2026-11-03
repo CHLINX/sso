@@ -18,7 +18,7 @@ jobs:
       - name: Download and inspect historical ZIP
         env:
           ZIP_URL: "https://raw.githubusercontent.com/CHLINX/sso/audit/v4.84.5-report-20261103_060012_1c9c61/audit_uploads/v4.84.5_20261103_060012_1c9c61/%E7%9C%8B%E8%82%A1%E6%9C%80%E9%80%9F%E9%81%A9_GoogleDriveNotebook%E7%89%88%E6%9C%AC%E8%BF%BD%E6%9F%A5_v4.84.5_20261103_060011.zip"
-          EXPECTED_SHA256: "df40e885ef58463e4dbd2a38035ddf6410808e76"
+          EXPECTED_SHA256: "9e51aaf5e346c67655707c82b9a0561cf16a2f1b4f88cb731fee9dddf15b4164"
           TARGET_REVISION: "0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"
         run: |
           python - <<'PY'
