@@ -1,0 +1,61 @@
+name: Read v4.81 candidate source evidence
+on:
+  push:
+    branches:
+      - audit/v4.81-candidate-source-values-20261103_091809
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Extract and summarize v4.81 report ZIP
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, io, json, urllib.parse, urllib.request, zipfile
+          from collections import Counter, defaultdict
+          branch="audit/v4.81-candidate-source-values-20261103_091809"
+          path="audit_uploads/v4.81_20261103/看股最速適_24項特徵候選原始欄位與歷史值關聯分析_v4.81_20261103_091809.zip"
+          url="https://raw.githubusercontent.com/CHLINX/sso/"+branch+"/"+urllib.parse.quote(path,safe="/")
+          req=urllib.request.Request(url,headers={"User-Agent":"CHLINX-v481-report-reader/1.0"})
+          with urllib.request.urlopen(req,timeout=180) as r: data=r.read()
+          z=zipfile.ZipFile(io.BytesIO(data)); bad=z.testzip()
+          print(f"ZIP|bytes={len(data)}|crc={'PASS' if bad is None else 'FAIL:'+str(bad)}|members={len(z.namelist())}",flush=True)
+          if bad: raise RuntimeError(bad)
+          print("ZIP_SCRIPT_DUPLICATES|"+json.dumps([n for n in set(z.namelist()) if z.namelist().count(n)>1],ensure_ascii=False),flush=True)
+          def rcsv(name): return list(csv.DictReader(io.StringIO(z.read(name).decode("utf-8-sig"))))
+          def rjson(name): return json.loads(z.read(name).decode("utf-8-sig"))
+          m=rjson("v4.81_manifest.json")
+          print("MANIFEST|"+json.dumps(m,ensure_ascii=False),flush=True)
+          mapping=rcsv("01_24項特徵候選來源欄位對照.csv")
+          print(f"MAPPING_ROWS|{len(mapping)}",flush=True)
+          for r in mapping:
+            print("FEATURE|"+json.dumps(r,ensure_ascii=False),flush=True)
+          schemas=rcsv("02_指定封存CSV完整欄位與列數.csv")
+          print(f"SCHEMA_ROWS|{len(schemas)}",flush=True)
+          for r in schemas:
+            x={k:r.get(k) for k in ["version","member","rows","columns","label_column","identity_columns","long_format_feature_groups","long_format_feature_labels","candidate_columns","status"]}
+            print("SCHEMA|"+json.dumps(x,ensure_ascii=False),flush=True)
+          vals=rcsv("03_候選來源欄位數值分布.csv")
+          print(f"VALUE_ROWS|{len(vals)}",flush=True)
+          by=defaultdict(list)
+          for r in vals:
+            by[r.get("feature","")].append(r)
+          for feature, rows in by.items():
+            rows.sort(key=lambda r:int(float(r.get("n") or 0)),reverse=True)
+            print("VALUE_FEATURE|"+json.dumps({"feature":feature,"records":len(rows),"top":rows[:8]},ensure_ascii=False),flush=True)
+          samples=rcsv("04_歷史資料樣本列.csv")
+          print(f"SAMPLE_ROWS|{len(samples)}",flush=True)
+          for r in samples[:30]:
+            print("SAMPLE|"+json.dumps(r,ensure_ascii=False),flush=True)
+          texts=rcsv("05_公式與版本文字線索.csv")
+          print(f"TEXT_ROWS|{len(texts)}",flush=True)
+          for r in texts[:100]:
+            print("TEXT|"+json.dumps(r,ensure_ascii=False),flush=True)
+          archives=rcsv("06_封存ZIP唯讀核驗.csv")
+          for r in archives:
+            print("ARCHIVE|"+json.dumps(r,ensure_ascii=False),flush=True)
+          print("V481_REPORT_REVIEW_COMPLETE|source_read_only=true|main_untouched=true|retrain=false|backtest=false",flush=True)
+          PY
