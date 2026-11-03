@@ -1,0 +1,57 @@
+name: Inspect existing v4.77 v4.78 formula reconstruction reports
+on:
+  push:
+    branches:
+      - audit/v4.82-corrected-evidence-20261103_093702
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Download and inspect v4.77 and v4.78 report ZIPs
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, io, json, urllib.parse, urllib.request, zipfile
+          from collections import Counter
+          sources=[
+            ("v4.77","uploads/v4.78-batch-20261103-082428","audit_uploads/v4.77_20261102/看股最速適_原十檔24特徵公式追溯與重建可行性核驗_v4.77_20261103_000912.zip"),
+            ("v4.78","uploads/v4.78-batch-20261103-082428","audit_uploads/v4.78_20261103/看股最速適_原十檔24特徵候選公式重建與來源資料核對_v4.78_20261103_082234.zip"),
+          ]
+          for version,branch,path in sources:
+            url="https://raw.githubusercontent.com/CHLINX/sso/"+branch+"/"+urllib.parse.quote(path,safe="/")
+            print("SOURCE|"+version+"|"+url,flush=True)
+            req=urllib.request.Request(url,headers={"User-Agent":"CHLINX-v478-report-reader/1.0"})
+            with urllib.request.urlopen(req,timeout=180) as r:data=r.read()
+            z=zipfile.ZipFile(io.BytesIO(data));bad=z.testzip()
+            print(f"ZIP|{version}|bytes={len(data)}|crc={'PASS' if bad is None else 'FAIL:'+str(bad)}|members={len(z.namelist())}",flush=True)
+            if bad: raise RuntimeError(f"{version} CRC {bad}")
+            for n in z.namelist():
+              info=z.getinfo(n)
+              print("MEMBER|"+version+"|"+json.dumps({"name":n,"bytes":info.file_size},ensure_ascii=False),flush=True)
+            def readtext(n):
+              b=z.read(n)
+              for enc in ("utf-8-sig","cp950"):
+                try:return b.decode(enc)
+                except UnicodeDecodeError:pass
+              return b.decode("utf-8",errors="replace")
+            for n in z.namelist():
+              base=n.split("/")[-1].lower()
+              if base.endswith((".txt",".md",".json")) and z.getinfo(n).file_size<3_000_000:
+                t=readtext(n)
+                if any(k in base for k in ("summary","摘要","manifest","執行","diagnostic","diagnosis")) or base.endswith(".txt"):
+                  print("DOC_BEGIN|"+version+"|"+n,flush=True)
+                  print(t[:12000],flush=True)
+                  print("DOC_END|"+version+"|"+n,flush=True)
+              elif base.endswith(".csv") and z.getinfo(n).file_size<8_000_000:
+                t=readtext(n)
+                try: rows=list(csv.DictReader(io.StringIO(t)))
+                except Exception: continue
+                print("CSV_SCHEMA|"+version+"|"+json.dumps({"member":n,"rows":len(rows),"header":list(rows[0].keys()) if rows else (next(csv.reader(io.StringIO(t)),[]))},ensure_ascii=False),flush=True)
+                if any(k in base for k in ("總覽","摘要","公式","因子","feature","rank","candidate","驗證","比較","diagnostic","summary","mapping","判定")):
+                  for row in rows[:30]:
+                    print("CSV_ROW|"+version+"|"+n+"|"+json.dumps(row,ensure_ascii=False)[:4000],flush=True)
+          print("V477_V478_INSPECTION_COMPLETE|raw_only=true|main_untouched=true",flush=True)
+          PY
