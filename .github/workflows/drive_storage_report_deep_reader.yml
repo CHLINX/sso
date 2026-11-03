@@ -95,6 +95,14 @@ jobs:
               print("trash_rows",len(trash),"sum_bytes",trash_bytes)
               for x in sorted(trash,key=lambda r:n(r.get("size_bytes")),reverse=True)[:20]:
                   print("TRASH_FILE",n(x.get("size_bytes")),x.get("name"),x.get("path"))
+              trash_roots=defaultdict(list)
+              for r in trash:
+                  p=str(r.get("path",""))
+                  root="FRO" if "/巡田最速適/" in p else ("SSO" if "/看股最速適/" in p else "OTHER")
+                  trash_roots[root].append(r)
+              print("TRASH_ROOT_BREAKDOWN")
+              for root,items in trash_roots.items():
+                  print("TRASH_ROOT",root,"rows",len(items),"bytes",sum(n(x.get("size_bytes")) for x in items))
               temp=readcsv("05_疑似暫存備份人工檢視.csv")
               temp_status=Counter(x.get("status","") for x in temp)
               print("\n=== TEMP / BACKUP REVIEW TABLE ===")
@@ -105,6 +113,10 @@ jobs:
               for status,items in t_groups.items():
                   print("TEMP_STATUS",status,"rows",len(items),
                         "bytes",sum(n(x.get("size_bytes")) for x in items))
+              pending=[x for x in temp if str(x.get("status","")).strip()=="不可自動刪除；待人工確認"]
+              print("PENDING_MANUAL_REVIEW_TOP30")
+              for x in sorted(pending,key=lambda r:n(r.get("size_bytes")),reverse=True)[:30]:
+                  print("PENDING_FILE",n(x.get("size_bytes")),x.get("name"),x.get("path"),"hint",x.get("temp_hint",""))
               print("\n=== LARGE WORK FILES / CURRENTLY KNOWN RESTRICTIONS ===")
               top=readcsv("01_本人擁有最大檔案.csv")
               for r in top:
