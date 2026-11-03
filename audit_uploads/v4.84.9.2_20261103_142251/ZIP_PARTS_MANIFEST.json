@@ -1,0 +1,14 @@
+{
+  "version": "v4.84.9.2",
+  "zip_filename": "看股最速適_v4.84.9.2_正式來源診斷_20261103_142251.zip",
+  "zip_size_bytes": 3515,
+  "zip_sha256": "24364aef5ee35ec51567c9f127e7ab8f1ea0f280fab508427ad45c6e4ffa203f",
+  "part_size_bytes": 10485760,
+  "parts": [
+    {
+      "repo_path": "audit_uploads/v4.84.9.2_20261103_142251/看股最速適_v4.84.9.2_正式來源診斷_20261103_142251.zip.part0001",
+      "size_bytes": 3515,
+      "sha256": "24364aef5ee35ec51567c9f127e7ab8f1ea0f280fab508427ad45c6e4ffa203f"
+    }
+  ]
+}
