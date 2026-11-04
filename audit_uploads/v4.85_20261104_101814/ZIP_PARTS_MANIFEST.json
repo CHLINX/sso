@@ -1,0 +1,15 @@
+{
+  "version": "v4.85.8",
+  "stamp": "20261104_101814",
+  "zip_filename": "看股最速適_v4.85.8_獲利資格門檻精確原碼與Notebook來源比對_20261104_101814.zip",
+  "zip_size_bytes": 169441,
+  "zip_sha256": "45228aedcc44bb15401b5e124d26b0047de0d32d120982d8aac3e992c0d9f657",
+  "readout_repo_path": "audit_readout/v4.85_20261104_101814",
+  "parts": [
+    {
+      "repo_path": "audit_uploads/v4.85_20261104_101814/看股最速適_v4.85.8_獲利資格門檻精確原碼與Notebook來源比對_20261104_101814.zip.part0001",
+      "size_bytes": 169441,
+      "sha256": "45228aedcc44bb15401b5e124d26b0047de0d32d120982d8aac3e992c0d9f657"
+    }
+  ]
+}
