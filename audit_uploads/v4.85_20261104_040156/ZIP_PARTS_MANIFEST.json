@@ -1,0 +1,15 @@
+{
+  "version": "v4.85.1",
+  "stamp": "20261104_040156",
+  "zip_filename": "看股最速適_v4.85_24因子與實際獲利關聯診斷_20261104_040156.zip",
+  "zip_size_bytes": 94827,
+  "zip_sha256": "e7155f52b2664f1d35c8a37c5792eeec5d8a993693c94d073b4f050c8e22ef0e",
+  "readout_repo_path": "audit_readout/v4.85_20261104_040156",
+  "parts": [
+    {
+      "repo_path": "audit_uploads/v4.85_20261104_040156/看股最速適_v4.85_24因子與實際獲利關聯診斷_20261104_040156.zip.part0001",
+      "size_bytes": 94827,
+      "sha256": "e7155f52b2664f1d35c8a37c5792eeec5d8a993693c94d073b4f050c8e22ef0e"
+    }
+  ]
+}
