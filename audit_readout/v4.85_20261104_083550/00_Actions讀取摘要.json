@@ -1,0 +1,133 @@
+{
+  "version": "v4.85.6",
+  "stamp": "20261104_083550",
+  "zip_crc": "PASS",
+  "zip_size_bytes": 576917,
+  "zip_sha256": "beaae086b8e2e7e81bf52360cfbe7061f924575b0642e59755b3060b890b6e96",
+  "member_count": 12,
+  "inventory": [
+    {
+      "name": "00_v4.85.6執行摘要.json",
+      "size_bytes": 3268,
+      "compressed_bytes": 1608
+    },
+    {
+      "name": "00_v4.85.6執行摘要.txt",
+      "size_bytes": 1387,
+      "compressed_bytes": 869
+    },
+    {
+      "name": "01_來源77欄位全集.csv",
+      "size_bytes": 26980,
+      "compressed_bytes": 6039
+    },
+    {
+      "name": "02B_三種模式候選集合差異明細.csv",
+      "size_bytes": 4,
+      "compressed_bytes": 6
+    },
+    {
+      "name": "02_三種模式候選集合重疊.csv",
+      "size_bytes": 2470,
+      "compressed_bytes": 337
+    },
+    {
+      "name": "03_候選資格不通過原因_訊號去重.csv",
+      "size_bytes": 1979,
+      "compressed_bytes": 874
+    },
+    {
+      "name": "04_交易模式資格與實際報酬狀態.csv",
+      "size_bytes": 3563,
+      "compressed_bytes": 615
+    },
+    {
+      "name": "05_不通過原因相關數值欄位分布.csv",
+      "size_bytes": 13868,
+      "compressed_bytes": 2716
+    },
+    {
+      "name": "06_核心資格旗標按H分布.csv",
+      "size_bytes": 463,
+      "compressed_bytes": 214
+    },
+    {
+      "name": "07_候選欄位跨12種情境一致性.csv",
+      "size_bytes": 3421,
+      "compressed_bytes": 518
+    },
+    {
+      "name": "08_精確H標籤與實際交易結果分開盤點.csv",
+      "size_bytes": 4902,
+      "compressed_bytes": 568
+    },
+    {
+      "name": "09_每個H訊號一筆的資格原始值.csv",
+      "size_bytes": 3673212,
+      "compressed_bytes": 560671
+    }
+  ],
+  "full_csv_extractions": [
+    {
+      "name": "01_來源77欄位全集.csv",
+      "path": "audit_readout/v4.85_20261104_083550/完整CSV報告/01_來源77欄位全集.csv",
+      "size_bytes": 26980,
+      "sha256": "61ad1cc523cfb997511aa344d2bba834be805287488bece4ecf7f4dbe12fa6ca"
+    },
+    {
+      "name": "02B_三種模式候選集合差異明細.csv",
+      "path": "audit_readout/v4.85_20261104_083550/完整CSV報告/02B_三種模式候選集合差異明細.csv",
+      "size_bytes": 4,
+      "sha256": "b42f2099187886def637d6aa840022266e05cb6c987a9394e708e23cd505eb46"
+    },
+    {
+      "name": "02_三種模式候選集合重疊.csv",
+      "path": "audit_readout/v4.85_20261104_083550/完整CSV報告/02_三種模式候選集合重疊.csv",
+      "size_bytes": 2470,
+      "sha256": "97409a76a5888d2c4edd7c7c5d889986beb94504ed2bea1008f2eec5867528c1"
+    },
+    {
+      "name": "03_候選資格不通過原因_訊號去重.csv",
+      "path": "audit_readout/v4.85_20261104_083550/完整CSV報告/03_候選資格不通過原因_訊號去重.csv",
+      "size_bytes": 1979,
+      "sha256": "97b80a857f81c73eea5709d305058f64cf0e41801424a8fd39360f9458760065"
+    },
+    {
+      "name": "04_交易模式資格與實際報酬狀態.csv",
+      "path": "audit_readout/v4.85_20261104_083550/完整CSV報告/04_交易模式資格與實際報酬狀態.csv",
+      "size_bytes": 3563,
+      "sha256": "770a562e5f96c3719ba5104a928d6e96cc8eff2b22ad0fa71d4749bf611789f3"
+    },
+    {
+      "name": "05_不通過原因相關數值欄位分布.csv",
+      "path": "audit_readout/v4.85_20261104_083550/完整CSV報告/05_不通過原因相關數值欄位分布.csv",
+      "size_bytes": 13868,
+      "sha256": "0aad4cd2881c6409e4e6bdbcecf01e8be0d485c6aad5f9d6c2db7a6869f51591"
+    },
+    {
+      "name": "06_核心資格旗標按H分布.csv",
+      "path": "audit_readout/v4.85_20261104_083550/完整CSV報告/06_核心資格旗標按H分布.csv",
+      "size_bytes": 463,
+      "sha256": "543a888d6a4ae8d4f5770214a9b599e0dd28c10921a52dbdd60bc70ae8eeefb0"
+    },
+    {
+      "name": "07_候選欄位跨12種情境一致性.csv",
+      "path": "audit_readout/v4.85_20261104_083550/完整CSV報告/07_候選欄位跨12種情境一致性.csv",
+      "size_bytes": 3421,
+      "sha256": "d149b433eee36ce3b2bb1080abbb684da6c4fa7b4c6006fe7c4e6dcb0afbdfd8"
+    },
+    {
+      "name": "08_精確H標籤與實際交易結果分開盤點.csv",
+      "path": "audit_readout/v4.85_20261104_083550/完整CSV報告/08_精確H標籤與實際交易結果分開盤點.csv",
+      "size_bytes": 4902,
+      "sha256": "6acc95e367505477be27b01dc4d0f260dab9e5d90fa39fa3af27197e19596d01"
+    },
+    {
+      "name": "09_每個H訊號一筆的資格原始值.csv",
+      "path": "audit_readout/v4.85_20261104_083550/完整CSV報告/09_每個H訊號一筆的資格原始值.csv",
+      "size_bytes": 3673212,
+      "sha256": "a77d1a1a0c765fc83f5bd07fff35f10f09f96f68452642e4f822cc4cbc519c68"
+    }
+  ],
+  "status": "READOUT_COMPLETED"
+}
