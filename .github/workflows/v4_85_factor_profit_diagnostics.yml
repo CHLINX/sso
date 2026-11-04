@@ -24,7 +24,7 @@ jobs:
           ref: "audit/v4.84.9.3-rebuild-pipeline"
           persist-credentials: true
 
-      - name: Verify, reassemble and read v4.85 audit ZIP
+      - name: Verify, reassemble and extract full diagnostic tables
         run: |
           python - <<'PY'
           import csv, gzip, hashlib, io, json, zipfile
@@ -37,9 +37,11 @@ jobs:
           if not manifests:
               raise RuntimeError("No v4.85 ZIP_PARTS_MANIFEST.json found")
           manifest_path = manifests[0]
-          manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+          manifest = json.loads(manifest_path.read_text(encoding="utf-8-sig"))
           readout = Path(manifest["readout_repo_path"])
           readout.mkdir(parents=True, exist_ok=True)
+          full_tables = readout / "完整CSV報告"
+          full_tables.mkdir(parents=True, exist_ok=True)
           archive = Path("/tmp/sso_v485_factor_profit_audit.zip")
           digest = hashlib.sha256()
           total = 0
@@ -62,7 +64,19 @@ jobs:
           if digest.hexdigest() != manifest["zip_sha256"]:
               raise RuntimeError("ZIP_SHA256_MISMATCH")
 
-          inventory, summaries = [], []
+          inventory, summaries, extracted = [], [], []
+          full_extract_names = {
+              "01_實際淨報酬空值總覽.csv",
+              "02_實際淨報酬空值交叉分類.csv",
+              "03_空值與原始交易狀態分布.csv",
+              "04_H成本交易模式淨報酬可用率.csv",
+              "05_24因子分層關聯IC與日市場IC.csv",
+              "06_24因子分位組實際報酬.csv",
+              "07_H成本交易模式分析母體.csv",
+              "08_v470精確H標籤可用性.csv",
+              "09_24因子訊號層級覆蓋與分布.csv"
+          }
+
           with zipfile.ZipFile(archive, "r") as zf:
               bad = zf.testzip()
               if bad:
@@ -74,6 +88,22 @@ jobs:
                       "size_bytes": info.file_size,
                       "compressed_bytes": info.compress_size
                   })
+                  base = Path(name).name
+                  if base in full_extract_names:
+                      target = full_tables / base
+                      if name.lower().endswith(".csv.gz"):
+                          with zf.open(name) as raw, gzip.GzipFile(fileobj=raw, mode="rb") as gz:
+                              raw_csv = gz.read()
+                      else:
+                          raw_csv = zf.read(name)
+                      target.write_bytes(raw_csv)
+                      extracted.append({
+                          "name": base,
+                          "path": target.as_posix(),
+                          "size_bytes": len(raw_csv),
+                          "sha256": hashlib.sha256(raw_csv).hexdigest()
+                      })
+
                   lower = name.lower()
                   rendered = ""
                   if lower.endswith(".csv.gz"):
@@ -116,6 +146,7 @@ jobs:
               "zip_sha256": digest.hexdigest(),
               "member_count": len(inventory),
               "inventory": inventory,
+              "full_csv_extractions": extracted,
               "status": "READOUT_COMPLETED"
           }
           (readout / "00_Actions讀取摘要.json").write_text(
@@ -125,6 +156,7 @@ jobs:
               "\n\n".join(summaries), encoding="utf-8"
           )
           print("SSO_V4_85_READOUT_COMPLETED")
+          print("SSO_V4_85_FULL_TABLES_EXTRACTED=" + str(len(extracted)))
           PY
 
       - name: Commit readout to isolated audit branch
@@ -135,6 +167,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No readout changes."
           else
-            git commit -m "Add SSO v4.85 factor-profit diagnostic readout"
+            git commit -m "Add full SSO v4.85 factor diagnostic tables"
             git push origin "HEAD:refs/heads/audit/v4.84.9.3-rebuild-pipeline"
           fi
