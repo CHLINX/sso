@@ -1,0 +1,15 @@
+{
+  "version": "v4.85.5",
+  "stamp": "20261104_080340",
+  "zip_filename": "看股最速適_v4.85.5_交易模式資格與精確H標籤稽核_20261104_080340.zip",
+  "zip_size_bytes": 12582,
+  "zip_sha256": "8a0bd5ebbdb53485346b2d9b62ec5a45ad4b577763e3a864230d8108e495d38a",
+  "readout_repo_path": "audit_readout/v4.85_20261104_080340",
+  "parts": [
+    {
+      "repo_path": "audit_uploads/v4.85_20261104_080340/看股最速適_v4.85.5_交易模式資格與精確H標籤稽核_20261104_080340.zip.part0001",
+      "size_bytes": 12582,
+      "sha256": "8a0bd5ebbdb53485346b2d9b62ec5a45ad4b577763e3a864230d8108e495d38a"
+    }
+  ]
+}
