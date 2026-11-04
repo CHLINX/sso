@@ -1,0 +1,431 @@
+name: SSO v4.85.4 scope-stratified factor and cost validation
+
+on:
+  push:
+    branches:
+      - "audit/v4.84.9.3-rebuild-pipeline"
+    paths:
+      - "audit_requests/v4.85_4_20261104_run.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sso-v4-85-4-scope-stratified-validation
+  cancel-in-progress: false
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout isolated audit branch
+        uses: actions/checkout@v4
+        with:
+          ref: "audit/v4.84.9.3-rebuild-pipeline"
+
+      - name: Install analysis dependencies
+        run: python -m pip install --disable-pip-version-check pandas numpy scipy
+
+      - name: Reassemble verified source and analyze each price-scope separately
+        run: |
+          python - <<'PY'
+          import hashlib, json, math, warnings, zipfile
+          from pathlib import Path
+          import numpy as np
+          import pandas as pd
+          from scipy.stats import spearmanr, wilcoxon
+
+          STAMP="20261104_013113"
+          EXPECTED_SHA="54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428"
+          EXPECTED_SIZE=92845777
+          req=json.loads(Path("audit_requests/v4.85_4_20261104_run.json").read_text(encoding="utf-8"))
+          m=json.loads(Path(req["manifest_path"]).read_text(encoding="utf-8"))
+          if m["zip_sha256"]!=EXPECTED_SHA or int(m["zip_size_bytes"])!=EXPECTED_SIZE:
+              raise RuntimeError("SOURCE_MANIFEST_FINGERPRINT_MISMATCH")
+          archive=Path("/tmp/sso_v4_84_9_8.zip")
+          dig=hashlib.sha256(); total=0
+          with archive.open("wb") as out:
+              for part in m["parts"]:
+                  p=Path(part["repo_path"]); b=p.read_bytes()
+                  if len(b)!=int(part["size_bytes"]): raise RuntimeError("PART_SIZE_MISMATCH: "+str(p))
+                  if hashlib.sha256(b).hexdigest()!=part["sha256"]: raise RuntimeError("PART_SHA256_MISMATCH: "+str(p))
+                  out.write(b); dig.update(b); total+=len(b)
+          if total!=EXPECTED_SIZE or dig.hexdigest()!=EXPECTED_SHA: raise RuntimeError("REASSEMBLED_ZIP_FINGERPRINT_MISMATCH")
+
+          member="逐筆配對/01_v4.69_v4.70.1_v2.51逐筆配對.csv.gz"
+          with zipfile.ZipFile(archive,"r") as zf:
+              bad=zf.testzip()
+              if bad: raise RuntimeError("ZIP_CRC_FAILURE: "+str(bad))
+              with zf.open(member,"r") as raw:
+                  df=pd.read_csv(raw,compression="gzip",low_memory=False)
+          if len(df)!=331200: raise RuntimeError("SOURCE_PAIR_ROW_COUNT_CHANGED")
+
+          STOCK=[
+              "v251_ret5_rank","v251_ret20_rank","v251_ret60_rank",
+              "v251_dist_ma20_rank","v251_dist_ma60_rank","v251_range_pos20_rank",
+              "v251_lowvol20_rank","v251_source_factor_rank",
+              "v251_ret5_abs_scaled","v251_ret20_abs_scaled","v251_ret60_abs_scaled",
+              "v251_dist_ma20_abs_scaled","v251_dist_ma60_abs_scaled",
+              "v251_ret5_rank_x_market_breadth","v251_ret20_rank_x_market_breadth",
+              "v251_ret60_rank_x_market_breadth"
+          ]
+          SCORES=["預測淨報酬","估計淨獲利機率_近似","排名","獲利可能性排名"]
+          MARKET=[
+              "v251_market_median_ret5","v251_market_median_ret20","v251_market_median_ret60",
+              "v251_market_breadth_pos_ret5","v251_market_breadth_pos_ret20",
+              "v251_market_breadth_pos_ret60","v251_market_breadth_above_ma20",
+              "v251_market_breadth_above_ma60"
+          ]
+          FIELDS=STOCK+SCORES
+          COSTS=["一般股票基準成本","壓力成本"]
+          SCOPES=["僅同區段","含跨區段"]
+          REQUIRED=[
+              "持有期間H","成本情境","交易模式","區段口徑","訊號日期","市場","股票代號",
+              "納入報酬","進場有效","出場有效","實際淨報酬",
+              "v4.84.9.8_訊號配對狀態","v4.84.9.8_交易鍵重複"
+          ]+FIELDS+MARKET
+          missing=[c for c in REQUIRED if c not in df.columns]
+          if missing: raise RuntimeError("MISSING_REQUIRED_COLUMNS: "+repr(missing))
+
+          def to_bool(s):
+              if pd.api.types.is_bool_dtype(s): return s.fillna(False)
+              return s.astype(str).str.strip().str.lower().isin(["true","1","yes","y","是","t"])
+          for c in ["納入報酬","進場有效","出場有效","v4.84.9.8_交易鍵重複"]:
+              df[c+"__b"]=to_bool(df[c])
+          df["持有期間H"]=pd.to_numeric(df["持有期間H"],errors="coerce").astype("Int64")
+          df["訊號日期"]=pd.to_datetime(df["訊號日期"],errors="coerce")
+          for c in FIELDS+MARKET+["實際淨報酬"]:
+              df[c]=pd.to_numeric(df[c],errors="coerce")
+          sample=df[
+              (df["交易模式"]=="前10名候選逐檔評估")&
+              (df["納入報酬__b"])&(df["進場有效__b"])&(df["出場有效__b"])&
+              df["實際淨報酬"].notna()&df["成本情境"].isin(COSTS)
+          ].copy()
+          if len(sample)!=110196: raise RuntimeError(f"INCLUDED_SAMPLE_CHANGED: {len(sample)}")
+          if int(sample["v4.84.9.8_交易鍵重複__b"].sum())!=0: raise RuntimeError("SOURCE_DUPLICATE_FLAG_NONZERO")
+          if set(sample["區段口徑"].dropna().astype(str).unique())!=set(SCOPES):
+              raise RuntimeError("PRICE_SCOPE_VALUES_CHANGED")
+          if int(sample[FIELDS].notna().all(axis=1).sum())!=len(sample):
+              raise RuntimeError("FEATURE_SCORE_MISSING_IN_INCLUDED_SAMPLE")
+
+          # Complete transaction key: the scope dimension is mandatory.
+          FULL_KEY=["持有期間H","交易模式","區段口徑","訊號日期","市場","股票代號"]
+          duplicate_rows=int(sample.duplicated(FULL_KEY+["成本情境"],keep=False).sum())
+          if duplicate_rows: raise RuntimeError(f"FULL_TRANSACTION_KEY_DUPLICATES: {duplicate_rows}")
+          key_check=[]
+          for H,gH in sample.groupby("持有期間H",sort=True):
+              for scope,gS in gH.groupby("區段口徑",sort=True):
+                  sets={}
+                  for cost in COSTS:
+                      gc=gS[gS["成本情境"]==cost]
+                      sets[cost]=set(map(tuple,gc[FULL_KEY].itertuples(index=False,name=None)))
+                  key_check.append({
+                      "H":int(H),"區段口徑":scope,
+                      "一般成本列":len(sets[COSTS[0]]),"壓力成本列":len(sets[COSTS[1]]),
+                      "完整鍵交集":len(sets[COSTS[0]]&sets[COSTS[1]]),
+                      "僅一般成本":len(sets[COSTS[0]]-sets[COSTS[1]]),
+                      "僅壓力成本":len(sets[COSTS[1]]-sets[COSTS[0]])
+                  })
+          if any(x["僅一般成本"] or x["僅壓力成本"] for x in key_check):
+              raise RuntimeError("FULL_TRANSACTION_KEYS_NOT_PAIRED_BY_SCOPE")
+
+          # Base/cost outcomes by scope, before factor association.
+          perf=[]
+          group_dims=["持有期間H","區段口徑","成本情境"]
+          for key,g in sample.groupby(group_dims,sort=True):
+              y=g["實際淨報酬"]
+              perf.append({
+                  "H":int(key[0]),"區段口徑":key[1],"成本情境":key[2],
+                  "有效實際交易列":len(g),"訊號日期數":int(g["訊號日期"].nunique()),
+                  "平均淨報酬_pct":float(y.mean()*100),
+                  "中位淨報酬_pct":float(y.median()*100),
+                  "勝率_pct":float((y>0).mean()*100),
+                  "正報酬筆數":int((y>0).sum()),"負報酬筆數":int((y<0).sum())
+              })
+
+          # Market context is one value per date-market-scope cell, not one stock observation.
+          constancy=[]
+          context_rows=[]
+          CELL=["持有期間H","區段口徑","成本情境","訊號日期","市場"]
+          grouped=sample.groupby(CELL,sort=True)
+          for key,g in grouped:
+              row={"H":int(key[0]),"區段口徑":key[1],"成本情境":key[2],
+                   "訊號日期":key[3],"市場":key[4],
+                   "候選數":len(g),"日期市場平均淨報酬_pct":float(g["實際淨報酬"].mean()*100)}
+              for f in MARKET:
+                  vals=g[f].dropna().unique()
+                  row[f]=float(vals[0]) if len(vals)==1 else np.nan
+                  constancy.append({"H":int(key[0]),"區段口徑":key[1],"成本情境":key[2],
+                                    "因子":f,"唯一值數":len(vals),"候選數":len(g)})
+              context_rows.append(row)
+          cdf=pd.DataFrame(context_rows)
+          context_summary=[]
+          for key,g in cdf.groupby(["H","區段口徑","成本情境"],sort=True):
+              for f in MARKET:
+                  z=g[[f,"日期市場平均淨報酬_pct"]].dropna()
+                  rho=p=np.nan
+                  if len(z)>=30 and z[f].nunique()>1 and z["日期市場平均淨報酬_pct"].nunique()>1:
+                      with warnings.catch_warnings():
+                          warnings.simplefilter("ignore")
+                          q=spearmanr(z[f],z["日期市場平均淨報酬_pct"])
+                      rho,p=float(q.statistic),float(q.pvalue)
+                  context_summary.append({"H":int(key[0]),"區段口徑":key[1],"成本情境":key[2],
+                                          "市場因子":f,"日期市場單元數":len(z),
+                                          "Spearman_rho":rho,"p_value_descriptive":p,
+                                          "單一值單元比例_pct":float((g[f].notna().sum()/len(g))*100) if len(g) else np.nan})
+
+          RANK={"排名","獲利可能性排名"}
+          daily_corr=[]; daily_spreads=[]
+          for key,g in grouped:
+              H,scope,cost,date,market=key
+              n=len(g); y=g["實際淨報酬"]
+              for field in FIELDS:
+                  x=g[field].copy()
+                  if field in RANK: x=-x
+                  valid=x.notna()&y.notna()
+                  if int(valid.sum())>=5 and x[valid].nunique()>1 and y[valid].nunique()>1:
+                      with warnings.catch_warnings():
+                          warnings.simplefilter("ignore")
+                          q=spearmanr(x[valid].to_numpy(),y[valid].to_numpy())
+                      daily_corr.append({
+                          "H":int(H),"區段口徑":scope,"成本情境":cost,
+                          "訊號日期":date,"市場":market,"欄位":field,
+                          "欄位類型":"v2.51預測分數" if field in SCORES else "個股因子",
+                          "rho":float(q.statistic),"候選數":int(valid.sum())
+                      })
+                  if int(valid.sum())<5 or x[valid].nunique()<2:
+                      continue
+                  z=pd.DataFrame({"x":x[valid],"y":y[valid]})
+                  try:
+                      bins=pd.qcut(z["x"],3,labels=False,duplicates="drop")
+                  except Exception:
+                      continue
+                  if bins.nunique()<2: continue
+                  lo,hi=bins.min(),bins.max()
+                  low=z.loc[bins==lo,"y"]; high=z.loc[bins==hi,"y"]
+                  if not len(low) or not len(high): continue
+                  daily_spreads.append({
+                      "H":int(H),"區段口徑":scope,"成本情境":cost,
+                      "訊號日期":date,"市場":market,"欄位":field,
+                      "欄位類型":"v2.51預測分數" if field in SCORES else "個股因子",
+                      "效果方向口徑":"較佳排名組－較差排名組" if field in RANK else "高因子值組－低因子值組",
+                      "候選數":len(z),"高低分位差_pct":float((high.mean()-low.mean())*100),
+                      "高組勝率_pct":float((high>0).mean()*100),
+                      "低組勝率_pct":float((low>0).mean()*100)
+                  })
+
+          dc=pd.DataFrame(daily_corr)
+          ds=pd.DataFrame(daily_spreads)
+          if dc.empty or ds.empty: raise RuntimeError("NO_SCOPE_STRATIFIED_FACTOR_RESULTS")
+
+          def wilcoxon_p(a):
+              v=pd.Series(a).dropna().to_numpy(dtype=float)
+              if len(v)<10 or np.allclose(v,0): return np.nan
+              try:
+                  with warnings.catch_warnings():
+                      warnings.simplefilter("ignore")
+                      return float(wilcoxon(v).pvalue)
+              except Exception: return np.nan
+          def bh_adjust(frame,pcol):
+              frame=frame.copy(); frame["BH_FDR_q"]=np.nan
+              valid=frame[pcol].notna(); p=frame.loc[valid,pcol].to_numpy(dtype=float)
+              if len(p):
+                  order=np.argsort(p); ranked=p[order]
+                  adj=np.minimum.accumulate((ranked*len(ranked)/np.arange(1,len(ranked)+1))[::-1])[::-1]
+                  restored=np.empty_like(adj); restored[order]=np.minimum(adj,1.0)
+                  frame.loc[valid,"BH_FDR_q"]=restored
+              return frame
+
+          rho_rows=[]
+          for key,g in dc.groupby(["H","區段口徑","成本情境","欄位","欄位類型"],sort=True):
+              v=g["rho"].dropna()
+              rho_rows.append({
+                  "H":int(key[0]),"區段口徑":key[1],"成本情境":key[2],
+                  "欄位":key[3],"欄位類型":key[4],"有效日期市場單元數":len(v),
+                  "平均日期市場Spearman":float(v.mean()) if len(v) else np.nan,
+                  "中位日期市場Spearman":float(v.median()) if len(v) else np.nan,
+                  "正向日期市場比例_pct":float((v>0).mean()*100) if len(v) else np.nan,
+                  "Wilcoxon日期市場rho_p":wilcoxon_p(v)
+              })
+          rho_summary=pd.DataFrame(rho_rows)
+          # FDR adjusted separately within each H x scope x cost family (20 tests per family).
+          rho_summary=pd.concat([
+              bh_adjust(g,"Wilcoxon日期市場rho_p")
+              for _,g in rho_summary.groupby(["H","區段口徑","成本情境"],sort=True)
+          ],ignore_index=True)
+
+          spread_rows=[]
+          for key,g in ds.groupby(["H","區段口徑","成本情境","欄位","欄位類型","效果方向口徑"],sort=True):
+              v=g["高低分位差_pct"].dropna()
+              spread_rows.append({
+                  "H":int(key[0]),"區段口徑":key[1],"成本情境":key[2],
+                  "欄位":key[3],"欄位類型":key[4],"效果方向口徑":key[5],
+                  "可比較日期市場單元數":len(v),
+                  "平均高低分位效果_pct":float(v.mean()) if len(v) else np.nan,
+                  "中位高低分位效果_pct":float(v.median()) if len(v) else np.nan,
+                  "高組勝過低組日期市場比例_pct":float((v>0).mean()*100) if len(v) else np.nan,
+                  "Wilcoxon日期市場效果_p":wilcoxon_p(v)
+              })
+          spread_summary=pd.DataFrame(spread_rows)
+          spread_summary=pd.concat([
+              bh_adjust(g,"Wilcoxon日期市場效果_p")
+              for _,g in spread_summary.groupby(["H","區段口徑","成本情境"],sort=True)
+          ],ignore_index=True)
+
+          # Temporal block bootstrap on one date-level observation: average markets within each date.
+          date_effect=(ds.groupby(["H","區段口徑","成本情境","欄位","欄位類型","效果方向口徑","訊號日期"],sort=True)
+                         .agg(日期平均效果_pct=("高低分位差_pct","mean"),
+                              市場單元數=("市場","nunique")).reset_index())
+          date_effect["年月"]=date_effect["訊號日期"].dt.to_period("M")
+          date_effect["年度"]=date_effect["訊號日期"].dt.year
+          B=3000; BLOCKS=[1,3,6]
+          boot_rows=[]; annual_rows=[]
+          def block_boot(arr,bl,seed):
+              arr=np.asarray(arr,dtype=float); T=len(arr)
+              nb=int(math.ceil(T/bl)); rng=np.random.default_rng(seed)
+              starts=rng.integers(0,T,size=(B,nb)); offsets=np.arange(bl)
+              ix=(starts[:,:,None]+offsets[None,None,:])%T
+              ix=ix.reshape(B,-1)[:,:T]
+              means=np.nanmean(arr[ix],axis=1); means=means[np.isfinite(means)]
+              if not len(means): return np.nan,np.nan,np.nan
+              lo,hi=np.quantile(means,[.025,.975])
+              return float(lo),float(hi),float((means>0).mean()*100)
+          boot_groups=list(date_effect.groupby(["H","區段口徑","成本情境","欄位","欄位類型","效果方向口徑"],sort=True))
+          for gi,(key,g) in enumerate(boot_groups):
+              H,scope,cost,field,typ,direction=key
+              monthly=g.groupby("年月")["日期平均效果_pct"].mean().sort_index()
+              span=pd.period_range(monthly.index.min(),monthly.index.max(),freq="M")
+              arr=monthly.reindex(span).to_numpy(dtype=float)
+              nmonths=int(np.isfinite(arr).sum())
+              for bl in BLOCKS:
+                  row={
+                      "H":int(H),"區段口徑":scope,"成本情境":cost,"欄位":field,
+                      "欄位類型":typ,"效果方向口徑":direction,
+                      "日期數":int(g["訊號日期"].nunique()),"非空月份數":nmonths,
+                      "區塊月數":bl,"月等權平均效果_pct":float(np.nanmean(arr)),
+                      "Bootstrap_95CI下界_pct":np.nan,"Bootstrap_95CI上界_pct":np.nan,
+                      "Bootstrap效果為正機率_pct":np.nan,"狀態":"INSUFFICIENT_MONTHS"
+                  }
+                  if nmonths>=max(12,bl*3):
+                      lo,hi,pp=block_boot(arr,bl,20261104+int(H)*10000+gi*10+bl)
+                      row.update({"Bootstrap_95CI下界_pct":lo,"Bootstrap_95CI上界_pct":hi,
+                                  "Bootstrap效果為正機率_pct":pp,"狀態":"COMPLETED"})
+                  boot_rows.append(row)
+              for year,yg in g.groupby("年度",sort=True):
+                  annual_rows.append({
+                      "H":int(H),"區段口徑":scope,"成本情境":cost,"欄位":field,
+                      "欄位類型":typ,"年度":int(year),
+                      "訊號日期數":int(yg["訊號日期"].nunique()),
+                      "平均日期效果_pct":float(yg["日期平均效果_pct"].mean()),
+                      "正效果日期比例_pct":float((yg["日期平均效果_pct"]>0).mean()*100)
+                  })
+
+          # Paired stress-minus-general cost contrast on exact scope-stratified daily cells.
+          pivot=ds.pivot_table(
+              index=["H","區段口徑","欄位","欄位類型","效果方向口徑","訊號日期","市場"],
+              columns="成本情境",values="高低分位差_pct",aggfunc="first"
+          ).reset_index()
+          for c in COSTS:
+              if c not in pivot.columns: raise RuntimeError("COST_COLUMN_MISSING: "+c)
+          pivot["壓力成本減一般成本效果差_pct"]=pivot["壓力成本"]-pivot["一般股票基準成本"]
+          paired=pivot.dropna(subset=["壓力成本減一般成本效果差_pct"]).copy()
+          if len(paired)==0: raise RuntimeError("NO_PAIRED_COST_DAILY_SCOPE_CELLS")
+          pdate=(paired.groupby(["H","區段口徑","欄位","欄位類型","效果方向口徑","訊號日期"],sort=True)
+                        .agg(日期成本效果差=("壓力成本減一般成本效果差_pct","mean"),
+                             市場單元數=("市場","nunique")).reset_index())
+          pdate["年月"]=pdate["訊號日期"].dt.to_period("M")
+          paired_boot=[]
+          pgroups=list(pdate.groupby(["H","區段口徑","欄位","欄位類型","效果方向口徑"],sort=True))
+          for gi,(key,g) in enumerate(pgroups):
+              H,scope,field,typ,direction=key
+              monthly=g.groupby("年月")["日期成本效果差"].mean().sort_index()
+              span=pd.period_range(monthly.index.min(),monthly.index.max(),freq="M")
+              arr=monthly.reindex(span).to_numpy(dtype=float)
+              nm=int(np.isfinite(arr).sum())
+              for bl in BLOCKS:
+                  row={
+                      "H":int(H),"區段口徑":scope,"欄位":field,"欄位類型":typ,
+                      "效果方向口徑":direction,"非空月份數":nm,"區塊月數":bl,
+                      "壓力成本減一般成本月等權平均差_pct":float(np.nanmean(arr)),
+                      "Bootstrap_95CI下界_pct":np.nan,"Bootstrap_95CI上界_pct":np.nan,
+                      "成本差效果為正機率_pct":np.nan,"狀態":"INSUFFICIENT_MONTHS"
+                  }
+                  if nm>=max(12,bl*3):
+                      lo,hi,pp=block_boot(arr,bl,20261105+int(H)*10000+gi*10+bl)
+                      row.update({"Bootstrap_95CI下界_pct":lo,"Bootstrap_95CI上界_pct":hi,
+                                  "成本差效果為正機率_pct":pp,"狀態":"COMPLETED"})
+                  paired_boot.append(row)
+
+          OUT=Path(f"audit_readout/v4.85.4_scope_stratified_validation_{STAMP}")
+          OUT.mkdir(parents=True,exist_ok=True)
+          pd.DataFrame(key_check).to_csv(OUT/"01_區段口徑完整交易鍵成本配對.csv",index=False,encoding="utf-8-sig")
+          pd.DataFrame(perf).to_csv(OUT/"02_H區段成本實際報酬概況.csv",index=False,encoding="utf-8-sig")
+          dc.to_csv(OUT/"03_逐日市場個股因子Spearman.csv",index=False,encoding="utf-8-sig")
+          rho_summary.to_csv(OUT/"04_區段分層Spearman穩定性與FDR.csv",index=False,encoding="utf-8-sig")
+          ds.to_csv(OUT/"05_逐日期市場區段分層高低分位效果.csv",index=False,encoding="utf-8-sig")
+          spread_summary.to_csv(OUT/"06_區段分層高低分位效果與FDR.csv",index=False,encoding="utf-8-sig")
+          pd.DataFrame(boot_rows).to_csv(OUT/"07_區段分層月區塊Bootstrap.csv",index=False,encoding="utf-8-sig")
+          pd.DataFrame(annual_rows).to_csv(OUT/"08_區段分層逐年方向穩定性.csv",index=False,encoding="utf-8-sig")
+          pd.DataFrame(context_summary).to_csv(OUT/"09_市場背景因子區段分層結果.csv",index=False,encoding="utf-8-sig")
+          pd.DataFrame(constancy).to_csv(OUT/"10_市場背景因子單元常數性.csv",index=False,encoding="utf-8-sig")
+          paired.to_csv(OUT/"11_區段分層逐日壓力成本配對效果.csv",index=False,encoding="utf-8-sig")
+          pd.DataFrame(paired_boot).to_csv(OUT/"12_區段分層壓力成本額外影響Bootstrap.csv",index=False,encoding="utf-8-sig")
+
+          manifest={
+              "version":"v4.85.4","source_version":"v4.84.9.8",
+              "source_zip_sha256":EXPECTED_SHA,"paired_rows_total":len(df),
+              "included_realized_rows_both_costs":len(sample),
+              "scopes":SCOPES,"costs":COSTS,"stock_factors":len(STOCK),
+              "model_score_fields":len(SCORES),"market_context_factors":len(MARKET),
+              "analysis_unit":"H × 區段口徑 × 成本 × 訊號日期 × 市場",
+              "minimum_cross_section_n":5,"bootstrap_replicates":B,"block_months":BLOCKS,
+              "full_transaction_key_duplicate_rows":duplicate_rows,
+              "paired_cost_daily_scope_cells":len(paired),
+              "notes":[
+                  "The prior v4.85.1 and v4.85.3 results pooled two distinct 区段口徑 values. This v4.85.4 re-runs all cross-sectional tests separately by scope.",
+                  "Only 前10名候選逐檔評估 with included, valid-entry, valid-exit, nonmissing realized net returns are analyzed.",
+                  "General and stress costs are analyzed separately; paired differences use scope-specific date-market cells.",
+                  "Rank scores are reversed so positive effect means smaller, better numeric rank group outperforms larger rank group.",
+                  "Spearman FDR is corrected separately within each H × scope × cost family across 20 stock feature/model score fields.",
+                  "Monthly moving-block bootstrap tests temporal stability; it is not a causal test or live deployment evidence."
+              ]
+          }
+          (OUT/"00_v4.85.4_manifest.json").write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding="utf-8")
+
+          lines=[
+              "看股最速適 v4.85.4｜區段口徑分層因子與成本驗證",
+              "="*88,
+              f"來源 ZIP SHA256：{EXPECTED_SHA}",
+              f"逐筆資料：{len(df):,}；正式納入有效交易（兩成本合計）：{len(sample):,}",
+              f"區段口徑：{SCOPES}",
+              "分析單位：H × 區段口徑 × 成本 × 訊號日期 × 市場。",
+              "每一個 H／區段／成本族群內，Spearman FDR 對 20 欄分別校正。",
+              "高低分位和月區塊Bootstrap均按區段口徑獨立計算。",
+              "",
+              "H × 區段 × 成本實際績效："
+          ]
+          for r in perf:
+              lines.append(f"- H={r['H']}｜{r['區段口徑']}｜{r['成本情境']}：n={r['有效實際交易列']:,}；平均={r['平均淨報酬_pct']:.3f}%；中位={r['中位淨報酬_pct']:.3f}%；勝率={r['勝率_pct']:.2f}%")
+          lines += ["","因子方向、FDR、月區塊Bootstrap：見 04、06、07。","成本壓力配對效果：見 12。","不把兩種區段口徑混合，也不把 H／成本／交易模式重複列視為獨立交易。"]
+          (OUT/"13_v4.85.4_執行摘要.txt").write_text("\n".join(lines),encoding="utf-8")
+          with zipfile.ZipFile(OUT/"看股最速適_v4.85.4_區段分層因子成本驗證報告.zip","w",
+                               compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:
+              for p in sorted(OUT.iterdir()):
+                  if p.is_file() and p.suffix.lower()!=".zip": z.write(p,arcname=p.name)
+
+          print("SSO_V4_85_4_COMPLETED")
+          print(json.dumps({
+              "included":len(sample),"daily_corr_rows":len(dc),"daily_spread_rows":len(ds),
+              "paired_cost_rows":len(paired),"bootstrap_groups":len(boot_rows),
+              "paired_bootstrap_groups":len(paired_boot),"output":str(OUT)
+          },ensure_ascii=False))
+          PY
+
+      - name: Commit v4.85.4 scope-stratified reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "audit_readout/v4.85.4_scope_stratified_validation_20261104_013113/"
+          git commit -m "Add SSO v4.85.4 scope stratified factor and cost validation"
+          git push origin "HEAD:refs/heads/audit/v4.84.9.3-rebuild-pipeline"
