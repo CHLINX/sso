@@ -1,0 +1,491 @@
+name: SSO v4.85b factor and realized-profit diagnosis
+
+on:
+  push:
+    branches:
+      - "audit/v4.84.9.3-rebuild-pipeline"
+    paths:
+      - "audit_requests/v4.85b_20261104_run.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sso-v4-85-factor-profit-diagnosis
+  cancel-in-progress: false
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout isolated audit branch
+        uses: actions/checkout@v4
+        with:
+          ref: "audit/v4.84.9.3-rebuild-pipeline"
+          persist-credentials: true
+
+      - name: Install analysis dependencies
+        run: python -m pip install --disable-pip-version-check pandas numpy scipy
+
+      - name: Reassemble v4.84.9.8 and diagnose missing returns and factor effects
+        run: |
+          python - <<'PY'
+          import csv, gzip, hashlib, io, json, math, os, warnings, zipfile
+          from pathlib import Path
+          import numpy as np
+          import pandas as pd
+          from scipy.stats import spearmanr
+
+          BRANCH = "audit/v4.84.9.3-rebuild-pipeline"
+          REQUEST = json.loads(Path("audit_requests/v4.85b_20261104_run.json").read_text(encoding="utf-8"))
+          STAMP = REQUEST.get("stamp", "20261104_013113")
+          MANIFEST_PATH = Path(REQUEST.get(
+              "manifest_path",
+              "audit_uploads/v4.84.9.8_20261104_013113/ZIP_PARTS_MANIFEST.json"
+          ))
+          manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+          expected_zip_sha = "54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428"
+          expected_zip_size = 92845777
+          if manifest["zip_sha256"] != expected_zip_sha or int(manifest["zip_size_bytes"]) != expected_zip_size:
+              raise RuntimeError("v4.84.9.8 manifest fingerprint mismatch")
+
+          archive = Path("/tmp/sso_v4_84_9_8_integrated.zip")
+          digest = hashlib.sha256()
+          total = 0
+          with archive.open("wb") as out:
+              for part in manifest["parts"]:
+                  p = Path(part["repo_path"])
+                  data = p.read_bytes()
+                  if len(data) != int(part["size_bytes"]):
+                      raise RuntimeError("PART_SIZE_MISMATCH: " + str(p))
+                  sha = hashlib.sha256(data).hexdigest()
+                  if sha != part["sha256"]:
+                      raise RuntimeError("PART_SHA256_MISMATCH: " + str(p))
+                  out.write(data)
+                  digest.update(data)
+                  total += len(data)
+          if total != expected_zip_size or digest.hexdigest() != expected_zip_sha:
+              raise RuntimeError("REASSEMBLED_ZIP_FINGERPRINT_MISMATCH")
+
+          member = "逐筆配對/01_v4.69_v4.70.1_v2.51逐筆配對.csv.gz"
+          with zipfile.ZipFile(archive, "r") as zf:
+              if zf.testzip() is not None:
+                  raise RuntimeError("INTEGRATED_ZIP_CRC_FAILURE")
+              if member not in zf.namelist():
+                  raise RuntimeError("PAIRED_TRANSACTION_DATA_NOT_FOUND")
+              with zf.open(member, "r") as raw:
+                  df = pd.read_csv(raw, compression="gzip", low_memory=False)
+
+          FACTORS = [
+              "v251_ret5_rank", "v251_ret20_rank", "v251_ret60_rank",
+              "v251_dist_ma20_rank", "v251_dist_ma60_rank", "v251_range_pos20_rank",
+              "v251_lowvol20_rank", "v251_source_factor_rank",
+              "v251_ret5_abs_scaled", "v251_ret20_abs_scaled", "v251_ret60_abs_scaled",
+              "v251_dist_ma20_abs_scaled", "v251_dist_ma60_abs_scaled",
+              "v251_market_median_ret5", "v251_market_median_ret20", "v251_market_median_ret60",
+              "v251_market_breadth_pos_ret5", "v251_market_breadth_pos_ret20",
+              "v251_market_breadth_pos_ret60", "v251_market_breadth_above_ma20",
+              "v251_market_breadth_above_ma60", "v251_ret5_rank_x_market_breadth",
+              "v251_ret20_rank_x_market_breadth", "v251_ret60_rank_x_market_breadth"
+          ]
+          REQUIRED = [
+              "持有期間H", "成本情境", "交易模式", "交易狀態", "候選狀態",
+              "符合獲利候選條件", "達成交易模式條件", "進場有效", "出場有效",
+              "納入報酬", "實際毛報酬", "實際淨報酬", "預測淨報酬",
+              "估計淨獲利機率_近似", "排名", "獲利可能性排名",
+              "上漲潛力", "v4.84.9.8_訊號配對狀態", "v4.84.9.8_交易鍵重複",
+              "_date_key", "_market_key", "_ticker_key"
+          ] + FACTORS
+          missing_cols = [c for c in REQUIRED if c not in df.columns]
+          if missing_cols:
+              raise RuntimeError("MISSING_REQUIRED_COLUMNS: " + repr(missing_cols))
+          if len(df) != 331200:
+              raise RuntimeError(f"ROW_COUNT_MISMATCH: {len(df)} != 331200")
+
+          def as_bool(s):
+              if pd.api.types.is_bool_dtype(s):
+                  return s.fillna(False)
+              return s.astype(str).str.strip().str.lower().isin(
+                  ["true", "1", "yes", "y", "是", "t"]
+              )
+
+          BOOLS = [
+              "符合獲利候選條件", "達成交易模式條件", "進場有效", "出場有效",
+              "納入報酬", "v4.84.9.8_交易鍵重複"
+          ]
+          for c in BOOLS:
+              df[c + "__bool"] = as_bool(df[c])
+
+          NUMERIC = FACTORS + [
+              "實際毛報酬", "實際淨報酬", "預測淨報酬",
+              "估計淨獲利機率_近似", "排名", "獲利可能性排名"
+          ]
+          for c in NUMERIC:
+              df[c] = pd.to_numeric(df[c], errors="coerce")
+
+          df["持有期間H"] = pd.to_numeric(df["持有期間H"], errors="coerce").astype("Int64")
+          df["has_net_return"] = df["實際淨報酬"].notna()
+          df["has_gross_return"] = df["實際毛報酬"].notna()
+          included = df["納入報酬__bool"]
+          entry = df["進場有效__bool"]
+          exit_ = df["出場有效__bool"]
+          has_net = df["has_net_return"]
+
+          def classify_return(row):
+              if row["has_net_return"]:
+                  return "NET_PRESENT_INCLUDED" if row["納入報酬__bool"] else "NET_PRESENT_NOT_INCLUDED"
+              if pd.isna(row["納入報酬"]):
+                  return "NET_MISSING_INCLUSION_FLAG_UNKNOWN"
+              if not row["納入報酬__bool"]:
+                  return "NET_MISSING_NOT_INCLUDED"
+              if not row["進場有效__bool"]:
+                  return "NET_MISSING_ENTRY_INVALID"
+              if not row["出場有效__bool"]:
+                  return "NET_MISSING_EXIT_INVALID"
+              if row["has_gross_return"]:
+                  return "NET_MISSING_GROSS_PRESENT"
+              return "NET_MISSING_INCLUDED_ENTRY_EXIT_VALID_BOTH_RETURNS_EMPTY"
+
+          df["net_return_status"] = df.apply(classify_return, axis=1)
+          df["missing_reason_primary"] = df["net_return_status"]
+          df["primary_realized_trade"] = has_net & included & entry & exit_
+          df["observed_return_any_inclusion"] = has_net & entry & exit_
+
+          # Exact transaction key validation
+          # Use the original audited transaction-duplicate flag from v4.84.9.8.
+          # Do not recreate a narrower key from helper columns in this follow-up stage.
+          txn_duplicate_rows = int(df["v4.84.9.8_交易鍵重複__bool"].sum())
+          matched_rows = int((df["v4.84.9.8_訊號配對狀態"].astype(str) == "MATCHED_UNIQUE").sum())
+          if txn_duplicate_rows != 0:
+              raise RuntimeError(f"SOURCE_TRANSACTION_KEY_DUPLICATES: {txn_duplicate_rows}")
+          if matched_rows != len(df):
+              raise RuntimeError(f"MATCHED_UNIQUE_COUNT_MISMATCH: {matched_rows}")
+          if int(df[FACTORS].notna().all(axis=1).sum()) != len(df):
+              raise RuntimeError("RECONSTRUCTED_24_FEATURES_NOT_COMPLETE_ON_ALL_TRANSACTION_ROWS")
+
+          OUT = Path(f"audit_readout/v4.85_factor_profit_diagnosis_{STAMP}")
+          OUT.mkdir(parents=True, exist_ok=True)
+
+          # 1) Return missingness classification
+          missing_counts = (
+              df.groupby("net_return_status", dropna=False)
+                .size().rename("資料列數").reset_index()
+          )
+          missing_counts["占全部資料百分比"] = missing_counts["資料列數"] / len(df) * 100
+          missing_counts.to_csv(OUT / "01_實際淨報酬缺值原因分類.csv", index=False, encoding="utf-8-sig")
+
+          status_fields = [
+              "交易狀態", "候選狀態", "符合獲利候選條件", "達成交易模式條件",
+              "進場有效", "出場有效", "納入報酬"
+          ]
+          crosstabs = []
+          for col in status_fields:
+              tmp = (df.groupby([col, "net_return_status"], dropna=False)
+                       .size().rename("資料列數").reset_index())
+              tmp.insert(0, "交叉檢查欄位", col)
+              tmp = tmp.rename(columns={col: "欄位值"})
+              crosstabs.append(tmp)
+          pd.concat(crosstabs, ignore_index=True).to_csv(
+              OUT / "02_報酬缺值與交易狀態交叉表.csv", index=False, encoding="utf-8-sig"
+          )
+
+          slice_keys = ["持有期間H", "成本情境", "交易模式"]
+          all_slices = []
+          for key, g in df.groupby(slice_keys, dropna=False, sort=True):
+              n = len(g)
+              hasn = g["has_net_return"]
+              hasg = g["has_gross_return"]
+              real = g["primary_realized_trade"]
+              observed = g["observed_return_any_inclusion"]
+              y = g.loc[real, "實際淨報酬"]
+              all_slices.append({
+                  "持有期間H": key[0], "成本情境": key[1], "交易模式": key[2],
+                  "總列數": n,
+                  "實際淨報酬非空": int(hasn.sum()),
+                  "實際淨報酬空白": int((~hasn).sum()),
+                  "實際毛報酬非空": int(hasg.sum()),
+                  "納入報酬": int(g["納入報酬__bool"].sum()),
+                  "進場有效": int(g["進場有效__bool"].sum()),
+                  "出場有效": int(g["出場有效__bool"].sum()),
+                  "進出場有效且淨報酬非空": int(observed.sum()),
+                  "正式納入且進出場有效淨報酬非空": int(real.sum()),
+                  "納入但淨報酬空白": int((g["納入報酬__bool"] & ~hasn).sum()),
+                  "淨報酬非空但未納入": int((~g["納入報酬__bool"] & hasn).sum()),
+                  "正式納入樣本勝率_pct": float((y > 0).mean() * 100) if len(y) else None,
+                  "正式納入樣本平均淨報酬_pct": float(y.mean() * 100) if len(y) else None,
+                  "正式納入樣本中位淨報酬_pct": float(y.median() * 100) if len(y) else None,
+                  "正式納入樣本正報酬筆數": int((y > 0).sum()) if len(y) else 0,
+                  "正式納入樣本負報酬筆數": int((y < 0).sum()) if len(y) else 0,
+                  "正式納入樣本零報酬筆數": int((y == 0).sum()) if len(y) else 0
+              })
+          slice_summary = pd.DataFrame(all_slices)
+          slice_summary.to_csv(OUT / "03_H成本交易模式報酬與樣本概況.csv", index=False, encoding="utf-8-sig")
+
+          def safe_spearman(x, y):
+              m = x.notna() & y.notna()
+              if int(m.sum()) < 30 or x[m].nunique() < 2 or y[m].nunique() < 2:
+                  return int(m.sum()), np.nan, np.nan
+              with warnings.catch_warnings():
+                  warnings.simplefilter("ignore")
+                  r = spearmanr(x[m].to_numpy(), y[m].to_numpy())
+              return int(m.sum()), float(r.statistic), float(r.pvalue)
+
+          def factor_analysis(cohort_name, mask):
+              corr_rows, quintile_rows = [], []
+              subset = df.loc[mask].copy()
+              for key, g in subset.groupby(slice_keys, dropna=False, sort=True):
+                  y = g["實際淨報酬"]
+                  for factor in FACTORS:
+                      n, rho, p = safe_spearman(g[factor], y)
+                      corr_rows.append({
+                          "樣本口徑": cohort_name,
+                          "持有期間H": key[0], "成本情境": key[1], "交易模式": key[2],
+                          "因子": factor, "有效樣本數": n,
+                          "Spearman_rho": rho, "p_value": p
+                      })
+                      x = g[factor]
+                      valid = x.notna() & y.notna()
+                      z = g.loc[valid, [factor, "實際淨報酬"]].copy()
+                      if len(z) < 30 or z[factor].nunique() < 2:
+                          continue
+                      try:
+                          z["因子五分位"] = pd.qcut(z[factor], 5, labels=False, duplicates="drop") + 1
+                      except Exception:
+                          continue
+                      qrows = []
+                      for q, qg in z.groupby("因子五分位", observed=True):
+                          yy = qg["實際淨報酬"]
+                          row = {
+                              "樣本口徑": cohort_name,
+                              "持有期間H": key[0], "成本情境": key[1], "交易模式": key[2],
+                              "因子": factor, "因子五分位": int(q),
+                              "資料列數": len(qg),
+                              "平均實際淨報酬_pct": float(yy.mean() * 100),
+                              "中位實際淨報酬_pct": float(yy.median() * 100),
+                              "勝率_pct": float((yy > 0).mean() * 100)
+                          }
+                          quintile_rows.append(row)
+                          qrows.append(row)
+                      if len(qrows) >= 2:
+                          low, high = qrows[0], qrows[-1]
+                          lowg = z[z["因子五分位"] == low["因子五分位"]]["實際淨報酬"]
+                          highg = z[z["因子五分位"] == high["因子五分位"]]["實際淨報酬"]
+                          diff = float((highg.mean() - lowg.mean()) * 100)
+                          se = math.sqrt(
+                              (highg.var(ddof=1) / len(highg) if len(highg) > 1 else 0) +
+                              (lowg.var(ddof=1) / len(lowg) if len(lowg) > 1 else 0)
+                          ) * 100
+                          qrows[-1]["Q最高減Q最低平均淨報酬差_pct"] = diff
+                          qrows[-1]["差異95CI下界_pct"] = diff - 1.96 * se
+                          qrows[-1]["差異95CI上界_pct"] = diff + 1.96 * se
+              return corr_rows, quintile_rows
+
+          corr_primary, quint_primary = factor_analysis(
+              "策略實際納入：淨報酬非空且進出場有效",
+              df["primary_realized_trade"]
+          )
+          corr_observed, quint_observed = factor_analysis(
+              "可觀測報酬：不論是否納入策略、但進出場有效",
+              df["observed_return_any_inclusion"]
+          )
+          corr = pd.DataFrame(corr_primary + corr_observed)
+          if not corr.empty:
+              corr["BH_FDR_q_value"] = np.nan
+              validp = corr["p_value"].notna()
+              pvals = corr.loc[validp, "p_value"].to_numpy()
+              if len(pvals):
+                  order = np.argsort(pvals)
+                  ranked = pvals[order]
+                  adj = np.minimum.accumulate((ranked * len(ranked) / np.arange(1, len(ranked)+1))[::-1])[::-1]
+                  adjusted = np.empty_like(adj)
+                  adjusted[order] = np.minimum(adj, 1.0)
+                  corr.loc[validp, "BH_FDR_q_value"] = adjusted
+              corr.to_csv(OUT / "04_24因子與實際淨報酬Spearman關聯.csv", index=False, encoding="utf-8-sig")
+          pd.DataFrame(quint_primary + quint_observed).to_csv(
+              OUT / "05_24因子五分位實際報酬與勝率.csv", index=False, encoding="utf-8-sig"
+          )
+
+          # Robustness counts across separate strata; do not pool repeated H/cost/mode rows.
+          if not corr.empty:
+              primary_corr = corr[corr["樣本口徑"] == "策略實際納入：淨報酬非空且進出場有效"].copy()
+              primary_q = pd.DataFrame(quint_primary)
+              robust = []
+              for factor, fg in primary_corr.groupby("因子"):
+                  qg = primary_q[primary_q["因子"] == factor]
+                  top_diff = qg[qg["因子五分位"] == qg.groupby(
+                      ["持有期間H", "成本情境", "交易模式"]
+                  )["因子五分位"].transform("max")]
+                  robust.append({
+                      "因子": factor,
+                      "可檢驗分層數": int(fg["Spearman_rho"].notna().sum()),
+                      "Spearman正向分層數": int((fg["Spearman_rho"] > 0).sum()),
+                      "Spearman負向分層數": int((fg["Spearman_rho"] < 0).sum()),
+                      "FDR_q小於0.05分層數": int((fg["BH_FDR_q_value"] < 0.05).sum()),
+                      "Q最高減Q最低差為正分層數": int((top_diff.get("Q最高減Q最低平均淨報酬差_pct", pd.Series(dtype=float)) > 0).sum()),
+                      "Spearman中位數": float(fg["Spearman_rho"].median()) if fg["Spearman_rho"].notna().any() else None
+                  })
+              pd.DataFrame(robust).sort_values(
+                  ["FDR_q小於0.05分層數", "Q最高減Q最低差為正分層數", "Spearman中位數"],
+                  ascending=[False, False, False]
+              ).to_csv(OUT / "06_24因子跨分層穩健性摘要.csv", index=False, encoding="utf-8-sig")
+
+          # Model-score calibration, using the same strategy-included realized sample.
+          prediction_rows = []
+          score_fields = {
+              "預測淨報酬": "higher_is_better",
+              "估計淨獲利機率_近似": "higher_is_better",
+              "排名": "lower_is_better",
+              "獲利可能性排名": "lower_is_better"
+          }
+          primary = df.loc[df["primary_realized_trade"]].copy()
+          for key, g in primary.groupby(slice_keys, dropna=False, sort=True):
+              y = g["實際淨報酬"]
+              for field, direction in score_fields.items():
+                  x = g[field]
+                  if direction == "lower_is_better":
+                      x = -x
+                  n, rho, p = safe_spearman(x, y)
+                  if n >= 30 and x.nunique() >= 2:
+                      try:
+                          bins = pd.qcut(x, 5, labels=False, duplicates="drop")
+                          temp = pd.DataFrame({"bin": bins, "ret": y}).dropna()
+                          for b, bg in temp.groupby("bin", observed=True):
+                              prediction_rows.append({
+                                  "持有期間H": key[0], "成本情境": key[1], "交易模式": key[2],
+                                  "預測欄位": field, "高分方向": direction,
+                                  "分組": int(b)+1, "資料列數": len(bg),
+                                  "平均實際淨報酬_pct": float(bg["ret"].mean()*100),
+                                  "中位實際淨報酬_pct": float(bg["ret"].median()*100),
+                                  "勝率_pct": float((bg["ret"] > 0).mean()*100),
+                                  "Spearman_rho": rho, "p_value": p
+                              })
+                      except Exception:
+                          pass
+          pd.DataFrame(prediction_rows).to_csv(
+              OUT / "07_v251預測分數與實際淨報酬校準.csv", index=False, encoding="utf-8-sig"
+          )
+
+          # Upside-potential class performance.
+          if "上漲潛力" in df.columns:
+              up = (df.loc[df["primary_realized_trade"]]
+                      .groupby(slice_keys + ["上漲潛力"], dropna=False)
+                      .agg(
+                          資料列數=("實際淨報酬", "size"),
+                          平均實際淨報酬=("實際淨報酬", "mean"),
+                          中位實際淨報酬=("實際淨報酬", "median"),
+                          勝率=("實際淨報酬", lambda x: (x > 0).mean())
+                      ).reset_index())
+              for c in ["平均實際淨報酬", "中位實際淨報酬", "勝率"]:
+                  up[c + "_pct"] = up[c] * 100
+              up.to_csv(OUT / "08_上漲潛力分級實際績效.csv", index=False, encoding="utf-8-sig")
+
+          # Overall validation / manifest
+          null_n = int((~has_net).sum())
+          included_n = int(included.sum())
+          valid_trade_n = int(df["primary_realized_trade"].sum())
+          observed_n = int(df["observed_return_any_inclusion"].sum())
+          feature_missing = int(df[FACTORS].isna().any(axis=1).sum())
+          status = {
+              "version": "v4.85",
+              "source_version": "v4.84.9.8",
+              "source_stamp": STAMP,
+              "source_zip_sha256": expected_zip_sha,
+              "source_pair_rows": len(df),
+              "source_transaction_key_duplicates": txn_duplicate_rows,
+              "matched_unique_rows": matched_rows,
+              "factor_count": len(FACTORS),
+              "factor_missing_rows": feature_missing,
+              "actual_net_return_missing_rows": null_n,
+              "actual_net_return_present_rows": int(has_net.sum()),
+              "actual_gross_return_missing_rows": int((~df["has_gross_return"]).sum()),
+              "actual_net_return_present_but_not_included": int((has_net & ~included).sum()),
+              "net_return_missing_and_not_included": int((~has_net & ~included).sum()),
+              "net_return_missing_but_included": int((~has_net & included).sum()),
+              "included_rows": included_n,
+              "primary_realized_trade_rows": valid_trade_n,
+              "observed_return_rows_regardless_of_inclusion": observed_n,
+              "net_return_status_counts": {str(k): int(v) for k, v in df["net_return_status"].value_counts(dropna=False).items()},
+              "H_values": sorted([int(x) for x in df["持有期間H"].dropna().unique()]),
+              "cost_scenarios": sorted(df["成本情境"].dropna().astype(str).unique().tolist()),
+              "trade_modes": sorted(df["交易模式"].dropna().astype(str).unique().tolist()),
+              "notes": [
+                  "Never impute missing realized net return as zero or as a loss.",
+                  "Primary factor analysis includes only rows with 納入報酬=True, 進場有效=True, 出場有效=True, and non-missing 實際淨報酬.",
+                  "Secondary factor analysis includes observed net returns with valid entry/exit regardless of 納入報酬; it is not presented as strategy PnL.",
+                  "Factor associations are calculated separately by H, cost scenario and trade mode; repeated scenarios are not pooled into one pseudo-independent sample.",
+                  "BH-FDR is applied across all reported factor-by-cohort-by-stratum Spearman tests.",
+                  "H=3 and H=10 have no exact v4.70.1 forward-label counterpart; analysis of their existing v2.51 realized return is kept separate from v4.70.1 labels.",
+                  "This is an association and diagnostic study, not causal attribution, a retrained model, or a live trading recommendation."
+              ]
+          }
+          (OUT / "00_v4.85_manifest.json").write_text(
+              json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8"
+          )
+
+          # Human-readable summary from observed data.
+          lines = [
+              "看股最速適 v4.85｜24因子與實際淨報酬逐筆關聯診斷",
+              "=" * 88,
+              f"來源：v4.84.9.8 ZIP SHA256 {expected_zip_sha}",
+              f"逐筆資料：{len(df):,} 列；唯一配對：{matched_rows:,} 列；重複交易鍵：{txn_duplicate_rows:,}",
+              f"24項因子缺值資料列：{feature_missing:,}",
+              "",
+              "一、實際淨報酬缺值",
+              f"非空：{int(has_net.sum()):,}；空白：{null_n:,}",
+              f"納入報酬：{included_n:,}；正式納入且進出場有效、淨報酬非空：{valid_trade_n:,}",
+              f"有觀測淨報酬且進出場有效（不論納入與否）：{observed_n:,}",
+              "",
+              "缺值主分類："
+          ]
+          for _, r in missing_counts.iterrows():
+              lines.append(f"- {r['net_return_status']}: {int(r['資料列數']):,} ({r['占全部資料百分比']:.2f}%)")
+          lines += ["", "二、各 H／成本／交易模式的實際報酬概況"]
+          for _, r in slice_summary.iterrows():
+              lines.append(
+                  f"- H={r['持有期間H']}｜{r['成本情境']}｜{r['交易模式']}："
+                  f"列數 {int(r['總列數']):,}；正式有效淨報酬 {int(r['正式納入且進出場有效淨報酬非空']):,}；"
+                  f"勝率 {r['正式納入樣本勝率_pct'] if pd.notna(r['正式納入樣本勝率_pct']) else 'NA'}%；"
+                  f"平均淨報酬 {r['正式納入樣本平均淨報酬_pct'] if pd.notna(r['正式納入樣本平均淨報酬_pct']) else 'NA'}%"
+              )
+          lines += [
+              "",
+              "三、24因子診斷",
+              "04_24因子與實際淨報酬Spearman關聯.csv：按兩種樣本口徑、H、成本與交易模式分層。",
+              "05_24因子五分位實際報酬與勝率.csv：比較低因子分位與高因子分位的實際報酬。",
+              "06_24因子跨分層穩健性摘要.csv：彙整方向跨分層一致性；不把不同情境的重複交易合併。",
+              "07_v251預測分數與實際淨報酬校準.csv：檢查模型預測分數／排名是否對應實際報酬。",
+              "",
+              "四、限制",
+              "- 空白實際淨報酬不補零、不當作虧損。",
+              "- 關聯不代表因果；多因子同時作用、交易篩選及樣本選擇仍可能影響結果。",
+              "- 這一步不重訓模型，也不產生正式買賣建議。"
+          ]
+          (OUT / "09_v4.85_執行摘要.txt").write_text("\n".join(lines), encoding="utf-8")
+
+          # Package the audit deliverables.
+          report_zip = OUT / "看股最速適_v4.85_24因子與實際淨報酬診斷報告.zip"
+          with zipfile.ZipFile(report_zip, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6) as z:
+              for p in sorted(OUT.iterdir()):
+                  if p.is_file() and p != report_zip:
+                      z.write(p, arcname=p.name)
+
+          print("SSO_V4_85_DIAGNOSIS_COMPLETED")
+          print(json.dumps({
+              "rows": len(df), "return_missing": null_n,
+              "return_present": int(has_net.sum()),
+              "included": included_n, "primary_realized": valid_trade_n,
+              "observed_any_inclusion": observed_n,
+              "factor_missing_rows": feature_missing,
+              "output_dir": str(OUT)
+          }, ensure_ascii=False))
+          PY
+
+      - name: Commit v4.85 diagnosis reports to isolated audit branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "audit_readout/v4.85_factor_profit_diagnosis_20261104_013113/"
+          git commit -m "Add SSO v4.85 factor and realized-profit diagnosis"
+          git push origin "HEAD:refs/heads/audit/v4.84.9.3-rebuild-pipeline"
