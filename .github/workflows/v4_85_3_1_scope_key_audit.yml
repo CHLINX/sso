@@ -1,0 +1,151 @@
+name: SSO v4.85.3.1 transaction scope key audit
+
+on:
+  push:
+    branches:
+      - "audit/v4.84.9.3-rebuild-pipeline"
+    paths:
+      - "audit_requests/v4.85_3_1_20261104_run.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sso-v4-85-3-1-scope-key-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout isolated audit branch
+        uses: actions/checkout@v4
+        with:
+          ref: "audit/v4.84.9.3-rebuild-pipeline"
+
+      - name: Install analysis dependencies
+        run: python -m pip install --disable-pip-version-check pandas
+
+      - name: Verify source and audit full transaction key dimensions
+        run: |
+          python - <<'PY'
+          import hashlib, json, zipfile
+          from pathlib import Path
+          import pandas as pd
+
+          MANIFEST = Path("audit_uploads/v4.84.9.8_20261104_013113/ZIP_PARTS_MANIFEST.json")
+          m=json.loads(MANIFEST.read_text(encoding="utf-8"))
+          EXPECTED_SHA="54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428"
+          EXPECTED_SIZE=92845777
+          if m["zip_sha256"] != EXPECTED_SHA or int(m["zip_size_bytes"]) != EXPECTED_SIZE:
+              raise RuntimeError("SOURCE_MANIFEST_FINGERPRINT_MISMATCH")
+          archive=Path("/tmp/sso_v4_84_9_8.zip")
+          dig=hashlib.sha256(); total=0
+          with archive.open("wb") as out:
+              for part in m["parts"]:
+                  p=Path(part["repo_path"]); b=p.read_bytes()
+                  if len(b)!=int(part["size_bytes"]): raise RuntimeError("PART_SIZE_MISMATCH")
+                  if hashlib.sha256(b).hexdigest()!=part["sha256"]: raise RuntimeError("PART_SHA_MISMATCH")
+                  out.write(b); dig.update(b); total+=len(b)
+          if total!=EXPECTED_SIZE or dig.hexdigest()!=EXPECTED_SHA:
+              raise RuntimeError("ARCHIVE_SHA_MISMATCH")
+          member="逐筆配對/01_v4.69_v4.70.1_v2.51逐筆配對.csv.gz"
+          with zipfile.ZipFile(archive) as zf:
+              if zf.testzip(): raise RuntimeError("ZIP_CRC_FAILURE")
+              with zf.open(member) as raw:
+                  df=pd.read_csv(raw,compression="gzip",low_memory=False)
+          required=["持有期間H","成本情境","交易模式","區段口徑","訊號日期","市場","股票代號",
+                    "納入報酬","進場有效","出場有效","實際淨報酬","v4.84.9.8_交易鍵重複"]
+          miss=[c for c in required if c not in df.columns]
+          if miss: raise RuntimeError("MISSING_COLUMNS: "+repr(miss))
+          if len(df)!=331200: raise RuntimeError("PAIR_ROW_COUNT_CHANGED")
+          def b(s):
+              if pd.api.types.is_bool_dtype(s): return s.fillna(False)
+              return s.astype(str).str.strip().str.lower().isin(["true","1","yes","y","是","t"])
+          for c in ["納入報酬","進場有效","出場有效","v4.84.9.8_交易鍵重複"]:
+              df[c+"__b"]=b(df[c])
+          df["持有期間H"]=pd.to_numeric(df["持有期間H"],errors="coerce").astype("Int64")
+          df["實際淨報酬"]=pd.to_numeric(df["實際淨報酬"],errors="coerce")
+          sample=df[
+              (df["交易模式"]=="前10名候選逐檔評估") &
+              (df["納入報酬__b"]) & (df["進場有效__b"]) &
+              (df["出場有效__b"]) & df["實際淨報酬"].notna() &
+              df["成本情境"].isin(["一般股票基準成本","壓力成本"])
+          ].copy()
+          if len(sample)!=110196: raise RuntimeError(f"INCLUDED_SAMPLE_CHANGED: {len(sample)}")
+          if sample["區段口徑"].isna().any(): raise RuntimeError("NULL_SCOPE_VALUE")
+          key=["持有期間H","成本情境","交易模式","區段口徑","訊號日期","市場","股票代號"]
+          duplicate_rows=int(sample.duplicated(key,keep=False).sum())
+          if int(sample["v4.84.9.8_交易鍵重複__b"].sum())!=0:
+              raise RuntimeError("SOURCE_AUDITED_DUPLICATE_FLAG_NONZERO")
+          # Compare complete transaction keys including scope.
+          key_report=[]
+          for H,g in sample.groupby("持有期間H",sort=True):
+              for scope,gs in g.groupby("區段口徑",dropna=False,sort=True):
+                  counts={}
+                  keysets={}
+                  for cost in ["一般股票基準成本","壓力成本"]:
+                      gc=gs[gs["成本情境"]==cost]
+                      k=key[:-3]+["訊號日期","市場","股票代號"] if False else [
+                          "持有期間H","交易模式","區段口徑","訊號日期","市場","股票代號"
+                      ]
+                      keysets[cost]=set(map(tuple,gc[k].itertuples(index=False,name=None)))
+                      counts[cost]=len(gc)
+                  key_report.append({
+                      "H":int(H),"區段口徑":str(scope),
+                      "一般成本有效列":counts["一般股票基準成本"],
+                      "壓力成本有效列":counts["壓力成本"],
+                      "一般成本唯一完整鍵":len(keysets["一般股票基準成本"]),
+                      "壓力成本唯一完整鍵":len(keysets["壓力成本"]),
+                      "兩成本完整鍵交集":len(keysets["一般股票基準成本"] & keysets["壓力成本"]),
+                      "僅一般成本":len(keysets["一般股票基準成本"]-keysets["壓力成本"]),
+                      "僅壓力成本":len(keysets["壓力成本"]-keysets["一般股票基準成本"])
+                  })
+          scope_counts=(sample.groupby(["持有期間H","成本情境","區段口徑"],dropna=False)
+                         .agg(資料列數=("股票代號","size"),
+                              唯一日期數=("訊號日期","nunique"),
+                              唯一股票數=("股票代號","nunique"))
+                         .reset_index())
+          scope_values=sorted(sample["區段口徑"].astype(str).unique().tolist())
+          OUT=Path("audit_readout/v4.85.3.1_scope_key_audit_20261104_013113")
+          OUT.mkdir(parents=True,exist_ok=True)
+          pd.DataFrame(key_report).to_csv(OUT/"01_含區段口徑完整交易鍵成本配對.csv",index=False,encoding="utf-8-sig")
+          scope_counts.to_csv(OUT/"02_H成本區段口徑樣本分布.csv",index=False,encoding="utf-8-sig")
+          manifest={
+              "version":"v4.85.3.1","source_version":"v4.84.9.8",
+              "source_zip_sha256":EXPECTED_SHA,
+              "pair_rows_total":len(df),"included_valid_rows_both_costs":len(sample),
+              "scope_values":scope_values,
+              "rows_with_duplicate_full_key_included_sample":duplicate_rows,
+              "original_audited_duplicate_flag_rows":int(sample["v4.84.9.8_交易鍵重複__b"].sum()),
+              "full_cost_key_overlap_all_scopes":int(sum(x["兩成本完整鍵交集"] for x in key_report)),
+              "full_key_mismatched_rows_all_scopes":int(sum(x["僅一般成本"]+x["僅壓力成本"] for x in key_report)),
+              "key_definition":["持有期間H","交易模式","區段口徑","訊號日期","市場","股票代號"],
+              "reason":"Previous v4.85.3 simplified overlap key omitted 區段口徑; this audit confirms the complete paired transaction keys."
+          }
+          (OUT/"00_v4.85.3.1_manifest.json").write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding="utf-8")
+          lines=[
+              "看股最速適 v4.85.3.1｜完整交易鍵與區段口徑核對",
+              "="*88,
+              f"完整逐筆配對資料：{len(df):,}列",
+              f"兩種成本、正式納入且進出場有效之實際報酬列：{len(sample):,}",
+              f"區段口徑值：{scope_values}",
+              f"完整交易鍵重複列：{duplicate_rows:,}",
+              f"含區段口徑完整鍵之一般／壓力成本交集：{manifest['full_cost_key_overlap_all_scopes']:,}",
+              f"完整鍵成本不一致列數：{manifest['full_key_mismatched_rows_all_scopes']:,}",
+              "",
+              "詳細分布：見 01、02。"
+          ]
+          (OUT/"03_v4.85.3.1_執行摘要.txt").write_text("\\n".join(lines),encoding="utf-8")
+          print("SSO_V4_85_3_1_COMPLETED")
+          print(json.dumps(manifest,ensure_ascii=False))
+          PY
+
+      - name: Commit scope-key audit reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "audit_readout/v4.85.3.1_scope_key_audit_20261104_013113/"
+          git commit -m "Add SSO v4.85.3.1 complete transaction scope key audit"
+          git push origin "HEAD:refs/heads/audit/v4.84.9.3-rebuild-pipeline"
