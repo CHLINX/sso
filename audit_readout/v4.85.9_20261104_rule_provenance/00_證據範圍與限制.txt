@@ -1,5 +1,5 @@
 SSO v4.85.9｜正式模型規則來源追查（第一輪：main 歷史結果 ZIP）
-執行時間 UTC：2026-11-04T13:55:15.756659+00:00
+執行時間 UTC：2026-11-04T13:57:17.554579+00:00
 讀取分支：main（checkout only；未修改）
 寫入分支：audit/v4.84.9.3-rebuild-pipeline
 本輪只讀取五個歷史結果 ZIP；不執行 Notebook／Python；不讀逐筆行情 CSV.GZ；不訓練模型。
