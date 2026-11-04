@@ -1,0 +1,24 @@
+{
+  "version": "v4.85.3.1",
+  "source_version": "v4.84.9.8",
+  "source_zip_sha256": "54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428",
+  "pair_rows_total": 331200,
+  "included_valid_rows_both_costs": 110196,
+  "scope_values": [
+    "僅同區段",
+    "含跨區段"
+  ],
+  "rows_with_duplicate_full_key_included_sample": 0,
+  "original_audited_duplicate_flag_rows": 0,
+  "full_cost_key_overlap_all_scopes": 55098,
+  "full_key_mismatched_rows_all_scopes": 0,
+  "key_definition": [
+    "持有期間H",
+    "交易模式",
+    "區段口徑",
+    "訊號日期",
+    "市場",
+    "股票代號"
+  ],
+  "reason": "Previous v4.85.3 simplified overlap key omitted 區段口徑; this audit confirms the complete paired transaction keys."
+}
