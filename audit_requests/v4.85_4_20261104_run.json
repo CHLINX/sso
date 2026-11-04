@@ -1,0 +1,7 @@
+{
+  "version": "v4.85.4",
+  "stamp": "20261104_013113",
+  "manifest_path": "audit_uploads/v4.84.9.8_20261104_013113/ZIP_PARTS_MANIFEST.json",
+  "source_zip_sha256": "54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428",
+  "request": "Re-run factor, model-score, realized-return, and base/stress cost validation separately for the two original 區段口徑 scopes (僅同區段, 含跨區段). Use complete paired transaction keys including scope, within date-market cross-sections, per-scope FDR and monthly block bootstrap."
+}
