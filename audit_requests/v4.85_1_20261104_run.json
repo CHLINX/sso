@@ -1,0 +1,7 @@
+{
+  "version": "v4.85.1",
+  "stamp": "20261104_013113",
+  "manifest_path": "audit_uploads/v4.84.9.8_20261104_013113/ZIP_PARTS_MANIFEST.json",
+  "source_zip_sha256": "54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428",
+  "request": "Validate original 24 v2.51 factors and model scores within signal-date by market cross-sections; analyze market-context factors at date-market level. Use one base-cost scenario to avoid duplicated cost rows."
+}
