@@ -1,0 +1,6 @@
+{
+  "version": "v4.85.3",
+  "stamp": "20261104_013113",
+  "source_zip_sha256": "54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428",
+  "request": "Compare general stock baseline cost with stress cost using paired exact transaction keys. Run within-date-market factor top/bottom tercile spreads for 16 stock features and 4 model scores, reverse rank direction correctly, and run 1/3/6 month moving block bootstrap by cost and on paired stress-minus-general effects."
+}
