@@ -1,0 +1,7 @@
+{
+  "version": "v4.85",
+  "stamp": "20261104_013113",
+  "manifest_path": "audit_uploads/v4.84.9.8_20261104_013113/ZIP_PARTS_MANIFEST.json",
+  "source_zip_sha256": "54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428",
+  "request": "Retry v4.85 factor and realized-profit diagnosis using the original v4.84.9.8 audited transaction-duplicate flag; do not recompute a narrower transaction key."
+}
