@@ -138,8 +138,11 @@ jobs:
 
                           # Store text members up to 2 MB individually; no executable code is run.
                           if len(data) <= 2_000_000 and suffix in {".txt", ".md", ".json", ".py", ".ipynb"}:
-                              safe = re.sub(r"[^0-9A-Za-z._-]+", "_", Path(member).name)[:100]
-                              dest = out / "ZIP成員清冊" / (name.replace(".zip","") + "__" + safe)
+                              archive_dir = out / "ZIP成員清冊" / name.replace(".zip", "")
+                              archive_dir.mkdir(parents=True, exist_ok=True)
+                              member_base = Path(member).name
+                              member_hash = hashlib.sha1(member.encode("utf-8")).hexdigest()[:10]
+                              dest = archive_dir / (Path(member_base).stem + "__" + member_hash + Path(member_base).suffix)
                               dest.write_bytes(data)
 
               except Exception as exc:
