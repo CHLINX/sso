@@ -154,11 +154,12 @@ jobs:
           df["observed_return_any_inclusion"] = has_net & entry & exit_
 
           # Exact transaction key validation
-          txn_keys = ["持有期間H", "成本情境", "交易模式", "_date_key", "_market_key", "_ticker_key"]
-          txn_duplicate_rows = int(df.duplicated(txn_keys, keep=False).sum())
+          # Use the original audited transaction-duplicate flag from v4.84.9.8.
+          # Do not recreate a narrower key from helper columns in this follow-up stage.
+          txn_duplicate_rows = int(df["v4.84.9.8_交易鍵重複__bool"].sum())
           matched_rows = int((df["v4.84.9.8_訊號配對狀態"].astype(str) == "MATCHED_UNIQUE").sum())
           if txn_duplicate_rows != 0:
-              raise RuntimeError(f"TRANSACTION_KEY_DUPLICATES: {txn_duplicate_rows}")
+              raise RuntimeError(f"SOURCE_TRANSACTION_KEY_DUPLICATES: {txn_duplicate_rows}")
           if matched_rows != len(df):
               raise RuntimeError(f"MATCHED_UNIQUE_COUNT_MISMATCH: {matched_rows}")
           if int(df[FACTORS].notna().all(axis=1).sum()) != len(df):
