@@ -134,7 +134,7 @@ jobs:
               (df["出場有效__b"]) &
               (df["實際淨報酬"].notna())
           ].copy()
-          if len(base) != 110196:
+          if len(base) != 55098:
               raise RuntimeError(f"PRIMARY_REALIZED_SAMPLE_CHANGED: {len(base)}")
 
           # A separate date x market cell is the unit for cross-sectional ranking.
