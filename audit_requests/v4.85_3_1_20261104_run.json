@@ -1,0 +1,6 @@
+{
+  "version": "v4.85.3.1",
+  "stamp": "20261104_013113",
+  "source_zip_sha256": "54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428",
+  "request": "Audit the complete transaction key using 区段口徑; verify general/stress cost keys for each H and scope, and report scope distributions and duplicate counts. This follows the v4.85.3 key which omitted scope and therefore only matched half as many unique keys as source rows."
+}
