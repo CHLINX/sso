@@ -1,0 +1,144 @@
+{
+  "version": "v4.85.5",
+  "stamp": "20261104_080340",
+  "zip_crc": "PASS",
+  "zip_size_bytes": 12582,
+  "zip_sha256": "8a0bd5ebbdb53485346b2d9b62ec5a45ad4b577763e3a864230d8108e495d38a",
+  "member_count": 13,
+  "inventory": [
+    {
+      "name": "00_v4.85.5執行摘要.json",
+      "size_bytes": 2337,
+      "compressed_bytes": 1254
+    },
+    {
+      "name": "00_v4.85.5執行摘要.txt",
+      "size_bytes": 1626,
+      "compressed_bytes": 1003
+    },
+    {
+      "name": "01_交易模式母體總覽.csv",
+      "size_bytes": 1847,
+      "compressed_bytes": 407
+    },
+    {
+      "name": "02_交易模式條件狀態盤點.csv",
+      "size_bytes": 25794,
+      "compressed_bytes": 1275
+    },
+    {
+      "name": "03B_交易模式候選集合差異明細.csv",
+      "size_bytes": 4,
+      "compressed_bytes": 6
+    },
+    {
+      "name": "03_交易模式候選集合重疊.csv",
+      "size_bytes": 2470,
+      "compressed_bytes": 337
+    },
+    {
+      "name": "04_v470標籤跨成本一致性.csv",
+      "size_bytes": 1377,
+      "compressed_bytes": 277
+    },
+    {
+      "name": "05_v470精確H標籤依交易模式結果.csv",
+      "size_bytes": 5185,
+      "compressed_bytes": 628
+    },
+    {
+      "name": "06_v470標籤依評估資格狀態結果.csv",
+      "size_bytes": 2315,
+      "compressed_bytes": 447
+    },
+    {
+      "name": "07_篩選條件相關原始欄位盤點.csv",
+      "size_bytes": 2769,
+      "compressed_bytes": 875
+    },
+    {
+      "name": "08_跨區段額外有效淨報酬訊號明細.csv",
+      "size_bytes": 2115,
+      "compressed_bytes": 468
+    },
+    {
+      "name": "09_v470標籤同日Q5Q1探索.csv",
+      "size_bytes": 93134,
+      "compressed_bytes": 3066
+    },
+    {
+      "name": "10_v470精確H標籤可用性.csv",
+      "size_bytes": 6884,
+      "compressed_bytes": 561
+    }
+  ],
+  "full_csv_extractions": [
+    {
+      "name": "01_交易模式母體總覽.csv",
+      "path": "audit_readout/v4.85_20261104_080340/完整CSV報告/01_交易模式母體總覽.csv",
+      "size_bytes": 1847,
+      "sha256": "87549636ad8645fe256df4024d31088a533af5f08524c68dff316f0b43cff5a1"
+    },
+    {
+      "name": "02_交易模式條件狀態盤點.csv",
+      "path": "audit_readout/v4.85_20261104_080340/完整CSV報告/02_交易模式條件狀態盤點.csv",
+      "size_bytes": 25794,
+      "sha256": "ef4f8adbacc417de775d561ca1be9609429b6ead57e946a32a846732c67e60f6"
+    },
+    {
+      "name": "03B_交易模式候選集合差異明細.csv",
+      "path": "audit_readout/v4.85_20261104_080340/完整CSV報告/03B_交易模式候選集合差異明細.csv",
+      "size_bytes": 4,
+      "sha256": "b42f2099187886def637d6aa840022266e05cb6c987a9394e708e23cd505eb46"
+    },
+    {
+      "name": "03_交易模式候選集合重疊.csv",
+      "path": "audit_readout/v4.85_20261104_080340/完整CSV報告/03_交易模式候選集合重疊.csv",
+      "size_bytes": 2470,
+      "sha256": "97409a76a5888d2c4edd7c7c5d889986beb94504ed2bea1008f2eec5867528c1"
+    },
+    {
+      "name": "04_v470標籤跨成本一致性.csv",
+      "path": "audit_readout/v4.85_20261104_080340/完整CSV報告/04_v470標籤跨成本一致性.csv",
+      "size_bytes": 1377,
+      "sha256": "70c14323ec470660e6bb11ecc840a2224f5e2350834dc44faefefa38c9332449"
+    },
+    {
+      "name": "05_v470精確H標籤依交易模式結果.csv",
+      "path": "audit_readout/v4.85_20261104_080340/完整CSV報告/05_v470精確H標籤依交易模式結果.csv",
+      "size_bytes": 5185,
+      "sha256": "962bee99beb34db6fe85d2b42dfaacd3845505d9cb3384876cd608ccc636a10e"
+    },
+    {
+      "name": "06_v470標籤依評估資格狀態結果.csv",
+      "path": "audit_readout/v4.85_20261104_080340/完整CSV報告/06_v470標籤依評估資格狀態結果.csv",
+      "size_bytes": 2315,
+      "sha256": "7b8988a6b6fd653dab58b1317215d41ad739162e7a98981be527e423eb22c19d"
+    },
+    {
+      "name": "07_篩選條件相關原始欄位盤點.csv",
+      "path": "audit_readout/v4.85_20261104_080340/完整CSV報告/07_篩選條件相關原始欄位盤點.csv",
+      "size_bytes": 2769,
+      "sha256": "39cc5e3b9bd77429ba0eb3f68847b6d53990cc9ff0ea0844ced558e6fb131b46"
+    },
+    {
+      "name": "08_跨區段額外有效淨報酬訊號明細.csv",
+      "path": "audit_readout/v4.85_20261104_080340/完整CSV報告/08_跨區段額外有效淨報酬訊號明細.csv",
+      "size_bytes": 2115,
+      "sha256": "74c5ea2247720b6b2e63a322068be5f7ceb88f807814b5bd0a3addc9a60bf2ab"
+    },
+    {
+      "name": "09_v470標籤同日Q5Q1探索.csv",
+      "path": "audit_readout/v4.85_20261104_080340/完整CSV報告/09_v470標籤同日Q5Q1探索.csv",
+      "size_bytes": 93134,
+      "sha256": "feb2bcf2acbef5aefa02ba7727e9fa1961e7752eb5df56a16f329a43d9629759"
+    },
+    {
+      "name": "10_v470精確H標籤可用性.csv",
+      "path": "audit_readout/v4.85_20261104_080340/完整CSV報告/10_v470精確H標籤可用性.csv",
+      "size_bytes": 6884,
+      "sha256": "9c569f1b57ba8d288104db905a7ae72733b7d6406cc2e85696b9cd0793e74b3a"
+    }
+  ],
+  "status": "READOUT_COMPLETED"
+}
