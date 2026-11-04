@@ -31,7 +31,7 @@ jobs:
       - name: Run monthly block bootstrap and year stability audit
         run: |
           python - <<'PY'
-          import json, math
+          import json, math, zipfile
           from pathlib import Path
           import numpy as np
           import pandas as pd
