@@ -1,0 +1,36 @@
+{
+  "version": "v4.85.4",
+  "source_version": "v4.84.9.8",
+  "source_zip_sha256": "54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428",
+  "paired_rows_total": 331200,
+  "included_realized_rows_both_costs": 110196,
+  "scopes": [
+    "僅同區段",
+    "含跨區段"
+  ],
+  "costs": [
+    "一般股票基準成本",
+    "壓力成本"
+  ],
+  "stock_factors": 16,
+  "model_score_fields": 4,
+  "market_context_factors": 8,
+  "analysis_unit": "H × 區段口徑 × 成本 × 訊號日期 × 市場",
+  "minimum_cross_section_n": 5,
+  "bootstrap_replicates": 3000,
+  "block_months": [
+    1,
+    3,
+    6
+  ],
+  "full_transaction_key_duplicate_rows": 0,
+  "paired_cost_daily_scope_cells": 133116,
+  "notes": [
+    "The prior v4.85.1 and v4.85.3 results pooled two distinct 区段口徑 values. This v4.85.4 re-runs all cross-sectional tests separately by scope.",
+    "Only 前10名候選逐檔評估 with included, valid-entry, valid-exit, nonmissing realized net returns are analyzed.",
+    "General and stress costs are analyzed separately; paired differences use scope-specific date-market cells.",
+    "Rank scores are reversed so positive effect means smaller, better numeric rank group outperforms larger rank group.",
+    "Spearman FDR is corrected separately within each H × scope × cost family across 20 stock feature/model score fields.",
+    "Monthly moving-block bootstrap tests temporal stability; it is not a causal test or live deployment evidence."
+  ]
+}
