@@ -1,0 +1,398 @@
+name: SSO v4.85.1 date-market cross-sectional validation
+
+on:
+  push:
+    branches:
+      - "audit/v4.84.9.3-rebuild-pipeline"
+    paths:
+      - "audit_requests/v4.85_1_20261104_run.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sso-v4-85-1-cross-sectional-validation
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout isolated audit branch
+        uses: actions/checkout@v4
+        with:
+          ref: "audit/v4.84.9.3-rebuild-pipeline"
+          persist-credentials: true
+
+      - name: Install analysis dependencies
+        run: python -m pip install --disable-pip-version-check pandas numpy scipy
+
+      - name: Reassemble the verified pair file and run date-market validation
+        run: |
+          python - <<'PY'
+          import hashlib, json, math, warnings, zipfile
+          from pathlib import Path
+          import numpy as np
+          import pandas as pd
+          from scipy.stats import spearmanr, wilcoxon
+
+          STAMP = "20261104_013113"
+          REQUEST = json.loads(Path("audit_requests/v4.85_1_20261104_run.json").read_text(encoding="utf-8"))
+          manifest = json.loads(Path(REQUEST["manifest_path"]).read_text(encoding="utf-8"))
+          EXPECTED_SHA = "54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428"
+          EXPECTED_SIZE = 92845777
+          if manifest.get("zip_sha256") != EXPECTED_SHA or int(manifest.get("zip_size_bytes", -1)) != EXPECTED_SIZE:
+              raise RuntimeError("SOURCE_MANIFEST_FINGERPRINT_MISMATCH")
+
+          archive = Path("/tmp/sso_v4_84_9_8_integrated.zip")
+          digest = hashlib.sha256()
+          total = 0
+          with archive.open("wb") as out:
+              for part in manifest["parts"]:
+                  p = Path(part["repo_path"])
+                  data = p.read_bytes()
+                  if len(data) != int(part["size_bytes"]):
+                      raise RuntimeError("PART_SIZE_MISMATCH: " + str(p))
+                  h = hashlib.sha256(data).hexdigest()
+                  if h != part["sha256"]:
+                      raise RuntimeError("PART_SHA256_MISMATCH: " + str(p))
+                  out.write(data)
+                  digest.update(data)
+                  total += len(data)
+          if total != EXPECTED_SIZE or digest.hexdigest() != EXPECTED_SHA:
+              raise RuntimeError("REASSEMBLED_ARCHIVE_FINGERPRINT_MISMATCH")
+
+          member = "逐筆配對/01_v4.69_v4.70.1_v2.51逐筆配對.csv.gz"
+          with zipfile.ZipFile(archive, "r") as zf:
+              bad = zf.testzip()
+              if bad:
+                  raise RuntimeError("ZIP_CRC_FAILURE: " + str(bad))
+              with zf.open(member, "r") as raw:
+                  df = pd.read_csv(raw, compression="gzip", low_memory=False)
+
+          FACTORS = [
+              "v251_ret5_rank", "v251_ret20_rank", "v251_ret60_rank",
+              "v251_dist_ma20_rank", "v251_dist_ma60_rank", "v251_range_pos20_rank",
+              "v251_lowvol20_rank", "v251_source_factor_rank",
+              "v251_ret5_abs_scaled", "v251_ret20_abs_scaled", "v251_ret60_abs_scaled",
+              "v251_dist_ma20_abs_scaled", "v251_dist_ma60_abs_scaled",
+              "v251_market_median_ret5", "v251_market_median_ret20", "v251_market_median_ret60",
+              "v251_market_breadth_pos_ret5", "v251_market_breadth_pos_ret20",
+              "v251_market_breadth_pos_ret60", "v251_market_breadth_above_ma20",
+              "v251_market_breadth_above_ma60", "v251_ret5_rank_x_market_breadth",
+              "v251_ret20_rank_x_market_breadth", "v251_ret60_rank_x_market_breadth"
+          ]
+          MARKET_FACTORS = [
+              "v251_market_median_ret5", "v251_market_median_ret20", "v251_market_median_ret60",
+              "v251_market_breadth_pos_ret5", "v251_market_breadth_pos_ret20",
+              "v251_market_breadth_pos_ret60", "v251_market_breadth_above_ma20",
+              "v251_market_breadth_above_ma60"
+          ]
+          SCORE_FIELDS = {
+              "預測淨報酬": "higher_is_better",
+              "估計淨獲利機率_近似": "higher_is_better",
+              "排名": "lower_is_better",
+              "獲利可能性排名": "lower_is_better"
+          }
+          REQUIRED = [
+              "持有期間H", "成本情境", "交易模式", "訊號日期", "市場",
+              "交易狀態", "進場有效", "出場有效", "納入報酬", "實際淨報酬",
+              "v4.84.9.8_訊號配對狀態", "v4.84.9.8_交易鍵重複"
+          ] + FACTORS + list(SCORE_FIELDS)
+          missing = [c for c in REQUIRED if c not in df.columns]
+          if missing:
+              raise RuntimeError("MISSING_REQUIRED_COLUMNS: " + repr(missing))
+          if len(df) != 331200:
+              raise RuntimeError("PAIR_ROW_COUNT_CHANGED: " + str(len(df)))
+
+          def bool_series(s):
+              if pd.api.types.is_bool_dtype(s):
+                  return s.fillna(False)
+              return s.astype(str).str.strip().str.lower().isin(["true", "1", "yes", "y", "t", "是"])
+
+          df["持有期間H"] = pd.to_numeric(df["持有期間H"], errors="coerce")
+          for c in FACTORS + list(SCORE_FIELDS) + ["實際淨報酬"]:
+              df[c] = pd.to_numeric(df[c], errors="coerce")
+          for c in ["進場有效", "出場有效", "納入報酬", "v4.84.9.8_交易鍵重複"]:
+              df[c + "__b"] = bool_series(df[c])
+
+          if int(df["v4.84.9.8_交易鍵重複__b"].sum()) != 0:
+              raise RuntimeError("SOURCE_TRANSACTION_DUPLICATE_FLAG_NOT_ZERO")
+          if int((df["v4.84.9.8_訊號配對狀態"].astype(str) == "MATCHED_UNIQUE").sum()) != 331200:
+              raise RuntimeError("UNIQUE_PAIR_COUNT_CHANGED")
+          if int(df[FACTORS].notna().all(axis=1).sum()) != 331200:
+              raise RuntimeError("24_FEATURE_COVERAGE_CHANGED")
+
+          # Use the original per-candidate assessment rows only. The other two strategy modes
+          # have no included realized-return observations in v2.51 and cannot support outcome tests.
+          base = df[
+              (df["交易模式"] == "前10名候選逐檔評估") &
+              (df["成本情境"] == "一般股票基準成本") &
+              (df["納入報酬__b"]) &
+              (df["進場有效__b"]) &
+              (df["出場有效__b"]) &
+              (df["實際淨報酬"].notna())
+          ].copy()
+          if len(base) != 110196:
+              raise RuntimeError(f"PRIMARY_REALIZED_SAMPLE_CHANGED: {len(base)}")
+
+          # A separate date x market cell is the unit for cross-sectional ranking.
+          GROUP_KEYS = ["持有期間H", "訊號日期", "市場"]
+          STOCK_FACTORS = [f for f in FACTORS if f not in MARKET_FACTORS]
+          all_daily_corr, all_daily_spread, context_rows, constancy_rows = [], [], [], []
+          min_corr_n = 5
+          min_spread_n = 6
+
+          def corr_safe(x, y):
+              m = x.notna() & y.notna()
+              if int(m.sum()) < min_corr_n or x[m].nunique() < 2 or y[m].nunique() < 2:
+                  return np.nan
+              with warnings.catch_warnings():
+                  warnings.simplefilter("ignore")
+                  return float(spearmanr(x[m].to_numpy(), y[m].to_numpy()).statistic)
+
+          def wilcoxon_p(values):
+              a = pd.Series(values).dropna().to_numpy(dtype=float)
+              if len(a) < 10 or np.allclose(a, 0):
+                  return np.nan
+              try:
+                  with warnings.catch_warnings():
+                      warnings.simplefilter("ignore")
+                      return float(wilcoxon(a, zero_method="wilcox", alternative="two-sided").pvalue)
+              except Exception:
+                  return np.nan
+
+          def bh_adjust(frame, p_col="wilcoxon_p"):
+              frame = frame.copy()
+              frame["BH_FDR_q"] = np.nan
+              valid = frame[p_col].notna()
+              p = frame.loc[valid, p_col].to_numpy(dtype=float)
+              if len(p):
+                  order = np.argsort(p)
+                  ranked = p[order]
+                  adj = np.minimum.accumulate((ranked * len(ranked) / np.arange(1, len(ranked)+1))[::-1])[::-1]
+                  restored = np.empty_like(adj)
+                  restored[order] = np.minimum(adj, 1.0)
+                  frame.loc[valid, "BH_FDR_q"] = restored
+              return frame
+
+          performance = []
+          for H, gh in base.groupby("持有期間H", sort=True):
+              yall = gh["實際淨報酬"]
+              date_means = gh.groupby(["訊號日期", "市場"])["實際淨報酬"].mean()
+              performance.append({
+                  "持有期間H": int(H), "有效候選數": len(gh),
+                  "訊號日期數": int(gh["訊號日期"].nunique()),
+                  "日期市場單元數": int(gh.groupby(["訊號日期", "市場"]).ngroups),
+                  "整體平均淨報酬_pct": float(yall.mean()*100),
+                  "整體中位淨報酬_pct": float(yall.median()*100),
+                  "整體勝率_pct": float((yall>0).mean()*100),
+                  "平均日期市場單元報酬_pct": float(date_means.mean()*100),
+                  "日期市場單元中位報酬_pct": float(date_means.median()*100),
+                  "正報酬日期市場單元_pct": float((date_means>0).mean()*100)
+              })
+
+              for key, g in gh.groupby(["訊號日期", "市場"], sort=True):
+                  n = len(g)
+                  y = g["實際淨報酬"]
+                  # Individual-stock / score ranking within the same signal date and market.
+                  for field in STOCK_FACTORS + list(SCORE_FIELDS):
+                      x = g[field]
+                      rho = corr_safe(x, y)
+                      if pd.notna(rho):
+                          all_daily_corr.append({
+                              "H": int(H), "訊號日期": key[0], "市場": key[1],
+                              "欄位": field, "rho": rho, "候選數": n,
+                              "欄位類型": "v2.51預測分數" if field in SCORE_FIELDS else "個股因子"
+                          })
+                      if n >= min_spread_n and x.notna().sum() == n and x.nunique() >= 2:
+                          try:
+                              bins = pd.qcut(x, 3, labels=False, duplicates="drop")
+                              if bins.nunique() >= 2:
+                                  lo, hi = bins.min(), bins.max()
+                                  low_ret = y[bins == lo]
+                                  high_ret = y[bins == hi]
+                                  if len(low_ret) and len(high_ret):
+                                      all_daily_spread.append({
+                                          "H": int(H), "訊號日期": key[0], "市場": key[1],
+                                          "欄位": field, "欄位類型": "v2.51預測分數" if field in SCORE_FIELDS else "個股因子",
+                                          "候選數": n, "最低分位數樣本數": int(len(low_ret)),
+                                          "最高分位數樣本數": int(len(high_ret)),
+                                          "高分位減低分位平均淨報酬差_pct": float((high_ret.mean()-low_ret.mean())*100),
+                                          "高分位勝率_pct": float((high_ret>0).mean()*100),
+                                          "低分位勝率_pct": float((low_ret>0).mean()*100)
+                                      })
+                          except Exception:
+                              pass
+
+                  # Market-level features should be constant within a date-market cell.
+                  for field in MARKET_FACTORS:
+                      nunique = int(g[field].nunique(dropna=True))
+                      constancy_rows.append({
+                          "H": int(H), "訊號日期": key[0], "市場": key[1],
+                          "因子": field, "候選數": n, "該日市場因子唯一值數": nunique
+                      })
+
+              # Aggregate each market-context feature to one value / one average outcome per date-market.
+              cells = []
+              for key, g in gh.groupby(["訊號日期", "市場"], sort=True):
+                  row = {"訊號日期": key[0], "市場": key[1],
+                         "日期市場平均淨報酬": float(g["實際淨報酬"].mean()),
+                         "候選數": len(g)}
+                  for field in MARKET_FACTORS:
+                      vals = g[field].dropna().unique()
+                      row[field] = float(vals[0]) if len(vals) == 1 else np.nan
+                  cells.append(row)
+              cell_df = pd.DataFrame(cells)
+              for field in MARKET_FACTORS:
+                  z = cell_df[[field, "日期市場平均淨報酬"]].dropna()
+                  rho = np.nan
+                  p = np.nan
+                  if len(z) >= 30 and z[field].nunique() >= 2 and z["日期市場平均淨報酬"].nunique() >= 2:
+                      with warnings.catch_warnings():
+                          warnings.simplefilter("ignore")
+                          sr = spearmanr(z[field].to_numpy(), z["日期市場平均淨報酬"].to_numpy())
+                      rho, p = float(sr.statistic), float(sr.pvalue)
+                  context_rows.append({
+                      "H": int(H), "市場因子": field, "日期市場單元數": len(z),
+                      "Spearman_rho": rho, "p_value_descriptive": p,
+                      "常數單元比例_pct": float((cell_df[field].notna().sum()/len(cell_df))*100) if len(cell_df) else np.nan
+                  })
+
+          # Aggregate stock-specific daily correlations and date-market top/bottom spread.
+          daily_corr = pd.DataFrame(all_daily_corr)
+          corr_summary = []
+          if not daily_corr.empty:
+              for (H, field, typ), g in daily_corr.groupby(["H", "欄位", "欄位類型"], sort=True):
+                  vals = g["rho"].dropna()
+                  corr_summary.append({
+                      "H": H, "欄位": field, "欄位類型": typ,
+                      "有效日期市場單元數": len(vals),
+                      "平均日期市場Spearman": float(vals.mean()) if len(vals) else np.nan,
+                      "中位日期市場Spearman": float(vals.median()) if len(vals) else np.nan,
+                      "正向日期市場比例_pct": float((vals>0).mean()*100) if len(vals) else np.nan,
+                      "Wilcoxon日期市場rho中位偏離0_p": wilcoxon_p(vals)
+                  })
+          corr_summary = bh_adjust(pd.DataFrame(corr_summary)) if corr_summary else pd.DataFrame()
+          spreads = pd.DataFrame(all_daily_spread)
+          spread_summary = []
+          if not spreads.empty:
+              for (H, field, typ), g in spreads.groupby(["H", "欄位", "欄位類型"], sort=True):
+                  vals = g["高分位減低分位平均淨報酬差_pct"].dropna()
+                  spread_summary.append({
+                      "H": H, "欄位": field, "欄位類型": typ,
+                      "可比較日期市場單元數": len(vals),
+                      "平均高分位減低分位報酬差_pct": float(vals.mean()) if len(vals) else np.nan,
+                      "中位高分位減低分位報酬差_pct": float(vals.median()) if len(vals) else np.nan,
+                      "高分位勝過低分位日期比例_pct": float((vals>0).mean()*100) if len(vals) else np.nan,
+                      "Wilcoxon高低分位報酬差_p": wilcoxon_p(vals)
+                  })
+          spread_summary = bh_adjust(pd.DataFrame(spread_summary), "Wilcoxon高低分位報酬差_p") if spread_summary else pd.DataFrame()
+
+          context = pd.DataFrame(context_rows)
+          if not context.empty:
+              context["BH_FDR_q_descriptive"] = np.nan
+              valid = context["p_value_descriptive"].notna()
+              pv = context.loc[valid, "p_value_descriptive"].to_numpy()
+              if len(pv):
+                  order = np.argsort(pv)
+                  ranked = pv[order]
+                  adj = np.minimum.accumulate((ranked*len(ranked)/np.arange(1,len(ranked)+1))[::-1])[::-1]
+                  restored = np.empty_like(adj)
+                  restored[order] = np.minimum(adj,1.0)
+                  context.loc[valid,"BH_FDR_q_descriptive"] = restored
+
+          constancy = pd.DataFrame(constancy_rows)
+          if not constancy.empty:
+              constancy_summary = (constancy.groupby(["H","因子"],dropna=False)
+                  .agg(
+                      日期市場單元數=("該日市場因子唯一值數","size"),
+                      單一值單元數=("該日市場因子唯一值數",lambda x:(x==1).sum()),
+                      多值單元數=("該日市場因子唯一值數",lambda x:(x>1).sum()),
+                      平均單元候選數=("候選數","mean")
+                  ).reset_index())
+              constancy_summary["單一值單元比例_pct"] = constancy_summary["單一值單元數"]/constancy_summary["日期市場單元數"]*100
+          else:
+              constancy_summary = pd.DataFrame()
+
+          OUT = Path(f"audit_readout/v4.85.1_date_market_validation_{STAMP}")
+          OUT.mkdir(parents=True, exist_ok=True)
+          pd.DataFrame(performance).to_csv(OUT/"01_H持有期實際報酬與日期市場分布.csv",index=False,encoding="utf-8-sig")
+          daily_corr.to_csv(OUT/"02_逐日期市場個股因子與預測分數Spearman.csv",index=False,encoding="utf-8-sig")
+          corr_summary.to_csv(OUT/"03_日期市場Spearman穩定性摘要.csv",index=False,encoding="utf-8-sig")
+          spreads.to_csv(OUT/"04_逐日期市場高低分位實際報酬差.csv",index=False,encoding="utf-8-sig")
+          spread_summary.to_csv(OUT/"05_高低分位日期市場差異摘要.csv",index=False,encoding="utf-8-sig")
+          context.to_csv(OUT/"06_市場環境因子與日期市場平均報酬.csv",index=False,encoding="utf-8-sig")
+          constancy_summary.to_csv(OUT/"07_市場因子日期市場常數性檢查.csv",index=False,encoding="utf-8-sig")
+
+          manifest_out = {
+              "version":"v4.85.1",
+              "source_version":"v4.84.9.8",
+              "source_zip_sha256":EXPECTED_SHA,
+              "paired_rows_total":len(df),
+              "primary_sample_rows":len(base),
+              "primary_scope":"前10名候選逐檔評估 × 一般股票基準成本 × 納入報酬 × 進出場有效 × 實際淨報酬非空",
+              "factor_count":len(FACTORS),
+              "market_context_factor_count":len(MARKET_FACTORS),
+              "stock_specific_factor_count":len(STOCK_FACTORS),
+              "group_unit":"持有期間H × 訊號日期 × 市場",
+              "minimum_cross_section_n_for_spearman":min_corr_n,
+              "minimum_cross_section_n_for_top_bottom":min_spread_n,
+              "H_counts":{str(int(k)):int(v) for k,v in base.groupby("持有期間H").size().items()},
+              "actual_net_return_missing_in_total_pair_file":int(df["實際淨報酬"].isna().sum()),
+              "return_missing_not_included":int((~df["納入報酬__b"] & df["實際淨報酬"].isna()).sum()),
+              "included_but_missing_return":int((df["納入報酬__b"] & df["實際淨報酬"].isna()).sum()),
+              "notes":[
+                  "Only 前10名候選逐檔評估 has included realized-return observations; the other two trade modes have zero included realized-return rows in this source file.",
+                  "Pressure-cost rows are not pooled with base-cost rows; this date-market refinement uses the general-stock baseline cost once to avoid duplicate cost scenarios.",
+                  "Stock-specific factors and v2.51 scores are tested within each signal date and market, then summarized across date-market cells.",
+                  "Market-context factors are analyzed at the date-market aggregate level only when each factor has a single value within that cell.",
+                  "Daily cross-sectional rho and top/bottom spreads are descriptive robustness diagnostics; they are not causal estimates and date-market cells can still be serially dependent.",
+                  "This stage does not retrain the model or use H=3/H=10 as exact v4.70.1 labels."
+              ]
+          }
+          (OUT/"00_v4.85.1_manifest.json").write_text(json.dumps(manifest_out,ensure_ascii=False,indent=2),encoding="utf-8")
+
+          lines = [
+              "看股最速適 v4.85.1｜訊號日期×市場之橫斷面驗證",
+              "="*88,
+              f"來源 ZIP SHA256：{EXPECTED_SHA}",
+              f"正式分析樣本：{len(base):,} 筆；依 H 分層：{manifest_out['H_counts']}",
+              f"分析單位：H × 訊號日期 × 市場；個股因子最低樣本數={min_corr_n}；高低分位比較最低樣本數={min_spread_n}",
+              "",
+              "H 持有期績效："
+          ]
+          for r in performance:
+              lines.append(
+                  f"- H={r['持有期間H']}：n={r['有效候選數']:,}；平均={r['整體平均淨報酬_pct']:.3f}%；"
+                  f"中位數={r['整體中位淨報酬_pct']:.3f}%；勝率={r['整體勝率_pct']:.2f}%；"
+                  f"日期市場單元平均報酬={r['平均日期市場單元報酬_pct']:.3f}%"
+              )
+          lines += ["","個股因子與預測分數：見 03、05。市場背景因子：見 06、07。","",
+                    "解讀限制：以日期市場單元降低跨日市場狀態混雜；仍非隨機實驗，也未處理所有日期序列相關性。"]
+          (OUT/"08_v4.85.1_執行摘要.txt").write_text("\n".join(lines),encoding="utf-8")
+
+          with zipfile.ZipFile(OUT/"看股最速適_v4.85.1_日期市場橫斷面驗證.zip","w",compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:
+              for p in sorted(OUT.iterdir()):
+                  if p.is_file() and p.name != "看股最速適_v4.85.1_日期市場橫斷面驗證.zip":
+                      z.write(p,arcname=p.name)
+
+          print("SSO_V4_85_1_COMPLETED")
+          print(json.dumps({
+              "rows":len(base),
+              "H_counts":manifest_out["H_counts"],
+              "daily_corr_groups":len(daily_corr),
+              "daily_spread_groups":len(spreads),
+              "context_rows":len(context),
+              "output":str(OUT)
+          },ensure_ascii=False))
+          PY
+
+      - name: Commit v4.85.1 date-market validation reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "audit_readout/v4.85.1_date_market_validation_20261104_013113/"
+          git commit -m "Add SSO v4.85.1 date-market cross-sectional validation"
+          git push origin "HEAD:refs/heads/audit/v4.84.9.3-rebuild-pipeline"
