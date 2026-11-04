@@ -1,0 +1,171 @@
+{
+  "version": "v4.85.4",
+  "stamp": "20261104_063730",
+  "zip_crc": "PASS",
+  "zip_size_bytes": 530479,
+  "zip_sha256": "2979b9f0895ceb78b9cc8ddaa91c7059869beef80869d89f5712fcdeca64d2ce",
+  "member_count": 16,
+  "inventory": [
+    {
+      "name": "00_v4.85執行摘要.json",
+      "size_bytes": 7084,
+      "compressed_bytes": 1905
+    },
+    {
+      "name": "00_v4.85執行摘要.txt",
+      "size_bytes": 1875,
+      "compressed_bytes": 1072
+    },
+    {
+      "name": "01_實際淨報酬空值總覽.csv",
+      "size_bytes": 421,
+      "compressed_bytes": 217
+    },
+    {
+      "name": "02_實際淨報酬空值交叉分類.csv",
+      "size_bytes": 19877,
+      "compressed_bytes": 1010
+    },
+    {
+      "name": "03_空值與原始交易狀態分布.csv",
+      "size_bytes": 563,
+      "compressed_bytes": 255
+    },
+    {
+      "name": "04_H成本交易模式淨報酬可用率.csv",
+      "size_bytes": 5016,
+      "compressed_bytes": 685
+    },
+    {
+      "name": "05_24因子分層關聯IC與日市場IC.csv",
+      "size_bytes": 936417,
+      "compressed_bytes": 30385
+    },
+    {
+      "name": "06_24因子分位組實際報酬.csv",
+      "size_bytes": 1725999,
+      "compressed_bytes": 407914
+    },
+    {
+      "name": "07_H成本交易模式分析母體.csv",
+      "size_bytes": 17414,
+      "compressed_bytes": 1413
+    },
+    {
+      "name": "08_v470精確H標籤可用性.csv",
+      "size_bytes": 6874,
+      "compressed_bytes": 551
+    },
+    {
+      "name": "09_24因子訊號層級覆蓋與分布.csv",
+      "size_bytes": 5217,
+      "compressed_bytes": 2062
+    },
+    {
+      "name": "10_v4.85來源與驗證manifest.json",
+      "size_bytes": 3099,
+      "compressed_bytes": 1086
+    },
+    {
+      "name": "11_區段口徑母體盤點.csv",
+      "size_bytes": 4417,
+      "compressed_bytes": 523
+    },
+    {
+      "name": "12_每日IC樣本覆蓋與分組敏感度.csv",
+      "size_bytes": 2455778,
+      "compressed_bytes": 52500
+    },
+    {
+      "name": "13_同日候選五分位Q5-Q1探索.csv",
+      "size_bytes": 790795,
+      "compressed_bytes": 25909
+    },
+    {
+      "name": "14_區段口徑同訊號配對差異.csv",
+      "size_bytes": 4572,
+      "compressed_bytes": 574
+    }
+  ],
+  "full_csv_extractions": [
+    {
+      "name": "01_實際淨報酬空值總覽.csv",
+      "path": "audit_readout/v4.85_20261104_063730/完整CSV報告/01_實際淨報酬空值總覽.csv",
+      "size_bytes": 421,
+      "sha256": "a6649dd69b1658f23bf4d9f28f26e2f31e0c6c5d1c826211ced60c333374f041"
+    },
+    {
+      "name": "02_實際淨報酬空值交叉分類.csv",
+      "path": "audit_readout/v4.85_20261104_063730/完整CSV報告/02_實際淨報酬空值交叉分類.csv",
+      "size_bytes": 19877,
+      "sha256": "cf636d674b9af9bdc6ef0e761f36e9bc4860661615a2f8b836ea4ba9c6f5b7be"
+    },
+    {
+      "name": "03_空值與原始交易狀態分布.csv",
+      "path": "audit_readout/v4.85_20261104_063730/完整CSV報告/03_空值與原始交易狀態分布.csv",
+      "size_bytes": 563,
+      "sha256": "bb443ea9de0be19dbc29d51ea7ee4e46b5b51d4cd7932885806e0ab370b89357"
+    },
+    {
+      "name": "04_H成本交易模式淨報酬可用率.csv",
+      "path": "audit_readout/v4.85_20261104_063730/完整CSV報告/04_H成本交易模式淨報酬可用率.csv",
+      "size_bytes": 5016,
+      "sha256": "9c582b7c0fda914dcf9e35faf33eb11ee8d81a41f8303f87c3a6603ca4a0871c"
+    },
+    {
+      "name": "05_24因子分層關聯IC與日市場IC.csv",
+      "path": "audit_readout/v4.85_20261104_063730/完整CSV報告/05_24因子分層關聯IC與日市場IC.csv",
+      "size_bytes": 936417,
+      "sha256": "153f35c22e984fae237b0b2e636cd5d07c89e7d7dca006f13ca47acd5283160f"
+    },
+    {
+      "name": "06_24因子分位組實際報酬.csv",
+      "path": "audit_readout/v4.85_20261104_063730/完整CSV報告/06_24因子分位組實際報酬.csv",
+      "size_bytes": 1725999,
+      "sha256": "10e1d2b842d46484043d2d639d517882fc8913311c219922fc21287a89dd6a7c"
+    },
+    {
+      "name": "07_H成本交易模式分析母體.csv",
+      "path": "audit_readout/v4.85_20261104_063730/完整CSV報告/07_H成本交易模式分析母體.csv",
+      "size_bytes": 17414,
+      "sha256": "19dec673f38e91ece61399cf0ca5ee81e613d38c56d710fc0830b3ca20151564"
+    },
+    {
+      "name": "08_v470精確H標籤可用性.csv",
+      "path": "audit_readout/v4.85_20261104_063730/完整CSV報告/08_v470精確H標籤可用性.csv",
+      "size_bytes": 6874,
+      "sha256": "661e3147565c7648ad07f473f46d71582fcc3b657b0d55753302900554738beb"
+    },
+    {
+      "name": "09_24因子訊號層級覆蓋與分布.csv",
+      "path": "audit_readout/v4.85_20261104_063730/完整CSV報告/09_24因子訊號層級覆蓋與分布.csv",
+      "size_bytes": 5217,
+      "sha256": "f19366f454c80dd7c67fda793e4267818d661b90f1d5c9dbe477de9e97c802af"
+    },
+    {
+      "name": "11_區段口徑母體盤點.csv",
+      "path": "audit_readout/v4.85_20261104_063730/完整CSV報告/11_區段口徑母體盤點.csv",
+      "size_bytes": 4417,
+      "sha256": "4a475edffb60709d29064922ee4102b90a58ae193171880b75ba374e1bd146de"
+    },
+    {
+      "name": "12_每日IC樣本覆蓋與分組敏感度.csv",
+      "path": "audit_readout/v4.85_20261104_063730/完整CSV報告/12_每日IC樣本覆蓋與分組敏感度.csv",
+      "size_bytes": 2455778,
+      "sha256": "4d58524ccbeb7c665feb15df1bf7b7714a3cceac129658cd27abd5fbff650146"
+    },
+    {
+      "name": "13_同日候選五分位Q5-Q1探索.csv",
+      "path": "audit_readout/v4.85_20261104_063730/完整CSV報告/13_同日候選五分位Q5-Q1探索.csv",
+      "size_bytes": 790795,
+      "sha256": "7f68b822a8193bc96b171fc56e10707668d896408f1da2c2dfd323b2bc774b68"
+    },
+    {
+      "name": "14_區段口徑同訊號配對差異.csv",
+      "path": "audit_readout/v4.85_20261104_063730/完整CSV報告/14_區段口徑同訊號配對差異.csv",
+      "size_bytes": 4572,
+      "sha256": "e08fd5eeffb7efe3f412305a97bb62e4ef8d1e9638c5f70bdf2411b207b7ff7d"
+    }
+  ],
+  "status": "READOUT_COMPLETED"
+}
