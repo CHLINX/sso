@@ -1,0 +1,81 @@
+{
+  "version": "v4.84.9.8",
+  "stamp": "20261104_013113",
+  "zip_crc": "PASS",
+  "zip_size_bytes": 92845777,
+  "zip_sha256": "54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428",
+  "member_count": 14,
+  "inventory": [
+    {
+      "name": "逐筆配對/00_執行摘要.json",
+      "size_bytes": 7600,
+      "compressed_bytes": 2383
+    },
+    {
+      "name": "逐筆配對/01_v4.69_v4.70.1_v2.51逐筆配對.csv.gz",
+      "size_bytes": 92417854,
+      "compressed_bytes": 92445864
+    },
+    {
+      "name": "逐筆配對/01_執行摘要.txt",
+      "size_bytes": 2081,
+      "compressed_bytes": 1257
+    },
+    {
+      "name": "逐筆配對/02_v4.84.9.8_manifest.json",
+      "size_bytes": 12638,
+      "compressed_bytes": 4568
+    },
+    {
+      "name": "逐筆配對/03_逐筆配對狀態統計.csv",
+      "size_bytes": 202,
+      "compressed_bytes": 164
+    },
+    {
+      "name": "逐筆配對/04_持有期間與前瞻標籤可用性.csv",
+      "size_bytes": 626,
+      "compressed_bytes": 261
+    },
+    {
+      "name": "逐筆配對/05_配對欄位盤點.csv",
+      "size_bytes": 4888,
+      "compressed_bytes": 646
+    },
+    {
+      "name": "逐筆配對/06_來源SHA256.csv",
+      "size_bytes": 1202,
+      "compressed_bytes": 770
+    },
+    {
+      "name": "逐筆配對/07_v251_24項特徵重建與來源核對.json",
+      "size_bytes": 1383,
+      "compressed_bytes": 699
+    },
+    {
+      "name": "原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py",
+      "size_bytes": 45118,
+      "compressed_bytes": 15265
+    },
+    {
+      "name": "原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py",
+      "size_bytes": 51469,
+      "compressed_bytes": 17654
+    },
+    {
+      "name": "原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py",
+      "size_bytes": 182742,
+      "compressed_bytes": 61205
+    },
+    {
+      "name": "v4.69稽核報告/v4.69_output.zip",
+      "size_bytes": 5879,
+      "compressed_bytes": 5091
+    },
+    {
+      "name": "v4.70.1稽核報告/看股最速適_資料品質修復特徵公式辨識與PurgedWalkForward驗證_v4.70.1_20261104_003140.zip",
+      "size_bytes": 290086,
+      "compressed_bytes": 287344
+    }
+  ],
+  "status": "READOUT_COMPLETED"
+}

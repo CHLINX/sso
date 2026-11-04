@@ -1,0 +1,640 @@
+===== 逐筆配對/00_執行摘要.json =====
+{
+  "version": "v4.84.9.8",
+  "created_at": "2026-11-04T02:16:34",
+  "v469_gate": "REVIEW_REQUIRED",
+  "v469_rows": 4193745,
+  "v469_feature_formula_pass": 5,
+  "v469_forward_formula_pass": 4,
+  "v470_dataset_gate": true,
+  "v470_final_status": "DATA_GATES_PASS_5_FEATURE_BASELINE_VALIDATED_2_FEATURES_EXCLUDED_NOT_DEPLOYMENT_READY",
+  "v470_model_features": [
+    "收盤相對MA5",
+    "收盤相對MA20",
+    "收盤相對MA60",
+    "收盤相對MA120",
+    "相對前20有效K棒最高價"
+  ],
+  "v470_completed_folds": 20,
+  "v251_feature_rebuild": {
+    "v251_baseline_rows": 4186723,
+    "v251_baseline_dates": 2447,
+    "v251_saturday_rows_excluded": 7022,
+    "v251_saturday_dates_excluded": [
+      "2017-02-18",
+      "2017-06-03",
+      "2017-09-30",
+      "2018-03-31",
+      "2018-12-22"
+    ],
+    "v251_duplicate_rows_examined": 0,
+    "v251_source_columns": {
+      "date": "日期",
+      "market": "市場",
+      "symbol": "股票代號",
+      "open": "影子開盤價",
+      "high": "影子最高價",
+      "low": "影子最低價",
+      "close": "影子收盤價",
+      "factor": "20根有效K棒報酬波動率",
+      "segment": "價格研究區段",
+      "volume": "原始成交量_不作指標"
+    },
+    "v251_volume_source_available": true,
+    "v251_volume_positive_rows": 4143522,
+    "v251_target_signal_keys": 22563,
+    "v251_target_keys_rebuilt": 22563,
+    "v251_target_keys_missing_in_baseline": 0,
+    "v251_target_keys_with_all_24_features": 22563,
+    "v251_target_keys_with_any_feature_missing": 0,
+    "v251_feature_logic": "SSO v2.51 make_features() 24 RANK_FEATURES；新增星期六列排除，以重建原始 v2.31 基準",
+    "scanned_model_rows": 4193745,
+    "matched_source_rows": 22563,
+    "unique_matched_signal_keys": 22563,
+    "ambiguous_multi_segment_signal_keys": 0,
+    "baseline_segment_mismatch_signal_keys": 0,
+    "baseline_missing_signal_keys": 0,
+    "duplicate_full_keys": 0,
+    "target_signal_keys": 22563,
+    "unmatched_signal_keys": 0
+  },
+  "v251_zip_sha256": "3b78213b0618678bd883b153e1b8d8d72b074daa4d9d3a2ecd225e80d1f8fdb7",
+  "v251_rows": 331200,
+  "v251_unique_signal_keys": 22563,
+  "unique_matched_signal_keys": 22563,
+  "ambiguous_multi_segment_signal_keys": 0,
+  "pair_counts": {
+    "rows": 331200,
+    "transaction_duplicate_rows": 0,
+    "MATCHED_UNIQUE": 331200,
+    "H_STATUS::EXACT_HORIZON_VALUE_PRESENT": 243000,
+    "H_STATUS::EXACT_HORIZON_COLUMN_BUT_VALUE_EMPTY": 360,
+    "H_STATUS::NO_EXACT_HORIZON_IN_V4.70.1": 87840,
+    "unique_feature_signals": 22563,
+    "ambiguous_signal_keys": 0,
+    "transaction_duplicate_key_count": 0,
+    "holding_period_distribution": {
+      "1": 202800,
+      "3": 67560,
+      "5": 40560,
+      "10": 20280
+    },
+    "holding_period_trade_mode_distribution": {
+      "1|前10名候選逐檔評估": 67600,
+      "1|只交易符合獲利條件": 67600,
+      "1|只交易高潛力": 67600,
+      "3|前10名候選逐檔評估": 22520,
+      "3|只交易符合獲利條件": 22520,
+      "3|只交易高潛力": 22520,
+      "5|前10名候選逐檔評估": 13520,
+      "5|只交易符合獲利條件": 13520,
+      "5|只交易高潛力": 13520,
+      "10|前10名候選逐檔評估": 6760,
+      "10|只交易符合獲利條件": 6760,
+      "10|只交易高潛力": 6760
+    },
+    "output_size_bytes": 92417854,
+    "source_v251_rows": 331200,
+    "source_empty_實際淨報酬": 221004,
+    "source_unique_signal_keys": 22563,
+    "source_unique_transaction_keys": 331200,
+    "source_duplicate_transaction_keys": 0,
+    "feature_v251_baseline_rows": 4186723,
+    "feature_v251_baseline_dates": 2447,
+    "feature_v251_saturday_rows_excluded": 7022,
+    "feature_v251_saturday_dates_excluded": [
+      "2017-02-18",
+      "2017-06-03",
+      "2017-09-30",
+      "2018-03-31",
+      "2018-12-22"
+    ],
+    "feature_v251_duplicate_rows_examined": 0,
+    "feature_v251_source_columns": {
+      "date": "日期",
+      "market": "市場",
+      "symbol": "股票代號",
+      "open": "影子開盤價",
+      "high": "影子最高價",
+      "low": "影子最低價",
+      "close": "影子收盤價",
+      "factor": "20根有效K棒報酬波動率",
+      "segment": "價格研究區段",
+      "volume": "原始成交量_不作指標"
+    },
+    "feature_v251_volume_source_available": true,
+    "feature_v251_volume_positive_rows": 4143522,
+    "feature_v251_target_signal_keys": 22563,
+    "feature_v251_target_keys_rebuilt": 22563,
+    "feature_v251_target_keys_missing_in_baseline": 0,
+    "feature_v251_target_keys_with_all_24_features": 22563,
+    "feature_v251_target_keys_with_any_feature_missing": 0,
+    "feature_v251_feature_logic": "SSO v2.51 make_features() 24 RANK_FEATURES；新增星期六列排除，以重建原始 v2.31 基準",
+    "feature_scanned_model_rows": 4193745,
+    "feature_matched_source_rows": 22563,
+    "feature_unique_matched_signal_keys": 22563,
+    "feature_ambiguous_multi_segment_signal_keys": 0,
+    "feature_baseline_segment_mismatch_signal_keys": 0,
+    "feature_baseline_missing_signal_keys": 0,
+    "feature_duplicate_full_keys": 0,
+    "feature_target_signal_keys": 22563,
+    "feature_unmatched_signal_keys": 0
+  },
+  "feature_map_stats": {
+    "v251_baseline_rows": 4186723,
+    "v251_baseline_dates": 2447,
+    "v251_saturday_rows_excluded": 7022,
+    "v251_saturday_dates_excluded": [
+      "2017-02-18",
+      "2017-06-03",
+      "2017-09-30",
+      "2018-03-31",
+      "2018-12-22"
+    ],
+    "v251_duplicate_rows_examined": 0,
+    "v251_source_columns": {
+      "date": "日期",
+      "market": "市場",
+      "symbol": "股票代號",
+      "open": "影子開盤價",
+      "high": "影子最高價",
+      "low": "影子最低價",
+      "close": "影子收盤價",
+      "factor": "20根有效K棒報酬波動率",
+      "segment": "價格研究區段",
+      "volume": "原始成交量_不作指標"
+    },
+    "v251_volume_source_available": true,
+    "v251_volume_positive_rows": 4143522,
+    "v251_target_signal_keys": 22563,
+    "v251_target_keys_rebuilt": 22563,
+    "v251_target_keys_missing_in_baseline": 0,
+    "v251_target_keys_with_all_24_features": 22563,
+    "v251_target_keys_with_any_feature_missing": 0,
+    "v251_feature_logic": "SSO v2.51 make_features() 24 RANK_FEATURES；新增星期六列排除，以重建原始 v2.31 基準",
+    "scanned_model_rows": 4193745,
+    "matched_source_rows": 22563,
+    "unique_matched_signal_keys": 22563,
+    "ambiguous_multi_segment_signal_keys": 0,
+    "baseline_segment_mismatch_signal_keys": 0,
+    "baseline_missing_signal_keys": 0,
+    "duplicate_full_keys": 0,
+    "target_signal_keys": 22563,
+    "unmatched_signal_keys": 0
+  },
+  "limitations": [
+    "v4.70.1 模型表依 v4.69 原始資料順序逐列核對，僅在四個 BASE_KEYS 完全對齊後建立配對。",
+    "v2.51 逐筆資料不含價格研究區段欄位；若同一訊號日／市場／股票在 v4.69 有多個價格研究區段，標記歧義並不任意挑選。",
+    "v4.70.1 只提供 H=1、5、20、60 的前瞻標籤；其他 H 不外插、不推估，逐筆標記沒有精確對應標籤。",
+    "v2.51 的 24 項非量能模型特徵依原 make_features() 公式重建；先排除 v4.69 新增的 7,022 筆星期六資料，復原原 v2.31 基準母體（4,186,723 列、2,447 日期）。",
+    "v2.51 的納入報酬、實際淨報酬、進出場有效與交易狀態原樣保留，本程式不重算或更改舊績效。",
+    "此工作是來源資料重建及逐筆欄位配對，不是完整投資組合回測，也不代表正式買賣訊號。"
+  ]
+}
+
+===== 逐筆配對/01_v4.69_v4.70.1_v2.51逐筆配對.csv.gz =====
+持有期間H | 成本情境 | 交易模式 | 區段口徑 | 訊號日期 | 訊號全市場日序 | 股票代號 | 公司名稱 | 市場 | 排名 | 獲利可能性排名 | 上漲潛力 | 候選狀態 | 符合獲利候選條件 | 達成交易模式條件 | 預測淨報酬 | 估計淨獲利機率_近似 | 進場有效 | 出場有效 | 跨價格研究區段或區段不明 | 訊號到進場已知跨區段未成交 | 納入報酬 | 交易狀態 | 實際毛報酬 | 實際淨報酬 | 評估口徑說明 | _date_key | _market_key | _ticker_key | v4.84.9.8_訊號配對狀態 | v4.84.9.8_交易鍵重複 | v251_ret5_rank | v251_ret20_rank | v251_ret60_rank | v251_dist_ma20_rank | v251_dist_ma60_rank | v251_range_pos20_rank | v251_lowvol20_rank | v251_source_factor_rank | v251_ret5_abs_scaled | v251_ret20_abs_scaled | v251_ret60_abs_scaled | v251_dist_ma20_abs_scaled | v251_dist_ma60_abs_scaled | v251_market_median_ret5 | v251_market_median_ret20 | v251_market_median_ret60 | v251_market_breadth_pos_ret5 | v251_market_breadth_pos_ret20 | v251_market_breadth_pos_ret60 | v251_market_breadth_above_ma20 | v251_market_breadth_above_ma60 | v251_ret5_rank_x_market_breadth | v251_ret20_rank_x_market_breadth | v251_ret60_rank_x_market_breadth | v251_20根有效K棒報酬波動率 | v251_價格研究區段 | v470_收盤相對MA5 | v470_收盤相對MA20 | v470_收盤相對MA60 | v470_收盤相對MA120 | v470_相對前20有效K棒最高價 | v470_前瞻報酬_1根_下一根開盤至第N根收盤 | v470_前瞻報酬_5根_下一根開盤至第N根收盤 | v470_前瞻報酬_20根_下一根開盤至第N根收盤 | v470_前瞻報酬_60根_下一根開盤至第N根收盤 | v470_label_end_1 | v470_label_end_5 | v470_label_end_20 | v470_label_end_60 | v470_樣本來源 | v470_日期類型 | v470_價格研究區段 | v470_本筆持有期間H對應前瞻報酬欄位 | v470_本筆持有期間H對應前瞻報酬 | v470_本筆持有期間H對應標籤結束日期 | v470_本筆持有期間H精確標籤狀態
+1 | 一般股票基準成本 | 前10名候選逐檔評估 | 含跨區段 | 2019-11-08 | 756 | 4554 | 橙的電子股份有限公司 | TPEX | 1 | 1 | 低 | 持續評估：預測淨報酬非正 | False | True | -0.011419403016633288 | 0.3534542736143288 | True | True | False | False | True | 已納入個股逐筆評估 | -0.04690110683441162 | -0.05436197062266457 | 每檔候選按一次訊號獨立計算單筆假設交易；不假設同時買進10檔，不計算組合複利。 | 2019-11-08 | TPEX | 4554 | MATCHED_UNIQUE | 否 | 0.048397235572338104 | 0.9847812056541443 | 0.9941176176071167 | 0.9676331877708435 | 0.9948453903198242 | 0.8186109066009521 | 0.010848755948245525 | 0.9881324172019958 | -0.32703670859336853 | 0.7422043085098267 | 0.8671990036964417 | 0.5413480401039124 | 0.842529296875 | -0.01002437062561512 | 0.040382031351327896 | 0.037241630256175995 | 0.4244648218154907 | 0.5865443348884583 | 0.5755351781845093 | 0.45137614011764526 | 0.48929664492607117 | -0.0036556937266141176 | 0.08522723615169525 | 0.07509084790945053 | 0.04350421205163002 | 0 | 0.032572195 | 0.09090909 | 0.36894825 | 0.5894211 | -0.079341315 | -0.046901174 | -0.21105528 | -0.18592964 | -0.32998326 | 2019-11-11 | 2019-11-15 | 2019-12-06 | 2020-02-12 | ORIGINAL_V231 | OBSERVED_MARKET_DATE | 0 | 前瞻報酬_1根_下一根開盤至第N根收盤 | -0.046901174 | 2019-11-11 | EXACT_HORIZON_VALUE_PRESENT
+1 | 一般股票基準成本 | 前10名候選逐檔評估 | 含跨區段 | 2019-11-08 | 756 | 3218 | 大學光學科技股份有限公司 | TPEX | 2 | 2 | 低 | 持續評估：預測淨報酬非正 | False | True | -0.01048216703155316 | 0.3493465577357586 | True | True | False | False | True | 已納入個股逐筆評估 | -0.03941601514816284 | -0.04693547227852757 | 每檔候選按一次訊號獨立計算單筆假設交易；不假設同時買進10檔，不計算組合複利。 | 2019-11-08 | TPEX | 3218 | MATCHED_UNIQUE | 否 | 0.02765556238591671 | 0.9765377044677734 | 0.9928104281425476 | 0.8462575674057007 | 0.9779086709022522 | 0.7491571307182312 | 0.02744097076356411 | 0.9712679386138916 | -0.41732195019721985 | 0.6287789344787598 | 0.8340966701507568 | 0.19360356032848358 | 0.6476836204528809 | -0.01002437062561512 | 0.040382031351327896 | 0.037241630256175995 | 0.4244648218154907 | 0.5865443348884583 | 0.5755351781845093 | 0.45137614011764526 | 0.48929664492607117 | -0.0020889679435640574 | 0.08451380580663681 | 0.0749921128153801 | 0.03856274485588074 | 0 | -0.022118744 | 0.029411765 | 0.23138943 | 0.49585694 | -0.08819538 | -0.03941606 | -0.07883212 | -0.03211679 | 0.25547445 | 2019-11-11 | 2019-11-15 | 2019-12-06 | 2020-02-12 | ORIGINAL_V231 | OBSERVED_MARKET_DATE | 0 | 前瞻報酬_1根_下一根開盤至第N根收盤 | -0.03941606 | 2019-11-11 | EXACT_HORIZON_VALUE_PRESENT
+1 | 一般股票基準成本 | 前10名候選逐檔評估 | 含跨區段 | 2019-11-08 | 756 | 8068 | 全達國際股份有限公司 | TPEX | 3 | 3 | 低 | 持續評估：預測淨報酬非正 | False | True | -0.011281851099786574 | 0.3491793779421843 | True | True | False | False | True | 已納入個股逐筆評估 | 0.013177156448364258 | 0.005245999658826994 | 每檔候選按一次訊號獨立計算單筆假設交易；不假設同時買進10檔，不計算組合複利。 | 2019-11-08 | TPEX | 8068 | MATCHED_UNIQUE | 否 | 0.06662476062774658 | 0.911223828792572 | 0.9967319965362549 | 0.3101820647716522 | 0.9793814420700073 | 0.6372218728065491 | 0.017868539318442345 | 0.9800124764442444 | -0.2864174246788025 | 0.36885470151901245 | 0.9231376647949219 | -0.06478198617696762 | 0.6894598007202148 | -0.01002437062561512 | 0.040382031351327896 | 0.037241630256175995 | 0.4244648218154907 | 0.5865443348884583 | 0.5755351781845093 | 0.45137614011764526 | 0.48929664492607117 | -0.005032513290643692 | 0.07886125892400742 | 0.075288325548172 | 0.04065666347742081 | 0 | -0.020662326 | -0.009730968 | 0.25407755 | 0.57654923 | -0.07733333 | 0.013177159 | 0.019033674 | -0.013177159 | 0.1420205 | 2019-11-11 | 2019-11-15 | 2019-12-06 | 2020-02-12 | ORIGINAL_V231 | OBSERVED_MARKET_DATE | 0 | 前瞻報酬_1根_下一根開盤至第N根收盤 | 0.013177159 | 2019-11-11 | EXACT_HORIZON_VALUE_PRESENT
+1 | 一般股票基準成本 | 前10名候選逐檔評估 | 含跨區段 | 2019-11-08 | 756 | 6683 | 雍智科技股份有限公司 | TPEX | 4 | 4 | 低 | 持續評估：預測淨報酬非正 | False | True | -0.00929025836867695 | 0.34834308118329144 | True | True | False | False | True | 已納入個股逐筆評估 | -0.022727251052856445 | -0.030377347927535436 | 每檔候選按一次訊號獨立計算單筆假設交易；不假設同時買進10檔，不計算組合複利。 | 2019-11-08 | TPEX | 6683 | MATCHED_UNIQUE | 否 | 0.0025141420774161816 | 0.8902980089187622 | 0.9849672913551331 | 0.15037086606025696 | 0.8637702465057373 | 0.43223196268081665 | 0.011486917734146118 | 0.9875078201293945 | -0.6175829172134399 | 0.3237694799900055 | 0.7487982511520386 | -0.16295050084590912 | 0.2575189471244812 | -0.01002437062561512 | 0.040382031351327896 | 0.037241630256175995 | 0.4244648218154907 | 0.5865443348884583 | 0.5755351781845093 | 0.45137614011764526 | 0.48929664492607117 | -0.0001899061753647402 | 0.07705024629831314 | 0.0743996798992157 | 0.04333817958831787 | 0 | -0.04501748 | -0.024662426 | 0.0790348 | 0.41649747 | -0.15799615 | -0.022727273 | 0.0022727272 | -0.095454544 | -0.1 | 2019-11-11 | 2019-11-15 | 2019-12-06 | 2020-02-12 | ORIGINAL_V231 | OBSERVED_MARKET_DATE | 0 | 前瞻報酬_1根_下一根開盤至第N根收盤 | -0.022727273 | 2019-11-11 | EXACT_HORIZON_VALUE_PRESENT
+1 | 一般股票基準成本 | 前10名候選逐檔評估 | 含跨區段 | 2019-11-08 | 756 | 3083 | 中華網龍股份有限公司 | TPEX | 5 | 5 | 低 | 持續評估：預測淨報酬非正 | False | True | -0.010052484362602296 | 0.34827223945873054 | True | True | False | False | True | 已納入個股逐筆評估 | -0.02651512622833252 | -0.034135571593673086 | 每檔候選按一次訊號獨立計算單筆假設交易；不假設同時買進10檔，不計算組合複利。 | 2019-11-08 | TPEX | 3083 | MATCHED_UNIQUE | 否 | 0.12445002794265747 | 0.23842740058898926 | 0.9679738283157349 | 0.6331759691238403 | 0.47201767563819885 | 0.6662171483039856 | 0.08806636929512024 | 0.9094315767288208 | -0.2060929536819458 | -0.05705748870968819 | 0.5870002508163452 | 0.04762457683682442 | 0.014591312035918236 | -0.01002437062561512 | 0.040382031351327896 | 0.037241630256175995 | 0.4244648218154907 | 0.5865443348884583 | 0.5755351781845093 | 0.45137614011764526 | 0.48929664492607117 | -0.009400354698300362 | 0.020634541288018227 | 0.07311607897281647 | 0.02894648164510727 | 0 | -0.0027322404 | 0.0071491282 | 0.0043777362 | 0.15892527 | -0.057511736 | -0.026515152 | -0.03409091 | -0.015151516 | -0.015151516 | 2019-11-11 | 2019-11-15 | 2019-12-06 | 2020-02-12 | ORIGINAL_V231 | OBSERVED_MARKET_DATE | 0 | 前瞻報酬_1根_下一根開盤至第N根收盤 | -0.026515152 | 2019-11-11 | EXACT_HORIZON_VALUE_PRESENT
+
+===== 逐筆配對/01_執行摘要.txt =====
+看股最速適 v4.84.9.8｜正式來源重建與 v2.51 逐筆配對
+============================================================================================
+執行時間：2026-11-04T02:16:34
+v4.69：REVIEW_REQUIRED；4,193,745列；特徵 5/5；前瞻標籤 4/4
+v4.70.1：資料品質閘門=True；最終狀態=DATA_GATES_PASS_5_FEATURE_BASELINE_VALIDATED_2_FEATURES_EXCLUDED_NOT_DEPLOYMENT_READY
+v4.70.1 納入模型特徵：收盤相對MA5, 收盤相對MA20, 收盤相對MA60, 收盤相對MA120, 相對前20有效K棒最高價
+v4.70.1 Purged Walk-Forward：20/20 folds
+v2.51 24項特徵重建：22,563/22,563 組目標訊號
+24項全數非缺值：22,563 組；至少一項缺值：0 組
+v2.51逐筆基準區段不一致：0 組；基準來源缺漏：0 組
+v2.51 逐筆資料列數：331,200
+可唯一配對列數：331,200
+多價格區段歧義列數：0
+找不到對應訊號列數：0
+訊號鍵缺漏列數：0
+v2.51 交易鍵重複鍵數：0
+v4.70.1 可與逐筆持有期間 H 精確對應的標籤：1、5、20、60；其他 H 不外插。
+
+配對狀態：
+- MATCHED_UNIQUE：331,200列
+- AMBIGUOUS_MULTIPLE_PRICE_SEGMENTS：0列
+- BASELINE_PRICE_SEGMENT_MISMATCH：0列
+- NO_BASELINE_FEATURE_SOURCE：0列
+- NO_MATCHING_V469_V470_SIGNAL：0列
+- INVALID_SIGNAL_KEY：0列
+
+重要限制：
+- v2.51 逐筆資料沒有價格研究區段；同一日期／市場／股票若在來源資料出現多個區段，標記歧義、不任意挑選。
+- v2.51 原始報酬及交易狀態均原樣保留；本版附加依原 v2.31 基準母體重建的 v2.51 24 項模型特徵，以及 v4.70.1 特徵／前瞻欄位。
+- v2.51 24 項特徵重建時排除 v4.69 後續補入的 7,022 筆星期六列，避免改變原模型的移動視窗與全市場日期軸。
+- v4.70.1 以 20/20 folds 判定 Purged Walk-Forward 完成；仍僅是 5 項已確認特徵基準，2 項未驗證特徵排除，不能視為部署就緒。
+- 逐筆資料配對不等於完整投資組合回測，也不構成正式投資建議。
+- 所有 Drive 來源唯讀；中間計算檔只存在 /content。
+
+===== 逐筆配對/02_v4.84.9.8_manifest.json =====
+{
+  "version": "v4.84.9.8",
+  "created_at": "2026-11-04T02:16:34",
+  "stamp": "20261104_013113",
+  "drive_source_root": "/content/drive/MyDrive/看股最速適",
+  "source_policy": "READ_ONLY",
+  "intermediate_policy": "CONTENT_ONLY",
+  "v469_source_sha256": "db661fc6004cd2fcfc171c346ee8255d734fd44a893256c0066bfdb6278f1ebe",
+  "v4701_source_sha256": "9472ceb22a3d45e83cf09cd4df022696f226dc1ec95fcac426cb4ea54a34ffca",
+  "orchestrator_source_sha256": "73dd73bc2e8ef59e714d829ad7b6e3cc5f3fc282644f21d50b692e0481630e10",
+  "v251_feature_logic_reference_sha256": "2a717acced64bd5bbc428affe20bfdc0e8f9a4b47b3d329a1cbf0ed3de244f09",
+  "v251_feature_logic_note": "24 RANK_FEATURES calculation reproduced from SSO v2.51 make_features(); volume feature set intentionally excluded as in RANK_FEATURES.",
+  "v469_manifest": {
+    "version": "v4.69",
+    "created_at": "2026-11-03T23:59:22",
+    "candidate_source": "/content/drive/MyDrive/看股最速適/看股最速適_v231補行日重建獨立候選資料集_v4_68_1_20261102_000547/01_v231補行日重建獨立候選資料集.csv.gz",
+    "candidate_source_sha256": "a5151cdebe26233389f55bf6189f65d21e1f5df05f025b653963bafc483deb4d",
+    "acceptance_source": "/content/drive/MyDrive/看股最速適/看股最速適_v4684候選資料驗收稽核_v4_68_4_20261102_083440",
+    "acceptance_status": "PASS_FOR_SORTING_AND_FEATURE_REBUILD_NOT_MODEL_READY",
+    "output_file": "/content/SSO_v4_84_9_5_20261103_225951/v4.69_output/01_v231補行日日期排序與已驗證特徵重建候選.csv.gz",
+    "output_sha256": "7debd5cde9d47a42091f7e8a0dec3b5c50808e28c6f1f6c59a55ddaaeb182dd8",
+    "output_rows": 4193745,
+    "output_columns": 29,
+    "date_sorted": true,
+    "duplicate_keys": 0,
+    "saturday_rows": 7022,
+    "saturday_date_counts": {
+      "2018-12-22": 1486,
+      "2017-02-18": 1463,
+      "2017-09-30": 1351,
+      "2018-03-31": 1515,
+      "2017-06-03": 1207
+    },
+    "feature_formula_pass": 5,
+    "feature_formula_total": 5,
+    "forward_formula_pass": 4,
+    "forward_formula_total": 4,
+    "feature_scales": {
+      "收盤相對MA5": 1.0,
+      "收盤相對MA20": 1.0,
+      "收盤相對MA60": 1.0,
+      "收盤相對MA120": 1.0,
+      "相對前20有效K棒最高價": 1.0
+    },
+    "unverified_features": [
+      "MA5相對MA20",
+      "MA20相對MA60"
+    ],
+    "updated_cells": {
+      "label::前瞻報酬_1根_下一根開盤至第N根收盤": 3727835,
+      "label::前瞻報酬_5根_下一根開盤至第N根收盤": 3933248,
+      "label::前瞻報酬_20根_下一根開盤至第N根收盤": 3933201,
+      "label::前瞻報酬_60根_下一根開盤至第N根收盤": 3748940,
+      "feature::收盤相對MA5": 4000220,
+      "feature::收盤相對MA20": 3788701,
+      "feature::相對前20有效K棒最高價": 3802639,
+      "feature::收盤相對MA60": 3406106,
+      "feature::收盤相對MA120": 3014971
+    },
+    "saturday_missing_calculations": {
+      "收盤相對MA60": 827,
+      "收盤相對MA120": 2412,
+      "收盤相對MA20": 451,
+      "相對前20有效K棒最高價": 469,
+      "前瞻報酬_60根_下一根開盤至第N根收盤": 167,
+      "收盤相對MA5": 172,
+      "前瞻報酬_1根_下一根開盤至第N根收盤": 54,
+      "前瞻報酬_5根_下一根開盤至第N根收盤": 106,
+      "前瞻報酬_20根_下一根開盤至第N根收盤": 135
+    },
+    "gate": "REVIEW_REQUIRED",
+    "model_ready": false,
+    "source_rows_group_sort": 4193745,
+    "group_count": 2935,
+    "date_sort_rows": 4193745
+  },
+  "v4701_manifest": {
+    "version": "v4.70.1",
+    "created_at": "2026-11-04T00:39:35",
+    "v469_dir": "/content/SSO_v4_84_9_5_20261103_225951/v4.69_output",
+    "candidate": "/content/SSO_v4_84_9_5_20261103_225951/v4.69_output/01_v231補行日日期排序與已驗證特徵重建候選.csv.gz",
+    "candidate_sha256": "7debd5cde9d47a42091f7e8a0dec3b5c50808e28c6f1f6c59a55ddaaeb182dd8",
+    "rows": 4193745,
+    "saturday_rows": 7022,
+    "saturday_dates": [
+      "2017-02-18",
+      "2017-06-03",
+      "2017-09-30",
+      "2018-03-31",
+      "2018-12-22"
+    ],
+    "v469_evidence": {
+      "rows_report_pass": true,
+      "sat_report_pass": true,
+      "date_report_pass": true,
+      "duplicate_report_pass": true,
+      "feature_formula_pass": 5,
+      "label_formula_pass": 4
+    },
+    "date_sorted": true,
+    "natural_key_duplicates": 0,
+    "saturday_missing_explained": 4793,
+    "saturday_missing_unexplained": 0,
+    "unverified_feature_decisions": [
+      {
+        "特徵欄位": "MA5相對MA20",
+        "判讀": "NOT_VERIFIED",
+        "採用公式": "",
+        "倍率": "",
+        "可比較列數": 4083832,
+        "符合比例": 0.982684400337722,
+        "MAE": 7.085118298020609e-05,
+        "年度最低符合比例": 0.8879246020710752,
+        "理由": "候選公式未達一致性門檻；不猜測、不填值",
+        "星期六補入值筆數": 0
+      },
+      {
+        "特徵欄位": "MA20相對MA60",
+        "判讀": "NOT_VERIFIED",
+        "採用公式": "",
+        "倍率": "",
+        "可比較列數": 3969176,
+        "符合比例": 0.9606845350269174,
+        "MAE": 0.00012990331975987296,
+        "年度最低符合比例": 0.7489680472709961,
+        "理由": "候選公式未達一致性門檻；不猜測、不填值",
+        "星期六補入值筆數": 0
+      }
+    ],
+    "model_features": [
+      "收盤相對MA5",
+      "收盤相對MA20",
+      "收盤相對MA60",
+      "收盤相對MA120",
+      "相對前20有效K棒最高價"
+    ],
+    "feature_formula_pass": 5,
+    "label_formula_pass": 4,
+    "dataset_gate": true,
+    "model_validation": {
+      "aggregate": "   前瞻根數  完成Fold數  ...  測試全體平均報酬_pct                                 判讀\n0     1        5  ...     -0.146509  WALK_FORWARD_VALIDATION_COMPLETED\n1     5        5  ...      0.153052  WALK_FORWARD_VALIDATION_COMPLETED\n2    20        5  ...      1.314481  WALK_FORWARD_VALIDATION_COMPLETED\n3    60        5  ...      4.351532  WALK_FORWARD_VALIDATION_COMPLETED\n\n[4 rows x 12 columns]",
+      "meta": {
+        "unique_dates": 2452,
+        "warmup_dates": 756,
+        "folds_requested": 5,
+        "feature_columns": [
+          "收盤相對MA5",
+          "收盤相對MA20",
+          "收盤相對MA60",
+          "收盤相對MA120",
+          "相對前20有效K棒最高價"
+        ],
+        "model": "HistGradientBoostingClassifier fixed parameters; no tuning",
+        "purging": "train date < test_start AND label_end_date < test_start",
+        "embargo": "Walk-forward is past-only; no post-test rows enter training; explicit label-end purging applied.",
+        "completed_folds": 20,
+        "elapsed_seconds": 116.9
+      }
+    },
+    "completed_folds": 20,
+    "final_status": "DATA_GATES_PASS_5_FEATURE_BASELINE_VALIDATED_2_FEATURES_EXCLUDED_NOT_DEPLOYMENT_READY",
+    "model_ready_for_live_use": false,
+    "model_table": "/content/SSO_v4_84_9_6_20261104_003127/v4.70.1_root/看股最速適_資料品質修復特徵公式辨識與PurgedWalkForward驗證_v4.70.1_20261104_003140/01_v231補行日模型研究資料表.csv.gz",
+    "model_table_sha256": "7fab7fffda276f97324688a873dc76bf9b200a20fae84ed57dc442d19429f7cf"
+  },
+  "v251_zip_sha256": "3b78213b0618678bd883b153e1b8d8d72b074daa4d9d3a2ecd225e80d1f8fdb7",
+  "v251_zip_size_bytes": 23606997,
+  "v251_member": "個股評估逐筆資料_多成本情境_v2.51停用量能.csv",
+  "v251_member_rows": 331200,
+  "pair_output": "01_v4.69_v4.70.1_v2.51逐筆配對.csv.gz",
+  "pair_output_sha256": "f93893931049d3bed76ad7a784993c84c6c07fc53b86be0666dffd7872357c76",
+  "pair_output_size_bytes": 92417854,
+  "pair_counts": {
+    "rows": 331200,
+    "transaction_duplicate_rows": 0,
+    "MATCHED_UNIQUE": 331200,
+    "H_STATUS::EXACT_HORIZON_VALUE_PRESENT": 243000,
+    "H_STATUS::EXACT_HORIZON_COLUMN_BUT_VALUE_EMPTY": 360,
+    "H_STATUS::NO_EXACT_HORIZON_IN_V4.70.1": 87840,
+    "unique_feature_signals": 22563,
+    "ambiguous_signal_keys": 0,
+    "transaction_duplicate_key_count": 0,
+    "holding_period_distribution": {
+      "1": 202800,
+      "3": 67560,
+      "5": 40560,
+      "10": 20280
+    },
+    "holding_period_trade_mode_distribution": {
+      "1|前10名候選逐檔評估": 67600,
+      "1|只交易符合獲利條件": 67600,
+      "1|只交易高潛力": 67600,
+      "3|前10名候選逐檔評估": 22520,
+      "3|只交易符合獲利條件": 22520,
+      "3|只交易高潛力": 22520,
+      "5|前10名候選逐檔評估": 13520,
+      "5|只交易符合獲利條件": 13520,
+      "5|只交易高潛力": 13520,
+      "10|前10名候選逐檔評估": 6760,
+      "10|只交易符合獲利條件": 6760,
+      "10|只交易高潛力": 6760
+    },
+    "output_size_bytes": 92417854,
+    "source_v251_rows": 331200,
+    "source_empty_實際淨報酬": 221004,
+    "source_unique_signal_keys": 22563,
+    "source_unique_transaction_keys": 331200,
+    "source_duplicate_transaction_keys": 0,
+    "feature_v251_baseline_rows": 4186723,
+    "feature_v251_baseline_dates": 2447,
+    "feature_v251_saturday_rows_excluded": 7022,
+    "feature_v251_saturday_dates_excluded": [
+      "2017-02-18",
+      "2017-06-03",
+      "2017-09-30",
+      "2018-03-31",
+      "2018-12-22"
+    ],
+    "feature_v251_duplicate_rows_examined": 0,
+    "feature_v251_source_columns": {
+      "date": "日期",
+      "market": "市場",
+      "symbol": "股票代號",
+      "open": "影子開盤價",
+      "high": "影子最高價",
+      "low": "影子最低價",
+      "close": "影子收盤價",
+      "factor": "20根有效K棒報酬波動率",
+      "segment": "價格研究區段",
+      "volume": "原始成交量_不作指標"
+    },
+    "feature_v251_volume_source_available": true,
+    "feature_v251_volume_positive_rows": 4143522,
+    "feature_v251_target_signal_keys": 22563,
+    "feature_v251_target_keys_rebuilt": 22563,
+    "feature_v251_target_keys_missing_in_baseline": 0,
+    "feature_v251_target_keys_with_all_24_features": 22563,
+    "feature_v251_target_keys_with_any_feature_missing": 0,
+    "feature_v251_feature_logic": "SSO v2.51 make_features() 24 RANK_FEATURES；新增星期六列排除，以重建原始 v2.31 基準",
+    "feature_scanned_model_rows": 4193745,
+    "feature_matched_source_rows": 22563,
+    "feature_unique_matched_signal_keys": 22563,
+    "feature_ambiguous_multi_segment_signal_keys": 0,
+    "feature_baseline_segment_mismatch_signal_keys": 0,
+    "feature_baseline_missing_signal_keys": 0,
+    "feature_duplicate_full_keys": 0,
+    "feature_target_signal_keys": 22563,
+    "feature_unmatched_signal_keys": 0
+  },
+  "feature_fields": [
+    "v251_ret5_rank",
+    "v251_ret20_rank",
+    "v251_ret60_rank",
+    "v251_dist_ma20_rank",
+    "v251_dist_ma60_rank",
+    "v251_range_pos20_rank",
+    "v251_lowvol20_rank",
+    "v251_source_factor_rank",
+    "v251_ret5_abs_scaled",
+    "v251_ret20_abs_scaled",
+    "v251_ret60_abs_scaled",
+    "v251_dist_ma20_abs_scaled",
+    "v251_dist_ma60_abs_scaled",
+    "v251_market_median_ret5",
+    "v251_market_median_ret20",
+    "v251_market_median_ret60",
+    "v251_market_breadth_pos_ret5",
+    "v251_market_breadth_pos_ret20",
+    "v251_market_breadth_pos_ret60",
+    "v251_market_breadth_above_ma20",
+    "v251_market_breadth_above_ma60",
+    "v251_ret5_rank_x_market_breadth",
+    "v251_ret20_rank_x_market_breadth",
+    "v251_ret60_rank_x_market_breadth",
+    "v251_20根有效K棒報酬波動率",
+    "v251_價格研究區段",
+    "v470_收盤相對MA5",
+    "v470_收盤相對MA20",
+    "v470_收盤相對MA60",
+    "v470_收盤相對MA120",
+    "v470_相對前20有效K棒最高價",
+    "v470_前瞻報酬_1根_下一根開盤至第N根收盤",
+    "v470_前瞻報酬_5根_下一根開盤至第N根收盤",
+    "v470_前瞻報酬_20根_下一根開盤至第N根收盤",
+    "v470_前瞻報酬_60根_下一根開盤至第N根收盤",
+    "v470_label_end_1",
+    "v470_label_end_5",
+    "v470_label_end_20",
+    "v470_label_end_60",
+    "v470_樣本來源",
+    "v470_日期類型",
+    "v470_價格研究區段"
+  ],
+  "model_features": [
+    "收盤相對MA5",
+    "收盤相對MA20",
+    "收盤相對MA60",
+    "收盤相對MA120",
+    "相對前20有效K棒最高價"
+  ],
+  "model_walk_forward_completed": true,
+  "model_walk_forward_completed_folds": 20,
+  "formal_deployment_ready": false,
+  "output_drive_dir": "/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113",
+  "git_upload_target": {
+    "repository": "CHLINX/sso",
+    "branch": "audit/v4.84.9.3-rebuild-pipeline",
+    "main_modified": false
+  }
+}
+
+===== 逐筆配對/03_逐筆配對狀態統計.csv =====
+配對狀態 | 資料列數
+MATCHED_UNIQUE | 331200
+AMBIGUOUS_MULTIPLE_PRICE_SEGMENTS | 0
+BASELINE_PRICE_SEGMENT_MISMATCH | 0
+NO_BASELINE_FEATURE_SOURCE | 0
+NO_MATCHING_V469_V470_SIGNAL | 0
+INVALID_SIGNAL_KEY | 0
+
+===== 逐筆配對/04_持有期間與前瞻標籤可用性.csv =====
+持有期間H | v2.51逐筆資料列數 | v4.70.1是否有相同H前瞻標籤 | v4.70.1對應標籤 | v4.70.1精確H標籤狀態分布
+1 | 202800 | True | 前瞻報酬_1根_下一根開盤至第N根收盤 | 請見逐筆配對資料欄位 v470_本筆持有期間H精確標籤狀態
+10 | 20280 | False | 無精確對應標籤 | 請見逐筆配對資料欄位 v470_本筆持有期間H精確標籤狀態
+3 | 67560 | False | 無精確對應標籤 | 請見逐筆配對資料欄位 v470_本筆持有期間H精確標籤狀態
+5 | 40560 | True | 前瞻報酬_5根_下一根開盤至第N根收盤 | 請見逐筆配對資料欄位 v470_本筆持有期間H精確標籤狀態
+
+===== 逐筆配對/05_配對欄位盤點.csv =====
+來源階段 | 欄位 | 狀態
+v2.51原始基準資料依 make_features() 重建 | ret5_rank | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | ret20_rank | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | ret60_rank | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | dist_ma20_rank | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | dist_ma60_rank | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | range_pos20_rank | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | lowvol20_rank | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | source_factor_rank | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | ret5_abs_scaled | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | ret20_abs_scaled | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | ret60_abs_scaled | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | dist_ma20_abs_scaled | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | dist_ma60_abs_scaled | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | market_median_ret5 | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | market_median_ret20 | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | market_median_ret60 | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | market_breadth_pos_ret5 | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | market_breadth_pos_ret20 | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+v2.51原始基準資料依 make_features() 重建 | market_breadth_pos_ret60 | 依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入
+
+===== 逐筆配對/06_來源SHA256.csv =====
+來源 | 路徑 | SHA256
+v4.69 原始程式 | 內嵌原始碼 | db661fc6004cd2fcfc171c346ee8255d734fd44a893256c0066bfdb6278f1ebe
+v4.70.1 原始程式 | 內嵌原始碼 | 9472ceb22a3d45e83cf09cd4df022696f226dc1ec95fcac426cb4ea54a34ffca
+v2.51 ZIP | /content/SSO_v4_84_9_8_20261104_013113/SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip | 3b78213b0618678bd883b153e1b8d8d72b074daa4d9d3a2ecd225e80d1f8fdb7
+v4.69 候選資料 | /content/SSO_v4_84_9_5_20261103_225951/v4.69_output/01_v231補行日日期排序與已驗證特徵重建候選.csv.gz | 7debd5cde9d47a42091f7e8a0dec3b5c50808e28c6f1f6c59a55ddaaeb182dd8
+v4.70.1 模型研究表 | /content/SSO_v4_84_9_6_20261104_003127/v4.70.1_root/看股最速適_資料品質修復特徵公式辨識與PurgedWalkForward驗證_v4.70.1_20261104_003140/01_v231補行日模型研究資料表.csv.gz | 7fab7fffda276f97324688a873dc76bf9b200a20fae84ed57dc442d19429f7cf
+v2.51 原始程式參考快照 | SSO_v2_51_個股獨立評估與量能消融整合版.py | 2a717acced64bd5bbc428affe20bfdc0e8f9a4b47b3d329a1cbf0ed3de244f09
+v2.51 24項特徵重建母體 | v4.69候選排除新增星期六列後之原始基準列 | 7debd5cde9d47a42091f7e8a0dec3b5c50808e28c6f1f6c59a55ddaaeb182dd8
+
+===== 逐筆配對/07_v251_24項特徵重建與來源核對.json =====
+{
+  "v251_baseline_rows": 4186723,
+  "v251_baseline_dates": 2447,
+  "v251_saturday_rows_excluded": 7022,
+  "v251_saturday_dates_excluded": [
+    "2017-02-18",
+    "2017-06-03",
+    "2017-09-30",
+    "2018-03-31",
+    "2018-12-22"
+  ],
+  "v251_duplicate_rows_examined": 0,
+  "v251_source_columns": {
+    "date": "日期",
+    "market": "市場",
+    "symbol": "股票代號",
+    "open": "影子開盤價",
+    "high": "影子最高價",
+    "low": "影子最低價",
+    "close": "影子收盤價",
+    "factor": "20根有效K棒報酬波動率",
+    "segment": "價格研究區段",
+    "volume": "原始成交量_不作指標"
+  },
+  "v251_volume_source_available": true,
+  "v251_volume_positive_rows": 4143522,
+  "v251_target_signal_keys": 22563,
+  "v251_target_keys_rebuilt": 22563,
+  "v251_target_keys_missing_in_baseline": 0,
+  "v251_target_keys_with_all_24_features": 22563,
+  "v251_target_keys_with_any_feature_missing": 0,
+  "v251_feature_logic": "SSO v2.51 make_features() 24 RANK_FEATURES；新增星期六列排除，以重建原始 v2.31 基準",
+  "scanned_model_rows": 4193745,
+  "matched_source_rows": 22563,
+  "unique_matched_signal_keys": 22563,
+  "ambiguous_multi_segment_signal_keys": 0,
+  "baseline_segment_mismatch_signal_keys": 0,
+  "baseline_missing_signal_keys": 0,
+  "duplicate_full_keys": 0,
+  "target_signal_keys": 22563,
+  "unmatched_signal_keys": 0
+}
