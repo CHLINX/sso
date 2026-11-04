@@ -1,0 +1,15 @@
+{
+  "version": "v4.85.6",
+  "stamp": "20261104_083550",
+  "zip_filename": "看股最速適_v4.85.6_獲利資格不通過原因追查_20261104_083550.zip",
+  "zip_size_bytes": 576917,
+  "zip_sha256": "beaae086b8e2e7e81bf52360cfbe7061f924575b0642e59755b3060b890b6e96",
+  "readout_repo_path": "audit_readout/v4.85_20261104_083550",
+  "parts": [
+    {
+      "repo_path": "audit_uploads/v4.85_20261104_083550/看股最速適_v4.85.6_獲利資格不通過原因追查_20261104_083550.zip.part0001",
+      "size_bytes": 576917,
+      "sha256": "beaae086b8e2e7e81bf52360cfbe7061f924575b0642e59755b3060b890b6e96"
+    }
+  ]
+}
