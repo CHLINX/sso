@@ -1,0 +1,276 @@
+name: SSO v4.85.2 factor robustness block bootstrap
+
+on:
+  push:
+    branches:
+      - "audit/v4.84.9.3-rebuild-pipeline"
+    paths:
+      - "audit_requests/v4.85_2_20261104_run.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sso-v4-85-2-factor-block-bootstrap
+  cancel-in-progress: false
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout isolated audit branch
+        uses: actions/checkout@v4
+        with:
+          ref: "audit/v4.84.9.3-rebuild-pipeline"
+          persist-credentials: true
+
+      - name: Install analysis dependencies
+        run: python -m pip install --disable-pip-version-check pandas numpy
+
+      - name: Run monthly block bootstrap and year stability audit
+        run: |
+          python - <<'PY'
+          import json, math
+          from pathlib import Path
+          import numpy as np
+          import pandas as pd
+
+          STAMP = "20261104_013113"
+          SRC = Path("audit_readout/v4.85.1_date_market_validation_20261104_013113/04_逐日期市場高低分位實際報酬差.csv")
+          if not SRC.exists():
+              raise RuntimeError("V4_85_1_DAILY_SPREAD_SOURCE_NOT_FOUND")
+          d = pd.read_csv(SRC, encoding="utf-8-sig", low_memory=False)
+          REQUIRED = [
+              "H", "訊號日期", "市場", "欄位", "欄位類型",
+              "高分位減低分位平均淨報酬差_pct"
+          ]
+          missing = [x for x in REQUIRED if x not in d.columns]
+          if missing:
+              raise RuntimeError("MISSING_COLUMNS: " + repr(missing))
+          d["H"] = pd.to_numeric(d["H"], errors="coerce").astype("Int64")
+          d["訊號日期"] = pd.to_datetime(d["訊號日期"], errors="coerce")
+          d["高分位減低分位平均淨報酬差_pct"] = pd.to_numeric(
+              d["高分位減低分位平均淨報酬差_pct"], errors="coerce"
+          )
+          d = d.dropna(subset=["H", "訊號日期", "高分位減低分位平均淨報酬差_pct"]).copy()
+          if len(d) != 100582:
+              raise RuntimeError(f"V4_85_1_SPREAD_ROW_COUNT_CHANGED: {len(d)}")
+
+          # Combine TWSE/TPEX into one same-date observation before monthly blocking.
+          # Score ranks need sign reversal because numerically smaller rank is better.
+          RANK_FIELDS = {"排名", "獲利可能性排名"}
+          d["方向校正後效果_pct"] = d["高分位減低分位平均淨報酬差_pct"]
+          d["效果方向口徑"] = "高因子值組－低因子值組"
+          rank_mask = d["欄位"].isin(RANK_FIELDS)
+          d.loc[rank_mask, "方向校正後效果_pct"] = -d.loc[
+              rank_mask, "高分位減低分位平均淨報酬差_pct"
+          ]
+          d.loc[rank_mask, "效果方向口徑"] = "較佳排名組（數字較小）－較差排名組（數字較大）"
+
+          date_effects = (
+              d.groupby(["H", "欄位", "欄位類型", "訊號日期", "效果方向口徑"], dropna=False)
+               .agg(
+                   日期平均效果_pct=("方向校正後效果_pct", "mean"),
+                   市場單元數=("市場", "nunique"),
+                   日期市場觀測數=("方向校正後效果_pct", "size")
+               ).reset_index()
+          )
+          date_effects["年月"] = date_effects["訊號日期"].dt.to_period("M")
+          date_effects["年度"] = date_effects["訊號日期"].dt.year
+
+          # A 3-month circular moving-block bootstrap preserves short-run serial dependence.
+          # 1- and 6-month blocks are sensitivity checks, not independent p-value fishing.
+          B = 3000
+          BLOCKS = [1, 3, 6]
+          MIN_MONTHS = 12
+          rng_base = 20261104
+          bootstrap_rows = []
+          monthly_rows = []
+          yearly_rows = []
+
+          groups = list(date_effects.groupby(["H", "欄位", "欄位類型", "效果方向口徑"], sort=True))
+          for gi, (key, g) in enumerate(groups):
+              H, field, typ, direction_label = key
+              monthly = g.groupby("年月")["日期平均效果_pct"].mean().sort_index()
+              span = pd.period_range(monthly.index.min(), monthly.index.max(), freq="M")
+              arr = monthly.reindex(span).to_numpy(dtype=float)
+              n_months = int(np.isfinite(arr).sum())
+              monthly_mean = float(np.nanmean(arr)) if n_months else np.nan
+              date_mean = float(g["日期平均效果_pct"].mean())
+              for m, v in monthly.items():
+                  monthly_rows.append({
+                      "H": int(H), "欄位": field, "欄位類型": typ,
+                      "年月": str(m), "月份平均效果_pct": float(v),
+                      "該月訊號日期數": int((g["年月"] == m).sum())
+                  })
+
+              for y, yg in g.groupby("年度", sort=True):
+                  yearly_rows.append({
+                      "H": int(H), "欄位": field, "欄位類型": typ,
+                      "年度": int(y),
+                      "訊號日期數": int(yg["訊號日期"].nunique()),
+                      "平均日期效果_pct": float(yg["日期平均效果_pct"].mean()),
+                      "正效果日期比例_pct": float((yg["日期平均效果_pct"] > 0).mean()*100)
+                  })
+
+              for block_len in BLOCKS:
+                  out = {
+                      "H": int(H), "欄位": field, "欄位類型": typ,
+                      "效果方向口徑": direction_label,
+                      "日期數": int(g["訊號日期"].nunique()),
+                      "日期市場原始單元數": int(g["日期市場觀測數"].sum()),
+                      "非空月份數": n_months,
+                      "曆月跨度": len(span),
+                      "區塊月數": block_len,
+                      "每月等權平均效果_pct": monthly_mean,
+                      "逐日期等權平均效果_pct": date_mean,
+                      "Bootstrap重抽樣次數": B,
+                      "Bootstrap_95CI下界_pct": np.nan,
+                      "Bootstrap_95CI上界_pct": np.nan,
+                      "Bootstrap效果為正機率_pct": np.nan,
+                      "狀態": "INSUFFICIENT_MONTHS"
+                  }
+                  if n_months >= max(MIN_MONTHS, block_len*3) and len(span) >= block_len*3:
+                      T = len(arr)
+                      nblocks = int(math.ceil(T / block_len))
+                      rng = np.random.default_rng(rng_base + int(H)*1000 + gi*10 + block_len)
+                      starts = rng.integers(0, T, size=(B, nblocks))
+                      offsets = np.arange(block_len)
+                      idx = (starts[:, :, None] + offsets[None, None, :]) % T
+                      idx = idx.reshape(B, -1)[:, :T]
+                      samples = arr[idx]
+                      means = np.nanmean(samples, axis=1)
+                      means = means[np.isfinite(means)]
+                      if len(means):
+                          lo, hi = np.quantile(means, [0.025, 0.975])
+                          out.update({
+                              "Bootstrap_95CI下界_pct": float(lo),
+                              "Bootstrap_95CI上界_pct": float(hi),
+                              "Bootstrap效果為正機率_pct": float((means > 0).mean()*100),
+                              "狀態": "COMPLETED"
+                          })
+                  bootstrap_rows.append(out)
+
+          OUT = Path(f"audit_readout/v4.85.2_factor_block_bootstrap_{STAMP}")
+          OUT.mkdir(parents=True, exist_ok=True)
+          boot = pd.DataFrame(bootstrap_rows)
+          monthly_df = pd.DataFrame(monthly_rows)
+          yearly_df = pd.DataFrame(yearly_rows)
+          boot.to_csv(OUT/"01_因子高低分位月區塊Bootstrap.csv", index=False, encoding="utf-8-sig")
+          monthly_df.to_csv(OUT/"02_每月因子效果序列.csv", index=False, encoding="utf-8-sig")
+          yearly_df.to_csv(OUT/"03_逐年因子方向穩定性.csv", index=False, encoding="utf-8-sig")
+
+          # Identify exact/near-identical factor spreads so redundant encodings are not
+          # counted as independent evidence.
+          duplicate_rows = []
+          keycols = ["H", "訊號日期", "市場"]
+          candidates = sorted(d["欄位"].unique())
+          for H, gh in d.groupby("H", sort=True):
+              tables = {}
+              for field, fg in gh.groupby("欄位"):
+                  tables[field] = fg.set_index(keycols)["高分位減低分位平均淨報酬差_pct"].sort_index()
+              for i, a in enumerate(candidates):
+                  if a not in tables:
+                      continue
+                  for b in candidates[i+1:]:
+                      if b not in tables:
+                          continue
+                      x, y = tables[a].align(tables[b], join="outer")
+                      if len(x) and x.notna().equals(y.notna()):
+                          both = x.notna() & y.notna()
+                          if int(both.sum()) and np.allclose(
+                              x[both].to_numpy(dtype=float), y[both].to_numpy(dtype=float),
+                              rtol=0, atol=1e-12
+                          ):
+                              duplicate_rows.append({
+                                  "H": int(H), "欄位A": a, "欄位B": b,
+                                  "完全相同單元數": int(both.sum()),
+                                  "關係": "PER_DATE_MARKET_SPREAD_IDENTICAL"
+                              })
+          pd.DataFrame(duplicate_rows).to_csv(
+              OUT/"04_因子效果完全重複欄位檢查.csv", index=False, encoding="utf-8-sig"
+          )
+
+          # Compact focus table for the key 5-session feature and v2.51 prediction scores.
+          focus_fields = {
+              "v251_ret5_rank", "v251_ret5_abs_scaled",
+              "v251_ret20_rank", "v251_ret60_rank",
+              "預測淨報酬", "估計淨獲利機率_近似", "排名", "獲利可能性排名"
+          }
+          focus = boot[
+              boot["欄位"].isin(focus_fields) & (boot["區塊月數"] == 3)
+          ].copy()
+          focus.to_csv(OUT/"05_核心因子與模型分數三個月區塊穩健性.csv", index=False, encoding="utf-8-sig")
+
+          manifest = {
+              "version": "v4.85.2",
+              "source_version": "v4.85.1",
+              "source_daily_spread_rows": int(len(d)),
+              "analysis_unit": "先在同一訊號日期平均 TWSE/TPEX 市場單元，再按月份作區塊重抽樣",
+              "bootstrap_replicates_per_group": B,
+              "block_month_lengths": BLOCKS,
+              "bootstrap_interpretation": "95% percentile interval and empirical positive-effect probability; not a causal p-value",
+              "rank_score_direction_corrected": True,
+              "rank_score_fields_reversed": sorted(RANK_FIELDS),
+              "independent_signal_warning": "Adjacent calendar-month blocks are resampled to reduce, but not eliminate, time dependence.",
+              "factor_duplicate_pairs": len(duplicate_rows),
+              "notes": [
+                  "All factor high-minus-low spreads remain descriptive factor associations, not causal effects.",
+                  "For model rank columns, smaller numeric rank is treated as the better-ranked group; sign is reversed to compare better rank minus worse rank.",
+                  "Monthly moving-block bootstrap preserves local serial structure but does not eliminate long-range dependence or selection bias.",
+                  "H=10 has fewer dates and months; any result with insufficient monthly coverage is marked INSUFFICIENT_MONTHS.",
+                  "The source v4.85.1 analysis uses only general-stock baseline cost and already-included valid trades."
+              ]
+          }
+          (OUT/"00_v4.85.2_manifest.json").write_text(
+              json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
+          )
+
+          lines = [
+              "看股最速適 v4.85.2｜因子方向月區塊穩健性檢查",
+              "="*88,
+              f"來源逐日期市場高低分位列：{len(d):,}",
+              f"分析訊號日期數：{date_effects['訊號日期'].nunique():,}",
+              f"區塊重抽樣次數：每組 {B:,}；區塊長度（月）：{BLOCKS}",
+              "排名欄位已修正方向：數字較小的較佳排名組－數字較大的較差排名組。",
+              "",
+              "核心欄位（3個月區塊Bootstrap）："
+          ]
+          for _, r in focus.iterrows():
+              lines.append(
+                  f"- H={int(r['H'])}｜{r['欄位']}｜非空月={int(r['非空月份數'])}｜"
+                  f"效果={r['每月等權平均效果_pct']:.4f}%｜"
+                  f"95%CI=[{r['Bootstrap_95CI下界_pct'] if pd.notna(r['Bootstrap_95CI下界_pct']) else 'NA'}, "
+                  f"{r['Bootstrap_95CI上界_pct'] if pd.notna(r['Bootstrap_95CI上界_pct']) else 'NA'}]｜"
+                  f"效果為正機率={r['Bootstrap效果為正機率_pct'] if pd.notna(r['Bootstrap效果為正機率_pct']) else 'NA'}%"
+              )
+          lines += [
+              "",
+              f"逐日期市場效果完全重複欄位配對數：{len(duplicate_rows)}",
+              "解讀限制：區塊Bootstrap用於檢查時間相依下的方向穩健性，不能證明因果或部署有效。"
+          ]
+          (OUT/"06_v4.85.2_執行摘要.txt").write_text("\n".join(lines), encoding="utf-8")
+          with zipfile.ZipFile(OUT/"看股最速適_v4.85.2_因子月區塊穩健性報告.zip","w",
+                               compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:
+              for p in sorted(OUT.iterdir()):
+                  if p.is_file() and p.suffix.lower() != ".zip":
+                      z.write(p, arcname=p.name)
+
+          print("SSO_V4_85_2_COMPLETED")
+          print(json.dumps({
+              "source_rows":len(d),
+              "groups":len(boot),
+              "completed_bootstrap_groups":int((boot["狀態"]=="COMPLETED").sum()),
+              "duplicate_pairs":len(duplicate_rows),
+              "output":str(OUT)
+          },ensure_ascii=False))
+          PY
+
+      - name: Commit v4.85.2 reports to isolated audit branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "audit_readout/v4.85.2_factor_block_bootstrap_20261104_013113/"
+          git commit -m "Add SSO v4.85.2 factor block bootstrap robustness audit"
+          git push origin "HEAD:refs/heads/audit/v4.84.9.3-rebuild-pipeline"
