@@ -1,0 +1,31 @@
+{
+  "version": "v4.85.1",
+  "source_version": "v4.84.9.8",
+  "source_zip_sha256": "54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428",
+  "paired_rows_total": 331200,
+  "primary_sample_rows": 55098,
+  "primary_scope": "前10名候選逐檔評估 × 一般股票基準成本 × 納入報酬 × 進出場有效 × 實際淨報酬非空",
+  "factor_count": 24,
+  "market_context_factor_count": 8,
+  "stock_specific_factor_count": 16,
+  "group_unit": "持有期間H × 訊號日期 × 市場",
+  "minimum_cross_section_n_for_spearman": 5,
+  "minimum_cross_section_n_for_top_bottom": 6,
+  "H_counts": {
+    "1": 33760,
+    "3": 11231,
+    "5": 6742,
+    "10": 3365
+  },
+  "actual_net_return_missing_in_total_pair_file": 221004,
+  "return_missing_not_included": 221004,
+  "included_but_missing_return": 0,
+  "notes": [
+    "Only 前10名候選逐檔評估 has included realized-return observations; the other two trade modes have zero included realized-return rows in this source file.",
+    "Pressure-cost rows are not pooled with base-cost rows; this date-market refinement uses the general-stock baseline cost once to avoid duplicate cost scenarios.",
+    "Stock-specific factors and v2.51 scores are tested within each signal date and market, then summarized across date-market cells.",
+    "Market-context factors are analyzed at the date-market aggregate level only when each factor has a single value within that cell.",
+    "Daily cross-sectional rho and top/bottom spreads are descriptive robustness diagnostics; they are not causal estimates and date-market cells can still be serially dependent.",
+    "This stage does not retrain the model or use H=3/H=10 as exact v4.70.1 labels."
+  ]
+}
