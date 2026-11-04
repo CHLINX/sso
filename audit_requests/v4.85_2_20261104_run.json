@@ -1,0 +1,7 @@
+{
+  "version": "v4.85.2",
+  "stamp": "20261104_013113",
+  "source_path": "audit_readout/v4.85.1_date_market_validation_20261104_013113/04_逐日期市場高低分位實際報酬差.csv",
+  "source_zip_sha256": "54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428",
+  "request": "Run monthly moving-block bootstrap on v4.85.1 date-market spread data, average markets within each date, test 1/3/6-month blocks, summarize yearly stability and identical factor spreads. Reverse numeric rank direction so smaller rank is better."
+}
