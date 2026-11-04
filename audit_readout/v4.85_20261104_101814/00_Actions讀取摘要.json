@@ -1,0 +1,78 @@
+{
+  "version": "v4.85.8",
+  "stamp": "20261104_101814",
+  "zip_crc": "PASS",
+  "zip_size_bytes": 169441,
+  "zip_sha256": "45228aedcc44bb15401b5e124d26b0047de0d32d120982d8aac3e992c0d9f657",
+  "member_count": 7,
+  "inventory": [
+    {
+      "name": "00_v4.85.8精確原碼比對摘要.json",
+      "size_bytes": 7399,
+      "compressed_bytes": 1673
+    },
+    {
+      "name": "00_v4.85.8精確原碼比對摘要.txt",
+      "size_bytes": 4602,
+      "compressed_bytes": 1504
+    },
+    {
+      "name": "01_指定來源清冊.csv",
+      "size_bytes": 4133,
+      "compressed_bytes": 1512
+    },
+    {
+      "name": "02_精確資格公式與常數命中行.csv",
+      "size_bytes": 358980,
+      "compressed_bytes": 22367
+    },
+    {
+      "name": "03_精確資格公式前後文.csv",
+      "size_bytes": 864336,
+      "compressed_bytes": 139950
+    },
+    {
+      "name": "04_復原候選Notebook比對清冊.csv",
+      "size_bytes": 3733,
+      "compressed_bytes": 1339
+    },
+    {
+      "name": "05_指定來源仍未找到項目.csv",
+      "size_bytes": 27,
+      "compressed_bytes": 32
+    }
+  ],
+  "full_csv_extractions": [
+    {
+      "name": "01_指定來源清冊.csv",
+      "path": "audit_readout/v4.85_20261104_101814/完整CSV報告/01_指定來源清冊.csv",
+      "size_bytes": 4133,
+      "sha256": "4736e72dddb2ad85d6faf6bf1f9107ea9134542bb4543c1500444d196418f606"
+    },
+    {
+      "name": "02_精確資格公式與常數命中行.csv",
+      "path": "audit_readout/v4.85_20261104_101814/完整CSV報告/02_精確資格公式與常數命中行.csv",
+      "size_bytes": 358980,
+      "sha256": "fdd0b2f3ef9a2642bbe01b2f3fd7bb99f587f2cf871c2dbaf4777c2d1b3f1eec"
+    },
+    {
+      "name": "03_精確資格公式前後文.csv",
+      "path": "audit_readout/v4.85_20261104_101814/完整CSV報告/03_精確資格公式前後文.csv",
+      "size_bytes": 864336,
+      "sha256": "cf608052c8da390b9832ddc787faacd2347082863062f7478f931ea32692408b"
+    },
+    {
+      "name": "04_復原候選Notebook比對清冊.csv",
+      "path": "audit_readout/v4.85_20261104_101814/完整CSV報告/04_復原候選Notebook比對清冊.csv",
+      "size_bytes": 3733,
+      "sha256": "fc2541e669ef411f1dc005cf16d8adf8b855348ee8a3c7405b954812e7e1e424"
+    },
+    {
+      "name": "05_指定來源仍未找到項目.csv",
+      "path": "audit_readout/v4.85_20261104_101814/完整CSV報告/05_指定來源仍未找到項目.csv",
+      "size_bytes": 27,
+      "sha256": "d870ac2ac02bc109f50b0a172076d6042ab5577d8900bfdee42688b7e5a14eeb"
+    }
+  ],
+  "status": "READOUT_COMPLETED"
+}

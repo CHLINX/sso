@@ -1,0 +1,405 @@
+===== 00_v4.85.8精確原碼比對摘要.json =====
+{
+  "version": "v4.85.8",
+  "created_at": "2026-11-04T10:18:26+0000",
+  "source_root": "/content/drive/MyDrive/看股最速適",
+  "private_formula_text": "/content/drive/MyDrive/看股最速適/看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt",
+  "notebook_dir": "/content/drive/MyDrive/看股最速適/看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳",
+  "summary": {
+    "pass_gate_assignment_found": true,
+    "oos_min_win_rate_assignment_found": true,
+    "profit_probability_threshold_found": true,
+    "priority_threshold_found": true,
+    "slope_positive_assignment_found": true,
+    "eligible_assignment_found": true,
+    "oos_gate_constants": {
+      "OOS_GATE_LOOKBACK_DAYS": [
+        "756"
+      ],
+      "OOS_GATE_MIN_SAMPLES": [
+        "500"
+      ],
+      "OOS_GATE_MIN_SIGNAL_DAYS": [
+        "20"
+      ],
+      "OOS_GATE_MIN_WIN_RATE": [
+        "0.52"
+      ],
+      "OOS_GATE_MIN_MEAN_NET_RETURN": [
+        "0.0"
+      ]
+    },
+    "notebook_count": 13,
+    "notebook_paths_with_hits": [
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMTdzVERQOFBzbDR5bFJYSjRVZWlxaEExVWc4PQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KQlpyeG1MVGIxU2xHVkVGdWxNb1lOSzBJTmQ4PQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTHE1MFYzNjV5YWtTMlVJK1hETUZtYzdNWDJZPQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVnJYVm1pVVpQbWdDUmdRL1dreDQ4c1lHTkFnPQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KdEZsWXp0RjlOWS80WEwrTlFybHFhZmkxTElBPQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__HEAD.ipynb"
+    ],
+    "source_asset_paths_with_hits": [
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMTdzVERQOFBzbDR5bFJYSjRVZWlxaEExVWc4PQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KQlpyeG1MVGIxU2xHVkVGdWxNb1lOSzBJTmQ4PQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTHE1MFYzNjV5YWtTMlVJK1hETUZtYzdNWDJZPQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVnJYVm1pVVpQbWdDUmdRL1dreDQ4c1lHTkFnPQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KdEZsWXp0RjlOWS80WEwrTlFybHFhZmkxTElBPQ.ipynb",
+      "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__HEAD.ipynb"
+    ],
+    "matched_categories": [
+      "calibration_direction_field",
+      "candidate_state_assignment",
+      "gate_reasons",
+      "min_profit_probability",
+      "oos_function",
+      "oos_gate_constant",
+      "oos_gate_usage",
+      "oos_supported_assignment",
+      "pass_gate_assignment",
+      "priority_profit_probability",
+      "probability_bucket_function",
+      "profit_eligibility_assignment",
+      "slope_positive_assignment",
+      "source_version_marker"
+    ],
+    "source_txt_sha256": "66a81d0b25be6475bf2d3d314976ef4935a1c8365e2ddb55514fe8f84202114b",
+    "pair_validation": {
+      "pair_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/逐筆配對/01_v4.69_v4.70.1_v2.51逐筆配對.csv.gz",
+      "pair_size_bytes": 92417854,
+      "pair_sha256": "f93893931049d3bed76ad7a784993c84c6c07fc53b86be0666dffd7872357c76",
+      "manifest_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/逐筆配對/02_v4.84.9.8_manifest.json",
+      "manifest_version": "v4.84.9.8",
+      "pair_contents_loaded": false
+    },
+    "source_policy": "READ_ONLY",
+    "pair_contents_loaded": false,
+    "notebook_cells_executed": false,
+    "training_policy": "NO_RETRAIN",
+    "github_policy": "CHLINX/sso:audit/v4.84.9.3-rebuild-pipeline; main untouched"
+  },
+  "assignment_values": {
+    "MIN_PROFIT_PROBABILITY": [
+      "0.50"
+    ],
+    "PRIORITY_PROFIT_PROBABILITY": [
+      "0.55"
+    ],
+    "OOS_GATE_LOOKBACK_DAYS": [
+      "756"
+    ],
+    "OOS_GATE_MIN_SAMPLES": [
+      "500"
+    ],
+    "OOS_GATE_MIN_SIGNAL_DAYS": [
+      "20"
+    ],
+    "OOS_GATE_MIN_WIN_RATE": [
+      "0.52"
+    ],
+    "OOS_GATE_MIN_MEAN_NET_RETURN": [
+      "0.0"
+    ]
+  },
+  "hit_line_count": 1007,
+  "context_count": 156,
+  "missing_items": [],
+  "source_modified": false,
+  "pair_contents_loaded": false,
+  "notebooks_executed": false,
+  "model_retrained": false,
+  "status": "EXACT_SOURCE_COMPARISON_COMPLETED"
+}
+
+===== 00_v4.85.8精確原碼比對摘要.txt =====
+看股最速適 v4.85.8｜獲利資格門檻精確原碼與 Notebook 來源比對
+================================================================================================
+私人公式程式片段：/content/drive/MyDrive/看股最速適/看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt
+私人公式片段 SHA256：66a81d0b25be6475bf2d3d314976ef4935a1c8365e2ddb55514fe8f84202114b
+復原候選 Notebook 數：13
+來源命中行數：1007；前後文區塊：156
+
+一、精確常數（以本次來源實際擷取到的賦值為準）
+- MIN_PROFIT_PROBABILITY = 0.50
+- OOS_GATE_LOOKBACK_DAYS = 756
+- OOS_GATE_MIN_MEAN_NET_RETURN = 0.0
+- OOS_GATE_MIN_SAMPLES = 500
+- OOS_GATE_MIN_SIGNAL_DAYS = 20
+- OOS_GATE_MIN_WIN_RATE = 0.52
+- PRIORITY_PROFIT_PROBABILITY = 0.55
+
+二、重點核對項目
+- 歷史機率區間 pass_gate 完整布林條件：命中 5 行
+- OOS_GATE_* 常數定義：命中 16 行
+- slope_positive 上游賦值：命中 21 行
+- eligible 獲利資格布林式：命中 111 行
+- build_oos_calibration_gate 函式：命中 5 行
+
+三、Notebook 清冊
+- 看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMTdzVERQOFBzbDR5bFJYSjRVZWlxaEExVWc4PQ.ipynb｜SCANNED｜命中 1 行｜版本：SSO v4.78
+- 看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb｜SCANNED｜命中 1 行｜版本：SSO v4.82
+- 看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KQlpyeG1MVGIxU2xHVkVGdWxNb1lOSzBJTmQ4PQ.ipynb｜SCANNED｜命中 1 行｜版本：SSO v4.80
+- 看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb｜SCANNED｜命中 0 行｜版本：
+- 看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTHE1MFYzNjV5YWtTMlVJK1hETUZtYzdNWDJZPQ.ipynb｜SCANNED｜命中 1 行｜版本：SSO v4.78
+- 看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb｜SCANNED｜命中 4 行｜版本：SSO v2.40
+- 看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVnJYVm1pVVpQbWdDUmdRL1dreDQ4c1lHTkFnPQ.ipynb｜SCANNED｜命中 1 行｜版本：
+- 看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb｜SCANNED｜命中 1 行｜版本：SSO v2.40
+- 看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KY3FhVEYwTlBjUG5XL0VqbmV4Ym9wNGtYU2ZrPQ.ipynb｜SCANNED｜命中 0 行｜版本：
+- 看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KZk45VjJHRGNoWVF2MHdYL0kva0R4SFgvTTJJPQ.ipynb｜SCANNED｜命中 0 行｜版本：
+- 看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb｜SCANNED｜命中 1 行｜版本：SSO v2.40
+- 看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KdEZsWXp0RjlOWS80WEwrTlFybHFhZmkxTElBPQ.ipynb｜SCANNED｜命中 1 行｜版本：SSO v4.84
+- 看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__HEAD.ipynb｜SCANNED｜命中 1 行｜版本：SSO v4.84.3
+
+四、判讀限制
+- 命中程式片段不等於已證明該 Notebook 就是正式執行時使用的唯一版本；仍須以來源雜湊、版本及輸出欄位逐項比對。
+- 若 OOS_GATE_MIN_WIN_RATE 或 pass_gate 完整式未在指定來源內出現，應明列未找到，不得自行推估數值。
+- 不載入逐筆 CSV.GZ、不執行來源 Notebook、不重訓模型。
+
+===== 01_指定來源清冊.csv =====
+來源路徑 | 大小_bytes | SHA256 | Notebook_cells_estimated | 命中行 | 版本標記 | 狀態
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | 2835214 | 66a81d0b25be6475bf2d3d314976ef4935a1c8365e2ddb55514fe8f84202114b | 75 | 994 | SSO v2.37；SSO v2.38；SSO v2.40；SSO v2.42；SSO v2.43；SSO v2.44；SSO v2.45；SSO v2.46；SSO v2.47；SSO v2.48；SSO v2.48.1；SSO v2.49；SSO v2.50；SSO v2.51 | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMTdzVERQOFBzbDR5bFJYSjRVZWlxaEExVWc4PQ.ipynb | 68750 | c8f183dac97e15312f72f066760d4b10db1aa932b8dfc918e84d225b67c1e6f6 |  | 1 | SSO v4.78 | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb | 56384 | cb8363dbc5f12db8980a757a0c85d80646ba59b275665717b27cd82aa409c7be |  | 1 | SSO v4.82 | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KQlpyeG1MVGIxU2xHVkVGdWxNb1lOSzBJTmQ4PQ.ipynb | 66812 | a810efdb639c8e56b57dc095fc95fcd22037a4ebe6acbb98152f8f60ce04ce7e |  | 1 | SSO v4.80 | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb | 61761 | c15f819bffe1d89117167ea2a4db5971095804a04c1a354051ceb2863aacff6c |  | 0 |  | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTHE1MFYzNjV5YWtTMlVJK1hETUZtYzdNWDJZPQ.ipynb | 64103 | 4e2c2ffe05f38648a9232a83af8fe59431329701bff1b273078a57502acc6321 |  | 1 | SSO v4.78 | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb | 49345 | 8ba1c99b4e117912ab0853b06acad0b1ff3d8bff196ac81b4a33c42c14088dd6 |  | 4 | SSO v2.40 | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVnJYVm1pVVpQbWdDUmdRL1dreDQ4c1lHTkFnPQ.ipynb | 34668 | f01326bbe60eb7c20875e643a54fcc258fae69aa207c45744391678a368176c0 |  | 1 |  | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb | 75974 | d306e34932a56a7b0ca2bf4bfa31b4c613d0913103c9f087173f4714634a92bb |  | 1 | SSO v2.40 | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KY3FhVEYwTlBjUG5XL0VqbmV4Ym9wNGtYU2ZrPQ.ipynb | 6521 | fec735da02403baa398a2f37b407f6e0bd2f3f5daf005af14d17feb209bae0fc |  | 0 |  | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KZk45VjJHRGNoWVF2MHdYL0kva0R4SFgvTTJJPQ.ipynb | 4867 | aea3d01d8620dbee4f23f175c3e54a58bd00e4fa33f183bd56a5249978f85df5 |  | 0 |  | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb | 40877 | dfe6a9c38016c8db3ac20ae4fd15c88a186cdc84421adcc366824f87f1d478c1 |  | 1 | SSO v2.40 | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KdEZsWXp0RjlOWS80WEwrTlFybHFhZmkxTElBPQ.ipynb | 60169 | dc2c8484ebb6312483156e652f0cc764f10b7fb84c16a693ca029eec6aa1aeea |  | 1 | SSO v4.84 | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__HEAD.ipynb | 43623 | 5119061280538d94676a7f3c9930fa4b3a632293f45a608ae4fb9549268d2a81 |  | 1 | SSO v4.84.3 | SCANNED
+
+===== 02_精確資格公式與常數命中行.csv =====
+來源路徑 | 來源類型 | Notebook_Cell | 原始行號 | 檔案物理行號 | 命中類型 | 原始程式行
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 0 | 734 | 27615 | candidate_state_assignment | show_cols = ['合格候選排名', '股票代號', '公司名稱', '預測淨報酬', '估計淨獲利機率_校準', '上漲潛力', '候選狀態']
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 0 | 734 | 28613 | candidate_state_assignment | show_cols = ['合格候選排名', '股票代號', '公司名稱', '預測淨報酬', '估計淨獲利機率_校準', '上漲潛力', '候選狀態']
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 0 | 755 | 32516 | candidate_state_assignment | show_cols = ['合格候選排名', '股票代號', '公司名稱', '預測淨報酬', '估計淨獲利機率_校準', '上漲潛力', '候選狀態']
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 0 | 780 | 38434 | source_version_marker | "模型限制：本版驗證的是 v2.31 資料上可重現的研究基準模型，不宣稱重現原 SSO v2.40 的完整打分／10 檔選股規則；若要驗證該策略，必須把原模型程式與交易規則納入相同 OOS 框架。",
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 0 | 465 | 40035 | profit_eligibility_assignment | eligible = past & (ne < start_i)
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 0 | 465 | 40039 | profit_eligibility_assignment | eligible = past & (ne < start_i)
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 0 | 439 | 40458 | candidate_state_assignment | "下一步不是直接重訓；應先以v2.31原始OHLC＋官方補行日OHLC，逐項建立『候選公式』與原封存輸出值的對照測試。所有未經對照驗證的公式均維持候選狀態。",
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 461 | 698 | candidate_state_assignment | r['修正後研究型候選狀態'] = (
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 461 | 704 | candidate_state_assignment | r['修正後研究型候選狀態'] = (
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 467 | 710 | candidate_state_assignment | combo_rows.sort(key=lambda r:(r['修正後研究型候選狀態'].startswith('可列入'),num(r.get('方法校正後留出期_長倉減全體淨報酬平均超額')) or -999,num(r.get('方法校正後留出期_方向後頂底淨報酬差平均')) or -999),reverse=True)
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 483 | 716 | candidate_state_assignment | 'v2.34最後狀態':r['修正後研究型候選狀態'],
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 3 | 2156 | source_version_marker | SSO v2.42｜選股範圍敏感度診斷與樣本外回測（研究版）
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 318 | 2333 | profit_eligibility_assignment | eligible = labeled['training_label_valid'] & labeled['target_idx'].le(day_idx) & labeled['signal_idx'].ge(window_start)
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 318 | 2339 | profit_eligibility_assignment | eligible = labeled['training_label_valid'] & labeled['target_idx'].le(day_idx) & labeled['signal_idx'].ge(window_start)
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 318 | 2345 | profit_eligibility_assignment | eligible = labeled['training_label_valid'] & labeled['target_idx'].le(day_idx) & labeled['signal_idx'].ge(window_start)
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 318 | 2351 | profit_eligibility_assignment | eligible = labeled['training_label_valid'] & labeled['target_idx'].le(day_idx) & labeled['signal_idx'].ge(window_start)
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 318 | 2357 | profit_eligibility_assignment | eligible = labeled['training_label_valid'] & labeled['target_idx'].le(day_idx) & labeled['signal_idx'].ge(window_start)
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 353 | 2417 | candidate_state_assignment | result['上漲潛力'] = np.select([prob >= 0.60, prob >= 0.50], ['高', '中'], default='低')
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 353 | 2423 | candidate_state_assignment | result['上漲潛力'] = np.select([prob >= 0.60, prob >= 0.50], ['高', '中'], default='低')
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 353 | 2428 | candidate_state_assignment | result['上漲潛力'] = np.select([prob >= 0.60, prob >= 0.50], ['高', '中'], default='低')
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 353 | 2434 | candidate_state_assignment | result['上漲潛力'] = np.select([prob >= 0.60, prob >= 0.50], ['高', '中'], default='低')
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 747 | 3060 | source_version_marker | diagnostics['程式版本'] = 'SSO v2.42'
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 757 | 3068 | source_version_marker | print(f'SSO v2.42｜H{h}：建立標籤與 walk-forward 上漲潛力模型')
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 757 | 3073 | source_version_marker | print(f'SSO v2.42｜H{h}：建立標籤與 walk-forward 上漲潛力模型')
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 757 | 3079 | source_version_marker | print(f'SSO v2.42｜H{h}：建立標籤與 walk-forward 上漲潛力模型')
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 757 | 3085 | source_version_marker | print(f'SSO v2.42｜H{h}：建立標籤與 walk-forward 上漲潛力模型')
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 886 | 3297 | source_version_marker | report.append('SSO v2.42｜選股範圍敏感度診斷與樣本外回測')
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 886 | 3302 | source_version_marker | report.append('SSO v2.42｜選股範圍敏感度診斷與樣本外回測')
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 924 | 3367 | source_version_marker | print('SSO v2.42｜選股範圍敏感度診斷與樣本外回測')
+
+===== 03_精確資格公式前後文.csv =====
+來源路徑 | 來源類型 | Notebook_Cell | 行號範圍 | 命中類型 | 程式碼前後文
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 0 | 27601-27629 | candidate_state_assignment |    [src-line=168; file-line=27601]         raise RuntimeError(f'無法安全製作執行副本：{label} 片段應命中 1 次，實際 {count} 次。')
+   [src-line=169; file-line=27602]     return text.replace(old, new, 1)
+   [src-line=170; file-line=27603] 
+   [src-line=170; file-line=27604] 
+   [src-line=653; file-line=27606]             reader = csv.DictReader(text)
+   [src-line=654; file-line=27607]             fields = reader.fieldnames or []
+   [src-line=655; file-line=27608]             for col in ('持有期間H', '訊號日期', '股票代號', '上漲潛力', '預測淨報酬'):
+   [src-line=656; file-line=27609]                 if col not in fields:
+   [src-line=657; file-line=27610]                     raise RuntimeError(f'{MODEL_MEMBER} 缺少必要欄位：{col}')
+   [src-line=657; file-line=27611] 
+   [src-line=732; file-line=27613]             log(f'── v2.50 原模型達標候選（H5／訊號日 {signal_date}／最多10檔，不足不湊數）：{len(rows_top)} 檔 ──')
+   [src-line=733; file-line=27614]             if rows_top:
+>> [src-line=734; file-line=27615]                 show_cols = ['合格候選排名', '股票代號', '公司名稱', '預測淨報酬', '估計淨獲利機率_校準', '上漲潛力', '候選狀態']
+   [src-line=735; file-line=27616]                 show_cols = [c for c in show_cols if c in fields_top]
+   [src-line=736; file-line=27617]                 log(' | '.join(show_cols))
+   [src-line=736; file-line=27618] 
+   [src-line=745; file-line=27620]         fields_all, rows_all, err_all = read_rows(archive, exact_members['frozen_hypothesis'])
+   [src-line=746; file-line=27621]         if not err_all:
+   [src-line=747; file-line=27622]             required = {'持有期間H', '訊號日期', '上漲潛力', '預測淨報酬'}
+   [src-line=748; file-line=27623]             if not required.issubset(fields_all):
+   [src-line=749; file-line=27624]                 result['凍結假設候選匯出說明'] = f'全市場候選檔缺欄：{sorted(required - set(fields_all))}'
+   [src-line=749; file-line=27625] 
+   [src-line=754; file-line=27627]                         continue
+   [src-line=755; file-line=27628]                     try:
+   [src-line=756; file-line=27629]                         pred = float(str(row.get('預測淨報酬', '')).strip())
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 0 | 28599-28627 | candidate_state_assignment |    [src-line=168; file-line=28599]         raise RuntimeError(f'無法安全製作執行副本：{label} 片段應命中 1 次，實際 {count} 次。')
+   [src-line=169; file-line=28600]     return text.replace(old, new, 1)
+   [src-line=170; file-line=28601] 
+   [src-line=170; file-line=28602] 
+   [src-line=653; file-line=28604]             reader = csv.DictReader(text)
+   [src-line=654; file-line=28605]             fields = reader.fieldnames or []
+   [src-line=655; file-line=28606]             for col in ('持有期間H', '訊號日期', '股票代號', '上漲潛力', '預測淨報酬'):
+   [src-line=656; file-line=28607]                 if col not in fields:
+   [src-line=657; file-line=28608]                     raise RuntimeError(f'{MODEL_MEMBER} 缺少必要欄位：{col}')
+   [src-line=657; file-line=28609] 
+   [src-line=732; file-line=28611]             log(f'── v2.50 原模型達標候選（H5／訊號日 {signal_date}／最多10檔，不足不湊數）：{len(rows_top)} 檔 ──')
+   [src-line=733; file-line=28612]             if rows_top:
+>> [src-line=734; file-line=28613]                 show_cols = ['合格候選排名', '股票代號', '公司名稱', '預測淨報酬', '估計淨獲利機率_校準', '上漲潛力', '候選狀態']
+   [src-line=735; file-line=28614]                 show_cols = [c for c in show_cols if c in fields_top]
+   [src-line=736; file-line=28615]                 log(' | '.join(show_cols))
+   [src-line=736; file-line=28616] 
+   [src-line=745; file-line=28618]         fields_all, rows_all, err_all = read_rows(archive, exact_members['frozen_hypothesis'])
+   [src-line=746; file-line=28619]         if not err_all:
+   [src-line=747; file-line=28620]             required = {'持有期間H', '訊號日期', '上漲潛力', '預測淨報酬'}
+   [src-line=748; file-line=28621]             if not required.issubset(fields_all):
+   [src-line=749; file-line=28622]                 result['凍結假設候選匯出說明'] = f'全市場候選檔缺欄：{sorted(required - set(fields_all))}'
+   [src-line=749; file-line=28623] 
+   [src-line=754; file-line=28625]                         continue
+   [src-line=755; file-line=28626]                     try:
+   [src-line=756; file-line=28627]                         pred = float(str(row.get('預測淨報酬', '')).strip())
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 0 | 32502-32530 | candidate_state_assignment |    [src-line=168; file-line=32502]         raise RuntimeError(f'無法安全製作執行副本：{label} 片段應命中 1 次，實際 {count} 次。')
+   [src-line=169; file-line=32503]     return text.replace(old, new, 1)
+   [src-line=170; file-line=32504] 
+   [src-line=170; file-line=32505] 
+   [src-line=674; file-line=32507]             reader = csv.DictReader(text)
+   [src-line=675; file-line=32508]             fields = reader.fieldnames or []
+   [src-line=676; file-line=32509]             for col in ('持有期間H', '訊號日期', '股票代號', '上漲潛力', '預測淨報酬'):
+   [src-line=677; file-line=32510]                 if col not in fields:
+   [src-line=678; file-line=32511]                     raise RuntimeError(f'{MODEL_MEMBER} 缺少必要欄位：{col}')
+   [src-line=678; file-line=32512] 
+   [src-line=753; file-line=32514]             log(f'── v2.50 原模型達標候選（H5／訊號日 {signal_date}／最多10檔，不足不湊數）：{len(rows_top)} 檔 ──')
+   [src-line=754; file-line=32515]             if rows_top:
+>> [src-line=755; file-line=32516]                 show_cols = ['合格候選排名', '股票代號', '公司名稱', '預測淨報酬', '估計淨獲利機率_校準', '上漲潛力', '候選狀態']
+   [src-line=756; file-line=32517]                 show_cols = [c for c in show_cols if c in fields_top]
+   [src-line=757; file-line=32518]                 log(' | '.join(show_cols))
+   [src-line=757; file-line=32519] 
+   [src-line=766; file-line=32521]         fields_all, rows_all, err_all = read_rows(archive, exact_members['frozen_hypothesis'])
+   [src-line=767; file-line=32522]         if not err_all:
+   [src-line=768; file-line=32523]             required = {'持有期間H', '訊號日期', '上漲潛力', '預測淨報酬'}
+   [src-line=769; file-line=32524]             if not required.issubset(fields_all):
+   [src-line=770; file-line=32525]                 result['凍結假設候選匯出說明'] = f'全市場候選檔缺欄：{sorted(required - set(fields_all))}'
+   [src-line=770; file-line=32526] 
+   [src-line=775; file-line=32528]                         continue
+   [src-line=776; file-line=32529]                     try:
+   [src-line=777; file-line=32530]                         pred = float(str(row.get('預測淨報酬', '')).strip())
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 0 | 38420-38448 | source_version_marker |    [src-line=776; file-line=38420]         f"最終判讀：{final_status}",
+   [src-line=776; file-line=38421] 
+   [src-line=775; file-line=38423]         f"資料品質閘門：{'PASS' if dataset_gate else 'REVIEW_REQUIRED'}",
+   [src-line=776; file-line=38424]         f"最終判讀：{final_status}",
+   [src-line=777; file-line=38425]         "模型說明：HistGradientBoostingClassifier 為本版固定規格的研究基準模型；預測目標為各 horizon 前瞻報酬是否大於 0。",
+   [src-line=778; file-line=38426]         "Purging：訓練列日期必須早於測試起日，且該列自身的 label_end_date 也必須早於測試起日。所有證券依全市場日期分組，避免同日跨 fold。",
+   [src-line=779; file-line=38427]         "模型限制：Top10/Top10% 是逐日橫斷面排序診斷，不等於持有期／換股／停損規則完整的投資組合回測；未扣手續費、證交稅、滑價及流動性成本。",
+   [src-line=779; file-line=38428] 
+   [src-line=776; file-line=38430]         f"最終判讀：{final_status}",
+   [src-line=777; file-line=38431]         "模型說明：HistGradientBoostingClassifier 為本版固定規格的研究基準模型；預測目標為各 horizon 前瞻報酬是否大於 0。",
+   [src-line=778; file-line=38432]         "Purging：訓練列日期必須早於測試起日，且該列自身的 label_end_date 也必須早於測試起日。所有證券依全市場日期分組，避免同日跨 fold。",
+   [src-line=779; file-line=38433]         "模型限制：Top10/Top10% 是逐日橫斷面排序診斷，不等於持有期／換股／停損規則完整的投資組合回測；未扣手續費、證交稅、滑價及流動性成本。",
+>> [src-line=780; file-line=38434]         "模型限制：本版驗證的是 v2.31 資料上可重現的研究基準模型，不宣稱重現原 SSO v2.40 的完整打分／10 檔選股規則；若要驗證該策略，必須把原模型程式與交易規則納入相同 OOS 框架。",
+   [src-line=780; file-line=38435] 
+   [src-line=792; file-line=38437]         "unverified_feature_decisions": [decision_5_20, decision_20_60],
+   [src-line=793; file-line=38438]         "model_features": model_features, "feature_formula_pass": formula_feature_pass,
+   [src-line=794; file-line=38439]         "label_formula_pass": label_formula_pass, "dataset_gate": dataset_gate,
+   [src-line=795; file-line=38440]         "model_validation": model_meta, "completed_folds": completed_folds,
+   [src-line=796; file-line=38441]         "final_status": final_status, "model_ready_for_live_use": False,
+   [src-line=796; file-line=38442] 
+   [src-line=807; file-line=38444]         "01_資料品質閘門重新判定.csv", "02_新增星期六樣本預期缺值與異常分類.csv",
+   [src-line=808; file-line=38445]         "03_兩項未驗證特徵公式候選比較.csv", "04_兩項未驗證特徵公式最終判定.csv",
+   [src-line=809; file-line=38446]         "05_前瞻標籤公式及label_end_date核對.csv", "06_模型特徵範圍與覆蓋率.csv",
+   [src-line=810; file-line=38447]         "07_PurgedWalkForward逐折模型驗證.csv", "08_PurgedWalkForward模型總覽.csv",
+   [src-line=811; file-line=38448]         "09_每日Top10及Top10百分位排序診斷.csv", "10_八個補行日雙市場官方交易日曆.csv",
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 0 | 40021-40053 | profit_eligibility_assignment |    [src-line=453; file-line=40021]     for h in HORIZONS.values():
+   [src-line=453; file-line=40022] 
+   [src-line=451; file-line=40024]     from sklearn.ensemble import HistGradientBoostingClassifier
+   [src-line=452; file-line=40025] 
+   [src-line=453; file-line=40026]     for h in HORIZONS.values():
+   [src-line=454; file-line=40027]         oy = old_y[h]
+   [src-line=455; file-line=40028]         ny = new_y[h]
+   [src-line=455; file-line=40029] 
+   [src-line=461; file-line=40031]             start_i = np.datetime64(start.date(), "D").astype("int32")
+   [src-line=462; file-line=40032]             end_i = np.datetime64(end.date(), "D").astype("int32")
+   [src-line=463; file-line=40033]             # Corrected full training universe: includes every verified Saturday row.
+   [src-line=464; file-line=40034]             past = (new_dates < start_i) & new_valid_x & new_y_valid & new_end_valid[h]
+>> [src-line=465; file-line=40035]             eligible = past & (ne < start_i)
+   [src-line=465; file-line=40036] 
+   [src-line=464; file-line=40038]             past = (new_dates < start_i) & new_valid_x & new_y_valid & new_end_valid[h]
+>> [src-line=465; file-line=40039]             eligible = past & (ne < start_i)
+   [src-line=466; file-line=40040]             train_pool = np.flatnonzero(eligible).astype(np.int64)
+   [src-line=467; file-line=40041]             seed = args.seed + h * 100 + fold
+   [src-line=468; file-line=40042]             chosen = sample_train(train_pool, ny, args.max_train_rows, seed)
+   [src-line=468; file-line=40043] 
+   [src-line=466; file-line=40045]             train_pool = np.flatnonzero(eligible).astype(np.int64)
+   [src-line=467; file-line=40046]             seed = args.seed + h * 100 + fold
+   [src-line=468; file-line=40047]             chosen = sample_train(train_pool, ny, args.max_train_rows, seed)
+   [src-line=469; file-line=40048]             if len(chosen) < 1_000:
+   [src-line=470; file-line=40049]                 raise RuntimeError(f"H{h} F{fold} 訓練樣本不足：{len(chosen):,}")
+   [src-line=470; file-line=40050] 
+   [src-line=468; file-line=40052]             chosen = sample_train(train_pool, ny, args.max_train_rows, seed)
+   [src-line=469; file-line=40053]             if len(chosen) < 1_000:
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 0 | 40444-40472 | candidate_state_assignment |    [src-line=433; file-line=40444]         "- 一般成本：slip=0.001、fee=0.001425、tax=0.003；壓力成本slip=0.002，其餘相同。",
+   [src-line=434; file-line=40445]         "- 封存規格沒有提供可執行的原始分類器程式及完整模型超參數，因此即使補足特徵公式，仍不能稱為v2.40／v2.45原模型精確重現。",
+   [src-line=434; file-line=40446] 
+   [src-line=432; file-line=40448]         "- 回看756個市場日；最近60個市場日完成樣本做Platt logistic校準；每20個市場日更新模型。",
+   [src-line=433; file-line=40449]         "- 一般成本：slip=0.001、fee=0.001425、tax=0.003；壓力成本slip=0.002，其餘相同。",
+   [src-line=434; file-line=40450]         "- 封存規格沒有提供可執行的原始分類器程式及完整模型超參數，因此即使補足特徵公式，仍不能稱為v2.40／v2.45原模型精確重現。",
+   [src-line=435; file-line=40451]         "- v2.62主要前瞻檢視規則仍固定H5／一般成本／僅同區段；至少12個日曆月且H5至少20個有效活躍訊號日後才正式檢視。",
+   [src-line=436; file-line=40452]         "",
+   [src-line=436; file-line=40453] 
+   [src-line=436; file-line=40455]         "",
+   [src-line=437; file-line=40456]         "五、v4.77結論與下一步",
+   [src-line=438; file-line=40457]         "結論：目前可確認特徵欄位與基礎資料候選來源，但不能精確重現原24項特徵公式，也沒有原始分類器程式／完整超參數。",
+>> [src-line=439; file-line=40458]         "下一步不是直接重訓；應先以v2.31原始OHLC＋官方補行日OHLC，逐項建立『候選公式』與原封存輸出值的對照測試。所有未經對照驗證的公式均維持候選狀態。",
+   [src-line=440; file-line=40459]         "只有當24項特徵公式、跨市場母體、價格研究區段、補行日自然鍵、標籤端點與模型超參數均有可核對證據，才可啟動相容重建模型；否則應明確命名為新重建模型，不得稱原策略精確復現。",
+   [src-line=440; file-line=40460] 
+   [src-line=441; file-line=40461] ==========================================================================================
+   [src-line=442; file-line=40462] 版本時間：2026-11-02T15:34:02.852Z
+   [src-line=443; file-line=40463] revision_id：0BxMjNkhpez1KMTdzVERQOFBzbDR5bFJYSjRVZWlxaEExVWc4PQ
+   [src-line=444; file-line=40464] 檔案：/content/drive/MyDrive/看股最速適/看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMTdzVERQOFBzbDR5bFJYSjRVZWlxaEExVWc4PQ.ipynb
+   [src-line=445; file-line=40465] SHA256：c8f183dac97e15312f72f066760d4b10db1aa932b8dfc918e84d225b67c1e6f6
+   [src-line=446; file-line=40466] 特徵覆蓋：24/24
+   [src-line=447; file-line=40467] 
+   [src-line=448; file-line=40468] [24 因子片段]
+   [src-line=449; file-line=40469] 
+   [src-line=450; file-line=40470] (code cell=0, line=57, ret5_rank, 特徵清單／欄位定義)
+   [src-line=55; file-line=40471] # 原十檔 24 項模型輸入；名稱及分組由 v2.48.1/v2.51 封存設定確認。
+   [src-line=56; file-line=40472] FEATURES = [
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/09_私人公式與模型程式片段全文.txt | .txt/extracted-code | 1 | 684-730 | candidate_state_assignment |    [src-line=455; file-line=684]                 spread_cov_ok=spread_cover is not None and spread_cover>=COVERAGE_MIN
+   [src-line=455; file-line=685] 
+   [src-line=452; file-line=687]                 ex=num(r.get(f'{period_label}_長倉減全體淨報酬平均超額'))
+   [src-line=453; file-line=688]                 exq=num(r.get(f'{period_label}_長倉超額BH_q24'))
+   [src-line=454; file-line=689]                 exs=num(r.get(f'{period_label}_長倉超額正值日比例'))
+   [src-line=455; file-line=690]                 spread_cov_ok=spread_cover is not None and spread_cover>=COVERAGE_MIN
+   [src-line=456; file-line=691]                 excess_cov_ok=(long_cover is not None and long_cover>=COVERAGE_MIN and benchmark_cover is not None and benchmark_cover>=COVERAGE_MIN)
+   [src-line=456; file-line=692] 
+   [src-line=457; file-line=694]                 sp_ok=bool(r['開發期可定向'] and n>=MIN_PERIOD_DAYS and spread_cov_ok and sp is not None and sp>0 and spq is not None and spq<=FDR_Q_LIMIT and sps is not None and sps>=MIN_POSITIVE_DAY_SHARE)
+   [src-line=458; file-line=695]                 ex_ok=bool(r['開發期可定向'] and n>=MIN_PERIOD_DAYS and excess_cov_ok and ex is not None and ex>0 and exq is not None and exq<=FDR_Q_LIMIT and exs is not None and exs>=MIN_POSITIVE_DAY_SHARE)
+   [src-line=459; file-line=696]                 r[f'{period_label}_排序能力門檻通過']=sp_ok
+   [src-line=460; file-line=697]                 r[f'{period_label}_長倉超額門檻通過']=ex_ok
+>> [src-line=461; file-line=698]             r['修正後研究型候選狀態'] = (
+   [src-line=461; file-line=699] 
+   [src-line=458; file-line=701]                 ex_ok=bool(r['開發期可定向'] and n>=MIN_PERIOD_DAYS and excess_cov_ok and ex is not None 
+
+===== 04_復原候選Notebook比對清冊.csv =====
+來源路徑 | 大小_bytes | SHA256 | Notebook_cells | 程式碼_cells | 命中行 | 版本標記 | 狀態
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMTdzVERQOFBzbDR5bFJYSjRVZWlxaEExVWc4PQ.ipynb | 68750 | c8f183dac97e15312f72f066760d4b10db1aa932b8dfc918e84d225b67c1e6f6 | 1 | 1 | 1 | SSO v4.78 | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb | 56384 | cb8363dbc5f12db8980a757a0c85d80646ba59b275665717b27cd82aa409c7be | 1 | 1 | 1 | SSO v4.82 | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KQlpyeG1MVGIxU2xHVkVGdWxNb1lOSzBJTmQ4PQ.ipynb | 66812 | a810efdb639c8e56b57dc095fc95fcd22037a4ebe6acbb98152f8f60ce04ce7e | 1 | 1 | 1 | SSO v4.80 | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb | 61761 | c15f819bffe1d89117167ea2a4db5971095804a04c1a354051ceb2863aacff6c | 1 | 1 | 0 |  | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTHE1MFYzNjV5YWtTMlVJK1hETUZtYzdNWDJZPQ.ipynb | 64103 | 4e2c2ffe05f38648a9232a83af8fe59431329701bff1b273078a57502acc6321 | 1 | 1 | 1 | SSO v4.78 | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb | 49345 | 8ba1c99b4e117912ab0853b06acad0b1ff3d8bff196ac81b4a33c42c14088dd6 | 1 | 1 | 4 | SSO v2.40 | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVnJYVm1pVVpQbWdDUmdRL1dreDQ4c1lHTkFnPQ.ipynb | 34668 | f01326bbe60eb7c20875e643a54fcc258fae69aa207c45744391678a368176c0 | 1 | 1 | 1 |  | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb | 75974 | d306e34932a56a7b0ca2bf4bfa31b4c613d0913103c9f087173f4714634a92bb | 1 | 1 | 1 | SSO v2.40 | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KY3FhVEYwTlBjUG5XL0VqbmV4Ym9wNGtYU2ZrPQ.ipynb | 6521 | fec735da02403baa398a2f37b407f6e0bd2f3f5daf005af14d17feb209bae0fc | 1 | 1 | 0 |  | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KZk45VjJHRGNoWVF2MHdYL0kva0R4SFgvTTJJPQ.ipynb | 4867 | aea3d01d8620dbee4f23f175c3e54a58bd00e4fa33f183bd56a5249978f85df5 | 1 | 1 | 0 |  | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb | 40877 | dfe6a9c38016c8db3ac20ae4fd15c88a186cdc84421adcc366824f87f1d478c1 | 1 | 1 | 1 | SSO v2.40 | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KdEZsWXp0RjlOWS80WEwrTlFybHFhZmkxTElBPQ.ipynb | 60169 | dc2c8484ebb6312483156e652f0cc764f10b7fb84c16a693ca029eec6aa1aeea | 1 | 1 | 1 | SSO v4.84 | SCANNED
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__HEAD.ipynb | 43623 | 5119061280538d94676a7f3c9930fa4b3a632293f45a608ae4fb9549268d2a81 | 1 | 1 | 1 | SSO v4.84.3 | SCANNED
+
+===== 05_指定來源仍未找到項目.csv =====
+待確認項目 | 狀態
