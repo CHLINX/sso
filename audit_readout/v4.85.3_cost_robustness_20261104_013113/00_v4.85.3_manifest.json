@@ -1,0 +1,58 @@
+{
+  "version": "v4.85.3",
+  "source_version": "v4.84.9.8",
+  "source_zip_sha256": "54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428",
+  "paired_source_rows": 331200,
+  "included_realized_rows_both_costs": 110196,
+  "factor_and_score_fields_tested": 20,
+  "daily_market_spread_rows": 201164,
+  "paired_daily_market_rows": 100582,
+  "block_bootstrap_replicates": 3000,
+  "block_lengths_months": [
+    1,
+    3,
+    6
+  ],
+  "rank_direction_corrected": true,
+  "cost_key_overlap": [
+    {
+      "H": 1,
+      "一般成本有效列": 16880,
+      "壓力成本有效列": 16880,
+      "兩種成本相同交易鍵": 16880,
+      "僅一般成本存在": 0,
+      "僅壓力成本存在": 0
+    },
+    {
+      "H": 3,
+      "一般成本有效列": 5616,
+      "壓力成本有效列": 5616,
+      "兩種成本相同交易鍵": 5616,
+      "僅一般成本存在": 0,
+      "僅壓力成本存在": 0
+    },
+    {
+      "H": 5,
+      "一般成本有效列": 3372,
+      "壓力成本有效列": 3372,
+      "兩種成本相同交易鍵": 3372,
+      "僅一般成本存在": 0,
+      "僅壓力成本存在": 0
+    },
+    {
+      "H": 10,
+      "一般成本有效列": 1684,
+      "壓力成本有效列": 1684,
+      "兩種成本相同交易鍵": 1684,
+      "僅一般成本存在": 0,
+      "僅壓力成本存在": 0
+    }
+  ],
+  "notes": [
+    "Only 前10名候選逐檔評估 with included, valid-entry, valid-exit and non-missing actual net returns are analyzed.",
+    "General and stress costs are separate and never pooled as independent trades.",
+    "Paired stress-minus-general difference uses identical H/date/market/factor cells from the two cost scenarios.",
+    "Rank scores are sign-reversed so positive effect means the numerically smaller, better rank group wins.",
+    "The monthly moving-block bootstrap is descriptive robustness evidence, not a causal test."
+  ]
+}
