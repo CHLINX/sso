@@ -274,7 +274,7 @@ jobs:
                       "正向日期市場比例_pct": float((vals>0).mean()*100) if len(vals) else np.nan,
                       "Wilcoxon日期市場rho中位偏離0_p": wilcoxon_p(vals)
                   })
-          corr_summary = bh_adjust(pd.DataFrame(corr_summary)) if corr_summary else pd.DataFrame()
+          corr_summary = bh_adjust(pd.DataFrame(corr_summary), "Wilcoxon日期市場rho中位偏離0_p") if corr_summary else pd.DataFrame()
           spreads = pd.DataFrame(all_daily_spread)
           spread_summary = []
           if not spreads.empty:
