@@ -1,0 +1,67 @@
+{
+  "version": "v4.85.7",
+  "stamp": "20261104_085203",
+  "zip_crc": "PASS",
+  "zip_size_bytes": 670091,
+  "zip_sha256": "c35a8eceaaf2859f8f5dd8f1cd83c2d09517442b8c6139120798c929fb2d86bf",
+  "member_count": 6,
+  "inventory": [
+    {
+      "name": "00_v4.85.7來源掃描摘要.json",
+      "size_bytes": 14566,
+      "compressed_bytes": 3084
+    },
+    {
+      "name": "00_v4.85.7來源掃描摘要.txt",
+      "size_bytes": 1560,
+      "compressed_bytes": 963
+    },
+    {
+      "name": "01_來源檔案與ZIP成員清冊.csv",
+      "size_bytes": 104861,
+      "compressed_bytes": 22270
+    },
+    {
+      "name": "02_資格判斷關鍵詞命中明細.csv",
+      "size_bytes": 2885548,
+      "compressed_bytes": 172327
+    },
+    {
+      "name": "03_原始程式碼前後文.csv",
+      "size_bytes": 3021368,
+      "compressed_bytes": 470526
+    },
+    {
+      "name": "04_來源讀取錯誤與略過.csv",
+      "size_bytes": 24,
+      "compressed_bytes": 29
+    }
+  ],
+  "full_csv_extractions": [
+    {
+      "name": "01_來源檔案與ZIP成員清冊.csv",
+      "path": "audit_readout/v4.85_20261104_085203/完整CSV報告/01_來源檔案與ZIP成員清冊.csv",
+      "size_bytes": 104861,
+      "sha256": "81e88170b86429aa17815e8d8f980b202f46752c67879f06a9cfeb83d87fbdf3"
+    },
+    {
+      "name": "02_資格判斷關鍵詞命中明細.csv",
+      "path": "audit_readout/v4.85_20261104_085203/完整CSV報告/02_資格判斷關鍵詞命中明細.csv",
+      "size_bytes": 2885548,
+      "sha256": "ab4bacb7aae55cdd7e2a43944242d88d6a98b8ab6de699ace7a950120c2f0c8b"
+    },
+    {
+      "name": "03_原始程式碼前後文.csv",
+      "path": "audit_readout/v4.85_20261104_085203/完整CSV報告/03_原始程式碼前後文.csv",
+      "size_bytes": 3021368,
+      "sha256": "88e0c551de58bdc43c3b80c50dcab5ff7702179e9071faedd3ed1217aa234199"
+    },
+    {
+      "name": "04_來源讀取錯誤與略過.csv",
+      "path": "audit_readout/v4.85_20261104_085203/完整CSV報告/04_來源讀取錯誤與略過.csv",
+      "size_bytes": 24,
+      "sha256": "b5e06049a85ac9b52bbd95508db4925e8bcec20b4fdc46265e90984e12569ba4"
+    }
+  ],
+  "status": "READOUT_COMPLETED"
+}
