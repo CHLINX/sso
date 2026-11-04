@@ -1,0 +1,15 @@
+{
+  "version": "v4.85.7",
+  "stamp": "20261104_085203",
+  "zip_filename": "看股最速適_v4.85.7_資格判斷上游程式來源追查_20261104_085203.zip",
+  "zip_size_bytes": 670091,
+  "zip_sha256": "c35a8eceaaf2859f8f5dd8f1cd83c2d09517442b8c6139120798c929fb2d86bf",
+  "readout_repo_path": "audit_readout/v4.85_20261104_085203",
+  "parts": [
+    {
+      "repo_path": "audit_uploads/v4.85_20261104_085203/看股最速適_v4.85.7_資格判斷上游程式來源追查_20261104_085203.zip.part0001",
+      "size_bytes": 670091,
+      "sha256": "c35a8eceaaf2859f8f5dd8f1cd83c2d09517442b8c6139120798c929fb2d86bf"
+    }
+  ]
+}
