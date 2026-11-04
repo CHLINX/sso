@@ -1,0 +1,355 @@
+name: SSO v4.85.3 base and stress cost paired factor validation
+
+on:
+  push:
+    branches:
+      - "audit/v4.84.9.3-rebuild-pipeline"
+    paths:
+      - "audit_requests/v4.85_3_20261104_run.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sso-v4-85-3-cost-paired-factor-validation
+  cancel-in-progress: false
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout isolated audit branch
+        uses: actions/checkout@v4
+        with:
+          ref: "audit/v4.84.9.3-rebuild-pipeline"
+          persist-credentials: true
+
+      - name: Install analysis dependencies
+        run: python -m pip install --disable-pip-version-check pandas numpy
+
+      - name: Reassemble verified pair ZIP and compare general versus stress cost
+        run: |
+          python - <<'PY'
+          import hashlib, json, math, zipfile
+          from pathlib import Path
+          import numpy as np
+          import pandas as pd
+
+          STAMP = "20261104_013113"
+          MANIFEST = Path("audit_uploads/v4.84.9.8_20261104_013113/ZIP_PARTS_MANIFEST.json")
+          m = json.loads(MANIFEST.read_text(encoding="utf-8"))
+          EXPECTED_SHA = "54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428"
+          EXPECTED_SIZE = 92845777
+          if m.get("zip_sha256") != EXPECTED_SHA or int(m.get("zip_size_bytes",-1)) != EXPECTED_SIZE:
+              raise RuntimeError("SOURCE_MANIFEST_FINGERPRINT_MISMATCH")
+
+          archive = Path("/tmp/sso_v4_84_9_8.zip")
+          digest = hashlib.sha256()
+          total = 0
+          with archive.open("wb") as out:
+              for part in m["parts"]:
+                  p = Path(part["repo_path"])
+                  data = p.read_bytes()
+                  if len(data) != int(part["size_bytes"]):
+                      raise RuntimeError("PART_SIZE_MISMATCH: "+str(p))
+                  sha = hashlib.sha256(data).hexdigest()
+                  if sha != part["sha256"]:
+                      raise RuntimeError("PART_SHA256_MISMATCH: "+str(p))
+                  out.write(data)
+                  digest.update(data)
+                  total += len(data)
+          if total != EXPECTED_SIZE or digest.hexdigest() != EXPECTED_SHA:
+              raise RuntimeError("REASSEMBLED_SOURCE_FINGERPRINT_MISMATCH")
+
+          member = "逐筆配對/01_v4.69_v4.70.1_v2.51逐筆配對.csv.gz"
+          with zipfile.ZipFile(archive,"r") as zf:
+              bad = zf.testzip()
+              if bad:
+                  raise RuntimeError("ZIP_CRC_FAILURE: "+str(bad))
+              with zf.open(member,"r") as raw:
+                  df = pd.read_csv(raw,compression="gzip",low_memory=False)
+          if len(df) != 331200:
+              raise RuntimeError("PAIRED_ROW_COUNT_CHANGED: "+str(len(df)))
+
+          STOCK_FACTORS = [
+              "v251_ret5_rank","v251_ret20_rank","v251_ret60_rank",
+              "v251_dist_ma20_rank","v251_dist_ma60_rank","v251_range_pos20_rank",
+              "v251_lowvol20_rank","v251_source_factor_rank",
+              "v251_ret5_abs_scaled","v251_ret20_abs_scaled","v251_ret60_abs_scaled",
+              "v251_dist_ma20_abs_scaled","v251_dist_ma60_abs_scaled",
+              "v251_ret5_rank_x_market_breadth","v251_ret20_rank_x_market_breadth",
+              "v251_ret60_rank_x_market_breadth"
+          ]
+          SCORES = ["預測淨報酬","估計淨獲利機率_近似","排名","獲利可能性排名"]
+          FIELDS = STOCK_FACTORS + SCORES
+          COSTS = ["一般股票基準成本","壓力成本"]
+          REQ = [
+              "持有期間H","成本情境","交易模式","訊號日期","市場","股票代號",
+              "納入報酬","進場有效","出場有效","實際淨報酬"
+          ] + FIELDS
+          missing = [c for c in REQ if c not in df.columns]
+          if missing:
+              raise RuntimeError("MISSING_COLUMNS: "+repr(missing))
+
+          def as_bool(s):
+              if pd.api.types.is_bool_dtype(s):
+                  return s.fillna(False)
+              return s.astype(str).str.strip().str.lower().isin(["true","1","yes","y","是","t"])
+          for c in ["納入報酬","進場有效","出場有效"]:
+              df[c+"__b"] = as_bool(df[c])
+          df["持有期間H"] = pd.to_numeric(df["持有期間H"],errors="coerce").astype("Int64")
+          df["實際淨報酬"] = pd.to_numeric(df["實際淨報酬"],errors="coerce")
+          for c in FIELDS:
+              df[c] = pd.to_numeric(df[c],errors="coerce")
+          df["訊號日期"] = pd.to_datetime(df["訊號日期"],errors="coerce")
+
+          base = df[
+              (df["交易模式"]=="前10名候選逐檔評估") &
+              (df["納入報酬__b"]) & (df["進場有效__b"]) &
+              (df["出場有效__b"]) & df["實際淨報酬"].notna() &
+              (df["成本情境"].isin(COSTS))
+          ].copy()
+          if len(base) != 110196:
+              raise RuntimeError("INCLUDED_REALIZED_ROWS_CHANGED: "+str(len(base)))
+
+          # Verify exact matching of included security/date/H keys between cost scenarios.
+          cost_overlap = []
+          keycols = ["持有期間H","訊號日期","市場","股票代號"]
+          for H, gh in base.groupby("持有期間H",sort=True):
+              sets = {}
+              for cost in COSTS:
+                  gc = gh[gh["成本情境"]==cost]
+                  sets[cost] = set(map(tuple,gc[keycols].itertuples(index=False,name=None)))
+              inter = sets[COSTS[0]] & sets[COSTS[1]]
+              cost_overlap.append({
+                  "H":int(H),
+                  "一般成本有效列":len(sets[COSTS[0]]),
+                  "壓力成本有效列":len(sets[COSTS[1]]),
+                  "兩種成本相同交易鍵":len(inter),
+                  "僅一般成本存在":len(sets[COSTS[0]]-sets[COSTS[1]]),
+                  "僅壓力成本存在":len(sets[COSTS[1]]-sets[COSTS[0]])
+              })
+          if any(r["僅一般成本存在"] or r["僅壓力成本存在"] for r in cost_overlap):
+              raise RuntimeError("BASE_STRESS_COST_TRANSACTION_KEYS_NOT_IDENTICAL")
+
+          # Build same-signal-date/market high-vs-low tertile spreads by cost scenario.
+          RANK_FIELDS = {"排名","獲利可能性排名"}
+          spread_rows = []
+          GROUP = ["持有期間H","成本情境","訊號日期","市場"]
+          for gi, (key,g) in enumerate(base.groupby(GROUP,sort=True)):
+              H,cost,date,market = key
+              y = g["實際淨報酬"]
+              n = len(g)
+              if n < 6:
+                  continue
+              for field in FIELDS:
+                  x = g[field]
+                  valid = x.notna() & y.notna()
+                  z = pd.DataFrame({"x":x[valid],"y":y[valid]})
+                  if len(z)<6 or z["x"].nunique()<2:
+                      continue
+                  try:
+                      bins = pd.qcut(z["x"],3,labels=False,duplicates="drop")
+                  except Exception:
+                      continue
+                  if bins.nunique()<2:
+                      continue
+                  lo,hi=bins.min(),bins.max()
+                  low=z.loc[bins==lo,"y"]
+                  high=z.loc[bins==hi,"y"]
+                  if not len(low) or not len(high):
+                      continue
+                  raw=float((high.mean()-low.mean())*100)
+                  effect=-raw if field in RANK_FIELDS else raw
+                  spread_rows.append({
+                      "H":int(H),"成本情境":cost,"訊號日期":date,
+                      "市場":market,"欄位":field,
+                      "欄位類型":"v2.51預測分數" if field in SCORES else "個股因子",
+                      "效果方向口徑":"較佳排名組－較差排名組" if field in RANK_FIELDS else "高因子值組－低因子值組",
+                      "候選數":len(z),"高低分位差_pct":effect,
+                      "高組勝率_pct":float((high>0).mean()*100),
+                      "低組勝率_pct":float((low>0).mean()*100)
+                  })
+          spreads=pd.DataFrame(spread_rows)
+          if spreads.empty:
+              raise RuntimeError("NO_COST_FACTOR_SPREADS_GENERATED")
+
+          # Average two markets to one date-level observation before temporal blocking.
+          date_effect = (
+              spreads.groupby(["H","成本情境","欄位","欄位類型","效果方向口徑","訊號日期"],sort=True)
+                     .agg(
+                         日期平均效果_pct=("高低分位差_pct","mean"),
+                         市場單元數=("市場","nunique")
+                     ).reset_index()
+          )
+          date_effect["年月"]=date_effect["訊號日期"].dt.to_period("M")
+          date_effect["年度"]=date_effect["訊號日期"].dt.year
+
+          B=3000
+          BLOCKS=[1,3,6]
+          bootstrap_rows=[]
+          annual_rows=[]
+          def block_bootstrap(arr,block_len,seed):
+              arr=np.asarray(arr,dtype=float)
+              T=len(arr)
+              nblocks=int(math.ceil(T/block_len))
+              rng=np.random.default_rng(seed)
+              starts=rng.integers(0,T,size=(B,nblocks))
+              offsets=np.arange(block_len)
+              ix=(starts[:,:,None]+offsets[None,None,:])%T
+              ix=ix.reshape(B,-1)[:,:T]
+              samples=arr[ix]
+              means=np.nanmean(samples,axis=1)
+              means=means[np.isfinite(means)]
+              if not len(means):
+                  return (np.nan,np.nan,np.nan)
+              lo,hi=np.quantile(means,[.025,.975])
+              return float(lo),float(hi),float((means>0).mean()*100)
+
+          # Cost-specific effects.
+          groups=list(date_effect.groupby(["H","成本情境","欄位","欄位類型","效果方向口徑"],sort=True))
+          for gi,(key,g) in enumerate(groups):
+              H,cost,field,typ,direction=key
+              monthly=g.groupby("年月")["日期平均效果_pct"].mean().sort_index()
+              span=pd.period_range(monthly.index.min(),monthly.index.max(),freq="M")
+              arr=monthly.reindex(span).to_numpy(dtype=float)
+              nmonths=int(np.isfinite(arr).sum())
+              for block_len in BLOCKS:
+                  out={
+                      "H":int(H),"成本情境":cost,"欄位":field,"欄位類型":typ,
+                      "效果方向口徑":direction,"日期數":int(g["訊號日期"].nunique()),
+                      "非空月份數":nmonths,"區塊月數":block_len,
+                      "月等權平均效果_pct":float(np.nanmean(arr)),
+                      "Bootstrap_95CI下界_pct":np.nan,"Bootstrap_95CI上界_pct":np.nan,
+                      "Bootstrap效果為正機率_pct":np.nan,"狀態":"INSUFFICIENT_MONTHS"
+                  }
+                  if nmonths>=max(12,block_len*3):
+                      lo,hi,pp=block_bootstrap(arr,block_len,20261104+int(H)*1000+gi*10+block_len)
+                      out.update({"Bootstrap_95CI下界_pct":lo,"Bootstrap_95CI上界_pct":hi,
+                                  "Bootstrap效果為正機率_pct":pp,"狀態":"COMPLETED"})
+                  bootstrap_rows.append(out)
+              for year,yg in g.groupby("年度",sort=True):
+                  annual_rows.append({
+                      "H":int(H),"成本情境":cost,"欄位":field,"欄位類型":typ,
+                      "年度":int(year),"訊號日期數":int(yg["訊號日期"].nunique()),
+                      "年度平均效果_pct":float(yg["日期平均效果_pct"].mean()),
+                      "正效果日期比例_pct":float((yg["日期平均效果_pct"]>0).mean()*100)
+                  })
+
+          # Paired stress-cost minus baseline-cost effect on the exact same date-market cells.
+          pivot=spreads.pivot_table(
+              index=["H","欄位","欄位類型","效果方向口徑","訊號日期","市場"],
+              columns="成本情境",values="高低分位差_pct",aggfunc="first"
+          ).reset_index()
+          if not all(c in pivot.columns for c in COSTS):
+              raise RuntimeError("COST_SCENARIO_COLUMNS_MISSING_AFTER_PIVOT")
+          pivot["壓力成本減一般成本效果差_pct"]=pivot["壓力成本"]-pivot["一般股票基準成本"]
+          paired=pivot.dropna(subset=["壓力成本減一般成本效果差_pct"]).copy()
+          paired_date=(
+              paired.groupby(["H","欄位","欄位類型","效果方向口徑","訊號日期"],sort=True)
+                    .agg(成本效果差=("壓力成本減一般成本效果差_pct","mean"),
+                         paired_market_cells=("市場","nunique"))
+                    .reset_index()
+          )
+          paired_date["年月"]=paired_date["訊號日期"].dt.to_period("M")
+          paired_date["年度"]=paired_date["訊號日期"].dt.year
+          paired_rows=[]
+          p_groups=list(paired_date.groupby(["H","欄位","欄位類型","效果方向口徑"],sort=True))
+          for gi,(key,g) in enumerate(p_groups):
+              H,field,typ,direction=key
+              monthly=g.groupby("年月")["成本效果差"].mean().sort_index()
+              span=pd.period_range(monthly.index.min(),monthly.index.max(),freq="M")
+              arr=monthly.reindex(span).to_numpy(dtype=float)
+              nmonths=int(np.isfinite(arr).sum())
+              for bl in BLOCKS:
+                  out={
+                      "H":int(H),"欄位":field,"欄位類型":typ,"效果方向口徑":direction,
+                      "配對日期數":int(g["訊號日期"].nunique()),"非空月份數":nmonths,
+                      "區塊月數":bl,"壓力成本減一般成本月等權平均差_pct":float(np.nanmean(arr)),
+                      "Bootstrap_95CI下界_pct":np.nan,"Bootstrap_95CI上界_pct":np.nan,
+                      "成本差效果為正機率_pct":np.nan,"狀態":"INSUFFICIENT_MONTHS"
+                  }
+                  if nmonths>=max(12,bl*3):
+                      lo,hi,pp=block_bootstrap(arr,bl,20261105+int(H)*1000+gi*10+bl)
+                      out.update({"Bootstrap_95CI下界_pct":lo,"Bootstrap_95CI上界_pct":hi,
+                                  "成本差效果為正機率_pct":pp,"狀態":"COMPLETED"})
+                  paired_rows.append(out)
+
+          OUT=Path(f"audit_readout/v4.85.3_cost_robustness_{STAMP}")
+          OUT.mkdir(parents=True,exist_ok=True)
+          pd.DataFrame(cost_overlap).to_csv(OUT/"01_一般成本與壓力成本交易鍵重疊核對.csv",index=False,encoding="utf-8-sig")
+          spreads.to_csv(OUT/"02_逐日期市場兩種成本因子高低分位差.csv",index=False,encoding="utf-8-sig")
+          pd.DataFrame(bootstrap_rows).to_csv(OUT/"03_兩種成本各自月區塊Bootstrap.csv",index=False,encoding="utf-8-sig")
+          pd.DataFrame(paired_rows).to_csv(OUT/"04_壓力成本相對一般成本配對效果差Bootstrap.csv",index=False,encoding="utf-8-sig")
+          pd.DataFrame(annual_rows).to_csv(OUT/"05_逐年因子效果與成本分層.csv",index=False,encoding="utf-8-sig")
+
+          focus_fields={"v251_ret5_rank","v251_ret20_rank","v251_ret60_rank",
+                        "預測淨報酬","估計淨獲利機率_近似","排名"}
+          focus=pd.DataFrame(bootstrap_rows)
+          focus=focus[focus["欄位"].isin(focus_fields)&(focus["區塊月數"]==3)]
+          focus.to_csv(OUT/"06_核心因子兩種成本三個月Bootstrap.csv",index=False,encoding="utf-8-sig")
+          paired_focus=pd.DataFrame(paired_rows)
+          paired_focus=paired_focus[paired_focus["欄位"].isin(focus_fields)&(paired_focus["區塊月數"]==3)]
+          paired_focus.to_csv(OUT/"07_核心因子壓力成本額外影響.csv",index=False,encoding="utf-8-sig")
+
+          manifest={
+              "version":"v4.85.3","source_version":"v4.84.9.8",
+              "source_zip_sha256":EXPECTED_SHA if False else m["zip_sha256"],
+              "paired_source_rows":len(df),"included_realized_rows_both_costs":len(base),
+              "factor_and_score_fields_tested":len(FIELDS),
+              "daily_market_spread_rows":len(spreads),
+              "paired_daily_market_rows":len(paired),
+              "block_bootstrap_replicates":B,"block_lengths_months":BLOCKS,
+              "rank_direction_corrected":True,
+              "cost_key_overlap":cost_overlap,
+              "notes":[
+                  "Only 前10名候選逐檔評估 with included, valid-entry, valid-exit and non-missing actual net returns are analyzed.",
+                  "General and stress costs are separate and never pooled as independent trades.",
+                  "Paired stress-minus-general difference uses identical H/date/market/factor cells from the two cost scenarios.",
+                  "Rank scores are sign-reversed so positive effect means the numerically smaller, better rank group wins.",
+                  "The monthly moving-block bootstrap is descriptive robustness evidence, not a causal test."
+              ]
+          }
+          (OUT/"00_v4.85.3_manifest.json").write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding="utf-8")
+
+          lines=[
+              "看股最速適 v4.85.3｜一般成本與壓力成本因子穩健性",
+              "="*88,
+              f"來源：v4.84.9.8 ZIP SHA256 {m['zip_sha256']}",
+              f"正式納入實際報酬列（兩種成本合計）：{len(base):,}",
+              "只分析前10名候選逐檔評估；兩成本分開估計，並以同日期／市場／股票配對檢查。",
+              "",
+              "一般成本與壓力成本交易鍵核對："
+          ]
+          for r in cost_overlap:
+              lines.append(f"- H={r['H']}：一般={r['一般成本有效列']:,}；壓力={r['壓力成本有效列']:,}；配對={r['兩種成本相同交易鍵']:,}；僅一般={r['僅一般成本存在']:,}；僅壓力={r['僅壓力成本存在']:,}")
+          lines += [
+              "",
+              "核心因子及模型分數：見 06、07。",
+              "所有效果為高低因子分位差；排名欄位已改為較佳排名組減較差排名組。",
+              "壓力成本相對一般成本差異為配對差，負值代表成本壓力使該排序效果變差。",
+              "注意：因子差異仍屬歷史關聯，不能視為獨立驗證或可直接部署的投資訊號。"
+          ]
+          (OUT/"08_v4.85.3_執行摘要.txt").write_text("\n".join(lines),encoding="utf-8")
+          with zipfile.ZipFile(OUT/"看股最速適_v4.85.3_成本情境穩健性報告.zip","w",
+                               compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:
+              for p in sorted(OUT.iterdir()):
+                  if p.is_file() and p.suffix.lower() != ".zip":
+                      z.write(p,arcname=p.name)
+
+          print("SSO_V4_85_3_COMPLETED")
+          print(json.dumps({
+              "included_rows":len(base),"spread_rows":len(spreads),
+              "paired_rows":len(paired),"groups":len(bootstrap_rows)+len(paired_rows),
+              "output":str(OUT)
+          },ensure_ascii=False))
+          PY
+
+      - name: Commit v4.85.3 cost robustness reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "audit_readout/v4.85.3_cost_robustness_20261104_013113/"
+          git commit -m "Add SSO v4.85.3 general and stress cost robustness audit"
+          git push origin "HEAD:refs/heads/audit/v4.84.9.3-rebuild-pipeline"
