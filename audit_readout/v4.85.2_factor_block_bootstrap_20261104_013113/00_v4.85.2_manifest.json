@@ -1,0 +1,27 @@
+{
+  "version": "v4.85.2",
+  "source_version": "v4.85.1",
+  "source_daily_spread_rows": 100582,
+  "analysis_unit": "先在同一訊號日期平均 TWSE/TPEX 市場單元，再按月份作區塊重抽樣",
+  "bootstrap_replicates_per_group": 3000,
+  "block_month_lengths": [
+    1,
+    3,
+    6
+  ],
+  "bootstrap_interpretation": "95% percentile interval and empirical positive-effect probability; not a causal p-value",
+  "rank_score_direction_corrected": true,
+  "rank_score_fields_reversed": [
+    "排名",
+    "獲利可能性排名"
+  ],
+  "independent_signal_warning": "Adjacent calendar-month blocks are resampled to reduce, but not eliminate, time dependence.",
+  "factor_duplicate_pairs": 24,
+  "notes": [
+    "All factor high-minus-low spreads remain descriptive factor associations, not causal effects.",
+    "For model rank columns, smaller numeric rank is treated as the better-ranked group; sign is reversed to compare better rank minus worse rank.",
+    "Monthly moving-block bootstrap preserves local serial structure but does not eliminate long-range dependence or selection bias.",
+    "H=10 has fewer dates and months; any result with insufficient monthly coverage is marked INSUFFICIENT_MONTHS.",
+    "The source v4.85.1 analysis uses only general-stock baseline cost and already-included valid trades."
+  ]
+}
