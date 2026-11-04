@@ -1,0 +1,71 @@
+{
+  "version": "v4.85.1",
+  "stamp": "20261104_053248",
+  "zip_crc": "PASS",
+  "zip_size_bytes": 94828,
+  "zip_sha256": "ad26130e7b342df6754155d2b345f268876cf225359e05a136e10157e90fe6cb",
+  "member_count": 12,
+  "inventory": [
+    {
+      "name": "00_v4.85執行摘要.json",
+      "size_bytes": 3970,
+      "compressed_bytes": 1242
+    },
+    {
+      "name": "00_v4.85執行摘要.txt",
+      "size_bytes": 1211,
+      "compressed_bytes": 734
+    },
+    {
+      "name": "01_實際淨報酬空值總覽.csv",
+      "size_bytes": 421,
+      "compressed_bytes": 217
+    },
+    {
+      "name": "02_實際淨報酬空值交叉分類.csv",
+      "size_bytes": 9406,
+      "compressed_bytes": 701
+    },
+    {
+      "name": "03_空值與原始交易狀態分布.csv",
+      "size_bytes": 563,
+      "compressed_bytes": 255
+    },
+    {
+      "name": "04_H成本交易模式淨報酬可用率.csv",
+      "size_bytes": 2349,
+      "compressed_bytes": 500
+    },
+    {
+      "name": "05_24因子分層關聯IC與日市場IC.csv",
+      "size_bytes": 345415,
+      "compressed_bytes": 14544
+    },
+    {
+      "name": "06_24因子分位組實際報酬.csv",
+      "size_bytes": 723712,
+      "compressed_bytes": 70587
+    },
+    {
+      "name": "07_H成本交易模式分析母體.csv",
+      "size_bytes": 7855,
+      "compressed_bytes": 928
+    },
+    {
+      "name": "08_v470精確H標籤可用性.csv",
+      "size_bytes": 3003,
+      "compressed_bytes": 398
+    },
+    {
+      "name": "09_24因子訊號層級覆蓋與分布.csv",
+      "size_bytes": 4361,
+      "compressed_bytes": 1923
+    },
+    {
+      "name": "10_v4.85來源與驗證manifest.json",
+      "size_bytes": 2813,
+      "compressed_bytes": 995
+    }
+  ],
+  "status": "READOUT_COMPLETED"
+}
