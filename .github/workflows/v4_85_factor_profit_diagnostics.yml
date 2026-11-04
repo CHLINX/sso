@@ -77,6 +77,7 @@ jobs:
                       "compressed_bytes": info.compress_size
                   })
                   base = Path(name).name
+                  lower = name.lower()
                   if lower.endswith(".csv") or lower.endswith(".csv.gz"):
                       target = full_tables / base
                       if name.lower().endswith(".csv.gz"):
