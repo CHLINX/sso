@@ -1,0 +1,64 @@
+{
+  "version": "v4.84.9.8",
+  "stamp": "20261104_013113",
+  "zip_filename": "看股最速適_v4.84.9.8_整合重建與v2.51逐筆配對_20261104_013113.zip",
+  "zip_size_bytes": 92845777,
+  "zip_sha256": "54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428",
+  "readout_repo_path": "audit_readout/v4.84.9.8_20261104_013113",
+  "parts": [
+    {
+      "repo_path": "audit_uploads/v4.84.9.8_20261104_013113/看股最速適_v4.84.9.8_整合重建與v2.51逐筆配對_20261104_013113.zip.part0001",
+      "size_bytes": 10485760,
+      "sha256": "f5ae503579c3fd203e164d0fc43f8154104071a647016456161f1f74847660e3",
+      "github_blob_sha": "6adff974d7f2a6db022b95a50ff70e8c99537fd2"
+    },
+    {
+      "repo_path": "audit_uploads/v4.84.9.8_20261104_013113/看股最速適_v4.84.9.8_整合重建與v2.51逐筆配對_20261104_013113.zip.part0002",
+      "size_bytes": 10485760,
+      "sha256": "65d211fe23e90c2f8006b93cf1eab03be0c41d84def0e0f5902d996afb83fbbc",
+      "github_blob_sha": "7e1270d61fbc67b91151db16929567d8326b7657"
+    },
+    {
+      "repo_path": "audit_uploads/v4.84.9.8_20261104_013113/看股最速適_v4.84.9.8_整合重建與v2.51逐筆配對_20261104_013113.zip.part0003",
+      "size_bytes": 10485760,
+      "sha256": "2be9e8e933b862118facc384e0d32b8c8f0f2086f600c0d0a7624eb476099d10",
+      "github_blob_sha": "12d12195d92d4d220af04d7dcabc97d57cc2af4b"
+    },
+    {
+      "repo_path": "audit_uploads/v4.84.9.8_20261104_013113/看股最速適_v4.84.9.8_整合重建與v2.51逐筆配對_20261104_013113.zip.part0004",
+      "size_bytes": 10485760,
+      "sha256": "9e44e659ab6d2cd3544d63891dadcc9b26895ae6c1c5a87f286b9df46f169529",
+      "github_blob_sha": "1f66640c25041c383499d3358923b3fe42cbc676"
+    },
+    {
+      "repo_path": "audit_uploads/v4.84.9.8_20261104_013113/看股最速適_v4.84.9.8_整合重建與v2.51逐筆配對_20261104_013113.zip.part0005",
+      "size_bytes": 10485760,
+      "sha256": "8e3761ee0ce927fbe69f389cc5a48324ab562265b0d7385282f6195883e8e091",
+      "github_blob_sha": "39fa2eb709d23a1ab236278043a05bb2516b6502"
+    },
+    {
+      "repo_path": "audit_uploads/v4.84.9.8_20261104_013113/看股最速適_v4.84.9.8_整合重建與v2.51逐筆配對_20261104_013113.zip.part0006",
+      "size_bytes": 10485760,
+      "sha256": "b59b112080f1ef0ff12f7ce6bfb1624c1bb156e8dd81038b83fe1de321fe0040",
+      "github_blob_sha": "70c30438ebc3f3d9029a36c2843400805c488964"
+    },
+    {
+      "repo_path": "audit_uploads/v4.84.9.8_20261104_013113/看股最速適_v4.84.9.8_整合重建與v2.51逐筆配對_20261104_013113.zip.part0007",
+      "size_bytes": 10485760,
+      "sha256": "67757687899196a1dbfb5a889cd32fee61626c8a8dd1d64bd37dea394ae74ef9",
+      "github_blob_sha": "820ebcabce610bcc762ca543888dc2e878d71c3a"
+    },
+    {
+      "repo_path": "audit_uploads/v4.84.9.8_20261104_013113/看股最速適_v4.84.9.8_整合重建與v2.51逐筆配對_20261104_013113.zip.part0008",
+      "size_bytes": 10485760,
+      "sha256": "0ae0f57b6e29316c4a002cde0179b35d7d8ecfedaa1e675db83333e1b4872324",
+      "github_blob_sha": "24f53248bff7797e734f5f864ad614d94ff845a5"
+    },
+    {
+      "repo_path": "audit_uploads/v4.84.9.8_20261104_013113/看股最速適_v4.84.9.8_整合重建與v2.51逐筆配對_20261104_013113.zip.part0009",
+      "size_bytes": 8959697,
+      "sha256": "c46fd532efbb00922effe1e1cbdb64b333244338c074a10d048b728200a0b93d",
+      "github_blob_sha": "df83c5ca427066b9ac7c8e79cc6080410031f78b"
+    }
+  ]
+}
