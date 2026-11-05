@@ -1,0 +1,152 @@
+name: Audit v4.87.4 result ZIP
+
+on:
+  push:
+    branches:
+      - audit/v4874-results-review-20261105
+
+permissions:
+  contents: read
+
+jobs:
+  inspect-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout audit branch
+        uses: actions/checkout@v4
+
+      - name: Download and inspect v4.87.4 release
+        env:
+          ZIP_URL: https://github.com/CHLINX/sso/releases/download/sso-v4.87.4-20261105_084557/SSO_v4.87.4_factor_validation_20261105_084557.zip
+          EXPECTED_SHA256: d4cb82aeb20a60bf4539b6c11ca861523f0932b37e26c316e035fcaa0821ef97
+        run: |
+          python -m pip install --quiet pandas
+          python - <<'PY'
+          import os, io, json, csv, hashlib, urllib.request, zipfile
+          import pandas as pd
+
+          url = os.environ["ZIP_URL"]
+          expected = os.environ["EXPECTED_SHA256"]
+          print("=== v4.87.4 RELEASE AUDIT ===")
+          print("URL:", url)
+          req = urllib.request.Request(url, headers={"User-Agent":"SSO-v4.87.4-audit"})
+          with urllib.request.urlopen(req, timeout=60) as r:
+              blob = r.read()
+          actual = hashlib.sha256(blob).hexdigest()
+          print("ZIP_BYTES:", len(blob))
+          print("ZIP_SHA256:", actual)
+          assert actual == expected, "Release ZIP SHA256 mismatch"
+          z = zipfile.ZipFile(io.BytesIO(blob))
+          bad = z.testzip()
+          assert bad is None, f"CRC failure: {bad}"
+          names = z.namelist()
+          print("ZIP_CRC: PASS")
+          print("MEMBER_COUNT:", len(names))
+          for n in names: print("MEMBER:", n)
+
+          manifest_name = next(n for n in names if "manifest" in n.lower())
+          summary_name = next(n for n in names if n.lower().endswith(".txt"))
+          manifest = json.loads(z.read(manifest_name).decode("utf-8-sig"))
+          print("\n=== MANIFEST ===")
+          print(json.dumps(manifest, ensure_ascii=False, indent=2)[:16000])
+          print("\n=== EXECUTION SUMMARY ===")
+          print(z.read(summary_name).decode("utf-8-sig")[:16000])
+
+          frames = {}
+          for n in names:
+              if n.lower().endswith(".csv"):
+                  frames[n] = pd.read_csv(io.BytesIO(z.read(n)), encoding="utf-8-sig")
+                  print("\nCSV:", n, "SHAPE:", frames[n].shape)
+                  print("COLUMNS:", json.dumps(list(frames[n].columns), ensure_ascii=False))
+                  for c in frames[n].columns:
+                      if any(k in str(c) for k in ["標籤口徑","異常","類型","方向","狀態","組別"]):
+                          vals = frames[n][c].dropna().astype(str).unique().tolist()
+                          if vals: print("VALUES", c, json.dumps(vals[:30], ensure_ascii=False))
+
+          def get_frame(prefix):
+              return next((v for k,v in frames.items() if k.startswith(prefix)), None)
+
+          def section(title, df, maxrows=100):
+              if df is None:
+                  print("\n###", title, "MISSING")
+                  return
+              print("\n###", title, "ROWS", len(df))
+              if len(df) <= maxrows:
+                  print(df.to_string(index=False, max_cols=40))
+              else:
+                  print(df.head(maxrows).to_string(index=False))
+
+          # Compact reports: inspect all rows.
+          section("DUPLICATE PAIR SUMMARY (04)", get_frame("04_"), 100)
+          section("DUPLICATE PAIR DETAIL (03)", get_frame("03_"), 100)
+          section("LONG HORIZON CANDIDATES (07)", get_frame("07_"), 100)
+          section("SOURCE / LABEL QUALITY (08)", get_frame("08_"), 100)
+          section("LABEL COVERAGE (09)", get_frame("09_"), 100)
+
+          # Direction and monotonicity: focus on primary horizons and path-complete evidence.
+          for prefix, title in [("01_","FACTOR DIRECTION"), ("02_","DECILE MONOTONICITY"), ("10_","FULL DIRECTION EVIDENCE")]:
+              df = get_frame(prefix)
+              if df is None: continue
+              print("\n###", title, "ALL ROWS", len(df))
+              print("COLUMNS:", json.dumps(list(df.columns), ensure_ascii=False))
+              # Print a sample and also rows selected by primary horizon where available.
+              hcol = next((c for c in df.columns if c in ["持有期","H","horizon"]), None)
+              labelcol = next((c for c in df.columns if "標籤口徑" in str(c)), None)
+              selected = df.copy()
+              if hcol:
+                  selected = selected[selected[hcol].astype(str).isin(["1","3","5","10","30","100","1.0","3.0","5.0","10.0","30.0","100.0"])]
+              if labelcol:
+                  labels = selected[labelcol].dropna().astype(str).unique().tolist()
+                  print("LABELS:", json.dumps(labels, ensure_ascii=False))
+                  path_labels = [x for x in labels if ("完整" in x and "路徑" in x) or "path" in x.lower()]
+                  if path_labels:
+                      selected = selected[selected[labelcol].astype(str).isin(path_labels)]
+              # Keep a targeted full print; prioritize rows indicating positive Q10-Q1 or monotonic support.
+              if len(selected) <= 180:
+                  print(selected.to_string(index=False, max_cols=40))
+              else:
+                  print(selected.head(180).to_string(index=False, max_cols=40))
+
+          # Stability summary: aggregate without implying overlapping groups are independent.
+          stab = get_frame("05_")
+          if stab is not None:
+              print("\n### STABILITY COLUMN REVIEW")
+              print(json.dumps(list(stab.columns), ensure_ascii=False))
+              print(stab.head(18).to_string(index=False, max_cols=30))
+              # Candidate likely grouping and status columns
+              factor_col = next((c for c in stab.columns if "因子" in str(c)), None)
+              horizon_col = next((c for c in stab.columns if c in ["持有期","H","horizon"]), None)
+              if factor_col and horizon_col:
+                  print("\nSTABILITY COUNTS BY HORIZON")
+                  print(stab.groupby(horizon_col).size().to_string())
+                  status_cols = [c for c in stab.columns if any(k in str(c) for k in ["正向","穩定","差距","樣本"])]
+                  print("STABILITY_METRIC_COLUMNS:", json.dumps(status_cols, ensure_ascii=False))
+
+          # Anomaly queue: identify why rows were flagged and where extremes concentrate.
+          anomaly = get_frame("06_")
+          if anomaly is not None:
+              print("\n### ANOMALY QUEUE SCHEMA")
+              print(json.dumps(list(anomaly.columns), ensure_ascii=False))
+              print("ANOMALY_HEAD:")
+              print(anomaly.head(25).to_string(index=False, max_cols=40))
+              print("\nANOMALY_DESCRIBE:")
+              print(anomaly.describe(include="all").to_string())
+              for c in anomaly.columns:
+                  if anomaly[c].dtype == object:
+                      vals = anomaly[c].dropna().astype(str)
+                      if len(vals):
+                          counts = vals.value_counts().head(30)
+                          if len(counts) > 1:
+                              print("\nANOMALY_VALUE_COUNTS:", c)
+                              print(counts.to_string())
+              numeric = anomaly.select_dtypes(include="number")
+              if not numeric.empty:
+                  print("\nANOMALY_NUMERIC_EXTREMES:")
+                  for c in numeric.columns:
+                      s = numeric[c].dropna()
+                      if len(s):
+                          print(c, "min=", s.min(), "median=", s.median(), "max=", s.max())
+
+          print("\n=== AUDIT END: HASH AND CRC VERIFIED ===")
+          PY
