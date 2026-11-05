@@ -163,7 +163,7 @@ jobs:
               ].copy()
               d["H"] = pd.to_numeric(d["H"], errors="coerce")
               m["H"] = pd.to_numeric(m["H"], errors="coerce")
-              d = d.merge(m[["研究母體","因子","H","平均報酬Spearman","正報酬比例Spearman","報酬方向步階一致率","平均報酬完全單調遞增","平均報酬完全單調遞減"]], on=["研究母體","因子","H"], how="left")
+              # File 10 already carries the joined monotonicity evidence; do not merge duplicate columns.
               print("\n=== COMPACT PRIMARY-HORIZON FACTOR TABLE ===")
               for factor, g in d.groupby("因子", sort=True):
                   g = g.sort_values("H")
