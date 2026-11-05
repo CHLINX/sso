@@ -1,0 +1,64 @@
+name: SSO v4.87.5.3 MA120 diagnostic ZIP inspection
+
+on:
+  push:
+    branches:
+      - "audit/v48753-zipread-20261105-233056"
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Download and inspect the diagnostic archive
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib
+          import io
+          import urllib.request
+          import zipfile
+
+          url = "https://raw.githubusercontent.com/CHLINX/sso/audit/v48753-ma120-20261105_233056/audit/20261105_v48753_ma120/SSO_v4.87.5.3_MA120_diagnostic_20261105_233056.zip"
+          expected = "38ead25fc857961bb0ee3087464ce7d1adb761479b953f948a378b5e015cf5ef"
+
+          request = urllib.request.Request(url, headers={"User-Agent": "SSO-MA120-audit"})
+          with urllib.request.urlopen(request, timeout=40) as response:
+              archive_bytes = response.read()
+
+          actual = hashlib.sha256(archive_bytes).hexdigest()
+          print("ARCHIVE_BYTES:", len(archive_bytes))
+          print("ARCHIVE_SHA256:", actual)
+          if actual != expected:
+              raise RuntimeError("ZIP SHA256 mismatch; do not inspect unverified bytes")
+
+          with zipfile.ZipFile(io.BytesIO(archive_bytes)) as zf:
+              names = zf.namelist()
+              print("ZIP_CRC:", "PASS" if zf.testzip() is None else "FAIL")
+              print("ZIP_MEMBERS:")
+              for name in names:
+                  info = zf.getinfo(name)
+                  print(f" - {name} ({info.file_size} bytes)")
+
+              targets = (
+                  "00_核驗摘要.txt",
+                  "02_MA120差異逐筆定位.csv",
+                  "03_MA120五種來源比較摘要.csv",
+              )
+              for target in targets:
+                  matches = [n for n in names if n.endswith(target)]
+                  if not matches:
+                      print(f"\n===== MISSING: {target} =====")
+                      continue
+                  name = matches[0]
+                  raw = zf.read(name)
+                  print(f"\n===== BEGIN {name} ({len(raw)} bytes) =====")
+                  text = raw.decode("utf-8-sig", errors="replace")
+                  print(text[:30000])
+                  if len(text) > 30000:
+                      print("[TRUNCATED AFTER 30000 CHARACTERS]")
+                  print(f"===== END {name} =====")
+          PY
