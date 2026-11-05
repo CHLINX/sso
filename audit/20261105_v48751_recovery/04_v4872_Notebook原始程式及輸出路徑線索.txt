@@ -1,0 +1,212 @@
+
+==========================================================================================
+Notebook In[1]
+字元數：46,373
+SHA256：ce93a66f0ca511234f5ef459c35f6f3dcee05174a04eea56a24ae29e6ea589dc
+==========================================================================================
+    L1: # 看股最速適 v4.87.5｜原始29項因子矩陣取得與核實
+    L4: import os, sys, re, json, zipfile, hashlib, shutil, subprocess, datetime
+    L14:     import duckdb
+    L16:     subprocess.run([sys.executable, "-m", "pip", "-q", "install", "duckdb"], check=True)
+    L17:     import duckdb
+    L27: OUT_DIR = Path(f"/content/SSO_v4.87.5_原始因子矩陣核實_{STAMP}")
+    L28: OUT_DIR.mkdir(parents=True, exist_ok=True)
+    L30: TMP_DIR = Path("/content/.sso_v4875_matrix_audit_tmp")
+    L34: print("看股最速適 v4.87.5｜原始29項因子矩陣取得與核實")
+    L39: print("成果目錄：", OUT_DIR)
+    L66: FACTOR_ALIASES = {
+    L167:     "source_factor_rank": [
+    L168:         "source_factor_rank", "source_rank",
+    L169:         "original_factor_rank", "來源因子排名"
+    L228: assert len(FACTOR_ALIASES) == 29, (
+    L229:     f"29項因子設定數錯誤：{len(FACTOR_ALIASES)}"
+    L232: STOCK_FACTORS = [
+    L233:     k for k in FACTOR_ALIASES if not k.startswith("market_")
+    L236: MARKET_FACTORS = [
+    L237:     k for k in FACTOR_ALIASES if k.startswith("market_")
+    L272:     "factor", "feature", "raw", "rawfactor", "rawfeature"
+    L375:     if "4.87.2" in s or "v4872" in s or "4872" in s:
+    L378:     if any(x in s for x in ("因子", "factor", "feature", "完整市場", "29項")):
+    L381:     if any(x in s for x in ("v4.87", "487", "重建")):
+    L414:     ".csv", ".csv.gz", ".parquet", ".pq",
+    L420:     "factor", "feature", "完整市場", "29項",
+    L421:     "v4872", "重建"
+    L474: # 05｜檢查 ZIP 內部的原始 CSV／Parquet 檔案
+    L486:         with zipfile.ZipFile(z["path"], "r") as zf:
+    L519: # 補充同一目錄內的 Parquet 分片資料集。
+    L520: parquet_dirs = {}
+    L523:     if x["path"].lower().endswith((".parquet", ".pq")):
+    L524:         parquet_dirs.setdefault(
+    L528: for d, items in parquet_dirs.items():
+    L532:             "kind": "parquet_dataset",
+    L590: con = duckdb.connect(database=":memory:")
+    L614:                 zipfile.ZipFile(c["archive"], "r") as zf,
+    L650:     if c["kind"] == "parquet_dataset":
+    L651:         pattern = str(Path(p) / "**" / "*.parquet")
+    L653:             f"read_parquet("
+    L657:     if low.endswith((".parquet", ".pq")):
+    L659:             f"read_parquet("
+    L663:     if low.endswith((".csv", ".csv.gz", ".gz")):
+    L709:         fmap, famb = match_columns(cols, FACTOR_ALIASES)
+    L717:             "factor_hits": len(fmap),
+    L718:             "factor_ambiguities": len(famb),
+    L719:             "missing_factors": ";".join(
+    L720:                 k for k in FACTOR_ALIASES if k not in fmap
+    L725:             "_factor_map": fmap,
+    L726:             "_factor_ambiguous": famb,
+    L737:             "factor_hits": 0,
+    L738:             "factor_ambiguities": 0,
+    L739:             "missing_factors": ";".join(FACTOR_ALIASES),
+    L743:             "_factor_map": {},
+    L744:             "_factor_ambiguous": {},
+    L756:         r["factor_hits"],
+    L768: pd.DataFrame(public_inventory).to_csv(
+    L769:     OUT_DIR / "01_原始矩陣候選檔案盤點.csv",
+    L778:         f"  命中 {r['factor_hits']:02d}/29"
+    L790:     if r["factor_hits"] >= 25 and r["column_count"] > 0
+    L819:             f"｜因子欄位 {r['factor_hits']}/29"
+    L842:         rr["factor_hits"],
+    L860:     if rr["factor_hits"] != 29:
+    L874:             "依母體列數、v4.87.2路徑及檔案大小排序選取。"
+    L889:         "v4.87.5 原始因子矩陣核實：未通過",
+    L893:             f"{ranked[0]['factor_hits'] if ranked else 0}/29"
+    L905:             "精確追查v4.87.2的原始輸出或分片資料。"
+    L910:         OUT_DIR / "02_核實摘要.txt"
+    L917:         OUT_DIR / "03_核實結果.json"
+    L920:             "version": "v4.87.5",
+    L924:             "best_factor_hits": (
+    L925:                 ranked[0]["factor_hits"] if ranked else 0
+    L927:             "expected_factor_count": 29,
+    L942:         ranked[0]["factor_hits"] if ranked else 0,
+    L947:         OUT_DIR / "01_原始矩陣候選檔案盤點.csv"
+    L951:         OUT_DIR / "02_核實摘要.txt"
+    L969:     factor_map = r["_factor_map"]
+    L1094:     factor_quality = []
+    L1095:     factor_value_exprs = {}
+    L1096:     factor_agg_exprs = []
+    L1098:     for i, (factor, col) in enumerate(factor_map.items()):
+    L1106:         factor_value_exprs[factor] = val
+    L1108:         factor_agg_exprs.extend([
+    L1120:     factor_agg = con.execute(
+    L1121:         f"SELECT {', '.join(factor_agg_exprs)} FROM {rel}"
+    L1124:     for i, (factor, col) in enumerate(factor_map.items()):
+    L1126:         n_valid = int(factor_agg[i * 3] or 0)
+    L1127:         n_finite = int(factor_agg[i * 3 + 1] or 0)
+    L1128:         n_null = int(factor_agg[i * 3 + 2] or 0)
+    L1130:         factor_quality.append({
+    L1131:             "factor": factor,
+    L1147:     pd.DataFrame(factor_quality).sort_values(
+    L1148:         "factor"
+    L1149:     ).to_csv(
+    L1150:         OUT_DIR / "04_29項因子欄位及數值覆蓋.csv",
+    L1169:         f"COUNT(DISTINCT {factor_value_exprs[f]}) AS m_{i}"
+    L1170:         for i, f in enumerate(MARKET_FACTORS)
+    L1182:     for i, factor in enumerate(MARKET_FACTORS):
+    L1195:             "factor": factor,
+    L1213:     pd.DataFrame(market_consistency).to_csv(
+
+==========================================================================================
+Notebook In[3]
+字元數：39,011
+SHA256：8e8d4447db4f45bde0d83e613ad9eb5c272a44d11dd5293638e5da973daf3022
+==========================================================================================
+    L2: # 看股最速適 v4.87.5.1
+    L3: # 完整追查 v4.87.2 原始29項因子矩陣的檔案位置、資料格式及來源
+    L9: # 4. 支援 CSV / CSV.GZ / Parquet / ZIP / DuckDB / SQLite / Feather / Arrow。
+    L10: # 5. 搜尋 Notebook 執行歷程中的 v4.87.2 原始程式及輸出位置。
+    L28: import zipfile
+    L43: VERSION = "v4.87.5.1"
+    L50: OUT_DIR = Path(
+    L53: TMP_DIR = Path("/content/.sso_v48751_tmp")
+    L55: OUT_DIR.mkdir(parents=True, exist_ok=False)
+    L65: print("成果目錄：", OUT_DIR)
+    L93: duckdb = install_import("duckdb")
+    L115: FACTOR_ALIASES = {
+    L174:     "source_factor_rank": ["source_factor_rank"],
+    L205: assert len(FACTOR_ALIASES) == 29
+    L207: STOCK_FACTORS = [
+    L208:     x for x in FACTOR_ALIASES if not x.startswith("market_")
+    L211: MARKET_FACTORS = [
+    L212:     x for x in FACTOR_ALIASES if x.startswith("market_")
+    L222:     "factor",
+    L252:     for key, values in FACTOR_ALIASES.items()
+    L256: def match_factors(columns):
+    L265:     for factor, aliases in NORMALIZED_ALIASES.items():
+    L274:             mapping[factor] = hits[0]
+    L277:             ambiguous[factor] = hits
+    L327: # 03｜辨識 v4.87.2 相關目錄
+    L336:     "factor", "feature", "matrix", "29項",
+    L342:     ".csv", ".csv.gz", ".tsv", ".tsv.gz",
+    L343:     ".parquet", ".pq", ".feather", ".arrow",
+    L344:     ".zip", ".duckdb", ".db", ".sqlite", ".sqlite3",
+    L449:             # v4.87.2 目錄內的所有檔案都先保留清冊。
+    L492: log(f"辨識到 v4.87.2 相關目錄數：{len(version_directories)}")
+    L502:         binary_file = gzip.GzipFile(fileobj=binary_file)
+    L520:     if low.endswith((".csv.gz", ".tsv.gz")) or low.endswith(".gz"):
+    L542:     if low.endswith((".parquet", ".pq")):
+    L544:         con = duckdb.connect(database=":memory:")
+    L550:                 f"DESCRIBE SELECT * FROM read_parquet('{escaped}')"
+    L558:     if low.endswith((".duckdb", ".db")):
+    L560:         con = duckdb.connect(str(p), read_only=True)
+    L658:             # DuckDB / SQLite 資料庫內各資料表。
+    L662:                 fmap, famb = match_factors(columns)
+    L672:                     "factor_hits": len(fmap),
+    L673:                     "factor_ambiguities": len(famb),
+    L677:                     "missing_factors": ";".join(
+    L678:                         x for x in FACTOR_ALIASES if x not in fmap
+    L689:             fmap, famb = match_factors(headers)
+    L699:                 "factor_hits": len(fmap),
+    L700:                 "factor_ambiguities": len(famb),
+    L704:                 "missing_factors": ";".join(
+    L705:                     x for x in FACTOR_ALIASES if x not in fmap
+    L717:             with zipfile.ZipFile(p, "r") as zf:
+    L742:                     if mlow.endswith((".csv", ".csv.gz", ".tsv", ".tsv.gz")):
+    L762:                     mfmap, mfamb = match_factors(member_header)
+    L772:                         "factor_hits": len(mfmap),
+    L773:                         "factor_ambiguities": len(mfamb),
+    L777:                         "missing_factors": ";".join(
+    L778:                             x for x in FACTOR_ALIASES if x not in mfmap
+    L806:         x["factor_hits"],
+    L821: pd.DataFrame(schema_public).to_csv(
+    L822:     OUT_DIR / "02_全部候選資料表頭及29項因子命中.csv",
+    L830: ]).to_csv(
+    L831:     OUT_DIR / "01_完整檔案及版本目錄盤點.csv",
+    L836: pd.DataFrame(errors).to_csv(
+    L837:     OUT_DIR / "06_檔案讀取錯誤.csv",
+    L849:         f"{x['factor_hits']:02d}/29"
+    L872:             zipfile.ZipFile(archive_path, "r") as zf,
+    L885: def duckdb_count_file(path):
+    L890:     con = duckdb.connect(database=":memory:")
+    L896:         if low.endswith((".parquet", ".pq")):
+    L897:             relation = f"read_parquet('{escaped}')"
+    L900:             (".csv", ".csv.gz", ".tsv", ".tsv.gz")
+    L928:     hits = int(x.get("factor_hits") or 0)
+    L939:         x["factor_hits"],
+    L961:             rows = duckdb_count_file(materialized)
+    L965:             rows = duckdb_count_file(item["path"])
+    L969:             # DuckDB / SQLite 資料庫資料表不在本次修改；
+    L980:             "factor_hits": item["factor_hits"],
+    L986:             "possible_full_matrix": (
+    L987:                 item["factor_hits"] == 29
+    L995:             f"｜因子 {item['factor_hits']}/29"
+    L1006:             "factor_hits": item["factor_hits"],
+    L1011: pd.DataFrame(row_count_records).to_csv(
+    L1012:     OUT_DIR / "03_高可能來源完整列數核對.csv",
+    L1049:                 r"to_csv|to_parquet|write_csv|write_parquet|"
+    L1050:                 r"output|outdir|out_dir|matrix|factor|"
+    L1051:                 r"zipfile|duckdb|parquet|csv\.gz|v4[._-]?87",
+    L1084: (OUT_DIR / "04_v4872_Notebook原始程式及輸出路徑線索.txt").write_text(
+    L1089: pd.DataFrame(history_matches).to_csv(
+    L1090:     OUT_DIR / "05_Notebook執行歷程命中.csv",
+    L1109:         fmap, famb = match_factors(obj.columns)
+    L1119:             "factor_hits": len(fmap),
+    L1120:             "factor_ambiguities": len(famb),
+    L1124:             "possible_full_matrix": (
+    L1135: pd.DataFrame(memory_records).to_csv(
+    L1136:     OUT_DIR / "07_記憶體DataFrame盤點.csv",
+    L1146: full_matrix_candidates = [
+    L1148:     if x.get("possible_full_matrix")
+    L1153:     if x.get("factor_hits") == 29
+    L1156: if full_matrix_candidates:
+    L1158:     status = "FOUND_FULL_MATRIX_CANDIDATE_REQUIRES_DEEP_VALIDATION"
+    L1162:     status = "FOUND_29_FACTORS_BUT_NOT_FULL_MARKET_MATRIX"
