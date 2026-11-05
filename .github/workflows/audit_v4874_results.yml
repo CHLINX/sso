@@ -148,5 +148,72 @@ jobs:
                       if len(s):
                           print(c, "min=", s.min(), "median=", s.median(), "max=", s.max())
 
+          # Compact factor-level synthesis on the primary path-complete horizons.
+          direction = get_frame("10_")
+          mono = get_frame("02_")
+          primary = [1,3,5,10,30,100]
+          if direction is not None and mono is not None:
+              d = direction[
+                  (direction["標籤口徑"].astype(str) == "路徑完整") &
+                  pd.to_numeric(direction["H"], errors="coerce").isin(primary)
+              ].copy()
+              m = mono[
+                  (mono["標籤口徑"].astype(str) == "路徑完整") &
+                  pd.to_numeric(mono["H"], errors="coerce").isin(primary)
+              ].copy()
+              d["H"] = pd.to_numeric(d["H"], errors="coerce")
+              m["H"] = pd.to_numeric(m["H"], errors="coerce")
+              d = d.merge(m[["研究母體","因子","H","平均報酬Spearman","正報酬比例Spearman","報酬方向步階一致率","平均報酬完全單調遞增","平均報酬完全單調遞減"]], on=["研究母體","因子","H"], how="left")
+              print("\n=== COMPACT PRIMARY-HORIZON FACTOR TABLE ===")
+              for factor, g in d.groupby("因子", sort=True):
+                  g = g.sort_values("H")
+                  spreads = ",".join(f"H{int(r.H)}:{r['Q10減Q1平均毛報酬']*100:+.3f}%" for _,r in g.iterrows())
+                  wins = ",".join(f"H{int(r.H)}:{r['Q10減Q1正報酬比例']*100:+.2f}pp" for _,r in g.iterrows())
+                  pos = int((g["Q10減Q1平均毛報酬"] > 0).sum())
+                  winpos = int((g["Q10減Q1正報酬比例"] > 0).sum())
+                  step = g["報酬方向步階一致率"].mean()
+                  spear = g["平均報酬Spearman"].mean()
+                  mono_up = int(g["平均報酬完全單調遞增"].fillna(False).astype(bool).sum())
+                  mono_dn = int(g["平均報酬完全單調遞減"].fillna(False).astype(bool).sum())
+                  pop = str(g["研究母體"].iloc[0])
+                  print(f"FACTOR={factor} | POP={pop} | SPREAD_POS={pos}/6 | WIN_POS={winpos}/6 | STEP_MEAN={step:.3f} | RETURN_SPEARMAN_MEAN={spear:.3f} | FULL_MONO_UP={mono_up} | FULL_MONO_DOWN={mono_dn} | SPREADS={spreads} | WIN_GAPS={wins}")
+
+          # H30/H100 stability by factor; annual/market/price-segment dimensions overlap.
+          stability = get_frame("05_")
+          if stability is not None:
+              st = stability[stability["H"].astype(str).isin(["H30","H100"])].copy()
+              agg = st.groupby(["因子","H"]).agg(
+                  stability_dimensions=("觀察維度","count"),
+                  direction_consistency_mean=("方向一致比例","mean"),
+                  direction_consistency_min=("方向一致比例","min"),
+                  positive_groups=("正向分組數","sum"),
+                  negative_groups=("反向分組數","sum"),
+                  weighted_spread_mean=("樣本加權Q10減Q1","mean")
+              ).reset_index()
+              print("\n=== H30/H100 STABILITY AGGREGATE (NOT INDEPENDENT SAMPLES) ===")
+              print(agg.sort_values(["H","direction_consistency_mean"], ascending=[True,False]).to_string(index=False))
+
+          # Exact overlap of the two anomaly flags and the concentration of flagged groups.
+          anomaly = get_frame("06_")
+          if anomaly is not None:
+              sm = anomaly["小樣本標記"].astype(bool)
+              ex = anomaly["極端差距標記"].astype(bool)
+              print("\n=== ANOMALY FLAG CROSS-TAB ===")
+              print("TOTAL:", len(anomaly), "SMALL:", int(sm.sum()), "EXTREME:", int(ex.sum()), "BOTH:", int((sm & ex).sum()), "SMALL_ONLY:", int((sm & ~ex).sum()), "EXTREME_ONLY:", int((~sm & ex).sum()))
+              print("BY_RESEARCH_POPULATION:")
+              print(anomaly.groupby("研究母體").agg(rows=("因子","size"),small=("小樣本標記","sum"),extreme=("極端差距標記","sum"),median_min_side=("最小單側樣本數","median")).to_string())
+              print("BY_HORIZON:")
+              print(anomaly.groupby("持有期").agg(rows=("因子","size"),small=("小樣本標記","sum"),extreme=("極端差距標記","sum"),median_min_side=("最小單側樣本數","median")).to_string())
+              print("BY_OBSERVATION_DIMENSION:")
+              print(anomaly.groupby("觀察維度").agg(rows=("因子","size"),small=("小樣本標記","sum"),extreme=("極端差距標記","sum"),median_min_side=("最小單側樣本數","median")).to_string())
+
+          # Long horizon ranking; show all rows with strongest H30/H100 spreads.
+          long_df = get_frame("07_")
+          if long_df is not None:
+              print("\n=== LONG-HORIZON TOP ROWS ===")
+              cols = [c for c in ["研究母體","因子","持有期","Q10減Q1平均毛報酬","Q10減Q1正報酬比例","平均報酬Spearman","報酬方向步階一致率","價格研究區段_方向一致比例","市場_方向一致比例","年度_方向一致比例","長期訊號類型"] if c in long_df.columns]
+              top = long_df.sort_values("Q10減Q1平均毛報酬", ascending=False).head(25)
+              print(top[cols].to_string(index=False))
+
           print("\n=== AUDIT END: HASH AND CRC VERIFIED ===")
           PY
