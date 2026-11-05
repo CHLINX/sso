@@ -1,4 +1,4 @@
-name: Audit v4.87.3 research ZIP
+name: Analyze v4.87.3 factor associations
 on:
   push:
     branches:
@@ -9,52 +9,157 @@ permissions:
   contents: read
   actions: read
 jobs:
-  inspect:
+  analyze:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Download and verify published ZIP
+      - name: Download, validate and summarize factor evidence
         shell: bash
         run: |
           python - <<'PY'
-          import urllib.request, hashlib, zipfile, io, csv, json, pathlib, sys
-          url = "https://github.com/CHLINX/sso/releases/download/sso-v4.87.3-20261105_070957/SSO_v4.87.3_29._20261105_071000.zip"
-          expected_size = 447566
-          expected_sha = "fd26c050aec14837ba6ffec042887ab6ad10aa7b8e4808ab113201ecb20931ea"
-          print("SSO v4.87.3 RESULT ZIP INSPECTION")
-          print("repository=CHLINX/sso")
-          print("release_tag=sso-v4.87.3-20261105_070957")
-          print("asset=SSO_v4.87.3_29._20261105_071000.zip")
-          data = urllib.request.urlopen(url, timeout=90).read()
-          actual_sha = hashlib.sha256(data).hexdigest()
-          print(f"download_bytes={len(data)}")
-          print(f"sha256={actual_sha}")
-          if len(data) != expected_size or actual_sha != expected_sha:
-              raise SystemExit("ZIP size/SHA256 mismatch")
+          import urllib.request, hashlib, zipfile, io, csv, json, statistics, collections
+          URL = "https://github.com/CHLINX/sso/releases/download/sso-v4.87.3-20261105_070957/SSO_v4.87.3_29._20261105_071000.zip"
+          EXPECTED_SIZE = 447566
+          EXPECTED_SHA = "fd26c050aec14837ba6ffec042887ab6ad10aa7b8e4808ab113201ecb20931ea"
+          PRIMARY = {1, 3, 5, 10, 30, 100}
+          SECONDARY = {20, 60}
+          LABELS = {"端點有效", "路徑完整"}
+          print("=== SSO v4.87.3 FACTOR EVIDENCE ANALYSIS ===")
+          data = urllib.request.urlopen(URL, timeout=90).read()
+          sha = hashlib.sha256(data).hexdigest()
+          print(f"ZIP bytes={len(data)} SHA256={sha}")
+          if len(data) != EXPECTED_SIZE or sha != EXPECTED_SHA:
+              raise RuntimeError("ZIP identity verification failed")
           z = zipfile.ZipFile(io.BytesIO(data))
-          bad = z.testzip()
-          if bad: raise RuntimeError("CRC failure: " + bad)
-          names = z.namelist()
-          print(f"zip_crc=PASS files={len(names)}")
-          for name in names: print("ZIP_MEMBER=" + name)
-          print("\\n===== CSV SCHEMAS AND SAMPLE ROWS =====")
-          for name in names:
-              if not name.lower().endswith(".csv"): continue
-              raw = z.read(name)
-              text = raw.decode("utf-8-sig")
-              reader = csv.DictReader(io.StringIO(text))
-              rows = list(reader)
-              print(f"\\n[CSV] {name} rows={len(rows)}")
-              print("COLUMNS=" + json.dumps(reader.fieldnames, ensure_ascii=False))
-              for i, row in enumerate(rows[:2], 1):
-                  print(f"SAMPLE_{i}=" + json.dumps(row, ensure_ascii=False))
-          print("\\n===== MANIFEST =====")
-          for name in names:
-              if name.endswith("manifest.json"):
-                  print(z.read(name).decode("utf-8-sig"))
-          print("\\n===== EXECUTIVE SUMMARY =====")
-          for name in names:
-              if name.endswith(".txt"):
-                  print(z.read(name).decode("utf-8-sig"))
-          print("\\nINSPECTION_COMPLETE")
+          if z.testzip() is not None:
+              raise RuntimeError("ZIP CRC check failed")
+          print(f"ZIP CRC=PASS members={len(z.namelist())}")
+          def read_csv(suffix):
+              matches = [n for n in z.namelist() if n.endswith(suffix)]
+              if len(matches) != 1:
+                  raise RuntimeError(f"Expected one file ending {suffix}, found {matches}")
+              return list(csv.DictReader(io.StringIO(z.read(matches[0]).decode("utf-8-sig"))))
+          def num(row, key):
+              try:
+                  x = float(row.get(key, ""))
+                  return x if x == x else None
+              except Exception:
+                  return None
+          def hnum(row):
+              return int(str(row["持有期"]).replace("H", ""))
+          def sign(x, eps=1e-12):
+              if x is None or abs(x) <= eps: return 0
+              return 1 if x > 0 else -1
+          qsum_official = read_csv("02_完整市場五項正式因子_Q10減Q1摘要.csv")
+          qsum_candidate = read_csv("04_v251二十四項候選因子_Q10減Q1摘要.csv")
+          dec_official = read_csv("01_完整市場五項正式因子_十等分報酬.csv")
+          dec_candidate = read_csv("03_v251二十四項候選因子_十等分報酬.csv")
+          stab_official = read_csv("05_完整市場正式因子_分年市場區段穩定性.csv")
+          stab_candidate = read_csv("06_v251候選因子_分年市場區段穩定性.csv")
+          coverage = read_csv("07_29項因子有效樣本覆蓋.csv")
+          quality = read_csv("08_來源與標籤品質核對.csv")
+          label_coverage = read_csv("09_v251基準母體前瞻標籤覆蓋.csv")
+          def make_decile_map(rows):
+              out = {}
+              for r in rows:
+                  h = hnum(r)
+                  if h not in PRIMARY: continue
+                  k = (r["因子"], h, r["標籤口徑"])
+                  q = int(r["因子分組"].replace("Q", ""))
+                  val = num(r, "平均毛報酬")
+                  out.setdefault(k, {})[q] = val
+              return out
+          decmap = make_decile_map(dec_official + dec_candidate)
+          def print_factor_summary(title, rows):
+              print("\\n" + title)
+              by_factor_label = collections.defaultdict(dict)
+              for r in rows:
+                  h = hnum(r)
+                  if h not in PRIMARY or r["標籤口徑"] not in LABELS: continue
+                  by_factor_label[(r["因子"], r["標籤口徑"])][h] = r
+              for (factor, label), hrows in sorted(by_factor_label.items()):
+                  diffs, pdiffs, support, steps = [], [], 0, 0
+                  vec = []
+                  for h in sorted(PRIMARY):
+                      r = hrows.get(h)
+                      if not r: continue
+                      d = num(r, "Q10減Q1平均毛報酬")
+                      p = num(r, "Q10減Q1正報酬比例")
+                      if d is not None: diffs.append(d); vec.append(f"H{h}:{d*100:+.3f}%")
+                      if p is not None: pdiffs.append(p)
+                      qvals = decmap.get((factor, h, label), {})
+                      ordered = [qvals.get(q) for q in range(1, 11)]
+                      if d is not None and all(v is not None for v in ordered) and sign(d) != 0:
+                          for a, b in zip(ordered, ordered[1:]):
+                              steps += 1
+                              if (sign(d) > 0 and b >= a) or (sign(d) < 0 and b <= a):
+                                  support += 1
+                  if not diffs: continue
+                  pos = sum(1 for d in diffs if d > 1e-12)
+                  neg = sum(1 for d in diffs if d < -1e-12)
+                  avg = statistics.mean(diffs)
+                  avgp = statistics.mean(pdiffs) if pdiffs else None
+                  monotone = (support / steps * 100) if steps else None
+                  print(
+                      f"{factor} | {label} | primary H +:{pos}/6 -:{neg}/6 "
+                      f"| mean_spread={avg*100:+.3f}%"
+                      f"| mean_winrate_gap={(avgp*100 if avgp is not None else float('nan')):+.2f}pp"
+                      f"| decile_direction_steps={(monotone if monotone is not None else float('nan')):.1f}% "
+                      f"| " + " ".join(vec)
+                  )
+          print_factor_summary("=== OFFICIAL FIVE FACTORS: PRIMARY HORIZONS ===", qsum_official)
+          print_factor_summary("=== V2.51 CANDIDATE 24 FACTORS: PRIMARY HORIZONS ===", qsum_candidate)
+          def print_stability(title, rows):
+              print("\\n" + title)
+              grp = collections.defaultdict(list)
+              for r in rows:
+                  if r["標籤口徑"] != "路徑完整" or hnum(r) not in PRIMARY: continue
+                  grp[(r["因子"], r["觀察維度"])].append(r)
+              for (factor, dim), rr in sorted(grp.items()):
+                  spreads = [num(x, "Q10減Q1平均毛報酬") for x in rr]
+                  spreads = [x for x in spreads if x is not None]
+                  if not spreads: continue
+                  pos = sum(x > 1e-12 for x in spreads)
+                  neg = sum(x < -1e-12 for x in spreads)
+                  zero = len(spreads) - pos - neg
+                  weights = []
+                  for x in rr:
+                      d = num(x, "Q10減Q1平均毛報酬")
+                      n1, n10 = num(x, "Q1樣本數"), num(x, "Q10樣本數")
+                      if d is not None and n1 is not None and n10 is not None:
+                          weights.append((d, (n1+n10)/2))
+                  wmean = sum(d*w for d,w in weights)/sum(w for d,w in weights) if weights and sum(w for d,w in weights)>0 else float("nan")
+                  print(
+                      f"{factor} | {dim} | groups_across_primary_H={len(spreads)} "
+                      f"| positive={pos} negative={neg} zero={zero} "
+                      f"| sample_weighted_spread={wmean*100:+.3f}% "
+                      f"| median_group_spread={statistics.median(spreads)*100:+.3f}% "
+                      f"| min={min(spreads)*100:+.3f}% max={max(spreads)*100:+.3f}%"
+                  )
+          print_stability("=== OFFICIAL FIVE FACTORS: STABILITY (PATH-CLEAN) ===", stab_official)
+          print_stability("=== CANDIDATE 24 FACTORS: STABILITY (PATH-CLEAN) ===", stab_candidate)
+          print("\\n=== FACTOR EFFECTIVE COVERAGE (ALL 29) ===")
+          for r in sorted(coverage, key=lambda x: num(x, "因子有效比例") or 0):
+              print(
+                  f'{r["因子"]} | {r["因子類型"]} | valid={r["因子有效筆數"]}'
+                  f'/{r["全市場筆數"]} | missing={r["因子缺值筆數"]}'
+                  f' | coverage={(num(r, "因子有效比例") or 0)*100:.2f}%'
+              )
+          print("\\n=== SOURCE / LABEL QUALITY AUDIT ===")
+          for r in quality:
+              print(f'{r["項目"]} | value={r["數值"]} | expected={r["預期"]} | {r["判讀"]}')
+          failed = [r for r in quality if str(r.get("判讀","")).upper() not in {"PASS",""}]
+          print(f"quality_non_pass_rows={len(failed)}")
+          print("\\n=== V2.51 FORWARD LABEL COVERAGE ===")
+          for r in label_coverage:
+              print(
+                  f'{r["持有期"]} | endpoint={r["端點有效筆數"]}'
+                  f' | path_clean={r["路徑完整筆數"]}'
+              )
+          print("\\n=== INTERPRETATION GUARDRAILS ===")
+          print("Q10-Q1 is gross-return spread, not net performance or proof of causality.")
+          print("Primary horizons are H1,H3,H5,H10,H30,H100; H20/H60 remain secondary.")
+          print("Stability rows are path-clean and sample-weighted; year/market/price-segment rows are not independent.")
+          print("All candidates are historical association evidence only; no OOS validation was performed.")
+          print("\\nANALYSIS_COMPLETE")
           PY
