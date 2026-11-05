@@ -1,0 +1,25 @@
+{
+  "version": "v4.87.5.1",
+  "timestamp": "20261105_211559",
+  "status": "FOUND_29_FACTORS_BUT_NOT_FULL_MARKET_MATRIX",
+  "scan": {
+    "root_count": 5,
+    "candidate_file_count": 257,
+    "schema_table_count": 310,
+    "version_directory_count": 0,
+    "row_count_checked": 40,
+    "notebook_history_matches": 2,
+    "memory_dataframe_candidates": 0,
+    "read_errors": 0
+  },
+  "version_directories": [],
+  "full_matrix_candidates": [],
+  "notes": [
+    "Only source metadata and schema were uploaded to GitHub.",
+    "No original matrix or market data were uploaded.",
+    "No formulas were rebuilt.",
+    "No Google Drive source files were modified.",
+    "No model was trained.",
+    "Full matrix candidate still requires natural-key, date, stock and value verification."
+  ]
+}
