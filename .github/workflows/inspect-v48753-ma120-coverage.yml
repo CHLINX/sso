@@ -1,0 +1,101 @@
+name: SSO v4.87.5.3 MA120 coverage inspection
+
+on:
+  push:
+    branches:
+      - "audit/v48753-zipread-20261105-233056"
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Inspect MA120 missing-value coverage
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv
+          import hashlib
+          import io
+          import urllib.request
+          import zipfile
+          from collections import Counter
+
+          url = "https://raw.githubusercontent.com/CHLINX/sso/audit/v48753-ma120-20261105_233056/audit/20261105_v48753_ma120/SSO_v4.87.5.3_MA120_diagnostic_20261105_233056.zip"
+          expected = "38ead25fc857961bb0ee3087464ce7d1adb761479b953f948a378b5e015cf5ef"
+          req = urllib.request.Request(url, headers={"User-Agent": "SSO-MA120-coverage-audit"})
+          with urllib.request.urlopen(req, timeout=40) as response:
+              data = response.read()
+          actual = hashlib.sha256(data).hexdigest()
+          print("ZIP_SHA256:", actual, "EXPECTED_MATCH:", actual == expected)
+          if actual != expected:
+              raise RuntimeError("ZIP SHA256 mismatch")
+
+          def missing(v):
+              return v is None or str(v).strip().lower() in ("", "nan", "none", "null", "<na>")
+
+          with zipfile.ZipFile(io.BytesIO(data)) as zf:
+              names = zf.namelist()
+              print("ZIP_CRC:", "PASS" if zf.testzip() is None else "FAIL")
+              for target in ("04_原始波動因子比較.csv", "05_價格研究區段比較.csv", "06_MA120差異判讀.csv"):
+                  hit = [n for n in names if n.endswith(target)]
+                  if hit:
+                      print(f"\n===== {hit[0]} =====")
+                      print(zf.read(hit[0]).decode("utf-8-sig", errors="replace")[:12000])
+
+              target = [n for n in names if n.endswith("01_歷史唯一訊號鍵完整比對.csv")]
+              if not target:
+                  raise RuntimeError("Missing full key comparison CSV")
+              raw = zf.read(target[0]).decode("utf-8-sig", errors="replace")
+              rows = list(csv.DictReader(io.StringIO(raw)))
+              if not rows:
+                  raise RuntimeError("No rows in full key comparison CSV")
+              headers = list(rows[0].keys())
+              factor_cols = [c for c in headers if "ma120" in c.lower() or "ma120" in c.replace("_", "").lower()]
+              print("\n===== 01 CSV HEADER =====")
+              print("|".join(headers))
+              print("ROWS:", len(rows))
+              print("MA120_COLUMNS:", factor_cols)
+
+              print("\n===== MA120 COLUMN COVERAGE =====")
+              for col in factor_cols:
+                  n_valid = sum(not missing(r.get(col)) for r in rows)
+                  n_missing = len(rows) - n_valid
+                  examples = [r.get(col, "") for r in rows if not missing(r.get(col))][:3]
+                  print(f"{col}: valid={n_valid}, missing={n_missing}, examples={examples}")
+
+              print("\n===== MISSING-PATTERN COUNTS =====")
+              patterns = Counter(
+                  tuple(not missing(r.get(c)) for c in factor_cols)
+                  for r in rows
+              )
+              for pattern, count in patterns.most_common(20):
+                  print(f"{pattern}: {count}")
+
+              print("\n===== FIRST 25 ONE-SIDED / DIFFERENT-COVERAGE ROWS =====")
+              shown = 0
+              for r in rows:
+                  flags = [not missing(r.get(c)) for c in factor_cols]
+                  if flags and any(flags) and not all(flags):
+                      print({k: r.get(k, "") for k in headers if
+                             k in ("market", "symbol", "date", "segment", "segment_v251", "segment_v470")
+                             or k in factor_cols})
+                      shown += 1
+                      if shown >= 25:
+                          break
+              print("ONE_SIDED_ROWS_SHOWN:", shown)
+
+              print("\n===== FIRST 10 ROWS WITH ALL MA120 FIELDS PRESENT =====")
+              shown = 0
+              for r in rows:
+                  if factor_cols and all(not missing(r.get(c)) for c in factor_cols):
+                      print({k: r.get(k, "") for k in headers if
+                             k in ("market", "symbol", "date", "segment", "segment_v251", "segment_v470")
+                             or k in factor_cols})
+                      shown += 1
+                      if shown >= 10:
+                          break
+          PY
