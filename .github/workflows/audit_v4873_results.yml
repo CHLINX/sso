@@ -1,0 +1,60 @@
+name: Audit v4.87.3 research ZIP
+on:
+  push:
+    branches:
+      - audit/v4873-results-review-20261105
+    paths:
+      - .github/workflows/audit_v4873_results.yml
+permissions:
+  contents: read
+  actions: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Download and verify published ZIP
+        shell: bash
+        run: |
+          python - <<'PY'
+          import urllib.request, hashlib, zipfile, io, csv, json, pathlib, sys
+          url = "https://github.com/CHLINX/sso/releases/download/sso-v4.87.3-20261105_070957/SSO_v4.87.3_29._20261105_071000.zip"
+          expected_size = 447566
+          expected_sha = "fd26c050aec14837ba6ffec042887ab6ad10aa7b8e4808ab113201ecb20931ea"
+          print("SSO v4.87.3 RESULT ZIP INSPECTION")
+          print("repository=CHLINX/sso")
+          print("release_tag=sso-v4.87.3-20261105_070957")
+          print("asset=SSO_v4.87.3_29._20261105_071000.zip")
+          data = urllib.request.urlopen(url, timeout=90).read()
+          actual_sha = hashlib.sha256(data).hexdigest()
+          print(f"download_bytes={len(data)}")
+          print(f"sha256={actual_sha}")
+          if len(data) != expected_size or actual_sha != expected_sha:
+              raise SystemExit("ZIP size/SHA256 mismatch")
+          z = zipfile.ZipFile(io.BytesIO(data))
+          bad = z.testzip()
+          if bad: raise RuntimeError("CRC failure: " + bad)
+          names = z.namelist()
+          print(f"zip_crc=PASS files={len(names)}")
+          for name in names: print("ZIP_MEMBER=" + name)
+          print("\\n===== CSV SCHEMAS AND SAMPLE ROWS =====")
+          for name in names:
+              if not name.lower().endswith(".csv"): continue
+              raw = z.read(name)
+              text = raw.decode("utf-8-sig")
+              reader = csv.DictReader(io.StringIO(text))
+              rows = list(reader)
+              print(f"\\n[CSV] {name} rows={len(rows)}")
+              print("COLUMNS=" + json.dumps(reader.fieldnames, ensure_ascii=False))
+              for i, row in enumerate(rows[:2], 1):
+                  print(f"SAMPLE_{i}=" + json.dumps(row, ensure_ascii=False))
+          print("\\n===== MANIFEST =====")
+          for name in names:
+              if name.endswith("manifest.json"):
+                  print(z.read(name).decode("utf-8-sig"))
+          print("\\n===== EXECUTIVE SUMMARY =====")
+          for name in names:
+              if name.endswith(".txt"):
+                  print(z.read(name).decode("utf-8-sig"))
+          print("\\nINSPECTION_COMPLETE")
+          PY
