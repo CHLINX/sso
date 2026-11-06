@@ -1,0 +1,10 @@
+﻿field,affected_keys,current_row_ohlc_valid,current_row_positive_volume,window_contains_OHLC_invalid_or_unknown,window_contains_nonpositive_missing_or_unknown_volume,window_checked,current_row_ohlc_invalid,current_row_nonpositive_or_missing_volume,window_all_OHLC_valid,window_all_positive_volume
+收盤相對MA5,102,102,102,102,102,102,,,,
+收盤相對MA20,228,228,228,228,228,228,,,,
+收盤相對MA60,409,409,409,409,409,409,,,,
+收盤相對MA120,1817,1817,1817,1817,1817,1817,,,,
+相對前20有效K棒最高價,68,68,68,68,68,68,,,,
+前瞻報酬_1根_下一根開盤至第N根收盤,30674,40,3308,107,107,30674,30634.0,27366.0,30567.0,30567.0
+前瞻報酬_5根_下一根開盤至第N根收盤,74465,50492,53251,59305,52462,74465,23973.0,21214.0,15160.0,22003.0
+前瞻報酬_20根_下一根開盤至第N根收盤,202292,178059,180878,196545,174834,202292,24233.0,21414.0,5747.0,27458.0
+前瞻報酬_60根_下一根開盤至第N根收盤,343837,319862,322642,341382,306847,343837,23975.0,21195.0,2455.0,36990.0

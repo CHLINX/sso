@@ -1,0 +1,15 @@
+{
+  "local_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.13_九欄位多標籤核對與原始程式驗證_20261106_182430/SSO_v4.87.5.13_multi_label_source_audit_20261106_182430.zip",
+  "local_bytes": 49540,
+  "local_sha256": "df7014bda06dbede05f0e4fc9c3f0be53b59fc150fa61231a272c0b9372d82b1",
+  "local_sha_matches_v487513_execution_log": false,
+  "remote_url": "https://raw.githubusercontent.com/CHLINX/sso/audit/v487510-ma120-group-rebuild-20261107_002229/audit/20261107_v487510_ma120_group_rebuild/v4.87.5.13/SSO_v4.87.5.13_multi_label_source_audit_20261106_182430.zip",
+  "remote_bytes": 49540,
+  "remote_sha256": "df7014bda06dbede05f0e4fc9c3f0be53b59fc150fa61231a272c0b9372d82b1",
+  "remote_fetch_status": "PASS",
+  "remote_sha_matches_reported_remote": true,
+  "local_remote_match": true,
+  "archive_status": "PASS_LOCAL_EQUALS_REMOTE",
+  "local_archive_copy_in_v487515": "prior_evidence/SSO_v4.87.5.13_local_archive_from_Drive.zip",
+  "local_archive_copy_sha256": "df7014bda06dbede05f0e4fc9c3f0be53b59fc150fa61231a272c0b9372d82b1"
+}

@@ -1,0 +1,12 @@
+﻿看股最速適 v4.87.5.15｜v4.69 群組重建逐列重播核驗
+執行時間：2026-11-06T19:26:01+00:00
+07/08：9/9 PASS；field-key=653,892/653,892
+v4.69 原始程式 SHA：db661fc6004cd2fcfc171c346ee8255d734fd44a893256c0066bfdb6278f1ebe；wrapper 內嵌 SHA=db661fc6004cd2fcfc171c346ee8255d734fd44a893256c0066bfdb6278f1ebe
+manifest 含原始程式 SHA：False
+逐列比較：4,193,745/4,193,745
+raw_calc 原始欄位與 group_sorted 不同 cells：0
+03 原始輸出與原始函數重播不同 cells：0
+07 計數 PASS：True；manifest更新計數 PASS：True
+整體逐列重播：PASS
+重播暫存檔：563,356,120 bytes；SHA256=7a628774ad41c8bcd3e7ff00f5e212aad43214896d4c086d30a19b9f27a21e5f；已自本版成果目錄清除（原始來源未動）
+原始來源唯讀；正式 29 因子矩陣不輸出；模型／回測／推薦／選股不放行。

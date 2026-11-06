@@ -1,0 +1,39 @@
+{
+  "version": "v4.69",
+  "source_rows_group_sort": 4193745,
+  "group_count": 2935,
+  "feature_formula_pass": 5,
+  "feature_formula_total": 5,
+  "forward_formula_pass": 4,
+  "forward_formula_total": 4,
+  "feature_scales": {
+    "收盤相對MA5": 1.0,
+    "收盤相對MA20": 1.0,
+    "收盤相對MA60": 1.0,
+    "收盤相對MA120": 1.0,
+    "相對前20有效K棒最高價": 1.0
+  },
+  "updated_cells": {
+    "label::前瞻報酬_1根_下一根開盤至第N根收盤": 3727835,
+    "label::前瞻報酬_5根_下一根開盤至第N根收盤": 3933248,
+    "label::前瞻報酬_20根_下一根開盤至第N根收盤": 3933201,
+    "label::前瞻報酬_60根_下一根開盤至第N根收盤": 3748940,
+    "feature::收盤相對MA5": 4000220,
+    "feature::收盤相對MA20": 3788701,
+    "feature::相對前20有效K棒最高價": 3802639,
+    "feature::收盤相對MA60": 3406106,
+    "feature::收盤相對MA120": 3014971
+  },
+  "manifest_updated_cells": {
+    "label::前瞻報酬_1根_下一根開盤至第N根收盤": 3727835,
+    "label::前瞻報酬_5根_下一根開盤至第N根收盤": 3933248,
+    "label::前瞻報酬_20根_下一根開盤至第N根收盤": 3933201,
+    "label::前瞻報酬_60根_下一根開盤至第N根收盤": 3748940,
+    "feature::收盤相對MA5": 4000220,
+    "feature::收盤相對MA20": 3788701,
+    "feature::相對前20有效K棒最高價": 3802639,
+    "feature::收盤相對MA60": 3406106,
+    "feature::收盤相對MA120": 3014971
+  },
+  "source_sha256_present_in_manifest": false
+}

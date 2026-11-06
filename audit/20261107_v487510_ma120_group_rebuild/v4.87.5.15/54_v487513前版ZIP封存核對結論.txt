@@ -1,0 +1,9 @@
+﻿v4.87.5.13 前版 ZIP 本機／GitHub 遠端獨立核對
+本機路徑：/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.13_九欄位多標籤核對與原始程式驗證_20261106_182430/SSO_v4.87.5.13_multi_label_source_audit_20261106_182430.zip
+本機大小／SHA256：49540/df7014bda06dbede05f0e4fc9c3f0be53b59fc150fa61231a272c0b9372d82b1
+GitHub 遠端大小／SHA256：49540/df7014bda06dbede05f0e4fc9c3f0be53b59fc150fa61231a272c0b9372d82b1
+遠端核驗狀態：PASS_LOCAL_EQUALS_REMOTE
+本機 SHA 是否等於執行日誌：False
+遠端 SHA 是否等於執行日誌記載的遠端 SHA：True
+本機與遠端是否相同：True
+本版不覆寫 v4.87.5.13 遠端檔案；本機 ZIP 複本已另存於 prior_evidence。

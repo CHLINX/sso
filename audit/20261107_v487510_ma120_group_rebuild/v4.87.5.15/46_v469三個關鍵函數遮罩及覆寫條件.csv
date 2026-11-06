@@ -1,0 +1,4 @@
+﻿function,line_start,line_end,contains_OHLC有效_reference,contains_volume_reference,contains_min_periods,contains_shift,contains_unconditional_feature_assignment,contains_forward_label_assignment
+calculate_group,357,442,False,False,True,True,False,False
+apply_calculated_values,568,620,False,False,False,False,True,True
+scan_and_calculate_grouped,445,565,False,False,False,False,False,False

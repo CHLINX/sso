@@ -1,0 +1,10 @@
+﻿field,manifest_updated_cells,original_function_updated_cells,07_tolerance_changed_keys,manifest_vs_function,function_vs_07,manifest_vs_07
+收盤相對MA5,4000220,4000220,102,True,False,False
+收盤相對MA20,3788701,3788701,228,True,False,False
+收盤相對MA60,3406106,3406106,409,True,False,False
+收盤相對MA120,3014971,3014971,1817,True,False,False
+相對前20有效K棒最高價,3802639,3802639,68,True,False,False
+前瞻報酬_1根_下一根開盤至第N根收盤,3727835,3727835,30674,True,False,False
+前瞻報酬_5根_下一根開盤至第N根收盤,3933248,3933248,74465,True,False,False
+前瞻報酬_20根_下一根開盤至第N根收盤,3933201,3933201,202292,True,False,False
+前瞻報酬_60根_下一根開盤至第N根收盤,3748940,3748940,343837,True,False,False

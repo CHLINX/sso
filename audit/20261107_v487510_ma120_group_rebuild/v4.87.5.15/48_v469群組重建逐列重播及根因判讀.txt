@@ -1,0 +1,36 @@
+﻿看股最速適 v4.87.5.15｜v4.69 群組重建逐列重播與更新計數核驗
+產生時間：2026-11-06T19:25:43+00:00
+v4.69 原始程式：/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py
+原始程式 SHA256：db661fc6004cd2fcfc171c346ee8255d734fd44a893256c0066bfdb6278f1ebe；預期 SHA 相符=True
+v4.69 manifest：/content/drive/MyDrive/看股最速適/看股最速適_v231補行日日期排序與已驗證特徵重建_v4_69_20261102_084647/09_v4.69_manifest.json；manifest SHA256=0ea85cefbef24b47098bab26de1ff4fc8a077683561a07f4670fd635d672915d
+原始 manifest 是否含程式 SHA：False
+
+一、原始公式決策
+feature_scales：{"收盤相對MA5": 1.0, "收盤相對MA20": 1.0, "收盤相對MA60": 1.0, "收盤相對MA120": 1.0, "相對前20有效K棒最高價": 1.0}
+label_pass：{"前瞻報酬_1根_下一根開盤至第N根收盤": true, "前瞻報酬_5根_下一根開盤至第N根收盤": true, "前瞻報酬_20根_下一根開盤至第N根收盤": true, "前瞻報酬_60根_下一根開盤至第N根收盤": true}
+manifest updated_cells 項目數：9；原始 apply_calculated_values() 回傳項目數：9
+
+二、逐列重播
+group_sorted / raw_calc / group_rebuilt / replay 共同比較列數：4,193,745；預期=4,193,745；列數 PASS=True
+raw_calc 原始欄位對 group_sorted 不同儲存格：0；PASS=True
+group_sorted 與 group_rebuilt 自然鍵／列序不一致列數：0；PASS=True
+原始 03 與原始 apply_calculated_values() 重播不同儲存格：0；完全一致=True
+07 九欄位與實際 sorted→03 差異計數：PASS=True
+實際 sorted→03 與重播 sorted→replay 差異計數：PASS=True
+manifest.updated_cells 與重播函數回傳更新計數：PASS=True
+總判讀：REPLAY_AND_MANIFEST_COUNTERS_MATCH
+
+三、公式／遮罩行為
+calculate_group() 取 opens、highs、closes 陣列；程式函數本身未讀取 OHLC有效 或成交量遮罩。
+移動平均使用 rolling(window=w, min_periods=w)；相對前 20 有效 K 棒最高價使用 highs.shift(1).rolling(20,min_periods=20)。
+前瞻報酬依群組實體列位移：close[t+h] / open[t+1] - 1；函數內只檢查端點價格有限及分母不為零，未要求 t+1 至 t+h 的每列 OHLC 都有效。
+apply_calculated_values() 在 feature_scales 有效且 calc 有限時直接覆寫原特徵欄；label_pass=True 且 calc 有限時直接覆寫原前瞻欄。
+異動欄位的窗口遮罩量化見 42；該表區分窗口全部 OHLC有效／窗口含無效或未知列，以及窗口全部正成交量／含非正或未知成交量。
+程式行為本身不自動等於公式錯誤；是否符合研究定義，仍須對照凍結的 v2.48.1／v2.31 規格及有效 K 棒定義。
+
+四、執行來源血緣限制
+原始 .py SHA 已與 v4.87.5.12 排名掃描及封存 wrapper 內嵌 V469_SOURCE SHA 一致。
+但 v4.69 manifest 沒有直接記錄原始 .py SHA；若逐列重播、manifest.updated_cells 與 07 計數全數相符，可建立高度一致的輸出／演算法證據鏈，但仍不等於 manifest 直接記錄了程式 SHA。
+
+五、放行限制
+Google Drive 原始來源唯讀；正式 29 因子矩陣不輸出；模型、回測、推薦及選股不放行。

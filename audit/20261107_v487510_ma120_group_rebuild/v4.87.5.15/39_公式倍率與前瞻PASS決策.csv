@@ -1,0 +1,10 @@
+﻿field,feature_scale,formula_status,label_pass
+收盤相對MA5,1.0,manifest scale,
+收盤相對MA20,1.0,manifest scale,
+收盤相對MA60,1.0,manifest scale,
+收盤相對MA120,1.0,manifest scale,
+相對前20有效K棒最高價,1.0,manifest scale,
+前瞻報酬_1根_下一根開盤至第N根收盤,,PASS,True
+前瞻報酬_5根_下一根開盤至第N根收盤,,PASS,True
+前瞻報酬_20根_下一根開盤至第N根收盤,,PASS,True
+前瞻報酬_60根_下一根開盤至第N根收盤,,PASS,True

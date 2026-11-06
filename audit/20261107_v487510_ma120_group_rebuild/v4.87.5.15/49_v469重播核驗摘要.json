@@ -1,0 +1,135 @@
+{
+  "rows_compared": 4193745,
+  "expected_rows": 4193745,
+  "raw_base_mismatch_cells": 0,
+  "raw_base_pass": true,
+  "row_key_mismatch": 0,
+  "key_pass": true,
+  "replay_exact_mismatch_cells": 0,
+  "full_replay_pass": true,
+  "07_field_counts_pass": true,
+  "replay_change_counts_pass": true,
+  "manifest_update_counts_pass": true,
+  "lineage_status": "REPLAY_AND_MANIFEST_COUNTERS_MATCH",
+  "replay_file_sha256": "7a628774ad41c8bcd3e7ff00f5e212aad43214896d4c086d30a19b9f27a21e5f",
+  "replay_apply_result": {
+    "updated_cells": {
+      "label::前瞻報酬_1根_下一根開盤至第N根收盤": 3727835,
+      "label::前瞻報酬_5根_下一根開盤至第N根收盤": 3933248,
+      "label::前瞻報酬_20根_下一根開盤至第N根收盤": 3933201,
+      "label::前瞻報酬_60根_下一根開盤至第N根收盤": 3748940,
+      "feature::收盤相對MA5": 4000220,
+      "feature::收盤相對MA20": 3788701,
+      "feature::相對前20有效K棒最高價": 3802639,
+      "feature::收盤相對MA60": 3406106,
+      "feature::收盤相對MA120": 3014971
+    },
+    "saturday_calculation_missing": {
+      "收盤相對MA60": 827,
+      "收盤相對MA120": 2412,
+      "收盤相對MA20": 451,
+      "相對前20有效K棒最高價": 469,
+      "前瞻報酬_60根_下一根開盤至第N根收盤": 167,
+      "收盤相對MA5": 172,
+      "前瞻報酬_1根_下一根開盤至第N根收盤": 54,
+      "前瞻報酬_5根_下一根開盤至第N根收盤": 106,
+      "前瞻報酬_20根_下一根開盤至第N根收盤": 135
+    }
+  },
+  "mask_columns": {
+    "OHLC有效": "OHLC有效",
+    "volume": "原始成交量_不作指標"
+  },
+  "global_OHLC_volume_mask_xor": 4286,
+  "global_OHLC_volume_mask_both_known": 4186723,
+  "mask_summary": {
+    "收盤相對MA5": {
+      "affected_keys": 102,
+      "current_row_ohlc_valid": 102,
+      "current_row_positive_volume": 102,
+      "window_contains_OHLC_invalid_or_unknown": 102,
+      "window_contains_nonpositive_missing_or_unknown_volume": 102,
+      "window_checked": 102
+    },
+    "收盤相對MA20": {
+      "affected_keys": 228,
+      "current_row_ohlc_valid": 228,
+      "current_row_positive_volume": 228,
+      "window_contains_OHLC_invalid_or_unknown": 228,
+      "window_contains_nonpositive_missing_or_unknown_volume": 228,
+      "window_checked": 228
+    },
+    "收盤相對MA60": {
+      "affected_keys": 409,
+      "current_row_ohlc_valid": 409,
+      "current_row_positive_volume": 409,
+      "window_contains_OHLC_invalid_or_unknown": 409,
+      "window_contains_nonpositive_missing_or_unknown_volume": 409,
+      "window_checked": 409
+    },
+    "收盤相對MA120": {
+      "affected_keys": 1817,
+      "current_row_ohlc_valid": 1817,
+      "current_row_positive_volume": 1817,
+      "window_contains_OHLC_invalid_or_unknown": 1817,
+      "window_contains_nonpositive_missing_or_unknown_volume": 1817,
+      "window_checked": 1817
+    },
+    "相對前20有效K棒最高價": {
+      "affected_keys": 68,
+      "current_row_ohlc_valid": 68,
+      "current_row_positive_volume": 68,
+      "window_contains_OHLC_invalid_or_unknown": 68,
+      "window_contains_nonpositive_missing_or_unknown_volume": 68,
+      "window_checked": 68
+    },
+    "前瞻報酬_1根_下一根開盤至第N根收盤": {
+      "affected_keys": 30674,
+      "current_row_ohlc_invalid": 30634,
+      "current_row_nonpositive_or_missing_volume": 27366,
+      "window_all_OHLC_valid": 30567,
+      "window_all_positive_volume": 30567,
+      "window_checked": 30674,
+      "window_contains_OHLC_invalid_or_unknown": 107,
+      "window_contains_nonpositive_missing_or_unknown_volume": 107,
+      "current_row_ohlc_valid": 40,
+      "current_row_positive_volume": 3308
+    },
+    "前瞻報酬_5根_下一根開盤至第N根收盤": {
+      "affected_keys": 74465,
+      "current_row_ohlc_valid": 50492,
+      "current_row_positive_volume": 53251,
+      "window_contains_OHLC_invalid_or_unknown": 59305,
+      "window_contains_nonpositive_missing_or_unknown_volume": 52462,
+      "window_checked": 74465,
+      "current_row_ohlc_invalid": 23973,
+      "current_row_nonpositive_or_missing_volume": 21214,
+      "window_all_OHLC_valid": 15160,
+      "window_all_positive_volume": 22003
+    },
+    "前瞻報酬_20根_下一根開盤至第N根收盤": {
+      "affected_keys": 202292,
+      "current_row_ohlc_valid": 178059,
+      "current_row_positive_volume": 180878,
+      "window_contains_OHLC_invalid_or_unknown": 196545,
+      "window_contains_nonpositive_missing_or_unknown_volume": 174834,
+      "window_checked": 202292,
+      "current_row_ohlc_invalid": 24233,
+      "current_row_nonpositive_or_missing_volume": 21414,
+      "window_all_OHLC_valid": 5747,
+      "window_all_positive_volume": 27458
+    },
+    "前瞻報酬_60根_下一根開盤至第N根收盤": {
+      "affected_keys": 343837,
+      "current_row_ohlc_valid": 319862,
+      "current_row_positive_volume": 322642,
+      "window_contains_OHLC_invalid_or_unknown": 341382,
+      "window_contains_nonpositive_missing_or_unknown_volume": 306847,
+      "window_checked": 343837,
+      "current_row_ohlc_invalid": 23975,
+      "current_row_nonpositive_or_missing_volume": 21195,
+      "window_all_OHLC_valid": 2455,
+      "window_all_positive_volume": 36990
+    }
+  }
+}
