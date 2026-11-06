@@ -1,0 +1,9 @@
+﻿dataset,source_path,market_column,symbol_column,date_column,segment_column,close_column,ma120_column,rows,invalid_keys,ma120_nonnull,close_nonnull,unique_segment_keys,duplicate_segment_key_excess
+v4681_base,/content/drive/MyDrive/看股最速適/看股最速適_v231補行日重建獨立候選資料集_v4_68_1_20261102_000547/01_v231補行日重建獨立候選資料集.csv.gz,市場,股票代號,日期,價格研究區段,影子收盤價,收盤相對MA120,4193745,0,3806693,4146258,4193745,0
+v469_formula_raw,/content/drive/MyDrive/看股最速適/看股最速適_v231補行日日期排序與已驗證特徵重建_v4_69_20261102_084647/.work/02_formula_calculation_raw.csv.gz,市場,股票代號,日期,價格研究區段,影子收盤價,收盤相對MA120,4193745,0,3806693,4146258,4193745,0
+v469_group_sorted,/content/drive/MyDrive/看股最速適/看股最速適_v231補行日日期排序與已驗證特徵重建_v4_69_20261102_084647/.work/01_group_sorted.csv.gz,市場,股票代號,日期,價格研究區段,影子收盤價,收盤相對MA120,4193745,0,3806693,4146258,4193745,0
+v469_group_rebuilt,/content/drive/MyDrive/看股最速適/看股最速適_v231補行日日期排序與已驗證特徵重建_v4_69_20261102_084647/.work/03_group_rebuilt.csv.gz,市場,股票代號,日期,價格研究區段,影子收盤價,收盤相對MA120,4193745,0,3808149,4146258,4193745,0
+v469_final_candidate,/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/v4.69/01_v231補行日日期排序與已驗證特徵重建候選.csv.gz,市場,股票代號,日期,價格研究區段,影子收盤價,收盤相對MA120,4193745,0,3808149,4146258,4193745,0
+v4701_model_table,/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/v4.70.1/01_v231補行日模型研究資料表.csv.gz,市場,股票代號,日期,價格研究區段,,收盤相對MA120,4193745,0,3808149,0,4193745,0
+v231_original_table,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SSO_研究指標獨立驗證與前瞻分析_v2.31_20261027_200759/相對價格因子與前瞻報酬研究資料_v2.31.csv.gz,市場,股票代號,日期,價格研究區段,影子收盤價,收盤相對MA120,4186723,0,3802083,4139236,4186723,0
+history_pair,/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/逐筆配對/01_v4.69_v4.70.1_v2.51逐筆配對.csv.gz,市場,股票代號,訊號日期,v470_價格研究區段,,v470_收盤相對MA120,331200,0,320952,0,22563,308637
