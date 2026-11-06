@@ -1,0 +1,14 @@
+﻿比較,自然鍵範圍,共同鍵,左方獨有鍵,右方獨有鍵,MA120雙方有值,MA120單邊缺值,MA120數值超差,MA120共同值吻合率,收盤價超差,完整鍵值狀態,共同值公式狀態
+v4681_base -> v469_formula_raw,含價格研究區段,4193745,0,0,3806693,0,0,1.0,0,PASS,PASS
+v4681_base -> v469_group_sorted,含價格研究區段,4193745,0,0,3806693,0,0,1.0,0,PASS,PASS
+v4681_base -> v469_group_rebuilt,含價格研究區段,4193745,0,0,3806693,1456,361,0.999905167030806,0,REVIEW,REVIEW
+v4681_base -> v469_final_candidate,含價格研究區段,4193745,0,0,3806693,1456,361,0.999905167030806,0,REVIEW,REVIEW
+v4681_base -> v4701_model_table,含價格研究區段,4193745,0,0,3806693,1456,361,0.999905167030806,0,REVIEW,REVIEW
+v4681_base -> v231_original_table,含價格研究區段,4186723,7022,0,3802083,0,578253,0.8479115263922434,0,REVIEW,REVIEW
+v469_formula_raw -> v469_group_sorted,含價格研究區段,4193745,0,0,3806693,0,0,1.0,0,PASS,PASS
+v469_group_sorted -> v469_group_rebuilt,含價格研究區段,4193745,0,0,3806693,1456,361,0.999905167030806,0,REVIEW,REVIEW
+v469_group_rebuilt -> v469_final_candidate,含價格研究區段,4193745,0,0,3808149,0,0,1.0,0,PASS,PASS
+v469_final_candidate -> v4701_model_table,含價格研究區段,4193745,0,0,3808149,0,0,1.0,0,PASS,PASS
+v231_original_table -> v469_formula_raw,含價格研究區段,4186723,0,7022,3802083,0,578253,0.8479115263922434,0,REVIEW,REVIEW
+v469_final_candidate -> history_pair,含價格研究區段,22563,4171182,0,21899,0,0,1.0,0,REVIEW,PASS
+v4701_model_table -> history_pair,含價格研究區段,22563,4171182,0,21899,0,0,1.0,0,REVIEW,PASS
