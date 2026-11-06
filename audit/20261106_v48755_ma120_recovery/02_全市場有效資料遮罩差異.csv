@@ -1,0 +1,4 @@
+﻿comparison,xor_rows,left_only,right_only
+有效OHLC_vs_有效收盤,7022,0,7022
+有效OHLC_vs_正成交量,0,0,0
+有效收盤_vs_正成交量,7022,7022,0
