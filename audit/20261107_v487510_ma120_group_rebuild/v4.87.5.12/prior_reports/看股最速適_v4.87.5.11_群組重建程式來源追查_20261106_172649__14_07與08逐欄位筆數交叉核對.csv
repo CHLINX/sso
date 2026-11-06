@@ -1,0 +1,10 @@
+﻿field,expected_affected_keys_from_07,affected_keys_parsed_from_08,match
+收盤相對MA5,102,35,False
+收盤相對MA20,228,120,False
+收盤相對MA60,409,297,False
+收盤相對MA120,1817,1690,False
+相對前20有效K棒最高價,68,53,False
+前瞻報酬_1根_下一根開盤至第N根收盤,30674,2379,False
+前瞻報酬_5根_下一根開盤至第N根收盤,74465,2311,False
+前瞻報酬_20根_下一根開盤至第N根收盤,202292,202292,True
+前瞻報酬_60根_下一根開盤至第N根收盤,343837,183763,False

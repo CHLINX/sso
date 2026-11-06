@@ -1,0 +1,194 @@
+﻿path,size_bytes,token,snippet
+/content/drive/MyDrive/Colab Notebooks/看股最速適.ipynb,156808,03_group_rebuilt,"# -*- coding: utf-8 -*-
+""""""看股最速適 v4.87.5.10｜MA120 群組重建階段分歧根因追查
+
+承接 v4.87.5.8：已確認 v4.68.1、v4.69 formula_raw、v4.69 group_sorted 的
+MA120 儲存值逐筆完全一致；第一次分歧發生於 v4.69 group_sorted -> group_rebuilt：
+1,456 筆 MA120 缺值狀態變動、361 筆數值超過 1e-6。
+
+本版只針對該階段進行唯讀鑑識：
+- 逐欄比較 group_sorted 與 group_rebuilt 的共通欄位，找出除 MA120 外是否另有變動。
+- 輸出 1,456 筆單邊缺值及 361 筆數值差異逐筆明細。
+- 按市場、股票、日期／年度彙整影響分布。
+- 比較來源列序與自然鍵列序，檢查 group rebuild 是否改變行順序。
+- 唯讀搜尋 v4.69 專案與 Colab Notebooks 中是否留有產生 03_group_rebuilt 的程式碼。
+- 核對 formula_raw、group_sorted、group_rebuilt、final、v4.70.1 的 MA120 傳遞鏈。
+
+不重算或改寫 MA120，不使用猜測公式取代來源值，不輸出正式 29 因子矩陣。
+Google Drive 原始資料唯讀；GitHub 只建立 audit 分支，main 不修改。
+
+Colab：%run /content/SSO_v4.87.5.10_MA120_group_rebuild_rootcause.py
+""""""
+from __future__ import annotations
+
+import os, sys, re, json, csv, gzip, base64, hashlib, zipfile, traceback, subprocess
+from pathlib import Path
+from datetime import datetime, timezone, timedelta
+from urllib.parse import quote
+
+import pandas as pd
+import requests
+
+VERSION = ""v4.87.5.10-ma120-group-rebuild-rootcause""
+DRIVE_ROOT = ""/content/drive/MyDrive/看股最速適""
+V469_ROOT = os.path.join(DRIVE_ROOT, ""看股最速適_v231補行日日期排序與已驗證特徵重建_v4_69_20261102_084647"")
+V484_ROOT = os.path.join(DRIVE_ROOT, ""看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113"")
+BASE_SHA_EXPECTED = ""a5151cdebe26233389f55bf6189f65d21e1f5df05f025b653963bafc483deb4d""
+TOL = 1e-6
+CLOSE_TOL = 1e-9
+TZ = timezone(timedelta(hours=8))
+RUN_DT = datetime.now(TZ)
+STAMP = RUN_DT.strftime(""%Y%m%d_%H%M%S"")
+DATE_FOLDER = RUN_DT.strftime(""%Y%m%d"")
+BRANCH = f""audit/v487510-ma120-group-rebuild-{STAMP}""
+GITHUB_REPO = ""CHLINX/sso""
+GITHUB_API = ""https://api.github.com""
+
+SOURCES = [
+    {""name"":""v4681_base"", ""path"":os.path.join(DRIVE_ROOT,""看股最速適_v231補行日重建獨立候選資料集_v4_68_1_20261102_000547"",""01_v231補行日重建獨立候選資料集.csv.gz""), ""required"":False, ""sha"":BASE_SHA_EXPECTED},
+    {""name"":""v469_formula_raw"", ""path"":os.path.join(V469_ROOT,"".work"",""02_formula_calculation_raw.csv.gz""), ""required"":False},
+    {""name"":""v469_group_sorted"", ""path"":os.path.join(V469_ROOT,"".work"",""01_group_sorted.csv.gz""), ""required"":T"
+/content/drive/MyDrive/Colab Notebooks/看股最速適.ipynb,156808,group_rebuilt,"# -*- coding: utf-8 -*-
+""""""看股最速適 v4.87.5.10｜MA120 群組重建階段分歧根因追查
+
+承接 v4.87.5.8：已確認 v4.68.1、v4.69 formula_raw、v4.69 group_sorted 的
+MA120 儲存值逐筆完全一致；第一次分歧發生於 v4.69 group_sorted -> group_rebuilt：
+1,456 筆 MA120 缺值狀態變動、361 筆數值超過 1e-6。
+
+本版只針對該階段進行唯讀鑑識：
+- 逐欄比較 group_sorted 與 group_rebuilt 的共通欄位，找出除 MA120 外是否另有變動。
+- 輸出 1,456 筆單邊缺值及 361 筆數值差異逐筆明細。
+- 按市場、股票、日期／年度彙整影響分布。
+- 比較來源列序與自然鍵列序，檢查 group rebuild 是否改變行順序。
+- 唯讀搜尋 v4.69 專案與 Colab Notebooks 中是否留有產生 03_group_rebuilt 的程式碼。
+- 核對 formula_raw、group_sorted、group_rebuilt、final、v4.70.1 的 MA120 傳遞鏈。
+
+不重算或改寫 MA120，不使用猜測公式取代來源值，不輸出正式 29 因子矩陣。
+Google Drive 原始資料唯讀；GitHub 只建立 audit 分支，main 不修改。
+
+Colab：%run /content/SSO_v4.87.5.10_MA120_group_rebuild_rootcause.py
+""""""
+from __future__ import annotations
+
+import os, sys, re, json, csv, gzip, base64, hashlib, zipfile, traceback, subprocess
+from pathlib import Path
+from datetime import datetime, timezone, timedelta
+from urllib.parse import quote
+
+import pandas as pd
+import requests
+
+VERSION = ""v4.87.5.10-ma120-group-rebuild-rootcause""
+DRIVE_ROOT = ""/content/drive/MyDrive/看股最速適""
+V469_ROOT = os.path.join(DRIVE_ROOT, ""看股最速適_v231補行日日期排序與已驗證特徵重建_v4_69_20261102_084647"")
+V484_ROOT = os.path.join(DRIVE_ROOT, ""看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113"")
+BASE_SHA_EXPECTED = ""a5151cdebe26233389f55bf6189f65d21e1f5df05f025b653963bafc483deb4d""
+TOL = 1e-6
+CLOSE_TOL = 1e-9
+TZ = timezone(timedelta(hours=8))
+RUN_DT = datetime.now(TZ)
+STAMP = RUN_DT.strftime(""%Y%m%d_%H%M%S"")
+DATE_FOLDER = RUN_DT.strftime(""%Y%m%d"")
+BRANCH = f""audit/v487510-ma120-group-rebuild-{STAMP}""
+GITHUB_REPO = ""CHLINX/sso""
+GITHUB_API = ""https://api.github.com""
+
+SOURCES = [
+    {""name"":""v4681_base"", ""path"":os.path.join(DRIVE_ROOT,""看股最速適_v231補行日重建獨立候選資料集_v4_68_1_20261102_000547"",""01_v231補行日重建獨立候選資料集.csv.gz""), ""required"":Fal"
+/content/drive/MyDrive/Colab Notebooks/看股最速適.ipynb,156808,01_group_sorted,"53963bafc483deb4d""
+TOL = 1e-6
+CLOSE_TOL = 1e-9
+TZ = timezone(timedelta(hours=8))
+RUN_DT = datetime.now(TZ)
+STAMP = RUN_DT.strftime(""%Y%m%d_%H%M%S"")
+DATE_FOLDER = RUN_DT.strftime(""%Y%m%d"")
+BRANCH = f""audit/v487510-ma120-group-rebuild-{STAMP}""
+GITHUB_REPO = ""CHLINX/sso""
+GITHUB_API = ""https://api.github.com""
+
+SOURCES = [
+    {""name"":""v4681_base"", ""path"":os.path.join(DRIVE_ROOT,""看股最速適_v231補行日重建獨立候選資料集_v4_68_1_20261102_000547"",""01_v231補行日重建獨立候選資料集.csv.gz""), ""required"":False, ""sha"":BASE_SHA_EXPECTED},
+    {""name"":""v469_formula_raw"", ""path"":os.path.join(V469_ROOT,"".work"",""02_formula_calculation_raw.csv.gz""), ""required"":False},
+    {""name"":""v469_group_sorted"", ""path"":os.path.join(V469_ROOT,"".work"",""01_group_sorted.csv.gz""), ""required"":True},
+    {""name"":""v469_group_rebuilt"", ""path"":os.path.join(V469_ROOT,"".work"",""03_group_rebuilt.csv.gz""), ""required"":True},
+    {""name"":""v469_final_candidate"", ""path"":os.path.join(V484_ROOT,""v4.69"",""01_v231補行日日期排序與已驗證特徵重建候選.csv.gz""), ""required"":False},
+    {""name"":""v4701_model_table"", ""path"":os.path.join(V484_ROOT,""v4.70.1"",""01_v231補行日模型研究資料表.csv.gz""), ""required"":False},
+]
+
+# -----------------------------------------------------------------------------
+# Colab / paths / logging
+# -----------------------------------------------------------------------------
+if not os.path.isdir(""/content/drive/MyDrive""):
+    try:
+        from google.colab import drive  # type: ignore
+        drive.mount(""/content/drive"")
+    except Exception as exc:
+        raise RuntimeError(""Google Drive 尚未掛載，請先掛載後再執行。"") from exc
+if not os.path.isdir(DRIVE_ROOT):
+    raise FileNotFoundError(f""找不到專案資料夾：{DRIVE_ROOT}"")
+OUT_DIR = os.path.join(DRIVE_ROOT, f""看股最速適_v4.87.5.10_MA120群組重建根因追查_{STAMP}"")
+os.makedirs(OUT_DIR, exist_ok=False)
+TMP_DIR = os.path.join(""/content"", f"".sso_v487510_group_rebuild_{STAMP}"")
+os.makedirs(TMP_DIR, exist_ok=True)
+LOGS: list[str] = []
+
+def log(msg: str) -> None:
+    line=f""[{datetime.now(TZ).strftime('%H:%M:%S')}] {msg}""
+    LOGS.append(line); print(line, flush=True)
+
+def sha256_file(path: str) -> str:
+    h=hashlib.sha256()
+    with open(path,""rb"") as f:
+        for b in iter(lambda:f.read(8*1024*1024),b""""): h.update(b)
+    return h.hexdigest()
+
+def norm_col(x: object) -> str:
+    return re.sub(r""[\s_\-（）()【】\[\]]+"", """", str(x)).lower()
+
+def ide"
+/content/drive/MyDrive/Colab Notebooks/看股最速適.ipynb,156808,02_formula_calculation_raw,"(DRIVE_ROOT, ""看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113"")
+BASE_SHA_EXPECTED = ""a5151cdebe26233389f55bf6189f65d21e1f5df05f025b653963bafc483deb4d""
+TOL = 1e-6
+CLOSE_TOL = 1e-9
+TZ = timezone(timedelta(hours=8))
+RUN_DT = datetime.now(TZ)
+STAMP = RUN_DT.strftime(""%Y%m%d_%H%M%S"")
+DATE_FOLDER = RUN_DT.strftime(""%Y%m%d"")
+BRANCH = f""audit/v487510-ma120-group-rebuild-{STAMP}""
+GITHUB_REPO = ""CHLINX/sso""
+GITHUB_API = ""https://api.github.com""
+
+SOURCES = [
+    {""name"":""v4681_base"", ""path"":os.path.join(DRIVE_ROOT,""看股最速適_v231補行日重建獨立候選資料集_v4_68_1_20261102_000547"",""01_v231補行日重建獨立候選資料集.csv.gz""), ""required"":False, ""sha"":BASE_SHA_EXPECTED},
+    {""name"":""v469_formula_raw"", ""path"":os.path.join(V469_ROOT,"".work"",""02_formula_calculation_raw.csv.gz""), ""required"":False},
+    {""name"":""v469_group_sorted"", ""path"":os.path.join(V469_ROOT,"".work"",""01_group_sorted.csv.gz""), ""required"":True},
+    {""name"":""v469_group_rebuilt"", ""path"":os.path.join(V469_ROOT,"".work"",""03_group_rebuilt.csv.gz""), ""required"":True},
+    {""name"":""v469_final_candidate"", ""path"":os.path.join(V484_ROOT,""v4.69"",""01_v231補行日日期排序與已驗證特徵重建候選.csv.gz""), ""required"":False},
+    {""name"":""v4701_model_table"", ""path"":os.path.join(V484_ROOT,""v4.70.1"",""01_v231補行日模型研究資料表.csv.gz""), ""required"":False},
+]
+
+# -----------------------------------------------------------------------------
+# Colab / paths / logging
+# -----------------------------------------------------------------------------
+if not os.path.isdir(""/content/drive/MyDrive""):
+    try:
+        from google.colab import drive  # type: ignore
+        drive.mount(""/content/drive"")
+    except Exception as exc:
+        raise RuntimeError(""Google Drive 尚未掛載，請先掛載後再執行。"") from exc
+if not os.path.isdir(DRIVE_ROOT):
+    raise FileNotFoundError(f""找不到專案資料夾：{DRIVE_ROOT}"")
+OUT_DIR = os.path.join(DRIVE_ROOT, f""看股最速適_v4.87.5.10_MA120群組重建根因追查_{STAMP}"")
+os.makedirs(OUT_DIR, exist_ok=False)
+TMP_DIR = os.path.join(""/content"", f"".sso_v487510_group_rebuild_{STAMP}"")
+os.makedirs(TMP_DIR, exist_ok=True)
+LOGS: list[str] = []
+
+def log(msg: str) -> None:
+    line=f""[{datetime.now(TZ).strftime('%H:%M:%S')}] {msg}""
+    LOGS.append(line); print(line, flush=True)
+
+def sha256_file(path: str) -> str:
+    h=hashlib.sha256()
+    with open(path,""rb"") as f:
+        for b in iter(lambda:f.read(8*1024*1024),b""""): h.update(b)"

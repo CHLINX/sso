@@ -1,0 +1,5 @@
+﻿market,ma120_status,affected_count,stock_count,first_date,last_date
+TPEX,numeric_mismatch,215,162,2017-04-05,2019-06-25
+TPEX,rebuilt_only_value,570,526,2017-03-30,2019-06-20
+TWSE,numeric_mismatch,146,105,2017-04-06,2019-12-16
+TWSE,rebuilt_only_value,886,811,2017-03-30,2019-06-21

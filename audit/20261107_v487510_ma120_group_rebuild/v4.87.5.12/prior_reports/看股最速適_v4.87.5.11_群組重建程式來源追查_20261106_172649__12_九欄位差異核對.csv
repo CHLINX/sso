@@ -1,0 +1,10 @@
+﻿field,left_null_right_value,left_value_right_null,numeric_diff_over_tolerance,text_value_diff,source_report,numeric_same_within_tolerance,tolerance
+收盤相對MA5,9,0,93,0,07_group_sorted_vs_rebuilt全共通欄位差異統計.csv,4134264,1e-06
+收盤相對MA20,38,0,190,0,07_group_sorted_vs_rebuilt全共通欄位差異統計.csv,4090213,1e-06
+收盤相對MA60,117,0,292,0,07_group_sorted_vs_rebuilt全共通欄位差異統計.csv,3975079,1e-06
+收盤相對MA120,1456,0,361,0,07_group_sorted_vs_rebuilt全共通欄位差異統計.csv,3806332,1e-06
+相對前20有效K棒最高價,40,0,28,0,07_group_sorted_vs_rebuilt全共通欄位差異統計.csv,4087457,1e-09
+前瞻報酬_1根_下一根開盤至第N根收盤,30674,0,0,0,07_group_sorted_vs_rebuilt全共通欄位差異統計.csv,4112714,1e-09
+前瞻報酬_5根_下一根開盤至第N根收盤,74465,0,0,0,07_group_sorted_vs_rebuilt全共通欄位差異統計.csv,4024509,1e-09
+前瞻報酬_20根_下一根開盤至第N根收盤,202292,0,0,0,07_group_sorted_vs_rebuilt全共通欄位差異統計.csv,3852302,1e-09
+前瞻報酬_60根_下一根開盤至第N根收盤,343837,0,0,0,07_group_sorted_vs_rebuilt全共通欄位差異統計.csv,3598215,1e-09
