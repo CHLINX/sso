@@ -1,0 +1,6 @@
+﻿function,line_start,line_end,contains_OHLC有效,contains_volume,contains_min_periods,contains_shift,contains_label_pass
+external_sort_csv_gz,245,354,False,False,False,False,False
+calculate_group,357,442,False,False,True,True,False
+scan_and_calculate_grouped,445,565,False,False,False,False,True
+apply_calculated_values,568,620,False,False,False,False,True
+main,665,848,False,False,False,False,True

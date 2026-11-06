@@ -1,0 +1,74 @@
+{
+  "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py",
+  "source_sha256_current": "db661fc6004cd2fcfc171c346ee8255d734fd44a893256c0066bfdb6278f1ebe",
+  "source_sha256_rank_report": "db661fc6004cd2fcfc171c346ee8255d734fd44a893256c0066bfdb6278f1ebe",
+  "source_sha256_at_scan": "db661fc6004cd2fcfc171c346ee8255d734fd44a893256c0066bfdb6278f1ebe",
+  "source_sha256_current_at_v487512": "db661fc6004cd2fcfc171c346ee8255d734fd44a893256c0066bfdb6278f1ebe",
+  "source_sha_matches_expected": true,
+  "source_sha_matches_rank": true,
+  "source_sha_matches_scan": true,
+  "source_mtime": "2026-11-04T01:31:13+00:00",
+  "archive_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py",
+  "archive_exists": true,
+  "archive_sha256": "73dd73bc2e8ef59e714d829ad7b6e3cc5f3fc282644f21d50b692e0481630e10",
+  "embedded_source_declared_sha256": "db661fc6004cd2fcfc171c346ee8255d734fd44a893256c0066bfdb6278f1ebe",
+  "embedded_source_sha256": "db661fc6004cd2fcfc171c346ee8255d734fd44a893256c0066bfdb6278f1ebe",
+  "embedded_sha_matches_expected": true,
+  "manifest_candidates": [
+    "/content/drive/MyDrive/看股最速適/看股最速適_v231補行日日期排序與已驗證特徵重建_v4_69_20261102_084647/09_v4.69_manifest.json",
+    "/content/drive/MyDrive/看股最速適/看股最速適_v231補行日日期排序與已驗證特徵重建_v4_69_20261102_230830/09_v4.69_manifest.json"
+  ],
+  "manifest_contains_expected_sha": false,
+  "functions": [
+    {
+      "function": "external_sort_csv_gz",
+      "line_start": 245,
+      "line_end": 354,
+      "contains_OHLC有效": false,
+      "contains_volume": false,
+      "contains_min_periods": false,
+      "contains_shift": false,
+      "contains_label_pass": false
+    },
+    {
+      "function": "calculate_group",
+      "line_start": 357,
+      "line_end": 442,
+      "contains_OHLC有效": false,
+      "contains_volume": false,
+      "contains_min_periods": true,
+      "contains_shift": true,
+      "contains_label_pass": false
+    },
+    {
+      "function": "scan_and_calculate_grouped",
+      "line_start": 445,
+      "line_end": 565,
+      "contains_OHLC有效": false,
+      "contains_volume": false,
+      "contains_min_periods": false,
+      "contains_shift": false,
+      "contains_label_pass": true
+    },
+    {
+      "function": "apply_calculated_values",
+      "line_start": 568,
+      "line_end": 620,
+      "contains_OHLC有效": false,
+      "contains_volume": false,
+      "contains_min_periods": false,
+      "contains_shift": false,
+      "contains_label_pass": true
+    },
+    {
+      "function": "main",
+      "line_start": 665,
+      "line_end": 848,
+      "contains_OHLC有效": false,
+      "contains_volume": false,
+      "contains_min_periods": false,
+      "contains_shift": false,
+      "contains_label_pass": true
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+﻿line,context
+53,"50: EXPECTED_SATURDAY_DATES = {
+51:     ""2017-02-18"", ""2017-06-03"", ""2017-09-30"", ""2018-03-31"", ""2018-12-22""
+52: }
+53: FEATURE_WINDOWS = {
+54:     ""收盤相對MA5"": 5,
+55:     ""收盤相對MA20"": 20,
+56:     ""收盤相對MA60"": 60,
+57:     ""收盤相對MA120"": 120,"
+60,"57:     ""收盤相對MA120"": 120,
+58: }
+59: HIGH_FEATURE = ""相對前20有效K棒最高價""
+60: VERIFIED_FEATURES = list(FEATURE_WINDOWS) + [HIGH_FEATURE]
+61: UNVERIFIED_FEATURES = [""MA5相對MA20"", ""MA20相對MA60""]
+62: FORWARD_HORIZONS = {
+63:     ""前瞻報酬_1根_下一根開盤至第N根收盤"": 1,
+64:     ""前瞻報酬_5根_下一根開盤至第N根收盤"": 5,"
+62,"59: HIGH_FEATURE = ""相對前20有效K棒最高價""
+60: VERIFIED_FEATURES = list(FEATURE_WINDOWS) + [HIGH_FEATURE]
+61: UNVERIFIED_FEATURES = [""MA5相對MA20"", ""MA20相對MA60""]
+62: FORWARD_HORIZONS = {
+63:     ""前瞻報酬_1根_下一根開盤至第N根收盤"": 1,
+64:     ""前瞻報酬_5根_下一根開盤至第N根收盤"": 5,
+65:     ""前瞻報酬_20根_下一根開盤至第N根收盤"": 20,
+66:     ""前瞻報酬_60根_下一根開盤至第N根收盤"": 60,"
+357,"354:             ""mode"": mode, ""header"": header, ""key_columns"": {""date"": dcol, ""market"": mcol, ""code"": ccol, ""segment"": scol}}
+355: 
+356: 
+357: def calculate_group(rows: List[List[str]], header: List[str], key_idx: Dict[str, int], price_idx: Dict[str, int],
+358:                     feature_idx: Dict[str, int], label_idx: Dict[str, int], metrics: dict,
+359:                     saturday_counts: Counter) -> List[List[str]]:
+360:     """"""Return original rows plus temporary calculation columns; all calculations are per segment sequence.""""""
+361:     n = len(rows)"
+367,"364:     closes = np.array([num(r[price_idx[""close""]]) for r in rows], dtype=float)
+365:     dates = [parse_date(r[key_idx[""date""]]) for r in rows]
+366:     feat_arrays: Dict[str, np.ndarray] = {}
+367:     for target, w in FEATURE_WINDOWS.items():
+368:         ma = pd.Series(closes).rolling(window=w, min_periods=w).mean().to_numpy(dtype=float)
+369:         arr = np.full(n, np.nan, dtype=float)
+370:         good = np.isfinite(closes) & np.isfinite(ma) & (ma != 0)
+371:         arr[good] = closes[good] / ma[good] - 1.0"
+380,"377:     feat_arrays[HIGH_FEATURE] = arr
+378: 
+379:     label_arrays: Dict[str, np.ndarray] = {}
+380:     for target, h in FORWARD_HORIZONS.items():
+381:         pred = np.full(n, np.nan, dtype=float)
+382:         if n > h:
+383:             den = opens[1:n-h+1]
+384:             numer = closes[h:]"
+436,"433:     calc_cols = []
+434:     for target in VERIFIED_FEATURES:
+435:         calc_cols.append(feat_arrays[target])
+436:     for target in FORWARD_HORIZONS:
+437:         calc_cols.append(label_arrays[target])
+438:     out_rows: List[List[str]] = []
+439:     for i, r in enumerate(rows):
+440:         extra = [fmt_num(a[i]) for a in calc_cols]"
+445,"442:     return out_rows
+443: 
+444: 
+445: def scan_and_calculate_grouped(group_sorted: Path, raw_calc_path: Path, header: List[str], chunk_progress_expected: int) -> Dict[str, Any]:
+446:     dcol = find_col(header, [""日期"", ""交易日期"", ""交易日"", ""date"", ""trade_date""])
+447:     mcol = find_col(header, [""市場"", ""market"", ""市場別""])
+448:     ccol = find_col(header, [""股票代號"", ""證券代號"", ""code"", ""ticker""])
+449:     scol = find_col(header, [""價格研究區段"", ""segment"", ""區段""])"
+466,"463:         if not col:
+464:             raise ValueError(f""候選資料缺少已驗證特徵欄：{c}"")
+465:         feature_idx[c] = header.index(col)
+466:     for c in FORWARD_HORIZONS:
+467:         col = find_col(header, [c])
+468:         if not col:
+469:             raise ValueError(f""候選資料缺少前瞻欄位：{c}"")
+470:         label_idx[c] = header.index(col)"
+473,"470:         label_idx[c] = header.index(col)
+471:     metrics = {
+472:         ""feature"": {f: {factor: {""n"": 0, ""match"": 0, ""sum_abs"": 0.0, ""max_abs"": 0.0} for factor in FEATURE_SCALE_CANDIDATES} for f in VERIFIED_FEATURES},
+473:         ""label"": {f: {""n"": 0, ""match"": 0, ""sum_abs"": 0.0, ""max_abs"": 0.0} for f in FORWARD_HORIZONS},
+474:         ""feature_uncomputable_nonblank"": {f: 0 for f in VERIFIED_FEATURES},
+475:         ""label_uncomputable_nonblank"": {f: 0 for f in FORWARD_HORIZONS},
+476:     }
+477:     saturday_counts = Counter()"
+475,"472:         ""feature"": {f: {factor: {""n"": 0, ""match"": 0, ""sum_abs"": 0.0, ""max_abs"": 0.0} for factor in FEATURE_SCALE_CANDIDATES} for f in VERIFIED_FEATURES},
+473:         ""label"": {f: {""n"": 0, ""match"": 0, ""sum_abs"": 0.0, ""max_abs"": 0.0} for f in FORWARD_HORIZONS},
+474:         ""feature_uncomputable_nonblank"": {f: 0 for f in VERIFIED_FEATURES},
+475:         ""label_uncomputable_nonblank"": {f: 0 for f in FORWARD_HORIZONS},
+476:     }
+477:     saturday_counts = Counter()
+478:     calc_cols = [f""__v469_calc_feature_{i+1}"" for i in range(len(VERIFIED_FEATURES))] + [f""__v469_calc_label_{i+1}"" for i in range(len(FORWARD_HORIZONS))]
+479:     started = time.monotonic()"
+478,"475:         ""label_uncomputable_nonblank"": {f: 0 for f in FORWARD_HORIZONS},
+476:     }
+477:     saturday_counts = Counter()
+478:     calc_cols = [f""__v469_calc_feature_{i+1}"" for i in range(len(VERIFIED_FEATURES))] + [f""__v469_calc_label_{i+1}"" for i in range(len(FORWARD_HORIZONS))]
+479:     started = time.monotonic()
+480:     rows_read = groups = 0
+481:     current_group = None
+482:     buffer: List[List[str]] = []"
+502,"499:             if current_group is None:
+500:                 current_group = gkey
+501:             if gkey != current_group:
+502:                 out_rows = calculate_group(buffer, header, key_idx, price_idx, feature_idx, label_idx, metrics, saturday_counts)
+503:                 writer.writerows(out_rows)
+504:                 rows_read += len(buffer)
+505:                 groups += 1
+506:                 buffer = []"
+519,"516:             last_key = sort_key
+517:             buffer.append(row)
+518:         if buffer:
+519:             out_rows = calculate_group(buffer, header, key_idx, price_idx, feature_idx, label_idx, metrics, saturday_counts)
+520:             writer.writerows(out_rows)
+521:             rows_read += len(buffer)
+522:             groups += 1
+523:     log(f""公式重建完成：{groups:,}組；{rows_read:,}列；星期六={sum(saturday_counts.values()):,}；耗時 {elapsed(time.monotonic()-started)}"")"
+568,"565:             ""key_idx"": key_idx, ""price_idx"": price_idx, ""feature_idx"": feature_idx, ""label_idx"": label_idx}
+566: 
+567: 
+568: def apply_calculated_values(raw_calc_path: Path, output_group_path: Path, header: List[str],
+569:                             calc_cols: List[str], feature_scales: Dict[str, Optional[float]],
+570:                             label_pass: Dict[str, bool], feature_idx: Dict[str, int], label_idx: Dict[str, int]) -> Dict[str, int]:
+571:     update_counts = Counter()
+572:     bad_new_saturday_missing = Counter()"
+607,"604:                     base[feature_idx[target]] = new
+605:                 elif is_sat:
+606:                     bad_new_saturday_missing[target] += 1
+607:             for target in FORWARD_HORIZONS:
+608:                 calc = num(extra[ei]); ei += 1
+609:                 if label_pass.get(target, False):
+610:                     if math.isfinite(calc):
+611:                         new = fmt_num(calc)"
+702,"699:     work.mkdir()
+700:     group_sorted = work / ""01_group_sorted.csv.gz""
+701:     raw_calc = work / ""02_formula_calculation_raw.csv.gz""
+702:     group_rebuilt = work / ""03_group_rebuilt.csv.gz""
+703:     final_group = work / ""04_final_date_sorted.csv.gz""
+704:     final_candidate = out / ""01_v231補行日日期排序與已驗證特徵重建候選.csv.gz""
+705: 
+706:     log(f""{VERSION}開始：依 market+code+segment 重建已驗證特徵及前瞻標籤，最後按日期排序"")"
+719,"716:     scol = find_col(header, [""價格研究區段"", ""segment"", ""區段""])
+717:     required_cols = [dcol, mcol, ccol, scol, ""影子開盤價"", ""影子最高價"", ""影子最低價"", ""影子收盤價""]
+718:     missing = [x for x in required_cols if not x or find_col(header, [x]) is None]
+719:     missing += [x for x in VERIFIED_FEATURES + list(FORWARD_HORIZONS) if find_col(header, [x]) is None]
+720:     if missing:
+721:         raise ValueError(f""候選資料缺少必要欄位：{missing}"")
+722:     if not all(find_col(header, [x]) for x in UNVERIFIED_FEATURES):
+723:         log(""注意：未驗證特徵欄位在候選檔中非完整存在；後續會明確列出欄位狀態。"")"
+729,"726:                                             args.expected_rows, ""證券序列排序"")
+727:     if group_sort_info[""duplicates""] != 0 or not group_sort_info[""monotonic""]:
+728:         raise RuntimeError(""依證券序列排序後發現自然鍵重複或順序異常，停止重建。"")
+729:     calc_info = scan_and_calculate_grouped(group_sorted, raw_calc, header, group_sort_info[""rows""])
+730:     feature_results = calc_info[""feature_results""]
+731:     label_results = calc_info[""label_results""]
+732:     feature_pass_n = sum(r[""公式判讀""] == ""PASS"" for r in feature_results)
+733:     label_pass_n = sum(r[""公式判讀""] == ""PASS"" for r in label_results)"
+736,"733:     label_pass_n = sum(r[""公式判讀""] == ""PASS"" for r in label_results)
+734:     log(f""公式交叉驗證：已驗證特徵 {feature_pass_n}/5；前瞻標籤 {label_pass_n}/4"")
+735: 
+736:     apply_info = apply_calculated_values(raw_calc, group_rebuilt, header, calc_info[""calc_cols""],
+737:                                          calc_info[""chosen_scales""], calc_info[""label_pass""],
+738:                                          calc_info[""feature_idx""], calc_info[""label_idx""])
+739:     date_sort_info = external_sort_csv_gz(group_rebuilt, final_group, work, ""date"", args.chunk_size,
+740:                                            calc_info[""rows""], ""全資料日期排序"")"
+739,"736:     apply_info = apply_calculated_values(raw_calc, group_rebuilt, header, calc_info[""calc_cols""],
+737:                                          calc_info[""chosen_scales""], calc_info[""label_pass""],
+738:                                          calc_info[""feature_idx""], calc_info[""label_idx""])
+739:     date_sort_info = external_sort_csv_gz(group_rebuilt, final_group, work, ""date"", args.chunk_size,
+740:                                            calc_info[""rows""], ""全資料日期排序"")
+741:     if date_sort_info[""duplicates""] != 0 or not date_sort_info[""monotonic""]:
+742:         raise RuntimeError(""最終日期排序發現自然鍵重複或日期順序異常，停止發佈候選。"")
+743:     if final_candidate.exists():"

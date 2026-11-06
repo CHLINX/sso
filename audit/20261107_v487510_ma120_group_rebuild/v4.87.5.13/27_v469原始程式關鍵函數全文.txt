@@ -1,0 +1,578 @@
+
+====================================================================================================
+FUNCTION external_sort_csv_gz｜lines 245-354
+====================================================================================================
+def external_sort_csv_gz(
+    source: Path,
+    target: Path,
+    work_dir: Path,
+    mode: str,
+    chunk_size: int,
+    expected_rows: int,
+    label: str,
+) -> Dict[str, Any]:
+    """External stable sort. mode=group => market/code/segment/date; date => date/market/code/segment."""
+    if mode not in {"group", "date"}:
+        raise ValueError(mode)
+    part_dir = work_dir / f"parts_{label}_{mode}"
+    if part_dir.exists():
+        shutil.rmtree(part_dir)
+    part_dir.mkdir(parents=True)
+    header = read_header(source)
+    dcol = find_col(header, ["日期", "交易日期", "交易日", "date", "trade_date"])
+    mcol = find_col(header, ["市場", "market", "市場別"])
+    ccol = find_col(header, ["股票代號", "證券代號", "code", "ticker"])
+    scol = find_col(header, ["價格研究區段", "segment", "區段"])
+    missing = [k for k, v in {"date": dcol, "market": mcol, "code": ccol, "segment": scol}.items() if not v]
+    if missing:
+        raise ValueError(f"候選資料缺少排序自然鍵欄位：{missing}; columns={header}")
+    idx = {"date": header.index(dcol), "market": header.index(mcol), "code": header.index(ccol), "segment": header.index(scol)}
+    key_names = ["__k_market", "__k_code", "__k_segment", "__k_date"] if mode == "group" else ["__k_date", "__k_market", "__k_code", "__k_segment"]
+    parts: List[Path] = []
+    total = 0
+    started = time.monotonic()
+    log(f"{label}分塊排序開始：mode={mode}; chunk={chunk_size:,}; 預估列數={expected_rows:,}")
+    reader = pd.read_csv(source, dtype=str, encoding="utf-8-sig", keep_default_na=False,
+                         chunksize=chunk_size, low_memory=False, compression="gzip")
+    for ci, df in enumerate(reader, 1):
+        n = len(df)
+        total += n
+        ds = df[dcol].map(parse_date)
+        if ds.isna().any():
+            raise ValueError(f"{label}第{ci}區塊有 {int(ds.isna().sum())} 筆日期無法解析")
+        ms = df[mcol].map(norm_market)
+        cs = df[ccol].map(norm_code)
+        ss = df[scol].map(clean)
+        if (ms.eq("") | cs.eq("") | ss.eq("")).any():
+            raise ValueError(f"{label}第{ci}區塊有自然鍵缺值")
+        temp = df.copy()
+        temp["__k_date"] = ds.to_numpy()
+        temp["__k_market"] = ms.to_numpy()
+        temp["__k_code"] = cs.to_numpy()
+        temp["__k_segment"] = ss.to_numpy()
+        temp = temp.sort_values(key_names, kind="mergesort")
+        part = part_dir / f"part_{ci:05d}.csv.gz"
+        temp[header].to_csv(part, index=False, encoding="utf-8-sig", compression="gzip", lineterminator="\n")
+        parts.append(part)
+        if ci == 1 or total % (chunk_size * 2) < n or total == expected_rows:
+            pct = min(100.0, total / max(1, expected_rows) * 100)
+            log(f"{label}分塊排序 {bar(pct)} | chunk {ci:,} | 已讀 {total:,}/{expected_rows:,}（估計） | {total/max(0.001,time.monotonic()-started):,.0f}列/秒 | {elapsed(time.monotonic()-started)}")
+    if total != expected_rows:
+        log(f"警告：{label}實際列數 {total:,} 與預期 {expected_rows:,} 不同；後續仍會以實際列數為準並驗證。")
+
+    # Merge sorted runs. Each run is opened once; only one row per run stays in heap.
+    log(f"{label}開始合併 {len(parts)} 個已排序分塊……")
+    output_header = header
+    rows_written = 0
+    duplicate_keys = 0
+    previous_natural = None
+    previous_sort = None
+    monotonic_ok = True
+    merge_started = time.monotonic()
+    idx_pos = {"date": header.index(dcol), "market": header.index(mcol), "code": header.index(ccol), "segment": header.index(scol)}
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if target.exists():
+        raise FileExistsError(f"拒絕覆寫排序輸出：{target}")
+    with ExitStack() as stack, gzip.open(target, "wt", encoding="utf-8-sig", newline="") as out_f:
+        writer = csv.writer(out_f, lineterminator="\n")
+        writer.writerow(output_header)
+        readers = []
+        heap = []
+        for pi, part in enumerate(parts):
+            pf = stack.enter_context(gzip.open(part, "rt", encoding="utf-8-sig", newline=""))
+            rr = csv.reader(pf)
+            part_header = next(rr, None)
+            if part_header != output_header:
+                raise ValueError(f"分塊欄位不一致：{part}")
+            readers.append(rr)
+            row = next(rr, None)
+            if row is not None:
+                key = sort_key_from_row(row, idx_pos, mode)
+                heapq.heappush(heap, (key, pi, row))
+        while heap:
+            key, pi, row = heapq.heappop(heap)
+            if previous_sort is not None and key < previous_sort:
+                monotonic_ok = False
+            nk = natural_key_from_sort_key(key, mode)
+            if nk == previous_natural:
+                duplicate_keys += 1
+            previous_sort = key
+            previous_natural = nk
+            writer.writerow(row)
+            rows_written += 1
+            nxt = next(readers[pi], None)
+            if nxt is not None:
+                nkey = sort_key_from_row(nxt, idx_pos, mode)
+                heapq.heappush(heap, (nkey, pi, nxt))
+            if rows_written % 500_000 == 0:
+                pct = min(100.0, rows_written / max(1, total) * 100)
+                log(f"{label}合併 {bar(pct)} | 已寫 {rows_written:,}/{total:,} | 重複自然鍵 {duplicate_keys:,} | {elapsed(time.monotonic()-merge_started)}")
+    log(f"{label}合併完成：{rows_written:,}列；自然鍵重複={duplicate_keys:,}；順序單調={monotonic_ok}；耗時 {elapsed(time.monotonic()-merge_started)}")
+    shutil.rmtree(part_dir, ignore_errors=True)
+    return {"rows": rows_written, "duplicates": duplicate_keys, "monotonic": monotonic_ok,
+            "part_count": len(parts), "elapsed_seconds": time.monotonic()-started,
+            "mode": mode, "header": header, "key_columns": {"date": dcol, "market": mcol, "code": ccol, "segment": scol}}
+
+
+====================================================================================================
+FUNCTION calculate_group｜lines 357-442
+====================================================================================================
+def calculate_group(rows: List[List[str]], header: List[str], key_idx: Dict[str, int], price_idx: Dict[str, int],
+                    feature_idx: Dict[str, int], label_idx: Dict[str, int], metrics: dict,
+                    saturday_counts: Counter) -> List[List[str]]:
+    """Return original rows plus temporary calculation columns; all calculations are per segment sequence."""
+    n = len(rows)
+    opens = np.array([num(r[price_idx["open"]]) for r in rows], dtype=float)
+    highs = np.array([num(r[price_idx["high"]]) for r in rows], dtype=float)
+    closes = np.array([num(r[price_idx["close"]]) for r in rows], dtype=float)
+    dates = [parse_date(r[key_idx["date"]]) for r in rows]
+    feat_arrays: Dict[str, np.ndarray] = {}
+    for target, w in FEATURE_WINDOWS.items():
+        ma = pd.Series(closes).rolling(window=w, min_periods=w).mean().to_numpy(dtype=float)
+        arr = np.full(n, np.nan, dtype=float)
+        good = np.isfinite(closes) & np.isfinite(ma) & (ma != 0)
+        arr[good] = closes[good] / ma[good] - 1.0
+        feat_arrays[target] = arr
+    prior_high = pd.Series(highs).shift(1).rolling(window=20, min_periods=20).max().to_numpy(dtype=float)
+    arr = np.full(n, np.nan, dtype=float)
+    good = np.isfinite(closes) & np.isfinite(prior_high) & (prior_high != 0)
+    arr[good] = closes[good] / prior_high[good] - 1.0
+    feat_arrays[HIGH_FEATURE] = arr
+
+    label_arrays: Dict[str, np.ndarray] = {}
+    for target, h in FORWARD_HORIZONS.items():
+        pred = np.full(n, np.nan, dtype=float)
+        if n > h:
+            den = opens[1:n-h+1]
+            numer = closes[h:]
+            good = np.isfinite(den) & np.isfinite(numer) & (den != 0)
+            z = np.full(n-h, np.nan, dtype=float)
+            z[good] = numer[good] / den[good] - 1.0
+            pred[:n-h] = z
+        label_arrays[target] = pred
+
+    # Validate feature formula scale against stored candidate values on every comparable row.
+    for target, arr in feat_arrays.items():
+        fidx = feature_idx[target]
+        for factor in FEATURE_SCALE_CANDIDATES:
+            met = metrics["feature"][target][factor]
+            for i, calc in enumerate(arr):
+                stored = num(rows[i][fidx])
+                if math.isfinite(calc) and math.isfinite(stored):
+                    err = abs(calc * factor - stored)
+                    met["n"] += 1
+                    met["match"] += int(err <= FORMULA_TOLERANCE)
+                    met["sum_abs"] += err
+                    met["max_abs"] = max(met["max_abs"], err)
+        met_any = metrics["feature_uncomputable_nonblank"][target]
+        for i, calc in enumerate(arr):
+            if not math.isfinite(calc) and clean(rows[i][fidx]):
+                met_any += 1
+        metrics["feature_uncomputable_nonblank"][target] = met_any
+
+    # Validate forward label formula (v4.60 found label multiplier=0.01 after percentage-form calculation;
+    # equivalently the persisted field is the raw decimal return ratio used here).
+    for target, arr in label_arrays.items():
+        lidx = label_idx[target]
+        met = metrics["label"][target]
+        for i, calc in enumerate(arr):
+            stored = num(rows[i][lidx])
+            if math.isfinite(calc) and math.isfinite(stored):
+                err = abs(calc - stored)
+                met["n"] += 1
+                met["match"] += int(err <= FORMULA_TOLERANCE)
+                met["sum_abs"] += err
+                met["max_abs"] = max(met["max_abs"], err)
+        for i, calc in enumerate(arr):
+            if not math.isfinite(calc) and clean(rows[i][lidx]):
+                metrics["label_uncomputable_nonblank"][target] += 1
+
+    # Per-new-row coverage and date count. Saturdays are the only added dates in the accepted candidate.
+    for d in dates:
+        if d and date.fromisoformat(d).weekday() == 5:
+            saturday_counts[d] += 1
+
+    # Add calculation columns for a second pass after choosing the empirically supported feature scale.
+    calc_cols = []
+    for target in VERIFIED_FEATURES:
+        calc_cols.append(feat_arrays[target])
+    for target in FORWARD_HORIZONS:
+        calc_cols.append(label_arrays[target])
+    out_rows: List[List[str]] = []
+    for i, r in enumerate(rows):
+        extra = [fmt_num(a[i]) for a in calc_cols]
+        out_rows.append(r + extra)
+    return out_rows
+
+
+====================================================================================================
+FUNCTION scan_and_calculate_grouped｜lines 445-565
+====================================================================================================
+def scan_and_calculate_grouped(group_sorted: Path, raw_calc_path: Path, header: List[str], chunk_progress_expected: int) -> Dict[str, Any]:
+    dcol = find_col(header, ["日期", "交易日期", "交易日", "date", "trade_date"])
+    mcol = find_col(header, ["市場", "market", "市場別"])
+    ccol = find_col(header, ["股票代號", "證券代號", "code", "ticker"])
+    scol = find_col(header, ["價格研究區段", "segment", "區段"])
+    opcol = find_col(header, ["影子開盤價"])
+    hicol = find_col(header, ["影子最高價"])
+    locol = find_col(header, ["影子最低價"])
+    clcol = find_col(header, ["影子收盤價"])
+    required = [dcol, mcol, ccol, scol, opcol, hicol, locol, clcol]
+    if any(not x for x in required):
+        raise ValueError(f"候選資料缺少日期／自然鍵／影子OHLC欄位：{required}")
+    key_idx = {"date": header.index(dcol), "market": header.index(mcol), "code": header.index(ccol), "segment": header.index(scol)}
+    price_idx = {"open": header.index(opcol), "high": header.index(hicol), "low": header.index(locol), "close": header.index(clcol)}
+    feature_idx = {}
+    label_idx = {}
+    for c in VERIFIED_FEATURES:
+        col = find_col(header, [c])
+        if not col:
+            raise ValueError(f"候選資料缺少已驗證特徵欄：{c}")
+        feature_idx[c] = header.index(col)
+    for c in FORWARD_HORIZONS:
+        col = find_col(header, [c])
+        if not col:
+            raise ValueError(f"候選資料缺少前瞻欄位：{c}")
+        label_idx[c] = header.index(col)
+    metrics = {
+        "feature": {f: {factor: {"n": 0, "match": 0, "sum_abs": 0.0, "max_abs": 0.0} for factor in FEATURE_SCALE_CANDIDATES} for f in VERIFIED_FEATURES},
+        "label": {f: {"n": 0, "match": 0, "sum_abs": 0.0, "max_abs": 0.0} for f in FORWARD_HORIZONS},
+        "feature_uncomputable_nonblank": {f: 0 for f in VERIFIED_FEATURES},
+        "label_uncomputable_nonblank": {f: 0 for f in FORWARD_HORIZONS},
+    }
+    saturday_counts = Counter()
+    calc_cols = [f"__v469_calc_feature_{i+1}" for i in range(len(VERIFIED_FEATURES))] + [f"__v469_calc_label_{i+1}" for i in range(len(FORWARD_HORIZONS))]
+    started = time.monotonic()
+    rows_read = groups = 0
+    current_group = None
+    buffer: List[List[str]] = []
+    last_key = None
+    if raw_calc_path.exists():
+        raise FileExistsError(raw_calc_path)
+    log("開始依 market+code+segment 計算五項已驗證特徵與四項前瞻標籤……")
+    with gzip.open(group_sorted, "rt", encoding="utf-8-sig", newline="") as src, gzip.open(raw_calc_path, "wt", encoding="utf-8-sig", newline="") as dst:
+        reader = csv.reader(src)
+        src_header = next(reader)
+        if src_header != header:
+            raise ValueError("group sorted header mismatch")
+        writer = csv.writer(dst, lineterminator="\n")
+        writer.writerow(header + calc_cols)
+        for row in reader:
+            if len(row) != len(header):
+                raise ValueError(f"候選資料列欄位數錯誤：{len(row)} != {len(header)}")
+            gkey = (norm_market(row[key_idx["market"]]), norm_code(row[key_idx["code"]]),
+                    clean(row[key_idx["segment"]]))
+            if current_group is None:
+                current_group = gkey
+            if gkey != current_group:
+                out_rows = calculate_group(buffer, header, key_idx, price_idx, feature_idx, label_idx, metrics, saturday_counts)
+                writer.writerows(out_rows)
+                rows_read += len(buffer)
+                groups += 1
+                buffer = []
+                current_group = gkey
+                if groups % 100 == 0:
+                    pct = min(100.0, rows_read / max(1, chunk_progress_expected) * 100)
+                    log(f"公式重建進度 {bar(pct)} | {groups:,}組 | 已處理 {rows_read:,}/{chunk_progress_expected:,}列 | 星期六 {sum(saturday_counts.values()):,} | {elapsed(time.monotonic()-started)}")
+            # Within the grouped-sorted file the date must be ascending and unique per group.
+            d = parse_date(row[key_idx["date"]])
+            sort_key = (gkey[0], gkey[1], gkey[2], d or "")
+            if last_key is not None and sort_key < last_key:
+                raise ValueError("group sort file 內日期順序錯誤")
+            last_key = sort_key
+            buffer.append(row)
+        if buffer:
+            out_rows = calculate_group(buffer, header, key_idx, price_idx, feature_idx, label_idx, metrics, saturday_counts)
+            writer.writerows(out_rows)
+            rows_read += len(buffer)
+            groups += 1
+    log(f"公式重建完成：{groups:,}組；{rows_read:,}列；星期六={sum(saturday_counts.values()):,}；耗時 {elapsed(time.monotonic()-started)}")
+
+    # Choose feature scale only when the observed stored values strongly support exactly one candidate.
+    feature_results = []
+    chosen_scales = {}
+    for target in VERIFIED_FEATURES:
+        options = []
+        for factor, met in metrics["feature"][target].items():
+            rate = met["match"] / met["n"] if met["n"] else 0.0
+            mae = met["sum_abs"] / met["n"] if met["n"] else float("inf")
+            options.append((rate, -mae, factor, met))
+        options.sort(reverse=True)
+        best = options[0]
+        # Avoid selecting a scale based on an insufficient denominator.
+        passed = best[3]["n"] >= 1000 and best[0] >= MIN_FORMULA_MATCH_RATE
+        chosen_scales[target] = best[2] if passed else None
+        feature_results.append({
+            "特徵欄位": target, "最佳倍率": best[2], "可比較列數": best[3]["n"],
+            "誤差小於等於0.001列數": best[3]["match"], "符合比例": best[0],
+            "平均絕對誤差": best[3]["sum_abs"] / best[3]["n"] if best[3]["n"] else "",
+            "最大絕對誤差": best[3]["max_abs"],
+            "公式判讀": "PASS" if passed else "NOT_VERIFIED",
+            "公式計算無值但原欄非空列數": metrics["feature_uncomputable_nonblank"][target],
+            "倍率候選診斷": json.dumps({str(f): {"n": m["n"], "match_rate": (m["match"]/m["n"] if m["n"] else 0), "mae": (m["sum_abs"]/m["n"] if m["n"] else None)} for f,m in metrics["feature"][target].items()}, ensure_ascii=False),
+        })
+    label_results = []
+    label_pass = {}
+    for target, met in metrics["label"].items():
+        rate = met["match"] / met["n"] if met["n"] else 0.0
+        mae = met["sum_abs"] / met["n"] if met["n"] else float("inf")
+        passed = met["n"] >= 1000 and rate >= MIN_FORMULA_MATCH_RATE and mae <= FORMULA_TOLERANCE
+        label_pass[target] = passed
+        label_results.append({
+            "前瞻標籤欄位": target, "公式": "close[t+h] / open[t+1] - 1（儲存小數報酬）",
+            "可比較列數": met["n"], "誤差小於等於0.001列數": met["match"], "符合比例": rate,
+            "平均絕對誤差": mae if math.isfinite(mae) else "", "最大絕對誤差": met["max_abs"],
+            "公式判讀": "PASS" if passed else "NOT_VERIFIED",
+            "公式計算無值但原欄非空列數": metrics["label_uncomputable_nonblank"][target],
+        })
+    return {"rows": rows_read, "groups": groups, "metrics": metrics, "feature_results": feature_results,
+            "label_results": label_results, "chosen_scales": chosen_scales, "label_pass": label_pass,
+            "saturday_counts": dict(saturday_counts), "calc_cols": calc_cols,
+            "key_idx": key_idx, "price_idx": price_idx, "feature_idx": feature_idx, "label_idx": label_idx}
+
+
+====================================================================================================
+FUNCTION apply_calculated_values｜lines 568-620
+====================================================================================================
+def apply_calculated_values(raw_calc_path: Path, output_group_path: Path, header: List[str],
+                            calc_cols: List[str], feature_scales: Dict[str, Optional[float]],
+                            label_pass: Dict[str, bool], feature_idx: Dict[str, int], label_idx: Dict[str, int]) -> Dict[str, int]:
+    update_counts = Counter()
+    bad_new_saturday_missing = Counter()
+    calc_header = header + calc_cols
+    if output_group_path.exists():
+        raise FileExistsError(output_group_path)
+    started = time.monotonic()
+    with gzip.open(raw_calc_path, "rt", encoding="utf-8-sig", newline="") as src, gzip.open(output_group_path, "wt", encoding="utf-8-sig", newline="") as dst:
+        reader = csv.reader(src)
+        src_header = next(reader)
+        if src_header != calc_header:
+            raise ValueError("暫存公式欄位結構不符")
+        writer = csv.writer(dst, lineterminator="\n")
+        writer.writerow(header)
+        date_col = find_col(header, ["日期", "交易日期", "交易日", "date", "trade_date"])
+        if not date_col:
+            raise ValueError("候選資料缺少日期欄")
+        date_idx = header.index(date_col)
+        for ri, row in enumerate(reader, 1):
+            if len(row) != len(calc_header):
+                raise ValueError(f"公式暫存列欄位數錯誤：row={ri}; len={len(row)}")
+            base = row[:len(header)]
+            extra = row[len(header):]
+            d = parse_date(base[date_idx])
+            is_sat = bool(d and date.fromisoformat(d).weekday() == 5)
+            ei = 0
+            for target in VERIFIED_FEATURES:
+                calc = num(extra[ei]); ei += 1
+                factor = feature_scales.get(target)
+                if factor is not None and math.isfinite(calc):
+                    value = calc * factor
+                    new = fmt_num(value)
+                    if base[feature_idx[target]] != new:
+                        update_counts[f"feature::{target}"] += 1
+                    base[feature_idx[target]] = new
+                elif is_sat:
+                    bad_new_saturday_missing[target] += 1
+            for target in FORWARD_HORIZONS:
+                calc = num(extra[ei]); ei += 1
+                if label_pass.get(target, False):
+                    if math.isfinite(calc):
+                        new = fmt_num(calc)
+                        if base[label_idx[target]] != new:
+                            update_counts[f"label::{target}"] += 1
+                        base[label_idx[target]] = new
+                    elif is_sat:
+                        bad_new_saturday_missing[target] += 1
+            writer.writerow(base)
+            if ri % 500_000 == 0:
+                log(f"套用已驗證公式 {bar(ri/EXPECTED_ROWS*100)} | 已處理 {ri:,}列 | {elapsed(time.monotonic()-started)}")
+    return {"updated_cells": dict(update_counts), "saturday_calculation_missing": dict(bad_new_saturday_missing)}
+
+
+====================================================================================================
+FUNCTION main｜lines 665-848
+====================================================================================================
+def main() -> None:
+    ap = argparse.ArgumentParser(description=VERSION)
+    ap.add_argument("--root", default=ROOT_DEFAULT)
+    ap.add_argument("--candidate-dir", default="")
+    ap.add_argument("--candidate-file", default="")
+    ap.add_argument("--acceptance-dir", default="")
+    ap.add_argument("--output-dir", default="")
+    ap.add_argument("--chunk-size", type=int, default=CHUNK_SIZE_DEFAULT)
+    ap.add_argument("--expected-rows", type=int, default=EXPECTED_ROWS)
+    ap.add_argument("--expected-saturday-rows", type=int, default=EXPECTED_SATURDAY_ROWS)
+    ap.add_argument("--keep-work", action="store_true", help="保留外部排序中間檔供除錯；預設清除")
+    args, unknown = ap.parse_known_args()
+    if unknown:
+        log("忽略 Notebook／外部啟動參數：" + " ".join(unknown))
+    if args.chunk_size < 10_000:
+        raise ValueError("chunk-size 不得小於 10,000")
+    root = Path(args.root)
+    candidate_dir = Path(args.candidate_dir) if args.candidate_dir else newest_dir(root, "看股最速適_v231補行日重建獨立候選資料集_v4_68_1_*")
+    acceptance_dir = Path(args.acceptance_dir) if args.acceptance_dir else newest_dir(root, "看股最速適_v4684候選資料驗收稽核_v4_68_4_*")
+    if not candidate_dir or not candidate_dir.exists():
+        raise FileNotFoundError("找不到 v4.68.1 候選資料資料夾")
+    if not acceptance_dir or not acceptance_dir.exists():
+        raise FileNotFoundError("找不到 v4.68.4 候選驗收資料夾")
+    accepted, acceptance_status = check_acceptance(acceptance_dir)
+    if not accepted:
+        raise RuntimeError(f"v4.68.4尚未通過可排序與特徵重建驗收：{acceptance_status}")
+    candidate = Path(args.candidate_file) if args.candidate_file else candidate_dir / "01_v231補行日重建獨立候選資料集.csv.gz"
+    if not candidate.exists():
+        raise FileNotFoundError(candidate)
+
+    stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    out = Path(args.output_dir) if args.output_dir else root / f"看股最速適_v231補行日日期排序與已驗證特徵重建_v4_69_{stamp}"
+    out.mkdir(parents=True, exist_ok=False)
+    work = out / ".work"
+    work.mkdir()
+    group_sorted = work / "01_group_sorted.csv.gz"
+    raw_calc = work / "02_formula_calculation_raw.csv.gz"
+    group_rebuilt = work / "03_group_rebuilt.csv.gz"
+    final_group = work / "04_final_date_sorted.csv.gz"
+    final_candidate = out / "01_v231補行日日期排序與已驗證特徵重建候選.csv.gz"
+
+    log(f"{VERSION}開始：依 market+code+segment 重建已驗證特徵及前瞻標籤，最後按日期排序")
+    log(f"v4.68.1候選：{candidate} ({candidate.stat().st_size/1024**2:,.1f} MB)")
+    log(f"v4.68.4驗收：{acceptance_dir}；判讀={acceptance_status}")
+    source_sha = sha256_file(candidate, "v4.68.1候選來源")
+    header = read_header(candidate)
+    if len(header) != 29:
+        log(f"注意：候選欄位數={len(header)}，v2.31既有欄位預期29；本版不強制29，但保留原欄位")
+    dcol = find_col(header, ["日期", "交易日期", "交易日", "date", "trade_date"])
+    mcol = find_col(header, ["市場", "market", "市場別"])
+    ccol = find_col(header, ["股票代號", "證券代號", "code", "ticker"])
+    scol = find_col(header, ["價格研究區段", "segment", "區段"])
+    required_cols = [dcol, mcol, ccol, scol, "影子開盤價", "影子最高價", "影子最低價", "影子收盤價"]
+    missing = [x for x in required_cols if not x or find_col(header, [x]) is None]
+    missing += [x for x in VERIFIED_FEATURES + list(FORWARD_HORIZONS) if find_col(header, [x]) is None]
+    if missing:
+        raise ValueError(f"候選資料缺少必要欄位：{missing}")
+    if not all(find_col(header, [x]) for x in UNVERIFIED_FEATURES):
+        log("注意：未驗證特徵欄位在候選檔中非完整存在；後續會明確列出欄位狀態。")
+
+    group_sort_info = external_sort_csv_gz(candidate, group_sorted, work, "group", args.chunk_size,
+                                            args.expected_rows, "證券序列排序")
+    if group_sort_info["duplicates"] != 0 or not group_sort_info["monotonic"]:
+        raise RuntimeError("依證券序列排序後發現自然鍵重複或順序異常，停止重建。")
+    calc_info = scan_and_calculate_grouped(group_sorted, raw_calc, header, group_sort_info["rows"])
+    feature_results = calc_info["feature_results"]
+    label_results = calc_info["label_results"]
+    feature_pass_n = sum(r["公式判讀"] == "PASS" for r in feature_results)
+    label_pass_n = sum(r["公式判讀"] == "PASS" for r in label_results)
+    log(f"公式交叉驗證：已驗證特徵 {feature_pass_n}/5；前瞻標籤 {label_pass_n}/4")
+
+    apply_info = apply_calculated_values(raw_calc, group_rebuilt, header, calc_info["calc_cols"],
+                                         calc_info["chosen_scales"], calc_info["label_pass"],
+                                         calc_info["feature_idx"], calc_info["label_idx"])
+    date_sort_info = external_sort_csv_gz(group_rebuilt, final_group, work, "date", args.chunk_size,
+                                           calc_info["rows"], "全資料日期排序")
+    if date_sort_info["duplicates"] != 0 or not date_sort_info["monotonic"]:
+        raise RuntimeError("最終日期排序發現自然鍵重複或日期順序異常，停止發佈候選。")
+    if final_candidate.exists():
+        raise FileExistsError(final_candidate)
+    shutil.move(str(final_group), str(final_candidate))
+    final_info = scan_sorted_output(final_candidate, header, args.expected_rows)
+    source_rows = group_sort_info["rows"]
+    saturday_ok = final_info["saturday_rows"] == args.expected_saturday_rows
+    rows_ok = final_info["rows"] == args.expected_rows
+    keys_ok = final_info["duplicate_keys"] == 0
+    date_ok = final_info["date_sorted"]
+    formula_ok = feature_pass_n == 5 and label_pass_n == 4
+    saturday_date_ok = set(calc_info["saturday_counts"]) == EXPECTED_SATURDAY_DATES
+    new_sat_missing = sum(apply_info["saturday_calculation_missing"].values())
+
+    unverified_rows = []
+    for target in UNVERIFIED_FEATURES:
+        col = find_col(header, [target])
+        unverified_rows.append({"未驗證特徵": target, "候選欄位存在": bool(col),
+                                "處理方式": "保留既有原始樣本值；新增星期六樣本不補造",
+                                "本版驗證狀態": "NOT_VERIFIED_NOT_REBUILT"})
+    saturday_rows = [{"日期": d, "新增星期六列數": n} for d, n in sorted(calc_info["saturday_counts"].items())]
+    all_gates = [rows_ok, saturday_ok, keys_ok, date_ok, formula_ok, saturday_date_ok, new_sat_missing == 0]
+    gate = "PASS_SORTED_VALIDATED_FEATURES_AND_LABELS_NOT_MODEL_READY" if all(all_gates) else "REVIEW_REQUIRED"
+
+    weekday_rows = []
+    for wd in range(7):
+        weekday_rows.append({"星期編號_Mon0": wd, "星期": ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"][wd],
+                             "資料列數": final_info["weekday_rows"].get(wd, 0)})
+    row_summary = [
+        {"項目": "最終總列數", "結果": final_info["rows"], "預期": args.expected_rows, "判讀": "PASS" if rows_ok else "FAIL"},
+        {"項目": "新增星期六列數", "結果": final_info["saturday_rows"], "預期": args.expected_saturday_rows, "判讀": "PASS" if saturday_ok else "FAIL"},
+        {"項目": "自然鍵重複", "結果": final_info["duplicate_keys"], "預期": 0, "判讀": "PASS" if keys_ok else "FAIL"},
+        {"項目": "全資料日期排序", "結果": final_info["date_sorted"], "預期": True, "判讀": "PASS" if date_ok else "FAIL"},
+        {"項目": "已驗證公式", "結果": f"特徵{feature_pass_n}/5；前瞻{label_pass_n}/4", "預期": "5/5；4/4", "判讀": "PASS" if formula_ok else "REVIEW"},
+        {"項目": "新增列計算欄位缺失", "結果": new_sat_missing, "預期": 0, "判讀": "PASS" if new_sat_missing == 0 else "REVIEW"},
+    ]
+
+    write_df(out / "01_已驗證特徵公式重現核對.csv", feature_results)
+    write_df(out / "02_前瞻標籤公式重現核對.csv", label_results)
+    write_df(out / "03_日期排序及列數品質閘門.csv", row_summary)
+    write_df(out / "04_最終資料星期分布.csv", weekday_rows)
+    write_df(out / "05_五個補行日新增列數.csv", saturday_rows)
+    write_df(out / "06_未驗證特徵與保留欄位限制.csv", unverified_rows)
+    update_rows = [{"資料層": k.split("::", 1)[0], "欄位": k.split("::", 1)[1], "實際重算值與原候選值不同列數": v}
+                   for k, v in sorted(apply_info["updated_cells"].items())]
+    write_df(out / "07_已驗證欄位實際值變動列數.csv", update_rows)
+    output_sha = sha256_file(final_candidate, "v4.69最終日期排序候選")
+    write_df(out / "08_來源與輸出SHA256.csv", [
+        {"項目": "v4.68.1候選來源", "路徑": str(candidate), "SHA256": source_sha},
+        {"項目": "v4.69日期排序候選", "路徑": str(final_candidate), "SHA256": output_sha},
+    ])
+    summary_lines = [
+        f"看股最速適 {VERSION}｜日期排序與已驗證特徵／前瞻標籤重建", "=" * 96,
+        f"產生時間：{datetime.now().isoformat(timespec='seconds')}",
+        f"v4.68.1候選來源：{candidate}", f"v4.68.4驗收來源：{acceptance_dir}；狀態={acceptance_status}",
+        f"輸出資料：{final_candidate}",
+        "排序：先依 market+code+segment+date 計算序列，再依 date+market+code+segment 排列全資料。",
+        f"總列數：{final_info['rows']:,}；日期：{final_info['min_date']}～{final_info['max_date']}；不重複日期={final_info['distinct_dates']:,}",
+        f"新增星期六列：{final_info['saturday_rows']:,}；五日清單符合={saturday_date_ok}；新增列公式缺值={new_sat_missing}",
+        f"排序：日期單調={date_ok}；自然鍵重複={final_info['duplicate_keys']:,}",
+        f"已驗證特徵公式：{feature_pass_n}/5；前瞻標籤公式：{label_pass_n}/4",
+        f"實際欄位重算差異：{sum(apply_info['updated_cells'].values()):,} 格",
+        f"判讀：{gate}",
+        "限制：MA5相對MA20、MA20相對MA60仍未驗證；本版不補造這兩項，也不推定其他未重建欄位正確。",
+        "限制：本版不是正式模型資料；仍需處理未驗證特徵、其餘新樣本欄位、完整輸入品質及樣本外回測驗證。",
+        "原始 v2.31、v4.68.1候選及 v4.66 差異層均未修改。",
+    ]
+    (out / f"{VERSION}執行摘要.txt").write_text("\n".join(summary_lines), encoding="utf-8-sig")
+    manifest = {
+        "version": VERSION, "created_at": datetime.now().isoformat(timespec="seconds"),
+        "candidate_source": str(candidate), "candidate_source_sha256": source_sha,
+        "acceptance_source": str(acceptance_dir), "acceptance_status": acceptance_status,
+        "output_file": str(final_candidate), "output_sha256": output_sha,
+        "output_rows": final_info["rows"], "output_columns": len(header),
+        "date_sorted": date_ok, "duplicate_keys": final_info["duplicate_keys"],
+        "saturday_rows": final_info["saturday_rows"], "saturday_date_counts": calc_info["saturday_counts"],
+        "feature_formula_pass": feature_pass_n, "feature_formula_total": 5,
+        "forward_formula_pass": label_pass_n, "forward_formula_total": 4,
+        "feature_scales": calc_info["chosen_scales"], "unverified_features": UNVERIFIED_FEATURES,
+        "updated_cells": apply_info["updated_cells"],
+        "saturday_missing_calculations": apply_info["saturday_calculation_missing"],
+        "gate": gate, "model_ready": False,
+        "source_rows_group_sort": group_sort_info["rows"], "group_count": calc_info["groups"],
+        "date_sort_rows": date_sort_info["rows"],
+    }
+    (out / "09_v4.69_manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8-sig")
+
+    zip_path = out / f"{out.name}.zip"
+    report_files = [out / x for x in [
+        "01_已驗證特徵公式重現核對.csv", "02_前瞻標籤公式重現核對.csv", "03_日期排序及列數品質閘門.csv",
+        "04_最終資料星期分布.csv", "05_五個補行日新增列數.csv", "06_未驗證特徵與保留欄位限制.csv",
+        "07_已驗證欄位實際值變動列數.csv", "08_來源與輸出SHA256.csv", f"{VERSION}執行摘要.txt", "09_v4.69_manifest.json"]]
+    log(f"建立獨立 ZIP：{len(report_files)}份稽核檔；大型候選資料另存，不重複放入 ZIP")
+    with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6) as zf:
+        for i, p in enumerate(report_files, 1):
+            zf.write(p, arcname=p.name)
+            log(f"ZIP封存 {bar(i/len(report_files)*100)} | {i}/{len(report_files)} | {p.name}")
+    if not args.keep_work:
+        shutil.rmtree(work, ignore_errors=True)
+    log(f"{VERSION}完成：閘門={gate}；列數={final_info['rows']:,}；星期六={final_info['saturday_rows']:,}；特徵={feature_pass_n}/5；前瞻={label_pass_n}/4")
+    log(f"日期排序候選：{final_candidate}")
+    log(f"報告資料夾：{out}")
+    log(f"ZIP：{zip_path}")
+    if gate != "PASS_SORTED_VALIDATED_FEATURES_AND_LABELS_NOT_MODEL_READY":
+        log("警告：部分排序或公式品質閘門未通過；不得作為後續模型輸入。")
+    else:
+        log("通過範圍：日期排序及五項已驗證特徵、四項前瞻標籤重建；仍非正式模型資料。")

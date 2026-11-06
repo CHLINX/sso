@@ -1,0 +1,15 @@
+v4.69 原始程式來源：/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py
+目前 SHA256：db661fc6004cd2fcfc171c346ee8255d734fd44a893256c0066bfdb6278f1ebe
+v4.87.5.12 排名表 SHA256：db661fc6004cd2fcfc171c346ee8255d734fd44a893256c0066bfdb6278f1ebe
+v4.87.5.12 掃描時 SHA256：db661fc6004cd2fcfc171c346ee8255d734fd44a893256c0066bfdb6278f1ebe
+SHA 與預期來源一致：True
+封存 wrapper：/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py
+wrapper SHA256：73dd73bc2e8ef59e714d829ad7b6e3cc5f3fc282644f21d50b692e0481630e10
+V469_SOURCE 宣告 SHA256：db661fc6004cd2fcfc171c346ee8255d734fd44a893256c0066bfdb6278f1ebe
+V469_SOURCE 實際 SHA256：db661fc6004cd2fcfc171c346ee8255d734fd44a893256c0066bfdb6278f1ebe
+嵌入程式與預期 SHA 一致：True
+v4.69 manifest 候選數：2；manifest 是否含預期程式 SHA：False
+
+重要靜態發現：請以 27 函數全文與 28 函數靜態特徵表核對。若 calculate_group 的輸入只取 opens/highs/closes，且沒有 OHLC有效／正成交量遮罩，則該函數採價格欄位有限值運算，而不是完整有效 OHLC K 棒遮罩。
+前瞻報酬計算若使用 opens[1:n-h+1] 與 closes[h:]，代表依每個 market+code+segment 群組的實體列位置位移 h 根；只有起點下一列開盤與終點第 h 列收盤有限且開盤不為 0 才計算，未在該段函數內要求中間每列 OHLC 均有效。
+以上是程式行為描述，不自動等同程式錯誤；仍須與 v2.31／原始研究規格的有效 K 棒定義及 apply_calculated_values 的覆寫規則對照。

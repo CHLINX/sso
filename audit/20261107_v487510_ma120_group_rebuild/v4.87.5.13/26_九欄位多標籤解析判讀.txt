@@ -1,0 +1,24 @@
+08 來源：/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.10_MA120群組重建根因追查_20261107_002229/08_逐筆列出所有欄位發生變動的自然鍵.csv
+08 SHA256：58f3f428928d06abfed6b5b0fd7ff2190e12d211b6d66b7fe23b581c5d334190
+列數：376,094；唯一自然鍵：376,094；原始欄位：['market', 'symbol', 'date', 'segment', 'sorted_row_no', 'rebuilt_row_no', 'changed_columns']
+changed_columns 欄：changed_columns；自然鍵欄位：{'market': 'market', 'symbol': 'symbol', 'date': 'date', 'segment': 'segment'}
+多標籤解析前 field-key 組合：653,892；去重後：653,892；重複組合移除：0
+07 九欄位異動筆數合計：653,892；08 多標籤解析後合計：653,892
+核對結果：9/9 PASS
+
+每自然鍵包含變動欄位數分布：
+[{'field_count': 1, 'natural_key_count': 178527}, {'field_count': 2, 'natural_key_count': 134182}, {'field_count': 3, 'natural_key_count': 46539}, {'field_count': 4, 'natural_key_count': 16846}]
+
+九欄位逐項核對：
+               field  expected_affected_keys_from_07  parsed_unique_field_keys_from_08  difference  match
+             收盤相對MA5                             102                               102           0   True
+            收盤相對MA20                             228                               228           0   True
+            收盤相對MA60                             409                               409           0   True
+           收盤相對MA120                            1817                              1817           0   True
+        相對前20有效K棒最高價                              68                                68           0   True
+ 前瞻報酬_1根_下一根開盤至第N根收盤                           30674                             30674           0   True
+ 前瞻報酬_5根_下一根開盤至第N根收盤                           74465                             74465           0   True
+前瞻報酬_20根_下一根開盤至第N根收盤                          202292                            202292           0   True
+前瞻報酬_60根_下一根開盤至第N根收盤                          343837                            343837           0   True
+
+解析限制說明：v4.87.5.12 的 map_field() 只回傳第一個欄名；當 changed_columns 內多個相鄰字串被 Python literal_eval 合併成一個 token 時，後續欄位會被漏計。v4.87.5.13 改為在每個 token 中逐一搜尋全部九個 canonical labels。
