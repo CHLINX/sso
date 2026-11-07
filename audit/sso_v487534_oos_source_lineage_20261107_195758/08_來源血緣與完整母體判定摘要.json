@@ -1,0 +1,186 @@
+{
+  "version": "v4.87.5.34",
+  "task": "OOS_Gate個股完整母體來源與原始機率區間公式血緣追查",
+  "timestamp_local": "2026-11-07T19:58:31.901852+00:00",
+  "status": "PASS",
+  "source_v532_status": "PASS",
+  "source_v533_status": "PASS",
+  "v251_zip_sha256": "3b78213b0618678bd883b153e1b8d8d72b074daa4d9d3a2ecd225e80d1f8fdb7",
+  "v251_zip_crc": "PASS",
+  "archive_tables_inspected": 5,
+  "drive_row_sources_inspected": 2,
+  "candidate_gates": [
+    {
+      "H": 3,
+      "asof_date": "2024-09-06",
+      "bucket": "65-70%",
+      "N": 61,
+      "days": 4
+    },
+    {
+      "H": 10,
+      "asof_date": "2025-04-18",
+      "bucket": ">=70%",
+      "N": 226,
+      "days": 5
+    },
+    {
+      "H": 10,
+      "asof_date": "2025-05-05",
+      "bucket": ">=70%",
+      "N": 1686,
+      "days": 6
+    },
+    {
+      "H": 10,
+      "asof_date": "2025-05-19",
+      "bucket": "65-70%",
+      "N": 827,
+      "days": 10
+    },
+    {
+      "H": 10,
+      "asof_date": "2025-05-19",
+      "bucket": ">=70%",
+      "N": 2776,
+      "days": 7
+    },
+    {
+      "H": 10,
+      "asof_date": "2026-07-27",
+      "bucket": "65-70%",
+      "N": 568,
+      "days": 6
+    }
+  ],
+  "top10_multicost_relation": {
+    "Top10自然鍵數": 27600,
+    "多成本自然鍵數": 27600,
+    "共同自然鍵數": 27600,
+    "僅Top10存在自然鍵數": 0,
+    "僅多成本存在自然鍵數": 0,
+    "共同自然鍵中多成本列數恰為Top10的12倍": 27600,
+    "共同自然鍵中不符合12倍數": 0,
+    "多成本對Top10列數倍率分布": {
+      "12.0": 27600
+    },
+    "是否確認為相同Top10自然鍵的12倍情境展開": true,
+    "判讀限制": "若12倍關係成立，僅能證明成本情境展開；不能把成本展開列數當成新增獨立股票樣本。"
+  },
+  "full_universe_source_candidates": [
+    {
+      "來源": "歷史樣本外每日10檔候選_v2.51停用量能.csv",
+      "資料列數": 27600,
+      "股票數": 1474,
+      "訊號日期數": 1690,
+      "完整自然鍵": true,
+      "具市場日序": true,
+      "具原始機率區間": true,
+      "具實際報酬候選": true,
+      "每日期H最大列數": 10,
+      "母體類型初判": "DAILY_TOP10_CANDIDATE_SUBSET",
+      "能否直接作為完整Gate個股母體": false,
+      "說明": "欄位能力與列數僅作來源篩選；仍須六組 Gate 的 N、訊號日及績效完整對帳。"
+    },
+    {
+      "來源": "個股評估逐筆資料_多成本情境_v2.51停用量能.csv",
+      "資料列數": 331200,
+      "股票數": 1474,
+      "訊號日期數": 1690,
+      "完整自然鍵": true,
+      "具市場日序": true,
+      "具原始機率區間": false,
+      "具實際報酬候選": true,
+      "每日期H最大列數": 120,
+      "母體類型初判": "MULTI_COST_EXPANSION_CANDIDATE",
+      "能否直接作為完整Gate個股母體": false,
+      "說明": "欄位能力與列數僅作來源篩選；仍須六組 Gate 的 N、訊號日及績效完整對帳。"
+    },
+    {
+      "來源": "前10檔候選個股獨立樣本外明細_v2.51停用量能.csv",
+      "資料列數": 27600,
+      "股票數": 1474,
+      "訊號日期數": 1690,
+      "完整自然鍵": true,
+      "具市場日序": true,
+      "具原始機率區間": false,
+      "具實際報酬候選": true,
+      "每日期H最大列數": 10,
+      "母體類型初判": "POSSIBLE_TOP10_OR_TRUNCATED_SUBSET",
+      "能否直接作為完整Gate個股母體": false,
+      "說明": "欄位能力與列數僅作來源篩選；仍須六組 Gate 的 N、訊號日及績效完整對帳。"
+    },
+    {
+      "來源": "最新全市場候選持續評估_v2.51停用量能.csv",
+      "資料列數": 6832,
+      "股票數": 1708,
+      "訊號日期數": 1,
+      "完整自然鍵": true,
+      "具市場日序": true,
+      "具原始機率區間": true,
+      "具實際報酬候選": true,
+      "每日期H最大列數": 1708,
+      "母體類型初判": "ROW_LEVEL_COVERAGE_REQUIRES_VALIDATION",
+      "能否直接作為完整Gate個股母體": false,
+      "說明": "欄位能力與列數僅作來源篩選；仍須六組 Gate 的 N、訊號日及績效完整對帳。"
+    },
+    {
+      "來源": "最新達標獲利候選最多10檔_v2.51停用量能.csv",
+      "資料列數": 0,
+      "股票數": 0,
+      "訊號日期數": 0,
+      "完整自然鍵": true,
+      "具市場日序": true,
+      "具原始機率區間": true,
+      "具實際報酬候選": true,
+      "每日期H最大列數": 0,
+      "母體類型初判": "EMPTY_OR_SNAPSHOT_EMPTY",
+      "能否直接作為完整Gate個股母體": false,
+      "說明": "欄位能力與列數僅作來源篩選；仍須六組 Gate 的 N、訊號日及績效完整對帳。"
+    },
+    {
+      "來源": "v2.57條件式逐筆重建",
+      "資料列數": 220800,
+      "股票數": 1474,
+      "訊號日期數": 1690,
+      "完整自然鍵": true,
+      "具市場日序": true,
+      "具原始機率區間": false,
+      "具實際報酬候選": true,
+      "每日期H最大列數": 80,
+      "母體類型初判": "ROW_LEVEL_COVERAGE_REQUIRES_VALIDATION",
+      "能否直接作為完整Gate個股母體": false,
+      "說明": "欄位能力與列數僅作來源篩選；仍須六組 Gate 的 N、訊號日及績效完整對帳。"
+    },
+    {
+      "來源": "v2.59高潛力正預測逐筆明細",
+      "資料列數": 2800,
+      "股票數": 365,
+      "訊號日期數": 80,
+      "完整自然鍵": true,
+      "具市場日序": true,
+      "具原始機率區間": false,
+      "具實際報酬候選": true,
+      "每日期H最大列數": 40,
+      "母體類型初判": "ROW_LEVEL_COVERAGE_REQUIRES_VALIDATION",
+      "能否直接作為完整Gate個股母體": false,
+      "說明": "欄位能力與列數僅作來源篩選；仍須六組 Gate 的 N、訊號日及績效完整對帳。"
+    }
+  ],
+  "full_universe_sources_meeting_field_and_coverage_screen": 0,
+  "original_probability_formula_code_hits": 0,
+  "six_gate_exact_N_and_day_matches_using_top10_source": 0,
+  "six_gate_reconciled": false,
+  "individual_contribution_metrics_computed": false,
+  "reason_no_contribution_metrics": "每日前10檔與多成本資料若僅是排名截斷子集／成本展開，不能代表原Gate全母體；機率分箱來源未經原始程式碼證明前不自行重分箱；未完成六組Gate N及訊號日全數對帳前不計算個股貢獻。",
+  "chronology_warning": "v5.33資料夾時間戳 2026-11-07 19:52 若採UTC，換算臺北時間為 2026-11-08 03:52，約晚於v5.32資料夾時間 03:45七分鐘，時間順序合理；仍應以manifest時間欄位與Drive實際檔案時間核實時間基準。此為時區口徑提示，不視為來源錯誤。",
+  "source_read_only": true,
+  "market_rescan": false,
+  "factor_recalculation": false,
+  "retrain": false,
+  "new_backtest": false,
+  "stock_selection": false,
+  "formal_gate_thresholds_changed": false,
+  "research_formulas_changed": false,
+  "github_main_modified": false
+}

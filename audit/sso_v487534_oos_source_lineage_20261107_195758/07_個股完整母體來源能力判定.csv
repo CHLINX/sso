@@ -1,0 +1,8 @@
+﻿來源,資料列數,股票數,訊號日期數,完整自然鍵,具市場日序,具原始機率區間,具實際報酬候選,每日期H最大列數,母體類型初判,能否直接作為完整Gate個股母體,說明
+歷史樣本外每日10檔候選_v2.51停用量能.csv,27600,1474,1690,True,True,True,True,10,DAILY_TOP10_CANDIDATE_SUBSET,False,欄位能力與列數僅作來源篩選；仍須六組 Gate 的 N、訊號日及績效完整對帳。
+個股評估逐筆資料_多成本情境_v2.51停用量能.csv,331200,1474,1690,True,True,False,True,120,MULTI_COST_EXPANSION_CANDIDATE,False,欄位能力與列數僅作來源篩選；仍須六組 Gate 的 N、訊號日及績效完整對帳。
+前10檔候選個股獨立樣本外明細_v2.51停用量能.csv,27600,1474,1690,True,True,False,True,10,POSSIBLE_TOP10_OR_TRUNCATED_SUBSET,False,欄位能力與列數僅作來源篩選；仍須六組 Gate 的 N、訊號日及績效完整對帳。
+最新全市場候選持續評估_v2.51停用量能.csv,6832,1708,1,True,True,True,True,1708,ROW_LEVEL_COVERAGE_REQUIRES_VALIDATION,False,欄位能力與列數僅作來源篩選；仍須六組 Gate 的 N、訊號日及績效完整對帳。
+最新達標獲利候選最多10檔_v2.51停用量能.csv,0,0,0,True,True,True,True,0,EMPTY_OR_SNAPSHOT_EMPTY,False,欄位能力與列數僅作來源篩選；仍須六組 Gate 的 N、訊號日及績效完整對帳。
+v2.57條件式逐筆重建,220800,1474,1690,True,True,False,True,80,ROW_LEVEL_COVERAGE_REQUIRES_VALIDATION,False,欄位能力與列數僅作來源篩選；仍須六組 Gate 的 N、訊號日及績效完整對帳。
+v2.59高潛力正預測逐筆明細,2800,365,80,True,True,False,True,40,ROW_LEVEL_COVERAGE_REQUIRES_VALIDATION,False,欄位能力與列數僅作來源篩選；仍須六組 Gate 的 N、訊號日及績效完整對帳。
