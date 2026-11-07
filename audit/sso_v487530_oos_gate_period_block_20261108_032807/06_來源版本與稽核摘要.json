@@ -1,0 +1,94 @@
+﻿{
+  "version": "v4.87.5.30",
+  "task": "OOS_Gate逐組as-of年度季度區塊剔除穩健性稽核",
+  "mainline_baseline": "v4.87.5.23",
+  "previous_version": "v4.87.5.29",
+  "timestamp": "20261108_032807",
+  "status": "PASS",
+  "source": {
+    "folder": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.29_OOS_Gate同H同機率區間底層訊號日去重與時間穩定性稽核_20261108_031221",
+    "files": {
+      "dedup": {
+        "path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.29_OOS_Gate同H同機率區間底層訊號日去重與時間穩定性稽核_20261108_031221/01_同H同機率區間底層訊號日去重.csv",
+        "bytes": 6058,
+        "sha256": "1cf4adce17b7e507e6f5328656dc27a0c6ffc38f9decee2351129e05c61a3b28"
+      },
+      "rolling": {
+        "path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.29_OOS_Gate同H同機率區間底層訊號日去重與時間穩定性稽核_20261108_031221/03_相鄰Gate滾動視窗日期新增沿用退出.csv",
+        "bytes": 2074,
+        "sha256": "717d4cb8c81d817591ae3230d681889159b34f51ee2af2e9a0b6c3b27f870ede"
+      },
+      "temporal": {
+        "path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.29_OOS_Gate同H同機率區間底層訊號日去重與時間穩定性稽核_20261108_031221/04_各H各機率區間去重後時間分布.csv",
+        "bytes": 2874,
+        "sha256": "8678165081bc45e187a5a249b2dffb8c938c2a60d9a8b7cf76d6d57c28552bba"
+      },
+      "yearly": {
+        "path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.29_OOS_Gate同H同機率區間底層訊號日去重與時間穩定性稽核_20261108_031221/05_逐年度去重底層訊號日績效分布.csv",
+        "bytes": 2853,
+        "sha256": "4720b7af8e506435ac3e9e2692f25091cd4d05d194ece46811d785b97849cc0e"
+      },
+      "quarterly": {
+        "path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.29_OOS_Gate同H同機率區間底層訊號日去重與時間穩定性稽核_20261108_031221/06_逐季度去重底層訊號日績效分布.csv",
+        "bytes": 3383,
+        "sha256": "dc62ac6a288397ec16237dced7f56fdfb9fdf1c690764c36b6b4c1728df2e812"
+      },
+      "gate": {
+        "path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.29_OOS_Gate同H同機率區間底層訊號日去重與時間穩定性稽核_20261108_031221/09_26組Gate績效重新對帳.csv",
+        "bytes": 3386,
+        "sha256": "29c32529bc737e63929a2ecce49d5cc660df0d397f532c5b04c94536349f67e1"
+      },
+      "manifest": {
+        "path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.29_OOS_Gate同H同機率區間底層訊號日去重與時間穩定性稽核_20261108_031221/10_來源版本與稽核摘要.json",
+        "bytes": 4535,
+        "sha256": "0282bc7b63e14d8c3e271c788dc43e40252f935e011496770f3d689e5d1ad149"
+      }
+    },
+    "v529_manifest_status": "PASS",
+    "dedup_rows": 64,
+    "unique_calendar_signal_dates_cross_H": 41,
+    "rolling_gate_rows": 26,
+    "gate_metric_rows": 26
+  },
+  "reconstruction": {
+    "gate_groups": 26,
+    "all_26_reconciled_exactly": true,
+    "lookback_market_days": 756,
+    "maturity_rule": "訊號全市場日序 + H <= Gate目標日序",
+    "lookback_rule": "訊號全市場日序 >= Gate目標日序 - 756"
+  },
+  "block_omission": {
+    "year_scenarios": 52,
+    "year_omission_four_metric_failures": 13,
+    "quarter_scenarios": 71,
+    "quarter_omission_four_metric_failures": 18,
+    "year_scenario_definition": "逐一從每個原始as-of Gate視窗移除其一個完整曆年，再計算四項績效描述指標。",
+    "quarter_scenario_definition": "逐一從每個原始as-of Gate視窗移除其一個完整季度，再計算四項績效描述指標。"
+  },
+  "formal_gate_thresholds_unchanged": {
+    "lookback_market_days": 756,
+    "sample_n_min": 500,
+    "signal_days_min": 20,
+    "weighted_win_rate_min": 0.52,
+    "daily_win_rate_min": 0.52,
+    "weighted_net_return_gt": 0.0,
+    "daily_net_return_gt": 0.0
+  },
+  "policy": {
+    "source_read_only": true,
+    "no_market_rescan": true,
+    "no_factor_recalculation": true,
+    "retrain": false,
+    "backtest": false,
+    "stock_selection": false,
+    "no_gate_threshold_change": true,
+    "github_main_modified": false
+  },
+  "guardrails": [
+    "本版先以 H、機率區間、Gate as-of 目標日重建原756市場日成熟視窗；必須與v5.29既有26組指標完全對帳，否則停止區塊剔除。",
+    "年度／季度剔除只是原Gate視窗內的期間敏感度診斷，不是重新跑正式Gate或新的回測。",
+    "不同 Gate as-of 視窗不可合併樣本數；同日跨Gate／跨H也不能加總為獨立N。",
+    "移除後四項績效是否通過只作脆弱度描述；N>=500及訊號日>=20仍依原 Gate 正式門檻判斷。",
+    "六項正式Gate門檻及研究公式均未修改。"
+  ]
+}
