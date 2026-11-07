@@ -1,0 +1,95 @@
+﻿{
+  "version": "v4.87.5.25",
+  "mainline_baseline": "v4.87.5.23",
+  "previous_audit_version": "v4.87.5.24",
+  "timestamp": "20261108_015939",
+  "status": "PASS",
+  "source": {
+    "folder": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.24_歷史OOS_Gate阻擋候選逐筆原因稽核_20261108_013705",
+    "detail_csv": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.24_歷史OOS_Gate阻擋候選逐筆原因稽核_20261108_013705/逐筆OOS阻擋候選Gate對帳.csv",
+    "detail_csv_bytes": 648110,
+    "detail_csv_sha256": "3e2e937231dd38dd8545e884c16ca78e2e3ad99b05b5fbf9d0473f9f19ccdf46",
+    "previous_summary_status": "PASS",
+    "previous_candidates": 1615,
+    "previous_gate_matched": 1615,
+    "previous_gate_unmatched": 0,
+    "candidate_count_by_H": {
+      "1": 109,
+      "3": 308,
+      "5": 602,
+      "10": 596
+    }
+  },
+  "candidate_count": 1615,
+  "unique_gate_evaluation_count": 353,
+  "program_source": {
+    "included": false,
+    "source_path": null,
+    "reason": "目前執行環境無法定位實體 .py（例如直接在 Notebook cell 執行）；略過程式副本封存。"
+  },
+  "candidate_count_by_H": {
+    "1": 109,
+    "3": 308,
+    "5": 602,
+    "10": 596
+  },
+  "six_gate_failure_counts": [
+    {
+      "Gate條件": "樣本數至少500",
+      "候選筆數口徑_失敗數": 297,
+      "候選筆數口徑_失敗率_pct": 18.390092879256965,
+      "唯一Gate評估組口徑_失敗數": 53,
+      "唯一Gate評估組口徑_失敗率_pct": 15.01416430594901
+    },
+    {
+      "Gate條件": "訊號日數至少20",
+      "候選筆數口徑_失敗數": 816,
+      "候選筆數口徑_失敗率_pct": 50.526315789473685,
+      "唯一Gate評估組口徑_失敗數": 169,
+      "唯一Gate評估組口徑_失敗率_pct": 47.875354107648725
+    },
+    {
+      "Gate條件": "成交加權勝率至少52%",
+      "候選筆數口徑_失敗數": 1115,
+      "候選筆數口徑_失敗率_pct": 69.04024767801857,
+      "唯一Gate評估組口徑_失敗數": 259,
+      "唯一Gate評估組口徑_失敗率_pct": 73.37110481586402
+    },
+    {
+      "Gate條件": "逐日平均勝率至少52%",
+      "候選筆數口徑_失敗數": 1398,
+      "候選筆數口徑_失敗率_pct": 86.56346749226006,
+      "唯一Gate評估組口徑_失敗數": 312,
+      "唯一Gate評估組口徑_失敗率_pct": 88.38526912181302
+    },
+    {
+      "Gate條件": "成交加權淨報酬大於0",
+      "候選筆數口徑_失敗數": 696,
+      "候選筆數口徑_失敗率_pct": 43.09597523219814,
+      "唯一Gate評估組口徑_失敗數": 170,
+      "唯一Gate評估組口徑_失敗率_pct": 48.1586402266289
+    },
+    {
+      "Gate條件": "逐日平均淨報酬大於0",
+      "候選筆數口徑_失敗數": 952,
+      "候選筆數口徑_失敗率_pct": 58.94736842105262,
+      "唯一Gate評估組口徑_失敗數": 219,
+      "唯一Gate評估組口徑_失敗率_pct": 62.03966005665722
+    }
+  ],
+  "unique_gate_failure_patterns": 24,
+  "unique_gate_groups_with_all_six_failed": 31,
+  "candidate_rows_with_all_six_failed": 185,
+  "interpretation_guardrails": [
+    "候選股票數不是獨立 Gate 評估樣本數；同一 H／日期／機率區間的候選共用同一筆 Gate 統計。",
+    "失敗原因可同時出現；各項失敗數不可直接相加當成不同候選總數。",
+    "只拆解既有歷史 Gate 診斷，不證明任何因子或策略有獲利預測力。"
+  ],
+  "policy": {
+    "source_read_only": true,
+    "retrain": false,
+    "backtest": false,
+    "stock_selection": false,
+    "github_main_modified": false
+  }
+}
