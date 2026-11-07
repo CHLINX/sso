@@ -1,0 +1,9 @@
+﻿{
+  "version": "v4.87.5.29",
+  "timestamp": "20261108_030804",
+  "github_upload": {
+    "status": "SKIP",
+    "reason": "環境變數 GITHUB_TOKEN 未設定；未進行GitHub上傳。"
+  },
+  "note": "本回執在成果ZIP建立後產生，因此獨立存放，不納入ZIP；ZIP內所有分析來源與報表已於上傳時逐檔SHA256核驗。"
+}
