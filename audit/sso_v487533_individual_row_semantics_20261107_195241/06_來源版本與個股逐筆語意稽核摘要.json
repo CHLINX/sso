@@ -1,0 +1,74 @@
+{
+  "version": "v4.87.5.33",
+  "task": "OOS_Gate個股逐筆資料實值語意與六組候選可配對性稽核",
+  "timestamp": "20261107_195241",
+  "status": "PASS",
+  "analysis_status": "ROW_LEVEL_SOURCE_FOUND_BUT_REALIZED_RETURN_OR_GATE_RECONCILIATION_INCOMPLETE",
+  "source_v532": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.32_OOS_Gate高穩健候選個股層級原始訊號資料定位與欄位可追溯性稽核_20261108_034530",
+  "source_archive": "/content/drive/MyDrive/看股最速適/緊急備份/睡前備份_20261028_181527/結果ZIP/SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip",
+  "source_archive_sha256": "3b78213b0618678bd883b153e1b8d8d72b074daa4d9d3a2ecd225e80d1f8fdb7",
+  "zip_crc": "PASS",
+  "candidate_gate_count": 6,
+  "candidate_gates": [
+    {
+      "H": 3,
+      "篩選訊號日期": "2024-09-06",
+      "機率區間": "65-70%",
+      "原Gate歷史訊號日數": 4,
+      "原Gate樣本數N": 61
+    },
+    {
+      "H": 10,
+      "篩選訊號日期": "2025-04-18",
+      "機率區間": ">=70%",
+      "原Gate歷史訊號日數": 5,
+      "原Gate樣本數N": 226
+    },
+    {
+      "H": 10,
+      "篩選訊號日期": "2025-05-05",
+      "機率區間": ">=70%",
+      "原Gate歷史訊號日數": 6,
+      "原Gate樣本數N": 1686
+    },
+    {
+      "H": 10,
+      "篩選訊號日期": "2025-05-19",
+      "機率區間": "65-70%",
+      "原Gate歷史訊號日數": 10,
+      "原Gate樣本數N": 827
+    },
+    {
+      "H": 10,
+      "篩選訊號日期": "2025-05-19",
+      "機率區間": ">=70%",
+      "原Gate歷史訊號日數": 7,
+      "原Gate樣本數N": 2776
+    },
+    {
+      "H": 10,
+      "篩選訊號日期": "2026-07-27",
+      "機率區間": "65-70%",
+      "原Gate歷史訊號日數": 6,
+      "原Gate樣本數N": 568
+    }
+  ],
+  "tables_streamed": 5,
+  "stock_level_sources_found": 5,
+  "tables_with_market_index_and_bucket": 3,
+  "any_unambiguous_realized_return_candidate": true,
+  "any_exact_gate_n_day_reconciliation": false,
+  "all_six_gates_reconciled_in_at_least_one_source": false,
+  "individual_contribution_metrics_computed": false,
+  "reason_no_unsupported_metrics": "本版先核對逐筆資料內容、欄位語意與Gate原視窗列數；若沒有明確實際持有期報酬欄或六組Gate N／訊號日無法吻合，不計算個股勝率、獲利貢獻或集中度。",
+  "source_read_only": true,
+  "archive_extracted_to_source_directory": false,
+  "formal_gate_thresholds_changed": false,
+  "research_formulas_changed": false,
+  "market_rescan": false,
+  "factor_recalculation": false,
+  "retrain": false,
+  "new_backtest": false,
+  "stock_selection": false,
+  "github_main_modified": false
+}
