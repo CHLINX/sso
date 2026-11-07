@@ -1,0 +1,175 @@
+﻿{
+  "version": "v4.87.5.27",
+  "task": "OOS_Gate逐訊號日原始證據重算與成熟標籤核對",
+  "mainline_baseline": "v4.87.5.23",
+  "previous_version": "v4.87.5.26",
+  "timestamp": "20261108_022801",
+  "status": "PASS",
+  "previous_source": {
+    "folder": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.26_OOS_Gate績效證據與樣本不足分層稽核_20261108_020918",
+    "manifest_version": "v4.87.5.26",
+    "group_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.26_OOS_Gate績效證據與樣本不足分層稽核_20261108_020918/Gate評估組分層明細.csv",
+    "group_sha256": "3438b73adb90ef02f4e03adca56ffd1621cdc1f645897136808e90b5a4e216e9",
+    "group_bytes": 158025,
+    "candidate_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.26_OOS_Gate績效證據與樣本不足分層稽核_20261108_020918/候選逐筆分層明細.csv",
+    "candidate_sha256": "dd97c3bdc62316dd0f99f017ff48f7c164dd4aa7429a8b11e0c0c1a15cc6e7c0",
+    "candidate_bytes": 475261,
+    "groups": 353,
+    "candidates": 1615,
+    "candidate_H": {
+      "1": 109,
+      "3": 308,
+      "5": 602,
+      "10": 596
+    },
+    "performance_pass_groups": 26,
+    "performance_pass_candidates": 184
+  },
+  "daily_source": {
+    "source_type": "ZIP member",
+    "archive_path": "/content/drive/MyDrive/看股最速適/緊急備份/睡前備份_20261028_181527/結果ZIP/SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip",
+    "archive_bytes": 23606997,
+    "archive_sha256": "3b78213b0618678bd883b153e1b8d8d72b074daa4d9d3a2ecd225e80d1f8fdb7",
+    "member": "獲利機率校準逐訊號日_v2.51停用量能.csv",
+    "member_bytes": 1973895,
+    "member_sha256": "f72f584d0847bb5488d54b22bd2174946975fa15544611e4c76ee0db6d0769a2",
+    "zip_member_count": 38,
+    "target_member_crc": "PASS (ZIP member fully read and CRC checked)",
+    "other_source_candidates": [
+      "/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/看股最速適_v4.84.9.8_整合重建與v2.51逐筆配對_20261104_013113.zip",
+      "/content/drive/MyDrive/看股最速適/緊急備份/睡前備份_20261028_181527/摘要報表/獲利機率校準逐訊號日_v2.51停用量能.csv",
+      "/content/drive/MyDrive/看股最速適/緊急備份/SSO結果備份_20261028_171832/結果ZIP/SSO_v2.51_量能消融_停用量能特徵與配對比較結果.zip",
+      "/content/drive/MyDrive/看股最速適/緊急備份/睡前備份_20261028_181527/結果ZIP/SSO_v2.51_量能消融_停用量能特徵與配對比較結果.zip"
+    ]
+  },
+  "daily_structure": {
+    "rows": 27600,
+    "H_counts": {
+      "1": 16900,
+      "3": 5630,
+      "5": 3380,
+      "10": 1690
+    },
+    "min_signal_date": "2019-11-08",
+    "max_signal_date": "2026-10-21",
+    "min_market_seq": 756,
+    "max_market_seq": 2445,
+    "duplicate_H_seq_bucket_rows": 0,
+    "max_win_rate_recalculation_abs_diff": 1.1102230246251565e-16,
+    "cadence_checks": [
+      {
+        "H": 1,
+        "有效訊號日數": 1690,
+        "最小日序": 756,
+        "最大日序": 2445,
+        "相鄰日序間隔最小值": 1,
+        "相鄰日序間隔中位數": 1.0,
+        "相鄰日序間隔最大值": 1,
+        "間隔非H倍數筆數": 0,
+        "非H倍數間隔範例": "",
+        "H倍數排程檢查": "PASS"
+      },
+      {
+        "H": 3,
+        "有效訊號日數": 563,
+        "最小日序": 756,
+        "最大日序": 2442,
+        "相鄰日序間隔最小值": 3,
+        "相鄰日序間隔中位數": 3.0,
+        "相鄰日序間隔最大值": 3,
+        "間隔非H倍數筆數": 0,
+        "非H倍數間隔範例": "",
+        "H倍數排程檢查": "PASS"
+      },
+      {
+        "H": 5,
+        "有效訊號日數": 338,
+        "最小日序": 756,
+        "最大日序": 2441,
+        "相鄰日序間隔最小值": 5,
+        "相鄰日序間隔中位數": 5.0,
+        "相鄰日序間隔最大值": 5,
+        "間隔非H倍數筆數": 0,
+        "非H倍數間隔範例": "",
+        "H倍數排程檢查": "PASS"
+      },
+      {
+        "H": 10,
+        "有效訊號日數": 169,
+        "最小日序": 756,
+        "最大日序": 2436,
+        "相鄰日序間隔最小值": 10,
+        "相鄰日序間隔中位數": 10.0,
+        "相鄰日序間隔最大值": 10,
+        "間隔非H倍數筆數": 0,
+        "非H倍數間隔範例": "",
+        "H倍數排程檢查": "PASS"
+      }
+    ]
+  },
+  "reconciliation": {
+    "gate_units": 353,
+    "candidate_rows": 1615,
+    "performance_pass_groups": 26,
+    "performance_pass_candidates": 184,
+    "group_recompute": {
+      "recomputed_groups": 353,
+      "exact_metric_match_groups": 353,
+      "metric_mismatch_groups": 0,
+      "unmatched_asof_groups": 0,
+      "recomputed_gate_pass_groups": 0,
+      "recomputed_gate_blocked_groups": 353
+    },
+    "sample_semantics": {
+      "historical_sample_count": "有效樣本數加總；每筆為一個個股／訊號日已成熟結果，不等同獨立訊號日期數。",
+      "independent_signal_days": "不同訊號全市場日序的個數；同一天大量股票仍只算一個訊號日。",
+      "lookback_days": 756,
+      "maturity_rule": "歷史訊號日序 + H <= 當前篩選日序。"
+    }
+  },
+  "performance_pass_groups": {
+    "績效四項全通過Gate組數": 26,
+    "涵蓋候選筆數": 184,
+    "原Gate樣本數至少500組數": 17,
+    "原Gate獨立訊號日數至少20組數": 0,
+    "原Gate樣本數與訊號日數皆通過組數": 0,
+    "原Gate樣本數未達500組數": 9,
+    "原Gate訊號日數未達20組數": 26,
+    "原Gate樣本數中位數": 799.5,
+    "原Gate訊號日數中位數": 4.0,
+    "v2.51重算有日序組數": 26,
+    "v2.51重算樣本數至少500組數": 17,
+    "v2.51重算訊號日數至少20組數": 0,
+    "v2.51重算樣本數與訊號日數皆通過組數": 0,
+    "v2.51重算樣本數中位數": 799.5,
+    "v2.51重算訊號日數中位數": 4.0,
+    "v2.51重算Gate通過組數": 0
+  },
+  "official_gate_thresholds_unchanged": {
+    "sample_n_min": 500,
+    "signal_days_min": 20,
+    "weighted_win_rate_min": 0.52,
+    "daily_win_rate_min": 0.52,
+    "weighted_net_return_gt": 0.0,
+    "daily_net_return_gt": 0.0,
+    "lookback_market_days": 756
+  },
+  "guardrails": [
+    "歷史有效樣本數是個股／訊號日標籤筆數總和，不等於獨立訊號日數。",
+    "獨立訊號日數以訊號全市場日序去重；同一天多檔股票只算一個訊號日。",
+    "只有 signal_idx + H <= asof_idx 且 signal_idx >= asof_idx - 756 的歷史列納入 Gate。",
+    "26 組績效通過組的回看視窗可能互相重疊，跨組樣本數不可加總視為獨立樣本。",
+    "如 v2.51 原始日資料與 v2.48.1 歷史 Gate 數值不一致，只標示差異，不任意覆蓋原始 Gate。"
+  ],
+  "policy": {
+    "source_read_only": true,
+    "retrain": false,
+    "backtest": false,
+    "stock_selection": false,
+    "github_main_modified": false
+  },
+  "program_source": {
+    "included": false,
+    "reason": "執行環境未定位到實體 .py；略過程式副本封存。"
+  }
+}
