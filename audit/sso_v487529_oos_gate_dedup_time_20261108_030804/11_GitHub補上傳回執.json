@@ -1,0 +1,91 @@
+﻿{
+  "status": "PASS",
+  "version": "v4.87.5.29",
+  "uploaded_at": "20261108_031738",
+  "repository": "CHLINX/sso",
+  "branch": "audit/v487529-oos-gate-dedup-recovery-20261108_031738",
+  "remote_folder": "audit/sso_v487529_oos_gate_dedup_time_20261108_030804",
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_sha_after": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_unchanged": true,
+  "files": [
+    {
+      "path": "audit/sso_v487529_oos_gate_dedup_time_20261108_030804/01_同H同機率區間底層訊號日去重.csv",
+      "bytes": 6058,
+      "sha256": "1cf4adce17b7e507e6f5328656dc27a0c6ffc38f9decee2351129e05c61a3b28",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487529_oos_gate_dedup_time_20261108_030804/02_跨Gate重複底層日期內容一致性.csv",
+      "bytes": 4163,
+      "sha256": "3f2de8023bcd2e2ada12c955235ba53521998f0f1f5a0677d45b4cb550ac33c6",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487529_oos_gate_dedup_time_20261108_030804/03_相鄰Gate滾動視窗日期新增沿用退出.csv",
+      "bytes": 2074,
+      "sha256": "717d4cb8c81d817591ae3230d681889159b34f51ee2af2e9a0b6c3b27f870ede",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487529_oos_gate_dedup_time_20261108_030804/04_各H各機率區間去重後時間分布.csv",
+      "bytes": 2874,
+      "sha256": "8678165081bc45e187a5a249b2dffb8c938c2a60d9a8b7cf76d6d57c28552bba",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487529_oos_gate_dedup_time_20261108_030804/05_逐年度去重底層訊號日績效分布.csv",
+      "bytes": 2853,
+      "sha256": "4720b7af8e506435ac3e9e2692f25091cd4d05d194ece46811d785b97849cc0e",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487529_oos_gate_dedup_time_20261108_030804/06_逐季度去重底層訊號日績效分布.csv",
+      "bytes": 3383,
+      "sha256": "dc62ac6a288397ec16237dced7f56fdfb9fdf1c690764c36b6b4c1728df2e812",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487529_oos_gate_dedup_time_20261108_030804/07_同一日跨H涵蓋情形.csv",
+      "bytes": 1719,
+      "sha256": "892dadcc5450a412d1ec119e9ccc24108246e2af135169c5c2b5b7e6abeac804",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487529_oos_gate_dedup_time_20261108_030804/08_H間隔排程去重後核對.csv",
+      "bytes": 441,
+      "sha256": "fc35ed2d7c01e711c9094993bcce70c043ea872bd3ef6066c45ec64a600f002d",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487529_oos_gate_dedup_time_20261108_030804/09_26組Gate績效重新對帳.csv",
+      "bytes": 3386,
+      "sha256": "29c32529bc737e63929a2ecce49d5cc660df0d397f532c5b04c94536349f67e1",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487529_oos_gate_dedup_time_20261108_030804/10_來源版本與稽核摘要.json",
+      "bytes": 4535,
+      "sha256": "6a3604b2068b2d19b5d57ea929860e680b7d0e977bad15123919124da4006ad5",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487529_oos_gate_dedup_time_20261108_030804/11_GitHub上傳稽核回執.json",
+      "bytes": 351,
+      "sha256": "8e0128d7bc2cbc8fb7a1ebea7075baa064bd751f5ddaf58761662ebec8c3c171",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487529_oos_gate_dedup_time_20261108_030804/v4.87.5.29_20261108_030804.zip",
+      "bytes": 14740,
+      "sha256": "7137cdd2747d20dab31dd1522696b48f0c8f668970b7a2d0cfdaeac297c478cd",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487529_oos_gate_dedup_time_20261108_030804/執行摘要.txt",
+      "bytes": 941,
+      "sha256": "da15aa4d6cb61d90b28f77267af9e68d7c0695d25b3ae288471fe1fe3ff2b07b",
+      "status": "PASS"
+    }
+  ]
+}
