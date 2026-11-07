@@ -1,0 +1,23 @@
+SSO_Market_Data_Continuation_TWSE_TPEX v1｜上市櫃雙市場行情續接
+執行時間（Asia/Taipei）：2026-11-07T23:43:57+08:00
+資料庫模式：FIRST_INITIALIZATION_BASE_A_PLUS_APPEND_ONLY_DELTA
+邏輯完整資料庫：A/v4.17 唯讀原始主檔 + /content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/行情增量資料.csv.gz
+A 原始主檔：/content/drive/MyDrive/看股最速適/看股最速適_官方行情完整證券代號重建_v4_16_20261031_131511/官方行情總表_完整證券代號_v4.17.csv
+A 固定 SHA256：25f736d96b8d81008a0325375837b5a663d06fdfc597b5b19793a8c003ac3444
+TWSE 更新前最後日期：2026-10-28；更新後最後日期：2026-11-06
+TPEX 更新前最後日期：2026-10-28；更新後最後日期：2026-11-06
+程式執行日：2026-11-07
+本次新增行情：16,847 筆；逐日狀態分布：{"CACHE_VERIFIED_PASS": 14, "WEEKEND_NO_QUOTES": 6}
+增量檔狀態：PASS；動作：INITIALIZED_DELTA_ONLY；只建立含欄位標題與新增行情的增量檔；未建立或複製完整歷史資料庫。
+增量檔位置：/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/行情增量資料.csv.gz
+增量檔累計列數：16,847；增量檔大小：387,180 bytes
+邏輯完整資料列數（A + 增量）：4,517,914
+A 唯讀完整性：PASS_BY_SIZE_AND_MTIME（後續僅比較檔案大小／修改時間，不重算 3.2GB SHA256）
+A 已核實歷史重複自然鍵：0 組
+儲存方式：不建立完整歷史複製檔；A 保持唯讀；只建立／追加行情增量資料.csv.gz。
+A 的 35 個英數尾碼證券（49,226 筆）全部維持原始完整代號；不會縮減特別股代碼。
+後續執行讀取狀態 JSON 與增量檔，不重掃 A、不重新計算 A SHA256、不重建 450 萬筆自然鍵索引。
+使用者若需單一實體 CSV，應在另有足夠儲存空間時另行匯出；本程式不自動建立 3.2GB 合併副本。
+ZIP／GitHub 僅封存本次增量、API 原始回應、報告及程式；不封存 A 或增量總檔。
+空回應不直接視為休市；沒有官方休市證據的未確認日期會阻止寫入。
+不重算因子、不訓練模型、不回測、不選股。
