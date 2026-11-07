@@ -1,0 +1,61 @@
+﻿{
+  "status": "PASS",
+  "version": "v4.87.5.30",
+  "uploaded_at": "20261108_032807",
+  "repository": "CHLINX/sso",
+  "branch": "audit/v487530-oos-gate-period-block-20261108_032807",
+  "remote_folder": "audit/sso_v487530_oos_gate_period_block_20261108_032807",
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_sha_after": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_unchanged": true,
+  "verified_files": [
+    {
+      "path": "audit/sso_v487530_oos_gate_period_block_20261108_032807/01_26組Gate原始756日視窗重建對帳.csv",
+      "bytes": 6661,
+      "sha256": "f02f32c2817432c65e8ace4c1b37f769082ec3762d7ace459062a698521fc17c",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487530_oos_gate_period_block_20261108_032807/02_逐Gate逐年度整期剔除明細.csv",
+      "bytes": 13593,
+      "sha256": "f169a134a537e6c54d5cb62089b71260b8ddeeacc7e911649a55c4bb2ae2d998",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487530_oos_gate_period_block_20261108_032807/03_逐Gate逐季度整期剔除明細.csv",
+      "bytes": 18140,
+      "sha256": "cfc41b257ed0fcd537165d95a8ac7cbec512a03e098f1c38d4388ab6dd020916",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487530_oos_gate_period_block_20261108_032807/04_26組Gate年度季度穩健性摘要.csv",
+      "bytes": 4220,
+      "sha256": "e4d159d129140361da31f41409b50f46999066a1df2b4574fdcef22436eebb0f",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487530_oos_gate_period_block_20261108_032807/05_高機率區間Gate時間穩健性比較.csv",
+      "bytes": 1226,
+      "sha256": "dfaa36a5bf5cb16a8e3d23488dc2a59d0771999311e1938b0f6531d2bf03d78a",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487530_oos_gate_period_block_20261108_032807/06_來源版本與稽核摘要.json",
+      "bytes": 4939,
+      "sha256": "b59909e48c7e0390106a7e1babef6a4e9cd962041f362139a68e65ab661d7829",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487530_oos_gate_period_block_20261108_032807/執行摘要.txt",
+      "bytes": 928,
+      "sha256": "2441c893f719850bf2c21d3a2991bfa14359d7c13438223ffe41d7c9fe673d69",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487530_oos_gate_period_block_20261108_032807/v4.87.5.30_20261108_032807.zip",
+      "bytes": 13248,
+      "sha256": "f8e34920991e225b6d7729df61bfb96d4dd84e0b4d4a29ced5b0c5770fb3d462",
+      "status": "PASS"
+    }
+  ]
+}
