@@ -1,0 +1,14 @@
+﻿看股最速適 v4.87.5.33｜OOS_Gate個股逐筆資料實值語意與六組候選可配對性稽核
+執行時間：2026-11-07T19:52:56.827698+00:00
+v5.32來源：/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.32_OOS_Gate高穩健候選個股層級原始訊號資料定位與欄位可追溯性稽核_20261108_034530
+v2.51 ZIP SHA256：3b78213b0618678bd883b153e1b8d8d72b074daa4d9d3a2ecd225e80d1f8fdb7
+候選 Gate：6 組
+串流檢查表數：5
+個股層級來源表數：5
+同時具市場日序及機率區間欄位表數：3
+含明確實際報酬候選欄：True
+至少一來源有Gate N／訊號日吻合：False
+六組 Gate 均可由至少一來源完全吻合：False
+分析狀態：ROW_LEVEL_SOURCE_FOUND_BUT_REALIZED_RETURN_OR_GATE_RECONCILIATION_INCOMPLETE
+本版不計算個股勝率、報酬貢獻或集中度；不以預測淨報酬冒充已實現淨報酬。
+原始 ZIP 僅串流讀取，未解壓寫回來源資料夾；不修改任何來源。
