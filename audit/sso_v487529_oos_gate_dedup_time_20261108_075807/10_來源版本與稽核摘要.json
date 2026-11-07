@@ -1,0 +1,90 @@
+﻿{
+  "version": "v4.87.5.29",
+  "task": "OOS_Gate同H同機率區間底層訊號日去重與時間穩定性稽核",
+  "mainline_baseline": "v4.87.5.23",
+  "previous_versions": [
+    "v4.87.5.27",
+    "v4.87.5.28"
+  ],
+  "timestamp": "20261108_075807",
+  "status": "PASS",
+  "input": {
+    "v527_folder": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.27_OOS_Gate逐訊號日原始證據重算與成熟標籤核對_20261108_022801",
+    "v528_folder": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.28_OOS_Gate績效通過組日集中度與逐日剔除穩健性稽核_20261108_025820",
+    "v527_daily_file": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.27_OOS_Gate逐訊號日原始證據重算與成熟標籤核對_20261108_022801/02_26組績效全通過Gate逐日貢獻明細.csv",
+    "v527_daily_bytes": 15108,
+    "v527_daily_sha256": "5f0f994a65938b280fcc4a163c712c6054ef11b034389f8534aca7b5450cd6ff",
+    "v527_manifest_sha256": "7bedbcad2afa773d34517e55e6a01c10849c2539d7d9e1eedb769d9a84b29dea",
+    "v528_group_file": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.28_OOS_Gate績效通過組日集中度與逐日剔除穩健性稽核_20261108_025820/01_26組Gate樣本集中度與基準績效.csv",
+    "v528_group_bytes": 7432,
+    "v528_group_sha256": "811b943218db40424cf0c789101962281be7b9fcbcc1cd01e990fcbd4da87e29",
+    "v528_overlap_file": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.28_OOS_Gate績效通過組日集中度與逐日剔除穩健性稽核_20261108_025820/03_同一歷史訊號日期跨Gate重疊.csv",
+    "v528_overlap_bytes": 4084,
+    "v528_overlap_sha256": "da07d0e995c0a21c4c8c3a10341bd3d50da03f753cb4c3d0c1efeff9ccd87b47",
+    "v528_manifest_sha256": "f64fa528250de82ece3a1d080746b529d30b775eabbaaa54de4e1764e16d4950",
+    "v528_source_declared_daily_sha256": "5f0f994a65938b280fcc4a163c712c6054ef11b034389f8534aca7b5450cd6ff"
+  },
+  "reconciliation": {
+    "v527_daily_rows": 132,
+    "v527_distinct_calendar_signal_dates": 41,
+    "unique_H_bucket_signal_date_keys": 64,
+    "same_H_bucket_date_keys_reused": 38,
+    "extra_duplicate_gate_rows": 68,
+    "repeated_cohort_content_consistency": "PASS",
+    "v528_gate_groups": 26,
+    "v528_group_metric_reconciliation": "PASS",
+    "v528_overlap_reconciliation": {
+      "recomputed": {
+        "daily_detail_rows": 132,
+        "unique_dates": 41,
+        "repeated_same_H_bucket_date_keys": 38,
+        "dates_reused_across_multiple_gates": 27,
+        "max_gate_coverage_per_date": 8
+      },
+      "checks": {
+        "逐日明細列數": true,
+        "不同歷史訊號日期數": true,
+        "同H同機率同歷史日期重複鍵數": true,
+        "同日跨多個Gate日期數": true,
+        "單日最大涵蓋Gate數": true,
+        "v5.28跨Gate日期重疊表逐日涵蓋數完全一致": true
+      },
+      "all_pass": true
+    },
+    "H_cadence_all_multiple_of_H": true
+  },
+  "temporal_analysis": {
+    "H_bucket_groups": 8,
+    "distinct_signal_dates_cross_H": 41,
+    "cohort_keys_after_dedup": 64,
+    "gate_window_rows_before_dedup": 132,
+    "gate_window_rows_removed_as_reuse": 68,
+    "interpretation_guardrail": "去重後跨Gate整體／年度／季度統計僅為底層日期群集描述；不同as-of視窗、不同H及不同機率區間不得合併為正式Gate樣本N。"
+  },
+  "formal_gate_thresholds_unchanged": {
+    "lookback_market_days": 756,
+    "sample_n_min": 500,
+    "signal_days_min": 20,
+    "weighted_win_rate_min": 0.52,
+    "daily_win_rate_min": 0.52,
+    "weighted_net_return_gt": 0.0,
+    "daily_net_return_gt": 0.0
+  },
+  "policy": {
+    "source_read_only": true,
+    "no_market_rescan": true,
+    "no_factor_recalculation": true,
+    "retrain": false,
+    "backtest": false,
+    "stock_selection": false,
+    "github_main_modified": false,
+    "no_gate_threshold_change": true
+  },
+  "guardrails": [
+    "同一 (H, 機率區間, 歷史訊號日期) 在多個Gate滾動視窗出現時只保留一份底層日期群集，不重複加總N。",
+    "不同H的前瞻標籤期限不同；同一天跨H出現只作重疊描述，不合併為獨立樣本。",
+    "跨Gate去重後的描述統計不等同單一as-of Gate，不可拿來取代正式Gate六項條件。",
+    "日期去重不代表時間序列已達統計獨立；仍須留意市場狀態、日期群聚及樣本數限制。",
+    "20個獨立訊號日及N>=500等正式門檻全部維持原值；本版不產生合格股票名單。"
+  ]
+}
