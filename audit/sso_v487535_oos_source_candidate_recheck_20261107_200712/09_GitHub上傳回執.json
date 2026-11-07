@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "repository": "CHLINX/sso",
+  "branch": "audit/v487535-oos-source-candidate-recheck-20261107_200712",
+  "folder": "audit/sso_v487535_oos_source_candidate_recheck_20261107_200712",
+  "url": "https://github.com/CHLINX/sso/tree/audit/v487535-oos-source-candidate-recheck-20261107_200712/audit/sso_v487535_oos_source_candidate_recheck_20261107_200712",
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_sha_after": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_unchanged": true,
+  "commit_sha": "a03d9a690024a8bb799797fcfef4510e7f268ed6",
+  "files": [
+    {
+      "path": "audit/sso_v487535_oos_source_candidate_recheck_20261107_200712/01_v532核心欄位候選逐表實際讀取與母體統計.csv",
+      "status": "PASS",
+      "blob_sha": "a17b7887eff68060fff629a1529b097ad1f0f748",
+      "local_sha256": "4f9039c63bd64cd3bf22b3310e57f745b9cf57ba0d460840bf8a43ef7bfa6729",
+      "remote_sha256": "4f9039c63bd64cd3bf22b3310e57f745b9cf57ba0d460840bf8a43ef7bfa6729"
+    },
+    {
+      "path": "audit/sso_v487535_oos_source_candidate_recheck_20261107_200712/02_六組Gate逐來源N日及實際報酬完整度對帳.csv",
+      "status": "PASS",
+      "blob_sha": "3211661a26eb16a83e76fa33ac12cd88d30b4935",
+      "local_sha256": "9bc381207fb2224d4969d73f38bf248c591a76fc29042a041f742d4925a37fab",
+      "remote_sha256": "9bc381207fb2224d4969d73f38bf248c591a76fc29042a041f742d4925a37fab"
+    },
+    {
+      "path": "audit/sso_v487535_oos_source_candidate_recheck_20261107_200712/03_六組Gate完整來源可用性摘要.csv",
+      "status": "PASS",
+      "blob_sha": "6ede844df316395eb0345075201a6a22cd8448ea",
+      "local_sha256": "9bed64acbd044cb7a5476d6502d594eed43725edae93293df48c8e6e18158306",
+      "remote_sha256": "9bed64acbd044cb7a5476d6502d594eed43725edae93293df48c8e6e18158306"
+    },
+    {
+      "path": "audit/sso_v487535_oos_source_candidate_recheck_20261107_200712/04_Top10原始日期市場日序唯一映射.csv",
+      "status": "PASS",
+      "blob_sha": "f9b2535bd968741f7c460469ef1bd5608cb70134",
+      "local_sha256": "0069ad827435381a34fa4d8a1158524e17ea9e4f4105ea3f3dd899cb7087e683",
+      "remote_sha256": "0069ad827435381a34fa4d8a1158524e17ea9e4f4105ea3f3dd899cb7087e683"
+    },
+    {
+      "path": "audit/sso_v487535_oos_source_candidate_recheck_20261107_200712/05_原始機率分箱程式碼血緣擴充搜尋.csv",
+      "status": "PASS",
+      "blob_sha": "d453b2c7b7b0cbc785e00b2f7b68ee24034a7eef",
+      "local_sha256": "7f3d46801bea5eb33292712b5664bb91abfb8e40469670bd4b99c2e45fb45460",
+      "remote_sha256": "7f3d46801bea5eb33292712b5664bb91abfb8e40469670bd4b99c2e45fb45460"
+    },
+    {
+      "path": "audit/sso_v487535_oos_source_candidate_recheck_20261107_200712/06_個股自然鍵重複及成本情境展開檢查.csv",
+      "status": "PASS",
+      "blob_sha": "9cb36d4a20b5f31ec842eed5f6c2855e5897e806",
+      "local_sha256": "d4f19f9fe408e3f5103ef0b78dd39d8e8eb89aea79e33c1e1367f05cf60756d6",
+      "remote_sha256": "d4f19f9fe408e3f5103ef0b78dd39d8e8eb89aea79e33c1e1367f05cf60756d6"
+    },
+    {
+      "path": "audit/sso_v487535_oos_source_candidate_recheck_20261107_200712/07_來源讀取錯誤與未取得檔案.csv",
+      "status": "PASS",
+      "blob_sha": "d453b2c7b7b0cbc785e00b2f7b68ee24034a7eef",
+      "local_sha256": "7f3d46801bea5eb33292712b5664bb91abfb8e40469670bd4b99c2e45fb45460",
+      "remote_sha256": "7f3d46801bea5eb33292712b5664bb91abfb8e40469670bd4b99c2e45fb45460"
+    },
+    {
+      "path": "audit/sso_v487535_oos_source_candidate_recheck_20261107_200712/08_來源擴充核驗與完整母體判定摘要.json",
+      "status": "PASS",
+      "blob_sha": "728cc8e0c7ce09c86b03cfa5a53369e4264fbbb2",
+      "local_sha256": "11547420c843089ece35e0754297a6471e5b82b533819f2c2f80c3d0e94edaae",
+      "remote_sha256": "11547420c843089ece35e0754297a6471e5b82b533819f2c2f80c3d0e94edaae"
+    },
+    {
+      "path": "audit/sso_v487535_oos_source_candidate_recheck_20261107_200712/執行摘要.txt",
+      "status": "PASS",
+      "blob_sha": "9f1e317447366ce18f37dfda11c10934a0280fbd",
+      "local_sha256": "033a8835917e403e09bfa1f7f267b8c60e1deeaa0644c9e078bdf9c4601cc259",
+      "remote_sha256": "033a8835917e403e09bfa1f7f267b8c60e1deeaa0644c9e078bdf9c4601cc259"
+    },
+    {
+      "path": "audit/sso_v487535_oos_source_candidate_recheck_20261107_200712/看股最速適_v4.87.5.35_OOS_Gate歷史個股候選來源擴充核驗與完整母體重建可行性判定_20261107_200712.zip",
+      "status": "PASS",
+      "blob_sha": "30e53c4662a73030d1edf5f721646156799b1b6a",
+      "local_sha256": "c54ede3726fd53655441cb45a6aa615bbb7bb986b4e0ac78792e82857a221581",
+      "remote_sha256": "c54ede3726fd53655441cb45a6aa615bbb7bb986b4e0ac78792e82857a221581"
+    }
+  ]
+}
