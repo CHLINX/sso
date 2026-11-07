@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "version": "v4.87.5.31",
+  "uploaded_at": "20261108_033648",
+  "repository": "CHLINX/sso",
+  "branch": "audit/v487531-oos-period-na-fix-20261108_033648",
+  "remote_folder": "audit/sso_v487531_oos_period_na_fix_20261108_033648",
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_sha_after": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_unchanged": true,
+  "verified_files": [
+    {
+      "path": "audit/sso_v487531_oos_period_na_fix_20261108_033648/01_年度剔除Gate可檢驗性與分區摘要_校正版.csv",
+      "bytes": 1236,
+      "sha256": "709cacc9ebb0570442d736fd77ced8853efb282a1666fc6bce2d5f9bb98c68f6",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487531_oos_period_na_fix_20261108_033648/02_季度剔除Gate可檢驗性與分區摘要_校正版.csv",
+      "bytes": 1239,
+      "sha256": "7d859f20691174c2b7d4b200d53c3fc8bd583918cd4a729eae14ad49ead2346e",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487531_oos_period_na_fix_20261108_033648/03_26組Gate逐組可檢驗性與時間穩健性.csv",
+      "bytes": 7314,
+      "sha256": "afb2190f4584739e32d485ea1caef5a2155fa7824d630e85e453ee6671d48071",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487531_oos_period_na_fix_20261108_033648/04_原05高機率區間摘要計數差異.csv",
+      "bytes": 514,
+      "sha256": "31f714aaced5272143d84e0757fb682ee16b14c50feb3e5f84641aca6139f85a",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487531_oos_period_na_fix_20261108_033648/05_來源版本與校正稽核摘要.json",
+      "bytes": 2835,
+      "sha256": "7fb96a39b8c8e1aa415197db800271e59839b2ca11ba353e457ee463a124a151",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487531_oos_period_na_fix_20261108_033648/執行摘要.txt",
+      "bytes": 971,
+      "sha256": "b93fa48eab3519ed138668073a6a29455683a451ae4a4555ffcf484db8233dff",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487531_oos_period_na_fix_20261108_033648/v4.87.5.31_20261108_033648.zip",
+      "bytes": 4913,
+      "sha256": "1610285ec6166f06001178251b8e366c74d1c3e53f688669cd72ec21c10ae62b",
+      "status": "PASS"
+    }
+  ]
+}
