@@ -1,0 +1,80 @@
+{
+  "version": "v4.87.5.31",
+  "task": "OOS_Gate年度季度穩健性摘要不可檢驗值口徑校正",
+  "timestamp": "20261108_033648",
+  "status": "PASS",
+  "source_version": "v4.87.5.30",
+  "source_folder": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.30_OOS_Gate逐組as-of年度季度區塊剔除穩健性稽核_20261108_032807",
+  "source_manifest_status": "PASS",
+  "source_reconstruction_26_of_26": true,
+  "recalculation": {
+    "year": {
+      "scenarios": 52,
+      "failed_scenarios": 13,
+      "passed_scenarios": 39,
+      "testable_gates": 20,
+      "untestable_gates": 6,
+      "gates_with_any_failure": 13
+    },
+    "quarter": {
+      "scenarios": 71,
+      "failed_scenarios": 18,
+      "passed_scenarios": 53,
+      "testable_gates": 21,
+      "untestable_gates": 5,
+      "gates_with_any_failure": 13
+    }
+  },
+  "correction": {
+    "rule": "只有至少一個有效年度／季度剔除情境的Gate才列入失敗Gate計數。",
+    "untestable_policy": "僅一個時間區塊而沒有可執行剔除情境者列為不可檢驗，不當作失敗，也不當作穩健通過。",
+    "original_focus_summary_overcount_detected": true,
+    "all_26_gate_groups_retained": true
+  },
+  "formal_gate_thresholds_changed": false,
+  "research_formulas_changed": false,
+  "market_rescan": false,
+  "factor_recalculation": false,
+  "retrain": false,
+  "backtest": false,
+  "stock_selection": false,
+  "source_read_only": true,
+  "github_main_modified": false,
+  "source_files": {
+    "gate_rebuild": {
+      "name": "01_26組Gate原始756日視窗重建對帳.csv",
+      "bytes": 6661,
+      "sha256": "f02f32c2817432c65e8ace4c1b37f769082ec3762d7ace459062a698521fc17c"
+    },
+    "year": {
+      "name": "02_逐Gate逐年度整期剔除明細.csv",
+      "bytes": 13593,
+      "sha256": "f169a134a537e6c54d5cb62089b71260b8ddeeacc7e911649a55c4bb2ae2d998"
+    },
+    "quarter": {
+      "name": "03_逐Gate逐季度整期剔除明細.csv",
+      "bytes": 18140,
+      "sha256": "cfc41b257ed0fcd537165d95a8ac7cbec512a03e098f1c38d4388ab6dd020916"
+    },
+    "gate_summary": {
+      "name": "04_26組Gate年度季度穩健性摘要.csv",
+      "bytes": 4220,
+      "sha256": "e4d159d129140361da31f41409b50f46999066a1df2b4574fdcef22436eebb0f"
+    },
+    "focus_original": {
+      "name": "05_高機率區間Gate時間穩健性比較.csv",
+      "bytes": 1226,
+      "sha256": "dfaa36a5bf5cb16a8e3d23488dc2a59d0771999311e1938b0f6531d2bf03d78a"
+    },
+    "manifest": {
+      "name": "06_來源版本與稽核摘要.json",
+      "bytes": 4939,
+      "sha256": "b59909e48c7e0390106a7e1babef6a4e9cd962041f362139a68e65ab661d7829"
+    },
+    "execution_summary": {
+      "name": "執行摘要.txt",
+      "bytes": 928,
+      "sha256": "2441c893f719850bf2c21d3a2991bfa14359d7c13438223ffe41d7c9fe673d69"
+    }
+  }
+}
