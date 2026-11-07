@@ -1,0 +1,119 @@
+{
+  "version": "v4.87.5.32",
+  "task": "OOS_Gate高穩健候選個股層級原始訊號資料定位與欄位可追溯性稽核",
+  "timestamp": "20261108_034530",
+  "status": "PASS",
+  "analysis_status": "INDIVIDUAL_LEVEL_SOURCE_WITH_MARKET_INDEX_FOUND",
+  "source_v531": {
+    "folder": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.31_OOS_Gate年度季度穩健性摘要不可檢驗值口徑校正_20261108_033648",
+    "status": "PASS",
+    "gate_groups": 26,
+    "robust_candidates": 6,
+    "selection_rule": "年度與季度均可檢驗，且各自全部區塊剔除情境均維持四項績效通過"
+  },
+  "drive_scan": {
+    "files_scanned": 14695,
+    "scan_limit_reached": false,
+    "extension_counts": {
+      ".zip": 116,
+      ".csv": 1268,
+      ".json": 12753,
+      ".txt": 206,
+      ".gz": 219,
+      ".md": 2,
+      ".pkl": 12,
+      ".duckdb": 1,
+      ".py": 9,
+      ".bin": 96,
+      ".ipynb": 13
+    },
+    "candidate_files": 106,
+    "scan_errors": 0
+  },
+  "known_v251_archive": "/content/drive/MyDrive/看股最速適/緊急備份/睡前備份_20261028_181527/結果ZIP/SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip",
+  "archives": [
+    {
+      "path": "/content/drive/MyDrive/看股最速適/緊急備份/睡前備份_20261028_181527/結果ZIP/SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip",
+      "exists": true,
+      "bytes": 23606997,
+      "sha256": "3b78213b0618678bd883b153e1b8d8d72b074daa4d9d3a2ecd225e80d1f8fdb7",
+      "zip_crc": "PASS",
+      "members": 38,
+      "csv_members": 34,
+      "inspected_csv_headers": 34,
+      "error": null
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/看股最速適_v4.84.9.8_整合重建與v2.51逐筆配對_20261104_013113.zip",
+      "exists": true,
+      "bytes": 92845777,
+      "sha256": "54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428",
+      "zip_crc": "NOT_RUN_FOR_DISCOVERY_ARCHIVE",
+      "members": 14,
+      "csv_members": 4,
+      "inspected_csv_headers": 4,
+      "error": null
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/緊急備份/SSO結果備份_20261028_171832/結果ZIP/SSO_v2.51_量能消融_停用量能特徵與配對比較結果.zip",
+      "exists": true,
+      "bytes": 21011289,
+      "sha256": "e472aa8a1f6a79bd2511e5209a5ab8a3e74e5d52d93f9196bc80617b59373949",
+      "zip_crc": "NOT_RUN_FOR_DISCOVERY_ARCHIVE",
+      "members": 22,
+      "csv_members": 19,
+      "inspected_csv_headers": 19,
+      "error": null
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/緊急備份/睡前備份_20261028_181527/結果ZIP/SSO_v2.51_量能消融_停用量能特徵與配對比較結果.zip",
+      "exists": true,
+      "bytes": 21011289,
+      "sha256": "e472aa8a1f6a79bd2511e5209a5ab8a3e74e5d52d93f9196bc80617b59373949",
+      "zip_crc": "NOT_RUN_FOR_DISCOVERY_ARCHIVE",
+      "members": 22,
+      "csv_members": 19,
+      "inspected_csv_headers": 19,
+      "error": null
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_v2.55_逐筆績效與統計口徑稽核_20261029_045750/SSO_v2.55_逐筆績效與統計口徑稽核結果_20261029_045750.zip",
+      "exists": true,
+      "bytes": 6392,
+      "sha256": "d17f10a294d37859c21d1e4a187349792aa0d6e10454920892e863820ab6fa8e",
+      "zip_crc": "NOT_RUN_FOR_DISCOVERY_ARCHIVE",
+      "members": 6,
+      "csv_members": 5,
+      "inspected_csv_headers": 5,
+      "error": null
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.3_v4681至v4701重建與v251逐筆配對_20261103_152321/看股最速適_v4.84.9.3_整合重建與逐筆配對_20261103_152321.zip",
+      "exists": true,
+      "bytes": 784,
+      "sha256": "0d6e2371d1fe166ea13fcfa81badb6bd92b5ca16d0b01ab007271fe398734867",
+      "zip_crc": "NOT_RUN_FOR_DISCOVERY_ARCHIVE",
+      "members": 2,
+      "csv_members": 0,
+      "inspected_csv_headers": 0,
+      "error": null
+    }
+  ],
+  "schema_inventory": {
+    "tables_inspected": 181,
+    "source_files_or_members_indexed": 181,
+    "individual_core_candidates": 26,
+    "complete_with_market_index": 15
+  },
+  "individual_level_analysis_performed": false,
+  "reason_no_fake_aggregation": "本版只定位原始表與欄位；未取得同時含股票代號、訊號日期、H、機率區間／機率值及個股結果的明細前，不計算個股勝率、報酬貢獻或集中度。",
+  "formal_gate_thresholds_changed": false,
+  "research_formulas_changed": false,
+  "market_rescan": false,
+  "factor_recalculation": false,
+  "retrain": false,
+  "backtest": false,
+  "stock_selection": false,
+  "source_read_only": true,
+  "github_main_modified": false
+}
