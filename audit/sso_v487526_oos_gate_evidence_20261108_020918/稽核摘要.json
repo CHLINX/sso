@@ -1,0 +1,100 @@
+﻿{
+  "version": "v4.87.5.26",
+  "task": "OOS_Gate績效證據與樣本不足分層稽核",
+  "mainline_baseline": "v4.87.5.23",
+  "previous_version": "v4.87.5.25",
+  "timestamp": "20261108_020918",
+  "status": "PASS",
+  "source": {
+    "folder": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.25_歷史OOS_Gate失敗型態與獨立門檻單位分析_20261108_015939",
+    "manifest_version": "v4.87.5.25",
+    "group_detail_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.25_歷史OOS_Gate失敗型態與獨立門檻單位分析_20261108_015939/唯一Gate評估組明細.csv",
+    "group_detail_bytes": 85183,
+    "group_detail_sha256": "39c746fd421ea4e7b1728d88c06d8dec41ac58f1878958b246b65543cdaa66bc",
+    "candidate_detail_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.25_歷史OOS_Gate失敗型態與獨立門檻單位分析_20261108_015939/候選逐筆附Gate旗標.csv",
+    "candidate_detail_bytes": 311950,
+    "candidate_detail_sha256": "6b3c54ab7d33462adb863041c1157b556a91d39b85be6a1ee9398bd11244b04f",
+    "candidate_rows": 1615,
+    "unique_gate_groups": 353,
+    "candidate_count_by_H": {
+      "1": 109,
+      "3": 308,
+      "5": 602,
+      "10": 596
+    },
+    "candidate_gate_flags_match": true,
+    "legacy_bitmask_padded_leading_zero_rows": 0,
+    "legacy_bitmask_semantics": "欄名沿用失敗位元碼；實際編碼為1=Gate條件通過、0=Gate條件未通過",
+    "group_candidate_count_sum": 1615
+  },
+  "program_source": {
+    "included": false,
+    "path": null,
+    "reason": "無法定位實體 .py；略過副本封存，不影響分析及 ZIP/GitHub。"
+  },
+  "candidate_count": 1615,
+  "unique_gate_evaluation_count": 353,
+  "primary_classification": [
+    {
+      "主要阻擋分類": "樣本證據不足且績效指標亦未全通過",
+      "唯一Gate評估組數": 129,
+      "候選筆數": 566,
+      "平均每組候選數": 4.387596899224806,
+      "平均失敗項目數": 4.147286821705427,
+      "Gate組占比_pct": 36.54390934844193,
+      "候選占比_pct": 35.04643962848297
+    },
+    {
+      "主要阻擋分類": "勝率與淨報酬條件皆未通過",
+      "唯一Gate評估組數": 128,
+      "候選筆數": 538,
+      "平均每組候選數": 4.203125,
+      "平均失敗項目數": 3.4453125,
+      "Gate組占比_pct": 36.26062322946176,
+      "候選占比_pct": 33.31269349845201
+    },
+    {
+      "主要阻擋分類": "勝率條件未全通過",
+      "唯一Gate評估組數": 56,
+      "候選筆數": 261,
+      "平均每組候選數": 4.660714285714286,
+      "平均失敗項目數": 1.5535714285714286,
+      "Gate組占比_pct": 15.864022662889518,
+      "候選占比_pct": 16.1609907120743
+    },
+    {
+      "主要阻擋分類": "績效指標全通過但樣本證據不足",
+      "唯一Gate評估組數": 26,
+      "候選筆數": 184,
+      "平均每組候選數": 7.076923076923077,
+      "平均失敗項目數": 1.3461538461538463,
+      "Gate組占比_pct": 7.365439093484419,
+      "候選占比_pct": 11.393188854489164
+    },
+    {
+      "主要阻擋分類": "無有效歷史樣本／績效指標全缺值",
+      "唯一Gate評估組數": 14,
+      "候選筆數": 66,
+      "平均每組候選數": 4.714285714285714,
+      "平均失敗項目數": 6.0,
+      "Gate組占比_pct": 3.9660056657223794,
+      "候選占比_pct": 4.086687306501548
+    }
+  ],
+  "high_probability_evidence_rows": 29,
+  "six_official_gate_rules_unchanged": true,
+  "threshold_sensitivity_or_relaxation": false,
+  "policy": {
+    "source_read_only": true,
+    "retrain": false,
+    "backtest": false,
+    "stock_selection": false,
+    "github_main_modified": false
+  },
+  "guardrails": [
+    "唯一 Gate 評估組以 H＋訊號日期＋機率區間為單位。",
+    "候選筆數僅用於說明涵蓋多少候選，不是獨立歷史樣本數。",
+    "本版不模擬放寬門檻，不修改正式 Gate 判斷。",
+    "績效四項通過但樣本證據不足，不等於已證明可獲利。"
+  ]
+}
