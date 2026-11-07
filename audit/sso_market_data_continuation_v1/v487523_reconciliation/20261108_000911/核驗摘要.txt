@@ -1,0 +1,14 @@
+﻿SSO_Market_Data_Continuation_TWSE_TPEX v1｜v4.87.5.23 校正版逐筆對帳
+執行時間：2026-11-08T00:09:12+08:00
+v4.87.5.23 校正版：21,659/21,659；18 組市場日期 PASS。
+A 之後七個交易日：16,847 筆／14 組市場日期。
+既有行情增量檔自然鍵集合：PASS；代號、名稱、OHLCV：PASS。
+本次未重新追加行情；未修改 A；未修改既有行情增量檔。
+新建語意層：/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/行情備註語意校正層_v4.87.5.23.csv.gz
+語意層 rows=16,847；bytes=922,679；SHA256=04281247a3b9e4e78507063ce6d084d02db64c1fbbe2806bf9e7a9253c730ad8
+漲跌方向符號分布：{"(blank)": 16847}
+官方文字備註狀態：{"OFFICIAL_NOTE_FIELD_NOT_RETURNED": 16847}
+既有增量檔 SHA256（前後應相同）：b5ac265e5bef8f09c5c5bd93bf39d2c78f4a3736a71a7b05c7db01a8b7781074
+A/v4.17 SHA256（依既有狀態指紋）：25f736d96b8d81008a0325375837b5a663d06fdfc597b5b19793a8c003ac3444
+邏輯交易資料筆數 = A 4,501,067 + 行情增量 16,847 = 4,517,914；語意層不另計交易筆數。
+未執行 29 因子矩陣／模型／回測／推薦／選股。
