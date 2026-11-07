@@ -1,0 +1,96 @@
+{
+  "version": "v4.87.5.24",
+  "mainline_baseline": "v4.87.5.23",
+  "historical_gate_reference": "v2.48.1",
+  "timestamp": "20261108_013705",
+  "status": "PASS",
+  "gate_source": {
+    "path": "/content/SSO_v2.48.1_樣本外校準門檻與公司名稱結果.zip",
+    "bytes": 21010200,
+    "sha256": "c45cec0752e5337130a72ca483accd2bd74b62bf76b24e1205e507aa54a58e2e",
+    "member": "樣本外機率區間門檻診斷_v2.48.1.csv",
+    "member_bytes": 9111630,
+    "member_sha256": "7737bc9d5dcf0a53229249c2488158599606fe0e54b6f603d2c985217f4c226d"
+  },
+  "pair_source": {
+    "path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/逐筆配對/01_v4.69_v4.70.1_v2.51逐筆配對.csv.gz",
+    "bytes": 92417854,
+    "sha256": "f93893931049d3bed76ad7a784993c84c6c07fc53b86be0666dffd7872357c76",
+    "rows_scanned": 331200,
+    "status_counts": {
+      "持續評估：預測淨報酬非正": 288696,
+      "持續評估：歷史同機率區間的實際勝率／淨報酬未通過樣本外檢核": 19380,
+      "持續評估：模型估計淨獲利機率未達50%": 18564,
+      "持續評估：分類器／機率校準方向未獲支持": 4560
+    },
+    "selected_oos_gate_status_counts": {
+      "持續評估：歷史同機率區間的實際勝率／淨報酬未通過樣本外檢核": 19380
+    },
+    "raw_oos_blocked_rows": 19380,
+    "unique_oos_blocked_keys": 1615,
+    "scenario_replicas_removed": 17765,
+    "scenario_replica_distribution": {
+      "12": 1615
+    },
+    "candidate_counts_by_H": {
+      "1": 109,
+      "3": 308,
+      "5": 602,
+      "10": 596
+    },
+    "column_mapping": {
+      "h": "持有期間H",
+      "status": "候選狀態",
+      "date": "訊號日期",
+      "market": "市場",
+      "ticker": "股票代號",
+      "prob": "估計淨獲利機率_近似",
+      "pred": "預測淨報酬"
+    },
+    "selection_rule": "normalized full semantic marker: 歷史同機率區間的實際勝率／淨報酬未通過樣本外檢核"
+  },
+  "candidate_unique_keys": 1615,
+  "gate_matched": 1615,
+  "gate_unmatched": 0,
+  "gate_pass": 0,
+  "gate_fail": 1615,
+  "gate_failure_reasons": [
+    {
+      "Gate條件": "樣本數至少500",
+      "已配對候選數": 1615,
+      "未通過候選數": 297
+    },
+    {
+      "Gate條件": "訊號日數至少20",
+      "已配對候選數": 1615,
+      "未通過候選數": 816
+    },
+    {
+      "Gate條件": "成交加權勝率至少52%",
+      "已配對候選數": 1615,
+      "未通過候選數": 1115
+    },
+    {
+      "Gate條件": "逐日平均勝率至少52%",
+      "已配對候選數": 1615,
+      "未通過候選數": 1398
+    },
+    {
+      "Gate條件": "成交加權淨報酬大於0",
+      "已配對候選數": 1615,
+      "未通過候選數": 696
+    },
+    {
+      "Gate條件": "逐日平均淨報酬大於0",
+      "已配對候選數": 1615,
+      "未通過候選數": 952
+    }
+  ],
+  "policy": {
+    "source_read_only": true,
+    "retrain": false,
+    "backtest": false,
+    "stock_selection": false,
+    "github_main_modified": false
+  }
+}
