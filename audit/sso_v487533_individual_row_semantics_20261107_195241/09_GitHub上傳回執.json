@@ -1,0 +1,68 @@
+{
+  "version": "v4.87.5.33",
+  "branch": "audit/v487533-individual-row-semantics-20261107_195241",
+  "folder": "audit/sso_v487533_individual_row_semantics_20261107_195241",
+  "github_url": "https://github.com/CHLINX/sso/tree/audit/v487533-individual-row-semantics-20261107_195241/audit/sso_v487533_individual_row_semantics_20261107_195241",
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_sha_after": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_unchanged": true,
+  "files": [
+    {
+      "file": "01_原始個股來源逐表內容統計.csv",
+      "bytes": 13239,
+      "sha256": "d3cfd4b5e886c59c640f0f467d0aed47ca18780575a1e25e5ff7f61f1d8a23c9",
+      "remote_sha256": "d3cfd4b5e886c59c640f0f467d0aed47ca18780575a1e25e5ff7f61f1d8a23c9",
+      "verified": true
+    },
+    {
+      "file": "02_原始CSV完整欄位清單.csv",
+      "bytes": 17395,
+      "sha256": "c7e978ab04c130af12704c40dbb9bc1b6b2af67fee11fd44295427f7873c410b",
+      "remote_sha256": "c7e978ab04c130af12704c40dbb9bc1b6b2af67fee11fd44295427f7873c410b",
+      "verified": true
+    },
+    {
+      "file": "03_原始逐筆樣本值與報酬語意.csv",
+      "bytes": 22678,
+      "sha256": "4f98dd4fbf5fc92b320a644c436114167f70f0776fb19376457a39312b1ca0a1",
+      "remote_sha256": "4f98dd4fbf5fc92b320a644c436114167f70f0776fb19376457a39312b1ca0a1",
+      "verified": true
+    },
+    {
+      "file": "04_報酬與獲利欄位語意初判.csv",
+      "bytes": 27459,
+      "sha256": "623513cfcf91ccbf3413ccce69cb241a7c75a82220807fe41b289ceeb3f95faf",
+      "remote_sha256": "623513cfcf91ccbf3413ccce69cb241a7c75a82220807fe41b289ceeb3f95faf",
+      "verified": true
+    },
+    {
+      "file": "05_六組Gate原規則視窗列數與日期對帳.csv",
+      "bytes": 5467,
+      "sha256": "09132083808e0ca34e5048cb41c7fa18333166edd501d888e6c1478a71389787",
+      "remote_sha256": "09132083808e0ca34e5048cb41c7fa18333166edd501d888e6c1478a71389787",
+      "verified": true
+    },
+    {
+      "file": "06_來源版本與個股逐筆語意稽核摘要.json",
+      "bytes": 2719,
+      "sha256": "2282d5afe10b91fb96afab299dbb8bb99fd7edeb01bd710a29162645dad981f0",
+      "remote_sha256": "2282d5afe10b91fb96afab299dbb8bb99fd7edeb01bd710a29162645dad981f0",
+      "verified": true
+    },
+    {
+      "file": "v4.87.5.33_20261107_195241.zip",
+      "bytes": 12765,
+      "sha256": "c5c674fd249bc5557581c8d285bb30b276c2e5273577c7d367f550cb38a96def",
+      "remote_sha256": "c5c674fd249bc5557581c8d285bb30b276c2e5273577c7d367f550cb38a96def",
+      "verified": true
+    },
+    {
+      "file": "執行摘要.txt",
+      "bytes": 975,
+      "sha256": "9ef58c22b730f0c045530f11212c113d8460d523794298e2c1ae415477ebfeda",
+      "remote_sha256": "9ef58c22b730f0c045530f11212c113d8460d523794298e2c1ae415477ebfeda",
+      "verified": true
+    }
+  ],
+  "receipt_self_verification": "The receipt file is uploaded and SHA256-verified separately; it is not self-listed to avoid a recursive hash."
+}
