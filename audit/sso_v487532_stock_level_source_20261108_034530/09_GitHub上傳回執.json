@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "version": "v4.87.5.32",
+  "uploaded_at": "20261108_034530",
+  "repository": "CHLINX/sso",
+  "branch": "audit/v487532-stock-level-source-20261108_034530",
+  "remote_folder": "audit/sso_v487532_stock_level_source_20261108_034530",
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_sha_after": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_unchanged": true,
+  "verified_files": [
+    {
+      "path": "audit/sso_v487532_stock_level_source_20261108_034530/01_年度季度剔除均全數通過的6組Gate候選.csv",
+      "bytes": 1324,
+      "sha256": "0e68207ecf74119acbdf9e051262591ede0d5c47f673cc7b3e772e505d32d818",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487532_stock_level_source_20261108_034530/02_Drive及ZIP個股明細候選來源檔案盤點.csv",
+      "bytes": 48237,
+      "sha256": "5c2a428d2d2351d37e69a22e29c6ed53d6bf77028e82a3abd24efb965bd28b94",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487532_stock_level_source_20261108_034530/03_候選資料表表頭與欄位能力矩陣.csv",
+      "bytes": 74267,
+      "sha256": "129dd3384e479982b86265c13d366353048e9dca78c48014ed3c49aaba513b0a",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487532_stock_level_source_20261108_034530/04_個股貢獻分析所需欄位與現有來源能力.csv",
+      "bytes": 610,
+      "sha256": "9c2caa2370d5115242f9fb3b3e2498ff0d6bdb1b8c54466f39ccf9f278eb94b1",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487532_stock_level_source_20261108_034530/05_來源版本與個股明細可追溯性稽核摘要.json",
+      "bytes": 4794,
+      "sha256": "716da3d90dbd40194c18f3b1b19a29bfc6138fa14f97910ffb56d9355dcfa84f",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487532_stock_level_source_20261108_034530/colab_kernel_launcher.py",
+      "bytes": 1364,
+      "sha256": "a26520916343afa41e6d91f541a1e0e5d9bce0cb89737798f5482756c501e1a9",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487532_stock_level_source_20261108_034530/執行摘要.txt",
+      "bytes": 1080,
+      "sha256": "47e6906da95ddd82309d8315d65241e63d901e0572110ddd9c724bdd6705c59a",
+      "status": "PASS"
+    },
+    {
+      "path": "audit/sso_v487532_stock_level_source_20261108_034530/v4.87.5.32_20261108_034530.zip",
+      "bytes": 16626,
+      "sha256": "6b6964f4f544a926cad0c1ee34c835fd022e093ec33de71926dd09df5fc31803",
+      "status": "PASS"
+    }
+  ]
+}
