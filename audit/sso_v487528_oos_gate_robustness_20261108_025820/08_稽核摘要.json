@@ -1,0 +1,165 @@
+﻿{
+  "version": "v4.87.5.28",
+  "task": "OOS_Gate績效通過組日集中度與逐日剔除穩健性稽核",
+  "mainline_baseline": "v4.87.5.23",
+  "previous_version": "v4.87.5.27",
+  "timestamp": "20261108_025820",
+  "status": "PASS",
+  "input": {
+    "folder": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.27_OOS_Gate逐訊號日原始證據重算與成熟標籤核對_20261108_022801",
+    "manifest_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.27_OOS_Gate逐訊號日原始證據重算與成熟標籤核對_20261108_022801/06_資料來源及Gate重算稽核摘要.json",
+    "gate_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.27_OOS_Gate逐訊號日原始證據重算與成熟標籤核對_20261108_022801/01_353組Gate逐訊號日重新計算對帳.csv",
+    "gate_bytes": 109913,
+    "gate_sha256": "904823417546fece172392f7eb2e67de22542753033e003a5827817bfb1eec25",
+    "daily_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.27_OOS_Gate逐訊號日原始證據重算與成熟標籤核對_20261108_022801/02_26組績效全通過Gate逐日貢獻明細.csv",
+    "daily_bytes": 15108,
+    "daily_sha256": "5f0f994a65938b280fcc4a163c712c6054ef11b034389f8534aca7b5450cd6ff",
+    "overlap_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.27_OOS_Gate逐訊號日原始證據重算與成熟標籤核對_20261108_022801/03_26組歷史訊號日重疊集中度.csv",
+    "overlap_sha256": "f54e1c7fc0277a31b396002fa2bc1ee5291320ecae374b10ea04c02e7ff233a9",
+    "cadence_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.27_OOS_Gate逐訊號日原始證據重算與成熟標籤核對_20261108_022801/05_原始逐訊號日資料結構與日序檢查.csv",
+    "cadence_sha256": "32751cbf00a80d99caa7fa7b95948ccf0673317eff28828faa36493dc3f3b04a"
+  },
+  "previous_manifest_status": "PASS",
+  "analysis": {
+    "version": "v4.87.5.28",
+    "task": "OOS_Gate績效通過組日集中度與逐日剔除穩健性稽核",
+    "mainline_baseline": "v4.87.5.23",
+    "previous_version": "v4.87.5.27",
+    "gate_group_count": 353,
+    "performance_gate_group_count": 26,
+    "performance_gate_candidate_count": 184,
+    "performance_gate_group_days": 132,
+    "unique_underlying_signal_dates": 41,
+    "leave_one_signal_day_out_scenarios": 128,
+    "leave_one_signal_day_out_performance_pass": 109,
+    "all_loo_scenarios_fail_min_signal_days": true,
+    "overlap": {
+      "Gate組日明細列數": 132,
+      "不同歷史訊號日期數_跨H合併": 41,
+      "同一日期涵蓋多個Gate組的日期數": 27,
+      "單一日期最大涵蓋Gate組數": 8,
+      "同H同機率同歷史日期重複使用鍵數": 38,
+      "同H同機率同歷史日期最大涵蓋Gate組數": 6,
+      "跨Gate日期重複列入樣本總量_不可加總為N": 21129
+    },
+    "daily_sample_concentration": {
+      "groups_max_day_share_ge_50pct": 19,
+      "groups_max_day_share_ge_80pct": 9,
+      "mean_max_day_share_pct": 67.59964290806042,
+      "median_max_day_share_pct": 65.80066687874825
+    },
+    "cadence": [
+      {
+        "H": 1,
+        "有效訊號日數": 1690,
+        "最小日序": 756,
+        "最大日序": 2445,
+        "相鄰日序間隔最小值": 1,
+        "相鄰日序間隔中位數": 1.0,
+        "相鄰日序間隔最大值": 1,
+        "間隔非H倍數筆數": 0,
+        "非H倍數間隔範例": NaN,
+        "H倍數排程檢查": "PASS",
+        "最大可用H格點日期數_756日含成熟條件": 756,
+        "最大可用格點日期數為估算上限": true,
+        "本次26組實際日期數中位數": NaN,
+        "本次26組實際日期數最大值": NaN,
+        "排程節奏驗證": "PASS"
+      },
+      {
+        "H": 3,
+        "有效訊號日數": 563,
+        "最小日序": 756,
+        "最大日序": 2442,
+        "相鄰日序間隔最小值": 3,
+        "相鄰日序間隔中位數": 3.0,
+        "相鄰日序間隔最大值": 3,
+        "間隔非H倍數筆數": 0,
+        "非H倍數間隔範例": NaN,
+        "H倍數排程檢查": "PASS",
+        "最大可用H格點日期數_756日含成熟條件": 252,
+        "最大可用格點日期數為估算上限": true,
+        "本次26組實際日期數中位數": 3.0,
+        "本次26組實際日期數最大值": 4.0,
+        "排程節奏驗證": "PASS"
+      },
+      {
+        "H": 5,
+        "有效訊號日數": 338,
+        "最小日序": 756,
+        "最大日序": 2441,
+        "相鄰日序間隔最小值": 5,
+        "相鄰日序間隔中位數": 5.0,
+        "相鄰日序間隔最大值": 5,
+        "間隔非H倍數筆數": 0,
+        "非H倍數間隔範例": NaN,
+        "H倍數排程檢查": "PASS",
+        "最大可用H格點日期數_756日含成熟條件": 151,
+        "最大可用格點日期數為估算上限": true,
+        "本次26組實際日期數中位數": 3.0,
+        "本次26組實際日期數最大值": 6.0,
+        "排程節奏驗證": "PASS"
+      },
+      {
+        "H": 10,
+        "有效訊號日數": 169,
+        "最小日序": 756,
+        "最大日序": 2436,
+        "相鄰日序間隔最小值": 10,
+        "相鄰日序間隔中位數": 10.0,
+        "相鄰日序間隔最大值": 10,
+        "間隔非H倍數筆數": 0,
+        "非H倍數間隔範例": NaN,
+        "H倍數排程檢查": "PASS",
+        "最大可用H格點日期數_756日含成熟條件": 75,
+        "最大可用格點日期數為估算上限": true,
+        "本次26組實際日期數中位數": 6.5,
+        "本次26組實際日期數最大值": 14.0,
+        "排程節奏驗證": "PASS"
+      }
+    ],
+    "official_gate_thresholds_unchanged": {
+      "lookback_market_days": 756,
+      "sample_n_min": 500,
+      "signal_days_min": 20,
+      "weighted_win_rate_min": 0.52,
+      "daily_win_rate_min": 0.52,
+      "weighted_net_return_gt": 0.0,
+      "daily_net_return_gt": 0.0
+    },
+    "policy": {
+      "source_read_only": true,
+      "retrain": false,
+      "backtest": false,
+      "stock_selection": false,
+      "github_main_modified": false
+    },
+    "guardrails": [
+      "單日剔除分析是脆弱度診斷，不是正式回測或新門檻。",
+      "同一歷史訊號日可被多個重疊 Gate 視窗重用，不可將跨組樣本加總為獨立樣本數。",
+      "候選筆數不是獨立 Gate 評估單位；統計以 H＋篩選日期＋機率區間的 Gate 組為主。",
+      "H 日取樣間隔是 v2.51 原始排程設計；每個 H 每隔 H 個市場日抽一個訊號日以避免同 H 前瞻報酬重疊。",
+      "正式六項 Gate 條件未修改；本版沒有放寬門檻或產生合格股票名單。"
+    ],
+    "previous_overlap_source_validation": {
+      "前版日期列數": 41,
+      "逐日明細重算日期數": 41,
+      "日期集合與涵蓋Gate組數完全一致": true,
+      "最大單日涵蓋Gate組數": 8
+    }
+  },
+  "source_reconciliation": {
+    "gate_rows": 353,
+    "performance_pass_groups": 26,
+    "performance_pass_candidates": 184,
+    "daily_detail_rows": 132,
+    "unique_underlying_signal_dates": 41,
+    "loo_scenarios": 128,
+    "loo_performance_pass_scenarios": 109,
+    "loo_performance_fail_scenarios": 19
+  },
+  "program_source": {
+    "included": false,
+    "reason": "執行環境未定位實體 .py；略過程式副本封存。"
+  }
+}
