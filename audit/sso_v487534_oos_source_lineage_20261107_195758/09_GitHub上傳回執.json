@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "repository": "CHLINX/sso",
+  "branch": "audit/v487534-oos-source-lineage-20261107_195758",
+  "folder": "audit/sso_v487534_oos_source_lineage_20261107_195758",
+  "url": "https://github.com/CHLINX/sso/tree/audit/v487534-oos-source-lineage-20261107_195758/audit/sso_v487534_oos_source_lineage_20261107_195758",
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_sha_after": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_unchanged": true,
+  "files": [
+    {
+      "path": "audit/sso_v487534_oos_source_lineage_20261107_195758/01_v251原始逐筆表母體與欄位統計.csv",
+      "status": "PASS",
+      "blob_sha": "9a1f75992f65e6c43a07d2213400c03238b08d51",
+      "local_sha256": "9358aecd211ee4c65f204212d5c25df098205d9fde6910f5b0d5c40bfa980f89",
+      "remote_sha256": "9358aecd211ee4c65f204212d5c25df098205d9fde6910f5b0d5c40bfa980f89"
+    },
+    {
+      "path": "audit/sso_v487534_oos_source_lineage_20261107_195758/02_Top10與多成本表自然鍵及12倍展開核對.csv",
+      "status": "PASS",
+      "blob_sha": "21e64a2fcffe60b386cf1fa2a4bb700b75a679f4",
+      "local_sha256": "3ef86a47bd2582d71430374211a3343b300f8967095dbfbf09182fb643d3e845",
+      "remote_sha256": "3ef86a47bd2582d71430374211a3343b300f8967095dbfbf09182fb643d3e845"
+    },
+    {
+      "path": "audit/sso_v487534_oos_source_lineage_20261107_195758/03_v257_v259既有個股逐筆來源結構.csv",
+      "status": "PASS",
+      "blob_sha": "aefe27ea68aee52cffa3854934a3cd62929e115c",
+      "local_sha256": "cfcd486601587b2782662f700a2205103d4b737b5d7fb3e65e7cf1d753fa5404",
+      "remote_sha256": "cfcd486601587b2782662f700a2205103d4b737b5d7fb3e65e7cf1d753fa5404"
+    },
+    {
+      "path": "audit/sso_v487534_oos_source_lineage_20261107_195758/04_六組Gate與每日前10檔子集列數差異.csv",
+      "status": "PASS",
+      "blob_sha": "da6109679050aaaa20f08349c9423e16f2a66cb8",
+      "local_sha256": "6fc0e58b047738556e421d2d0811849035f265b49dfb8da21716a8fe6473dac6",
+      "remote_sha256": "6fc0e58b047738556e421d2d0811849035f265b49dfb8da21716a8fe6473dac6"
+    },
+    {
+      "path": "audit/sso_v487534_oos_source_lineage_20261107_195758/05_原始機率區間分箱程式碼血緣線索.csv",
+      "status": "PASS",
+      "blob_sha": "d453b2c7b7b0cbc785e00b2f7b68ee24034a7eef",
+      "local_sha256": "7f3d46801bea5eb33292712b5664bb91abfb8e40469670bd4b99c2e45fb45460",
+      "remote_sha256": "7f3d46801bea5eb33292712b5664bb91abfb8e40469670bd4b99c2e45fb45460"
+    },
+    {
+      "path": "audit/sso_v487534_oos_source_lineage_20261107_195758/06_DuckDB唯讀資料表欄位盤點.csv",
+      "status": "PASS",
+      "blob_sha": "e1d54ef83e0f3eb99fa6d3f5f92c07a43d007b9d",
+      "local_sha256": "e5a20f46232628606949320716ed96e37fb26b305fadaec3367a9348895d4d2b",
+      "remote_sha256": "e5a20f46232628606949320716ed96e37fb26b305fadaec3367a9348895d4d2b"
+    },
+    {
+      "path": "audit/sso_v487534_oos_source_lineage_20261107_195758/07_個股完整母體來源能力判定.csv",
+      "status": "PASS",
+      "blob_sha": "3e34e707c8f13a1cd9876563538eddc89c4106f6",
+      "local_sha256": "8f2c4bb0dde1657895a2c98684eefa50907bc6f92c5fe6555b15738372bae557",
+      "remote_sha256": "8f2c4bb0dde1657895a2c98684eefa50907bc6f92c5fe6555b15738372bae557"
+    },
+    {
+      "path": "audit/sso_v487534_oos_source_lineage_20261107_195758/08_來源血緣與完整母體判定摘要.json",
+      "status": "PASS",
+      "blob_sha": "5e60670f03d955ec51e4e48de42b5518c1acff90",
+      "local_sha256": "6d1da933e6e6fd085ebb266a902e867fc0e0623c5c6a82754a2c667ebb99c443",
+      "remote_sha256": "6d1da933e6e6fd085ebb266a902e867fc0e0623c5c6a82754a2c667ebb99c443"
+    },
+    {
+      "path": "audit/sso_v487534_oos_source_lineage_20261107_195758/執行摘要.txt",
+      "status": "PASS",
+      "blob_sha": "db83f386d20ff483f89f995d47b9a9848abc0958",
+      "local_sha256": "12391c5bb9f98ece13f6d5baa0232de8ac2dea4535c777e61d83c4572930f593",
+      "remote_sha256": "12391c5bb9f98ece13f6d5baa0232de8ac2dea4535c777e61d83c4572930f593"
+    },
+    {
+      "path": "audit/sso_v487534_oos_source_lineage_20261107_195758/看股最速適_v4.87.5.34_OOS_Gate個股完整母體來源與原始機率區間公式血緣追查_20261107_195758.zip",
+      "status": "PASS",
+      "blob_sha": "df15758ab4023052ef2821427d51c8a668928629",
+      "local_sha256": "e70eaf831a5c5281861250063d88d74e1908f4b2a2bad3bfe34774cde67ebf91",
+      "remote_sha256": "e70eaf831a5c5281861250063d88d74e1908f4b2a2bad3bfe34774cde67ebf91"
+    }
+  ],
+  "commit_sha": "99c8a54952f632b987e2c113fe5b743d09453618"
+}
