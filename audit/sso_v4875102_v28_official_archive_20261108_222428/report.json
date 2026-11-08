@@ -1,0 +1,92 @@
+{
+  "version": "v4.87.5.102",
+  "timestamp_taipei": "2026-11-08T22:29:39.597587+08:00",
+  "status": "PARTIAL_ARCHIVE_EVIDENCE",
+  "drive_source": {
+    "method": "authenticated_user_drive_readonly",
+    "drive_api_write": false,
+    "query_log": {
+      "id": "1-I25f5tD5LFxIk40xnuyBEB5NPEuSNFM",
+      "name": "官方來源逐日查詢紀錄.csv",
+      "bytes": 2690272,
+      "md5": "cf1ce8fdcc515f4870d3e8ea65db6e75",
+      "sha256": "b38bcf02b22ff661e4824ea1f15536b18bc5523cfaf3073fca6aaa8dca079d4d"
+    },
+    "table_fields": {
+      "id": "1YvaILWYog2V2rV4vEIC9o8BVygb3FmlN",
+      "name": "官方API資料表欄位.csv",
+      "bytes": 2573187,
+      "md5": "58d7c2195a2b64b0b1e924596bcb553d",
+      "sha256": "22538dd7f6c8c503e9ff147ae9af1772e6fcea4d7dbd4db49ee7217bff3944bd"
+    },
+    "archives": [
+      {
+        "name": "官方行情備份_第0001-0500交易日_20160101_20180123.zip",
+        "drive_file_id": "1c6TMCUac9CNgTPZMEpuXNlPic4PR4ri8",
+        "bytes": 19230111,
+        "md5": "f0ea8f4a1f0f94d6274a39b8960f2c92",
+        "sha256": "53fb69644fa5fc1876a95021c686d9bac42220802027af1c9ac15c0b2bec8e22"
+      },
+      {
+        "name": "官方行情備份_第0501-1000交易日_20180124_20200220.zip",
+        "drive_file_id": "11nrA4lVn_pOo2zupvPmGONO2kmfUwhu5",
+        "bytes": 20560584,
+        "md5": "4fccda922584f2e86d693fb0495562d8",
+        "sha256": "1826442349b44fdeacf7faba59beddf028651618bb70f7b9750552fca3aa9d12"
+      }
+    ]
+  },
+  "v4681_candidate": {
+    "sha256": "a5151cdebe26233389f55bf6189f65d21e1f5df05f025b653963bafc483deb4d",
+    "rows": 7022,
+    "unique_keys": 7022,
+    "duplicate_key_rows": 0,
+    "segment_column": "價格研究區段",
+    "complete_positive_ohlc": 7022,
+    "valid_ohlc": 4965,
+    "invalid_ohlc": 2057,
+    "missing_ohlc_rows": 0,
+    "nonpositive_ohlc_rows": 0,
+    "high_low_logic_error_rows": 2057
+  },
+  "official_query_log": {
+    "target_rows": 0,
+    "http_200_rows": 0,
+    "status_ok_rows": 0,
+    "expected_response_hashes": 0,
+    "matched_response_records": 0,
+    "target_date_market_pairs": 0,
+    "matched_date_market_pairs": 0,
+    "missing_date_market_pairs": []
+  },
+  "checks": {
+    "candidate_rows_equal_7022": true,
+    "candidate_keys_unique": true,
+    "all_target_date_market_pairs_hash_matched": false
+  },
+  "limits": [
+    "透過已核實Drive file ID讀取，不依賴猜測路徑。",
+    "Drive API僅get及get_media，沒有修改操作。",
+    "不呼叫TWSE／TPEx官方行情API。",
+    "核對官方查詢紀錄SHA256與備份ZIP內成員。",
+    "檢查新增補行資料OHLC完整性、正值及高低價邏輯。",
+    "尚未重建v2.51因子矩陣、模型係數或OOS回測。"
+  ],
+  "guardrails": {
+    "drive_read_only": true,
+    "official_api_called": false,
+    "drive_original_modified": false,
+    "database_updated": false,
+    "retrain": false,
+    "backtest": false,
+    "stock_selection": false,
+    "github_main_modified": false
+  },
+  "github": {
+    "branch": "audit/v4875102-v28-official-archive-20261108_222428",
+    "folder": "audit/sso_v4875102_v28_official_archive_20261108_222428",
+    "main_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_after_artifacts": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_unchanged": true
+  }
+}
