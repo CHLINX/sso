@@ -1,0 +1,43 @@
+{
+  "source_sha256": {
+    "v231": "a8f6097355b2a992f6fa6b171eb822e47e17b1d339c2dd82e856833f6f586883",
+    "v4681": "a5151cdebe26233389f55bf6189f65d21e1f5df05f025b653963bafc483deb4d"
+  },
+  "outputs": [
+    {
+      "name": "01_逐日新增缺失自然鍵.csv",
+      "bytes": 116,
+      "sha256": "312ac12a5bb832634ccbb3c8dbad4f56cfb15c6fd3f80c7803c254d11d16f55e"
+    },
+    {
+      "name": "02_五個補行日覆蓋核對.csv",
+      "bytes": 185,
+      "sha256": "b5bac00c2d8dcde1c1bd2df17c8a50dacae7b5d5b9e8eb4d75ff5194119b1f6d"
+    },
+    {
+      "name": "03_H1_H3_H5_H10目標日期及逐筆報酬差異.csv",
+      "bytes": 13237,
+      "sha256": "7fe11d3ac9c9c45a5d849bce75b9fd348a65bf0fcc71fdbafb0aaab7009e9e49"
+    },
+    {
+      "name": "04_Horizon影響摘要.csv",
+      "bytes": 585,
+      "sha256": "7ad07e5fec891cfeda76e30b4c0d8472790016f83a0612d6768f24fbfd0401f7"
+    },
+    {
+      "name": "05_OOS起點756日視窗.csv",
+      "bytes": 153,
+      "sha256": "db10c421ab1baf3a139635385d06d07023f790670026418bc7ab648c217dff00"
+    },
+    {
+      "name": "report.json",
+      "bytes": 5091,
+      "sha256": "f01dbc1dfbc6db677ffc7959bfcefe863913b4105bb8b5ad19b30105834e4bf6"
+    },
+    {
+      "name": "執行摘要.txt",
+      "bytes": 2030,
+      "sha256": "8df6c3042dbf0429f8cc46db860a9824083d0ea59f68d68e236800213ff29a8a"
+    }
+  ]
+}
