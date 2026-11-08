@@ -1,4 +1,4 @@
-name: SSO v2.57 read-only result extraction
+name: SSO v2.57-v2.61 read-only result extraction
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Download available existing v2.57 result archives
+      - name: Verify and extract existing SSO audit archives
         shell: bash
         run: |
           python - <<'PY'
@@ -27,115 +27,127 @@ jobs:
           from urllib.parse import quote
 
           base = "https://raw.githubusercontent.com/CHLINX/sso/main/"
-          names = [
-              "SSO_v2.57_條件式交易模式回溯核驗結果_20261029_061311.zip",
-              "SSO_v2.57_條件式交易模式回溯核驗結果_20261029_061851.zip",
-              "SSO_v2.57_條件式交易模式回溯核驗結果_20261029_062309.zip",
-              "SSO_v2.57_條件式交易模式回溯核驗結果_20261029_062605.zip",
+          archives = [
+              {
+                  "version": "v2.57",
+                  "name": "SSO_v2.57_條件式交易模式回溯核驗結果_20261029_062605.zip",
+                  "size": 12721426,
+                  "sha256": "9693fbfc18eb923649fbd4643d5e4da0375a18c69c50f9650cd3bf2bbfee49b1",
+                  "csvs": [
+                      "v2.57_條件式回溯績效彙總.csv",
+                      "v2.57_條件旗標一致性.csv",
+                      "v2.57_回報來源配對稽核.csv",
+                      "v2.57_對照鍵值唯一性異常.csv",
+                  ],
+              },
+              {
+                  "version": "v2.58",
+                  "name": "SSO_v2.58_候選排除門檻拆解結果_20261029_075004.zip",
+                  "size": 2229698,
+                  "sha256": "3fd718631cb6fb2de312011733eba3c31236ec35bc594393d8834694fd1a3644",
+                  "csvs": [
+                      "v2.58_候選門檻反事實情境彙總.csv",
+                      "v2.58_原始旗標與單項門檻盤點.csv",
+                      "v2.58_兩種條件模式欄位一致性.csv",
+                      "v2.58_候選狀態排除原因績效.csv",
+                      "v2.58_基準前10名績效.csv",
+                  ],
+              },
+              {
+                  "version": "v2.59",
+                  "name": "SSO_v2.59_時間切分穩定性診斷結果_20261029_080204.zip",
+                  "size": 225716,
+                  "sha256": "9eb06a7c67601cf8e9942dce18f7b8915ec5d0b2839be7af9b29fd5f7bf487ba",
+                  "csvs": [
+                      "v2.59_時間切分情境彙總.csv",
+                      "v2.59_時間切分候選旗標盤點.csv",
+                      "v2.59_各時期候選狀態績效.csv",
+                      "v2.59_時間切片界線.csv",
+                  ],
+              },
+              {
+                  "version": "v2.60",
+                  "name": "SSO_v2.60_訊號日層級穩定性診斷結果_20261029_082147.zip",
+                  "size": 589833,
+                  "sha256": "f8b53d0748c223d1b7ebf43e45edc860e4dfba1cf28bdd58e1bee53aff051f9e",
+                  "csvs": [
+                      "v2.60_H3_H5_H10重點彙整.csv",
+                      "v2.60_資料完整性與配對檢查.csv",
+                      "v2.60_時間切片界線.csv",
+                  ],
+              },
+              {
+                  "version": "v2.61",
+                  "name": "SSO_v2.61_訊號日極端日穩健性診斷結果_20261029_084332.zip",
+                  "size": 29432,
+                  "sha256": "a9f777cc9c862ed92ab66db2f65955477520b817b80990890870251b1cfbc385",
+                  "csvs": [
+                      "v2.61_訊號日穩健性摘要.csv",
+                      "v2.61_一般成本與壓力成本比較.csv",
+                      "v2.61_資料完整性檢查.csv",
+                  ],
+              },
           ]
-          expected_sha = {
-              "SSO_v2.57_條件式交易模式回溯核驗結果_20261029_062605.zip":
-              "9693fbfc18eb923649fbd4643d5e4da0375a18c69c50f9650cd3bf2bbfee49b1"
-          }
 
           def sha256(data):
               return hashlib.sha256(data).hexdigest()
 
-          def read_csv(zf, filename):
-              matches = [n for n in zf.namelist() if PurePosixPath(n).name == filename]
-              if not matches:
-                  print(f"CSV_NOT_FOUND: {filename}")
-                  return []
-              raw = zf.read(matches[0])
+          def emit_csv(zf, wanted):
+              members = [n for n in zf.namelist() if PurePosixPath(n).name == wanted]
+              if not members:
+                  print(f"CSV_NOT_FOUND: {wanted}")
+                  return
+              raw = zf.read(members[0])
               rows = list(csv.DictReader(io.StringIO(raw.decode("utf-8-sig", errors="replace"))))
-              print(f"CSV: {filename} | bytes={len(raw)} | rows={len(rows)} | sha256={sha256(raw)}")
-              return rows
+              print(f"CSV: {wanted} | bytes={len(raw)} | rows={len(rows)} | sha256={sha256(raw)}")
+              print(f"TABLE_BEGIN: {wanted}")
+              for row in rows[:100]:
+                  print(" | ".join(f"{k}={v}" for k, v in row.items()))
+              if len(rows) > 100:
+                  print(f"TABLE_TRUNCATED: {len(rows)-100} additional rows")
+              print(f"TABLE_END: {wanted}")
 
-          archives = []
-          for name in names:
-              url = base + quote(name, safe="")
-              req = urllib.request.Request(url, headers={"User-Agent": "SSO-v2.57-read-only-audit"})
+          found = []
+          for item in archives:
+              url = base + quote(item["name"], safe="")
+              req = urllib.request.Request(url, headers={"User-Agent": "SSO-read-only-result-audit"})
               try:
                   with urllib.request.urlopen(req, timeout=90) as response:
                       raw = response.read()
               except urllib.error.HTTPError as exc:
                   if exc.code == 404:
-                      print(f"ARCHIVE_NOT_ON_GITHUB_MAIN: {name} | HTTP 404 | skipped")
+                      print(f"ARCHIVE_NOT_ON_GITHUB_MAIN: {item['name']} | HTTP 404")
                       continue
                   raise
 
               actual_sha = sha256(raw)
-              print("\\n" + "=" * 100)
-              print(f"ARCHIVE: {name}")
-              print(f"BYTES: {len(raw)}")
-              print(f"SHA256: {actual_sha}")
-              expected = expected_sha.get(name)
-              if expected and actual_sha != expected:
-                  raise RuntimeError(f"ZIP_SHA256_MISMATCH: expected={expected} actual={actual_sha}")
-
+              print("\\n" + "=" * 105)
+              print(f"ARCHIVE: {item['version']} | {item['name']}")
+              print(f"BYTES: {len(raw)} | EXPECTED: {item['size']}")
+              print(f"SHA256: {actual_sha} | EXPECTED: {item['sha256']}")
+              if len(raw) != item["size"] or actual_sha != item["sha256"]:
+                  raise RuntimeError(f"{item['version']} archive size/SHA256 mismatch")
               with zipfile.ZipFile(io.BytesIO(raw), "r") as zf:
                   bad = zf.testzip()
                   if bad is not None:
-                      raise RuntimeError(f"ZIP_TEST_FAILED: {bad}")
-                  members = zf.namelist()
-                  print(f"ZIP_TEST: PASS | MEMBERS: {len(members)}")
-                  for item in members:
-                      print(f"MEMBER: {item} | {zf.getinfo(item).file_size}")
+                      raise RuntimeError(f"{item['version']} ZIP CRC failure: {bad}")
+                  print(f"ZIP_TEST: PASS | MEMBERS: {len(zf.namelist())}")
+                  reports = [n for n in zf.namelist()
+                             if PurePosixPath(n).suffix.lower() == ".txt"
+                             and PurePosixPath(n).name.startswith(item["version"])]
+                  for name in reports:
+                      txt = zf.read(name).decode("utf-8-sig", errors="replace")
+                      print(f"REPORT_BEGIN: {name}")
+                      print(txt[:16000])
+                      if len(txt) > 16000:
+                          print(f"REPORT_TRUNCATED_CHARS: {len(txt)-16000}")
+                      print(f"REPORT_END: {name}")
+                  for csv_name in item["csvs"]:
+                      emit_csv(zf, csv_name)
+              found.append(item["version"])
 
-                  report_matches = [n for n in members if PurePosixPath(n).name == "SSO_v2.57_條件式交易模式回溯核驗報告.txt"]
-                  if report_matches:
-                      report_raw = zf.read(report_matches[0])
-                      print("REPORT_BEGIN")
-                      print(report_raw.decode("utf-8-sig", errors="replace"))
-                      print("REPORT_END")
-                  else:
-                      report_raw = b""
-                      print("REPORT_MISSING")
-
-                  for csv_name in [
-                      "v2.57_條件式回溯績效彙總.csv",
-                      "v2.57_條件旗標一致性.csv",
-                      "v2.57_回報來源配對稽核.csv",
-                      "v2.57_對照鍵值唯一性異常.csv",
-                  ]:
-                      rows = read_csv(zf, csv_name)
-                      print(f"TABLE_BEGIN: {csv_name}")
-                      for row in rows[:80]:
-                          print(" | ".join(f"{k}={v}" for k, v in row.items()))
-                      if len(rows) > 80:
-                          print(f"TABLE_TRUNCATED: {len(rows)-80} rows")
-                      print(f"TABLE_END: {csv_name}")
-
-                  detail_rows = read_csv(zf, "v2.57_條件式逐筆重建結果.csv")
-                  if detail_rows:
-                      groups = {}
-                      for row in detail_rows:
-                          key = (row.get("持有期間H",""), row.get("成本情境",""), row.get("交易模式",""), row.get("區段口徑",""))
-                          g = groups.setdefault(key, {"rows":0,"selected":0,"matched_net":0,"original_net":0})
-                          g["rows"] += 1
-                          selected = str(row.get("條件旗標達成","")).strip().lower() in ("true","1","yes","y")
-                          if selected:
-                              g["selected"] += 1
-                              if str(row.get("實際淨報酬","")).strip():
-                                  g["original_net"] += 1
-                              if str(row.get("重建可用淨報酬","")).strip():
-                                  g["matched_net"] += 1
-                      print("ROW_LEVEL_REAGG_BEGIN")
-                      for key in sorted(groups):
-                          print(f"{key} | {groups[key]}")
-                      print("ROW_LEVEL_REAGG_END")
-
-                  archives.append({"name": name, "zip_sha": actual_sha,
-                                   "report_sha": sha256(report_raw) if report_raw else "",
-                                   "members": len(members)})
-
-          print("\\n" + "=" * 100)
-          print("CROSS_ARCHIVE_COMPARISON")
-          for row in archives:
-              print(row)
-          print("AVAILABLE_ARCHIVES:", len(archives))
-          print("ZIP_SHA_VARIANTS:", len({x["zip_sha"] for x in archives}))
-          print("REPORT_SHA_VARIANTS:", len({x["report_sha"] for x in archives}))
-          if not archives:
-              raise RuntimeError("NO_ARCHIVE_AVAILABLE_ON_GITHUB_MAIN")
+          print("\\n" + "=" * 105)
+          print("ARCHIVES_VERIFIED:", ",".join(found))
+          if "v2.57" not in found or "v2.58" not in found or "v2.60" not in found:
+              raise RuntimeError("Required v2.57/v2.58/v2.60 archive missing from GitHub main")
           PY
