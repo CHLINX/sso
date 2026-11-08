@@ -1,0 +1,30 @@
+{
+  "version": "v4.87.5.46",
+  "run_time_taipei": "2026-11-08T14:49:29.965088+08:00",
+  "drive_status": "PASS_TWO_ROOTS_RECURSIVE_METADATA_INVENTORY",
+  "zip_bytes": 7037,
+  "zip_sha256": "cb99cfcd8309ea3d89f5526ce6d3f126b735ce6677aa8bcd03a3245c4cf3b678",
+  "github": {
+    "status": "UPLOAD_PASS",
+    "branch": "audit/v487546-source-inventory-20261108_144929",
+    "path": "audit/sso_v487546_source_inventory_20261108_144929",
+    "commit_sha": "6d7dff24ba364584ea64e10665ee26697ad7c428",
+    "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_sha_after": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_unchanged": true,
+    "branch_head_verified": true,
+    "url": "https://github.com/CHLINX/sso/tree/audit/v487546-source-inventory-20261108_144929/audit/sso_v487546_source_inventory_20261108_144929"
+  },
+  "constraints": {
+    "drive_methods_get_only": true,
+    "file_content_downloaded": false,
+    "drive_files_modified_deleted_moved": false,
+    "large_market_tables_downloaded": false,
+    "official_market_api_called": false,
+    "database_updated": false,
+    "model_retrained": false,
+    "backtest_run": false,
+    "stock_selection_run": false,
+    "master_selected": false
+  }
+}
