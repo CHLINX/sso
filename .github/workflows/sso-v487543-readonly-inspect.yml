@@ -1,0 +1,67 @@
+name: SSO v4.87.5.43 read-only archive inspection
+
+on:
+  push:
+    branches:
+      - "audit/v487543-forward-source-locator-20261108_131723"
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify and inspect audit archive
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, hashlib, io, json, urllib.request, zipfile
+          from pathlib import PurePosixPath
+
+          url = "https://raw.githubusercontent.com/CHLINX/sso/audit/v487543-forward-source-locator-20261108_131723/audit/sso_v487543_forward_source_locator_20261108_131724/SSO_v4.87.5.zip"
+          expected_size = 12313
+          expected_sha256 = "ffb243eea1725ea8745424be00cb8ca4556107bf6f046205ad0240006d495936"
+          req = urllib.request.Request(url, headers={"User-Agent":"SSO-v487543-read-only"})
+          with urllib.request.urlopen(req, timeout=60) as response:
+              raw = response.read()
+          digest = hashlib.sha256(raw).hexdigest()
+          print(f"ARCHIVE_BYTES={len(raw)} EXPECTED={expected_size}")
+          print(f"ARCHIVE_SHA256={digest} EXPECTED={expected_sha256}")
+          if len(raw) != expected_size or digest != expected_sha256:
+              raise RuntimeError("ZIP size/SHA mismatch")
+
+          with zipfile.ZipFile(io.BytesIO(raw)) as zf:
+              bad = zf.testzip()
+              if bad:
+                  raise RuntimeError(f"CRC failed: {bad}")
+              names = zf.namelist()
+              print(f"ZIP_CRC=PASS MEMBERS={len(names)}")
+              print("=== ZIP MEMBER INVENTORY ===")
+              for n in names:
+                  info = zf.getinfo(n)
+                  print(f"{n} | bytes={info.file_size}")
+              for n in names:
+                  suffix = PurePosixPath(n).suffix.lower()
+                  base = PurePosixPath(n).name
+                  if suffix == ".json":
+                      data = zf.read(n).decode("utf-8-sig", errors="replace")
+                      print(f"\n=== JSON {n} ===")
+                      try:
+                          print(json.dumps(json.loads(data), ensure_ascii=False, indent=2))
+                      except Exception:
+                          print(data[:10000])
+                  elif suffix == ".txt":
+                      data = zf.read(n).decode("utf-8-sig", errors="replace")
+                      print(f"\n=== TXT {n} ===")
+                      print(data[:14000])
+                  elif suffix == ".csv":
+                      data = zf.read(n).decode("utf-8-sig", errors="replace")
+                      rows = list(csv.reader(io.StringIO(data)))
+                      print(f"\n=== CSV {n} | rows={max(0,len(rows)-1)} ===")
+                      for row in rows[:101]:
+                          print(" | ".join(row))
+                      if len(rows) > 101:
+                          print(f"... OMITTED {len(rows)-101} rows")
+          PY
