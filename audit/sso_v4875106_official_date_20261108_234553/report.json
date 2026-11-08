@@ -1,0 +1,543 @@
+{
+  "version": "v4.87.5.106",
+  "timestamp_taipei": "2026-11-08T23:47:10.117371+08:00",
+  "status": "DATE_DIAGNOSIS_COMPLETED",
+  "target_dates": [
+    "2017-02-18",
+    "2017-06-03",
+    "2017-09-30",
+    "2018-03-31",
+    "2018-12-22"
+  ],
+  "archive_checks": [
+    {
+      "name": "官方行情備份_第0001-0500交易日_20160101_20180123.zip",
+      "drive_file_id": "1c6TMCUac9CNgTPZMEpuXNlPic4PR4ri8",
+      "metadata": {
+        "id": "1c6TMCUac9CNgTPZMEpuXNlPic4PR4ri8",
+        "name": "官方行情備份_第0001-0500交易日_20160101_20180123.zip",
+        "mimeType": "application/zip",
+        "md5Checksum": "f0ea8f4a1f0f94d6274a39b8960f2c92",
+        "size": "19230111"
+      },
+      "bytes": 19230111,
+      "md5": "f0ea8f4a1f0f94d6274a39b8960f2c92",
+      "sha256": "53fb69644fa5fc1876a95021c686d9bac42220802027af1c9ac15c0b2bec8e22"
+    },
+    {
+      "name": "官方行情備份_第0501-1000交易日_20180124_20200220.zip",
+      "drive_file_id": "11nrA4lVn_pOo2zupvPmGONO2kmfUwhu5",
+      "metadata": {
+        "id": "11nrA4lVn_pOo2zupvPmGONO2kmfUwhu5",
+        "name": "官方行情備份_第0501-1000交易日_20180124_20200220.zip",
+        "mimeType": "application/zip",
+        "md5Checksum": "4fccda922584f2e86d693fb0495562d8",
+        "size": "20560584"
+      },
+      "bytes": 20560584,
+      "md5": "4fccda922584f2e86d693fb0495562d8",
+      "sha256": "1826442349b44fdeacf7faba59beddf028651618bb70f7b9750552fca3aa9d12"
+    }
+  ],
+  "archive_date_diagnostics": [
+    {
+      "archive": "官方行情備份_第0001-0500交易日_20160101_20180123.zip",
+      "member": "官方行情分段.csv.gz",
+      "total_rows": 754621,
+      "parsed_date_rows": 754621,
+      "unparsed_date_rows": 0,
+      "parsed_date_min": "2016-01-04",
+      "parsed_date_max": "2018-01-23",
+      "date_format_counts": {
+        "AD_SEPARATED": 754621
+      },
+      "raw_date_top30": [
+        {
+          "raw_date": "2018-01-23",
+          "count": 1565
+        },
+        {
+          "raw_date": "2018-01-22",
+          "count": 1562
+        },
+        {
+          "raw_date": "2018-01-15",
+          "count": 1559
+        },
+        {
+          "raw_date": "2018-01-16",
+          "count": 1559
+        },
+        {
+          "raw_date": "2018-01-17",
+          "count": 1559
+        },
+        {
+          "raw_date": "2018-01-18",
+          "count": 1559
+        },
+        {
+          "raw_date": "2018-01-19",
+          "count": 1559
+        },
+        {
+          "raw_date": "2018-01-10",
+          "count": 1558
+        },
+        {
+          "raw_date": "2018-01-11",
+          "count": 1558
+        },
+        {
+          "raw_date": "2018-01-12",
+          "count": 1558
+        },
+        {
+          "raw_date": "2018-01-09",
+          "count": 1557
+        },
+        {
+          "raw_date": "2018-01-04",
+          "count": 1556
+        },
+        {
+          "raw_date": "2018-01-05",
+          "count": 1556
+        },
+        {
+          "raw_date": "2018-01-08",
+          "count": 1556
+        },
+        {
+          "raw_date": "2017-12-29",
+          "count": 1555
+        },
+        {
+          "raw_date": "2018-01-02",
+          "count": 1555
+        },
+        {
+          "raw_date": "2018-01-03",
+          "count": 1555
+        },
+        {
+          "raw_date": "2017-12-28",
+          "count": 1554
+        },
+        {
+          "raw_date": "2017-12-15",
+          "count": 1552
+        },
+        {
+          "raw_date": "2017-12-18",
+          "count": 1552
+        },
+        {
+          "raw_date": "2017-12-19",
+          "count": 1552
+        },
+        {
+          "raw_date": "2017-12-20",
+          "count": 1552
+        },
+        {
+          "raw_date": "2017-12-21",
+          "count": 1552
+        },
+        {
+          "raw_date": "2017-12-22",
+          "count": 1552
+        },
+        {
+          "raw_date": "2017-12-25",
+          "count": 1552
+        },
+        {
+          "raw_date": "2017-12-26",
+          "count": 1552
+        },
+        {
+          "raw_date": "2017-12-27",
+          "count": 1552
+        },
+        {
+          "raw_date": "2017-12-11",
+          "count": 1551
+        },
+        {
+          "raw_date": "2017-12-12",
+          "count": 1551
+        },
+        {
+          "raw_date": "2017-12-13",
+          "count": 1551
+        }
+      ],
+      "raw_date_samples": [
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04",
+        "2016-01-04"
+      ],
+      "market_raw_counts_top30": [
+        {
+          "market_raw": "TWSE",
+          "count": 421280
+        },
+        {
+          "market_raw": "TPEx",
+          "count": 333341
+        }
+      ],
+      "target_date_counts": {},
+      "target_date_market_counts": {},
+      "literal_iso_string_hit_counts": {},
+      "unknown_date_samples": [],
+      "first_rows": [
+        {
+          "row_number": 2,
+          "raw_date": "2016-01-04",
+          "parsed_date": "2016-01-04",
+          "date_format": "AD_SEPARATED",
+          "market": "TPEx",
+          "code": "1256"
+        },
+        {
+          "row_number": 3,
+          "raw_date": "2016-01-04",
+          "parsed_date": "2016-01-04",
+          "date_format": "AD_SEPARATED",
+          "market": "TPEx",
+          "code": "1259"
+        },
+        {
+          "row_number": 4,
+          "raw_date": "2016-01-04",
+          "parsed_date": "2016-01-04",
+          "date_format": "AD_SEPARATED",
+          "market": "TPEx",
+          "code": "1264"
+        },
+        {
+          "row_number": 5,
+          "raw_date": "2016-01-04",
+          "parsed_date": "2016-01-04",
+          "date_format": "AD_SEPARATED",
+          "market": "TPEx",
+          "code": "1336"
+        },
+        {
+          "row_number": 6,
+          "raw_date": "2016-01-04",
+          "parsed_date": "2016-01-04",
+          "date_format": "AD_SEPARATED",
+          "market": "TPEx",
+          "code": "1565"
+        }
+      ]
+    },
+    {
+      "archive": "官方行情備份_第0501-1000交易日_20180124_20200220.zip",
+      "member": "官方行情分段.csv.gz",
+      "total_rows": 808280,
+      "parsed_date_rows": 808280,
+      "unparsed_date_rows": 0,
+      "parsed_date_min": "2018-01-24",
+      "parsed_date_max": "2020-02-20",
+      "date_format_counts": {
+        "AD_SEPARATED": 808280
+      },
+      "raw_date_top30": [
+        {
+          "raw_date": "2020-01-20",
+          "count": 1663
+        },
+        {
+          "raw_date": "2020-01-30",
+          "count": 1663
+        },
+        {
+          "raw_date": "2020-01-31",
+          "count": 1663
+        },
+        {
+          "raw_date": "2020-02-03",
+          "count": 1663
+        },
+        {
+          "raw_date": "2020-02-04",
+          "count": 1663
+        },
+        {
+          "raw_date": "2020-02-05",
+          "count": 1663
+        },
+        {
+          "raw_date": "2020-02-06",
+          "count": 1662
+        },
+        {
+          "raw_date": "2020-02-07",
+          "count": 1662
+        },
+        {
+          "raw_date": "2020-02-10",
+          "count": 1662
+        },
+        {
+          "raw_date": "2020-02-11",
+          "count": 1662
+        },
+        {
+          "raw_date": "2020-02-12",
+          "count": 1662
+        },
+        {
+          "raw_date": "2019-12-30",
+          "count": 1661
+        },
+        {
+          "raw_date": "2019-12-31",
+          "count": 1661
+        },
+        {
+          "raw_date": "2020-01-17",
+          "count": 1661
+        },
+        {
+          "raw_date": "2020-02-17",
+          "count": 1661
+        },
+        {
+          "raw_date": "2020-02-18",
+          "count": 1661
+        },
+        {
+          "raw_date": "2020-02-19",
+          "count": 1661
+        },
+        {
+          "raw_date": "2019-12-26",
+          "count": 1660
+        },
+        {
+          "raw_date": "2019-12-27",
+          "count": 1660
+        },
+        {
+          "raw_date": "2020-01-06",
+          "count": 1660
+        },
+        {
+          "raw_date": "2020-01-07",
+          "count": 1660
+        },
+        {
+          "raw_date": "2020-01-08",
+          "count": 1660
+        },
+        {
+          "raw_date": "2020-02-13",
+          "count": 1660
+        },
+        {
+          "raw_date": "2020-02-14",
+          "count": 1660
+        },
+        {
+          "raw_date": "2020-02-20",
+          "count": 1660
+        },
+        {
+          "raw_date": "2019-12-25",
+          "count": 1659
+        },
+        {
+          "raw_date": "2020-01-02",
+          "count": 1659
+        },
+        {
+          "raw_date": "2020-01-03",
+          "count": 1659
+        },
+        {
+          "raw_date": "2020-01-13",
+          "count": 1659
+        },
+        {
+          "raw_date": "2020-01-14",
+          "count": 1659
+        }
+      ],
+      "raw_date_samples": [
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24",
+        "2018-01-24"
+      ],
+      "market_raw_counts_top30": [
+        {
+          "market_raw": "TWSE",
+          "count": 449479
+        },
+        {
+          "market_raw": "TPEx",
+          "count": 358801
+        }
+      ],
+      "target_date_counts": {},
+      "target_date_market_counts": {},
+      "literal_iso_string_hit_counts": {},
+      "unknown_date_samples": [],
+      "first_rows": [
+        {
+          "row_number": 2,
+          "raw_date": "2018-01-24",
+          "parsed_date": "2018-01-24",
+          "date_format": "AD_SEPARATED",
+          "market": "TPEx",
+          "code": "1259"
+        },
+        {
+          "row_number": 3,
+          "raw_date": "2018-01-24",
+          "parsed_date": "2018-01-24",
+          "date_format": "AD_SEPARATED",
+          "market": "TPEx",
+          "code": "1264"
+        },
+        {
+          "row_number": 4,
+          "raw_date": "2018-01-24",
+          "parsed_date": "2018-01-24",
+          "date_format": "AD_SEPARATED",
+          "market": "TPEx",
+          "code": "1268"
+        },
+        {
+          "row_number": 5,
+          "raw_date": "2018-01-24",
+          "parsed_date": "2018-01-24",
+          "date_format": "AD_SEPARATED",
+          "market": "TPEx",
+          "code": "1336"
+        },
+        {
+          "row_number": 6,
+          "raw_date": "2018-01-24",
+          "parsed_date": "2018-01-24",
+          "date_format": "AD_SEPARATED",
+          "market": "TPEx",
+          "code": "1565"
+        }
+      ]
+    }
+  ],
+  "target_date_summary": [
+    {
+      "目標日期": "2017-02-18",
+      "官方命中總列數": 0,
+      "上市": 0,
+      "上櫃": 0,
+      "其他市場": 0
+    },
+    {
+      "目標日期": "2017-06-03",
+      "官方命中總列數": 0,
+      "上市": 0,
+      "上櫃": 0,
+      "其他市場": 0
+    },
+    {
+      "目標日期": "2017-09-30",
+      "官方命中總列數": 0,
+      "上市": 0,
+      "上櫃": 0,
+      "其他市場": 0
+    },
+    {
+      "目標日期": "2018-03-31",
+      "官方命中總列數": 0,
+      "上市": 0,
+      "上櫃": 0,
+      "其他市場": 0
+    },
+    {
+      "目標日期": "2018-12-22",
+      "官方命中總列數": 0,
+      "上市": 0,
+      "上櫃": 0,
+      "其他市場": 0
+    }
+  ],
+  "literal_iso_hit_records_count": 0,
+  "interpretation": [
+    "本版同時解析西元及民國日期格式。",
+    "ISO日期字串搜尋會記錄實際命中列與欄位，不再只以整份檔案的字串搜尋結果代表資料列存在。",
+    "若民國日期解析後命中補行日，代表官方備份確實包含對應日期列，v4.87.5.105 的零命中屬日期解析問題。",
+    "若日期欄已確認為可解析格式、完整掃描區間涵蓋目標日，且目標日列數仍為零，才有依據判定備份檔未收錄這些日期列。"
+  ],
+  "guardrails": {
+    "drive_readonly": true,
+    "drive_original_modified": false,
+    "drive_files_moved_or_deleted": false,
+    "official_api_called": false,
+    "database_updated": false,
+    "retrain": false,
+    "backtest": false,
+    "stock_selection": false,
+    "github_main_modified": false
+  }
+}
