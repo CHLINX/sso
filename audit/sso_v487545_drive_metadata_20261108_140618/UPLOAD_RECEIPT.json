@@ -1,0 +1,32 @@
+{
+  "version": "v4.87.5.45",
+  "run_time_taipei": "2026-11-08T14:06:18.628537+08:00",
+  "repository": "CHLINX/sso",
+  "drive_status": "PASS_ALL_FOUR_CREATEDTIME_VERIFIED",
+  "zip_path": "/content/SSO_v4.87.5.45_GoogleDriveMetadata_Diagnostics_20261108_140618/SSO_v4.87.5.45.zip",
+  "zip_bytes": 4517,
+  "zip_sha256": "9668a2426ff79fd9fb0c51bd6fcb4b15a2d9b3f64cf21235d14f82df7de3d0c7",
+  "github": {
+    "status": "UPLOAD_PASS",
+    "repository": "CHLINX/sso",
+    "branch": "audit/v487545-drive-metadata-20261108_140618",
+    "commit_sha": "cd41c09421893815ca73ee21be6beae6d7377517",
+    "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_sha_after": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_unchanged": true,
+    "branch_head_verified": true,
+    "url": "https://github.com/CHLINX/sso/tree/audit/v487545-drive-metadata-20261108_140618/audit/sso_v487545_drive_metadata_20261108_140618"
+  },
+  "constraints": {
+    "drive_calls_get_only": true,
+    "drive_source_files_created_modified_deleted_moved": false,
+    "drive_file_content_downloaded": false,
+    "official_market_or_company_action_api_called": false,
+    "market_data_downloaded": false,
+    "database_updated": false,
+    "model_retrained": false,
+    "backtest_run": false,
+    "stock_selection_run": false,
+    "github_main_modified": false
+  }
+}
