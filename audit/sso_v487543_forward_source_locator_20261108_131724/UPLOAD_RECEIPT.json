@@ -1,0 +1,23 @@
+{
+  "version": "v4.87.5.43",
+  "repository": "CHLINX/sso",
+  "branch": "audit/v487543-forward-source-locator-20261108_131723",
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "zip_path": "audit/sso_v487543_forward_source_locator_20261108_131724/SSO_v4.87.5.zip",
+  "zip_bytes": 12313,
+  "zip_sha256": "ffb243eea1725ea8745424be00cb8ca4556107bf6f046205ad0240006d495936",
+  "expected_git_blob_sha": "7f4041f96fda61c661a993426fc921661f6866b6",
+  "uploaded_blob_sha": "7f4041f96fda61c661a993426fc921661f6866b6",
+  "run_time_taipei": "2026-11-08T13:17:23+08:00",
+  "constraints": {
+    "drive_source_read_only": true,
+    "drive_files_created_modified_deleted_moved": false,
+    "v266_v263_v264_executed": false,
+    "official_api_called": false,
+    "market_data_downloaded": false,
+    "model_retrained": false,
+    "backtest_run": false,
+    "stock_selection_run": false,
+    "large_market_csv_full_read": false
+  }
+}
