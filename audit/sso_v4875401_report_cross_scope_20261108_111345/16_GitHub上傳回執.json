@@ -1,0 +1,115 @@
+{
+  "version": "v4.87.5.40.1",
+  "status": "PASS",
+  "branch": "audit/v4875401-report-cross-scope-20261108_111345",
+  "result_directory": "audit/sso_v4875401_report_cross_scope_20261108_111345",
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_sha_after_artifacts_before_receipt": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "uploaded": [
+    {
+      "file": "01_三張既有來源SHA256與列數核驗.csv",
+      "bytes": 574,
+      "sha256": "bcee1e2ac537e3b5c630865276c010debfecf0ccdca547135d58fd50a896d587",
+      "git_blob_sha": "2b0d1832f426a054ae27cb3bf378b0355cb3b7fd"
+    },
+    {
+      "file": "02_54筆淨報酬缺值逐鍵分類.csv",
+      "bytes": 15706,
+      "sha256": "6da645a5a70b5469ca9f2d56f74f8ebfedf163ec10e61a8f012e69f7a6afc8a3",
+      "git_blob_sha": "d0ed3db9f64906b63b23d5fa0ad1ceb953faa038"
+    },
+    {
+      "file": "03_6筆僅含跨區段診斷值明細.csv",
+      "bytes": 1400,
+      "sha256": "085eb411288d863e09809fb733c85b5d44e93d13daeacdaa1680c9bc59a40f19",
+      "git_blob_sha": "0da4d46f555b04a1239acd684b26c1e427b2cede"
+    },
+    {
+      "file": "04_48筆六情境均無淨報酬分類.csv",
+      "bytes": 12997,
+      "sha256": "d0582fccccb9a8053cdc4c3d692e5f3931ffe117d88bf51f252413423acc6f2a",
+      "git_blob_sha": "32b9eab192339dbacce56b692242aacaf2221111"
+    },
+    {
+      "file": "05_54筆缺值六情境324列完整明細.csv",
+      "bytes": 57090,
+      "sha256": "05cceb2ba3924d1dc125426e0e6c14a381f4afecd75416bb690f5f2251929555",
+      "git_blob_sha": "2ae23a9e51cc81bab01cee593120ce6ad2cd57b3"
+    },
+    {
+      "file": "06_原始報告含跨區段與僅同區段H分布對帳.csv",
+      "bytes": 460,
+      "sha256": "ffb6565372b53b549a58544e97461f810bd80e87019e1aecd4336a9b6c7b3966",
+      "git_blob_sha": "3373364510dcc6c47a66d9bd9f268eb60d3b0072"
+    },
+    {
+      "file": "07_原始報告區段語意證據.csv",
+      "bytes": 338,
+      "sha256": "ebeb6087a635f0321186d68b2173174df050e65eb559205575037fcf70fa8370",
+      "git_blob_sha": "10770de7f45957245e7c5b3660f534095beeb789"
+    },
+    {
+      "file": "08_來源ZIP成員與程式檔清單.csv",
+      "bytes": 3117,
+      "sha256": "1e3837ae468bb6998180bb990aec21d11087029f74636e9e4b2bc3b1ec8d8988",
+      "git_blob_sha": "5822885bde51f0089c7d58cc3a68e132827487f6"
+    },
+    {
+      "file": "09_Drive專案樹v251程式文件名盤點.csv",
+      "bytes": 855,
+      "sha256": "c918f8edadd11c757dcf80a70355f1975363d7cc1825eb377eb4da5ceccae36c",
+      "git_blob_sha": "aa541387a5ec6185ec4d4c1c213d05062b33cbef"
+    },
+    {
+      "file": "10_程式候選原始碼關鍵詞摘錄.csv",
+      "bytes": 11,
+      "sha256": "ae7c98b95ab4816af3929cf9475d8017aaf11e01e4a591058f35751cd569dd8f",
+      "git_blob_sha": "d45107d301fda4afba76c6fb50390b6c24ff0ebf"
+    },
+    {
+      "file": "11_來源讀取或程式盤點錯誤.csv",
+      "bytes": 11,
+      "sha256": "ae7c98b95ab4816af3929cf9475d8017aaf11e01e4a591058f35751cd569dd8f",
+      "git_blob_sha": "d45107d301fda4afba76c6fb50390b6c24ff0ebf"
+    },
+    {
+      "file": "12_原始核心修正說明.txt",
+      "bytes": 1541,
+      "sha256": "d82676255a4c69ad7f6731379a7f23d2ce11342dd645d0c2a896926825a6b9e1",
+      "git_blob_sha": "095c0fed56b13ca98e41f01a0197db4955b5aef3"
+    },
+    {
+      "file": "13_來源品質與執行設定.json",
+      "bytes": 4495,
+      "sha256": "b8d53f5562596a0a557cc68e9eb97a9453a6f07bc28ac2a73a40aa6314fa9316",
+      "git_blob_sha": "419b2597be132a1fb6e4a5c19624c5d6acd4574c"
+    },
+    {
+      "file": "14_原始報告相關內容.txt",
+      "bytes": 3464,
+      "sha256": "799dd69786a91adc8bd4b0ec06d70865b0e3cb3ff44f2f3406a8deb4ae07f8a1",
+      "git_blob_sha": "7abf917ec5e133ac434c4e931244b15a24f95e32"
+    },
+    {
+      "file": "15_缺值與原始報告跨區段口徑對帳摘要.json",
+      "bytes": 5116,
+      "sha256": "89ebdd49661343f344160d2a819c8989145017f279db904051164dd31a86aae8",
+      "git_blob_sha": "db78905e5ec90099a5db4c1a77ebc6f4de59bcb5"
+    },
+    {
+      "file": "執行摘要.txt",
+      "bytes": 1745,
+      "sha256": "9c1a5abf517c1f104a231070d55dce85e583f181712ee2531641ae5d3e77e7fe",
+      "git_blob_sha": "a46665f8176cf5eabca1f1a965d9cc858759a06c"
+    },
+    {
+      "file": "看股最速適_v4.87.5.40.1_Top10缺值與報告跨區段口徑對帳_20261108_111345.zip",
+      "bytes": 16961,
+      "sha256": "3cbe330ed01337d053d8cba5e6c1bdfb3b97fedc9a8f004e1d8a4c7aa6e89bb3",
+      "git_blob_sha": "74a1a69de080614827d499c9168fb68341b37d30"
+    }
+  ],
+  "zip_sha256": "3cbe330ed01337d053d8cba5e6c1bdfb3b97fedc9a8f004e1d8a4c7aa6e89bb3",
+  "timestamp_taipei": "2026-11-08T11:13:45.303018+08:00",
+  "receipt_policy": "回執只建立並上傳一次；不重複 PUT 同一路徑。"
+}
