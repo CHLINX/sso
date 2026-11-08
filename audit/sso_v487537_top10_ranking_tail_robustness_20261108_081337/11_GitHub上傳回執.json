@@ -1,0 +1,91 @@
+{
+  "version": "v4.87.5.37",
+  "status": "PASS",
+  "branch": "audit/v487537-top10-ranking-tail-robustness-20261108_081337",
+  "result_directory": "audit/sso_v487537_top10_ranking_tail_robustness_20261108_081337",
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_sha_after_artifacts_before_receipt": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "uploaded": [
+    {
+      "file": "01_兩表來源血緣與鍵值對帳.csv",
+      "bytes": 2520,
+      "sha256": "931ca94a563736a3124883e33df022ca989cae7e1adc20cf6ebe0347aeb71333",
+      "git_blob_sha": "fdefaa2bf25d7de5630e9ab6fa3d9d61b0e03686"
+    },
+    {
+      "file": "02_Top10依H基本實績基準.csv",
+      "bytes": 1677,
+      "sha256": "eaf547d3ab53bf0142706af7f2b8e0c78b5748d71679fd38051ecfe660cd6932",
+      "git_blob_sha": "33f90b799c6fc7e2f3e87b641aa2fa0d4a84b5f8"
+    },
+    {
+      "file": "03_H內預測淨報酬排名位置實績.csv",
+      "bytes": 12205,
+      "sha256": "d8fbcf71858435ed17f76dc263e840b23aa2277fdc079ecd5e167a7d49416c6f",
+      "git_blob_sha": "6d12ea79faaa857eebaf3dec3daa56f3c9d68463"
+    },
+    {
+      "file": "04_同訊號日H內排序關聯與前3後3差值.csv",
+      "bytes": 1707,
+      "sha256": "8272a4cf08e17f03d528d9966750fedc668d26ce4d0b55d17a72d2f6938d2fd7",
+      "git_blob_sha": "0c5a95e152a691a29245993474ec5b5e966abc33"
+    },
+    {
+      "file": "05_H個股報酬尾部集中與均值穩健性.csv",
+      "bytes": 2095,
+      "sha256": "3fbf96de499fbe4ae65b20d2c8b61b3cea5354468eeab7800f83df1a8424d630",
+      "git_blob_sha": "10d7028d8e8b4b988fc7b6a539bcd8d879e27e79"
+    },
+    {
+      "file": "06_H日等權報酬極端日期敏感度.csv",
+      "bytes": 2547,
+      "sha256": "a84bb607b2c63d6b33f39dcc4dd8882b7c4c461d387fc309557a6df72c17b1f0",
+      "git_blob_sha": "d3e745d8d700a6ddb8eaa6813a6e92204ee5fba7"
+    },
+    {
+      "file": "07_逐股預測排序與實績配對明細.csv",
+      "bytes": 4617404,
+      "sha256": "6b737b87786b132c579fec8e2665fba3b4ec023c1f122c91c02a24a9785fc262",
+      "git_blob_sha": "0bbd6dc427ee120df8b117795c033db5ecc49bc8"
+    },
+    {
+      "file": "08_來源配對及Gate母體界線診斷.csv",
+      "bytes": 1045,
+      "sha256": "5f9e8056913e7e5fb79816850adced3955fda475ca863cb9c35a84792dae5a04",
+      "git_blob_sha": "ffc9b112575a7ca2abc67dfd9ea2e1d325d2f7bc"
+    },
+    {
+      "file": "09_來源副本讀取錯誤.csv",
+      "bytes": 11,
+      "sha256": "ae7c98b95ab4816af3929cf9475d8017aaf11e01e4a591058f35751cd569dd8f",
+      "git_blob_sha": "d45107d301fda4afba76c6fb50390b6c24ff0ebf"
+    },
+    {
+      "file": "10_Top10排序效度與尾部穩健性摘要.json",
+      "bytes": 18823,
+      "sha256": "76147761a8b7f84fa49bdae503974af379b696677579a852d108c03c1efcdd87",
+      "git_blob_sha": "91bf39a8a12cc9e7c771a6a099d9ce9dbe37d99e"
+    },
+    {
+      "file": "10_跨日期預測與實際報酬相關性.csv",
+      "bytes": 886,
+      "sha256": "7a55b55bb380ad939f6c4d5f9c8c29abe469f9f5494cf0e5f4055ab9a651a58f",
+      "git_blob_sha": "a1315b3ec688d1807e14d04422ea614c8dc3b90f"
+    },
+    {
+      "file": "執行摘要.txt",
+      "bytes": 2340,
+      "sha256": "3c9c87aae22905ee42f9690a8cd1449f5a084740db918a2072effa2c0dd7b864",
+      "git_blob_sha": "5cb29dcf1ce7ee131e92c6d0c44b0e8763950dbd"
+    },
+    {
+      "file": "看股最速適_v4.87.5.37_Top10預測排序效度與實績尾部穩健性稽核_20261108_081337.zip",
+      "bytes": 1019969,
+      "sha256": "d7cc088084f16168e9db43c60f8e7d740fccf92fcf8fd4e7a3100283ffb9b9e1",
+      "git_blob_sha": "b184a6faca3d9e296618917df9b9923cb76f6278"
+    }
+  ],
+  "zip_sha256": "d7cc088084f16168e9db43c60f8e7d740fccf92fcf8fd4e7a3100283ffb9b9e1",
+  "timestamp_taipei": "2026-11-08T08:13:38.389340+08:00",
+  "receipt_policy": "此回執只建立及上傳一次；不重複 PUT 同一路徑。"
+}
