@@ -1,0 +1,91 @@
+{
+  "version": "v4.87.5.38",
+  "status": "PASS",
+  "branch": "audit/v487538-return-semantics-crosscheck-20261108_082058",
+  "result_directory": "audit/sso_v487538_return_semantics_crosscheck_20261108_082058",
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_sha_after_artifacts_before_receipt": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "uploaded": [
+    {
+      "file": "01_三張來源血緣與欄位對應.csv",
+      "bytes": 4083,
+      "sha256": "c2ffac488ba0cb4cda29cff867060a0a317b1e47b5ac1307d2d682f978327d77",
+      "git_blob_sha": "6629cb439807acc9b5bf4dd2460c7d535d50d5b5"
+    },
+    {
+      "file": "02_多成本情境列數分布.csv",
+      "bytes": 168,
+      "sha256": "d01e74916c00656f8f98687d988b2db54b8e41350d828783d7595fb25c9f36d0",
+      "git_blob_sha": "d325972b54f4f0c98dbd4c7b8cc74385da45ead8"
+    },
+    {
+      "file": "03_一般基準成本每自然鍵展開列數.csv",
+      "bytes": 72,
+      "sha256": "1e4a714e36af4fe70c31d2ab4a26aabd31072a6f80f98fd1e42e12ebae4c74ed",
+      "git_blob_sha": "8333e1d91a4ac0ef5679531a9586352ded83e75a"
+    },
+    {
+      "file": "04_逐股實績與多成本表逐鍵淨毛報酬對帳.csv",
+      "bytes": 3469105,
+      "sha256": "32530a532f77f729c6a5319dd4e1f3d2ed03835191e01befb82438b78359446c",
+      "git_blob_sha": "93f182c4a3dcda8fd33d7c60d10119a1a1d9f80d"
+    },
+    {
+      "file": "05_54筆逐股淨報酬缺值跨表狀態.csv",
+      "bytes": 8472,
+      "sha256": "a4d64632ee457290cab67c23d9465c1da4afbd834e0e3c76b1caeb1f0c3ccd9a",
+      "git_blob_sha": "f32c5e909550162a4d9cbcf8d5eaa2517c3f4112"
+    },
+    {
+      "file": "06_毛報酬與淨報酬數值關係摘要.csv",
+      "bytes": 473,
+      "sha256": "c79fc89d5b5e5c5b3044a4547d4b9a1ea677b92d03e96b28f9e6cb10e1e2b3e1",
+      "git_blob_sha": "519303cd5f30454c2458bfe77ecebd5dda3e87db"
+    },
+    {
+      "file": "07_多成本表額外欄位及維度盤點.csv",
+      "bytes": 3913,
+      "sha256": "85a372b949a73f64e4772f7ac679b0ce0b8e0a34b4af0b8d36f37cc1b62d00a9",
+      "git_blob_sha": "fb664ea48ed372ff93aef060e4da5a6ddbd64de3"
+    },
+    {
+      "file": "08_淨報酬跨來源不一致樣本.csv",
+      "bytes": 11,
+      "sha256": "ae7c98b95ab4816af3929cf9475d8017aaf11e01e4a591058f35751cd569dd8f",
+      "git_blob_sha": "d45107d301fda4afba76c6fb50390b6c24ff0ebf"
+    },
+    {
+      "file": "09_來源讀取錯誤.csv",
+      "bytes": 11,
+      "sha256": "ae7c98b95ab4816af3929cf9475d8017aaf11e01e4a591058f35751cd569dd8f",
+      "git_blob_sha": "d45107d301fda4afba76c6fb50390b6c24ff0ebf"
+    },
+    {
+      "file": "10_跨來源一致性及標籤語意判定.csv",
+      "bytes": 720,
+      "sha256": "4d67bc894da10ea8673c927af582a66129867a934532010f24bdf1a38a70309d",
+      "git_blob_sha": "8c9aa7eb693a751f88b23f77c8c62044c9cc588c"
+    },
+    {
+      "file": "11_逐股實績標籤與多成本來源核驗摘要.json",
+      "bytes": 3768,
+      "sha256": "839d99fd3e54d2d96b0f6a0f3ebb1462eac6a8bcb2fb58d000858ff0f87cb903",
+      "git_blob_sha": "ee651e6e8fbe1778b621e5999baca7f8715680da"
+    },
+    {
+      "file": "執行摘要.txt",
+      "bytes": 1449,
+      "sha256": "6a805b543b3b73821304159bcc2a31f00985b9989f80bcfbf5c2fa136e19bae4",
+      "git_blob_sha": "7b51669f3f28b718a7b845271f529590954845f1"
+    },
+    {
+      "file": "看股最速適_v4.87.5.38_Top10逐股實際報酬標籤語意與多成本來源一致性核驗_20261108_082058.zip",
+      "bytes": 850769,
+      "sha256": "8d4420e56649ea085235e7c438d4f3b748d5d6f74d2d154177d4cda2a4ae1f9b",
+      "git_blob_sha": "30f744bf1e3427d802e5d572d204489b9316eeaa"
+    }
+  ],
+  "zip_sha256": "8d4420e56649ea085235e7c438d4f3b748d5d6f74d2d154177d4cda2a4ae1f9b",
+  "timestamp_taipei": "2026-11-08T08:20:58.656935+08:00",
+  "receipt_policy": "回執只建立並上傳一次；不重複 PUT 同一路徑。"
+}
