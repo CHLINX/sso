@@ -1,0 +1,91 @@
+{
+  "version": "v4.87.5.39",
+  "status": "PASS",
+  "branch": "audit/v487539-missingness-dimension-20261108_082810",
+  "result_directory": "audit/sso_v487539_missingness_dimension_20261108_082810",
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_sha_after_artifacts_before_receipt": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "uploaded": [
+    {
+      "file": "01_三張來源血緣與SHA256核驗.csv",
+      "bytes": 2619,
+      "sha256": "0f752bcebc28ef8937cdb6bb745eb495b369181379461d9b7b09ef736223f986",
+      "git_blob_sha": "52cf1bd9f9ca93f2ec8fdffaff9f7407845a9ff6"
+    },
+    {
+      "file": "02_一般成本交易模式與區段口徑六組合分布.csv",
+      "bytes": 523,
+      "sha256": "e0d5476a0e332568313ddb4cc858aeab6a94c4287bd9359bdb9072111291073d",
+      "git_blob_sha": "1d7ac7548ed88cac5fd858728d7682985523ef26"
+    },
+    {
+      "file": "03_逐股自然鍵六列結構與報酬數值覆蓋.csv",
+      "bytes": 2696993,
+      "sha256": "d489f38e38afb713f3ea29286465421b0b6d88cfdea2bf5e11156df025f0f244",
+      "git_blob_sha": "4f0accfb07ff80a26d54d1c082e81bec4cf2348b"
+    },
+    {
+      "file": "04_54筆淨報酬缺值逐鍵原始欄位與跨表狀態.csv",
+      "bytes": 68523,
+      "sha256": "102429ca39663496373134d88b6d7b74bb666890fdff2caa8d0937382313a034",
+      "git_blob_sha": "269733b5ca8bb0c5be4563bcc9e03afd90727517"
+    },
+    {
+      "file": "05_54筆缺值逐鍵六種模式區段逐列明細.csv",
+      "bytes": 418855,
+      "sha256": "e8fd355db050c8b9876c2f76d2b8636492a8d9119a966e68854a3866e3fc0ac2",
+      "git_blob_sha": "c5fdccc0c5b3079a74e3bc442257d26287e6f1a7"
+    },
+    {
+      "file": "06_54筆缺值按H分布.csv",
+      "bytes": 156,
+      "sha256": "919bc31b365c59ddd53202c1daa25ec489357eedb832e1dd8c893298b4353035",
+      "git_blob_sha": "91752aa9acf6c52ef6efe2546bda80f22e440bff"
+    },
+    {
+      "file": "07_逐股實績數值與六種多成本列一致性摘要.csv",
+      "bytes": 404,
+      "sha256": "c03dd0fbb8a3f398b58fa0afecacf87966784806bc4981a981ff4a84fa977c65",
+      "git_blob_sha": "dca49cb9261600dfb3e8b2be9d6a1a3661e43c80"
+    },
+    {
+      "file": "08_多成本來源ZIP成員有限盤點.csv",
+      "bytes": 9146,
+      "sha256": "f45fa14d1b012ebead6d20ed92becb9d6b43c1f33007765f388d20920897acf6",
+      "git_blob_sha": "ad1d0260b1066dd5be8b35d2f8168c5246801452"
+    },
+    {
+      "file": "09_來源程式與說明檔關鍵詞摘錄.csv",
+      "bytes": 45280,
+      "sha256": "13f7c663c358072cf599acfce8cfef04cc213d661efc8554d10d07b5c78eb4fa",
+      "git_blob_sha": "b3f59d9d4c626b93ecf815ba5cc87d09cb405b0d"
+    },
+    {
+      "file": "10_逐股實績數值不一致自然鍵.csv",
+      "bytes": 11,
+      "sha256": "ae7c98b95ab4816af3929cf9475d8017aaf11e01e4a591058f35751cd569dd8f",
+      "git_blob_sha": "d45107d301fda4afba76c6fb50390b6c24ff0ebf"
+    },
+    {
+      "file": "11_缺值與六維度拆解核驗摘要.json",
+      "bytes": 5996,
+      "sha256": "b8a556eb700dbd289e871cf8afd2f2a51acc190749f9e8963acc292d4348fe6a",
+      "git_blob_sha": "5c193552924dee1186d62f52f9c7652c19cd3d25"
+    },
+    {
+      "file": "執行摘要.txt",
+      "bytes": 1326,
+      "sha256": "8d236fcb59c7c178133ad2291cf8b41711bc544bb0b601ae2bde6a06296a4d5e",
+      "git_blob_sha": "a968b420f98960f2c618ccb73c52cd7364c5133b"
+    },
+    {
+      "file": "看股最速適_v4.87.5.39_Top10缺值與六維度語意拆解_20261108_082810.zip",
+      "bytes": 567605,
+      "sha256": "1ee614e4839d71b46ba3d71717aeb37fcc0958e0ee434ac3ccee31a27016f874",
+      "git_blob_sha": "e62735fd11338019d5b249455cb5a41ac7d59732"
+    }
+  ],
+  "zip_sha256": "1ee614e4839d71b46ba3d71717aeb37fcc0958e0ee434ac3ccee31a27016f874",
+  "timestamp_taipei": "2026-11-08T08:28:10.701776+08:00",
+  "receipt_policy": "回執只建立並上傳一次；不重複 PUT 同一路徑。"
+}
