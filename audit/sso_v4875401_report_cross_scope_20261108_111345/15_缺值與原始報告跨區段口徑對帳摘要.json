@@ -1,0 +1,131 @@
+{
+  "version": "v4.87.5.40.1",
+  "task": "OOS Top10 54筆淨報酬缺值與來源報告跨區段口徑對帳",
+  "timestamp_taipei": "2026-11-08T11:13:45.303018+08:00",
+  "status": "PASS",
+  "source_integrity": {
+    "v535_manifest": "PASS",
+    "source_matrix_rows": 27,
+    "top10_rows": 27600,
+    "individual_detail_rows": 27600,
+    "multi_cost_rows": 331200,
+    "source_hashes_pinned": true,
+    "top10_sha256": "463af7ad63b9b7b1553a59115c0f377c7791cd4fc3d4199d05bbc41ee68b40bc",
+    "detail_sha256": "6dd75120067fa23cbfe718f3f6222063d4b60f1d4c14eb8263a506a86091422f",
+    "multi_cost_sha256": "429025caa45e1742c42cd1d0704df2b48da0d6331dacbf1b14d64cef3ed94817"
+  },
+  "missingness": {
+    "detail_net_numeric": 27546,
+    "detail_net_missing": 54,
+    "numeric_detail_values_matching_multicost": 27546,
+    "cross_segment_only_numeric_keys": 6,
+    "no_numeric_net_in_any_of_six_scenarios": 48,
+    "cross_only_by_H": {
+      "1": 0,
+      "3": 1,
+      "5": 2,
+      "10": 3
+    },
+    "missing_by_H": {
+      "1": 20,
+      "3": 15,
+      "5": 10,
+      "10": 9
+    },
+    "classification_counts": {
+      "進場與出場皆無效；無可用實際報酬": 16,
+      "進場無效；無可用實際報酬": 8,
+      "出場無效；無可用實際報酬": 19,
+      "僅含跨區段診斷值；同區段無值；不得回填正式逐股標籤": 6,
+      "訊號至進場已知跨區段未成交；無可用實際報酬": 5
+    }
+  },
+  "report_reconciliation": {
+    "report_member_found": true,
+    "report_rows_found": 8,
+    "h_scope_count_differences": [
+      {
+        "H": 1,
+        "報告含跨區段有效結果數": 16880,
+        "報告僅同區段有效結果數": 16880,
+        "報告跨區段增加筆數": 0,
+        "本次54缺值中僅跨區段有值筆數": 0,
+        "數量是否完全吻合": true,
+        "報告含跨區段候選列數": 16900,
+        "報告僅同區段候選列數": 16900,
+        "報告含跨區段訊號日數": 1690,
+        "報告僅同區段訊號日數": 1690
+      },
+      {
+        "H": 3,
+        "報告含跨區段有效結果數": 5616,
+        "報告僅同區段有效結果數": 5615,
+        "報告跨區段增加筆數": 1,
+        "本次54缺值中僅跨區段有值筆數": 1,
+        "數量是否完全吻合": true,
+        "報告含跨區段候選列數": 5630,
+        "報告僅同區段候選列數": 5630,
+        "報告含跨區段訊號日數": 563,
+        "報告僅同區段訊號日數": 563
+      },
+      {
+        "H": 5,
+        "報告含跨區段有效結果數": 3372,
+        "報告僅同區段有效結果數": 3370,
+        "報告跨區段增加筆數": 2,
+        "本次54缺值中僅跨區段有值筆數": 2,
+        "數量是否完全吻合": true,
+        "報告含跨區段候選列數": 3380,
+        "報告僅同區段候選列數": 3380,
+        "報告含跨區段訊號日數": 338,
+        "報告僅同區段訊號日數": 338
+      },
+      {
+        "H": 10,
+        "報告含跨區段有效結果數": 1684,
+        "報告僅同區段有效結果數": 1681,
+        "報告跨區段增加筆數": 3,
+        "本次54缺值中僅跨區段有值筆數": 3,
+        "數量是否完全吻合": true,
+        "報告含跨區段候選列數": 1690,
+        "報告僅同區段候選列數": 1690,
+        "報告含跨區段訊號日數": 169,
+        "報告僅同區段訊號日數": 169
+      }
+    ],
+    "all_H_differences_match_cross_only_missing_keys": true,
+    "interpretation": "若四個H差額全數吻合，6筆缺值外表有值可由含跨區段輸出比僅同區段多出的有效列解釋；這是輸出層級口徑對帳，不是原始程式公式證明。"
+  },
+  "source_code_lookup": {
+    "same_zip_member_count": 38,
+    "same_zip_code_candidates": [],
+    "same_zip_contains_source_code": false,
+    "drive_project_tree_scanned_dirs": 519,
+    "drive_project_tree_scanned_files": 14814,
+    "drive_project_code_candidates": [],
+    "drive_project_code_with_3plus_semantic_terms": [],
+    "formula_semantics_proven": false,
+    "note": "找到相關程式檔只表示有候選；仍須核實函數與分支。報告／輸出差額吻合不能單獨證明原始程式公式。"
+  },
+  "interpretation": {
+    "six_rows_are_cross_segment_diagnostic_only": true,
+    "six_missing_values_filled": false,
+    "six_cross_segment_values_used_as_official_labels": false,
+    "48_missing_keys_preserved_as_missing": true,
+    "missingness_resolved_at_output_scope": true,
+    "original_formula_semantics_proven": false,
+    "full_gate_population_rebuilt": false,
+    "warning": "含跨區段數值在原始報告中明定僅供診斷；排除跨區段亦屬事後條件診斷，均不可自動回填或視為策略正式可交易標籤。"
+  },
+  "restrictions": {
+    "no_market_rescan": true,
+    "no_factor_recalculation": true,
+    "no_retraining": true,
+    "no_new_backtest": true,
+    "no_formula_changes": true,
+    "no_gate_threshold_changes": true,
+    "no_source_program_execution": true,
+    "source_read_only": true,
+    "github_main_modified": false
+  }
+}
