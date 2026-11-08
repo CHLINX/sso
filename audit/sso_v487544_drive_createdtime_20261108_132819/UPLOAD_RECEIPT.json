@@ -1,0 +1,27 @@
+{
+  "version": "v4.87.5.44",
+  "repository": "CHLINX/sso",
+  "branch": "audit/v487544-drive-createdtime-20261108_132819",
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "zip_path": "audit/sso_v487544_drive_createdtime_20261108_132819/SSO_v4.87.5.zip",
+  "zip_bytes": 7286,
+  "zip_sha256": "4b997847cee0073aae197844abd1c6a4b0f963d2a3a166da83d6841f61ad3461",
+  "expected_git_blob_sha": "84af0f25c8df731f27c915d87cc0ac86f5ce0564",
+  "uploaded_blob_sha": "84af0f25c8df731f27c915d87cc0ac86f5ce0564",
+  "run_time_taipei": "2026-11-08T13:28:19+08:00",
+  "drive_api_status": "DRIVE_METADATA_API_UNAVAILABLE",
+  "constraints": {
+    "drive_metadata_read_only": true,
+    "drive_source_files_created_modified_deleted_moved": false,
+    "drive_api_scope": "drive.metadata.readonly",
+    "official_market_or_company_action_api_called": false,
+    "market_data_downloaded": false,
+    "v266_v263_v264_executed": false,
+    "database_updated": false,
+    "model_retrained": false,
+    "backtest_run": false,
+    "stock_selection_run": false,
+    "v417_large_csv_full_read": false,
+    "v417_large_csv_sha256_computed": false
+  }
+}
