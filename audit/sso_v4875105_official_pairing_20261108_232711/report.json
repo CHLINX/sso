@@ -1,0 +1,241 @@
+{
+  "version": "v4.87.5.105",
+  "timestamp_taipei": "2026-11-08T23:31:23.785027+08:00",
+  "status": "ANALYSIS_COMPLETED",
+  "scope": {
+    "target_dates": [
+      "2017-02-18",
+      "2017-06-03",
+      "2017-09-30",
+      "2018-03-31",
+      "2018-12-22"
+    ],
+    "candidate_source_path": "MyDrive/看股最速適/看股最速適_v231補行日重建獨立候選資料集_v4_68_1_20261102_000547/01_v231補行日重建獨立候選資料集.csv.gz",
+    "candidate_drive_file_id": "1ZzQUNQQ0KYwHXwO-q_xfKJqYcTpuw6U1",
+    "candidate_download": {
+      "drive_metadata": {
+        "id": "1ZzQUNQQ0KYwHXwO-q_xfKJqYcTpuw6U1",
+        "name": "01_v231補行日重建獨立候選資料集.csv.gz",
+        "mimeType": "application/x-gzip",
+        "md5Checksum": "85727ac75ba5ea81564aa02d68fee19f",
+        "size": "480672355"
+      },
+      "bytes": 480672355,
+      "md5": "85727ac75ba5ea81564aa02d68fee19f",
+      "sha256": "a5151cdebe26233389f55bf6189f65d21e1f5df05f025b653963bafc483deb4d"
+    },
+    "candidate_expected_sha256": "a5151cdebe26233389f55bf6189f65d21e1f5df05f025b653963bafc483deb4d",
+    "archives": [
+      {
+        "name": "官方行情備份_第0001-0500交易日_20160101_20180123.zip",
+        "drive_file_id": "1c6TMCUac9CNgTPZMEpuXNlPic4PR4ri8",
+        "drive_metadata": {
+          "id": "1c6TMCUac9CNgTPZMEpuXNlPic4PR4ri8",
+          "name": "官方行情備份_第0001-0500交易日_20160101_20180123.zip",
+          "mimeType": "application/zip",
+          "md5Checksum": "f0ea8f4a1f0f94d6274a39b8960f2c92",
+          "size": "19230111"
+        },
+        "bytes": 19230111,
+        "md5": "f0ea8f4a1f0f94d6274a39b8960f2c92",
+        "sha256": "53fb69644fa5fc1876a95021c686d9bac42220802027af1c9ac15c0b2bec8e22"
+      },
+      {
+        "name": "官方行情備份_第0501-1000交易日_20180124_20200220.zip",
+        "drive_file_id": "11nrA4lVn_pOo2zupvPmGONO2kmfUwhu5",
+        "drive_metadata": {
+          "id": "11nrA4lVn_pOo2zupvPmGONO2kmfUwhu5",
+          "name": "官方行情備份_第0501-1000交易日_20180124_20200220.zip",
+          "mimeType": "application/zip",
+          "md5Checksum": "4fccda922584f2e86d693fb0495562d8",
+          "size": "20560584"
+        },
+        "bytes": 20560584,
+        "md5": "4fccda922584f2e86d693fb0495562d8",
+        "sha256": "1826442349b44fdeacf7faba59beddf028651618bb70f7b9750552fca3aa9d12"
+      }
+    ],
+    "ratio_direction": "v4.68.1 候選影子 OHLC / 官方備份原始 OHLC",
+    "ratio_spread_relative_tolerance": 0.005,
+    "multiplier_near_one_tolerance": 0.0001,
+    "exact_price_absolute_tolerance": 1e-08
+  },
+  "results": {
+    "candidate_total_rows_scanned": 4193745,
+    "candidate_target_rows": 7022,
+    "candidate_target_keys": 7022,
+    "candidate_duplicate_key_rows": 0,
+    "official_target_rows": 0,
+    "official_target_keys": 0,
+    "official_duplicate_key_rows": 0,
+    "matched_unique_keys": 0,
+    "unmatched_candidate_rows": 7022,
+    "unmatched_official_rows": 0,
+    "price_comparison_class_counts": {},
+    "daily_market_summary": [
+      {
+        "日期": "2017-02-18",
+        "市場": "上市",
+        "candidate_rows": 827,
+        "candidate_keys": 827,
+        "candidate_duplicate_rows": 0,
+        "official_rows": 0,
+        "official_keys": 0,
+        "official_duplicate_rows": 0,
+        "unmatched_candidate_keys": 827
+      },
+      {
+        "日期": "2017-02-18",
+        "市場": "上櫃",
+        "candidate_rows": 636,
+        "candidate_keys": 636,
+        "candidate_duplicate_rows": 0,
+        "official_rows": 0,
+        "official_keys": 0,
+        "official_duplicate_rows": 0,
+        "unmatched_candidate_keys": 636
+      },
+      {
+        "日期": "2017-06-03",
+        "市場": "上市",
+        "candidate_rows": 670,
+        "candidate_keys": 670,
+        "candidate_duplicate_rows": 0,
+        "official_rows": 0,
+        "official_keys": 0,
+        "official_duplicate_rows": 0,
+        "unmatched_candidate_keys": 670
+      },
+      {
+        "日期": "2017-06-03",
+        "市場": "上櫃",
+        "candidate_rows": 537,
+        "candidate_keys": 537,
+        "candidate_duplicate_rows": 0,
+        "official_rows": 0,
+        "official_keys": 0,
+        "official_duplicate_rows": 0,
+        "unmatched_candidate_keys": 537
+      },
+      {
+        "日期": "2017-09-30",
+        "市場": "上市",
+        "candidate_rows": 770,
+        "candidate_keys": 770,
+        "candidate_duplicate_rows": 0,
+        "official_rows": 0,
+        "official_keys": 0,
+        "official_duplicate_rows": 0,
+        "unmatched_candidate_keys": 770
+      },
+      {
+        "日期": "2017-09-30",
+        "市場": "上櫃",
+        "candidate_rows": 581,
+        "candidate_keys": 581,
+        "candidate_duplicate_rows": 0,
+        "official_rows": 0,
+        "official_keys": 0,
+        "official_duplicate_rows": 0,
+        "unmatched_candidate_keys": 581
+      },
+      {
+        "日期": "2018-03-31",
+        "市場": "上市",
+        "candidate_rows": 855,
+        "candidate_keys": 855,
+        "candidate_duplicate_rows": 0,
+        "official_rows": 0,
+        "official_keys": 0,
+        "official_duplicate_rows": 0,
+        "unmatched_candidate_keys": 855
+      },
+      {
+        "日期": "2018-03-31",
+        "市場": "上櫃",
+        "candidate_rows": 660,
+        "candidate_keys": 660,
+        "candidate_duplicate_rows": 0,
+        "official_rows": 0,
+        "official_keys": 0,
+        "official_duplicate_rows": 0,
+        "unmatched_candidate_keys": 660
+      },
+      {
+        "日期": "2018-12-22",
+        "市場": "上市",
+        "candidate_rows": 850,
+        "candidate_keys": 850,
+        "candidate_duplicate_rows": 0,
+        "official_rows": 0,
+        "official_keys": 0,
+        "official_duplicate_rows": 0,
+        "unmatched_candidate_keys": 850
+      },
+      {
+        "日期": "2018-12-22",
+        "市場": "上櫃",
+        "candidate_rows": 636,
+        "candidate_keys": 636,
+        "candidate_duplicate_rows": 0,
+        "official_rows": 0,
+        "official_keys": 0,
+        "official_duplicate_rows": 0,
+        "unmatched_candidate_keys": 636
+      }
+    ],
+    "archive_scans": [
+      {
+        "archive": "官方行情備份_第0001-0500交易日_20160101_20180123.zip",
+        "member": "官方行情分段.csv.gz",
+        "rows_scanned": 754621,
+        "target_rows": 0,
+        "target_keys": 0
+      },
+      {
+        "archive": "官方行情備份_第0501-1000交易日_20180124_20200220.zip",
+        "member": "官方行情分段.csv.gz",
+        "rows_scanned": 808280,
+        "target_rows": 0,
+        "target_keys": 0
+      }
+    ],
+    "candidate_columns_used": {
+      "date": "日期",
+      "market": "市場",
+      "code": "股票代號",
+      "open": "影子開盤價",
+      "high": "影子最高價",
+      "low": "影子最低價",
+      "close": "影子收盤價"
+    }
+  },
+  "guardrails": {
+    "drive_api_scope_readonly": true,
+    "drive_original_modified": false,
+    "drive_files_moved_or_deleted": false,
+    "official_api_called": false,
+    "market_database_updated": false,
+    "factor_matrix_rebuilt": false,
+    "retrain": false,
+    "backtest": false,
+    "stock_selection": false,
+    "github_main_write_requested": false,
+    "github_main_unchanged_before_final_report": true
+  },
+  "interpretation_limits": [
+    "自然鍵為日期＋市場＋股票代號；重複鍵不強制配對。",
+    "四價倍率為候選影子價格除以官方備份原始價格。",
+    "四價共同倍率分類門檻為四個倍率相對離散度不超過0.5%，不等於已證明公司行動或調整原因。",
+    "倍率約1為數值接近1；四價完全相同另以絕對差1e-8判定。",
+    "本版只核對五個補行日，不重建因子矩陣、不重新訓練、不進行樣本外回測。"
+  ],
+  "github": {
+    "branch": "audit/v4875105-official-pairing-20261108_232711",
+    "folder": "audit/sso_v4875105_official_pairing_20261108_232711",
+    "main_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_after_before_report": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_unchanged_before_report": true,
+    "report_url": "https://github.com/CHLINX/sso/tree/audit/v4875105-official-pairing-20261108_232711/audit/sso_v4875105_official_pairing_20261108_232711"
+  }
+}
