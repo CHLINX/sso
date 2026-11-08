@@ -1,0 +1,21 @@
+{
+  "version": "v4.87.5.41",
+  "repository": "CHLINX/sso",
+  "branch": "audit/v487541-forward-shadow-ledger-20261108_130523",
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "zip_path": "audit/sso_v487541_forward_shadow_ledger_20261108_130524/SSO_v4.87.5.zip",
+  "zip_bytes": 6304,
+  "zip_sha256": "a85e5560db9bc83f7972f4667a6c4c861a4ab935f6004acf89ed26571bd26171",
+  "expected_git_blob_sha": "680f2ca4489fcc4fedff3ee3aa7f60b29eae557e",
+  "uploaded_blob_sha": "680f2ca4489fcc4fedff3ee3aa7f60b29eae557e",
+  "run_time_taipei": "2026-11-08T13:05:23+08:00",
+  "constraints": {
+    "drive_source_read_only": true,
+    "ledger_modified": false,
+    "v263_or_v264_executed": false,
+    "market_data_downloaded": false,
+    "model_retrained": false,
+    "backtest_run": false,
+    "stock_selection_run": false
+  }
+}
