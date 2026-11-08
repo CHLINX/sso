@@ -1,0 +1,7 @@
+{
+  "branch": "audit/v4875101-v231-saturday-impact-20261108_214747",
+  "folder": "audit/sso_v4875101_v231_saturday_impact_20261108_214747",
+  "main_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_after": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_unchanged": true
+}
