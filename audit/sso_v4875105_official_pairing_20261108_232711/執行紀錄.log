@@ -1,4 +1,4 @@
-[23:27:11] 啟動 v4.87.5.105；Drive readonly；不呼叫官方 API；不改動來源；不重訓、不回測、不選股。
+﻿[23:27:11] 啟動 v4.87.5.105；Drive readonly；不呼叫官方 API；不改動來源；不重訓、不回測、不選股。
 [23:27:11] [SELF-TEST] PASS：已明確指定四個影子 OHLC 欄位及五個補行日。
 [23:27:12] Drive OAuth credentials=Credentials；scopes=['https://www.googleapis.com/auth/drive.readonly']
 [23:27:13] 候選來源：MyDrive/看股最速適/看股最速適_v231補行日重建獨立候選資料集_v4_68_1_20261102_000547/01_v231補行日重建獨立候選資料集.csv.gz
@@ -81,3 +81,7 @@
 [23:31:03] 讀取備份成員：官方行情備份_第0501-1000交易日_20180124_20200220.zip :: 官方行情分段.csv.gz
 [23:31:03] 官方欄位映射：{'date': '日期', 'market': '市場', 'code': '股票代號', 'open': '開盤', 'high': '最高', 'low': '最低', 'close': '收盤'}
 [23:31:23] [PASS] 官方備份掃描：官方行情備份_第0501-1000交易日_20180124_20200220.zip；五日列=0；鍵=0
+[23:31:24] [PASS] main 起始 SHA=aaabc2433fb5df2bb68af06461178305d6bd30d1
+[23:31:32] [PASS] GitHub main 最終 SHA 未變更：aaabc2433fb5df2bb68af06461178305d6bd30d1
+[23:31:32] GitHub audit branch=audit/v4875105-official-pairing-20261108_232711
+[23:31:32] 報告網址=https://github.com/CHLINX/sso/tree/audit/v4875105-official-pairing-20261108_232711/audit/sso_v4875105_official_pairing_20261108_232711
