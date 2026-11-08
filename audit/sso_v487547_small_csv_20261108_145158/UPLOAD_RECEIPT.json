@@ -1,0 +1,17 @@
+{
+  "version": "v4.87.5.47",
+  "drive_status": "PASS_SMALL_CSV_VALIDATION_AND_COMPANY_ACTION_DISCOVERY",
+  "zip_bytes": 17990,
+  "zip_sha256": "be7cd45e22c8b42d1d38dbad7d344c6fd9904ff4cde28633da5cfbe99f1f1098",
+  "github": {
+    "status": "UPLOAD_PASS",
+    "branch": "audit/v487547-small-csv-20261108_145158",
+    "commit_sha": "ac44eb5cd4246379512c7cc8203bab093900d87e",
+    "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_sha_after": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_unchanged": true,
+    "branch_head_verified": true,
+    "url": "https://github.com/CHLINX/sso/tree/audit/v487547-small-csv-20261108_145158/audit/sso_v487547_small_csv_20261108_145158"
+  },
+  "drive_original_files_modified": false
+}
