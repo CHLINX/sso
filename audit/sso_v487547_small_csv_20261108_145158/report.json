@@ -1,0 +1,2249 @@
+{
+  "version": "v4.87.5.47",
+  "run_time": "2026-11-08T14:51:58.339903+08:00",
+  "auth": {
+    "method": "ADC",
+    "project": "",
+    "tokeninfo": {
+      "status": "PASS",
+      "exact_metadata_readonly": false,
+      "drive_scopes": [
+        "https://www.googleapis.com/auth/drive"
+      ]
+    }
+  },
+  "constraints": {
+    "only_small_sidecar_files_read": true,
+    "zip_archives_downloaded": false,
+    "large_market_table_downloaded": false,
+    "drive_original_files_modified": false,
+    "official_api_called": false,
+    "database_updated": false,
+    "model_retrained": false,
+    "backtest_run": false,
+    "stock_selection_run": false,
+    "github_main_modified": false
+  },
+  "files": [
+    {
+      "id": "1-I25f5tD5LFxIk40xnuyBEB5NPEuSNFM",
+      "name": "官方來源逐日查詢紀錄.csv",
+      "size": 2690272,
+      "md5_verified": true,
+      "createdTime": "2026-10-29T16:45:16.111Z",
+      "modifiedTime": "2026-10-29T16:45:16.111Z",
+      "encoding": "utf-8-sig",
+      "delimiter": "','",
+      "columns": [
+        "日期",
+        "市場",
+        "HTTP狀態碼",
+        "API狀態",
+        "查詢狀態",
+        "市場池命中列數",
+        "解析資料表數",
+        "查詢網址",
+        "實際回應網址",
+        "使用端點",
+        "原始回應檔",
+        "回應SHA256",
+        "回應位元組數",
+        "查詢時間",
+        "使用快取",
+        "錯誤"
+      ],
+      "column_count": 16,
+      "row_count": 5648,
+      "date_ranges": {
+        "日期": {
+          "min": "2016-01-01",
+          "max": "2026-10-28",
+          "valid": 5648
+        }
+      },
+      "unique_stock_counts": {},
+      "categorical_counts": {
+        "市場": [
+          [
+            "TPEx",
+            2824
+          ],
+          [
+            "TWSE",
+            2824
+          ]
+        ],
+        "市場池命中列數": [
+          [
+            "0",
+            396
+          ],
+          [
+            "911",
+            58
+          ],
+          [
+            "758",
+            58
+          ],
+          [
+            "731",
+            57
+          ],
+          [
+            "742",
+            53
+          ],
+          [
+            "929",
+            52
+          ],
+          [
+            "875",
+            51
+          ],
+          [
+            "677",
+            50
+          ],
+          [
+            "845",
+            49
+          ],
+          [
+            "653",
+            48
+          ],
+          [
+            "794",
+            44
+          ],
+          [
+            "678",
+            43
+          ],
+          [
+            "887",
+            42
+          ],
+          [
+            "789",
+            42
+          ],
+          [
+            "950",
+            40
+          ],
+          [
+            "760",
+            40
+          ],
+          [
+            "795",
+            40
+          ],
+          [
+            "829",
+            39
+          ],
+          [
+            "880",
+            38
+          ],
+          [
+            "671",
+            37
+          ]
+        ],
+        "HTTP狀態碼": [
+          [
+            "200",
+            5648
+          ]
+        ],
+        "API狀態": [
+          [
+            "ok",
+            2824
+          ],
+          [
+            "OK",
+            2626
+          ]
+        ],
+        "查詢狀態": [
+          [
+            "OK",
+            5252
+          ],
+          [
+            "TABLE_FOUND_NO_UNIVERSE_ROWS",
+            198
+          ],
+          [
+            "JSON_PARSE_ERROR",
+            198
+          ]
+        ],
+        "錯誤": [
+          [
+            "HTTP 200，但無法辨識官方行情資料表（TWSE_LEGACY_JSON）：{\"stat\":\"很抱歉，沒有符合條件的資料!\",\"type\":\"ALLBUT0999\"}",
+            198
+          ]
+        ]
+      },
+      "empty_cells_by_column": {
+        "錯誤": 5450,
+        "API狀態": 198
+      },
+      "read_status": "PASS"
+    },
+    {
+      "id": "1YvaILWYog2V2rV4vEIC9o8BVygb3FmlN",
+      "name": "官方API資料表欄位.csv",
+      "size": 2573187,
+      "md5_verified": true,
+      "createdTime": "2026-10-29T16:45:16.438Z",
+      "modifiedTime": "2026-10-29T16:45:16.438Z",
+      "encoding": "utf-8-sig",
+      "delimiter": "','",
+      "columns": [
+        "市場",
+        "資料表名稱",
+        "欄位",
+        "可解析完整OHLCV",
+        "日期",
+        "查詢網址"
+      ],
+      "column_count": 6,
+      "row_count": 5450,
+      "date_ranges": {
+        "日期": {
+          "min": "2016-01-01",
+          "max": "2026-10-28",
+          "valid": 5450
+        }
+      },
+      "unique_stock_counts": {},
+      "categorical_counts": {
+        "市場": [
+          [
+            "TPEx",
+            2824
+          ],
+          [
+            "TWSE",
+            2626
+          ]
+        ]
+      },
+      "empty_cells_by_column": {},
+      "read_status": "PASS"
+    },
+    {
+      "id": "1YEX0LuXGpS7b7u0yA30RoIV9ALNSlUZV",
+      "name": "逐日雙市場完整性檢核.csv",
+      "size": 204207,
+      "md5_verified": true,
+      "createdTime": "2026-10-29T16:45:16.398Z",
+      "modifiedTime": "2026-10-29T16:45:16.398Z",
+      "encoding": "utf-8-sig",
+      "delimiter": "','",
+      "columns": [
+        "日期",
+        "TWSE狀態",
+        "TPEx狀態",
+        "確認交易日",
+        "雙市場判讀完整",
+        "當日行情列數",
+        "判讀"
+      ],
+      "column_count": 7,
+      "row_count": 2824,
+      "date_ranges": {
+        "日期": {
+          "min": "2016-01-01",
+          "max": "2026-10-28",
+          "valid": 2824
+        },
+        "確認交易日": {
+          "min": null,
+          "max": null,
+          "valid": 0
+        }
+      },
+      "unique_stock_counts": {},
+      "categorical_counts": {
+        "雙市場判讀完整": [
+          [
+            "是",
+            2626
+          ],
+          [
+            "否",
+            198
+          ]
+        ],
+        "TWSE狀態": [
+          [
+            "OK",
+            2626
+          ],
+          [
+            "JSON_PARSE_ERROR",
+            198
+          ]
+        ],
+        "TPEx狀態": [
+          [
+            "OK",
+            2626
+          ],
+          [
+            "TABLE_FOUND_NO_UNIVERSE_ROWS",
+            198
+          ]
+        ]
+      },
+      "empty_cells_by_column": {},
+      "read_status": "PASS"
+    },
+    {
+      "id": "1_GH1WUrGV2rONXqzbQiUArUexOD1QfXL",
+      "name": "官方來源查詢錯誤清單.csv",
+      "size": 124962,
+      "md5_verified": true,
+      "createdTime": "2026-10-29T16:45:16.593Z",
+      "modifiedTime": "2026-10-29T16:45:16.593Z",
+      "encoding": "utf-8-sig",
+      "delimiter": "','",
+      "columns": [
+        "日期",
+        "市場",
+        "HTTP狀態碼",
+        "API狀態",
+        "查詢狀態",
+        "市場池命中列數",
+        "解析資料表數",
+        "查詢網址",
+        "實際回應網址",
+        "使用端點",
+        "原始回應檔",
+        "回應SHA256",
+        "回應位元組數",
+        "查詢時間",
+        "使用快取",
+        "錯誤"
+      ],
+      "column_count": 16,
+      "row_count": 198,
+      "date_ranges": {
+        "日期": {
+          "min": "2016-01-01",
+          "max": "2026-10-26",
+          "valid": 198
+        }
+      },
+      "unique_stock_counts": {},
+      "categorical_counts": {
+        "市場": [
+          [
+            "TWSE",
+            198
+          ]
+        ],
+        "市場池命中列數": [
+          [
+            "0",
+            198
+          ]
+        ],
+        "HTTP狀態碼": [
+          [
+            "200",
+            198
+          ]
+        ],
+        "API狀態": [],
+        "查詢狀態": [
+          [
+            "JSON_PARSE_ERROR",
+            198
+          ]
+        ],
+        "錯誤": [
+          [
+            "HTTP 200，但無法辨識官方行情資料表（TWSE_LEGACY_JSON）：{\"stat\":\"很抱歉，沒有符合條件的資料!\",\"type\":\"ALLBUT0999\"}",
+            198
+          ]
+        ]
+      },
+      "empty_cells_by_column": {
+        "API狀態": 198
+      },
+      "read_status": "PASS"
+    },
+    {
+      "id": "1gHn4e2Tdzd034qVMHKqWKNbl8cjda64F",
+      "name": "各股票官方資料覆蓋摘要.csv",
+      "size": 74152,
+      "md5_verified": true,
+      "createdTime": "2026-10-29T16:57:25.775Z",
+      "modifiedTime": "2026-10-29T16:57:25.775Z",
+      "encoding": "utf-8-sig",
+      "delimiter": "','",
+      "columns": [
+        "市場",
+        "股票代號",
+        "官方資料列數",
+        "首筆官方日期",
+        "末筆官方日期"
+      ],
+      "column_count": 5,
+      "row_count": 2010,
+      "date_ranges": {
+        "首筆官方日期": {
+          "min": "2016-01-04",
+          "max": "2026-10-22",
+          "valid": 2010
+        },
+        "末筆官方日期": {
+          "min": "2016-03-16",
+          "max": "2026-10-28",
+          "valid": 2010
+        }
+      },
+      "unique_stock_counts": {
+        "股票代號": 1985
+      },
+      "categorical_counts": {
+        "市場": [
+          [
+            "TWSE",
+            1092
+          ],
+          [
+            "TPEx",
+            918
+          ]
+        ],
+        "股票代號": [
+          [
+            "1256",
+            2
+          ],
+          [
+            "1597",
+            2
+          ],
+          [
+            "1752",
+            2
+          ],
+          [
+            "1795",
+            2
+          ],
+          [
+            "2233",
+            2
+          ],
+          [
+            "2636",
+            2
+          ],
+          [
+            "3092",
+            2
+          ],
+          [
+            "3528",
+            2
+          ],
+          [
+            "3563",
+            2
+          ],
+          [
+            "3652",
+            2
+          ],
+          [
+            "4736",
+            2
+          ],
+          [
+            "4739",
+            2
+          ],
+          [
+            "5284",
+            2
+          ],
+          [
+            "5306",
+            2
+          ],
+          [
+            "6024",
+            2
+          ],
+          [
+            "6426",
+            2
+          ],
+          [
+            "8908",
+            2
+          ],
+          [
+            "8462",
+            2
+          ],
+          [
+            "6446",
+            2
+          ],
+          [
+            "8476",
+            2
+          ]
+        ]
+      },
+      "empty_cells_by_column": {},
+      "read_status": "PASS"
+    },
+    {
+      "id": "1nYTUqQpBMY5blgDxtAZzoRTbrxqxWi1c",
+      "name": "股票池官方市場對照.csv",
+      "size": 70706,
+      "md5_verified": true,
+      "createdTime": "2026-10-29T12:54:01.543Z",
+      "modifiedTime": "2026-10-29T12:54:01.543Z",
+      "encoding": "utf-8-sig",
+      "delimiter": "','",
+      "columns": [
+        "股票代號",
+        "股票名稱_股票池",
+        "市場",
+        "原始股票代號欄位值",
+        "股票池行情代號欄位值",
+        "市場原始欄位值"
+      ],
+      "column_count": 6,
+      "row_count": 1985,
+      "date_ranges": {},
+      "unique_stock_counts": {
+        "股票代號": 1985,
+        "原始股票代號欄位值": 1985,
+        "股票池行情代號欄位值": 1985
+      },
+      "categorical_counts": {
+        "市場": [
+          [
+            "TWSE",
+            1091
+          ],
+          [
+            "TPEx",
+            894
+          ]
+        ],
+        "市場原始欄位值": [
+          [
+            "上市",
+            1091
+          ],
+          [
+            "上櫃",
+            894
+          ]
+        ],
+        "股票代號": [
+          [
+            "1101",
+            1
+          ],
+          [
+            "1102",
+            1
+          ],
+          [
+            "1103",
+            1
+          ],
+          [
+            "1104",
+            1
+          ],
+          [
+            "1108",
+            1
+          ],
+          [
+            "1109",
+            1
+          ],
+          [
+            "1110",
+            1
+          ],
+          [
+            "1201",
+            1
+          ],
+          [
+            "1203",
+            1
+          ],
+          [
+            "1210",
+            1
+          ],
+          [
+            "1213",
+            1
+          ],
+          [
+            "1215",
+            1
+          ],
+          [
+            "1216",
+            1
+          ],
+          [
+            "1217",
+            1
+          ],
+          [
+            "1218",
+            1
+          ],
+          [
+            "1219",
+            1
+          ],
+          [
+            "1220",
+            1
+          ],
+          [
+            "1225",
+            1
+          ],
+          [
+            "1227",
+            1
+          ],
+          [
+            "1229",
+            1
+          ]
+        ],
+        "原始股票代號欄位值": [
+          [
+            "1101",
+            1
+          ],
+          [
+            "1102",
+            1
+          ],
+          [
+            "1103",
+            1
+          ],
+          [
+            "1104",
+            1
+          ],
+          [
+            "1108",
+            1
+          ],
+          [
+            "1109",
+            1
+          ],
+          [
+            "1110",
+            1
+          ],
+          [
+            "1201",
+            1
+          ],
+          [
+            "1203",
+            1
+          ],
+          [
+            "1210",
+            1
+          ],
+          [
+            "1213",
+            1
+          ],
+          [
+            "1215",
+            1
+          ],
+          [
+            "1216",
+            1
+          ],
+          [
+            "1217",
+            1
+          ],
+          [
+            "1218",
+            1
+          ],
+          [
+            "1219",
+            1
+          ],
+          [
+            "1220",
+            1
+          ],
+          [
+            "1225",
+            1
+          ],
+          [
+            "1227",
+            1
+          ],
+          [
+            "1229",
+            1
+          ]
+        ],
+        "股票池行情代號欄位值": [
+          [
+            "1101",
+            1
+          ],
+          [
+            "1102",
+            1
+          ],
+          [
+            "1103",
+            1
+          ],
+          [
+            "1104",
+            1
+          ],
+          [
+            "1108",
+            1
+          ],
+          [
+            "1109",
+            1
+          ],
+          [
+            "1110",
+            1
+          ],
+          [
+            "1201",
+            1
+          ],
+          [
+            "1203",
+            1
+          ],
+          [
+            "1210",
+            1
+          ],
+          [
+            "1213",
+            1
+          ],
+          [
+            "1215",
+            1
+          ],
+          [
+            "1216",
+            1
+          ],
+          [
+            "1217",
+            1
+          ],
+          [
+            "1218",
+            1
+          ],
+          [
+            "1219",
+            1
+          ],
+          [
+            "1220",
+            1
+          ],
+          [
+            "1225",
+            1
+          ],
+          [
+            "1227",
+            1
+          ],
+          [
+            "1229",
+            1
+          ]
+        ]
+      },
+      "empty_cells_by_column": {},
+      "read_status": "PASS"
+    },
+    {
+      "id": "1tTBeaCMJdMaxqLFlMOk8_OWxUcGuhL6s",
+      "name": "執行摘要.json",
+      "size": 3578,
+      "md5_verified": true,
+      "createdTime": "2026-10-29T16:57:25.805Z",
+      "modifiedTime": "2026-10-29T16:57:25.805Z",
+      "encoding": "utf-8-sig",
+      "json_top_level_type": "dict",
+      "json_keys": [
+        "版本",
+        "執行時間",
+        "資料源政策",
+        "專案根目錄",
+        "分析資料夾",
+        "輸入股票池",
+        "日期範圍",
+        "平日查詢日數",
+        "市場查詢數",
+        "確認交易日數",
+        "雙市場均無資料的非交易日候選",
+        "官方行情資料列數",
+        "股票池去重筆數",
+        "有官方行情股票分檔數",
+        "查詢異常數",
+        "雙市場未確認日期數",
+        "品質檢核通過",
+        "每500個已確認交易日建立備份",
+        "500交易日備份檔案",
+        "官方API快取目錄",
+        "輸出資料夾",
+        "官方行情總表",
+        "重要限制",
+        "交接ZIP"
+      ],
+      "json_content": {
+        "版本": "SFAS v2.8 十年官方行情重建版",
+        "執行時間": "2026-10-30T00:57:25+08:00",
+        "資料源政策": {
+          "上市股票": "TWSE 官方每日市場行情",
+          "上櫃股票": "TPEx 官方每日市場行情",
+          "Yahoo OHLCV": "未使用"
+        },
+        "專案根目錄": "/content/drive/MyDrive/看股最速適",
+        "分析資料夾": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023",
+        "輸入股票池": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/台股股票池.csv",
+        "日期範圍": {
+          "起日": "2016-01-01",
+          "迄日": "2026-10-28"
+        },
+        "平日查詢日數": 2824,
+        "市場查詢數": 5648,
+        "確認交易日數": 2626,
+        "雙市場均無資料的非交易日候選": 0,
+        "官方行情資料列數": 4501058,
+        "股票池去重筆數": 1985,
+        "有官方行情股票分檔數": 2010,
+        "查詢異常數": 198,
+        "雙市場未確認日期數": 198,
+        "品質檢核通過": false,
+        "每500個已確認交易日建立備份": true,
+        "500交易日備份檔案": [
+          "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318/500交易日備份/官方行情備份_第0001-0500交易日_20160101_20180123.zip",
+          "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318/500交易日備份/官方行情備份_第0501-1000交易日_20180124_20200220.zip",
+          "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318/500交易日備份/官方行情備份_第1001-1500交易日_20200221_20220309.zip",
+          "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318/500交易日備份/官方行情備份_第1501-2000交易日_20220310_20240328.zip",
+          "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318/500交易日備份/官方行情備份_第2001-2500交易日_20240329_20260423.zip",
+          "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318/500交易日備份/官方行情備份_補充未滿500交易日_20260424_20261028.zip"
+        ],
+        "官方API快取目錄": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1",
+        "輸出資料夾": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318",
+        "官方行情總表": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318/官方行情總表.csv",
+        "重要限制": [
+          "本程式只重建官方未還原 OHLCV；不自動調整除權息。",
+          "股票池是目前股票池，歷史下市證券可能未納入。",
+          "500交易日備份為可還原行情分段及該區間查詢紀錄；原始官方 JSON 與 SHA256 留在快取目錄。",
+          "如品質檢核未通過，須先處理錯誤清單，不可直接宣稱十年行情完整。"
+        ],
+        "交接ZIP": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318/SFAS_v2.8_十年官方行情完整底稿_20261029_205318.zip"
+      },
+      "read_status": "PASS"
+    },
+    {
+      "id": "14F-T2eO4aKzT_3UZnlG-ufveq94sihTs",
+      "name": "執行紀錄.txt",
+      "size": 21106,
+      "md5_verified": true,
+      "createdTime": "2026-10-29T12:54:01.506Z",
+      "modifiedTime": "2026-10-29T18:09:50.541Z",
+      "encoding": "utf-8-sig",
+      "line_count": 159,
+      "important_lines": [
+        "[2026-10-29 20:54:01 Asia/Taipei UTC+08:00] 股票池去重筆數=1985；市場=['TPEx', 'TWSE']；平日數=2824；預計官方市場日查詢=5648",
+        "[2026-10-29 20:54:01 Asia/Taipei UTC+08:00] 每完成500個雙市場確認交易日即建立一份分段 ZIP 備份；最後不足500個交易日另存補充備份。",
+        "[2026-10-29 20:55:55 Asia/Taipei UTC+08:00] 進度 20/2824；已確認交易日=19；行情列累計=27858；查詢異常=1",
+        "[2026-10-29 20:58:49 Asia/Taipei UTC+08:00] 進度 40/2824；已確認交易日=32；行情列累計=46933；查詢異常=8",
+        "[2026-10-29 21:00:22 Asia/Taipei UTC+08:00] 進度 60/2824；已確認交易日=51；行情列累計=74870；查詢異常=9",
+        "[2026-10-29 21:02:34 Asia/Taipei UTC+08:00] 進度 80/2824；已確認交易日=69；行情列累計=101461；查詢異常=11",
+        "[2026-10-29 21:04:17 Asia/Taipei UTC+08:00] 進度 100/2824；已確認交易日=88；行情列累計=129556；查詢異常=12",
+        "[2026-10-29 21:06:16 Asia/Taipei UTC+08:00] 進度 120/2824；已確認交易日=106；行情列累計=156223；查詢異常=14",
+        "[2026-10-29 21:07:53 Asia/Taipei UTC+08:00] 進度 140/2824；已確認交易日=125；行情列累計=184395；查詢異常=15",
+        "[2026-10-29 21:09:31 Asia/Taipei UTC+08:00] 進度 160/2824；已確認交易日=145；行情列累計=214064；查詢異常=15",
+        "[2026-10-29 21:11:13 Asia/Taipei UTC+08:00] 進度 180/2824；已確認交易日=165；行情列累計=243772；查詢異常=15",
+        "[2026-10-29 21:13:24 Asia/Taipei UTC+08:00] 進度 200/2824；已確認交易日=181；行情列累計=267551；查詢異常=19",
+        "[2026-10-29 21:13:45 Asia/Taipei UTC+08:00] 進度 220/2824；已確認交易日=200；行情列累計=295941；查詢異常=20",
+        "[2026-10-29 21:13:49 Asia/Taipei UTC+08:00] 進度 240/2824；已確認交易日=220；行情列累計=325996；查詢異常=20",
+        "[2026-10-29 21:13:53 Asia/Taipei UTC+08:00] 進度 260/2824；已確認交易日=240；行情列累計=356162；查詢異常=20",
+        "[2026-10-29 21:14:45 Asia/Taipei UTC+08:00] 進度 280/2824；已確認交易日=257；行情列累計=381912；查詢異常=23",
+        "[2026-10-29 21:15:56 Asia/Taipei UTC+08:00] 進度 300/2824；已確認交易日=273；行情列累計=406210；查詢異常=27",
+        "[2026-10-29 21:16:32 Asia/Taipei UTC+08:00] 進度 320/2824；已確認交易日=291；行情列累計=433579；查詢異常=29",
+        "[2026-10-29 21:17:09 Asia/Taipei UTC+08:00] 進度 340/2824；已確認交易日=309；行情列累計=460995；查詢異常=31",
+        "[2026-10-29 21:17:32 Asia/Taipei UTC+08:00] 進度 360/2824；已確認交易日=328；行情列累計=490036；查詢異常=32",
+        "[2026-10-29 21:18:07 Asia/Taipei UTC+08:00] 進度 380/2824；已確認交易日=346；行情列累計=517590；查詢異常=34",
+        "[2026-10-29 21:18:11 Asia/Taipei UTC+08:00] 進度 400/2824；已確認交易日=366；行情列累計=548258；查詢異常=34",
+        "[2026-10-29 21:18:16 Asia/Taipei UTC+08:00] 進度 420/2824；已確認交易日=386；行情列累計=578914；查詢異常=34",
+        "[2026-10-29 21:18:20 Asia/Taipei UTC+08:00] 進度 440/2824；已確認交易日=406；行情列累計=609520；查詢異常=34",
+        "[2026-10-29 21:18:40 Asia/Taipei UTC+08:00] 進度 460/2824；已確認交易日=425；行情列累計=638590；查詢異常=35",
+        "[2026-10-29 21:19:18 Asia/Taipei UTC+08:00] 進度 480/2824；已確認交易日=443；行情列累計=666252；查詢異常=37",
+        "[2026-10-29 21:20:35 Asia/Taipei UTC+08:00] 進度 500/2824；已確認交易日=463；行情列累計=697122；查詢異常=37",
+        "[2026-10-29 21:21:53 Asia/Taipei UTC+08:00] 進度 520/2824；已確認交易日=483；行情列累計=728135；查詢異常=37",
+        "[2026-10-29 21:24:02 Asia/Taipei UTC+08:00] 500交易日備份完成：官方行情備份_第0001-0500交易日_20160101_20180123.zip；確認交易日累計=500",
+        "[2026-10-29 21:24:09 Asia/Taipei UTC+08:00] 進度 540/2824；已確認交易日=502；行情列累計=757751；查詢異常=38",
+        "[2026-10-29 21:26:44 Asia/Taipei UTC+08:00] 進度 560/2824；已確認交易日=516；行情列累計=779698；查詢異常=44",
+        "[2026-10-29 21:28:00 Asia/Taipei UTC+08:00] 進度 580/2824；已確認交易日=535；行情列累計=809504；查詢異常=45",
+        "[2026-10-29 21:29:44 Asia/Taipei UTC+08:00] 進度 600/2824；已確認交易日=552；行情列累計=836234；查詢異常=48",
+        "[2026-10-29 21:31:27 Asia/Taipei UTC+08:00] 進度 620/2824；已確認交易日=571；行情列累計=866240；查詢異常=49",
+        "[2026-10-29 21:32:52 Asia/Taipei UTC+08:00] 進度 640/2824；已確認交易日=591；行情列累計=897839；查詢異常=49",
+        "[2026-10-29 21:34:38 Asia/Taipei UTC+08:00] 進度 660/2824；已確認交易日=610；行情列累計=927930；查詢異常=50",
+        "[2026-10-29 21:36:06 Asia/Taipei UTC+08:00] 進度 680/2824；已確認交易日=630；行情列累計=959717；查詢異常=50",
+        "[2026-10-29 21:37:31 Asia/Taipei UTC+08:00] 進度 700/2824；已確認交易日=650；行情列累計=991509；查詢異常=50",
+        "[2026-10-29 21:39:16 Asia/Taipei UTC+08:00] 進度 720/2824；已確認交易日=669；行情列累計=1021719；查詢異常=51",
+        "[2026-10-29 21:41:10 Asia/Taipei UTC+08:00] 進度 740/2824；已確認交易日=688；行情列累計=1052034；查詢異常=52",
+        "[2026-10-29 21:43:11 Asia/Taipei UTC+08:00] 進度 760/2824；已確認交易日=708；行情列累計=1084132；查詢異常=52",
+        "[2026-10-29 21:45:00 Asia/Taipei UTC+08:00] 進度 780/2824；已確認交易日=728；行情列累計=1116385；查詢異常=52",
+        "[2026-10-29 21:47:05 Asia/Taipei UTC+08:00] 進度 800/2824；已確認交易日=746；行情列累計=1145560；查詢異常=54",
+        "[2026-10-29 21:50:18 Asia/Taipei UTC+08:00] 進度 820/2824；已確認交易日=759；行情列累計=1166700；查詢異常=61",
+        "[2026-10-29 21:52:08 Asia/Taipei UTC+08:00] 進度 840/2824；已確認交易日=777；行情列累計=1196007；查詢異常=63",
+        "[2026-10-29 21:54:08 Asia/Taipei UTC+08:00] 進度 860/2824；已確認交易日=795；行情列累計=1225366；查詢異常=65",
+        "[2026-10-29 21:55:23 Asia/Taipei UTC+08:00] 進度 880/2824；已確認交易日=814；行情列累計=1256415；查詢異常=66",
+        "[2026-10-29 21:56:55 Asia/Taipei UTC+08:00] 進度 900/2824；已確認交易日=833；行情列累計=1287536；查詢異常=67",
+        "[2026-10-29 21:58:08 Asia/Taipei UTC+08:00] 進度 920/2824；已確認交易日=853；行情列累計=1320350；查詢異常=67",
+        "[2026-10-29 21:59:36 Asia/Taipei UTC+08:00] 進度 940/2824；已確認交易日=873；行情列累計=1353190；查詢異常=67",
+        "[2026-10-29 22:01:44 Asia/Taipei UTC+08:00] 進度 960/2824；已確認交易日=892；行情列累計=1384386；查詢異常=68",
+        "[2026-10-29 22:03:46 Asia/Taipei UTC+08:00] 進度 980/2824；已確認交易日=910；行情列累計=1413948；查詢異常=70",
+        "[2026-10-29 22:05:33 Asia/Taipei UTC+08:00] 進度 1000/2824；已確認交易日=928；行情列累計=1443631；查詢異常=72",
+        "[2026-10-29 22:07:00 Asia/Taipei UTC+08:00] 進度 1020/2824；已確認交易日=948；行情列累計=1476655；查詢異常=72",
+        "[2026-10-29 22:09:52 Asia/Taipei UTC+08:00] 進度 1040/2824；已確認交易日=968；行情列累計=1509759；查詢異常=72",
+        "[2026-10-29 22:12:08 Asia/Taipei UTC+08:00] 進度 1060/2824；已確認交易日=984；行情列累計=1536313；查詢異常=76",
+        "[2026-10-29 22:15:24 Asia/Taipei UTC+08:00] 500交易日備份完成：官方行情備份_第0501-1000交易日_20180124_20200220.zip；確認交易日累計=1000",
+        "[2026-10-29 22:15:24 Asia/Taipei UTC+08:00] 進度 1080/2824；已確認交易日=1000；行情列累計=1562901；查詢異常=80",
+        "[2026-10-29 22:16:46 Asia/Taipei UTC+08:00] 進度 1100/2824；已確認交易日=1019；行情列累計=1594537；查詢異常=81",
+        "[2026-10-29 22:18:22 Asia/Taipei UTC+08:00] 進度 1120/2824；已確認交易日=1037；行情列累計=1624558；查詢異常=83",
+        "[2026-10-29 22:19:45 Asia/Taipei UTC+08:00] 進度 1140/2824；已確認交易日=1056；行情列累計=1656269；查詢異常=84",
+        "[2026-10-29 22:21:11 Asia/Taipei UTC+08:00] 進度 1160/2824；已確認交易日=1076；行情列累計=1689675；查詢異常=84",
+        "[2026-10-29 22:23:12 Asia/Taipei UTC+08:00] 進度 1180/2824；已確認交易日=1094；行情列累計=1719784；查詢異常=86",
+        "[2026-10-29 22:24:26 Asia/Taipei UTC+08:00] 進度 1200/2824；已確認交易日=1114；行情列累計=1753262；查詢異常=86",
+        "[2026-10-29 22:25:32 Asia/Taipei UTC+08:00] 進度 1220/2824；已確認交易日=1134；行情列累計=1786729；查詢異常=86",
+        "[2026-10-29 22:26:46 Asia/Taipei UTC+08:00] 進度 1240/2824；已確認交易日=1153；行情列累計=1818522；查詢異常=87",
+        "[2026-10-29 22:28:29 Asia/Taipei UTC+08:00] 進度 1260/2824；已確認交易日=1171；行情列累計=1848693；查詢異常=89",
+        "[2026-10-29 22:29:55 Asia/Taipei UTC+08:00] 進度 1280/2824；已確認交易日=1191；行情列累計=1882323；查詢異常=89",
+        "[2026-10-29 22:31:15 Asia/Taipei UTC+08:00] 進度 1300/2824；已確認交易日=1211；行情列累計=1916038；查詢異常=89",
+        "[2026-10-29 22:32:43 Asia/Taipei UTC+08:00] 進度 1320/2824；已確認交易日=1230；行情列累計=1948196；查詢異常=90",
+        "[2026-10-29 22:35:35 Asia/Taipei UTC+08:00] 進度 1340/2824；已確認交易日=1243；行情列累計=1970282；查詢異常=97",
+        "[2026-10-29 22:37:14 Asia/Taipei UTC+08:00] 進度 1360/2824；已確認交易日=1262；行情列累計=2002616；查詢異常=98",
+        "[2026-10-29 22:39:14 Asia/Taipei UTC+08:00] 進度 1380/2824；已確認交易日=1280；行情列累計=2033231；查詢異常=100",
+        "[2026-10-29 22:41:06 Asia/Taipei UTC+08:00] 進度 1400/2824；已確認交易日=1299；行情列累計=2065621；查詢異常=101",
+        "[2026-10-29 22:42:21 Asia/Taipei UTC+08:00] 進度 1420/2824；已確認交易日=1319；行情列累計=2099763；查詢異常=101",
+        "[2026-10-29 22:44:03 Asia/Taipei UTC+08:00] 進度 1440/2824；已確認交易日=1338；行情列累計=2132196；查詢異常=102",
+        "[2026-10-29 22:45:38 Asia/Taipei UTC+08:00] 進度 1460/2824；已確認交易日=1358；行情列累計=2166349；查詢異常=102",
+        "[2026-10-29 22:46:50 Asia/Taipei UTC+08:00] 進度 1480/2824；已確認交易日=1378；行情列累計=2200562；查詢異常=102",
+        "[2026-10-29 22:48:13 Asia/Taipei UTC+08:00] 進度 1500/2824；已確認交易日=1396；行情列累計=2231372；查詢異常=104",
+        "[2026-10-29 22:49:34 Asia/Taipei UTC+08:00] 進度 1520/2824；已確認交易日=1415；行情列累計=2263951；查詢異常=105",
+        "[2026-10-29 22:50:53 Asia/Taipei UTC+08:00] 進度 1540/2824；已確認交易日=1435；行情列累計=2298319；查詢異常=105",
+        "[2026-10-29 22:52:21 Asia/Taipei UTC+08:00] 進度 1560/2824；已確認交易日=1455；行情列累計=2332713；查詢異常=105",
+        "[2026-10-29 22:54:02 Asia/Taipei UTC+08:00] 進度 1580/2824；已確認交易日=1474；行情列累計=2365507；查詢異常=106",
+        "[2026-10-29 22:57:16 Asia/Taipei UTC+08:00] 進度 1600/2824；已確認交易日=1487；行情列累計=2388004；查詢異常=113",
+        "[2026-10-29 22:59:47 Asia/Taipei UTC+08:00] 500交易日備份完成：官方行情備份_第1001-1500交易日_20200221_20220309.zip；確認交易日累計=1500",
+        "[2026-10-29 23:00:14 Asia/Taipei UTC+08:00] 進度 1620/2824；已確認交易日=1506；行情列累計=2420932；查詢異常=114",
+        "[2026-10-29 23:02:10 Asia/Taipei UTC+08:00] 進度 1640/2824；已確認交易日=1524；行情列累計=2452222；查詢異常=116",
+        "[2026-10-29 23:03:35 Asia/Taipei UTC+08:00] 進度 1660/2824；已確認交易日=1543；行情列累計=2485324；查詢異常=117",
+        "[2026-10-29 23:05:16 Asia/Taipei UTC+08:00] 進度 1680/2824；已確認交易日=1562；行情列累計=2518548；查詢異常=118",
+        "[2026-10-29 23:06:39 Asia/Taipei UTC+08:00] 進度 1700/2824；已確認交易日=1582；行情列累計=2553596；查詢異常=118",
+        "[2026-10-29 23:07:52 Asia/Taipei UTC+08:00] 進度 1720/2824；已確認交易日=1602；行情列累計=2588666；查詢異常=118",
+        "[2026-10-29 23:09:04 Asia/Taipei UTC+08:00] 進度 1740/2824；已確認交易日=1622；行情列累計=2623729；查詢異常=118",
+        "[2026-10-29 23:10:53 Asia/Taipei UTC+08:00] 進度 1760/2824；已確認交易日=1641；行情列累計=2657095；查詢異常=119",
+        "[2026-10-29 23:12:40 Asia/Taipei UTC+08:00] 進度 1780/2824；已確認交易日=1660；行情列累計=2690492；查詢異常=120",
+        "[2026-10-29 23:13:59 Asia/Taipei UTC+08:00] 進度 1800/2824；已確認交易日=1680；行情列累計=2725769；查詢異常=120",
+        "[2026-10-29 23:15:28 Asia/Taipei UTC+08:00] 進度 1820/2824；已確認交易日=1700；行情列累計=2761128；查詢異常=120",
+        "[2026-10-29 23:17:18 Asia/Taipei UTC+08:00] 進度 1840/2824；已確認交易日=1717；行情列累計=2791282；查詢異常=123",
+        "[2026-10-29 23:19:50 Asia/Taipei UTC+08:00] 進度 1860/2824；已確認交易日=1731；行情列累計=2816110；查詢異常=129",
+        "[2026-10-29 23:21:34 Asia/Taipei UTC+08:00] 進度 1880/2824；已確認交易日=1749；行情列累計=2848044；查詢異常=131",
+        "[2026-10-29 23:23:43 Asia/Taipei UTC+08:00] 進度 1900/2824；已確認交易日=1766；行情列累計=2878344；查詢異常=134"
+      ],
+      "read_status": "PASS"
+    },
+    {
+      "id": "1gjTwin_bOYfYv7iTPns-ZqiT3nDF-fzZ",
+      "name": "資料源與品質說明.md",
+      "size": 472,
+      "md5_verified": true,
+      "createdTime": "2026-10-29T16:57:25.813Z",
+      "modifiedTime": "2026-10-29T16:57:25.813Z",
+      "encoding": "utf-8-sig",
+      "text": "# 十年官方行情重建底稿\n\n- 期間：2016-01-01 至 2026-10-28\n- 來源：TWSE／TPEx 官方日行情，不使用 Yahoo OHLCV\n- 成功確認交易日：2,626\n- 官方行情總列數：4,501,058\n- API 查詢異常：198\n- 雙市場未確認日期：198\n- 品質檢核：未通過，需先處理錯誤清單\n- 每 500 個確認交易日備份：500交易日備份/\n\n注意：資料尚未自動進行除權息調整；正式選股前仍須完成公司行動檢核。\n",
+      "read_status": "PASS"
+    }
+  ],
+  "company_action_search": {
+    "query": "trashed = false and (name contains '公司行動' or name contains 'company_action' or name contains 'v2.17' or name contains 'v2.24')",
+    "pages": 1,
+    "incompleteSearch": false,
+    "result_count": 37,
+    "results": [
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "1-PrbcehF71Dg2NbscWLX6woDqhLNLIv1"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/164qtSLDKHyVwFEP2htao3bsXPswKEqwd/view?usp=drivesdk",
+        "size": "811",
+        "id": "164qtSLDKHyVwFEP2htao3bsXPswKEqwd",
+        "name": "10_v449特殊公司行動排除清單.csv",
+        "createdTime": "2026-11-01T15:46:00.952Z",
+        "modifiedTime": "2026-11-01T15:46:00.952Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "1qcpmTYWaOfoBm246S1kQigD2ZbIUFcFH"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/1e5q7iaQBbuJv7n6m7i9OdJq39LTdplu6/view?usp=drivesdk",
+        "size": "8887",
+        "id": "1e5q7iaQBbuJv7n6m7i9OdJq39LTdplu6",
+        "name": "公司行動／復牌日起逐日行情明細.csv",
+        "createdTime": "2026-11-01T01:56:53.131Z",
+        "modifiedTime": "2026-11-01T01:56:53.131Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "1qcpmTYWaOfoBm246S1kQigD2ZbIUFcFH"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/1kUz54XyrQKk9WLj9JfzbwMCcEw9eRqGk/view?usp=drivesdk",
+        "size": "6553",
+        "id": "1kUz54XyrQKk9WLj9JfzbwMCcEw9eRqGk",
+        "name": "高優先事件公司行動時序複核.csv",
+        "createdTime": "2026-11-01T01:56:53.097Z",
+        "modifiedTime": "2026-11-01T01:56:53.097Z"
+      },
+      {
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [
+          "1NS9dJT8aARCBuymsTqhT0xae0iIsR4Fu"
+        ],
+        "webViewLink": "https://drive.google.com/drive/folders/1qcpmTYWaOfoBm246S1kQigD2ZbIUFcFH",
+        "id": "1qcpmTYWaOfoBm246S1kQigD2ZbIUFcFH",
+        "name": "看股最速適_公司行動時序缺口與報酬基準可用性核驗_v4_41_20261101_015653",
+        "createdTime": "2026-11-01T01:56:53.015Z",
+        "modifiedTime": "2026-11-01T01:56:53.015Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "1lL-bdtAGRjK6eKQ73slz7HQYRD8_ApFD"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/1bUW7XslCUxSxvk5E0cVfsgPSFg2ydJmb/view?usp=drivesdk",
+        "size": "8887",
+        "id": "1bUW7XslCUxSxvk5E0cVfsgPSFg2ydJmb",
+        "name": "公司行動／復牌日起逐日行情明細.csv",
+        "createdTime": "2026-11-01T01:43:09.886Z",
+        "modifiedTime": "2026-11-01T01:43:09.886Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "1lL-bdtAGRjK6eKQ73slz7HQYRD8_ApFD"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/12zJ8zagx7P94JEHImgO3AglMoFd3LuAs/view?usp=drivesdk",
+        "size": "38307",
+        "id": "12zJ8zagx7P94JEHImgO3AglMoFd3LuAs",
+        "name": "100筆事件公司行動與復牌整合診斷.csv",
+        "createdTime": "2026-11-01T01:43:09.765Z",
+        "modifiedTime": "2026-11-01T01:43:09.765Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "14tFkeLnoYa3B91sC3M3WtIYtyYOWAguA"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/1nZycOhS93n0hnAy_U5XO52BkmttGLY8j/view?usp=drivesdk",
+        "size": "99",
+        "id": "1nZycOhS93n0hnAy_U5XO52BkmttGLY8j",
+        "name": "官方公司行動參考價衝突清單.csv",
+        "createdTime": "2026-10-31T18:49:02.928Z",
+        "modifiedTime": "2026-10-31T18:49:02.928Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "14tFkeLnoYa3B91sC3M3WtIYtyYOWAguA"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/1y6YgM78Fy7j7K3C3BaUvuj_gbuzoDvoW/view?usp=drivesdk",
+        "size": "492",
+        "id": "1y6YgM78Fy7j7K3C3BaUvuj_gbuzoDvoW",
+        "name": "官方公司行動邏輯重複鍵明細.csv",
+        "createdTime": "2026-10-31T18:49:02.914Z",
+        "modifiedTime": "2026-10-31T18:49:02.914Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "14tFkeLnoYa3B91sC3M3WtIYtyYOWAguA"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/13WfojleIBoTUpjYfqvckY7qfeknW7gBc/view?usp=drivesdk",
+        "size": "72413",
+        "id": "13WfojleIBoTUpjYfqvckY7qfeknW7gBc",
+        "name": "官方公司行動價格差異浮點容差重分類.csv",
+        "createdTime": "2026-10-31T18:49:02.882Z",
+        "modifiedTime": "2026-10-31T18:49:02.882Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "1PWYIDY1O6ty_m9G3CFBbpUBrECUVWM00"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/1eskCkn9NIMPVHzWHLYY35Z5jPiNiSrQ0/view?usp=drivesdk",
+        "size": "106269",
+        "id": "1eskCkn9NIMPVHzWHLYY35Z5jPiNiSrQ0",
+        "name": "官方公司行動精確命中價格基準診斷.csv",
+        "createdTime": "2026-10-31T18:39:26.602Z",
+        "modifiedTime": "2026-10-31T18:39:26.602Z"
+      },
+      {
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [
+          "1NS9dJT8aARCBuymsTqhT0xae0iIsR4Fu"
+        ],
+        "webViewLink": "https://drive.google.com/drive/folders/1PWYIDY1O6ty_m9G3CFBbpUBrECUVWM00",
+        "id": "1PWYIDY1O6ty_m9G3CFBbpUBrECUVWM00",
+        "name": "看股最速適_官方公司行動控制組校準與來源覆蓋修正_v4_32_20261031_183923",
+        "createdTime": "2026-10-31T18:39:23.287Z",
+        "modifiedTime": "2026-10-31T18:39:23.287Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "1J0TKltvMWyxOeVjE7A2iNcbvGM5Ac5S9"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/13HQnSyWCn3kB9kcCGaR1oztx6DRbWXTi/view?usp=drivesdk",
+        "size": "267585",
+        "id": "13HQnSyWCn3kB9kcCGaR1oztx6DRbWXTi",
+        "name": "官方公司行動原始欄位明細.csv",
+        "createdTime": "2026-10-31T18:29:36.991Z",
+        "modifiedTime": "2026-10-31T18:29:36.991Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "1J0TKltvMWyxOeVjE7A2iNcbvGM5Ac5S9"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/1FyOUnPHiwcFlfec3uFlFsonMyCu6hYTI/view?usp=drivesdk",
+        "size": "116930",
+        "id": "1FyOUnPHiwcFlfec3uFlFsonMyCu6hYTI",
+        "name": "官方公司行動命中事件.csv",
+        "createdTime": "2026-10-31T18:29:36.908Z",
+        "modifiedTime": "2026-10-31T18:29:36.908Z"
+      },
+      {
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [
+          "1NS9dJT8aARCBuymsTqhT0xae0iIsR4Fu"
+        ],
+        "webViewLink": "https://drive.google.com/drive/folders/1J0TKltvMWyxOeVjE7A2iNcbvGM5Ac5S9",
+        "id": "1J0TKltvMWyxOeVjE7A2iNcbvGM5Ac5S9",
+        "name": "看股最速適_官方公司行動逐筆核對_v4_31_1_20261031_180538",
+        "createdTime": "2026-10-31T18:05:38.889Z",
+        "modifiedTime": "2026-10-31T18:05:38.889Z"
+      },
+      {
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [
+          "1NS9dJT8aARCBuymsTqhT0xae0iIsR4Fu"
+        ],
+        "webViewLink": "https://drive.google.com/drive/folders/1VjUkPe4TwEH3r7gBTcw-sjJ8TJ-Mb1DZ",
+        "id": "1VjUkPe4TwEH3r7gBTcw-sjJ8TJ-Mb1DZ",
+        "name": "看股最速適_官方公司行動逐筆核對_v4_31_20261031_175409",
+        "createdTime": "2026-10-31T17:54:09.816Z",
+        "modifiedTime": "2026-10-31T17:54:09.816Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "1rpeX2tj9sDuJExiKIHRzSJfkpghoGzkV"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/1XvZP7UPYCeLKHgM1JW87ZEzXid1kaXtk/view?usp=drivesdk",
+        "size": "2761",
+        "id": "1XvZP7UPYCeLKHgM1JW87ZEzXid1kaXtk",
+        "name": "已核實公司行動事件參數與來源.csv",
+        "createdTime": "2026-10-31T17:36:22.534Z",
+        "modifiedTime": "2026-10-31T17:36:22.534Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "1rpeX2tj9sDuJExiKIHRzSJfkpghoGzkV"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/1l2jbMLH4Ap475AshiXCNJwE4hWRL6p-0/view?usp=drivesdk",
+        "size": "67660",
+        "id": "1l2jbMLH4Ap475AshiXCNJwE4hWRL6p-0",
+        "name": "極端報酬尚未核實公司行動清單_至少20_percent.csv",
+        "createdTime": "2026-10-31T17:36:22.266Z",
+        "modifiedTime": "2026-10-31T17:36:22.266Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "1rpeX2tj9sDuJExiKIHRzSJfkpghoGzkV"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/1qGm6FGIxl7b4L9B6dRoPUwz_72V5eB_f/view?usp=drivesdk",
+        "size": "4676",
+        "id": "1qGm6FGIxl7b4L9B6dRoPUwz_72V5eB_f",
+        "name": "已核實公司行動報酬調整對照.csv",
+        "createdTime": "2026-10-31T17:36:21.698Z",
+        "modifiedTime": "2026-10-31T17:36:21.698Z"
+      },
+      {
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [
+          "1NS9dJT8aARCBuymsTqhT0xae0iIsR4Fu"
+        ],
+        "webViewLink": "https://drive.google.com/drive/folders/1rpeX2tj9sDuJExiKIHRzSJfkpghoGzkV",
+        "id": "1rpeX2tj9sDuJExiKIHRzSJfkpghoGzkV",
+        "name": "看股最速適_零股量價狀態與公司行動報酬再核驗_v4_29_20261031_173553",
+        "createdTime": "2026-10-31T17:35:53.379Z",
+        "modifiedTime": "2026-10-31T17:35:53.379Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "1s1OSRu8nWvjpi-0ffjS_t-h_PHE3uU0j"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/1sE7e6W4yodOK9tOEEHXuzSil52RjUkKt/view?usp=drivesdk",
+        "size": "3360774",
+        "id": "1sE7e6W4yodOK9tOEEHXuzSil52RjUkKt",
+        "name": "v2.8與v4.17舊版投影逐筆差異.csv",
+        "createdTime": "2026-10-31T05:53:24.281Z",
+        "modifiedTime": "2026-10-31T05:53:24.281Z"
+      },
+      {
+        "mimeType": "application/json",
+        "parents": [
+          "1ZTGZDkvXk92MLbNDhlsHUeweE7FlJfF_"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/17OIEwL5uSwb8GaDrdae7faiWo_a1jDaF/view?usp=drivesdk",
+        "size": "1393",
+        "id": "17OIEwL5uSwb8GaDrdae7faiWo_a1jDaF",
+        "name": "SSO_v2.66_執行報告_20261029_192214_e50a24.json",
+        "createdTime": "2026-10-29T11:22:14.093Z",
+        "modifiedTime": "2026-10-29T11:22:14.000Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "1LK5IGJKwR-df1S6isJrWoTU_JP1QVzW-"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/14Jjr-1kN4HIJ36u8tok_XcHwgBj9rjWZ/view?usp=drivesdk",
+        "size": "26736",
+        "id": "14Jjr-1kN4HIJ36u8tok_XcHwgBj9rjWZ",
+        "name": "修正後24組因子方向與留出檢驗_v2.34.csv",
+        "createdTime": "2026-10-27T13:19:30.390Z",
+        "modifiedTime": "2026-10-27T13:19:30.390Z"
+      },
+      {
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [
+          "1fecHAVqOoxce5FE9uwGqxh5szF9MRLKk"
+        ],
+        "webViewLink": "https://drive.google.com/drive/folders/1Muk6CiP7ejMNac4XV1BvxVaX9kuVSWNV",
+        "id": "1Muk6CiP7ejMNac4XV1BvxVaX9kuVSWNV",
+        "name": "SSO_公司行動最終准入檢核_v2.29_20261027_175246",
+        "createdTime": "2026-10-27T09:52:46.489Z",
+        "modifiedTime": "2026-10-27T09:52:46.489Z"
+      },
+      {
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [
+          "1fecHAVqOoxce5FE9uwGqxh5szF9MRLKk"
+        ],
+        "webViewLink": "https://drive.google.com/drive/folders/1MzdHHt1nEOV2HstEE3dznpO1EtZTzei4",
+        "id": "1MzdHHt1nEOV2HstEE3dznpO1EtZTzei4",
+        "name": "SSO_公司行動例外收斂稽核_v2.28_20261027_174732",
+        "createdTime": "2026-10-27T09:47:32.193Z",
+        "modifiedTime": "2026-10-27T09:47:32.193Z"
+      },
+      {
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [
+          "1fecHAVqOoxce5FE9uwGqxh5szF9MRLKk"
+        ],
+        "webViewLink": "https://drive.google.com/drive/folders/1Q1l8aPBzaJL06NLcoBddcsH7bIBm2YEC",
+        "id": "1Q1l8aPBzaJL06NLcoBddcsH7bIBm2YEC",
+        "name": "SSO_公司行動影子行情全量終檢_v2.27_20261027_170958",
+        "createdTime": "2026-10-27T09:09:58.365Z",
+        "modifiedTime": "2026-10-27T09:09:58.365Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "1dRngHJ_ZnYDTVFtMi7wd7x6EgZo6fS-u"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/1TFKbaYfvdNVPmZ0rmkniKQQo3Vt2PfAk/view?usp=drivesdk",
+        "size": "8558986",
+        "id": "1TFKbaYfvdNVPmZ0rmkniKQQo3Vt2PfAk",
+        "name": "現有股票池全部公司行動事件_v2.24.csv",
+        "createdTime": "2026-10-27T08:24:53.778Z",
+        "modifiedTime": "2026-10-27T08:24:53.778Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "1dRngHJ_ZnYDTVFtMi7wd7x6EgZo6fS-u"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/1UkNpFti9u0ZBE86sBePB3Cy4f_JOo2Sw/view?usp=drivesdk",
+        "size": "339316",
+        "id": "1UkNpFti9u0ZBE86sBePB3Cy4f_JOo2Sw",
+        "name": "現有股票池待處理公司行動_v2.24.csv",
+        "createdTime": "2026-10-27T08:24:53.557Z",
+        "modifiedTime": "2026-10-27T08:24:53.557Z"
+      },
+      {
+        "mimeType": "text/csv",
+        "parents": [
+          "1dRngHJ_ZnYDTVFtMi7wd7x6EgZo6fS-u"
+        ],
+        "webViewLink": "https://drive.google.com/file/d/1zSrLvUpD4vfjPoHuQxV5EunTUs6DjskO/view?usp=drivesdk",
+        "size": "8220393",
+        "id": "1zSrLvUpD4vfjPoHuQxV5EunTUs6DjskO",
+        "name": "現有股票池影子調整測試候選_v2.24.csv",
+        "createdTime": "2026-10-27T08:24:52.215Z",
+        "modifiedTime": "2026-10-27T08:24:52.215Z"
+      },
+      {
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [
+          "1fecHAVqOoxce5FE9uwGqxh5szF9MRLKk"
+        ],
+        "webViewLink": "https://drive.google.com/drive/folders/1dRngHJ_ZnYDTVFtMi7wd7x6EgZo6fS-u",
+        "id": "1dRngHJ_ZnYDTVFtMi7wd7x6EgZo6fS-u",
+        "name": "SSO_公司行動因子建置資格與分布稽核_v2.24_20261027_162449",
+        "createdTime": "2026-10-27T08:24:49.510Z",
+        "modifiedTime": "2026-10-27T08:24:49.510Z"
+      },
+      {
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [
+          "1fecHAVqOoxce5FE9uwGqxh5szF9MRLKk"
+        ],
+        "webViewLink": "https://drive.google.com/drive/folders/1oZFdymGELQAkNRyTPiOu722cCJEx8R3r",
+        "id": "1oZFdymGELQAkNRyTPiOu722cCJEx8R3r",
+        "name": "SSO_官方查詢原始回應與公司行動涵蓋診斷_v2.23_20261027_161525",
+        "createdTime": "2026-10-27T08:15:25.370Z",
+        "modifiedTime": "2026-10-27T08:15:25.370Z"
+      },
+      {
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [
+          "1fecHAVqOoxce5FE9uwGqxh5szF9MRLKk"
+        ],
+        "webViewLink": "https://drive.google.com/drive/folders/1yFfJuPzYyFT8YZZbECsyVDyVfu86G4Uj",
+        "id": "1yFfJuPzYyFT8YZZbECsyVDyVfu86G4Uj",
+        "name": "SSO_公司行動例外根因與官方查詢紀錄交叉稽核_v2.22_20261027_160532",
+        "createdTime": "2026-10-27T08:05:32.168Z",
+        "modifiedTime": "2026-10-27T08:05:32.168Z"
+      },
+      {
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [
+          "1fecHAVqOoxce5FE9uwGqxh5szF9MRLKk"
+        ],
+        "webViewLink": "https://drive.google.com/drive/folders/1Z24Pp-Ybawl-x96AOhXHeUZA4Ptdaqg9",
+        "id": "1Z24Pp-Ybawl-x96AOhXHeUZA4Ptdaqg9",
+        "name": "SSO_公司行動未命中與前收盤例外診斷_v2.21_20261027_155219",
+        "createdTime": "2026-10-27T07:52:19.333Z",
+        "modifiedTime": "2026-10-27T07:52:19.333Z"
+      },
+      {
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [
+          "1fecHAVqOoxce5FE9uwGqxh5szF9MRLKk"
+        ],
+        "webViewLink": "https://drive.google.com/drive/folders/1m6R47UnvXj_d-s3-acdkVJcALC81sLQu",
+        "id": "1m6R47UnvXj_d-s3-acdkVJcALC81sLQu",
+        "name": "SSO_公司行動因子與行情前收盤交叉驗證_v2.20_20261027_153259",
+        "createdTime": "2026-10-27T07:32:59.150Z",
+        "modifiedTime": "2026-10-27T07:32:59.150Z"
+      },
+      {
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [
+          "1fecHAVqOoxce5FE9uwGqxh5szF9MRLKk"
+        ],
+        "webViewLink": "https://drive.google.com/drive/folders/1s-j-qFxl3J532G9VSrlaYJsOhuOTH_or",
+        "id": "1s-j-qFxl3J532G9VSrlaYJsOhuOTH_or",
+        "name": "SSO_公司行動因子與行情前收盤交叉驗證_v2.19_20261027_145453",
+        "createdTime": "2026-10-27T06:54:53.414Z",
+        "modifiedTime": "2026-10-27T06:54:53.414Z"
+      },
+      {
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [
+          "1fecHAVqOoxce5FE9uwGqxh5szF9MRLKk"
+        ],
+        "webViewLink": "https://drive.google.com/drive/folders/149F10fRxEaN97DBdN7xV4n36qOt_IvbW",
+        "id": "149F10fRxEaN97DBdN7xV4n36qOt_IvbW",
+        "name": "SSO_公司行動欄位映射修正與候選因子稽核_v2.18_20261027_144038",
+        "createdTime": "2026-10-27T06:40:38.946Z",
+        "modifiedTime": "2026-10-27T06:40:38.946Z"
+      },
+      {
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [
+          "1fecHAVqOoxce5FE9uwGqxh5szF9MRLKk"
+        ],
+        "webViewLink": "https://drive.google.com/drive/folders/1-X59MOemOjnOvCrG4LIChzO5_0HW-qtg",
+        "id": "1-X59MOemOjnOvCrG4LIChzO5_0HW-qtg",
+        "name": "SSO_官方公司行動API快取_v2.17",
+        "createdTime": "2026-10-27T05:45:04.084Z",
+        "modifiedTime": "2026-10-27T05:45:04.084Z"
+      },
+      {
+        "mimeType": "application/vnd.google-apps.folder",
+        "parents": [
+          "1fecHAVqOoxce5FE9uwGqxh5szF9MRLKk"
+        ],
+        "webViewLink": "https://drive.google.com/drive/folders/1bOifETz9LiF_CzrfVG89b3aIdbxm_gHf",
+        "id": "1bOifETz9LiF_CzrfVG89b3aIdbxm_gHf",
+        "name": "SSO_官方公司行動資料盤點_v2.17_20261027_134504",
+        "createdTime": "2026-10-27T05:45:04.037Z",
+        "modifiedTime": "2026-10-27T05:45:04.037Z"
+      }
+    ]
+  },
+  "overall_status": "PASS_SMALL_CSV_VALIDATION_AND_COMPANY_ACTION_DISCOVERY",
+  "total_small_file_bytes_read": 5762642,
+  "assessment": {
+    "csv_success_count": 6,
+    "csv_expected_count": 6,
+    "all_csv_read_pass": true,
+    "official_daily_log": {
+      "id": "1-I25f5tD5LFxIk40xnuyBEB5NPEuSNFM",
+      "name": "官方來源逐日查詢紀錄.csv",
+      "size": 2690272,
+      "md5_verified": true,
+      "createdTime": "2026-10-29T16:45:16.111Z",
+      "modifiedTime": "2026-10-29T16:45:16.111Z",
+      "encoding": "utf-8-sig",
+      "delimiter": "','",
+      "columns": [
+        "日期",
+        "市場",
+        "HTTP狀態碼",
+        "API狀態",
+        "查詢狀態",
+        "市場池命中列數",
+        "解析資料表數",
+        "查詢網址",
+        "實際回應網址",
+        "使用端點",
+        "原始回應檔",
+        "回應SHA256",
+        "回應位元組數",
+        "查詢時間",
+        "使用快取",
+        "錯誤"
+      ],
+      "column_count": 16,
+      "row_count": 5648,
+      "date_ranges": {
+        "日期": {
+          "min": "2016-01-01",
+          "max": "2026-10-28",
+          "valid": 5648
+        }
+      },
+      "unique_stock_counts": {},
+      "categorical_counts": {
+        "市場": [
+          [
+            "TPEx",
+            2824
+          ],
+          [
+            "TWSE",
+            2824
+          ]
+        ],
+        "市場池命中列數": [
+          [
+            "0",
+            396
+          ],
+          [
+            "911",
+            58
+          ],
+          [
+            "758",
+            58
+          ],
+          [
+            "731",
+            57
+          ],
+          [
+            "742",
+            53
+          ],
+          [
+            "929",
+            52
+          ],
+          [
+            "875",
+            51
+          ],
+          [
+            "677",
+            50
+          ],
+          [
+            "845",
+            49
+          ],
+          [
+            "653",
+            48
+          ],
+          [
+            "794",
+            44
+          ],
+          [
+            "678",
+            43
+          ],
+          [
+            "887",
+            42
+          ],
+          [
+            "789",
+            42
+          ],
+          [
+            "950",
+            40
+          ],
+          [
+            "760",
+            40
+          ],
+          [
+            "795",
+            40
+          ],
+          [
+            "829",
+            39
+          ],
+          [
+            "880",
+            38
+          ],
+          [
+            "671",
+            37
+          ]
+        ],
+        "HTTP狀態碼": [
+          [
+            "200",
+            5648
+          ]
+        ],
+        "API狀態": [
+          [
+            "ok",
+            2824
+          ],
+          [
+            "OK",
+            2626
+          ]
+        ],
+        "查詢狀態": [
+          [
+            "OK",
+            5252
+          ],
+          [
+            "TABLE_FOUND_NO_UNIVERSE_ROWS",
+            198
+          ],
+          [
+            "JSON_PARSE_ERROR",
+            198
+          ]
+        ],
+        "錯誤": [
+          [
+            "HTTP 200，但無法辨識官方行情資料表（TWSE_LEGACY_JSON）：{\"stat\":\"很抱歉，沒有符合條件的資料!\",\"type\":\"ALLBUT0999\"}",
+            198
+          ]
+        ]
+      },
+      "empty_cells_by_column": {
+        "錯誤": 5450,
+        "API狀態": 198
+      },
+      "read_status": "PASS"
+    },
+    "dual_market_check": {
+      "id": "1YEX0LuXGpS7b7u0yA30RoIV9ALNSlUZV",
+      "name": "逐日雙市場完整性檢核.csv",
+      "size": 204207,
+      "md5_verified": true,
+      "createdTime": "2026-10-29T16:45:16.398Z",
+      "modifiedTime": "2026-10-29T16:45:16.398Z",
+      "encoding": "utf-8-sig",
+      "delimiter": "','",
+      "columns": [
+        "日期",
+        "TWSE狀態",
+        "TPEx狀態",
+        "確認交易日",
+        "雙市場判讀完整",
+        "當日行情列數",
+        "判讀"
+      ],
+      "column_count": 7,
+      "row_count": 2824,
+      "date_ranges": {
+        "日期": {
+          "min": "2016-01-01",
+          "max": "2026-10-28",
+          "valid": 2824
+        },
+        "確認交易日": {
+          "min": null,
+          "max": null,
+          "valid": 0
+        }
+      },
+      "unique_stock_counts": {},
+      "categorical_counts": {
+        "雙市場判讀完整": [
+          [
+            "是",
+            2626
+          ],
+          [
+            "否",
+            198
+          ]
+        ],
+        "TWSE狀態": [
+          [
+            "OK",
+            2626
+          ],
+          [
+            "JSON_PARSE_ERROR",
+            198
+          ]
+        ],
+        "TPEx狀態": [
+          [
+            "OK",
+            2626
+          ],
+          [
+            "TABLE_FOUND_NO_UNIVERSE_ROWS",
+            198
+          ]
+        ]
+      },
+      "empty_cells_by_column": {},
+      "read_status": "PASS"
+    },
+    "source_error_list": {
+      "id": "1_GH1WUrGV2rONXqzbQiUArUexOD1QfXL",
+      "name": "官方來源查詢錯誤清單.csv",
+      "size": 124962,
+      "md5_verified": true,
+      "createdTime": "2026-10-29T16:45:16.593Z",
+      "modifiedTime": "2026-10-29T16:45:16.593Z",
+      "encoding": "utf-8-sig",
+      "delimiter": "','",
+      "columns": [
+        "日期",
+        "市場",
+        "HTTP狀態碼",
+        "API狀態",
+        "查詢狀態",
+        "市場池命中列數",
+        "解析資料表數",
+        "查詢網址",
+        "實際回應網址",
+        "使用端點",
+        "原始回應檔",
+        "回應SHA256",
+        "回應位元組數",
+        "查詢時間",
+        "使用快取",
+        "錯誤"
+      ],
+      "column_count": 16,
+      "row_count": 198,
+      "date_ranges": {
+        "日期": {
+          "min": "2016-01-01",
+          "max": "2026-10-26",
+          "valid": 198
+        }
+      },
+      "unique_stock_counts": {},
+      "categorical_counts": {
+        "市場": [
+          [
+            "TWSE",
+            198
+          ]
+        ],
+        "市場池命中列數": [
+          [
+            "0",
+            198
+          ]
+        ],
+        "HTTP狀態碼": [
+          [
+            "200",
+            198
+          ]
+        ],
+        "API狀態": [],
+        "查詢狀態": [
+          [
+            "JSON_PARSE_ERROR",
+            198
+          ]
+        ],
+        "錯誤": [
+          [
+            "HTTP 200，但無法辨識官方行情資料表（TWSE_LEGACY_JSON）：{\"stat\":\"很抱歉，沒有符合條件的資料!\",\"type\":\"ALLBUT0999\"}",
+            198
+          ]
+        ]
+      },
+      "empty_cells_by_column": {
+        "API狀態": 198
+      },
+      "read_status": "PASS"
+    },
+    "per_stock_coverage": {
+      "id": "1gHn4e2Tdzd034qVMHKqWKNbl8cjda64F",
+      "name": "各股票官方資料覆蓋摘要.csv",
+      "size": 74152,
+      "md5_verified": true,
+      "createdTime": "2026-10-29T16:57:25.775Z",
+      "modifiedTime": "2026-10-29T16:57:25.775Z",
+      "encoding": "utf-8-sig",
+      "delimiter": "','",
+      "columns": [
+        "市場",
+        "股票代號",
+        "官方資料列數",
+        "首筆官方日期",
+        "末筆官方日期"
+      ],
+      "column_count": 5,
+      "row_count": 2010,
+      "date_ranges": {
+        "首筆官方日期": {
+          "min": "2016-01-04",
+          "max": "2026-10-22",
+          "valid": 2010
+        },
+        "末筆官方日期": {
+          "min": "2016-03-16",
+          "max": "2026-10-28",
+          "valid": 2010
+        }
+      },
+      "unique_stock_counts": {
+        "股票代號": 1985
+      },
+      "categorical_counts": {
+        "市場": [
+          [
+            "TWSE",
+            1092
+          ],
+          [
+            "TPEx",
+            918
+          ]
+        ],
+        "股票代號": [
+          [
+            "1256",
+            2
+          ],
+          [
+            "1597",
+            2
+          ],
+          [
+            "1752",
+            2
+          ],
+          [
+            "1795",
+            2
+          ],
+          [
+            "2233",
+            2
+          ],
+          [
+            "2636",
+            2
+          ],
+          [
+            "3092",
+            2
+          ],
+          [
+            "3528",
+            2
+          ],
+          [
+            "3563",
+            2
+          ],
+          [
+            "3652",
+            2
+          ],
+          [
+            "4736",
+            2
+          ],
+          [
+            "4739",
+            2
+          ],
+          [
+            "5284",
+            2
+          ],
+          [
+            "5306",
+            2
+          ],
+          [
+            "6024",
+            2
+          ],
+          [
+            "6426",
+            2
+          ],
+          [
+            "8908",
+            2
+          ],
+          [
+            "8462",
+            2
+          ],
+          [
+            "6446",
+            2
+          ],
+          [
+            "8476",
+            2
+          ]
+        ]
+      },
+      "empty_cells_by_column": {},
+      "read_status": "PASS"
+    },
+    "official_api_fields": {
+      "id": "1YvaILWYog2V2rV4vEIC9o8BVygb3FmlN",
+      "name": "官方API資料表欄位.csv",
+      "size": 2573187,
+      "md5_verified": true,
+      "createdTime": "2026-10-29T16:45:16.438Z",
+      "modifiedTime": "2026-10-29T16:45:16.438Z",
+      "encoding": "utf-8-sig",
+      "delimiter": "','",
+      "columns": [
+        "市場",
+        "資料表名稱",
+        "欄位",
+        "可解析完整OHLCV",
+        "日期",
+        "查詢網址"
+      ],
+      "column_count": 6,
+      "row_count": 5450,
+      "date_ranges": {
+        "日期": {
+          "min": "2016-01-01",
+          "max": "2026-10-28",
+          "valid": 5450
+        }
+      },
+      "unique_stock_counts": {},
+      "categorical_counts": {
+        "市場": [
+          [
+            "TPEx",
+            2824
+          ],
+          [
+            "TWSE",
+            2626
+          ]
+        ]
+      },
+      "empty_cells_by_column": {},
+      "read_status": "PASS"
+    },
+    "stock_pool_market_mapping": {
+      "id": "1nYTUqQpBMY5blgDxtAZzoRTbrxqxWi1c",
+      "name": "股票池官方市場對照.csv",
+      "size": 70706,
+      "md5_verified": true,
+      "createdTime": "2026-10-29T12:54:01.543Z",
+      "modifiedTime": "2026-10-29T12:54:01.543Z",
+      "encoding": "utf-8-sig",
+      "delimiter": "','",
+      "columns": [
+        "股票代號",
+        "股票名稱_股票池",
+        "市場",
+        "原始股票代號欄位值",
+        "股票池行情代號欄位值",
+        "市場原始欄位值"
+      ],
+      "column_count": 6,
+      "row_count": 1985,
+      "date_ranges": {},
+      "unique_stock_counts": {
+        "股票代號": 1985,
+        "原始股票代號欄位值": 1985,
+        "股票池行情代號欄位值": 1985
+      },
+      "categorical_counts": {
+        "市場": [
+          [
+            "TWSE",
+            1091
+          ],
+          [
+            "TPEx",
+            894
+          ]
+        ],
+        "市場原始欄位值": [
+          [
+            "上市",
+            1091
+          ],
+          [
+            "上櫃",
+            894
+          ]
+        ],
+        "股票代號": [
+          [
+            "1101",
+            1
+          ],
+          [
+            "1102",
+            1
+          ],
+          [
+            "1103",
+            1
+          ],
+          [
+            "1104",
+            1
+          ],
+          [
+            "1108",
+            1
+          ],
+          [
+            "1109",
+            1
+          ],
+          [
+            "1110",
+            1
+          ],
+          [
+            "1201",
+            1
+          ],
+          [
+            "1203",
+            1
+          ],
+          [
+            "1210",
+            1
+          ],
+          [
+            "1213",
+            1
+          ],
+          [
+            "1215",
+            1
+          ],
+          [
+            "1216",
+            1
+          ],
+          [
+            "1217",
+            1
+          ],
+          [
+            "1218",
+            1
+          ],
+          [
+            "1219",
+            1
+          ],
+          [
+            "1220",
+            1
+          ],
+          [
+            "1225",
+            1
+          ],
+          [
+            "1227",
+            1
+          ],
+          [
+            "1229",
+            1
+          ]
+        ],
+        "原始股票代號欄位值": [
+          [
+            "1101",
+            1
+          ],
+          [
+            "1102",
+            1
+          ],
+          [
+            "1103",
+            1
+          ],
+          [
+            "1104",
+            1
+          ],
+          [
+            "1108",
+            1
+          ],
+          [
+            "1109",
+            1
+          ],
+          [
+            "1110",
+            1
+          ],
+          [
+            "1201",
+            1
+          ],
+          [
+            "1203",
+            1
+          ],
+          [
+            "1210",
+            1
+          ],
+          [
+            "1213",
+            1
+          ],
+          [
+            "1215",
+            1
+          ],
+          [
+            "1216",
+            1
+          ],
+          [
+            "1217",
+            1
+          ],
+          [
+            "1218",
+            1
+          ],
+          [
+            "1219",
+            1
+          ],
+          [
+            "1220",
+            1
+          ],
+          [
+            "1225",
+            1
+          ],
+          [
+            "1227",
+            1
+          ],
+          [
+            "1229",
+            1
+          ]
+        ],
+        "股票池行情代號欄位值": [
+          [
+            "1101",
+            1
+          ],
+          [
+            "1102",
+            1
+          ],
+          [
+            "1103",
+            1
+          ],
+          [
+            "1104",
+            1
+          ],
+          [
+            "1108",
+            1
+          ],
+          [
+            "1109",
+            1
+          ],
+          [
+            "1110",
+            1
+          ],
+          [
+            "1201",
+            1
+          ],
+          [
+            "1203",
+            1
+          ],
+          [
+            "1210",
+            1
+          ],
+          [
+            "1213",
+            1
+          ],
+          [
+            "1215",
+            1
+          ],
+          [
+            "1216",
+            1
+          ],
+          [
+            "1217",
+            1
+          ],
+          [
+            "1218",
+            1
+          ],
+          [
+            "1219",
+            1
+          ],
+          [
+            "1220",
+            1
+          ],
+          [
+            "1225",
+            1
+          ],
+          [
+            "1227",
+            1
+          ],
+          [
+            "1229",
+            1
+          ]
+        ]
+      },
+      "empty_cells_by_column": {},
+      "read_status": "PASS"
+    },
+    "v2_17_root_previous_inventory_file_count": 0,
+    "market_archive_zip_read": false,
+    "historical_data_completeness": "NOT_YET_VERIFIED"
+  },
+  "finished_time": "2026-11-08T14:52:04.425767+08:00"
+}

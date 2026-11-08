@@ -1,0 +1,49 @@
+[14:51:58] 啟動 v4.87.5.47
+[14:51:58] 授權=ADC；scope={'status': 'PASS', 'exact_metadata_readonly': False, 'drive_scopes': ['https://www.googleapis.com/auth/drive']}
+[14:51:59] [READ PASS] 官方來源逐日查詢紀錄.csv | 2,690,272 bytes | rows=5648
+[14:52:01] [READ PASS] 官方API資料表欄位.csv | 2,573,187 bytes | rows=5450
+[14:52:01] [READ PASS] 逐日雙市場完整性檢核.csv | 204,207 bytes | rows=2824
+[14:52:01] [READ PASS] 官方來源查詢錯誤清單.csv | 124,962 bytes | rows=198
+[14:52:02] [READ PASS] 各股票官方資料覆蓋摘要.csv | 74,152 bytes | rows=2010
+[14:52:02] [READ PASS] 股票池官方市場對照.csv | 70,706 bytes | rows=1985
+[14:52:03] [READ PASS] 執行摘要.json | 3,578 bytes
+[14:52:03] [READ PASS] 執行紀錄.txt | 21,106 bytes
+[14:52:03] [READ PASS] 資料源與品質說明.md | 472 bytes
+[14:52:04] [DISCOVERY] 10_v449特殊公司行動排除清單.csv | text/csv | 811 bytes
+[14:52:04] [DISCOVERY] 公司行動／復牌日起逐日行情明細.csv | text/csv | 8887 bytes
+[14:52:04] [DISCOVERY] 高優先事件公司行動時序複核.csv | text/csv | 6553 bytes
+[14:52:04] [DISCOVERY] 看股最速適_公司行動時序缺口與報酬基準可用性核驗_v4_41_20261101_015653 | application/vnd.google-apps.folder | 0 bytes
+[14:52:04] [DISCOVERY] 公司行動／復牌日起逐日行情明細.csv | text/csv | 8887 bytes
+[14:52:04] [DISCOVERY] 100筆事件公司行動與復牌整合診斷.csv | text/csv | 38307 bytes
+[14:52:04] [DISCOVERY] 官方公司行動參考價衝突清單.csv | text/csv | 99 bytes
+[14:52:04] [DISCOVERY] 官方公司行動邏輯重複鍵明細.csv | text/csv | 492 bytes
+[14:52:04] [DISCOVERY] 官方公司行動價格差異浮點容差重分類.csv | text/csv | 72413 bytes
+[14:52:04] [DISCOVERY] 官方公司行動精確命中價格基準診斷.csv | text/csv | 106269 bytes
+[14:52:04] [DISCOVERY] 看股最速適_官方公司行動控制組校準與來源覆蓋修正_v4_32_20261031_183923 | application/vnd.google-apps.folder | 0 bytes
+[14:52:04] [DISCOVERY] 官方公司行動原始欄位明細.csv | text/csv | 267585 bytes
+[14:52:04] [DISCOVERY] 官方公司行動命中事件.csv | text/csv | 116930 bytes
+[14:52:04] [DISCOVERY] 看股最速適_官方公司行動逐筆核對_v4_31_1_20261031_180538 | application/vnd.google-apps.folder | 0 bytes
+[14:52:04] [DISCOVERY] 看股最速適_官方公司行動逐筆核對_v4_31_20261031_175409 | application/vnd.google-apps.folder | 0 bytes
+[14:52:04] [DISCOVERY] 已核實公司行動事件參數與來源.csv | text/csv | 2761 bytes
+[14:52:04] [DISCOVERY] 極端報酬尚未核實公司行動清單_至少20_percent.csv | text/csv | 67660 bytes
+[14:52:04] [DISCOVERY] 已核實公司行動報酬調整對照.csv | text/csv | 4676 bytes
+[14:52:04] [DISCOVERY] 看股最速適_零股量價狀態與公司行動報酬再核驗_v4_29_20261031_173553 | application/vnd.google-apps.folder | 0 bytes
+[14:52:04] [DISCOVERY] v2.8與v4.17舊版投影逐筆差異.csv | text/csv | 3360774 bytes
+[14:52:04] [DISCOVERY] SSO_v2.66_執行報告_20261029_192214_e50a24.json | application/json | 1393 bytes
+[14:52:04] [DISCOVERY] 修正後24組因子方向與留出檢驗_v2.34.csv | text/csv | 26736 bytes
+[14:52:04] [DISCOVERY] SSO_公司行動最終准入檢核_v2.29_20261027_175246 | application/vnd.google-apps.folder | 0 bytes
+[14:52:04] [DISCOVERY] SSO_公司行動例外收斂稽核_v2.28_20261027_174732 | application/vnd.google-apps.folder | 0 bytes
+[14:52:04] [DISCOVERY] SSO_公司行動影子行情全量終檢_v2.27_20261027_170958 | application/vnd.google-apps.folder | 0 bytes
+[14:52:04] [DISCOVERY] 現有股票池全部公司行動事件_v2.24.csv | text/csv | 8558986 bytes
+[14:52:04] [DISCOVERY] 現有股票池待處理公司行動_v2.24.csv | text/csv | 339316 bytes
+[14:52:04] [DISCOVERY] 現有股票池影子調整測試候選_v2.24.csv | text/csv | 8220393 bytes
+[14:52:04] [DISCOVERY] SSO_公司行動因子建置資格與分布稽核_v2.24_20261027_162449 | application/vnd.google-apps.folder | 0 bytes
+[14:52:04] [DISCOVERY] SSO_官方查詢原始回應與公司行動涵蓋診斷_v2.23_20261027_161525 | application/vnd.google-apps.folder | 0 bytes
+[14:52:04] [DISCOVERY] SSO_公司行動例外根因與官方查詢紀錄交叉稽核_v2.22_20261027_160532 | application/vnd.google-apps.folder | 0 bytes
+[14:52:04] [DISCOVERY] SSO_公司行動未命中與前收盤例外診斷_v2.21_20261027_155219 | application/vnd.google-apps.folder | 0 bytes
+[14:52:04] [DISCOVERY] SSO_公司行動因子與行情前收盤交叉驗證_v2.20_20261027_153259 | application/vnd.google-apps.folder | 0 bytes
+[14:52:04] [DISCOVERY] SSO_公司行動因子與行情前收盤交叉驗證_v2.19_20261027_145453 | application/vnd.google-apps.folder | 0 bytes
+[14:52:04] [DISCOVERY] SSO_公司行動欄位映射修正與候選因子稽核_v2.18_20261027_144038 | application/vnd.google-apps.folder | 0 bytes
+[14:52:04] [DISCOVERY] SSO_官方公司行動API快取_v2.17 | application/vnd.google-apps.folder | 0 bytes
+[14:52:04] [DISCOVERY] SSO_官方公司行動資料盤點_v2.17_20261027_134504 | application/vnd.google-apps.folder | 0 bytes
+[14:52:04] 公司行動相關搜尋完成：37 筆
