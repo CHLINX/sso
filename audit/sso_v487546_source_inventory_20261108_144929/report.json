@@ -1,0 +1,348 @@
+{
+  "version": "v4.87.5.46",
+  "run_time_taipei": "2026-11-08T14:49:29.965088+08:00",
+  "purpose": "兩個已核實來源資料夾的遞迴 metadata inventory",
+  "roots": [
+    {
+      "group": "v2.8_official_market",
+      "name": "SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318",
+      "id": "1L2VLFPHHycrxj9wiWU6nc0H3tGSw2dRj"
+    },
+    {
+      "group": "v2.17_company_action",
+      "name": "SSO_官方公司行動資料盤點_v2.17_20261027_134504",
+      "id": "1bOifETz9LiF_CzrfVG89b3aIdbxm_gHf"
+    }
+  ],
+  "constraints": {
+    "drive_methods_get_only": true,
+    "file_content_downloaded": false,
+    "drive_files_modified_deleted_moved": false,
+    "large_market_tables_downloaded": false,
+    "official_market_api_called": false,
+    "database_updated": false,
+    "model_retrained": false,
+    "backtest_run": false,
+    "stock_selection_run": false,
+    "master_selected": false
+  },
+  "overall_status": "PASS_TWO_ROOTS_RECURSIVE_METADATA_INVENTORY",
+  "root_summaries": [
+    {
+      "group": "v2.8_official_market",
+      "root_name": "SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318",
+      "root_id": "1L2VLFPHHycrxj9wiWU6nc0H3tGSw2dRj",
+      "root_createdTime": "2026-10-29T12:53:18.664Z",
+      "root_modifiedTime": "2026-10-29T12:53:18.664Z",
+      "folder_count_including_root": 3,
+      "file_count": 16,
+      "total_blob_bytes": 653281064,
+      "total_blob_gib": 0.6084,
+      "extension_counts": {
+        "txt": 1,
+        "zip": 7,
+        "md": 1,
+        "json": 1,
+        "csv": 6
+      },
+      "mimeType_counts": {
+        "text/plain": 1,
+        "application/zip": 7,
+        "text/markdown": 1,
+        "application/json": 1,
+        "text/csv": 6
+      },
+      "market_data_candidate_count": 7,
+      "company_action_candidate_count": 0,
+      "largest_files": [
+        {
+          "path": "SFAS_v2.8_十年官方行情完整底稿_20261029_205318.zip",
+          "bytes": 530349419,
+          "mimeType": "application/zip",
+          "id": "1pCBuTENQiCn9sBJRkYipwi4j0jF30sF-"
+        },
+        {
+          "path": "500交易日備份/官方行情備份_第2001-2500交易日_20240329_20260423.zip",
+          "bytes": 25197739,
+          "mimeType": "application/zip",
+          "id": "1U1sVkAi9yHGER3lDvX3OtZnRqY2cnfhR"
+        },
+        {
+          "path": "500交易日備份/官方行情備份_第1501-2000交易日_20220310_20240328.zip",
+          "bytes": 23260453,
+          "mimeType": "application/zip",
+          "id": "1F_9K6UcYSjZIFxSqqXXT7y9uVEitXZMP"
+        },
+        {
+          "path": "500交易日備份/官方行情備份_第1001-1500交易日_20200221_20220309.zip",
+          "bytes": 22183365,
+          "mimeType": "application/zip",
+          "id": "192LkuXl6nsVGRm7Dd56MbpeHrzHmc9vh"
+        },
+        {
+          "path": "500交易日備份/官方行情備份_第0501-1000交易日_20180124_20200220.zip",
+          "bytes": 20560584,
+          "mimeType": "application/zip",
+          "id": "11nrA4lVn_pOo2zupvPmGONO2kmfUwhu5"
+        },
+        {
+          "path": "500交易日備份/官方行情備份_第0001-0500交易日_20160101_20180123.zip",
+          "bytes": 19230111,
+          "mimeType": "application/zip",
+          "id": "1c6TMCUac9CNgTPZMEpuXNlPic4PR4ri8"
+        },
+        {
+          "path": "500交易日備份/官方行情備份_補充未滿500交易日_20260424_20261028.zip",
+          "bytes": 6736751,
+          "mimeType": "application/zip",
+          "id": "1TkNrmsYSmFVFfkcH5iJMTZpDW4kHku_k"
+        },
+        {
+          "path": "官方來源逐日查詢紀錄.csv",
+          "bytes": 2690272,
+          "mimeType": "text/csv",
+          "id": "1-I25f5tD5LFxIk40xnuyBEB5NPEuSNFM"
+        },
+        {
+          "path": "官方API資料表欄位.csv",
+          "bytes": 2573187,
+          "mimeType": "text/csv",
+          "id": "1YvaILWYog2V2rV4vEIC9o8BVygb3FmlN"
+        },
+        {
+          "path": "逐日雙市場完整性檢核.csv",
+          "bytes": 204207,
+          "mimeType": "text/csv",
+          "id": "1YEX0LuXGpS7b7u0yA30RoIV9ALNSlUZV"
+        },
+        {
+          "path": "官方來源查詢錯誤清單.csv",
+          "bytes": 124962,
+          "mimeType": "text/csv",
+          "id": "1_GH1WUrGV2rONXqzbQiUArUexOD1QfXL"
+        },
+        {
+          "path": "各股票官方資料覆蓋摘要.csv",
+          "bytes": 74152,
+          "mimeType": "text/csv",
+          "id": "1gHn4e2Tdzd034qVMHKqWKNbl8cjda64F"
+        },
+        {
+          "path": "股票池官方市場對照.csv",
+          "bytes": 70706,
+          "mimeType": "text/csv",
+          "id": "1nYTUqQpBMY5blgDxtAZzoRTbrxqxWi1c"
+        },
+        {
+          "path": "執行紀錄.txt",
+          "bytes": 21106,
+          "mimeType": "text/plain",
+          "id": "14F-T2eO4aKzT_3UZnlG-ufveq94sihTs"
+        },
+        {
+          "path": "執行摘要.json",
+          "bytes": 3578,
+          "mimeType": "application/json",
+          "id": "1tTBeaCMJdMaxqLFlMOk8_OWxUcGuhL6s"
+        },
+        {
+          "path": "資料源與品質說明.md",
+          "bytes": 472,
+          "mimeType": "text/markdown",
+          "id": "1gjTwin_bOYfYv7iTPns-ZqiT3nDF-fzZ"
+        }
+      ],
+      "market_data_candidates": [
+        {
+          "path": "SFAS_v2.8_十年官方行情完整底稿_20261029_205318.zip",
+          "bytes": 530349419,
+          "mimeType": "application/zip",
+          "id": "1pCBuTENQiCn9sBJRkYipwi4j0jF30sF-"
+        },
+        {
+          "path": "500交易日備份/官方行情備份_補充未滿500交易日_20260424_20261028.zip",
+          "bytes": 6736751,
+          "mimeType": "application/zip",
+          "id": "1TkNrmsYSmFVFfkcH5iJMTZpDW4kHku_k"
+        },
+        {
+          "path": "500交易日備份/官方行情備份_第2001-2500交易日_20240329_20260423.zip",
+          "bytes": 25197739,
+          "mimeType": "application/zip",
+          "id": "1U1sVkAi9yHGER3lDvX3OtZnRqY2cnfhR"
+        },
+        {
+          "path": "500交易日備份/官方行情備份_第1501-2000交易日_20220310_20240328.zip",
+          "bytes": 23260453,
+          "mimeType": "application/zip",
+          "id": "1F_9K6UcYSjZIFxSqqXXT7y9uVEitXZMP"
+        },
+        {
+          "path": "500交易日備份/官方行情備份_第1001-1500交易日_20200221_20220309.zip",
+          "bytes": 22183365,
+          "mimeType": "application/zip",
+          "id": "192LkuXl6nsVGRm7Dd56MbpeHrzHmc9vh"
+        },
+        {
+          "path": "500交易日備份/官方行情備份_第0501-1000交易日_20180124_20200220.zip",
+          "bytes": 20560584,
+          "mimeType": "application/zip",
+          "id": "11nrA4lVn_pOo2zupvPmGONO2kmfUwhu5"
+        },
+        {
+          "path": "500交易日備份/官方行情備份_第0001-0500交易日_20160101_20180123.zip",
+          "bytes": 19230111,
+          "mimeType": "application/zip",
+          "id": "1c6TMCUac9CNgTPZMEpuXNlPic4PR4ri8"
+        }
+      ],
+      "company_action_candidates": [],
+      "truncated": false,
+      "list_calls": [
+        {
+          "folder_id": "1L2VLFPHHycrxj9wiWU6nc0H3tGSw2dRj",
+          "path": ".",
+          "pages": 1,
+          "incompleteSearch": false,
+          "children": 12
+        },
+        {
+          "folder_id": "1-HmTGNVB9UZeq1n_ZvlhI452K4szesT4",
+          "path": "官方歷史行情",
+          "pages": 1,
+          "incompleteSearch": false,
+          "children": 0
+        },
+        {
+          "folder_id": "157ehM9lJQSqiupHM_mAOACyfUuHvkEQD",
+          "path": "500交易日備份",
+          "pages": 1,
+          "incompleteSearch": false,
+          "children": 6
+        }
+      ]
+    },
+    {
+      "group": "v2.17_company_action",
+      "root_name": "SSO_官方公司行動資料盤點_v2.17_20261027_134504",
+      "root_id": "1bOifETz9LiF_CzrfVG89b3aIdbxm_gHf",
+      "root_createdTime": "2026-10-27T05:45:04.037Z",
+      "root_modifiedTime": "2026-10-27T05:45:04.037Z",
+      "folder_count_including_root": 10,
+      "file_count": 0,
+      "total_blob_bytes": 0,
+      "total_blob_gib": 0.0,
+      "extension_counts": {},
+      "mimeType_counts": {},
+      "market_data_candidate_count": 0,
+      "company_action_candidate_count": 0,
+      "largest_files": [],
+      "market_data_candidates": [],
+      "company_action_candidates": [],
+      "truncated": false,
+      "list_calls": [
+        {
+          "folder_id": "1bOifETz9LiF_CzrfVG89b3aIdbxm_gHf",
+          "path": ".",
+          "pages": 1,
+          "incompleteSearch": false,
+          "children": 1
+        },
+        {
+          "folder_id": "1FoQcgrn6cEzAvPWjIPiQN07dNtdX3-qe",
+          "path": "官方原始回應",
+          "pages": 1,
+          "incompleteSearch": false,
+          "children": 2
+        },
+        {
+          "folder_id": "1sva5rST2Z0rXFfAo5nZ3Ds7hAuNnGXAW",
+          "path": "官方原始回應/TPEx",
+          "pages": 1,
+          "incompleteSearch": false,
+          "children": 2
+        },
+        {
+          "folder_id": "1hNlZPPtv4W1kfeVGCguwrMJZyp4uztzo",
+          "path": "官方原始回應/TWSE",
+          "pages": 1,
+          "incompleteSearch": false,
+          "children": 4
+        },
+        {
+          "folder_id": "1pXFTzstOzyPNXngTcgc0ApXQev3qObdN",
+          "path": "官方原始回應/TPEx/TPEX_revivt",
+          "pages": 1,
+          "incompleteSearch": false,
+          "children": 0
+        },
+        {
+          "folder_id": "1FIwmkkmb_fASvldM8wtnBD4lb4Fyks08",
+          "path": "官方原始回應/TPEx/TPEX_exDailyQ",
+          "pages": 1,
+          "incompleteSearch": false,
+          "children": 0
+        },
+        {
+          "folder_id": "1c8fCYxF7QRTuXavQhaVHF3wyKxr7rsOc",
+          "path": "官方原始回應/TWSE/TWSE_TWTCAU",
+          "pages": 1,
+          "incompleteSearch": false,
+          "children": 0
+        },
+        {
+          "folder_id": "1nCw4E_6xaad-kF0QTLKXqohhuUWl3VBs",
+          "path": "官方原始回應/TWSE/TWSE_TWTB8U",
+          "pages": 1,
+          "incompleteSearch": false,
+          "children": 0
+        },
+        {
+          "folder_id": "109o6vh6DUTKNi86KXhZe-9qmA6CTq7Iu",
+          "path": "官方原始回應/TWSE/TWSE_TWTAUU",
+          "pages": 1,
+          "incompleteSearch": false,
+          "children": 0
+        },
+        {
+          "folder_id": "1ONNWEXGWJJ0Z9FhwGCmx11dufRj4cnCD",
+          "path": "官方原始回應/TWSE/TWSE_TWT49U",
+          "pages": 1,
+          "incompleteSearch": false,
+          "children": 0
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "auth": {
+    "method": "ADC",
+    "project_id": "",
+    "requested_scope": "https://www.googleapis.com/auth/drive.metadata.readonly",
+    "credential_scopes": [
+      "https://www.googleapis.com/auth/drive.metadata.readonly"
+    ],
+    "tokeninfo": {
+      "status": "PASS",
+      "scopes": [
+        "email",
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/drive",
+        "https://www.googleapis.com/auth/userinfo.email",
+        "openid"
+      ],
+      "exact_metadata_readonly": false,
+      "drive_scope_present": true
+    }
+  },
+  "incomplete_search_detected": false,
+  "data_completeness_assessment": {
+    "v2_8_listing_tpex_coverage": "NOT_VERIFIED_METADATA_ONLY",
+    "v2_8_listing_twse_coverage": "NOT_VERIFIED_METADATA_ONLY",
+    "ohlc_columns": "NOT_VERIFIED_NO_FILE_CONTENT_READ",
+    "historical_date_range": "NOT_VERIFIED_NO_FILE_CONTENT_READ",
+    "v2_17_event_rows_and_factor_values": "NOT_VERIFIED_NO_FILE_CONTENT_READ",
+    "note": "本版僅列出檔案名稱、大小、類型及時間；不能僅憑 metadata 宣告行情或公司行動內容完整。"
+  },
+  "finished_time_taipei": "2026-11-08T14:49:32.444887+08:00"
+}

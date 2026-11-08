@@ -1,0 +1,19 @@
+[14:49:29] ====================================================================================================
+[14:49:29] 啟動 v4.87.5.46｜v2.8 十年重建與 v2.17 公司行動資料夾遞迴唯讀盤點
+[14:49:30] Drive 僅使用 files.get/files.list；不下載檔案內容
+[14:49:30] 授權完成：method=ADC | tokeninfo=PASS | metadata_readonly_exact=False
+[14:49:30] 盤點 v2.8_official_market：. | 子項=12 | 累計=13
+[14:49:30] 盤點 v2.8_official_market：官方歷史行情 | 子項=0 | 累計=13
+[14:49:30] 盤點 v2.8_official_market：500交易日備份 | 子項=6 | 累計=19
+[14:49:30] 完成 v2.8_official_market：folders=3 | files=16 | bytes=653281064 | truncated=False
+[14:49:31] 盤點 v2.17_company_action：. | 子項=1 | 累計=2
+[14:49:31] 盤點 v2.17_company_action：官方原始回應 | 子項=2 | 累計=4
+[14:49:31] 盤點 v2.17_company_action：官方原始回應/TPEx | 子項=2 | 累計=6
+[14:49:31] 盤點 v2.17_company_action：官方原始回應/TWSE | 子項=4 | 累計=10
+[14:49:31] 盤點 v2.17_company_action：官方原始回應/TPEx/TPEX_revivt | 子項=0 | 累計=10
+[14:49:31] 盤點 v2.17_company_action：官方原始回應/TPEx/TPEX_exDailyQ | 子項=0 | 累計=10
+[14:49:32] 盤點 v2.17_company_action：官方原始回應/TWSE/TWSE_TWTCAU | 子項=0 | 累計=10
+[14:49:32] 盤點 v2.17_company_action：官方原始回應/TWSE/TWSE_TWTB8U | 子項=0 | 累計=10
+[14:49:32] 盤點 v2.17_company_action：官方原始回應/TWSE/TWSE_TWTAUU | 子項=0 | 累計=10
+[14:49:32] 盤點 v2.17_company_action：官方原始回應/TWSE/TWSE_TWT49U | 子項=0 | 累計=10
+[14:49:32] 完成 v2.17_company_action：folders=10 | files=0 | bytes=0 | truncated=False
