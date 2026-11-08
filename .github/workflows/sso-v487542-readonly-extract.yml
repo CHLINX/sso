@@ -1,0 +1,74 @@
+name: SSO v4.87.5.42 v2.66 stop-reason read-only extraction
+
+on:
+  push:
+    branches:
+      - "audit/v487542-v266-stop-rootcause-20261108_130857"
+
+permissions:
+  contents: read
+
+jobs:
+  extract-read-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify archive and print original JSON evidence
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, hashlib, io, json, urllib.request, zipfile
+          from pathlib import PurePosixPath
+
+          url = "https://raw.githubusercontent.com/CHLINX/sso/audit/v487542-v266-stop-rootcause-20261108_130857/audit/sso_v487542_v266_stop_rootcause_20261108_130858/SSO_v4.87.5.zip"
+          expected_size = 17100
+          expected_sha256 = "c429b79150f5c1a8b8cad5c0e6d8a044f55ef6a1673e5da975cd7a6d8aeb8761"
+
+          req = urllib.request.Request(url, headers={"User-Agent": "SSO-v487542-read-only-audit"})
+          with urllib.request.urlopen(req, timeout=60) as response:
+              archive = response.read()
+
+          actual_sha256 = hashlib.sha256(archive).hexdigest()
+          print(f"ARCHIVE_BYTES={len(archive)} EXPECTED={expected_size}")
+          print(f"ARCHIVE_SHA256={actual_sha256} EXPECTED={expected_sha256}")
+          if len(archive) != expected_size or actual_sha256 != expected_sha256:
+              raise RuntimeError("Archive size or SHA256 mismatch")
+
+          with zipfile.ZipFile(io.BytesIO(archive), "r") as zf:
+              bad = zf.testzip()
+              if bad:
+                  raise RuntimeError(f"ZIP CRC failure: {bad}")
+              names = zf.namelist()
+              print(f"ZIP_CRC=PASS MEMBERS={len(names)}")
+              print("MEMBERS_BEGIN")
+              for name in names:
+                  print(name)
+              print("MEMBERS_END")
+
+              reports = [n for n in names
+                         if PurePosixPath(n).suffix.lower() == ".json"
+                         and "v2.66" in PurePosixPath(n).name]
+              print(f"V266_JSON_REPORTS={len(reports)}")
+              for name in reports:
+                  raw = zf.read(name)
+                  decoded = raw.decode("utf-8-sig", errors="replace")
+                  print(f"\n===== ORIGINAL_JSON_BEGIN: {name} | bytes={len(raw)} =====")
+                  try:
+                      obj = json.loads(decoded)
+                      print(json.dumps(obj, ensure_ascii=False, indent=2, sort_keys=True))
+                  except Exception as exc:
+                      print("JSON_PARSE_ERROR:", repr(exc))
+                      print(decoded[:12000])
+                  print(f"===== ORIGINAL_JSON_END: {name} =====")
+
+              csvs = [n for n in names if PurePosixPath(n).suffix.lower() == ".csv"]
+              for name in csvs:
+                  raw = zf.read(name)
+                  text = raw.decode("utf-8-sig", errors="replace")
+                  rows = list(csv.reader(io.StringIO(text)))
+                  print(f"CSV_AUDIT: {name} | bytes={len(raw)} | data_rows={max(0, len(rows)-1)}")
+                  if rows:
+                      print("CSV_COLUMNS:", " | ".join(rows[0]))
+                  for row in rows[1:4]:
+                      print("CSV_SAMPLE:", " | ".join(row))
+          PY
