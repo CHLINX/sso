@@ -1,0 +1,46 @@
+﻿檔案,資料列,欄位數,編碼,解析狀態,日期欄位數,事件候選數,證券代號欄,市場欄,日期欄位,來源類型
+官方或推算減資參考基準明細.csv,16.0,20.0,utf-8-sig,PASS,5,49,full_code,market_norm,trade_date|previous_trade_date|official_reduction_action_date|mops_new_share_listing_date|mops_resumption_effective_date,診斷衍生資料
+官方或推算減資參考基準明細.csv,16.0,20.0,utf-8-sig,PASS,5,49,full_code,market_norm,trade_date|previous_trade_date|official_reduction_action_date|mops_new_share_listing_date|mops_resumption_effective_date,診斷衍生資料
+官方減資重複鍵名稱差異診斷.csv,1.0,9.0,utf-8-sig,PASS,1,1,full_code,market,action_date,診斷衍生資料
+官方減資參考價重複鍵明細.csv,2.0,10.0,utf-8-sig,PASS,2,4,full_code,market,action_date|source_date_raw,診斷衍生資料
+官方減資參考價重複鍵檢查.csv,1.0,6.0,utf-8-sig,PASS,1,1,full_code,market,action_date,官方或原始名稱來源
+優先事件官方參考價與行情核對.csv,6.0,25.0,utf-8-sig,PASS,7,24,full_code,market_norm,trade_date|previous_trade_date|official_action_date|days_action_date_before_event|candidate_adjusted_return_pct|candidate_return_change_pp|source_date_raw,診斷衍生資料
+100筆事件官方減資參考價核對摘要.csv,100.0,25.0,utf-8-sig,PASS,10,255,full_code,market_norm,trade_date|previous_trade_date|matched_action_dates|nearest_action_date|rebase_candidate_count|candidate_action_date|candidate_official_pre_suspension_close|candidate_official_reference_price|candidate_adjusted_return_pct|candidate_return_change_pp,診斷衍生資料
+100筆事件與官方減資參考價日期窗關聯.csv,16.0,25.0,utf-8-sig,PASS,7,64,full_code,market_norm,trade_date|previous_trade_date|official_action_date|days_action_date_before_event|candidate_adjusted_return_pct|candidate_return_change_pp|source_date_raw,官方或原始名稱來源
+官方減資恢復交易參考價_上市.csv,289.0,12.0,utf-8-sig,PASS,2,578,full_code,market,action_date|source_date_raw,官方或原始名稱來源
+官方減資恢復交易參考價_上櫃.csv,227.0,12.0,utf-8-sig,PASS,2,454,full_code,market,action_date|source_date_raw,官方或原始名稱來源
+官方減資參考價邏輯重複鍵.csv,1.0,5.0,utf-8-sig,PASS,1,1,full_code,market,action_date,官方或原始名稱來源
+優先事件官方參考價與行情核對.csv,6.0,18.0,utf-8-sig,PASS,5,24,full_code,market_norm,trade_date|previous_trade_date|official_action_date|days_action_date_before_event|source_date_raw,診斷衍生資料
+100筆事件官方減資參考價核對摘要.csv,100.0,15.0,utf-8-sig,PASS,4,232,full_code,market_norm,trade_date|previous_trade_date|matched_action_dates|nearest_action_date,診斷衍生資料
+100筆事件與官方減資參考價日期窗關聯.csv,16.0,18.0,utf-8-sig,PASS,5,64,full_code,market_norm,trade_date|previous_trade_date|official_action_date|days_action_date_before_event|source_date_raw,官方或原始名稱來源
+官方減資恢復交易參考價_上市.csv,288.0,11.0,utf-8-sig,PASS,2,576,full_code,market,action_date|source_date_raw,官方或原始名稱來源
+官方減資恢復交易參考價_上櫃.csv,227.0,11.0,utf-8-sig,PASS,2,454,full_code,market,action_date|source_date_raw,官方或原始名稱來源
+官方減資參考價邏輯重複鍵.csv,,,,FAIL: 無法解析 CSV：所有編碼及分隔符號均失敗。,0,0,,,,
+優先事件官方參考價與行情核對.csv,,,,FAIL: 無法解析 CSV：所有編碼及分隔符號均失敗。,0,0,,,,
+100筆事件官方減資參考價核對摘要.csv,100.0,15.0,utf-8-sig,PASS,4,200,full_code,market_norm,trade_date|previous_trade_date|matched_action_dates|nearest_action_date,診斷衍生資料
+100筆事件與官方減資參考價日期窗關聯.csv,,,,FAIL: 無法解析 CSV：所有編碼及分隔符號均失敗。,0,0,,,,
+官方減資恢復交易參考價_上市.csv,2.0,11.0,utf-8-sig,PASS,2,4,full_code,market,action_date|source_date_raw,官方或原始名稱來源
+官方減資恢復交易參考價_上櫃.csv,,,,FAIL: 無法解析 CSV：所有編碼及分隔符號均失敗。,0,0,,,,
+官方公司行動參考價衝突清單.csv,0.0,8.0,utf-8-sig,成功解析CSV，但未辨識證券代號欄,0,0,,,,
+官方公司行動邏輯重複鍵明細.csv,2.0,11.0,utf-8-sig,PASS,2,4,full_code,market_norm,trade_date|official_event_date,診斷衍生資料
+官方公司行動價格差異浮點容差重分類.csv,386.0,19.0,utf-8-sig,PASS,3,1158,full_code,market_norm,trade_date|official_event_date|previous_trade_date,官方或原始名稱來源
+官方命中事件市場類型及參考價殘餘統計.csv,6.0,6.0,utf-8-sig,成功解析CSV，但未辨識證券代號欄,0,0,,,,
+官方公司行動精確命中價格基準診斷.csv,387.0,15.0,utf-8-sig,PASS,3,1161,full_code,market_norm,trade_date|official_event_date|previous_trade_date,診斷衍生資料
+官方公司行動原始欄位明細.csv,396.0,8.0,utf-8-sig,PASS,1,396,full_code,market,event_date,診斷衍生資料
+官方公司行動命中事件.csv,386.0,24.0,utf-8-sig,PASS,2,772,full_code,market_norm,trade_date|previous_trade_date,官方或原始名稱來源
+10_v449特殊公司行動排除清單.csv,1.0,24.0,utf-8-sig,PASS,1,1,證券代號,市場,v4.41來源前收日期,其他公司行動資料
+公司行動／復牌日起逐日行情明細.csv,47.0,12.0,utf-8-sig,成功解析CSV，但未辨識證券代號欄,0,0,,,,
+高優先事件公司行動時序複核.csv,17.0,27.0,utf-8-sig,PASS,9,64,full_code,,trade_date|official_reduction_action_date|old_share_last_trade_date|old_share_suspension_start_date|old_share_suspension_end_date|trading_suspension_effective_dates|new_share_listing_date|explicit_resumption_date|source_interval_start_date,其他公司行動資料
+公司行動／復牌日起逐日行情明細.csv,47.0,12.0,utf-8-sig,成功解析CSV，但未辨識證券代號欄,0,0,,,,
+明確復牌事件與首筆行情核對.csv,2.0,24.0,utf-8-sig,PASS,9,11,full_code,market_norm,trade_date|previous_trade_date|mops_resumption_effective_date|resumption_date_rows_in_timeline|resumption_date_row_status|resumption_date_volume|first_trade_after_resumption_date|first_valid_ohlc_after_resumption_date|mops_new_share_listing_date,診斷衍生資料
+MOPS關鍵公告日期與減資比例解析.csv,13.0,20.0,utf-8-sig,PASS,4,30,event_full_code,,event_trade_date|publication_date|resumption_effective_dates|new_share_listing_dates,其他公司行動資料
+100筆事件公司行動與復牌整合診斷.csv,100.0,36.0,utf-8-sig,PASS,7,222,full_code,market_norm,trade_date|previous_trade_date|mops_resumption_effective_date|mops_new_share_listing_date|first_trade_after_resumption_date|first_valid_ohlc_after_resumption_date|official_reduction_action_date,診斷衍生資料
+減資候選事件窗口逐日行情明細.csv,44.0,12.0,utf-8-sig,成功解析CSV，但未辨識證券代號欄,0,0,,,,
+減資候選恢復日至事件日基準再驗證.csv,14.0,38.0,utf-8-sig,PASS,13,56,full_code,market_norm,trade_date|previous_trade_date|official_action_date|action_date_row_count_in_timeline|action_date_row_status|action_date_volume|first_valid_ohlc_after_action_date|first_valid_ohlc_is_event_date|event_date_valid_ohlc_rows|v438_candidate_return_pct|recomputed_candidate_return_pct|v438_candidate_recalculation_matches|candidate_return_delta_pp,診斷衍生資料
+優先事件減資基準影響摘要.csv,15.0,25.0,utf-8-sig,PASS,10,50,full_code,market_norm,trade_date|previous_trade_date|matched_action_dates|nearest_action_date|rebase_candidate_count|candidate_action_date|candidate_official_pre_suspension_close|candidate_official_reference_price|candidate_adjusted_return_pct|candidate_return_change_pp,診斷衍生資料
+100筆事件減資價格基準重算候選.csv,14.0,25.0,utf-8-sig,PASS,7,56,full_code,market_norm,trade_date|previous_trade_date|official_action_date|days_action_date_before_event|candidate_adjusted_return_pct|candidate_return_change_pp|source_date_raw,診斷衍生資料
+已核實公司行動事件參數與來源.csv,12.0,7.0,utf-8-sig,PASS,1,12,full_code,exchange_ratio,event_date,其他公司行動資料
+極端報酬尚未核實公司行動清單_至少20_percent.csv,486.0,11.0,utf-8-sig,PASS,2,972,full_code,market_norm,trade_date|previous_trade_date,其他公司行動資料
+已核實公司行動報酬調整對照.csv,12.0,14.0,utf-8-sig,PASS,2,24,full_code,exchange_ratio,event_date|previous_trade_date,其他公司行動資料
+現有股票池全部公司行動事件_v2.24.csv,14845.0,30.0,utf-8-sig,PASS,2,29541,股票代號,市場,事件日期|v2.20行情表事件日前最近有效收盤日期,其他公司行動資料
+現有股票池待處理公司行動_v2.24.csv,638.0,30.0,utf-8-sig,PASS,2,1127,股票代號,市場,事件日期|v2.20行情表事件日前最近有效收盤日期,其他公司行動資料
