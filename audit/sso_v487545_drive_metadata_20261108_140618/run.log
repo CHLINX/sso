@@ -1,0 +1,20 @@
+[14:06:18] ====================================================================================================
+[14:06:18] 啟動：看股最速適 v4.87.5.45｜Google Drive 建立時間 API 故障診斷與唯讀核對
+[14:06:18] Drive 僅允許 files.get / files.list GET；不讀取任何檔案內容、不修改 Drive
+[14:06:18] [SELF-TEST] PASS：四個候選資料夾及唯讀限制已載入
+[14:06:18] Google ADC 初次取得/更新失敗：RefreshError: ("Failed to retrieve http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true from the Google Compute Engine metadata service. Status: 404 Response:\nb''", <google.auth.transport.requests._Response object at 0x7ed09d56e5d0>)
+[14:06:34] Colab 使用者授權流程完成
+[14:06:34] [AUTH] tokeninfo=PASS | scope_assessment=DRIVE_API_SCOPE_PRESENT_BUT_NOT_EXACT_METADATA_READONLY | quota_project=None
+[14:06:34] [API TEST] files.get(root)=PASS；root=我的雲端硬碟
+[14:06:34] [LIST] 查詢資料夾：SFAS_官方市場行情資料底稿_v2.8_20261027_035634
+[14:06:34] [META] SFAS_官方市場行情資料底稿_v2.8_20261027_035634 | id=1yH2-qQ4saDQ0KTjfY130nq1d6qbUQoCJ | createdTime=2026-10-26T19:57:20.231Z | modifiedTime=2026-10-26T19:57:20.231Z | files.get=PASS
+[14:06:34] [LIST] SFAS_官方市場行情資料底稿_v2.8_20261027_035634：exact_matches=1
+[14:06:34] [LIST] 查詢資料夾：SFAS_官方市場行情資料底稿_v2.8_20261029_193103
+[14:06:35] [META] SFAS_官方市場行情資料底稿_v2.8_20261029_193103 | id=129zjcIUnyEevbGgNBFDcsBe6T5VdpWBt | createdTime=2026-10-29T11:31:03.421Z | modifiedTime=2026-10-29T11:31:03.421Z | files.get=PASS
+[14:06:35] [LIST] SFAS_官方市場行情資料底稿_v2.8_20261029_193103：exact_matches=1
+[14:06:35] [LIST] 查詢資料夾：SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318
+[14:06:35] [META] SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318 | id=1L2VLFPHHycrxj9wiWU6nc0H3tGSw2dRj | createdTime=2026-10-29T12:53:18.664Z | modifiedTime=2026-10-29T12:53:18.664Z | files.get=PASS
+[14:06:35] [LIST] SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318：exact_matches=1
+[14:06:35] [LIST] 查詢資料夾：SSO_官方公司行動資料盤點_v2.17_20261027_134504
+[14:06:36] [META] SSO_官方公司行動資料盤點_v2.17_20261027_134504 | id=1bOifETz9LiF_CzrfVG89b3aIdbxm_gHf | createdTime=2026-10-27T05:45:04.037Z | modifiedTime=2026-10-27T05:45:04.037Z | files.get=PASS
+[14:06:36] [LIST] SSO_官方公司行動資料盤點_v2.17_20261027_134504：exact_matches=1

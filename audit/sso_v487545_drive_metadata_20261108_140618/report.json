@@ -1,0 +1,280 @@
+{
+  "version": "v4.87.5.45",
+  "run_time_taipei": "2026-11-08T14:06:18.628537+08:00",
+  "repository": "CHLINX/sso",
+  "drive_scope_requested": "https://www.googleapis.com/auth/drive.metadata.readonly",
+  "constraints": {
+    "drive_calls_get_only": true,
+    "drive_source_files_created_modified_deleted_moved": false,
+    "drive_file_content_downloaded": false,
+    "official_market_or_company_action_api_called": false,
+    "market_data_downloaded": false,
+    "database_updated": false,
+    "model_retrained": false,
+    "backtest_run": false,
+    "stock_selection_run": false,
+    "github_main_modified": false
+  },
+  "candidate_definitions": [
+    {
+      "group": "v2.8_official_market",
+      "folder_name": "SFAS_官方市場行情資料底稿_v2.8_20261027_035634"
+    },
+    {
+      "group": "v2.8_official_market",
+      "folder_name": "SFAS_官方市場行情資料底稿_v2.8_20261029_193103"
+    },
+    {
+      "group": "v2.8_official_market",
+      "folder_name": "SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318"
+    },
+    {
+      "group": "v2.17_company_action",
+      "folder_name": "SSO_官方公司行動資料盤點_v2.17_20261027_134504"
+    }
+  ],
+  "auth": {
+    "method": "COLAB_AUTHENTICATE_USER",
+    "project_id": "",
+    "quota_project_id": null,
+    "credential_type": "Credentials",
+    "scope_inspection": {
+      "requested_scope": "https://www.googleapis.com/auth/drive.metadata.readonly",
+      "credential_type": "Credentials",
+      "credential_scopes": [
+        "https://www.googleapis.com/auth/drive.metadata.readonly"
+      ],
+      "granted_scopes_attribute": null,
+      "tokeninfo_status": "PASS",
+      "token_scopes": [
+        "email",
+        "https://www.googleapis.com/auth/cloud-platform",
+        "https://www.googleapis.com/auth/drive",
+        "https://www.googleapis.com/auth/userinfo.email",
+        "openid"
+      ],
+      "contains_exact_metadata_readonly": false,
+      "contains_alternative_drive_scope": true,
+      "scope_assessment": "DRIVE_API_SCOPE_PRESENT_BUT_NOT_EXACT_METADATA_READONLY"
+    }
+  },
+  "drive_api_tests": {
+    "files.get_root": {
+      "status": "PASS",
+      "id": "0ABMjNkhpez1KUk9PVA",
+      "name": "我的雲端硬碟",
+      "mimeType": "application/vnd.google-apps.folder",
+      "createdTime": "2026-09-22T12:19:08.883Z"
+    }
+  },
+  "folder_results": [
+    {
+      "group": "v2.8_official_market",
+      "folder_name": "SFAS_官方市場行情資料底稿_v2.8_20261027_035634",
+      "matches": [
+        {
+          "group": "v2.8_official_market",
+          "folder_name": "SFAS_官方市場行情資料底稿_v2.8_20261027_035634",
+          "id": "1yH2-qQ4saDQ0KTjfY130nq1d6qbUQoCJ",
+          "mimeType": "application/vnd.google-apps.folder",
+          "createdTime": "2026-10-26T19:57:20.231Z",
+          "modifiedTime": "2026-10-26T19:57:20.231Z",
+          "parents": [
+            "1fecHAVqOoxce5FE9uwGqxh5szF9MRLKk"
+          ],
+          "driveId": null,
+          "webViewLink": "https://drive.google.com/drive/folders/1yH2-qQ4saDQ0KTjfY130nq1d6qbUQoCJ",
+          "metadata_get_status": "PASS",
+          "name": "SFAS_官方市場行情資料底稿_v2.8_20261027_035634",
+          "createdTime_valid": true,
+          "latest_by_createdTime": false
+        }
+      ],
+      "list_tests": [
+        {
+          "status": "PASS",
+          "query": "name = 'SFAS_官方市場行情資料底稿_v2.8_20261027_035634' and mimeType = 'application/vnd.google-apps.folder' and trashed = false",
+          "corpora": "user",
+          "pages": 1,
+          "incompleteSearch": false
+        }
+      ]
+    },
+    {
+      "group": "v2.8_official_market",
+      "folder_name": "SFAS_官方市場行情資料底稿_v2.8_20261029_193103",
+      "matches": [
+        {
+          "group": "v2.8_official_market",
+          "folder_name": "SFAS_官方市場行情資料底稿_v2.8_20261029_193103",
+          "id": "129zjcIUnyEevbGgNBFDcsBe6T5VdpWBt",
+          "mimeType": "application/vnd.google-apps.folder",
+          "createdTime": "2026-10-29T11:31:03.421Z",
+          "modifiedTime": "2026-10-29T11:31:03.421Z",
+          "parents": [
+            "1fecHAVqOoxce5FE9uwGqxh5szF9MRLKk"
+          ],
+          "driveId": null,
+          "webViewLink": "https://drive.google.com/drive/folders/129zjcIUnyEevbGgNBFDcsBe6T5VdpWBt",
+          "metadata_get_status": "PASS",
+          "name": "SFAS_官方市場行情資料底稿_v2.8_20261029_193103",
+          "createdTime_valid": true,
+          "latest_by_createdTime": false
+        }
+      ],
+      "list_tests": [
+        {
+          "status": "PASS",
+          "query": "name = 'SFAS_官方市場行情資料底稿_v2.8_20261029_193103' and mimeType = 'application/vnd.google-apps.folder' and trashed = false",
+          "corpora": "user",
+          "pages": 1,
+          "incompleteSearch": false
+        }
+      ]
+    },
+    {
+      "group": "v2.8_official_market",
+      "folder_name": "SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318",
+      "matches": [
+        {
+          "group": "v2.8_official_market",
+          "folder_name": "SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318",
+          "id": "1L2VLFPHHycrxj9wiWU6nc0H3tGSw2dRj",
+          "mimeType": "application/vnd.google-apps.folder",
+          "createdTime": "2026-10-29T12:53:18.664Z",
+          "modifiedTime": "2026-10-29T12:53:18.664Z",
+          "parents": [
+            "1fecHAVqOoxce5FE9uwGqxh5szF9MRLKk"
+          ],
+          "driveId": null,
+          "webViewLink": "https://drive.google.com/drive/folders/1L2VLFPHHycrxj9wiWU6nc0H3tGSw2dRj",
+          "metadata_get_status": "PASS",
+          "name": "SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318",
+          "createdTime_valid": true,
+          "latest_by_createdTime": true
+        }
+      ],
+      "list_tests": [
+        {
+          "status": "PASS",
+          "query": "name = 'SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318' and mimeType = 'application/vnd.google-apps.folder' and trashed = false",
+          "corpora": "user",
+          "pages": 1,
+          "incompleteSearch": false
+        }
+      ]
+    },
+    {
+      "group": "v2.17_company_action",
+      "folder_name": "SSO_官方公司行動資料盤點_v2.17_20261027_134504",
+      "matches": [
+        {
+          "group": "v2.17_company_action",
+          "folder_name": "SSO_官方公司行動資料盤點_v2.17_20261027_134504",
+          "id": "1bOifETz9LiF_CzrfVG89b3aIdbxm_gHf",
+          "mimeType": "application/vnd.google-apps.folder",
+          "createdTime": "2026-10-27T05:45:04.037Z",
+          "modifiedTime": "2026-10-27T05:45:04.037Z",
+          "parents": [
+            "1fecHAVqOoxce5FE9uwGqxh5szF9MRLKk"
+          ],
+          "driveId": null,
+          "webViewLink": "https://drive.google.com/drive/folders/1bOifETz9LiF_CzrfVG89b3aIdbxm_gHf",
+          "metadata_get_status": "PASS",
+          "name": "SSO_官方公司行動資料盤點_v2.17_20261027_134504",
+          "createdTime_valid": true,
+          "latest_by_createdTime": true
+        }
+      ],
+      "list_tests": [
+        {
+          "status": "PASS",
+          "query": "name = 'SSO_官方公司行動資料盤點_v2.17_20261027_134504' and mimeType = 'application/vnd.google-apps.folder' and trashed = false",
+          "corpora": "user",
+          "pages": 1,
+          "incompleteSearch": false
+        }
+      ]
+    }
+  ],
+  "group_summary": {
+    "v2.17_company_action": {
+      "expected_candidate_names": [
+        "SSO_官方公司行動資料盤點_v2.17_20261027_134504"
+      ],
+      "candidate_name_count": 1,
+      "matched_folder_count": 1,
+      "each_name_has_exactly_one_match": true,
+      "all_createdTime_available": true,
+      "all_files_get_pass": true,
+      "sorted_by_createdTime_desc": [
+        {
+          "folder_name": "SSO_官方公司行動資料盤點_v2.17_20261027_134504",
+          "id": "1bOifETz9LiF_CzrfVG89b3aIdbxm_gHf",
+          "createdTime": "2026-10-27T05:45:04.037Z"
+        }
+      ],
+      "master_selected": false
+    },
+    "v2.8_official_market": {
+      "expected_candidate_names": [
+        "SFAS_官方市場行情資料底稿_v2.8_20261027_035634",
+        "SFAS_官方市場行情資料底稿_v2.8_20261029_193103",
+        "SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318"
+      ],
+      "candidate_name_count": 3,
+      "matched_folder_count": 3,
+      "each_name_has_exactly_one_match": true,
+      "all_createdTime_available": true,
+      "all_files_get_pass": true,
+      "sorted_by_createdTime_desc": [
+        {
+          "folder_name": "SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318",
+          "id": "1L2VLFPHHycrxj9wiWU6nc0H3tGSw2dRj",
+          "createdTime": "2026-10-29T12:53:18.664Z"
+        },
+        {
+          "folder_name": "SFAS_官方市場行情資料底稿_v2.8_20261029_193103",
+          "id": "129zjcIUnyEevbGgNBFDcsBe6T5VdpWBt",
+          "createdTime": "2026-10-29T11:31:03.421Z"
+        },
+        {
+          "folder_name": "SFAS_官方市場行情資料底稿_v2.8_20261027_035634",
+          "id": "1yH2-qQ4saDQ0KTjfY130nq1d6qbUQoCJ",
+          "createdTime": "2026-10-26T19:57:20.231Z"
+        }
+      ],
+      "master_selected": false
+    }
+  },
+  "overall_status": "PASS_ALL_FOUR_CREATEDTIME_VERIFIED",
+  "run_time_finished_taipei": "2026-11-08T14:06:36.093102+08:00",
+  "log": [
+    "[14:06:18] ====================================================================================================",
+    "[14:06:18] 啟動：看股最速適 v4.87.5.45｜Google Drive 建立時間 API 故障診斷與唯讀核對",
+    "[14:06:18] Drive 僅允許 files.get / files.list GET；不讀取任何檔案內容、不修改 Drive",
+    "[14:06:18] [SELF-TEST] PASS：四個候選資料夾及唯讀限制已載入",
+    "[14:06:18] Google ADC 初次取得/更新失敗：RefreshError: (\"Failed to retrieve http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/?recursive=true from the Google Compute Engine metadata service. Status: 404 Response:\\nb''\", <google.auth.transport.requests._Response object at 0x7ed09d56e5d0>)",
+    "[14:06:34] Colab 使用者授權流程完成",
+    "[14:06:34] [AUTH] tokeninfo=PASS | scope_assessment=DRIVE_API_SCOPE_PRESENT_BUT_NOT_EXACT_METADATA_READONLY | quota_project=None",
+    "[14:06:34] [API TEST] files.get(root)=PASS；root=我的雲端硬碟",
+    "[14:06:34] [LIST] 查詢資料夾：SFAS_官方市場行情資料底稿_v2.8_20261027_035634",
+    "[14:06:34] [META] SFAS_官方市場行情資料底稿_v2.8_20261027_035634 | id=1yH2-qQ4saDQ0KTjfY130nq1d6qbUQoCJ | createdTime=2026-10-26T19:57:20.231Z | modifiedTime=2026-10-26T19:57:20.231Z | files.get=PASS",
+    "[14:06:34] [LIST] SFAS_官方市場行情資料底稿_v2.8_20261027_035634：exact_matches=1",
+    "[14:06:34] [LIST] 查詢資料夾：SFAS_官方市場行情資料底稿_v2.8_20261029_193103",
+    "[14:06:35] [META] SFAS_官方市場行情資料底稿_v2.8_20261029_193103 | id=129zjcIUnyEevbGgNBFDcsBe6T5VdpWBt | createdTime=2026-10-29T11:31:03.421Z | modifiedTime=2026-10-29T11:31:03.421Z | files.get=PASS",
+    "[14:06:35] [LIST] SFAS_官方市場行情資料底稿_v2.8_20261029_193103：exact_matches=1",
+    "[14:06:35] [LIST] 查詢資料夾：SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318",
+    "[14:06:35] [META] SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318 | id=1L2VLFPHHycrxj9wiWU6nc0H3tGSw2dRj | createdTime=2026-10-29T12:53:18.664Z | modifiedTime=2026-10-29T12:53:18.664Z | files.get=PASS",
+    "[14:06:35] [LIST] SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318：exact_matches=1",
+    "[14:06:35] [LIST] 查詢資料夾：SSO_官方公司行動資料盤點_v2.17_20261027_134504",
+    "[14:06:36] [META] SSO_官方公司行動資料盤點_v2.17_20261027_134504 | id=1bOifETz9LiF_CzrfVG89b3aIdbxm_gHf | createdTime=2026-10-27T05:45:04.037Z | modifiedTime=2026-10-27T05:45:04.037Z | files.get=PASS",
+    "[14:06:36] [LIST] SSO_官方公司行動資料盤點_v2.17_20261027_134504：exact_matches=1"
+  ],
+  "artifacts": {
+    "output_dir": "/content/SSO_v4.87.5.45_GoogleDriveMetadata_Diagnostics_20261108_140618",
+    "zip_path": "/content/SSO_v4.87.5.45_GoogleDriveMetadata_Diagnostics_20261108_140618/SSO_v4.87.5.45.zip",
+    "zip_bytes": 4517,
+    "zip_sha256": "9668a2426ff79fd9fb0c51bd6fcb4b15a2d9b3f64cf21235d14f82df7de3d0c7"
+  }
+}
