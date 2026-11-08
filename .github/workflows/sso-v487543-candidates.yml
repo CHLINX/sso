@@ -1,0 +1,55 @@
+name: SSO v4.87.5.43 targeted source candidate extraction
+
+on:
+  push:
+    branches:
+      - "audit/v487543-forward-source-locator-20261108_131723"
+
+permissions:
+  contents: read
+
+jobs:
+  extract-candidates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Print candidate directories and related filenames only
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, hashlib, io, json, urllib.request, zipfile
+
+          url = "https://raw.githubusercontent.com/CHLINX/sso/audit/v487543-forward-source-locator-20261108_131723/audit/sso_v487543_forward_source_locator_20261108_131724/SSO_v4.87.5.zip"
+          expected = "ffb243eea1725ea8745424be00cb8ca4556107bf6f046205ad0240006d495936"
+          req = urllib.request.Request(url, headers={"User-Agent":"SSO-v487543-targeted-read-only"})
+          with urllib.request.urlopen(req, timeout=60) as response:
+              raw = response.read()
+          digest = hashlib.sha256(raw).hexdigest()
+          if digest != expected:
+              raise RuntimeError(f"SHA256 mismatch: {digest}")
+          print(f"ARCHIVE_SHA256={digest} ZIP=PASS")
+
+          with zipfile.ZipFile(io.BytesIO(raw)) as zf:
+              if zf.testzip():
+                  raise RuntimeError("ZIP CRC failed")
+              print(f"ZIP_CRC=PASS members={len(zf.namelist())}")
+              targets = ["02_候選資料夾清單.csv", "03_精確檔名命中.csv", "04_其他相關檔名.csv"]
+              for target in targets:
+                  matches = [n for n in zf.namelist() if n.rsplit("/",1)[-1] == target]
+                  if not matches:
+                      print(f"NOT_FOUND={target}")
+                      continue
+                  name = matches[0]
+                  data = zf.read(name).decode("utf-8-sig", errors="replace")
+                  rows = list(csv.reader(io.StringIO(data)))
+                  print(f"\n===== {target} rows={max(0,len(rows)-1)} bytes={len(data.encode('utf-8'))} =====")
+                  for row in rows:
+                      print(" | ".join(row))
+              # Print only the key source paths from the path-check JSON.
+              jname = next(n for n in zf.namelist() if n.rsplit("/",1)[-1] == "05_指定路徑核對.json")
+              obj = json.loads(zf.read(jname).decode("utf-8-sig"))
+              print("\n===== PATH CHECKS =====")
+              for key, value in obj.get("path_checks", {}).items():
+                  if any(token in key.lower() for token in ("v217","v28","history","company","market")):
+                      print(key, json.dumps(value, ensure_ascii=False))
+          PY
