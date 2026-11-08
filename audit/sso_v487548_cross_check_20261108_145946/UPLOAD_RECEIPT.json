@@ -1,0 +1,17 @@
+{
+  "version": "v4.87.5.48",
+  "drive_status": "PARTIAL_ANALYSIS",
+  "zip_sha256": "e4ef69f250ae23f7ba5593b70e1867fd214697f9aa323dd74d416a1a22a0703f",
+  "zip_bytes": 25379,
+  "github": {
+    "status": "UPLOAD_PASS",
+    "branch": "audit/v487548-cross-check-20261108_145946",
+    "commit_sha": "8ec53150de50b520b4760ea2dfddbcff7f6ccf7b",
+    "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_sha_after": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_unchanged": true,
+    "branch_head_verified": true,
+    "url": "https://github.com/CHLINX/sso/tree/audit/v487548-cross-check-20261108_145946/audit/sso_v487548_cross_check_20261108_145946"
+  },
+  "drive_original_files_modified": false
+}
