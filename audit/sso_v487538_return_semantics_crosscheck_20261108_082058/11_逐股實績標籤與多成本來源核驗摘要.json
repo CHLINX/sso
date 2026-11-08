@@ -1,0 +1,97 @@
+{
+  "version": "v4.87.5.38",
+  "task": "OOS Top10逐股實際報酬標籤語意與多成本來源一致性核驗",
+  "timestamp_taipei": "2026-11-08T08:20:58.656935+08:00",
+  "status": "PASS",
+  "upstream_v535": {
+    "manifest": "PASS",
+    "sources_read_successfully": 27,
+    "sources_read_error": 0,
+    "six_gates_exact_reconciled": false
+  },
+  "source_rows": {
+    "top10_candidates": 27600,
+    "individual_realized_return": 27600,
+    "multi_cost_expanded": 331200,
+    "multi_cost_invalid_natural_key_rows": 0
+  },
+  "source_sha256": {
+    "top10": "463af7ad63b9b7b1553a59115c0f377c7791cd4fc3d4199d05bbc41ee68b40bc",
+    "individual_return": "6dd75120067fa23cbfe718f3f6222063d4b60f1d4c14eb8263a506a86091422f",
+    "multi_cost": "429025caa45e1742c42cd1d0704df2b48da0d6331dacbf1b14d64cef3ed94817"
+  },
+  "natural_key": {
+    "top10_unique": 27600,
+    "individual_return_unique": 27600,
+    "top10_and_return_key_sets_equal": true,
+    "base_cost_unique_keys": 27600,
+    "detail_keys_missing_from_base_cost": 0,
+    "extra_base_cost_keys": 0
+  },
+  "multi_cost": {
+    "scenario_values": [
+      "一般股票基準成本",
+      "壓力成本"
+    ],
+    "selected_base_scenario": "一般股票基準成本",
+    "scenario_row_counts": {
+      "一般股票基準成本": 165600,
+      "壓力成本": 165600
+    },
+    "base_cost_rows_per_natural_key": {
+      "6": 27600
+    },
+    "base_cost_nonkey_signature_count_distribution": {
+      "6": 27600
+    },
+    "base_cost_keys_with_multiple_distinct_net_values": 0,
+    "base_cost_keys_with_multiple_distinct_gross_values": 0
+  },
+  "actual_net_consistency": {
+    "detail_numeric_rows": 27546,
+    "detail_missing_rows": 54,
+    "compared_keys": 27546,
+    "any_matching_value_keys": 27546,
+    "unique_value_exact_matching_keys": 27546,
+    "any_match_rate": 1.0,
+    "unique_exact_match_rate": 1.0,
+    "detail_numeric_but_multi_cost_missing": 0,
+    "detail_value_not_found_in_multi_cost": 0,
+    "detail_missing_but_multi_cost_has_numeric_value": 6
+  },
+  "actual_gross_consistency": {
+    "detail_numeric_rows": 27546,
+    "compared_keys": 27546,
+    "any_matching_value_keys": 27546,
+    "unique_value_exact_matching_keys": 27546,
+    "any_match_rate": 1.0,
+    "unique_exact_match_rate": 1.0
+  },
+  "gross_net_relationship": {
+    "毛淨均有數值筆數": 27546,
+    "毛淨差額平均_毛減淨": 0.007834163857046253,
+    "毛淨差額中位數_毛減淨": 0.007796152371043419,
+    "毛淨差額P01": 0.006620485236463036,
+    "毛淨差額P99": 0.009593572789877144,
+    "淨報酬高於毛報酬筆數": 0,
+    "毛淨相同筆數": 0,
+    "淨報酬缺值但毛報酬有值": 0,
+    "淨報酬有值但毛報酬缺值": 0,
+    "判讀": "毛減淨差額僅作數值關係檢查；未確認欄位定義及成本公式前，不將差額直接視為交易成本率。"
+  },
+  "overall_assessment": "NUMERIC_NET_VALUES_MATCH_BUT_MISSINGNESS_OR_EXTRA_DIMENSION_REMAINS",
+  "limitations": [
+    "多成本表與獨立逐股實績表可能源自同一 v2.51 計算流程；一致性只能證明輸出間一致，不能取代原始行情價格及成本公式的獨立重算。",
+    "若同一自然鍵在一般基準成本下仍有多列且存在多個不同淨／毛報酬值，不可任意挑一列，須追查額外維度語意。",
+    "54 筆實績表淨報酬缺值不補值、不當作虧損；另表有數值時僅列來源不一致待查。",
+    "所有結論僅適用歷史每日 Top10 子集，不代表完整 Gate 全市場母體。"
+  ],
+  "no_retraining": true,
+  "no_new_backtest": true,
+  "no_market_rescan": true,
+  "no_factor_recalculation": true,
+  "no_formula_changes": true,
+  "no_gate_threshold_changes": true,
+  "source_read_only": true,
+  "github_main_modified": false
+}
