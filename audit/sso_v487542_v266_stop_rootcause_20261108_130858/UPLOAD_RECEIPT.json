@@ -1,0 +1,22 @@
+{
+  "version": "v4.87.5.42",
+  "repository": "CHLINX/sso",
+  "branch": "audit/v487542-v266-stop-rootcause-20261108_130857",
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "zip_path": "audit/sso_v487542_v266_stop_rootcause_20261108_130858/SSO_v4.87.5.zip",
+  "zip_bytes": 17100,
+  "zip_sha256": "c429b79150f5c1a8b8cad5c0e6d8a044f55ef6a1673e5da975cd7a6d8aeb8761",
+  "expected_git_blob_sha": "c93df6e70a775bcef869de6119627e5d82d90bf2",
+  "uploaded_blob_sha": "c93df6e70a775bcef869de6119627e5d82d90bf2",
+  "run_time_taipei": "2026-11-08T13:08:57+08:00",
+  "constraints": {
+    "drive_source_read_only": true,
+    "ledger_modified": false,
+    "v263_or_v264_executed": false,
+    "market_data_downloaded": false,
+    "official_api_called": false,
+    "model_retrained": false,
+    "backtest_run": false,
+    "stock_selection_run": false
+  }
+}
