@@ -1,0 +1,55 @@
+name: SSO v4.87.5.100 Python source recheck
+
+on:
+  push:
+    branches:
+      - audit/v4875100-python-recheck-20261108
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout read-only main data
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: source
+      - name: Inspect v2.51 source ZIP members and schemas
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, io, json, zipfile
+          from pathlib import Path
+
+          zip_path = Path("source/SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip")
+          if not zip_path.is_file():
+              raise FileNotFoundError(zip_path)
+          print(f"SOURCE_ZIP={zip_path.name} bytes={zip_path.stat().st_size}")
+          hints = ("歷史樣本外每日10檔候選", "前10檔候選個股獨立樣本外明細",
+                   "獲利機率校準逐訊號日", "個股評估逐筆資料_多成本情境",
+                   "預測排序能力逐訊號日")
+          with zipfile.ZipFile(zip_path) as z:
+              infos = z.infolist()
+              print(f"ZIP_MEMBERS={len(infos)}")
+              selected = [i for i in infos if i.filename.lower().endswith(".csv")
+                          and any(h in Path(i.filename).name for h in hints)]
+              for info in selected:
+                  print(f"MEMBER={info.filename} compressed={info.compress_size} uncompressed={info.file_size}")
+                  raw = z.open(info, "r")
+                  # The historical export is expected to be UTF-8 with BOM; try cp950 if needed.
+                  text = io.TextIOWrapper(raw, encoding="utf-8-sig", errors="replace", newline="")
+                  reader = csv.DictReader(text)
+                  print("COLUMNS=" + json.dumps(reader.fieldnames or [], ensure_ascii=False))
+                  for k, row in enumerate(reader):
+                      if k < 2:
+                          sample = {key: (str(value)[:120] if value is not None else None)
+                                    for key, value in row.items()}
+                          print("SAMPLE=" + json.dumps(sample, ensure_ascii=False))
+                      if k >= 1:
+                          break
+                  text.close()
+          PY
