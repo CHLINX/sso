@@ -1,0 +1,215 @@
+{
+  "version": "v4.87.5.39",
+  "task": "OOS Top10 54筆淨報酬缺值根因線索與一般成本六維度拆解",
+  "timestamp_taipei": "2026-11-08T08:28:10.701776+08:00",
+  "status": "PASS",
+  "upstream_v535": {
+    "manifest": "PASS",
+    "sources_read_successfully": 27,
+    "sources_read_error": 0,
+    "six_gates_exact_reconciled": false
+  },
+  "sources": {
+    "top10_rows": 27600,
+    "detail_rows": 27600,
+    "multicost_rows": 331200,
+    "top10_sha256": "463af7ad63b9b7b1553a59115c0f377c7791cd4fc3d4199d05bbc41ee68b40bc",
+    "detail_sha256": "6dd75120067fa23cbfe718f3f6222063d4b60f1d4c14eb8263a506a86091422f",
+    "multicost_sha256": "429025caa45e1742c42cd1d0704df2b48da0d6331dacbf1b14d64cef3ed94817",
+    "all_source_hashes_pinned": true
+  },
+  "base_cost_dimensions": {
+    "交易模式欄位": "交易模式",
+    "區段口徑欄位": "區段口徑",
+    "交易模式種類數": 3,
+    "交易模式值": [
+      "前10名候選逐檔評估",
+      "只交易符合獲利條件",
+      "只交易高潛力"
+    ],
+    "區段口徑種類數": 2,
+    "區段口徑值": [
+      "僅同區段",
+      "含跨區段"
+    ],
+    "是否完整3乘2笛卡兒組合": true,
+    "組合數": 6,
+    "每個組合是否均覆蓋27600自然鍵": true,
+    "每個自然鍵是否恰有6列且6種組合": true
+  },
+  "dimension_combinations": [
+    {
+      "交易模式": "前10名候選逐檔評估",
+      "區段口徑": "僅同區段",
+      "列數": 27600,
+      "自然鍵數": 27600,
+      "淨報酬數值列數": 27546,
+      "有淨報酬數值自然鍵數": 27546,
+      "淨報酬數值列率": 0.9980434782608696
+    },
+    {
+      "交易模式": "前10名候選逐檔評估",
+      "區段口徑": "含跨區段",
+      "列數": 27600,
+      "自然鍵數": 27600,
+      "淨報酬數值列數": 27552,
+      "有淨報酬數值自然鍵數": 27552,
+      "淨報酬數值列率": 0.9982608695652174
+    },
+    {
+      "交易模式": "只交易符合獲利條件",
+      "區段口徑": "僅同區段",
+      "列數": 27600,
+      "自然鍵數": 27600,
+      "淨報酬數值列數": 0,
+      "有淨報酬數值自然鍵數": 0,
+      "淨報酬數值列率": 0.0
+    },
+    {
+      "交易模式": "只交易符合獲利條件",
+      "區段口徑": "含跨區段",
+      "列數": 27600,
+      "自然鍵數": 27600,
+      "淨報酬數值列數": 0,
+      "有淨報酬數值自然鍵數": 0,
+      "淨報酬數值列率": 0.0
+    },
+    {
+      "交易模式": "只交易高潛力",
+      "區段口徑": "僅同區段",
+      "列數": 27600,
+      "自然鍵數": 27600,
+      "淨報酬數值列數": 0,
+      "有淨報酬數值自然鍵數": 0,
+      "淨報酬數值列率": 0.0
+    },
+    {
+      "交易模式": "只交易高潛力",
+      "區段口徑": "含跨區段",
+      "列數": 27600,
+      "自然鍵數": 27600,
+      "淨報酬數值列數": 0,
+      "有淨報酬數值自然鍵數": 0,
+      "淨報酬數值列率": 0.0
+    }
+  ],
+  "per_key_structure_distribution": {
+    "rows_per_key": {
+      "6": 27600
+    },
+    "unique_mode_segment_combinations_per_key": {
+      "6": 27600
+    }
+  },
+  "detail_net_missingness": {
+    "numeric_keys": 27546,
+    "missing_keys": 54,
+    "missing_by_H": {
+      "1": 20,
+      "3": 15,
+      "5": 10,
+      "10": 9
+    },
+    "missing_but_multicost_has_numeric": 6,
+    "missing_but_multicost_has_numeric_by_H": {
+      "3": 1,
+      "5": 2,
+      "10": 3
+    },
+    "missing_key_list": [
+      [
+        "2603",
+        "2022-06-24",
+        3
+      ],
+      [
+        "1325",
+        "2020-07-09",
+        5
+      ],
+      [
+        "2603",
+        "2022-06-27",
+        5
+      ],
+      [
+        "1325",
+        "2020-07-09",
+        10
+      ],
+      [
+        "3308",
+        "2021-12-22",
+        10
+      ],
+      [
+        "2603",
+        "2022-06-27",
+        10
+      ]
+    ]
+  },
+  "six_scenario_net_coverage_per_key": [
+    {
+      "每自然鍵多成本淨報酬數值列數": 0,
+      "自然鍵數": 48
+    },
+    {
+      "每自然鍵多成本淨報酬數值列數": 1,
+      "自然鍵數": 6
+    },
+    {
+      "每自然鍵多成本淨報酬數值列數": 2,
+      "自然鍵數": 27546
+    }
+  ],
+  "unique_net_values_per_key": [
+    {
+      "每自然鍵多成本淨報酬不同值數": 0,
+      "自然鍵數": 48
+    },
+    {
+      "每自然鍵多成本淨報酬不同值數": 1,
+      "自然鍵數": 27552
+    }
+  ],
+  "numeric_reconciliation": {
+    "numeric_detail_keys": 27546,
+    "matching_keys": 27546,
+    "mismatch_keys": 0,
+    "detail_numeric_without_any_multicost_net": 0,
+    "numeric_match_rate": 1.0
+  },
+  "source_code_lookup": {
+    "scope": "僅含多成本CSV的同一個來源ZIP；不掃描其他Drive路徑、不執行程式",
+    "archive_path": "/content/drive/MyDrive/看股最速適/緊急備份/睡前備份_20261028_181527/結果ZIP/SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip",
+    "members": 38,
+    "code_or_text_candidates": 4,
+    "keyword_excerpts": 135,
+    "errors": []
+  },
+  "interpretation": {
+    "six_combinations_verified_as_3x2": true,
+    "six rows are dimension scenarios, not six independent samples": true,
+    "missing_values_filled": false,
+    "missing_values_treated_as_losses": false,
+    "formula_semantics_proven_from_source_code": false,
+    "note": "六種組合的欄位名稱只提供維度線索；若ZIP未含可核對的生成程式，不能據此推論每個情境的實際交易邏輯或淨報酬應否非空。"
+  },
+  "restrictions": {
+    "no_market_rescan": true,
+    "no_factor_recalculation": true,
+    "no_retraining": true,
+    "no_new_backtest": true,
+    "no_formula_changes": true,
+    "no_gate_threshold_changes": true,
+    "source_read_only": true,
+    "github_main_modified": false
+  },
+  "conclusions": {
+    "dimension_structure_complete": true,
+    "numeric_reconciliation_pass": true,
+    "missingness_resolved": false,
+    "full_gate_population_rebuilt": false
+  }
+}
