@@ -207998,5 +207998,13 @@
     "backtest": false,
     "stock_selection": false,
     "github_main_modified": false
+  },
+  "github": {
+    "branch": "audit/v4875107-source-audit-20261108_235612",
+    "folder": "audit/sso_v4875107_source_audit_20261108_235612",
+    "main_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_after": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_unchanged": true,
+    "report_url": "https://github.com/CHLINX/sso/tree/audit/v4875107-source-audit-20261108_235612/audit/sso_v4875107_source_audit_20261108_235612"
   }
 }
