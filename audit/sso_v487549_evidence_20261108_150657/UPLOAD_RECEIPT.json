@@ -1,0 +1,19 @@
+{
+  "version": "v4.87.5.49",
+  "overall_status": "PASS_ANALYSIS",
+  "total_bytes_read": 24378099,
+  "zip_bytes": 24915,
+  "zip_sha256": "83c00d8dea0c1db4b0473e74e36692427ec23ea6cb583eca50e7c5f0e3bb127b",
+  "github": {
+    "status": "UPLOAD_PASS",
+    "branch": "audit/v487549-evidence-20261108_150657",
+    "path": "audit/sso_v487549_evidence_20261108_150657",
+    "commit_sha": "4e0ed5db1cda9295ef02a2ee55094cc956529975",
+    "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_sha_after": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_unchanged": true,
+    "branch_head_verified": true,
+    "url": "https://github.com/CHLINX/sso/tree/audit/v487549-evidence-20261108_150657/audit/sso_v487549_evidence_20261108_150657"
+  },
+  "drive_original_files_modified": false
+}
