@@ -1,0 +1,69 @@
+{
+  "version": "v4.87.5.36.1",
+  "task": "OOS Top10歷史入選逐股實績與原始機率區間精確配對評估｜manifest命名相容與日區塊Bootstrap修正",
+  "timestamp_taipei": "2026-11-08T08:04:20.265206+08:00",
+  "status": "PASS",
+  "upstream_v535": {
+    "manifest": "PASS",
+    "sources_read_successfully": 27,
+    "sources_read_error": 0,
+    "gate_status_field": "six_gates_exact_reconciled",
+    "six_gates_exact_reconciled": false
+  },
+  "source_tables": {
+    "top10_probability_source": {
+      "name": "歷史樣本外每日10檔候選_v2.51停用量能.csv",
+      "sha256": "463af7ad63b9b7b1553a59115c0f377c7791cd4fc3d4199d05bbc41ee68b40bc",
+      "rows": 27600,
+      "keys": 27600,
+      "bucket_column": "歷史同機率區間"
+    },
+    "individual_realized_return_source": {
+      "name": "前10檔候選個股獨立樣本外明細_v2.51停用量能.csv",
+      "sha256": "6dd75120067fa23cbfe718f3f6222063d4b60f1d4c14eb8263a506a86091422f",
+      "raw_rows": 27600,
+      "kept_rows": 27600,
+      "keys": 27600,
+      "actual_net_column": "實際淨報酬",
+      "cost_policy": "SINGLE_SCENARIO:一般股票基準成本"
+    }
+  },
+  "pairing": {
+    "matched_natural_keys": 27600,
+    "candidate_keys_without_return_row": 0,
+    "return_keys_not_in_top10": 0,
+    "paired_rows": 27600,
+    "numeric_actual_net_return_rows": 27546,
+    "missing_actual_net_return_rows": 54,
+    "predicted_and_actual_numeric_pairs": 27546
+  },
+  "bootstrap": {
+    "method": "circular_moving_block_bootstrap",
+    "repetitions": 1000,
+    "block_length_rule": "ceil(n^(1/3)), bounded to [2,n]",
+    "daily_series_sorted_chronologically": true
+  },
+  "gate_boundary": {
+    "full_gate_population_rebuilt": false,
+    "reason": "原始機率區間來源是歷史每日Top10子集；逐股實績來源可與該Top10子集自然鍵配對，但不能補出Top10以外的Gate個股母體。",
+    "not_allowed_interpretations": [
+      "不得將Top10子集的績效稱為全市場Gate績效",
+      "不得將Top10子集的勝率回填為Gate的樣本勝率",
+      "不得以Top10子集推論完整Gate內所有個股的貢獻或集中度",
+      "不得把缺失的54筆實際淨報酬當作虧損或零報酬"
+    ],
+    "allowed_interpretations": [
+      "可描述模型實際選出的歷史Top10子集之已觀察實際報酬",
+      "可按H及原始機率區間比較Top10子集內的表現",
+      "可檢查預測淨報酬排序與實際淨報酬的樣本內相關性"
+    ]
+  },
+  "retraining": false,
+  "new_backtest": false,
+  "market_rescan": false,
+  "factor_recalculation": false,
+  "research_formulas_changed": false,
+  "formal_gate_thresholds_changed": false,
+  "source_read_only": true,
+  "github_main_modified": false
+}
