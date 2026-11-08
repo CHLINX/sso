@@ -1,0 +1,173 @@
+
+====================================================================================================
+來源ZIP：官方行情備份_第0001-0500交易日_20160101_20180123.zip
+ZIP內路徑：官方行情分段.csv.gz
+大小：19,659,342
+無法直接解碼為文字
+HEX：1f8b0800bf48e36a02ffecbd6b6f5d49
+
+
+====================================================================================================
+來源ZIP：官方行情備份_第0001-0500交易日_20160101_20180123.zip
+ZIP內路徑：官方行情分段.csv.gz [GZIP解壓內容]
+大小：576,723,495
+編碼：utf-8-sig
+日期命中：{"2017-02-18": 1, "2017-06-03": 0, "2017-09-30": 0, "2018-03-31": 0, "2018-12-22": 0}
+CSV欄位：['日期', '市場', '股票代號', '官方名稱', '開盤', '最高', '最低', '收盤', '成交量', '資料源', '查詢網址', '查詢時間', '回應SHA256', '官方原始回應檔', '使用端點', '官方資料表名稱', '官方欄位']
+內容預覽：
+日期,市場,股票代號,官方名稱,開盤,最高,最低,收盤,成交量,資料源,查詢網址,查詢時間,回應SHA256,官方原始回應檔,使用端點,官方資料表名稱,官方欄位
+2016-01-04,TPEx,1256,F-鮮活,136.0,136.0,133.0,133.0,18000.0,TPEx 官方每日市場行情,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F04&type=EW&response=json,2026-10-29T20:54:20+08:00,b8ea716d4ca5cac0399cec0f5d2d23e423ffa8b79ef5e086d6e24a463154ab27,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20160104.json,TPEX_DAILY_JSON,上櫃股票每日收盤行情(不含定價),"[""代號"", ""名稱"", ""收盤"", ""漲跌"", ""開盤"", ""最高"", ""最低"", ""成交股數"", ""成交金額(元)"", ""成交筆數"", ""最後買價"", ""最後賣價"", ""發行股數"", ""次日漲停價"", ""次日跌停價""]"
+2016-01-04,TPEx,1259,安心,72.0,72.1,71.5,72.1,12000.0,TPEx 官方每日市場行情,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F04&type=EW&response=json,2026-10-29T20:54:20+08:00,b8ea716d4ca5cac0399cec0f5d2d23e423ffa8b79ef5e086d6e24a463154ab27,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20160104.json,TPEX_DAILY_JSON,上櫃股票每日收盤行情(不含定價),"[""代號"", ""名稱"", ""收盤"", ""漲跌"", ""開盤"", ""最高"", ""最低"", ""成交股數"", ""成交金額(元)"", ""成交筆數"", ""最後買價"", ""最後賣價"", ""發行股數"", ""次日漲停價"", ""次日跌停價""]"
+2016-01-04,TPEx,1264,德麥,181.5,181.5,178.0,181.0,73000.0,TPEx 官方每日市場行情,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F04&type=EW&response=json,2026-10-29T20:54:20+08:00,b8ea716d4ca5cac0399cec0f5d2d23e423ffa8b79ef5e086d6e24a463154ab27,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20160104.json,TPEX_DAILY_JSON,上櫃股票每日收盤行情(不含定價),"[""代號"", ""名稱"", ""收盤"", ""漲跌"", ""開盤"", ""最高"", ""最低"", ""成交股數"", ""成交金額(元)"", ""成交筆數"", ""最後買價"", ""最後賣價"", ""發行股數"", ""次日漲停價"", ""次日跌停價""]"
+2016-01-04,TPEx,1336,台翰,8.22,8.39,8.07,8.07,65000.0,TPEx 官方每日市場行情,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F04&type=EW&response=json,2026-10-29T20:54:20+08:00,b8ea716d4ca5cac0399cec0f5d2d23e423ffa8b79ef5e086d6e24a463154ab27,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20160104.json,TPEX_DAILY_JSON,上櫃股票每日收盤行情(不含定價),"[""代號"", ""名稱"", ""收盤"", ""漲跌"", ""開盤"", ""最高"", ""最低"", ""成交股數"", ""成交金額(元)"", ""成交筆數"", ""最後買價"", ""最後賣價"", ""發行股數"", ""次日漲停價"", ""次日跌停價""]"
+2016-01-04,TPEx,1565,精華,665.0,665.0,642.0,651.0,303000.0,TPEx 官方每日市場行情,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F04&type=EW&response=json,2026-10-29T20:54:20+08:00,b8ea716d4ca5cac0399cec0f5d2d23e423ffa8b79ef5e086d6e24a463154ab27,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官
+CSV預覽：
+        日期   市場 股票代號 官方名稱    開盤    最高    最低    收盤     成交量           資料源                                                                                         查詢網址                      查詢時間                                                         回應SHA256                                                                                        官方原始回應檔            使用端點          官方資料表名稱                                                                                                            官方欄位
+2016-01-04 TPEx 1256 F-鮮活 136.0 136.0 133.0 133.0 18000.0 TPEx 官方每日市場行情 https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F04&type=EW&response=json 2026-10-29T20:54:20+08:00 b8ea716d4ca5cac0399cec0f5d2d23e423ffa8b79ef5e086d6e24a463154ab27 /content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20160104.json TPEX_DAILY_JSON 上櫃股票每日收盤行情(不含定價) ["代號", "名稱", "收盤", "漲跌", "開盤", "最高", "最低", "成交股數", "成交金額(元)", "成交筆數", "最後買價", "最後賣價", "發行股數", "次日漲停價", "次日跌停價"]
+2016-01-04 TPEx 1259   安心  72.0  72.1  71.5  72.1 12000.0 TPEx 官方每日市場行情 https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F04&type=EW&response=json 2026-10-29T20:54:20+08:00 b8ea716d4ca5cac0399cec0f5d2d23e423ffa8b79ef5e086d6e24a463154ab27 /content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20160104.json TPEX_DAILY_JSON 上櫃股票每日收盤行情(不含定價) ["代號", "名稱", "收盤", "漲跌", "開盤", "最高", "最低", "成交股數", "成交金額(元)", "成交筆數", "最後買價", "最後賣價", "發行股數", "次日漲停價", "次日跌停價"]
+2016-01-04 TPEx 1264   德麥 181.5 181.5 178.0 181.0 73000.0 TPEx 官方每日市場行情 https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F04&type=EW&response=json 2026-10-29T20:54:20+08:00 b8ea716d4ca5cac0399cec0f5d2d23e423ffa8b79ef5e086d6e24a463154ab27 /content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20160104.json TPEX_DAILY_JSON 上櫃股票每日收盤行情(不含定價) ["代號", "名稱", "收盤", "漲跌", "開盤", "最高", "最低", "成交股數", "成交金額(元)", "成交筆數", "最後買價", "最後賣價", "發行股數", "次日漲停價", "次日跌停價"]
+
+
+====================================================================================================
+來源ZIP：官方行情備份_第0001-0500交易日_20160101_20180123.zip
+ZIP內路徑：區間官方查詢紀錄.csv
+大小：512,207
+編碼：utf-8-sig
+日期命中：{"2017-02-18": 0, "2017-06-03": 0, "2017-09-30": 0, "2018-03-31": 0, "2018-12-22": 0}
+CSV欄位：['日期', '市場', 'HTTP狀態碼', 'API狀態', '查詢狀態', '市場池命中列數', '解析資料表數', '查詢網址', '實際回應網址', '使用端點', '原始回應檔', '回應SHA256', '回應位元組數', '查詢時間', '使用快取', '錯誤']
+內容預覽：
+日期,市場,HTTP狀態碼,API狀態,查詢狀態,市場池命中列數,解析資料表數,查詢網址,實際回應網址,使用端點,原始回應檔,回應SHA256,回應位元組數,查詢時間,使用快取,錯誤
+2016-01-01,TPEx,200,ok,TABLE_FOUND_NO_UNIVERSE_ROWS,0,1,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F01&type=EW&response=json,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F01&type=EW&response=json,TPEX_DAILY_JSON,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20160101.json,192909fa50ac1a2063258ac36abfdef843249355d24578243edb736758229f0e,665,2026-10-29T20:54:01+08:00,否,
+2016-01-01,TWSE,200,,JSON_PARSE_ERROR,0,0,https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20160101&type=ALLBUT0999&response=json,https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20160101&type=ALLBUT0999&response=json,TWSE_LEGACY_JSON,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TWSE_20160101.json,a5691b2512d7068ab2f69df75c3ef8fbc38dc565086422b1602656895c92c652,71,2026-10-29T20:54:03+08:00,否,"HTTP 200，但無法辨識官方行情資料表（TWSE_LEGACY_JSON）：{""stat"":""很抱歉，沒有符合條件的資料!"",""type"":""ALLBUT0999""}"
+2016-01-04,TPEx,200,ok,OK,640,1,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F04&type=EW&response=json,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F04&type=EW&response=json,TPEX_DAILY_JSON,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20160104.json,b8ea716d4ca5cac0399cec0f5d2d23e423ffa8b79ef5e086d6e24a463154ab27,92164,2026-10-29T20:54:20+08:00,否,
+2016-01-04,TWSE,200,OK,OK,820,1,https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20160104&type=ALLBUT0999&response=json,https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20160104&type=ALLBUT0999&response=json,TWSE_RWD_JSON,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TWSE_20160104.json,f56b0813e7f4ec87ab54629dd386a5e96fd2d67c173889d178d092d59f8b5b3f,154240,2026-10-29T20:54:21+08:00,否,
+2016-01-05,TPEx,200,ok,OK,640,1,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F05&type=EW&response=json,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F05&type=EW&response=json,TPEX_DAILY_JSON,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20160105.json,983dc18917aecfafd1243dcb996dd22eae0b623062601acbe49bfc95ea01a1ee,92072,2026-10-29T20:54:23+08:00,否,
+2016-01-05,TWSE,200,OK,OK,821,1,https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20160105&type=ALLBUT0999&respons
+CSV預覽：
+        日期   市場 HTTP狀態碼 API狀態                         查詢狀態 市場池命中列數 解析資料表數                                                                                             查詢網址                                                                                       實際回應網址             使用端點                                                                                          原始回應檔                                                         回應SHA256 回應位元組數                      查詢時間 使用快取                                                                                    錯誤
+2016-01-01 TPEx     200    ok TABLE_FOUND_NO_UNIVERSE_ROWS       0      1     https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F01&type=EW&response=json https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F01&type=EW&response=json  TPEX_DAILY_JSON /content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20160101.json 192909fa50ac1a2063258ac36abfdef843249355d24578243edb736758229f0e    665 2026-10-29T20:54:01+08:00    否                                                                                   NaN
+2016-01-01 TWSE     200   NaN             JSON_PARSE_ERROR       0      0 https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20160101&type=ALLBUT0999&response=json  https://www.twse.com.tw/exchangeReport/MI_INDEX?date=20160101&type=ALLBUT0999&response=json TWSE_LEGACY_JSON /content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TWSE_20160101.json a5691b2512d7068ab2f69df75c3ef8fbc38dc565086422b1602656895c92c652     71 2026-10-29T20:54:03+08:00    否 HTTP 200，但無法辨識官方行情資料表（TWSE_LEGACY_JSON）：{"stat":"很抱歉，沒有符合條件的資料!","type":"ALLBUT0999"}
+2016-01-04 TPEx     200    ok                           OK     640      1     https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F04&type=EW&response=json https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2016%2F01%2F04&type=EW&response=json  TPEX_DAILY_JSON /content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20160104.json b8ea716d4ca5cac0399cec0f5d2d23e423ffa8b79ef5e086d6e24a463154ab27  92164 2026-10-29T20:54:20+08:00    否                                                                                   NaN
+
+
+====================================================================================================
+來源ZIP：官方行情備份_第0001-0500交易日_20160101_20180123.zip
+ZIP內路徑：備份說明.json
+大小：738
+編碼：utf-8-sig
+日期命中：{"2017-02-18": 0, "2017-06-03": 0, "2017-09-30": 0, "2018-03-31": 0, "2018-12-22": 0}
+CSV欄位：['{']
+內容預覽：
+{
+  "專案": "看股最速適",
+  "備份類型": "每500個已確認交易日分段備份",
+  "備份起始交易日序號": 1,
+  "備份結束交易日序號": 500,
+  "本段已確認交易日數": 500,
+  "本段交易日首日": "2016-01-04",
+  "本段交易日末日": "2018-01-23",
+  "包含查詢日曆區間": {
+    "起日": "2016-01-01",
+    "迄日": "2018-01-23",
+    "平日數": 538
+  },
+  "分段行情列數": 754621,
+  "來源": [
+    "TWSE 官方每日市場行情",
+    "TPEx 官方每日市場行情"
+  ],
+  "說明": "本 ZIP 為可還原的行情分段；所有原始官方 JSON 與 SHA256 查詢紀錄另存於 Google Drive 的官方 API 快取與總查詢紀錄。",
+  "建立時間": "2026-10-29T21:24:00+08:00"
+}
+CSV預覽：
+  {
+NaN
+NaN
+NaN
+
+
+====================================================================================================
+來源ZIP：官方行情備份_第0501-1000交易日_20180124_20200220.zip
+ZIP內路徑：官方行情分段.csv.gz
+大小：21,010,013
+無法直接解碼為文字
+HEX：1f8b0800c854e36a02ffecbd6b6f5d49
+
+
+====================================================================================================
+來源ZIP：官方行情備份_第0501-1000交易日_20180124_20200220.zip
+ZIP內路徑：官方行情分段.csv.gz [GZIP解壓內容]
+大小：617,681,390
+編碼：utf-8-sig
+日期命中：{"2017-02-18": 0, "2017-06-03": 0, "2017-09-30": 0, "2018-03-31": 0, "2018-12-22": 0}
+CSV欄位：['日期', '市場', '股票代號', '官方名稱', '開盤', '最高', '最低', '收盤', '成交量', '資料源', '查詢網址', '查詢時間', '回應SHA256', '官方原始回應檔', '使用端點', '官方資料表名稱', '官方欄位']
+內容預覽：
+日期,市場,股票代號,官方名稱,開盤,最高,最低,收盤,成交量,資料源,查詢網址,查詢時間,回應SHA256,官方原始回應檔,使用端點,官方資料表名稱,官方欄位
+2018-01-24,TPEx,1259,安心,87.6,87.7,87.5,87.5,11000.0,TPEx 官方每日市場行情,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F24&type=EW&response=json,2026-10-29T21:24:02+08:00,b55d13cf8f63abb7972b9485f1357b060aaf317d611ad3d8e329f98164f23a4b,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20180124.json,TPEX_DAILY_JSON,上櫃股票每日收盤行情(不含定價),"[""代號"", ""名稱"", ""收盤"", ""漲跌"", ""開盤"", ""最高"", ""最低"", ""成交股數"", ""成交金額(元)"", ""成交筆數"", ""最後買價"", ""最後賣價"", ""發行股數"", ""次日漲停價"", ""次日跌停價""]"
+2018-01-24,TPEx,1264,德麥,233.0,233.5,232.0,232.5,13000.0,TPEx 官方每日市場行情,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F24&type=EW&response=json,2026-10-29T21:24:02+08:00,b55d13cf8f63abb7972b9485f1357b060aaf317d611ad3d8e329f98164f23a4b,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20180124.json,TPEX_DAILY_JSON,上櫃股票每日收盤行情(不含定價),"[""代號"", ""名稱"", ""收盤"", ""漲跌"", ""開盤"", ""最高"", ""最低"", ""成交股數"", ""成交金額(元)"", ""成交筆數"", ""最後買價"", ""最後賣價"", ""發行股數"", ""次日漲停價"", ""次日跌停價""]"
+2018-01-24,TPEx,1268,漢來美食,142.5,143.0,142.5,142.5,9000.0,TPEx 官方每日市場行情,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F24&type=EW&response=json,2026-10-29T21:24:02+08:00,b55d13cf8f63abb7972b9485f1357b060aaf317d611ad3d8e329f98164f23a4b,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20180124.json,TPEX_DAILY_JSON,上櫃股票每日收盤行情(不含定價),"[""代號"", ""名稱"", ""收盤"", ""漲跌"", ""開盤"", ""最高"", ""最低"", ""成交股數"", ""成交金額(元)"", ""成交筆數"", ""最後買價"", ""最後賣價"", ""發行股數"", ""次日漲停價"", ""次日跌停價""]"
+2018-01-24,TPEx,1336,台翰,19.05,19.05,18.85,18.9,670000.0,TPEx 官方每日市場行情,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F24&type=EW&response=json,2026-10-29T21:24:02+08:00,b55d13cf8f63abb7972b9485f1357b060aaf317d611ad3d8e329f98164f23a4b,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20180124.json,TPEX_DAILY_JSON,上櫃股票每日收盤行情(不含定價),"[""代號"", ""名稱"", ""收盤"", ""漲跌"", ""開盤"", ""最高"", ""最低"", ""成交股數"", ""成交金額(元)"", ""成交筆數"", ""最後買價"", ""最後賣價"", ""發行股數"", ""次日漲停價"", ""次日跌停價""]"
+2018-01-24,TPEx,1565,精華,980.0,987.0,953.0,960.0,332000.0,TPEx 官方每日市場行情,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F24&type=EW&response=json,2026-10-29T21:24:02+08:00,b55d13cf8f63abb7972b9485f1357b060aaf317d611ad3d8e329f98164f23a4b,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFA
+CSV預覽：
+        日期   市場 股票代號 官方名稱    開盤    最高    最低    收盤     成交量           資料源                                                                                         查詢網址                      查詢時間                                                         回應SHA256                                                                                        官方原始回應檔            使用端點          官方資料表名稱                                                                                                            官方欄位
+2018-01-24 TPEx 1259   安心  87.6  87.7  87.5  87.5 11000.0 TPEx 官方每日市場行情 https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F24&type=EW&response=json 2026-10-29T21:24:02+08:00 b55d13cf8f63abb7972b9485f1357b060aaf317d611ad3d8e329f98164f23a4b /content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20180124.json TPEX_DAILY_JSON 上櫃股票每日收盤行情(不含定價) ["代號", "名稱", "收盤", "漲跌", "開盤", "最高", "最低", "成交股數", "成交金額(元)", "成交筆數", "最後買價", "最後賣價", "發行股數", "次日漲停價", "次日跌停價"]
+2018-01-24 TPEx 1264   德麥 233.0 233.5 232.0 232.5 13000.0 TPEx 官方每日市場行情 https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F24&type=EW&response=json 2026-10-29T21:24:02+08:00 b55d13cf8f63abb7972b9485f1357b060aaf317d611ad3d8e329f98164f23a4b /content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20180124.json TPEX_DAILY_JSON 上櫃股票每日收盤行情(不含定價) ["代號", "名稱", "收盤", "漲跌", "開盤", "最高", "最低", "成交股數", "成交金額(元)", "成交筆數", "最後買價", "最後賣價", "發行股數", "次日漲停價", "次日跌停價"]
+2018-01-24 TPEx 1268 漢來美食 142.5 143.0 142.5 142.5  9000.0 TPEx 官方每日市場行情 https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F24&type=EW&response=json 2026-10-29T21:24:02+08:00 b55d13cf8f63abb7972b9485f1357b060aaf317d611ad3d8e329f98164f23a4b /content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20180124.json TPEX_DAILY_JSON 上櫃股票每日收盤行情(不含定價) ["代號", "名稱", "收盤", "漲跌", "開盤", "最高", "最低", "成交股數", "成交金額(元)", "成交筆數", "最後買價", "最後賣價", "發行股數", "次日漲停價", "次日跌停價"]
+
+
+====================================================================================================
+來源ZIP：官方行情備份_第0501-1000交易日_20180124_20200220.zip
+ZIP內路徑：區間官方查詢紀錄.csv
+大小：517,170
+編碼：utf-8-sig
+日期命中：{"2017-02-18": 0, "2017-06-03": 0, "2017-09-30": 0, "2018-03-31": 0, "2018-12-22": 0}
+CSV欄位：['日期', '市場', 'HTTP狀態碼', 'API狀態', '查詢狀態', '市場池命中列數', '解析資料表數', '查詢網址', '實際回應網址', '使用端點', '原始回應檔', '回應SHA256', '回應位元組數', '查詢時間', '使用快取', '錯誤']
+內容預覽：
+日期,市場,HTTP狀態碼,API狀態,查詢狀態,市場池命中列數,解析資料表數,查詢網址,實際回應網址,使用端點,原始回應檔,回應SHA256,回應位元組數,查詢時間,使用快取,錯誤
+2018-01-24,TPEx,200,ok,OK,694,1,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F24&type=EW&response=json,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F24&type=EW&response=json,TPEX_DAILY_JSON,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20180124.json,b55d13cf8f63abb7972b9485f1357b060aaf317d611ad3d8e329f98164f23a4b,99838,2026-10-29T21:24:02+08:00,否,
+2018-01-24,TWSE,200,OK,OK,871,1,https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20180124&type=ALLBUT0999&response=json,https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20180124&type=ALLBUT0999&response=json,TWSE_RWD_JSON,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TWSE_20180124.json,c2f689d664b5efb9a246f04d9fca2e88b341126bb1cd7d0c125d8d877eccbbcc,174205,2026-10-29T21:24:03+08:00,否,
+2018-01-25,TPEx,200,ok,OK,694,1,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F25&type=EW&response=json,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F25&type=EW&response=json,TPEX_DAILY_JSON,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20180125.json,04ba2f8c6a1d27d72f3eff6a14a2ec9453b01a73aae9c39570f8c6b9e21d9597,99751,2026-10-29T21:24:05+08:00,否,
+2018-01-25,TWSE,200,OK,OK,871,1,https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20180125&type=ALLBUT0999&response=json,https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20180125&type=ALLBUT0999&response=json,TWSE_RWD_JSON,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TWSE_20180125.json,8f30bebac60d4ea9dae4a7fcb577bee2b1a80da8324adbfa6513ef79de6c8fed,174511,2026-10-29T21:24:07+08:00,否,
+2018-01-26,TPEx,200,ok,OK,694,1,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F26&type=EW&response=json,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F26&type=EW&response=json,TPEX_DAILY_JSON,/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20180126.json,6d220d094f7ccd9a3ffbdf775589b90c426f7db0a094cf5bd492d685940219c0,99595,2026-10-29T21:24:09+08:00,否,
+2018-01-26,TWSE,200,OK,OK,872,1,https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20180126&type=ALLBUT0999&response=json,https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20180126&type=ALLBUT0999&response=json,TWSE_RWD_JSON,/co
+CSV預覽：
+        日期   市場 HTTP狀態碼 API狀態 查詢狀態 市場池命中列數 解析資料表數                                                                                             查詢網址                                                                                           實際回應網址            使用端點                                                                                          原始回應檔                                                         回應SHA256 回應位元組數                      查詢時間 使用快取  錯誤
+2018-01-24 TPEx     200    ok   OK     694      1     https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F24&type=EW&response=json     https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F24&type=EW&response=json TPEX_DAILY_JSON /content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20180124.json b55d13cf8f63abb7972b9485f1357b060aaf317d611ad3d8e329f98164f23a4b  99838 2026-10-29T21:24:02+08:00    否 NaN
+2018-01-24 TWSE     200    OK   OK     871      1 https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20180124&type=ALLBUT0999&response=json https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20180124&type=ALLBUT0999&response=json   TWSE_RWD_JSON /content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TWSE_20180124.json c2f689d664b5efb9a246f04d9fca2e88b341126bb1cd7d0c125d8d877eccbbcc 174205 2026-10-29T21:24:03+08:00    否 NaN
+2018-01-25 TPEx     200    ok   OK     694      1     https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F25&type=EW&response=json     https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?date=2018%2F01%2F25&type=EW&response=json TPEX_DAILY_JSON /content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1/TPEx_20180125.json 04ba2f8c6a1d27d72f3eff6a14a2ec9453b01a73aae9c39570f8c6b9e21d9597  99751 2026-10-29T21:24:05+08:00    否 NaN
+
+
+====================================================================================================
+來源ZIP：官方行情備份_第0501-1000交易日_20180124_20200220.zip
+ZIP內路徑：備份說明.json
+大小：741
+編碼：utf-8-sig
+日期命中：{"2017-02-18": 0, "2017-06-03": 0, "2017-09-30": 0, "2018-03-31": 0, "2018-12-22": 0}
+CSV欄位：['{']
+內容預覽：
+{
+  "專案": "看股最速適",
+  "備份類型": "每500個已確認交易日分段備份",
+  "備份起始交易日序號": 501,
+  "備份結束交易日序號": 1000,
+  "本段已確認交易日數": 500,
+  "本段交易日首日": "2018-01-24",
+  "本段交易日末日": "2020-02-20",
+  "包含查詢日曆區間": {
+    "起日": "2018-01-24",
+    "迄日": "2020-02-20",
+    "平日數": 542
+  },
+  "分段行情列數": 808280,
+  "來源": [
+    "TWSE 官方每日市場行情",
+    "TPEx 官方每日市場行情"
+  ],
+  "說明": "本 ZIP 為可還原的行情分段；所有原始官方 JSON 與 SHA256 查詢紀錄另存於 Google Drive 的官方 API 快取與總查詢紀錄。",
+  "建立時間": "2026-10-29T22:15:23+08:00"
+}
+CSV預覽：
+  {
+NaN
+NaN
+NaN
