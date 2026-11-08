@@ -18,38 +18,488 @@ jobs:
         with:
           ref: main
           path: source
-      - name: Inspect v2.51 source ZIP members and schemas
+      - name: Recompute calibration, ranking, Top10 eligibility and equal-weight baskets
         shell: bash
         run: |
           python - <<'PY'
-          import csv, io, json, zipfile
+          import csv, io, json, zipfile, hashlib, math, random, statistics, subprocess
+          from collections import defaultdict, Counter
           from pathlib import Path
 
-          zip_path = Path("source/SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip")
-          if not zip_path.is_file():
-              raise FileNotFoundError(zip_path)
-          print(f"SOURCE_ZIP={zip_path.name} bytes={zip_path.stat().st_size}")
-          hints = ("歷史樣本外每日10檔候選", "前10檔候選個股獨立樣本外明細",
-                   "獲利機率校準逐訊號日", "個股評估逐筆資料_多成本情境",
-                   "預測排序能力逐訊號日")
-          with zipfile.ZipFile(zip_path) as z:
-              infos = z.infolist()
-              print(f"ZIP_MEMBERS={len(infos)}")
-              selected = [i for i in infos if i.filename.lower().endswith(".csv")
-                          and any(h in Path(i.filename).name for h in hints)]
-              for info in selected:
-                  print(f"MEMBER={info.filename} compressed={info.compress_size} uncompressed={info.file_size}")
-                  raw = z.open(info, "r")
-                  # The historical export is expected to be UTF-8 with BOM; try cp950 if needed.
-                  text = io.TextIOWrapper(raw, encoding="utf-8-sig", errors="replace", newline="")
-                  reader = csv.DictReader(text)
-                  print("COLUMNS=" + json.dumps(reader.fieldnames or [], ensure_ascii=False))
-                  for k, row in enumerate(reader):
-                      if k < 2:
-                          sample = {key: (str(value)[:120] if value is not None else None)
-                                    for key, value in row.items()}
-                          print("SAMPLE=" + json.dumps(sample, ensure_ascii=False))
-                      if k >= 1:
-                          break
+          EXPECTED_MAIN = "aaabc2433fb5df2bb68af06461178305d6bd30d1"
+          SOURCE = Path("source")
+          ZIP_PATH = SOURCE / "SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip"
+          OUT = Path("python_recheck_output")
+          OUT.mkdir(exist_ok=True)
+
+          def log(s):
+              print(str(s), flush=True)
+
+          def number(v):
+              if v is None:
+                  return None
+              s = str(v).strip().replace(",", "")
+              if not s or s.lower() in {"nan", "none", "null", "na", "n/a"}:
+                  return None
+              try:
+                  x = float(s)
+                  return x if math.isfinite(x) else None
+              except Exception:
+                  return None
+
+          def integer(v):
+              x = number(v)
+              return int(x) if x is not None else 0
+
+          def yes(v):
+              return str(v).strip().lower() in {"true", "1", "yes", "y", "是"}
+
+          def moving_block_ci(values, seed, reps=500):
+              x = [float(v) for v in values if v is not None and math.isfinite(float(v))]
+              n = len(x)
+              if n < 10:
+                  return None, None, n, 0
+              block = min(n, max(2, math.ceil(n ** (1 / 3))))
+              rng = random.Random(seed)
+              means = []
+              for _ in range(reps):
+                  sample = []
+                  while len(sample) < n:
+                      start = rng.randrange(n)
+                      for j in range(block):
+                          sample.append(x[(start + j) % n])
+                          if len(sample) == n:
+                              break
+                  means.append(sum(sample) / n)
+              means.sort()
+              lo = means[max(0, int(0.025 * (reps - 1)))]
+              hi = means[min(reps - 1, int(0.975 * (reps - 1)))]
+              return lo, hi, n, block
+
+          def write_csv(path, rows):
+              rows = list(rows)
+              if not rows:
+                  path.write_text("", encoding="utf-8-sig")
+                  return
+              cols = list(dict.fromkeys(k for row in rows for k in row.keys()))
+              with path.open("w", encoding="utf-8-sig", newline="") as f:
+                  w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")
+                  w.writeheader()
+                  w.writerows(rows)
+
+          def member_by_hint(z, hint):
+              hits = [n for n in z.namelist()
+                      if n.lower().endswith(".csv") and hint in Path(n).name]
+              if len(hits) != 1:
+                  raise RuntimeError(f"ZIP member lookup {hint!r}: expected 1, found {hits}")
+              return hits[0]
+
+          def row_iter(z, name):
+              raw = z.open(name, "r")
+              text = io.TextIOWrapper(raw, encoding="utf-8-sig", errors="replace", newline="")
+              reader = csv.DictReader(text)
+              if not reader.fieldnames:
                   text.close()
+                  raise RuntimeError(f"No CSV header: {name}")
+              return text, reader
+
+          def summarize_weighted(stats, date_values, seed):
+              n = stats["n"]
+              pred = stats["pred_sum"] / n if n else None
+              actual = stats["wins"] / n if n else None
+              ret = stats["ret_sum"] / n if n else None
+              diffs = [v["win"] - v["pred"] for _, v in sorted(date_values.items()) if v["n"] > 0]
+              day_actual = [v["win"] for _, v in sorted(date_values.items()) if v["n"] > 0]
+              day_pred = [v["pred"] for _, v in sorted(date_values.items()) if v["n"] > 0]
+              day_ret = [v["ret"] for _, v in sorted(date_values.items()) if v["n"] > 0]
+              lo, hi, days, block = moving_block_ci(diffs, seed)
+              return {
+                  "有效樣本數": n, "獨立訊號日數": len(diffs),
+                  "樣本加權平均預測淨獲利機率": pred,
+                  "樣本加權實際淨獲利率": actual,
+                  "樣本加權實際減預測差": actual - pred if n else None,
+                  "樣本加權平均實際淨報酬": ret,
+                  "逐日等權平均預測機率": statistics.mean(day_pred) if day_pred else None,
+                  "逐日等權平均實際淨獲利率": statistics.mean(day_actual) if day_actual else None,
+                  "逐日等權平均實際減預測差": statistics.mean(diffs) if diffs else None,
+                  "逐日等權平均實際淨報酬": statistics.mean(day_ret) if day_ret else None,
+                  "差值日區塊Bootstrap95CI下限": lo,
+                  "差值日區塊Bootstrap95CI上限": hi,
+                  "Bootstrap訊號日數": days, "Bootstrap區塊長度": block
+              }
+
+          def compound(values):
+              v = 1.0
+              for r in values:
+                  if r is None or r <= -1:
+                      return None
+                  v *= (1.0 + r)
+              return v - 1.0
+
+          main_sha = subprocess.check_output(
+              ["git", "-C", str(SOURCE), "rev-parse", "HEAD"], text=True
+          ).strip()
+          if main_sha != EXPECTED_MAIN:
+              raise RuntimeError(f"Main SHA changed: {main_sha} != {EXPECTED_MAIN}")
+          if not ZIP_PATH.is_file():
+              raise FileNotFoundError(ZIP_PATH)
+          zip_sha = hashlib.sha256(ZIP_PATH.read_bytes()).hexdigest()
+          log(f"READ_ONLY_MAIN_SHA={main_sha}")
+          log(f"SOURCE_ZIP_BYTES={ZIP_PATH.stat().st_size} SHA256={zip_sha}")
+
+          with zipfile.ZipFile(ZIP_PATH) as z:
+              names = z.namelist()
+              if len(names) != 38:
+                  raise RuntimeError(f"ZIP member count changed: {len(names)}")
+              calibration_member = member_by_hint(z, "獲利機率校準逐訊號日")
+              ranking_member = member_by_hint(z, "預測排序能力逐訊號日診斷")
+              top10_member = member_by_hint(z, "歷史樣本外每日10檔候選")
+              multi_member = member_by_hint(z, "個股評估逐筆資料_多成本情境")
+              log("SOURCE_MEMBERS=" + json.dumps({
+                  "calibration": calibration_member, "ranking": ranking_member,
+                  "top10": top10_member, "multi_cost": multi_member
+              }, ensure_ascii=False))
+
+              # 1) Full-universe calibration by H, probability bucket and signal day.
+              cal_stats = defaultdict(lambda: {"n": 0, "pred_sum": 0.0, "wins": 0, "ret_sum": 0.0})
+              cal_dates = defaultdict(dict)
+              cal_h_stats = defaultdict(lambda: {"n": 0, "pred_sum": 0.0, "wins": 0, "ret_sum": 0.0})
+              cal_h_dates = defaultdict(dict)
+              cal_row_count = 0
+              text, reader = row_iter(z, calibration_member)
+              required = {"持有期間H", "訊號日期", "估計淨獲利機率區間", "有效樣本數",
+                          "平均估計淨獲利機率", "實際淨獲利率", "平均實際淨報酬", "淨獲利筆數"}
+              if not required.issubset(set(reader.fieldnames or [])):
+                  raise RuntimeError(f"Calibration columns missing: {required - set(reader.fieldnames or [])}")
+              for r in reader:
+                  cal_row_count += 1
+                  h = integer(r["持有期間H"])
+                  date = r["訊號日期"]
+                  bucket = r["估計淨獲利機率區間"]
+                  n = integer(r["有效樣本數"])
+                  if not h or not date or not bucket or n <= 0:
+                      continue
+                  p = number(r["平均估計淨獲利機率"])
+                  win_rate = number(r["實際淨獲利率"])
+                  ret = number(r["平均實際淨報酬"])
+                  wins = integer(r["淨獲利筆數"])
+                  if p is None or win_rate is None or ret is None:
+                      continue
+                  key = (h, bucket)
+                  st = cal_stats[key]
+                  st["n"] += n
+                  st["pred_sum"] += p * n
+                  st["wins"] += wins
+                  st["ret_sum"] += ret * n
+                  dv = cal_dates[key].setdefault(date, {"n": 0, "pred_sum": 0.0, "wins": 0, "ret_sum": 0.0})
+                  dv["n"] += n
+                  dv["pred_sum"] += p * n
+                  dv["wins"] += wins
+                  dv["ret_sum"] += ret * n
+                  hs = cal_h_stats[h]
+                  hs["n"] += n
+                  hs["pred_sum"] += p * n
+                  hs["wins"] += wins
+                  hs["ret_sum"] += ret * n
+                  hd = cal_h_dates[h].setdefault(date, {"n": 0, "pred_sum": 0.0, "wins": 0, "ret_sum": 0.0})
+                  hd["n"] += n
+                  hd["pred_sum"] += p * n
+                  hd["wins"] += wins
+                  hd["ret_sum"] += ret * n
+              text.close()
+
+              bucket_rows = []
+              bucket_order = ["<30%", "30-35%", "35-40%", "40-45%", "45-50%",
+                              "50-55%", "55-60%", "60-65%", "65-70%", ">=70%"]
+              for (h, bucket), st in sorted(cal_stats.items(), key=lambda kv: (kv[0][0], bucket_order.index(kv[0][1]) if kv[0][1] in bucket_order else 99)):
+                  dates = {}
+                  for d, v in cal_dates[(h, bucket)].items():
+                      n = v["n"]
+                      dates[d] = {"n": n, "pred": v["pred_sum"] / n,
+                                  "win": v["wins"] / n, "ret": v["ret_sum"] / n}
+                  row = {"H": h, "機率區間": bucket}
+                  row.update(summarize_weighted(st, dates, seed=10000 + h * 100 + (bucket_order.index(bucket) if bucket in bucket_order else 99)))
+                  bucket_rows.append(row)
+              horizon_rows = []
+              for h, st in sorted(cal_h_stats.items()):
+                  dates = {}
+                  for d, v in cal_h_dates[h].items():
+                      n = v["n"]
+                      dates[d] = {"n": n, "pred": v["pred_sum"] / n,
+                                  "win": v["wins"] / n, "ret": v["ret_sum"] / n}
+                  row = {"H": h}
+                  row.update(summarize_weighted(st, dates, seed=20000 + h))
+                  horizon_rows.append(row)
+              write_csv(OUT / "01_full_universe_calibration_by_bucket.csv", bucket_rows)
+              write_csv(OUT / "02_full_universe_calibration_by_horizon.csv", horizon_rows)
+              log(f"CALIBRATION_ROWS={cal_row_count}")
+              for r in horizon_rows:
+                  log("CALIBRATION_H=" + json.dumps(r, ensure_ascii=False))
+
+              # 2) Full-market ranking ability, top-decile lift and Top10-vs-market lift.
+              rank_day = defaultdict(list)
+              rank_row_count = 0
+              text, reader = row_iter(z, ranking_member)
+              for r in reader:
+                  rank_row_count += 1
+                  if r.get("區段口徑") != "全體可用成交":
+                      continue
+                  h = integer(r.get("持有期間H"))
+                  date = r.get("訊號日期", "")
+                  if not h or not date:
+                      continue
+                  rank_day[h].append({
+                      "date": date,
+                      "spearman": number(r.get("Spearman排序相關係數")),
+                      "top_decile": number(r.get("最高減最低分位_一般成本")),
+                      "top10_lift": number(r.get("前10檔減全市場_一般成本")),
+                      "stress_lift": number(r.get("前10檔減全市場_壓力成本")),
+                      "n": integer(r.get("有效成交數")),
+                      "top10_net": number(r.get("預測前10檔平均一般成本淨報酬")),
+                      "market_net": number(r.get("全市場平均一般成本淨報酬"))
+                  })
+              text.close()
+              rank_rows = []
+              for h, arr in sorted(rank_day.items()):
+                  arr.sort(key=lambda x: x["date"])
+                  spears = [x["spearman"] for x in arr if x["spearman"] is not None]
+                  top = [x["top_decile"] for x in arr if x["top_decile"] is not None]
+                  lift = [x["top10_lift"] for x in arr if x["top10_lift"] is not None]
+                  stress = [x["stress_lift"] for x in arr if x["stress_lift"] is not None]
+                  top_ci = moving_block_ci(top, 30000 + h)
+                  lift_ci = moving_block_ci(lift, 31000 + h)
+                  rank_rows.append({
+                      "H": h, "訊號日數": len(arr), "有效Spearman日數": len(spears),
+                      "日內Spearman平均": statistics.mean(spears) if spears else None,
+                      "日內Spearman中位數": statistics.median(spears) if spears else None,
+                      "Spearman為正日比例": sum(v > 0 for v in spears) / len(spears) if spears else None,
+                      "最高預測分位減最低分位_平均淨報酬": statistics.mean(top) if top else None,
+                      "最高減最低分位_Bootstrap95CI下限": top_ci[0],
+                      "最高減最低分位_Bootstrap95CI上限": top_ci[1],
+                      "Top10減全市場_平均淨報酬": statistics.mean(lift) if lift else None,
+                      "Top10減全市場_Bootstrap95CI下限": lift_ci[0],
+                      "Top10減全市場_Bootstrap95CI上限": lift_ci[1],
+                      "壓力成本Top10減全市場平均": statistics.mean(stress) if stress else None,
+                      "Top10自身平均淨報酬": statistics.mean([x["top10_net"] for x in arr if x["top10_net"] is not None]) if any(x["top10_net"] is not None for x in arr) else None,
+                      "全市場平均淨報酬": statistics.mean([x["market_net"] for x in arr if x["market_net"] is not None]) if any(x["market_net"] is not None for x in arr) else None
+                  })
+              write_csv(OUT / "03_full_market_ranking_by_horizon.csv", rank_rows)
+              log(f"RANKING_ROWS={rank_row_count}")
+              for r in rank_rows:
+                  log("RANKING_H=" + json.dumps(r, ensure_ascii=False))
+
+              # 3) Count how often the Top10 output is a recommendation versus a watchlist candidate.
+              top_stats = defaultdict(lambda: Counter())
+              top_states = Counter()
+              top_uses = Counter()
+              top_rows = 0
+              top_dates = defaultdict(set)
+              text, reader = row_iter(z, top10_member)
+              for r in reader:
+                  top_rows += 1
+                  h = integer(r.get("持有期間H"))
+                  d = r.get("訊號日期", "")
+                  if not h:
+                      continue
+                  st = top_stats[h]
+                  st["rows"] += 1
+                  if d:
+                      top_dates[h].add(d)
+                  st["qualifying"] += int(yes(r.get("符合獲利候選條件")))
+                  st["priority"] += int(yes(r.get("優先獲利候選")))
+                  st["positive_predicted_net"] += int((number(r.get("預測淨報酬")) or 0) > 0)
+                  st["probability_60_plus"] += int((number(r.get("估計淨獲利機率_校準")) or 0) >= 0.60)
+                  st["probability_70_plus"] += int((number(r.get("估計淨獲利機率_校準")) or 0) >= 0.70)
+                  top_states[(h, r.get("候選狀態", ""))] += 1
+                  top_uses[(h, r.get("名單用途", ""))] += 1
+              text.close()
+              eligibility_rows = []
+              for h, st in sorted(top_stats.items()):
+                  days = len(top_dates[h])
+                  eligibility_rows.append({
+                      "H": h, "候選列數": st["rows"], "訊號日數": days,
+                      "符合獲利候選條件筆數": st["qualifying"],
+                      "符合獲利候選條件比例": st["qualifying"] / st["rows"] if st["rows"] else None,
+                      "優先獲利候選筆數": st["priority"],
+                      "優先獲利候選比例": st["priority"] / st["rows"] if st["rows"] else None,
+                      "預測淨報酬為正筆數": st["positive_predicted_net"],
+                      "估計淨獲利機率至少60筆數": st["probability_60_plus"],
+                      "估計淨獲利機率至少70筆數": st["probability_70_plus"],
+                      "平均每訊號日符合獲利候選數": st["qualifying"] / days if days else None
+                  })
+              state_rows = [{"H": h, "候選狀態": state, "筆數": count}
+                            for (h, state), count in sorted(top_states.items())]
+              use_rows = [{"H": h, "名單用途": use, "筆數": count}
+                          for (h, use), count in sorted(top_uses.items())]
+              write_csv(OUT / "04_top10_eligibility_by_horizon.csv", eligibility_rows)
+              write_csv(OUT / "05_top10_candidate_status.csv", state_rows)
+              write_csv(OUT / "06_top10_list_usage.csv", use_rows)
+              log(f"TOP10_ROWS={top_rows}")
+              for r in eligibility_rows:
+                  log("TOP10_ELIGIBILITY_H=" + json.dumps(r, ensure_ascii=False))
+              for r in state_rows:
+                  log("TOP10_STATUS=" + json.dumps(r, ensure_ascii=False))
+
+              # 4) Costs and trade modes; reconstruct equal-weight 10-slot signal-date baskets.
+              mc_summary = defaultdict(lambda: {"rows": 0, "eligible": 0, "included": 0,
+                                                  "numeric": 0, "wins": 0, "net_sum": 0.0,
+                                                  "nets": []})
+              basket_groups = defaultdict(lambda: {"rows": 0, "eligible": 0, "nets": [],
+                                                     "seqs": set(), "unpriced_eligible": 0})
+              cost_names, mode_names, scope_names = set(), set(), set()
+              mc_rows = 0
+              text, reader = row_iter(z, multi_member)
+              required = {"持有期間H", "成本情境", "交易模式", "區段口徑", "訊號日期",
+                          "訊號全市場日序", "達成交易模式條件", "納入報酬", "實際淨報酬"}
+              if not required.issubset(set(reader.fieldnames or [])):
+                  raise RuntimeError(f"Multi-cost columns missing: {required - set(reader.fieldnames or [])}")
+              for r in reader:
+                  mc_rows += 1
+                  h = integer(r.get("持有期間H"))
+                  cost = r.get("成本情境", "")
+                  mode = r.get("交易模式", "")
+                  scope = r.get("區段口徑", "")
+                  date = r.get("訊號日期", "")
+                  if not h or not date:
+                      continue
+                  cost_names.add(cost); mode_names.add(mode); scope_names.add(scope)
+                  st = mc_summary[(h, mode, cost, scope)]
+                  st["rows"] += 1
+                  eligible = yes(r.get("達成交易模式條件"))
+                  included = yes(r.get("納入報酬"))
+                  net = number(r.get("實際淨報酬"))
+                  if eligible:
+                      st["eligible"] += 1
+                  if included:
+                      st["included"] += 1
+                  if eligible and included and net is not None:
+                      st["numeric"] += 1
+                      st["wins"] += int(net > 0)
+                      st["net_sum"] += net
+                      st["nets"].append(net)
+                  if mode in {"前10名候選逐檔評估", "只交易符合獲利條件", "只交易高潛力"}:
+                      bg = basket_groups[(h, mode, cost, scope, date)]
+                      bg["rows"] += 1
+                      try:
+                          bg["seqs"].add(integer(r.get("訊號全市場日序")))
+                      except Exception:
+                          pass
+                      if eligible:
+                          bg["eligible"] += 1
+                          if included and net is not None:
+                              bg["nets"].append(net)
+                          else:
+                              bg["unpriced_eligible"] += 1
+              text.close()
+
+              cost_mode_rows = []
+              for (h, mode, cost, scope), st in sorted(mc_summary.items()):
+                  n = st["numeric"]
+                  cost_mode_rows.append({
+                      "H": h, "交易模式": mode, "成本情境": cost, "區段口徑": scope,
+                      "來源列數": st["rows"], "交易模式合格列數": st["eligible"],
+                      "納入報酬列數": st["included"], "有淨報酬數值且合格列數": n,
+                      "實際淨獲利率": st["wins"] / n if n else None,
+                      "平均實際淨報酬": st["net_sum"] / n if n else None,
+                      "中位數實際淨報酬": statistics.median(st["nets"]) if st["nets"] else None
+                  })
+              write_csv(OUT / "07_cost_and_trade_mode_summary.csv", cost_mode_rows)
+
+              basket_rows = []
+              for key, bg in sorted(basket_groups.items()):
+                  h, mode, cost, scope, date = key
+                  if bg["rows"] == 0:
+                      continue
+                  # 10 fixed slots: any eligible but unpriced position makes the basket incomplete.
+                  complete = (bg["rows"] == 10 and bg["unpriced_eligible"] == 0)
+                  basket_rows.append({
+                      "H": h, "交易模式": mode, "成本情境": cost, "區段口徑": scope,
+                      "訊號日期": date, "候選列數": bg["rows"],
+                      "模式合格筆數": bg["eligible"], "有淨報酬數值筆數": len(bg["nets"]),
+                      "合格但無有效淨報酬筆數": bg["unpriced_eligible"],
+                      "完整10槽且所有合格交易有報酬": complete,
+                      "等權10槽淨報酬_未成交留現": sum(bg["nets"]) / 10 if complete else None,
+                      "已成交部分等權淨報酬": sum(bg["nets"]) / bg["eligible"] if complete and bg["eligible"] else None,
+                      "訊號日序": next(iter(bg["seqs"])) if len(bg["seqs"]) == 1 else None
+                  })
+              write_csv(OUT / "08_equal_weight_basket_by_signal.csv", basket_rows)
+
+              # Summarize the sequential equal-weight basket for every H/mode/cost/scope.
+              baskets_by_key = defaultdict(list)
+              for r in basket_rows:
+                  if r["完整10槽且所有合格交易有報酬"]:
+                      baskets_by_key[(r["H"], r["交易模式"], r["成本情境"], r["區段口徑"])].append(r)
+              basket_summary = []
+              for key, arr in sorted(baskets_by_key.items()):
+                  h, mode, cost, scope = key
+                  arr.sort(key=lambda r: r["訊號日期"])
+                  returns = [r["等權10槽淨報酬_未成交留現"] for r in arr]
+                  active = [r["已成交部分等權淨報酬"] for r in arr if r["已成交部分等權淨報酬"] is not None]
+                  seqs = [r["訊號日序"] for r in arr if r["訊號日序"] is not None]
+                  gaps = [seqs[i] - seqs[i-1] for i in range(1, len(seqs))]
+                  basket_summary.append({
+                      "H": h, "交易模式": mode, "成本情境": cost, "區段口徑": scope,
+                      "完整可評估組合日數": len(arr),
+                      "組合日平均淨報酬_10槽": statistics.mean(returns) if returns else None,
+                      "組合日中位數淨報酬_10槽": statistics.median(returns) if returns else None,
+                      "組合日獲利比例_10槽": sum(x > 0 for x in returns) / len(returns) if returns else None,
+                      "連續等權組合複利報酬_10槽": compound(returns),
+                      "實際持有期間日序間隔是否均等於H": all(g == h for g in gaps) if gaps else None,
+                      "已成交部位平均淨報酬": statistics.mean(active) if active else None
+                  })
+              write_csv(OUT / "09_equal_weight_basket_summary.csv", basket_summary)
+              log(f"MULTICOST_ROWS={mc_rows}")
+              log("COST_SCENARIOS=" + json.dumps(sorted(cost_names), ensure_ascii=False))
+              log("TRADE_MODES=" + json.dumps(sorted(mode_names), ensure_ascii=False))
+              log("SEGMENT_SCOPES=" + json.dumps(sorted(scope_names), ensure_ascii=False))
+              for r in cost_mode_rows:
+                  if r["成本情境"] == "一般股票基準成本" and r["區段口徑"] == "僅同區段":
+                      log("COST_MODE_BASE=" + json.dumps(r, ensure_ascii=False))
+              for r in basket_summary:
+                  if r["成本情境"] == "一般股票基準成本" and r["區段口徑"] == "僅同區段":
+                      log("BASKET_BASE=" + json.dumps(r, ensure_ascii=False))
+
+              summary = {
+                  "task": "v2.51 原始ZIP Python獨立重算：全市場機率校準、全市場排序、Top10資格及等權10槽組合",
+                  "source_main_sha": main_sha,
+                  "source_zip": ZIP_PATH.name,
+                  "source_zip_bytes": ZIP_PATH.stat().st_size,
+                  "source_zip_sha256": zip_sha,
+                  "source_zip_members": len(names),
+                  "calibration_rows": cal_row_count,
+                  "ranking_rows": rank_row_count,
+                  "top10_rows": top_rows,
+                  "multicost_rows": mc_rows,
+                  "calibration_by_horizon": horizon_rows,
+                  "ranking_by_horizon": rank_rows,
+                  "top10_eligibility_by_horizon": eligibility_rows,
+                  "cost_scenarios": sorted(cost_names),
+                  "trade_modes": sorted(mode_names),
+                  "segment_scopes": sorted(scope_names),
+                  "cost_mode_summary": cost_mode_rows,
+                  "equal_weight_basket_summary": basket_summary,
+                  "interpretation_limits": [
+                      "單股報酬是個股獨立假設交易；等權10槽是本次另作的組合敏感度模擬，不是原始程式正式回測。",
+                      "只以一般成本與同區段作正式主口徑；含跨區段僅作診斷，不能回填正式標籤。",
+                      "未完成或缺少實際淨報酬的合格交易不補值；組合複利僅計入完整可評估的訊號日組合。",
+                      "組合等權假設每個訊號日10個固定資金槽，未成交槽留現；未納入市場衝擊、持倉路徑或融資。",
+                      "全市場日資料 H 排程應為 H 個市場日間隔；只有確認間隔後才解讀為不重疊訊號組合。"
+                  ]
+              }
+              (OUT / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+              manifest = {
+                  "main_sha": main_sha, "zip_sha256": zip_sha,
+                  "outputs": [{"name": p.name, "bytes": p.stat().st_size, "sha256": hashlib.sha256(p.read_bytes()).hexdigest()}
+                              for p in sorted(OUT.iterdir()) if p.is_file()]
+              }
+              (OUT / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+
+          log("PYTHON_ANALYSIS_STATUS=PASS")
+          log("OUTPUT_MANIFEST=" + json.dumps(manifest, ensure_ascii=False))
           PY
+      - name: Upload Python analysis tables
+        uses: actions/upload-artifact@v4
+        with:
+          name: sso-v4875100-python-recheck
+          path: python_recheck_output/
+          retention-days: 30
