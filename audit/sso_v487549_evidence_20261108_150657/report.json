@@ -1,0 +1,3587 @@
+{
+  "version": "v4.87.5.49",
+  "run_time": "2026-11-08T15:06:57.900331+08:00",
+  "auth": {
+    "requested_scope": "https://www.googleapis.com/auth/drive.metadata.readonly",
+    "token_drive_scopes": [
+      "email",
+      "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/drive",
+      "https://www.googleapis.com/auth/userinfo.email",
+      "openid"
+    ],
+    "exact_metadata_readonly": false
+  },
+  "constraints": {
+    "drive_calls_get_only": true,
+    "only_predefined_files_read": true,
+    "zip_downloaded": false,
+    "large_market_table_downloaded": false,
+    "drive_originals_modified": false,
+    "official_api_called": false,
+    "database_updated": false,
+    "model_retrained": false,
+    "backtest_run": false,
+    "stock_selection_run": false,
+    "github_main_modified": false
+  },
+  "files": [
+    {
+      "family": "v2.8",
+      "id": "1-I25f5tD5LFxIk40xnuyBEB5NPEuSNFM",
+      "name": "官方來源逐日查詢紀錄.csv",
+      "bytes": 2690272,
+      "createdTime": "2026-10-29T16:45:16.111Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 5648,
+      "columns": [
+        "日期",
+        "市場",
+        "HTTP狀態碼",
+        "API狀態",
+        "查詢狀態",
+        "市場池命中列數",
+        "解析資料表數",
+        "查詢網址",
+        "實際回應網址",
+        "使用端點",
+        "原始回應檔",
+        "回應SHA256",
+        "回應位元組數",
+        "查詢時間",
+        "使用快取",
+        "錯誤"
+      ],
+      "event_key_info": {
+        "market_column": "市場",
+        "code_column": null,
+        "date_column": null,
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "KEY_COLUMNS_NOT_FOUND"
+      }
+    },
+    {
+      "family": "v2.8",
+      "id": "1YvaILWYog2V2rV4vEIC9o8BVygb3FmlN",
+      "name": "官方API資料表欄位.csv",
+      "bytes": 2573187,
+      "createdTime": "2026-10-29T16:45:16.438Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 5450,
+      "columns": [
+        "市場",
+        "資料表名稱",
+        "欄位",
+        "可解析完整OHLCV",
+        "日期",
+        "查詢網址"
+      ],
+      "event_key_info": {
+        "market_column": "市場",
+        "code_column": null,
+        "date_column": null,
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "KEY_COLUMNS_NOT_FOUND"
+      }
+    },
+    {
+      "family": "v2.8",
+      "id": "1YEX0LuXGpS7b7u0yA30RoIV9ALNSlUZV",
+      "name": "逐日雙市場完整性檢核.csv",
+      "bytes": 204207,
+      "createdTime": "2026-10-29T16:45:16.398Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 2824,
+      "columns": [
+        "日期",
+        "TWSE狀態",
+        "TPEx狀態",
+        "確認交易日",
+        "雙市場判讀完整",
+        "當日行情列數",
+        "判讀"
+      ],
+      "event_key_info": {
+        "market_column": null,
+        "code_column": null,
+        "date_column": null,
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "KEY_COLUMNS_NOT_FOUND"
+      }
+    },
+    {
+      "family": "v2.8",
+      "id": "1_GH1WUrGV2rONXqzbQiUArUexOD1QfXL",
+      "name": "官方來源查詢錯誤清單.csv",
+      "bytes": 124962,
+      "createdTime": "2026-10-29T16:45:16.593Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 198,
+      "columns": [
+        "日期",
+        "市場",
+        "HTTP狀態碼",
+        "API狀態",
+        "查詢狀態",
+        "市場池命中列數",
+        "解析資料表數",
+        "查詢網址",
+        "實際回應網址",
+        "使用端點",
+        "原始回應檔",
+        "回應SHA256",
+        "回應位元組數",
+        "查詢時間",
+        "使用快取",
+        "錯誤"
+      ],
+      "event_key_info": {
+        "market_column": "市場",
+        "code_column": null,
+        "date_column": null,
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "KEY_COLUMNS_NOT_FOUND"
+      }
+    },
+    {
+      "family": "v2.8",
+      "id": "1gHn4e2Tdzd034qVMHKqWKNbl8cjda64F",
+      "name": "各股票官方資料覆蓋摘要.csv",
+      "bytes": 74152,
+      "createdTime": "2026-10-29T16:57:25.775Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 2010,
+      "columns": [
+        "市場",
+        "股票代號",
+        "官方資料列數",
+        "首筆官方日期",
+        "末筆官方日期"
+      ],
+      "event_key_info": {
+        "market_column": "市場",
+        "code_column": "股票代號",
+        "date_column": null,
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "KEY_COLUMNS_NOT_FOUND"
+      }
+    },
+    {
+      "family": "v2.8",
+      "id": "1nYTUqQpBMY5blgDxtAZzoRTbrxqxWi1c",
+      "name": "股票池官方市場對照.csv",
+      "bytes": 70706,
+      "createdTime": "2026-10-29T12:54:01.543Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 1985,
+      "columns": [
+        "股票代號",
+        "股票名稱_股票池",
+        "市場",
+        "原始股票代號欄位值",
+        "股票池行情代號欄位值",
+        "市場原始欄位值"
+      ],
+      "event_key_info": {
+        "market_column": "市場",
+        "code_column": "股票代號",
+        "date_column": null,
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "KEY_COLUMNS_NOT_FOUND"
+      }
+    },
+    {
+      "family": "v2.8",
+      "id": "1tTBeaCMJdMaxqLFlMOk8_OWxUcGuhL6s",
+      "name": "執行摘要.json",
+      "bytes": 3578,
+      "createdTime": "2026-10-29T16:57:25.805Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "encoding": "utf-8-sig"
+    },
+    {
+      "family": "v2.24",
+      "id": "1TFKbaYfvdNVPmZ0rmkniKQQo3Vt2PfAk",
+      "name": "現有股票池全部公司行動事件_v2.24.csv",
+      "bytes": 8558986,
+      "createdTime": "2026-10-27T08:24:53.778Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 14845,
+      "columns": [
+        "v2.18來源列序",
+        "市場",
+        "股票代號",
+        "股票名稱",
+        "事件日期",
+        "資料集",
+        "資料集說明",
+        "事件類別原始值",
+        "前收盤欄位名稱",
+        "參考價欄位名稱",
+        "官方前收盤價",
+        "官方參考價",
+        "候選調整因子_參考價除以前收盤",
+        "重新複算因子",
+        "因子欄位一致性檢查",
+        "是否在v2.8目前股票池",
+        "是否在v2.8查詢涵蓋區間",
+        "v2.8市場行情起日",
+        "v2.8市場行情迄日",
+        "v2.20交叉驗證狀態",
+        "v2.20行情表事件日收盤價",
+        "v2.20行情表事件日前最近有效收盤日期",
+        "v2.20行情表事件日前最近有效收盤價",
+        "同股同日多事件風險",
+        "調整行情候選資格判讀",
+        "v2.18原始JSON路徑",
+        "v2.18原始列序",
+        "v2.18原始前收盤值",
+        "v2.18原始參考價值",
+        "v2.18無候選因子原因"
+      ],
+      "event_key_info": {
+        "market_column": "市場",
+        "code_column": "股票代號",
+        "date_column": "事件日期",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "status": "PASS",
+        "valid_key_rows": 14845,
+        "unique_keys": 14845,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v2.24",
+      "id": "1UkNpFti9u0ZBE86sBePB3Cy4f_JOo2Sw",
+      "name": "現有股票池待處理公司行動_v2.24.csv",
+      "bytes": 339316,
+      "createdTime": "2026-10-27T08:24:53.557Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 638,
+      "columns": [
+        "v2.18來源列序",
+        "市場",
+        "股票代號",
+        "股票名稱",
+        "事件日期",
+        "資料集",
+        "資料集說明",
+        "事件類別原始值",
+        "前收盤欄位名稱",
+        "參考價欄位名稱",
+        "官方前收盤價",
+        "官方參考價",
+        "候選調整因子_參考價除以前收盤",
+        "重新複算因子",
+        "因子欄位一致性檢查",
+        "是否在v2.8目前股票池",
+        "是否在v2.8查詢涵蓋區間",
+        "v2.8市場行情起日",
+        "v2.8市場行情迄日",
+        "v2.20交叉驗證狀態",
+        "v2.20行情表事件日收盤價",
+        "v2.20行情表事件日前最近有效收盤日期",
+        "v2.20行情表事件日前最近有效收盤價",
+        "同股同日多事件風險",
+        "調整行情候選資格判讀",
+        "v2.18原始JSON路徑",
+        "v2.18原始列序",
+        "v2.18原始前收盤值",
+        "v2.18原始參考價值",
+        "v2.18無候選因子原因"
+      ],
+      "event_key_info": {
+        "market_column": "市場",
+        "code_column": "股票代號",
+        "date_column": "事件日期",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "status": "PASS",
+        "valid_key_rows": 638,
+        "unique_keys": 638,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v2.24",
+      "id": "1zSrLvUpD4vfjPoHuQxV5EunTUs6DjskO",
+      "name": "現有股票池影子調整測試候選_v2.24.csv",
+      "bytes": 8220393,
+      "createdTime": "2026-10-27T08:24:52.215Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 14207,
+      "columns": [
+        "v2.18來源列序",
+        "市場",
+        "股票代號",
+        "股票名稱",
+        "事件日期",
+        "資料集",
+        "資料集說明",
+        "事件類別原始值",
+        "前收盤欄位名稱",
+        "參考價欄位名稱",
+        "官方前收盤價",
+        "官方參考價",
+        "候選調整因子_參考價除以前收盤",
+        "重新複算因子",
+        "因子欄位一致性檢查",
+        "是否在v2.8目前股票池",
+        "是否在v2.8查詢涵蓋區間",
+        "v2.8市場行情起日",
+        "v2.8市場行情迄日",
+        "v2.20交叉驗證狀態",
+        "v2.20行情表事件日收盤價",
+        "v2.20行情表事件日前最近有效收盤日期",
+        "v2.20行情表事件日前最近有效收盤價",
+        "同股同日多事件風險",
+        "調整行情候選資格判讀",
+        "v2.18原始JSON路徑",
+        "v2.18原始列序",
+        "v2.18原始前收盤值",
+        "v2.18原始參考價值",
+        "v2.18無候選因子原因"
+      ],
+      "event_key_info": {
+        "market_column": "市場",
+        "code_column": "股票代號",
+        "date_column": "事件日期",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "status": "PASS",
+        "valid_key_rows": 14207,
+        "unique_keys": 14207,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.29",
+      "id": "1yTM0QAA7D8-M3qgjQhIWHLEaGy34ANY1",
+      "name": "v4.29核驗摘要.txt",
+      "bytes": 3109,
+      "createdTime": "2026-10-31T17:36:22.556Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "encoding": "utf-8-sig",
+      "line_count": 44
+    },
+    {
+      "family": "v4.29",
+      "id": "1XvZP7UPYCeLKHgM1JW87ZEzXid1kaXtk",
+      "name": "已核實公司行動事件參數與來源.csv",
+      "bytes": 2761,
+      "createdTime": "2026-10-31T17:36:22.534Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 12,
+      "columns": [
+        "full_code",
+        "event_date",
+        "action_type",
+        "exchange_ratio",
+        "cash_refund_per_old_share",
+        "action_note",
+        "reference_url"
+      ],
+      "event_key_info": {
+        "market_column": null,
+        "code_column": "full_code",
+        "date_column": "event_date",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "status": "NO_VALID_KEYS",
+        "valid_key_rows": 0,
+        "unique_keys": 0,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 0,
+        "missing_market_rows": 12,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.29",
+      "id": "1qGm6FGIxl7b4L9B6dRoPUwz_72V5eB_f",
+      "name": "已核實公司行動報酬調整對照.csv",
+      "bytes": 4676,
+      "createdTime": "2026-10-31T17:36:21.698Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 12,
+      "columns": [
+        "full_code",
+        "event_date",
+        "action_type",
+        "exchange_ratio",
+        "cash_refund_per_old_share",
+        "action_note",
+        "reference_url",
+        "previous_trade_date",
+        "previous_close",
+        "close_px",
+        "raw_return_pct",
+        "adjusted_reference_price",
+        "adjusted_return_pct",
+        "match_status"
+      ],
+      "event_key_info": {
+        "market_column": null,
+        "code_column": "full_code",
+        "date_column": "event_date",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "status": "NO_VALID_KEYS",
+        "valid_key_rows": 0,
+        "unique_keys": 0,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 0,
+        "missing_market_rows": 12,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.29",
+      "id": "1l2jbMLH4Ap475AshiXCNJwE4hWRL6p-0",
+      "name": "極端報酬尚未核實公司行動清單_至少20_percent.csv",
+      "bytes": 67660,
+      "createdTime": "2026-10-31T17:36:22.266Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 486,
+      "columns": [
+        "trade_date",
+        "market_norm",
+        "full_code",
+        "legacy_code",
+        "security_name",
+        "previous_trade_date",
+        "calendar_gap_days",
+        "previous_close",
+        "close_px",
+        "return_pct",
+        "followup_hint"
+      ],
+      "event_key_info": {
+        "market_column": "market_norm",
+        "code_column": "full_code",
+        "date_column": "trade_date",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "PASS",
+        "valid_key_rows": 486,
+        "unique_keys": 486,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.29",
+      "id": "1j_UuhcXHeGj9zJxqHfjNX8ag06hHb7D-",
+      "name": "極端報酬事件全清單_至少20_percent.csv",
+      "bytes": 56750,
+      "createdTime": "2026-10-31T17:36:22.002Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 498,
+      "columns": [
+        "trade_date",
+        "market_norm",
+        "previous_market",
+        "full_code",
+        "legacy_code",
+        "security_name",
+        "previous_trade_date",
+        "calendar_gap_days",
+        "previous_close",
+        "close_px",
+        "return_pct",
+        "market_changed",
+        "action_audit_status"
+      ],
+      "event_key_info": {
+        "market_column": "market_norm",
+        "code_column": "full_code",
+        "date_column": "trade_date",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "PASS",
+        "valid_key_rows": 498,
+        "unique_keys": 498,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.31",
+      "id": "1ThmOc__Lh3VlqQbm30OcBqXatAr1AirQ",
+      "name": "v4.31.1核驗摘要.txt",
+      "bytes": 2746,
+      "createdTime": "2026-10-31T18:29:36.853Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "encoding": "utf-8-sig",
+      "line_count": 38
+    },
+    {
+      "family": "v4.31",
+      "id": "13HQnSyWCn3kB9kcCGaR1oztx6DRbWXTi",
+      "name": "官方公司行動原始欄位明細.csv",
+      "bytes": 267585,
+      "createdTime": "2026-10-31T18:29:36.991Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 396,
+      "columns": [
+        "market",
+        "source_tag",
+        "action_kind",
+        "event_date",
+        "full_code",
+        "reference_price",
+        "target_group",
+        "raw_record_json"
+      ],
+      "event_key_info": {
+        "market_column": "market",
+        "code_column": "full_code",
+        "date_column": "event_date",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "status": "PASS",
+        "valid_key_rows": 396,
+        "unique_keys": 395,
+        "duplicate_key_rows": 1,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": [
+          {
+            "key": "TWSE|5906|2016-07-14",
+            "count": 2
+          }
+        ]
+      }
+    },
+    {
+      "family": "v4.31",
+      "id": "1FyOUnPHiwcFlfec3uFlFsonMyCu6hYTI",
+      "name": "官方公司行動命中事件.csv",
+      "bytes": 116930,
+      "createdTime": "2026-10-31T18:29:36.908Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 386,
+      "columns": [
+        "trade_date",
+        "market_norm",
+        "full_code",
+        "legacy_code",
+        "security_name",
+        "previous_trade_date",
+        "calendar_gap_days",
+        "previous_close",
+        "open_px",
+        "high_px",
+        "low_px",
+        "close_px",
+        "volume",
+        "raw_return_pct",
+        "priority_score",
+        "priority_level",
+        "audit_reasons",
+        "official_match_count",
+        "official_action_kinds",
+        "official_sources",
+        "official_reference_prices",
+        "close_vs_official_reference_pct",
+        "source_coverage_complete",
+        "official_audit_status"
+      ],
+      "event_key_info": {
+        "market_column": "market_norm",
+        "code_column": "full_code",
+        "date_column": "trade_date",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "PASS",
+        "valid_key_rows": 386,
+        "unique_keys": 386,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.31",
+      "id": "1X24fQ6dM6nlgU3brXqvbssCXK5vAhjEJ",
+      "name": "官方來源查詢涵蓋及錯誤紀錄.csv",
+      "bytes": 145024,
+      "createdTime": "2026-10-31T18:29:37.039Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 796,
+      "columns": [
+        "market",
+        "source_tag",
+        "action_kind",
+        "query_start",
+        "query_end",
+        "task_type",
+        "status",
+        "official_rows",
+        "matched_rows",
+        "http_status",
+        "error",
+        "source_url"
+      ],
+      "event_key_info": {
+        "market_column": "market",
+        "code_column": null,
+        "date_column": null,
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "KEY_COLUMNS_NOT_FOUND"
+      }
+    },
+    {
+      "family": "v4.31",
+      "id": "1eQd05-l-9-7bJk_Yx7Mje5GCU5tVPMnE",
+      "name": "高優先事件官方核對結果.csv",
+      "bytes": 71800,
+      "createdTime": "2026-10-31T18:29:36.965Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 210,
+      "columns": [
+        "trade_date",
+        "market_norm",
+        "full_code",
+        "legacy_code",
+        "security_name",
+        "previous_trade_date",
+        "calendar_gap_days",
+        "previous_close",
+        "open_px",
+        "high_px",
+        "low_px",
+        "close_px",
+        "volume",
+        "raw_return_pct",
+        "priority_score",
+        "priority_level",
+        "audit_reasons",
+        "official_match_count",
+        "official_action_kinds",
+        "official_sources",
+        "official_reference_prices",
+        "close_vs_official_reference_pct",
+        "source_coverage_complete",
+        "official_audit_status"
+      ],
+      "event_key_info": {
+        "market_column": "market_norm",
+        "code_column": "full_code",
+        "date_column": "trade_date",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "PASS",
+        "valid_key_rows": 210,
+        "unique_keys": 210,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.31",
+      "id": "1g8i5blL_uVe7PJWOR_mi2rZjN8CR2l6U",
+      "name": "官方來源完整查核但未命中.csv",
+      "bytes": 21265,
+      "createdTime": "2026-10-31T18:29:36.944Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 88,
+      "columns": [
+        "trade_date",
+        "market_norm",
+        "full_code",
+        "legacy_code",
+        "security_name",
+        "previous_trade_date",
+        "calendar_gap_days",
+        "previous_close",
+        "open_px",
+        "high_px",
+        "low_px",
+        "close_px",
+        "volume",
+        "raw_return_pct",
+        "priority_score",
+        "priority_level",
+        "audit_reasons",
+        "official_match_count",
+        "official_action_kinds",
+        "official_sources",
+        "official_reference_prices",
+        "close_vs_official_reference_pct",
+        "source_coverage_complete",
+        "official_audit_status"
+      ],
+      "event_key_info": {
+        "market_column": "market_norm",
+        "code_column": "full_code",
+        "date_column": "trade_date",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "PASS",
+        "valid_key_rows": 88,
+        "unique_keys": 88,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.31",
+      "id": "1O401KkVd5ZHZbrU-J4HEc5zF7ICE7YgO",
+      "name": "未核實事件官方來源逐筆核對.csv",
+      "bytes": 140461,
+      "createdTime": "2026-10-31T18:29:36.866Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 486,
+      "columns": [
+        "trade_date",
+        "market_norm",
+        "full_code",
+        "legacy_code",
+        "security_name",
+        "previous_trade_date",
+        "calendar_gap_days",
+        "previous_close",
+        "open_px",
+        "high_px",
+        "low_px",
+        "close_px",
+        "volume",
+        "raw_return_pct",
+        "priority_score",
+        "priority_level",
+        "audit_reasons",
+        "official_match_count",
+        "official_action_kinds",
+        "official_sources",
+        "official_reference_prices",
+        "close_vs_official_reference_pct",
+        "source_coverage_complete",
+        "official_audit_status"
+      ],
+      "event_key_info": {
+        "market_column": "market_norm",
+        "code_column": "full_code",
+        "date_column": "trade_date",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "PASS",
+        "valid_key_rows": 486,
+        "unique_keys": 486,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.32",
+      "id": "1-H5r0pCY771k0Z7P2VNIBce1_iIO1N8M",
+      "name": "v4.32核驗摘要.txt",
+      "bytes": 2460,
+      "createdTime": "2026-10-31T18:39:26.404Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "encoding": "utf-8-sig",
+      "line_count": 24
+    },
+    {
+      "family": "v4.32",
+      "id": "1eskCkn9NIMPVHzWHLYY35Z5jPiNiSrQ0",
+      "name": "官方公司行動精確命中價格基準診斷.csv",
+      "bytes": 106269,
+      "createdTime": "2026-10-31T18:39:26.602Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 387,
+      "columns": [
+        "trade_date",
+        "market_norm",
+        "full_code",
+        "security_name",
+        "action_kind",
+        "official_event_date",
+        "source_tag",
+        "previous_trade_date",
+        "previous_close",
+        "raw_close_return_pct",
+        "official_reference_price",
+        "event_close",
+        "close_vs_reference_pct",
+        "raw_return_reduction_pct",
+        "reference_price_note"
+      ],
+      "event_key_info": {
+        "market_column": "market_norm",
+        "code_column": "full_code",
+        "date_column": "official_event_date",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "status": "PASS",
+        "valid_key_rows": 387,
+        "unique_keys": 386,
+        "duplicate_key_rows": 1,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": [
+          {
+            "key": "TWSE|5906|2016-07-14",
+            "count": 2
+          }
+        ]
+      }
+    },
+    {
+      "family": "v4.32",
+      "id": "13l72yGoE2hEDLl-muwha4Vf0WWaM4bhs",
+      "name": "486筆事件來源覆蓋重新判定.csv",
+      "bytes": 55637,
+      "createdTime": "2026-10-31T18:39:26.482Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 486,
+      "columns": [
+        "trade_date",
+        "market_norm",
+        "full_code",
+        "security_name",
+        "priority_level",
+        "priority_score",
+        "previous_trade_date",
+        "raw_return_pct",
+        "v431_coverage_complete",
+        "v432_coverage_complete",
+        "coverage_note",
+        "official_match_count",
+        "official_audit_status"
+      ],
+      "event_key_info": {
+        "market_column": "market_norm",
+        "code_column": "full_code",
+        "date_column": "trade_date",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "PASS",
+        "valid_key_rows": 486,
+        "unique_keys": 486,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.32",
+      "id": "1vAeV_xgDuy3XQFVgPSXrXpHl7NcvF3Fg",
+      "name": "官方三類來源尚未命中事件清單.csv",
+      "bytes": 21681,
+      "createdTime": "2026-10-31T18:39:26.846Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 100,
+      "columns": [
+        "trade_date",
+        "market_norm",
+        "full_code",
+        "security_name",
+        "previous_trade_date",
+        "raw_return_pct",
+        "priority_level",
+        "priority_score",
+        "v432_source_coverage_complete",
+        "v432_interpretation"
+      ],
+      "event_key_info": {
+        "market_column": "market_norm",
+        "code_column": "full_code",
+        "date_column": "trade_date",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "PASS",
+        "valid_key_rows": 100,
+        "unique_keys": 100,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.32",
+      "id": "1L4VGe7Nzf-V_dP8V2G-ozr9-ULlZh1G7",
+      "name": "官方查詢空結果合理性重分類.csv",
+      "bytes": 22483,
+      "createdTime": "2026-10-31T18:39:26.426Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 63,
+      "columns": [
+        "market",
+        "source_tag",
+        "action_kind",
+        "query_start",
+        "query_end",
+        "task_type",
+        "http_status",
+        "original_error",
+        "revised_status",
+        "reason",
+        "source_url"
+      ],
+      "event_key_info": {
+        "market_column": "market",
+        "code_column": null,
+        "date_column": null,
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "KEY_COLUMNS_NOT_FOUND"
+      }
+    },
+    {
+      "family": "v4.32",
+      "id": "10I0AHQHmzUw7kdQtzA-2kqXwej013MXC",
+      "name": "公告有效日期與行情首個交易日對照.csv",
+      "bytes": 1234,
+      "createdTime": "2026-10-31T18:39:26.794Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 3,
+      "columns": [
+        "full_code",
+        "market_norm",
+        "announcement_effective_date",
+        "v429_market_event_date",
+        "duckdb_first_market_date",
+        "calendar_offset_days",
+        "reason",
+        "source_url",
+        "alignment_valid"
+      ],
+      "event_key_info": {
+        "market_column": "market_norm",
+        "code_column": "full_code",
+        "date_column": null,
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "KEY_COLUMNS_NOT_FOUND"
+      }
+    },
+    {
+      "family": "v4.32",
+      "id": "18ZI0YN8J6uT2tgsQeLQAPEzrkT2Btqy9",
+      "name": "控制組12事件校準結果.csv",
+      "bytes": 4128,
+      "createdTime": "2026-10-31T18:39:26.740Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 12,
+      "columns": [
+        "full_code",
+        "market_norm",
+        "security_name",
+        "v429_trade_date",
+        "announcement_effective_date",
+        "first_market_date_from_duckdb",
+        "database_date_matches_v429",
+        "date_offset_calendar_days",
+        "expected_action_kind",
+        "exchange_ratio",
+        "previous_close",
+        "official_reference_price_or_calculated",
+        "reference_price_method",
+        "event_close",
+        "raw_return_pct",
+        "adjusted_return_vs_reference_pct",
+        "v431_api_exact_match",
+        "v431_api_status",
+        "v432_source_coverage_complete",
+        "v432_coverage_note",
+        "v432_evidence_status",
+        "announcement_summary",
+        "evidence_note",
+        "source_url",
+        "mops_company_query_url",
+        "official_sources"
+      ],
+      "event_key_info": {
+        "market_column": "market_norm",
+        "code_column": "full_code",
+        "date_column": null,
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "KEY_COLUMNS_NOT_FOUND"
+      }
+    },
+    {
+      "family": "v4.32",
+      "id": "110aKw7FC6_jxAnetkiV_yLnwbnkOtnyK",
+      "name": "官方來源覆蓋修正後完整紀錄.csv",
+      "bytes": 200821,
+      "createdTime": "2026-10-31T18:39:27.039Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 796,
+      "columns": [
+        "market",
+        "source_tag",
+        "action_kind",
+        "query_start",
+        "query_end",
+        "task_type",
+        "original_status",
+        "revised_status",
+        "official_rows",
+        "matched_rows",
+        "http_status",
+        "error",
+        "reclassification_reason",
+        "source_url"
+      ],
+      "event_key_info": {
+        "market_column": "market",
+        "code_column": null,
+        "date_column": null,
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "KEY_COLUMNS_NOT_FOUND"
+      }
+    },
+    {
+      "family": "v4.32",
+      "id": "1huvCN7z5ZRFmiN_7JvnYXANEaqmzj_BV",
+      "name": "官方原始命中資料重複鍵檢查.csv",
+      "bytes": 100,
+      "createdTime": "2026-10-31T18:39:27.013Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 0,
+      "columns": [
+        "market",
+        "source_tag",
+        "action_kind",
+        "event_date",
+        "full_code",
+        "reference_price",
+        "target_group",
+        "raw_record_json"
+      ],
+      "event_key_info": {
+        "market_column": "market",
+        "code_column": "full_code",
+        "date_column": "event_date",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "status": "NO_VALID_KEYS",
+        "valid_key_rows": 0,
+        "unique_keys": 0,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.30",
+      "id": "1nZycOhS93n0hnAy_U5XO52BkmttGLY8j",
+      "name": "官方公司行動參考價衝突清單.csv",
+      "bytes": 99,
+      "createdTime": "2026-10-31T18:49:02.928Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 0,
+      "columns": [
+        "trade_date",
+        "market_norm",
+        "full_code",
+        "action_kind",
+        "source_tag",
+        "reference_prices",
+        "member_count",
+        "decision"
+      ],
+      "event_key_info": {
+        "market_column": "market_norm",
+        "code_column": "full_code",
+        "date_column": "trade_date",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "NO_VALID_KEYS",
+        "valid_key_rows": 0,
+        "unique_keys": 0,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.30",
+      "id": "1y6YgM78Fy7j7K3C3BaUvuj_gbuzoDvoW",
+      "name": "官方公司行動邏輯重複鍵明細.csv",
+      "bytes": 492,
+      "createdTime": "2026-10-31T18:49:02.914Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 2,
+      "columns": [
+        "trade_date",
+        "market_norm",
+        "full_code",
+        "security_name",
+        "action_kind",
+        "official_event_date",
+        "source_tag",
+        "official_reference_price",
+        "event_close",
+        "logical_row_count",
+        "dedup_decision"
+      ],
+      "event_key_info": {
+        "market_column": "market_norm",
+        "code_column": "full_code",
+        "date_column": "official_event_date",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "status": "PASS",
+        "valid_key_rows": 2,
+        "unique_keys": 1,
+        "duplicate_key_rows": 1,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": [
+          {
+            "key": "TWSE|5906|2016-07-14",
+            "count": 2
+          }
+        ]
+      }
+    },
+    {
+      "family": "v4.30",
+      "id": "13WfojleIBoTUpjYfqvckY7qfeknW7gBc",
+      "name": "官方公司行動價格差異浮點容差重分類.csv",
+      "bytes": 72413,
+      "createdTime": "2026-10-31T18:49:02.882Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 386,
+      "columns": [
+        "trade_date",
+        "market_norm",
+        "full_code",
+        "security_name",
+        "action_kind",
+        "official_event_date",
+        "source_tag",
+        "previous_trade_date",
+        "previous_close",
+        "raw_close_return_pct",
+        "official_reference_price",
+        "event_close",
+        "close_vs_reference_pct",
+        "raw_return_reduction_pct",
+        "logical_row_count",
+        "logical_dedup_status",
+        "gap_classification_v433",
+        "within_10pct_with_tolerance",
+        "float_tolerance_percentage_point"
+      ],
+      "event_key_info": {
+        "market_column": "market_norm",
+        "code_column": "full_code",
+        "date_column": "official_event_date",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "status": "PASS",
+        "valid_key_rows": 386,
+        "unique_keys": 386,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.40",
+      "id": "12zJ8zagx7P94JEHImgO3AglMoFd3LuAs",
+      "name": "100筆事件公司行動與復牌整合診斷.csv",
+      "bytes": 38307,
+      "createdTime": "2026-11-01T01:43:09.765Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 100,
+      "columns": [
+        "event_key",
+        "trade_date",
+        "market_norm",
+        "full_code",
+        "security_name",
+        "previous_trade_date",
+        "calendar_days_previous_to_event",
+        "previous_close",
+        "event_close",
+        "raw_return_pct",
+        "mops_signal_document_count",
+        "mops_resumption_document_count",
+        "mops_resumption_effective_date",
+        "mops_new_share_listing_date",
+        "days_from_resumption_to_event",
+        "resumption_day_timeline_status",
+        "resumption_day_volume",
+        "first_trade_after_resumption_date",
+        "first_valid_ohlc_after_resumption_date",
+        "first_valid_ohlc_after_resumption_is_event_day",
+        "official_reduction_action_count_in_window",
+        "official_reduction_action_date",
+        "official_reduction_reference_price",
+        "mops_conversion_ratio_count",
+        "mops_conversion_ratio_shares_per_1000",
+        "mops_action_reason",
+        "inferred_reference_price",
+        "inferred_reference_return_pct",
+        "event_close_vs_official_reference_pct",
+        "selected_baseline_type",
+        "selected_baseline_price",
+        "selected_interval_return_pct",
+        "timing_classification",
+        "baseline_diagnosis",
+        "return_interpretation",
+        "source_previous_event_assessment"
+      ],
+      "event_key_info": {
+        "market_column": "market_norm",
+        "code_column": "full_code",
+        "date_column": "official_reduction_action_date",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "status": "PASS",
+        "valid_key_rows": 14,
+        "unique_keys": 14,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 86,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.41",
+      "id": "1fCzSB05N9Imv77dGFhC2A5Yv7-vBf7y_",
+      "name": "v4.41核驗摘要.txt",
+      "bytes": 4446,
+      "createdTime": "2026-11-01T01:56:53.239Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "encoding": "utf-8-sig",
+      "line_count": 26
+    },
+    {
+      "family": "v4.41",
+      "id": "1e5q7iaQBbuJv7n6m7i9OdJq39LTdplu6",
+      "name": "公司行動／復牌日起逐日行情明細.csv",
+      "bytes": 8887,
+      "createdTime": "2026-11-01T01:56:53.131Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 47,
+      "columns": [
+        "event_key",
+        "trade_date",
+        "days_from_resume_or_action",
+        "is_resume_or_action_date",
+        "is_event_date",
+        "open_px",
+        "high_px",
+        "low_px",
+        "close_px",
+        "volume",
+        "row_status",
+        "note"
+      ],
+      "event_key_info": {
+        "market_column": null,
+        "code_column": null,
+        "date_column": "trade_date",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "KEY_COLUMNS_NOT_FOUND"
+      }
+    },
+    {
+      "family": "v4.41",
+      "id": "1kUz54XyrQKk9WLj9JfzbwMCcEw9eRqGk",
+      "name": "高優先事件公司行動時序複核.csv",
+      "bytes": 6553,
+      "createdTime": "2026-11-01T01:56:53.097Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 17,
+      "columns": [
+        "event_key",
+        "trade_date",
+        "full_code",
+        "security_name",
+        "raw_return_pct",
+        "official_reduction_action_date",
+        "official_reduction_reference_price",
+        "old_share_last_trade_date",
+        "old_share_suspension_start_date",
+        "old_share_suspension_end_date",
+        "trading_suspension_effective_dates",
+        "new_share_listing_date",
+        "explicit_resumption_date",
+        "listing_to_resumption_calendar_days",
+        "inferred_reference_price",
+        "inferred_reference_return_pct_sensitivity_only",
+        "inferred_baseline_eligibility",
+        "source_interval_start_date",
+        "source_interval_rows_before_event",
+        "source_interval_valid_ohlc_before_event",
+        "source_interval_volume_without_ohlc",
+        "source_interval_zero_or_empty_volume_rows",
+        "source_interval_state",
+        "source_interval_max_calendar_gap_days",
+        "source_interval_calendar_gap_assessment",
+        "schedule_relation",
+        "baseline_use_scope"
+      ],
+      "event_key_info": {
+        "market_column": null,
+        "code_column": "full_code",
+        "date_column": "official_reduction_action_date",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "status": "NO_VALID_KEYS",
+        "valid_key_rows": 0,
+        "unique_keys": 0,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 3,
+        "missing_market_rows": 14,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.41",
+      "id": "1FH3mYn4qgn8mtRHDZQ1XKht4_4uxSMQJ",
+      "name": "v4.41 MOPS公告日期明細.csv",
+      "bytes": 5578,
+      "createdTime": "2026-11-01T01:56:53.217Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 13,
+      "columns": [
+        "event_key",
+        "event_trade_date",
+        "full_code",
+        "security_name",
+        "publication_date",
+        "subject",
+        "detail_fetch_state",
+        "parse_source",
+        "old_share_last_trade_date",
+        "old_share_suspension_start_date",
+        "old_share_suspension_end_date",
+        "trading_suspension_effective_dates",
+        "new_share_listing_dates",
+        "resumption_effective_dates",
+        "conversion_ratio_shares_per_1000",
+        "action_reason",
+        "detail_url"
+      ],
+      "event_key_info": {
+        "market_column": null,
+        "code_column": "full_code",
+        "date_column": null,
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "KEY_COLUMNS_NOT_FOUND"
+      }
+    },
+    {
+      "family": "v4.41",
+      "id": "17B8U3AWEX3pw5Z2m3hmjB627UR6a2Nkd",
+      "name": "官方或推算減資參考基準明細.csv",
+      "bytes": 2882,
+      "createdTime": "2026-11-01T01:56:53.162Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 16,
+      "columns": [
+        "event_key",
+        "trade_date",
+        "market_norm",
+        "full_code",
+        "security_name",
+        "previous_trade_date",
+        "pre_action_close_used",
+        "official_reduction_action_date",
+        "mops_new_share_listing_date",
+        "mops_resumption_effective_date",
+        "mops_conversion_ratio_shares_per_1000",
+        "mops_action_reason",
+        "official_reference_price",
+        "inferred_reference_price",
+        "event_close",
+        "event_close_vs_official_reference_pct",
+        "event_close_vs_inferred_reference_pct",
+        "raw_return_pct",
+        "reference_source_class",
+        "note"
+      ],
+      "event_key_info": {
+        "market_column": "market_norm",
+        "code_column": "full_code",
+        "date_column": "official_reduction_action_date",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "status": "PASS",
+        "valid_key_rows": 14,
+        "unique_keys": 14,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 2,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.41",
+      "id": "1bOWHOtE5Pvb-BqEs9bbDa1Q1jjHiOmMC",
+      "name": "MOPS公告日期與舊股停買新股上櫃時程抽取.csv",
+      "bytes": 7504,
+      "createdTime": "2026-11-01T01:56:53.067Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 13,
+      "columns": [
+        "event_key",
+        "event_trade_date",
+        "event_full_code",
+        "publication_date",
+        "subject",
+        "signal_categories",
+        "contains_reduction_signal",
+        "contains_suspension_signal",
+        "contains_resumption_signal",
+        "contains_new_share_listing_signal",
+        "detail_fetch_state",
+        "detail_bytes",
+        "detail_sha256_or_error",
+        "resumption_effective_dates",
+        "new_share_listing_dates",
+        "old_share_last_trade_date",
+        "old_share_suspension_start_date",
+        "old_share_suspension_end_date",
+        "trading_suspension_effective_dates",
+        "conversion_ratio_shares_per_1000",
+        "conversion_ratio_count",
+        "action_reason",
+        "detail_url",
+        "parse_source"
+      ],
+      "event_key_info": {
+        "market_column": null,
+        "code_column": null,
+        "date_column": null,
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "status": "KEY_COLUMNS_NOT_FOUND"
+      }
+    },
+    {
+      "family": "v4.41",
+      "id": "1xhV2y5XpCjXL1Bi0u1tRM_7m5YGG5Yty",
+      "name": "100筆事件基準使用範圍與時序缺口核驗.csv",
+      "bytes": 54788,
+      "createdTime": "2026-11-01T01:56:53.025Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 100,
+      "columns": [
+        "event_key",
+        "trade_date",
+        "market_norm",
+        "full_code",
+        "security_name",
+        "previous_trade_date",
+        "calendar_days_previous_to_event",
+        "previous_close",
+        "event_close",
+        "raw_return_pct",
+        "mops_signal_document_count",
+        "mops_resumption_document_count",
+        "mops_resumption_effective_date",
+        "mops_new_share_listing_date",
+        "mops_old_share_last_trade_date",
+        "mops_old_share_suspension_start_date",
+        "mops_old_share_suspension_end_date",
+        "mops_trading_suspension_effective_dates",
+        "days_from_resumption_to_event",
+        "resumption_day_timeline_status",
+        "resumption_day_volume",
+        "first_trade_after_resumption_date",
+        "first_valid_ohlc_after_resumption_date",
+        "first_valid_ohlc_after_resumption_is_event_day",
+        "official_reduction_action_count_in_window",
+        "official_reduction_action_date",
+        "official_reduction_reference_price",
+        "mops_conversion_ratio_count",
+        "mops_conversion_ratio_shares_per_1000",
+        "mops_action_reason",
+        "inferred_reference_price",
+        "inferred_reference_return_pct",
+        "event_close_vs_official_reference_pct",
+        "selected_baseline_type",
+        "selected_baseline_price",
+        "selected_interval_return_pct",
+        "timing_classification",
+        "baseline_diagnosis",
+        "return_interpretation",
+        "source_previous_event_assessment",
+        "mops_schedule_relation_v441",
+        "source_interval_start_date_v441",
+        "source_interval_rows_before_event_v441",
+        "source_interval_valid_ohlc_before_event_v441",
+        "source_interval_volume_without_ohlc_v441",
+        "source_interval_zero_or_empty_volume_rows_v441",
+        "source_interval_state_v441",
+        "source_interval_max_calendar_gap_days_v441",
+        "source_interval_calendar_gap_assessment_v441",
+        "listing_to_resumption_calendar_days_v441",
+        "inferred_baseline_eligibility_v441",
+        "baseline_use_scope_v441"
+      ],
+      "event_key_info": {
+        "market_column": "market_norm",
+        "code_column": "full_code",
+        "date_column": "official_reduction_action_date",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "status": "PASS",
+        "valid_key_rows": 14,
+        "unique_keys": 14,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 86,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    },
+    {
+      "family": "v4.49",
+      "id": "164qtSLDKHyVwFEP2htao3bsXPswKEqwd",
+      "name": "10_v449特殊公司行動排除清單.csv",
+      "bytes": 811,
+      "createdTime": "2026-11-01T15:46:00.952Z",
+      "md5_verified": true,
+      "read_status": "PASS",
+      "rows": 1,
+      "columns": [
+        "event_key",
+        "補行日",
+        "事件日",
+        "市場",
+        "證券代號",
+        "證券名稱",
+        "v4.41來源前收日期",
+        "v4.41來源前收",
+        "官方補行日收盤",
+        "官方事件日收盤",
+        "原始報酬_pct",
+        "官方補行日前收至事件日區間報酬_pct",
+        "官方區間報酬減原始報酬_pp",
+        "逐日明細交叉核驗",
+        "交叉核驗來源",
+        "交叉核驗收盤",
+        "官方事件日收盤相符",
+        "官方失敗月份查詢數",
+        "官方減資參考價_若有",
+        "特殊處理",
+        "證據層級",
+        "_d",
+        "_m",
+        "_c"
+      ],
+      "event_key_info": {
+        "market_column": "市場",
+        "code_column": "證券代號",
+        "date_column": "事件日",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "status": "PASS",
+        "valid_key_rows": 1,
+        "unique_keys": 1,
+        "duplicate_key_rows": 0,
+        "invalid_rows": 0,
+        "missing_market_rows": 0,
+        "duplicate_examples": []
+      }
+    }
+  ],
+  "v28": {
+    "declared_quality_pass": false,
+    "official_rows": 4501058,
+    "confirmed_trading_days": 2626,
+    "stock_pool_unique": 1985,
+    "query_error_rows": 198,
+    "declared_nontrading_candidates": 0,
+    "query_status_counts": {
+      "TABLE_FOUND_NO_UNIVERSE_ROWS": 198,
+      "JSON_PARSE_ERROR": 198,
+      "OK": 5252
+    },
+    "bad_dates_count": 198,
+    "bad_dates": [
+      "2016-01-01",
+      "2016-02-04",
+      "2016-02-05",
+      "2016-02-08",
+      "2016-02-09",
+      "2016-02-10",
+      "2016-02-11",
+      "2016-02-12",
+      "2016-02-29",
+      "2016-04-04",
+      "2016-04-05",
+      "2016-05-02",
+      "2016-06-09",
+      "2016-06-10",
+      "2016-07-08",
+      "2016-09-15",
+      "2016-09-16",
+      "2016-09-27",
+      "2016-09-28",
+      "2016-10-10",
+      "2017-01-02",
+      "2017-01-25",
+      "2017-01-26",
+      "2017-01-27",
+      "2017-01-30",
+      "2017-01-31",
+      "2017-02-01",
+      "2017-02-27",
+      "2017-02-28",
+      "2017-04-03",
+      "2017-04-04",
+      "2017-05-01",
+      "2017-05-29",
+      "2017-05-30",
+      "2017-10-04",
+      "2017-10-09",
+      "2017-10-10",
+      "2018-01-01",
+      "2018-02-13",
+      "2018-02-14",
+      "2018-02-15",
+      "2018-02-16",
+      "2018-02-19",
+      "2018-02-20",
+      "2018-02-28",
+      "2018-04-04",
+      "2018-04-05",
+      "2018-04-06",
+      "2018-05-01",
+      "2018-06-18",
+      "2018-09-24",
+      "2018-10-10",
+      "2018-12-31",
+      "2019-01-01",
+      "2019-01-31",
+      "2019-02-01",
+      "2019-02-04",
+      "2019-02-05",
+      "2019-02-06",
+      "2019-02-07",
+      "2019-02-08",
+      "2019-02-28",
+      "2019-03-01",
+      "2019-04-04",
+      "2019-04-05",
+      "2019-05-01",
+      "2019-06-07",
+      "2019-08-09",
+      "2019-09-13",
+      "2019-09-30",
+      "2019-10-10",
+      "2019-10-11",
+      "2020-01-01",
+      "2020-01-21",
+      "2020-01-22",
+      "2020-01-23",
+      "2020-01-24",
+      "2020-01-27",
+      "2020-01-28",
+      "2020-01-29",
+      "2020-02-28",
+      "2020-04-02",
+      "2020-04-03",
+      "2020-05-01",
+      "2020-06-25",
+      "2020-06-26",
+      "2020-10-01",
+      "2020-10-02",
+      "2020-10-09",
+      "2021-01-01",
+      "2021-02-08",
+      "2021-02-09",
+      "2021-02-10",
+      "2021-02-11",
+      "2021-02-12",
+      "2021-02-15",
+      "2021-02-16",
+      "2021-03-01",
+      "2021-04-02",
+      "2021-04-05",
+      "2021-04-30",
+      "2021-06-14",
+      "2021-09-20",
+      "2021-09-21",
+      "2021-10-11",
+      "2021-12-31",
+      "2022-01-27",
+      "2022-01-28",
+      "2022-01-31",
+      "2022-02-01",
+      "2022-02-02",
+      "2022-02-03",
+      "2022-02-04",
+      "2022-02-28",
+      "2022-04-04",
+      "2022-04-05",
+      "2022-05-02",
+      "2022-06-03",
+      "2022-09-09",
+      "2022-10-10",
+      "2023-01-02",
+      "2023-01-18",
+      "2023-01-19",
+      "2023-01-20",
+      "2023-01-23",
+      "2023-01-24",
+      "2023-01-25",
+      "2023-01-26",
+      "2023-01-27",
+      "2023-02-27",
+      "2023-02-28",
+      "2023-04-03",
+      "2023-04-04",
+      "2023-04-05",
+      "2023-05-01",
+      "2023-06-22",
+      "2023-06-23",
+      "2023-08-03",
+      "2023-09-29",
+      "2023-10-09",
+      "2023-10-10",
+      "2024-01-01",
+      "2024-02-06",
+      "2024-02-07",
+      "2024-02-08",
+      "2024-02-09",
+      "2024-02-12",
+      "2024-02-13",
+      "2024-02-14",
+      "2024-02-28",
+      "2024-04-04",
+      "2024-04-05",
+      "2024-05-01",
+      "2024-06-10",
+      "2024-07-24",
+      "2024-07-25",
+      "2024-09-17",
+      "2024-10-02",
+      "2024-10-03",
+      "2024-10-10",
+      "2024-10-31",
+      "2025-01-01",
+      "2025-01-23",
+      "2025-01-24",
+      "2025-01-27",
+      "2025-01-28",
+      "2025-01-29",
+      "2025-01-30",
+      "2025-01-31",
+      "2025-02-28",
+      "2025-04-03",
+      "2025-04-04",
+      "2025-05-01",
+      "2025-05-30",
+      "2025-09-29",
+      "2025-10-06",
+      "2025-10-10",
+      "2025-10-24",
+      "2025-12-25",
+      "2026-01-01",
+      "2026-02-12",
+      "2026-02-13",
+      "2026-02-16",
+      "2026-02-17",
+      "2026-02-18",
+      "2026-02-19",
+      "2026-02-20",
+      "2026-02-27",
+      "2026-04-03",
+      "2026-04-06",
+      "2026-05-01",
+      "2026-06-19",
+      "2026-07-10",
+      "2026-09-25",
+      "2026-09-28",
+      "2026-10-09",
+      "2026-10-23",
+      "2026-10-26"
+    ],
+    "bad_dates_market_status": {
+      "TPEx|TABLE_FOUND_NO_UNIVERSE_ROWS": 198,
+      "TWSE|JSON_PARSE_ERROR": 198
+    },
+    "makeup_saturdays": {
+      "2016-01-30": {
+        "in_query_log": false,
+        "missing": true
+      },
+      "2016-06-04": {
+        "in_query_log": false,
+        "missing": true
+      },
+      "2016-09-10": {
+        "in_query_log": false,
+        "missing": true
+      },
+      "2017-02-18": {
+        "in_query_log": false,
+        "missing": true
+      },
+      "2017-06-03": {
+        "in_query_log": false,
+        "missing": true
+      },
+      "2017-09-30": {
+        "in_query_log": false,
+        "missing": true
+      },
+      "2018-03-31": {
+        "in_query_log": false,
+        "missing": true
+      },
+      "2018-12-22": {
+        "in_query_log": false,
+        "missing": true
+      }
+    },
+    "integrity_counts": {
+      "双市場完整": {
+        "否": 198,
+        "是": 2626
+      },
+      "TWSE": {
+        "JSON_PARSE_ERROR": 198,
+        "OK": 2626
+      },
+      "TPEx": {
+        "TABLE_FOUND_NO_UNIVERSE_ROWS": 198,
+        "OK": 2626
+      }
+    },
+    "stock_market_reconciliation": {
+      "coverage_rows": 2010,
+      "coverage_unique_market_code": 2010,
+      "pool_rows": 1985,
+      "pool_unique_market_code": 1985,
+      "coverage_only_pairs": [
+        [
+          "TPEx",
+          "1256"
+        ],
+        [
+          "TPEx",
+          "1597"
+        ],
+        [
+          "TPEx",
+          "1752"
+        ],
+        [
+          "TPEx",
+          "1795"
+        ],
+        [
+          "TPEx",
+          "2233"
+        ],
+        [
+          "TPEx",
+          "2636"
+        ],
+        [
+          "TPEx",
+          "3092"
+        ],
+        [
+          "TPEx",
+          "3528"
+        ],
+        [
+          "TPEx",
+          "3563"
+        ],
+        [
+          "TPEx",
+          "3652"
+        ],
+        [
+          "TPEx",
+          "4736"
+        ],
+        [
+          "TPEx",
+          "4739"
+        ],
+        [
+          "TPEx",
+          "5236"
+        ],
+        [
+          "TPEx",
+          "5284"
+        ],
+        [
+          "TPEx",
+          "5306"
+        ],
+        [
+          "TPEx",
+          "6024"
+        ],
+        [
+          "TPEx",
+          "6426"
+        ],
+        [
+          "TPEx",
+          "6438"
+        ],
+        [
+          "TPEx",
+          "6446"
+        ],
+        [
+          "TPEx",
+          "6472"
+        ],
+        [
+          "TPEx",
+          "6589"
+        ],
+        [
+          "TPEx",
+          "8462"
+        ],
+        [
+          "TPEx",
+          "8476"
+        ],
+        [
+          "TPEx",
+          "8908"
+        ],
+        [
+          "TWSE",
+          "6423"
+        ]
+      ],
+      "pool_without_coverage": [],
+      "cross_market_codes": {
+        "1256": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-01-04",
+            "last_date": "2016-03-16",
+            "rows": "45"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2016-03-17",
+            "last_date": "2026-10-28",
+            "rows": "2581"
+          }
+        ],
+        "1597": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-01-04",
+            "last_date": "2020-12-22",
+            "rows": "1209"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2020-12-23",
+            "last_date": "2026-10-28",
+            "rows": "1417"
+          }
+        ],
+        "1752": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-01-04",
+            "last_date": "2022-01-18",
+            "rows": "1472"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2022-01-19",
+            "last_date": "2026-10-28",
+            "rows": "1154"
+          }
+        ],
+        "1795": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-01-04",
+            "last_date": "2019-12-13",
+            "rows": "959"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2019-12-16",
+            "last_date": "2026-10-28",
+            "rows": "1667"
+          }
+        ],
+        "2233": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-01-04",
+            "last_date": "2019-09-16",
+            "rows": "898"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2019-09-17",
+            "last_date": "2026-10-28",
+            "rows": "1728"
+          }
+        ],
+        "2636": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-01-04",
+            "last_date": "2016-12-21",
+            "rows": "234"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2016-12-22",
+            "last_date": "2026-10-28",
+            "rows": "2392"
+          }
+        ],
+        "3092": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-01-04",
+            "last_date": "2021-05-12",
+            "rows": "1298"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2021-05-13",
+            "last_date": "2026-10-28",
+            "rows": "1328"
+          }
+        ],
+        "3528": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-01-04",
+            "last_date": "2016-05-17",
+            "rows": "86"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2016-05-18",
+            "last_date": "2026-10-28",
+            "rows": "2540"
+          }
+        ],
+        "3563": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-01-04",
+            "last_date": "2019-04-01",
+            "rows": "784"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2019-04-02",
+            "last_date": "2026-10-28",
+            "rows": "1842"
+          }
+        ],
+        "3652": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-01-04",
+            "last_date": "2022-09-20",
+            "rows": "1634"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2022-09-21",
+            "last_date": "2026-10-28",
+            "rows": "992"
+          }
+        ],
+        "4736": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-01-04",
+            "last_date": "2023-12-21",
+            "rows": "1939"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2023-12-22",
+            "last_date": "2026-10-28",
+            "rows": "687"
+          }
+        ],
+        "4739": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-01-04",
+            "last_date": "2017-09-07",
+            "rows": "406"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2017-09-08",
+            "last_date": "2026-10-28",
+            "rows": "2220"
+          }
+        ],
+        "5284": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-01-04",
+            "last_date": "2017-03-08",
+            "rows": "280"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2017-03-09",
+            "last_date": "2026-10-28",
+            "rows": "2346"
+          }
+        ],
+        "5306": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-01-04",
+            "last_date": "2022-03-07",
+            "rows": "1498"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2022-03-08",
+            "last_date": "2026-10-28",
+            "rows": "1128"
+          }
+        ],
+        "6024": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-01-04",
+            "last_date": "2017-10-13",
+            "rows": "429"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2017-10-16",
+            "last_date": "2026-10-28",
+            "rows": "2197"
+          }
+        ],
+        "6426": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-01-04",
+            "last_date": "2021-03-23",
+            "rows": "1265"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2021-03-24",
+            "last_date": "2026-10-28",
+            "rows": "1361"
+          }
+        ],
+        "8908": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-01-04",
+            "last_date": "2026-10-15",
+            "rows": "2619"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2026-10-16",
+            "last_date": "2026-10-28",
+            "rows": "7"
+          }
+        ],
+        "8462": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-03-10",
+            "last_date": "2019-03-14",
+            "rows": "732"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2019-03-15",
+            "last_date": "2026-10-28",
+            "rows": "1854"
+          }
+        ],
+        "6446": [
+          {
+            "market": "TPEx",
+            "first_date": "2016-07-19",
+            "last_date": "2024-01-24",
+            "rows": "1835"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2024-01-25",
+            "last_date": "2026-10-28",
+            "rows": "664"
+          }
+        ],
+        "8476": [
+          {
+            "market": "TPEx",
+            "first_date": "2017-03-28",
+            "last_date": "2023-10-30",
+            "rows": "1608"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2023-10-31",
+            "last_date": "2026-10-28",
+            "rows": "719"
+          }
+        ],
+        "6472": [
+          {
+            "market": "TPEx",
+            "first_date": "2017-04-19",
+            "last_date": "2023-12-18",
+            "rows": "1629"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2023-12-19",
+            "last_date": "2026-10-28",
+            "rows": "690"
+          }
+        ],
+        "6438": [
+          {
+            "market": "TPEx",
+            "first_date": "2017-04-25",
+            "last_date": "2021-01-18",
+            "rows": "916"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2021-01-19",
+            "last_date": "2026-10-28",
+            "rows": "1399"
+          }
+        ],
+        "6589": [
+          {
+            "market": "TPEx",
+            "first_date": "2019-06-28",
+            "last_date": "2025-07-18",
+            "rows": "1474"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2025-07-21",
+            "last_date": "2026-10-28",
+            "rows": "309"
+          }
+        ],
+        "5236": [
+          {
+            "market": "TPEx",
+            "first_date": "2021-07-29",
+            "last_date": "2026-07-15",
+            "rows": "1204"
+          },
+          {
+            "market": "TWSE",
+            "first_date": "2026-07-16",
+            "last_date": "2026-10-28",
+            "rows": "70"
+          }
+        ],
+        "6423": [
+          {
+            "market": "TWSE",
+            "first_date": "2024-05-15",
+            "last_date": "2026-01-21",
+            "rows": "414"
+          },
+          {
+            "market": "TPEx",
+            "first_date": "2026-01-22",
+            "last_date": "2026-10-28",
+            "rows": "182"
+          }
+        ]
+      },
+      "cross_market_code_count": 25
+    },
+    "ohlcv_field_counts": {
+      "field": "可解析完整OHLCV",
+      "counts": {
+        "是": 5450
+      }
+    },
+    "calendar_reconciliation": {
+      "198_weekday_no_data": "PREVIOUS_OFFICIAL_CALENDAR_AUDIT_CONFIRMED_NONTRADING",
+      "eight_makeup_saturdays_missing": "CONFIRMED_MISSING_FROM_V28_QUERY_LOG",
+      "recommended_trading_day_count": 2634,
+      "current_v28_trading_day_count": 2626,
+      "required_action": "補入八個週六交易日，再重算品質檢核；不得把198個已確認休市日當成行情 API 故障。"
+    }
+  },
+  "company_action": {
+    "v224": {
+      "all_rows": 14845,
+      "unique_event_keys": 14845,
+      "duplicate_event_keys": 0,
+      "pending_rows": 638,
+      "shadow_rows": 14207,
+      "pending_intersection_all": 638,
+      "shadow_intersection_all": 14207,
+      "pending_only": 0,
+      "shadow_only": 0,
+      "overlap_pending_shadow": 0,
+      "partition_sum": 14845,
+      "eligibility_distribution": {
+        "可列入下一階段影子調整測試候選；尚非正式核准": 14207,
+        "暫緩：行情未命中或無可用前收盤，需查明原因": 132,
+        "暫緩：前收盤日期未對齊": 27,
+        "凍結：官方前收盤價與行情不符": 14,
+        "目前股票池事件但缺少有效候選因子；需另行處理": 465
+      },
+      "factor_consistency_distribution": {
+        "候選因子與官方欄位複算一致": 14380,
+        "無法計算正值候選因子": 465
+      },
+      "crosscheck_distribution": {
+        "通過初步交叉核對：前收盤價格與前一市場資料日相符": 14207,
+        "未能交叉驗證：官方行情總表沒有該股事件日行情列": 132,
+        "價格相符但日期未對齊：非緊鄰前一市場資料日或前一日無有效收盤": 27,
+        "待查：公司行動前收盤價與行情最近有效收盤不符": 14,
+        "僅列例外：原始事件無可計算候選因子": 465
+      },
+      "event_type_distribution": {
+        "除權": 524,
+        "除權息": 599,
+        "除息": 4881,
+        "彌補虧損": 247,
+        "現金減資": 66,
+        "息": 7150,
+        "權": 534,
+        "權息": 681,
+        "退還股款": 153,
+        "": 10
+      },
+      "no_factor_reason_distribution": {
+        "": 14380,
+        "未辨識前收盤欄位": 203,
+        "參考價非數值/空白": 262
+      },
+      "partition_integrity": true
+    },
+    "cross_version_event_key_comparison": {
+      "官方來源逐日查詢紀錄.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": "市場",
+          "code_column": null,
+          "date_column": null,
+          "date_quality": "TRADE_DATE_WEAK_KEY",
+          "status": "KEY_COLUMNS_NOT_FOUND"
+        }
+      },
+      "官方API資料表欄位.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": "市場",
+          "code_column": null,
+          "date_column": null,
+          "date_quality": "TRADE_DATE_WEAK_KEY",
+          "status": "KEY_COLUMNS_NOT_FOUND"
+        }
+      },
+      "逐日雙市場完整性檢核.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": null,
+          "code_column": null,
+          "date_column": null,
+          "date_quality": "TRADE_DATE_WEAK_KEY",
+          "status": "KEY_COLUMNS_NOT_FOUND"
+        }
+      },
+      "官方來源查詢錯誤清單.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": "市場",
+          "code_column": null,
+          "date_column": null,
+          "date_quality": "TRADE_DATE_WEAK_KEY",
+          "status": "KEY_COLUMNS_NOT_FOUND"
+        }
+      },
+      "各股票官方資料覆蓋摘要.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": "市場",
+          "code_column": "股票代號",
+          "date_column": null,
+          "date_quality": "TRADE_DATE_WEAK_KEY",
+          "status": "KEY_COLUMNS_NOT_FOUND"
+        }
+      },
+      "股票池官方市場對照.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": "市場",
+          "code_column": "股票代號",
+          "date_column": null,
+          "date_quality": "TRADE_DATE_WEAK_KEY",
+          "status": "KEY_COLUMNS_NOT_FOUND"
+        }
+      },
+      "已核實公司行動事件參數與來源.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": null,
+          "code_column": "full_code",
+          "date_column": "event_date",
+          "date_quality": "OFFICIAL_EVENT_DATE",
+          "status": "NO_VALID_KEYS",
+          "valid_key_rows": 0,
+          "unique_keys": 0,
+          "duplicate_key_rows": 0,
+          "invalid_rows": 0,
+          "missing_market_rows": 12,
+          "duplicate_examples": []
+        }
+      },
+      "已核實公司行動報酬調整對照.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": null,
+          "code_column": "full_code",
+          "date_column": "event_date",
+          "date_quality": "OFFICIAL_EVENT_DATE",
+          "status": "NO_VALID_KEYS",
+          "valid_key_rows": 0,
+          "unique_keys": 0,
+          "duplicate_key_rows": 0,
+          "invalid_rows": 0,
+          "missing_market_rows": 12,
+          "duplicate_examples": []
+        }
+      },
+      "極端報酬尚未核實公司行動清單_至少20_percent.csv": {
+        "status": "PASS",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "rows": 486,
+        "unique_keys": 486,
+        "matched_v224_keys": 351,
+        "not_in_v224": 135,
+        "v224_not_in_this_file": 14494,
+        "matched_ratio_of_this_file": 0.722222,
+        "matched_ratio_of_v224": 0.023644
+      },
+      "極端報酬事件全清單_至少20_percent.csv": {
+        "status": "PASS",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "rows": 498,
+        "unique_keys": 498,
+        "matched_v224_keys": 360,
+        "not_in_v224": 138,
+        "v224_not_in_this_file": 14485,
+        "matched_ratio_of_this_file": 0.722892,
+        "matched_ratio_of_v224": 0.024251
+      },
+      "官方公司行動原始欄位明細.csv": {
+        "status": "PASS",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "rows": 396,
+        "unique_keys": 395,
+        "matched_v224_keys": 360,
+        "not_in_v224": 35,
+        "v224_not_in_this_file": 14485,
+        "matched_ratio_of_this_file": 0.911392,
+        "matched_ratio_of_v224": 0.024251
+      },
+      "官方公司行動命中事件.csv": {
+        "status": "PASS",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "rows": 386,
+        "unique_keys": 386,
+        "matched_v224_keys": 351,
+        "not_in_v224": 35,
+        "v224_not_in_this_file": 14494,
+        "matched_ratio_of_this_file": 0.909326,
+        "matched_ratio_of_v224": 0.023644
+      },
+      "官方來源查詢涵蓋及錯誤紀錄.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": "market",
+          "code_column": null,
+          "date_column": null,
+          "date_quality": "TRADE_DATE_WEAK_KEY",
+          "status": "KEY_COLUMNS_NOT_FOUND"
+        }
+      },
+      "高優先事件官方核對結果.csv": {
+        "status": "PASS",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "rows": 210,
+        "unique_keys": 210,
+        "matched_v224_keys": 166,
+        "not_in_v224": 44,
+        "v224_not_in_this_file": 14679,
+        "matched_ratio_of_this_file": 0.790476,
+        "matched_ratio_of_v224": 0.011182
+      },
+      "官方來源完整查核但未命中.csv": {
+        "status": "PASS",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "rows": 88,
+        "unique_keys": 88,
+        "matched_v224_keys": 0,
+        "not_in_v224": 88,
+        "v224_not_in_this_file": 14845,
+        "matched_ratio_of_this_file": 0.0,
+        "matched_ratio_of_v224": 0.0
+      },
+      "未核實事件官方來源逐筆核對.csv": {
+        "status": "PASS",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "rows": 486,
+        "unique_keys": 486,
+        "matched_v224_keys": 351,
+        "not_in_v224": 135,
+        "v224_not_in_this_file": 14494,
+        "matched_ratio_of_this_file": 0.722222,
+        "matched_ratio_of_v224": 0.023644
+      },
+      "官方公司行動精確命中價格基準診斷.csv": {
+        "status": "PASS",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "rows": 387,
+        "unique_keys": 386,
+        "matched_v224_keys": 351,
+        "not_in_v224": 35,
+        "v224_not_in_this_file": 14494,
+        "matched_ratio_of_this_file": 0.909326,
+        "matched_ratio_of_v224": 0.023644
+      },
+      "486筆事件來源覆蓋重新判定.csv": {
+        "status": "PASS",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "rows": 486,
+        "unique_keys": 486,
+        "matched_v224_keys": 351,
+        "not_in_v224": 135,
+        "v224_not_in_this_file": 14494,
+        "matched_ratio_of_this_file": 0.722222,
+        "matched_ratio_of_v224": 0.023644
+      },
+      "官方三類來源尚未命中事件清單.csv": {
+        "status": "PASS",
+        "date_quality": "TRADE_DATE_WEAK_KEY",
+        "rows": 100,
+        "unique_keys": 100,
+        "matched_v224_keys": 0,
+        "not_in_v224": 100,
+        "v224_not_in_this_file": 14845,
+        "matched_ratio_of_this_file": 0.0,
+        "matched_ratio_of_v224": 0.0
+      },
+      "官方查詢空結果合理性重分類.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": "market",
+          "code_column": null,
+          "date_column": null,
+          "date_quality": "TRADE_DATE_WEAK_KEY",
+          "status": "KEY_COLUMNS_NOT_FOUND"
+        }
+      },
+      "公告有效日期與行情首個交易日對照.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": "market_norm",
+          "code_column": "full_code",
+          "date_column": null,
+          "date_quality": "TRADE_DATE_WEAK_KEY",
+          "status": "KEY_COLUMNS_NOT_FOUND"
+        }
+      },
+      "控制組12事件校準結果.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": "market_norm",
+          "code_column": "full_code",
+          "date_column": null,
+          "date_quality": "TRADE_DATE_WEAK_KEY",
+          "status": "KEY_COLUMNS_NOT_FOUND"
+        }
+      },
+      "官方來源覆蓋修正後完整紀錄.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": "market",
+          "code_column": null,
+          "date_column": null,
+          "date_quality": "TRADE_DATE_WEAK_KEY",
+          "status": "KEY_COLUMNS_NOT_FOUND"
+        }
+      },
+      "官方原始命中資料重複鍵檢查.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": "market",
+          "code_column": "full_code",
+          "date_column": "event_date",
+          "date_quality": "OFFICIAL_EVENT_DATE",
+          "status": "NO_VALID_KEYS",
+          "valid_key_rows": 0,
+          "unique_keys": 0,
+          "duplicate_key_rows": 0,
+          "invalid_rows": 0,
+          "missing_market_rows": 0,
+          "duplicate_examples": []
+        }
+      },
+      "官方公司行動參考價衝突清單.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": "market_norm",
+          "code_column": "full_code",
+          "date_column": "trade_date",
+          "date_quality": "TRADE_DATE_WEAK_KEY",
+          "status": "NO_VALID_KEYS",
+          "valid_key_rows": 0,
+          "unique_keys": 0,
+          "duplicate_key_rows": 0,
+          "invalid_rows": 0,
+          "missing_market_rows": 0,
+          "duplicate_examples": []
+        }
+      },
+      "官方公司行動邏輯重複鍵明細.csv": {
+        "status": "PASS",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "rows": 2,
+        "unique_keys": 1,
+        "matched_v224_keys": 0,
+        "not_in_v224": 1,
+        "v224_not_in_this_file": 14845,
+        "matched_ratio_of_this_file": 0.0,
+        "matched_ratio_of_v224": 0.0
+      },
+      "官方公司行動價格差異浮點容差重分類.csv": {
+        "status": "PASS",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "rows": 386,
+        "unique_keys": 386,
+        "matched_v224_keys": 351,
+        "not_in_v224": 35,
+        "v224_not_in_this_file": 14494,
+        "matched_ratio_of_this_file": 0.909326,
+        "matched_ratio_of_v224": 0.023644
+      },
+      "100筆事件公司行動與復牌整合診斷.csv": {
+        "status": "PASS",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "rows": 100,
+        "unique_keys": 14,
+        "matched_v224_keys": 13,
+        "not_in_v224": 1,
+        "v224_not_in_this_file": 14832,
+        "matched_ratio_of_this_file": 0.928571,
+        "matched_ratio_of_v224": 0.000876
+      },
+      "公司行動／復牌日起逐日行情明細.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": null,
+          "code_column": null,
+          "date_column": "trade_date",
+          "date_quality": "TRADE_DATE_WEAK_KEY",
+          "status": "KEY_COLUMNS_NOT_FOUND"
+        }
+      },
+      "高優先事件公司行動時序複核.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": null,
+          "code_column": "full_code",
+          "date_column": "official_reduction_action_date",
+          "date_quality": "OFFICIAL_EVENT_DATE",
+          "status": "NO_VALID_KEYS",
+          "valid_key_rows": 0,
+          "unique_keys": 0,
+          "duplicate_key_rows": 0,
+          "invalid_rows": 3,
+          "missing_market_rows": 14,
+          "duplicate_examples": []
+        }
+      },
+      "v4.41 MOPS公告日期明細.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": null,
+          "code_column": "full_code",
+          "date_column": null,
+          "date_quality": "TRADE_DATE_WEAK_KEY",
+          "status": "KEY_COLUMNS_NOT_FOUND"
+        }
+      },
+      "官方或推算減資參考基準明細.csv": {
+        "status": "PASS",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "rows": 16,
+        "unique_keys": 14,
+        "matched_v224_keys": 13,
+        "not_in_v224": 1,
+        "v224_not_in_this_file": 14832,
+        "matched_ratio_of_this_file": 0.928571,
+        "matched_ratio_of_v224": 0.000876
+      },
+      "MOPS公告日期與舊股停買新股上櫃時程抽取.csv": {
+        "status": "NOT_COMPARABLE",
+        "event_key_info": {
+          "market_column": null,
+          "code_column": null,
+          "date_column": null,
+          "date_quality": "TRADE_DATE_WEAK_KEY",
+          "status": "KEY_COLUMNS_NOT_FOUND"
+        }
+      },
+      "100筆事件基準使用範圍與時序缺口核驗.csv": {
+        "status": "PASS",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "rows": 100,
+        "unique_keys": 14,
+        "matched_v224_keys": 13,
+        "not_in_v224": 1,
+        "v224_not_in_this_file": 14832,
+        "matched_ratio_of_this_file": 0.928571,
+        "matched_ratio_of_v224": 0.000876
+      },
+      "10_v449特殊公司行動排除清單.csv": {
+        "status": "PASS",
+        "date_quality": "OFFICIAL_EVENT_DATE",
+        "rows": 1,
+        "unique_keys": 1,
+        "matched_v224_keys": 0,
+        "not_in_v224": 1,
+        "v224_not_in_this_file": 14845,
+        "matched_ratio_of_this_file": 0.0,
+        "matched_ratio_of_v224": 0.0
+      }
+    },
+    "version_diagnostics": {
+      "已核實公司行動報酬調整對照.csv": {
+        "rows": 12,
+        "status_distributions": {
+          "match_status": {
+            "已配對：原極端報酬已由公司行動解釋，調整值僅供參考": 12
+          }
+        },
+        "numeric": {
+          "raw_return_pct": {
+            "count": 12,
+            "invalid": 0,
+            "min": 221.71581769437,
+            "median": 543.0735438915398,
+            "max": 983.0324909747292,
+            "positive": 12,
+            "negative": 0,
+            "zero": 0
+          },
+          "adjusted_return_pct": {
+            "count": 12,
+            "invalid": 0,
+            "min": -9.855951973684206,
+            "median": 0.8230138813946686,
+            "max": 10.000000000000009,
+            "positive": 6,
+            "negative": 6,
+            "zero": 0
+          },
+          "exchange_ratio": {
+            "count": 12,
+            "invalid": 0,
+            "min": 0.091511335,
+            "median": 0.1605668,
+            "max": 0.27464605,
+            "positive": 12,
+            "negative": 0,
+            "zero": 0
+          },
+          "adjusted_reference_price": {
+            "count": 12,
+            "invalid": 0,
+            "min": 9.499999999999998,
+            "median": 24.393577015635437,
+            "max": 109.40066496496127,
+            "positive": 12,
+            "negative": 0,
+            "zero": 0
+          }
+        }
+      },
+      "官方公司行動精確命中價格基準診斷.csv": {
+        "rows": 387,
+        "status_distributions": {},
+        "numeric": {
+          "raw_close_return_pct": {
+            "count": 387,
+            "invalid": 0,
+            "min": -95.49664429530202,
+            "median": 37.22222222222222,
+            "max": 365.3614457831325,
+            "positive": 277,
+            "negative": 110,
+            "zero": 0
+          },
+          "close_vs_reference_pct": {
+            "count": 387,
+            "invalid": 0,
+            "min": -10.000000000000009,
+            "median": -1.3791857383762873,
+            "max": 10.000000000000009,
+            "positive": 157,
+            "negative": 225,
+            "zero": 5
+          },
+          "raw_return_reduction_pct": {
+            "count": 387,
+            "invalid": 0,
+            "min": -103.61151079136691,
+            "median": 39.35814943484857,
+            "max": 372.28915662650604,
+            "positive": 277,
+            "negative": 110,
+            "zero": 0
+          }
+        }
+      },
+      "官方公司行動價格差異浮點容差重分類.csv": {
+        "rows": 386,
+        "status_distributions": {
+          "logical_dedup_status": {
+            "單一邏輯事件": 385,
+            "同鍵同參考價重複明細": 1
+          },
+          "gap_classification_v433": {
+            "小於10%": 376,
+            "約等於10%（浮點容差邊界）": 10
+          }
+        },
+        "numeric": {
+          "close_vs_reference_pct": {
+            "count": 386,
+            "invalid": 0,
+            "min": -10.000000000000009,
+            "median": -1.380244973267808,
+            "max": 10.000000000000009,
+            "positive": 156,
+            "negative": 225,
+            "zero": 5
+          },
+          "raw_return_reduction_pct": {
+            "count": 386,
+            "invalid": 0,
+            "min": -103.61151079136691,
+            "median": 39.315475198670676,
+            "max": 372.28915662650604,
+            "positive": 276,
+            "negative": 110,
+            "zero": 0
+          },
+          "float_tolerance_percentage_point": {
+            "count": 386,
+            "invalid": 0,
+            "min": 1e-07,
+            "median": 1e-07,
+            "max": 1e-07,
+            "positive": 386,
+            "negative": 0,
+            "zero": 0
+          }
+        }
+      },
+      "100筆事件公司行動與復牌整合診斷.csv": {
+        "rows": 100,
+        "status_distributions": {
+          "resumption_day_timeline_status": {
+            "未出現在逐日行情檔": 98,
+            "有效OHLC收盤": 1,
+            "無OHLC／零量或無量": 1
+          },
+          "mops_action_reason": {
+            "": 94,
+            "減資原因未能由公告文字確定": 3,
+            "彌補虧損": 2,
+            "彌補虧損；減資原因未能由公告文字確定": 1
+          },
+          "selected_baseline_type": {
+            "OFFICIAL_REDUCTION_REFERENCE": 14,
+            "INFERRED_REDUCTION_REFERENCE_NOT_OFFICIAL": 1,
+            "": 84,
+            "PRE_SUSPENSION_CLOSE_ONLY_LONG_GAP": 1
+          },
+          "selected_baseline_price": {
+            "12.95": 1,
+            "36.14": 1,
+            "25": 1,
+            "15.08": 1,
+            "8.36": 1,
+            "24.93": 1,
+            "6.55": 1,
+            "28.91": 1,
+            "19.3904566539": 1,
+            "": 84,
+            "10.73": 1,
+            "41.65": 1,
+            "17.34": 1,
+            "12.36": 1,
+            "15.59": 1,
+            "10.09": 1,
+            "15.65": 1
+          },
+          "timing_classification": {
+            "減資恢復參考價後／事件日為來源序列首筆有效OHLC": 14,
+            "復牌日即事件日／事件日為復牌後首筆有效OHLC": 1,
+            "未由本版來源確認減資恢復價或明確復牌日期": 84,
+            "公告復牌日早於事件日／事件日為復牌後首筆有效OHLC": 1
+          },
+          "baseline_diagnosis": {
+            "": 98,
+            "有官方減資參考價；MOPS換發比例僅作交叉核對": 1,
+            "依MOPS彌補虧損換發比例及停牌前收盤價推算；非交易所正式公布參考價": 1
+          }
+        },
+        "numeric": {
+          "raw_return_pct": {
+            "count": 100,
+            "invalid": 0,
+            "min": -46.3481228669,
+            "median": 20.907610130850003,
+            "max": 141.304347826,
+            "positive": 88,
+            "negative": 12,
+            "zero": 0
+          },
+          "event_close_vs_official_reference_pct": {
+            "count": 14,
+            "invalid": 0,
+            "min": -20.3770557561,
+            "median": -3.6976598970400003,
+            "max": 10.0,
+            "positive": 4,
+            "negative": 9,
+            "zero": 1
+          },
+          "selected_interval_return_pct": {
+            "count": 16,
+            "invalid": 0,
+            "min": -20.3770557561,
+            "median": -1.588092864263,
+            "max": 20.7667731629,
+            "positive": 6,
+            "negative": 9,
+            "zero": 1
+          }
+        }
+      },
+      "高優先事件公司行動時序複核.csv": {
+        "rows": 17,
+        "status_distributions": {
+          "inferred_baseline_eligibility": {
+            "NOT_APPLICABLE": 16,
+            "NOT_ELIGIBLE_AS_EVENT_BASELINE_LISTING_PRECEDES_ACTUAL_RESUMPTION": 1
+          },
+          "baseline_use_scope": {
+            "OFFICIAL_REFERENCE_TO_EVENT_CLOSE_ENDPOINT_INTERVAL_ONLY_NOT_SINGLE_DAY_RETURN": 14,
+            "NON_OFFICIAL_RATIO_SENSITIVITY_ONLY_NOT_A_CORRECTED_RETURN": 1,
+            "NO_VERIFIED_ACTION_BASELINE_AVAILABLE": 1,
+            "PRE_SUSPENSION_CLOSE_TO_FIRST_VALID_POST_RESUMPTION_OHLC_INTERVAL": 1
+          }
+        },
+        "numeric": {
+          "raw_return_pct": {
+            "count": 17,
+            "invalid": 0,
+            "min": 20.7667731629,
+            "median": 58.9552238806,
+            "max": 141.304347826,
+            "positive": 17,
+            "negative": 0,
+            "zero": 0
+          },
+          "inferred_reference_return_pct_sensitivity_only": {
+            "count": 1,
+            "invalid": 0,
+            "min": 9.84785134328,
+            "median": 9.84785134328,
+            "max": 9.84785134328,
+            "positive": 1,
+            "negative": 0,
+            "zero": 0
+          }
+        }
+      }
+    },
+    "version_status_distributions": {
+      "官方來源逐日查詢紀錄.csv": {
+        "HTTP狀態碼": {
+          "200": 5648
+        },
+        "API狀態": {
+          "ok": 2824,
+          "": 198,
+          "OK": 2626
+        },
+        "查詢狀態": {
+          "TABLE_FOUND_NO_UNIVERSE_ROWS": 198,
+          "JSON_PARSE_ERROR": 198,
+          "OK": 5252
+        }
+      },
+      "官方API資料表欄位.csv": {},
+      "逐日雙市場完整性檢核.csv": {
+        "TWSE狀態": {
+          "JSON_PARSE_ERROR": 198,
+          "OK": 2626
+        },
+        "TPEx狀態": {
+          "TABLE_FOUND_NO_UNIVERSE_ROWS": 198,
+          "OK": 2626
+        },
+        "雙市場判讀完整": {
+          "否": 198,
+          "是": 2626
+        },
+        "判讀": {
+          "市場資料不完整或無法確認，須檢視錯誤紀錄": 198,
+          "雙市場行情均成功且有資料": 2626
+        }
+      },
+      "官方來源查詢錯誤清單.csv": {
+        "HTTP狀態碼": {
+          "200": 198
+        },
+        "API狀態": {
+          "": 198
+        },
+        "查詢狀態": {
+          "JSON_PARSE_ERROR": 198
+        }
+      },
+      "各股票官方資料覆蓋摘要.csv": {},
+      "股票池官方市場對照.csv": {},
+      "已核實公司行動事件參數與來源.csv": {},
+      "已核實公司行動報酬調整對照.csv": {
+        "match_status": {
+          "已配對：原極端報酬已由公司行動解釋，調整值僅供參考": 12
+        }
+      },
+      "極端報酬尚未核實公司行動清單_至少20_percent.csv": {},
+      "極端報酬事件全清單_至少20_percent.csv": {
+        "action_audit_status": {
+          "已核實公司行動事件": 12,
+          "尚未核實公司行動": 486
+        }
+      },
+      "官方公司行動原始欄位明細.csv": {},
+      "官方公司行動命中事件.csv": {
+        "audit_reasons": {
+          "報酬絕對值達100%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間": 31,
+          "報酬絕對值達100%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間；同一證券有多次未核實極端事件": 36,
+          "報酬絕對值達50%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間；同一證券有多次未核實極端事件": 46,
+          "報酬絕對值達50%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間": 42,
+          "報酬絕對值達50%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；同一證券有多次未核實極端事件": 9,
+          "報酬絕對值達50%；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間；同一證券有多次未核實極端事件": 3,
+          "報酬絕對值達50%；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間": 2,
+          "報酬絕對值達50%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%": 13,
+          "前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%": 66,
+          "前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；同一證券有多次未核實極端事件": 49,
+          "事件日開盤相對前收跳空達20%；同一證券有多次未核實極端事件": 37,
+          "事件日開盤相對前收跳空達20%": 27,
+          "前後有效行情間隔超過4日；同一證券有多次未核實極端事件": 2,
+          "同一證券有多次未核實極端事件": 5,
+          "": 12,
+          "前後有效行情間隔超過4日": 6
+        },
+        "official_match_count": {
+          "1": 385,
+          "2": 1
+        },
+        "official_audit_status": {
+          "命中官方減資資料": 276,
+          "命中官方面額變更資料": 24,
+          "命中官方除權息資料": 86
+        }
+      },
+      "官方來源查詢涵蓋及錯誤紀錄.csv": {
+        "status": {
+          "success": 733,
+          "failed": 63
+        },
+        "matched_rows": {
+          "1": 167,
+          "0": 548,
+          "2": 45,
+          "4": 11,
+          "6": 3,
+          "3": 19,
+          "5": 1,
+          "8": 1,
+          "7": 1
+        },
+        "http_status": {
+          "200": 796
+        }
+      },
+      "高優先事件官方核對結果.csv": {
+        "audit_reasons": {
+          "報酬絕對值達100%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間": 33,
+          "報酬絕對值達100%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間；同一證券有多次未核實極端事件": 39,
+          "報酬絕對值達50%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；同一證券有多次未核實極端事件": 10,
+          "報酬絕對值達50%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間；同一證券有多次未核實極端事件": 49,
+          "報酬絕對值達50%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間": 42,
+          "報酬絕對值達50%；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間；同一證券有多次未核實極端事件": 3,
+          "前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；同一證券有多次未核實極端事件": 34
+        },
+        "official_match_count": {
+          "1": 182,
+          "2": 1,
+          "0": 27
+        },
+        "official_audit_status": {
+          "命中官方減資資料": 160,
+          "官方來源查核完成但未命中": 26,
+          "官方來源查核不完整；不可判定未命中": 1,
+          "命中官方面額變更資料": 20,
+          "命中官方除權息資料": 3
+        }
+      },
+      "官方來源完整查核但未命中.csv": {
+        "audit_reasons": {
+          "報酬絕對值達100%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間": 2,
+          "報酬絕對值達100%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間；同一證券有多次未核實極端事件": 2,
+          "報酬絕對值達50%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；同一證券有多次未核實極端事件": 1,
+          "報酬絕對值達50%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間；同一證券有多次未核實極端事件": 3,
+          "報酬絕對值達50%": 1,
+          "事件日開盤相對前收跳空達20%；同一證券有多次未核實極端事件": 20,
+          "": 20,
+          "前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%": 2,
+          "前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；同一證券有多次未核實極端事件": 20,
+          "前後有效行情間隔超過4日；同一證券有多次未核實極端事件": 2,
+          "同一證券有多次未核實極端事件": 7,
+          "前後有效行情間隔超過4日": 1,
+          "事件日開盤相對前收跳空達20%": 7
+        },
+        "official_match_count": {
+          "0": 88
+        },
+        "official_audit_status": {
+          "官方來源查核完成但未命中": 88
+        }
+      },
+      "未核實事件官方來源逐筆核對.csv": {
+        "audit_reasons": {
+          "報酬絕對值達100%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間": 33,
+          "報酬絕對值達100%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間；同一證券有多次未核實極端事件": 39,
+          "報酬絕對值達50%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；同一證券有多次未核實極端事件": 10,
+          "報酬絕對值達50%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間；同一證券有多次未核實極端事件": 49,
+          "報酬絕對值達50%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間": 42,
+          "報酬絕對值達50%；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間；同一證券有多次未核實極端事件": 3,
+          "報酬絕對值達50%；事件日開盤相對前收跳空達20%；事件後價格維持在顯著不同區間": 2,
+          "報酬絕對值達50%；前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%": 13,
+          "報酬絕對值達50%": 1,
+          "前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%": 69,
+          "前後有效行情間隔超過4日；事件日開盤相對前收跳空達20%；同一證券有多次未核實極端事件": 70,
+          "事件日開盤相對前收跳空達20%；同一證券有多次未核實極端事件": 57,
+          "": 39,
+          "事件日開盤相對前收跳空達20%": 35,
+          "前後有效行情間隔超過4日；同一證券有多次未核實極端事件": 4,
+          "同一證券有多次未核實極端事件": 13,
+          "前後有效行情間隔超過4日": 7
+        },
+        "official_match_count": {
+          "1": 385,
+          "2": 1,
+          "0": 100
+        },
+        "official_audit_status": {
+          "命中官方減資資料": 276,
+          "官方來源查核完成但未命中": 88,
+          "官方來源查核不完整；不可判定未命中": 12,
+          "命中官方面額變更資料": 24,
+          "命中官方除權息資料": 86
+        }
+      },
+      "官方公司行動精確命中價格基準診斷.csv": {},
+      "486筆事件來源覆蓋重新判定.csv": {
+        "official_match_count": {
+          "1": 385,
+          "2": 1,
+          "0": 100
+        },
+        "official_audit_status": {
+          "命中官方減資資料": 276,
+          "官方來源查核完成但未命中": 88,
+          "官方來源查核不完整；不可判定未命中": 12,
+          "命中官方面額變更資料": 24,
+          "命中官方除權息資料": 86
+        }
+      },
+      "官方三類來源尚未命中事件清單.csv": {},
+      "官方查詢空結果合理性重分類.csv": {
+        "http_status": {
+          "200": 63
+        },
+        "revised_status": {
+          "success_empty": 63
+        },
+        "reason": {
+          "HTTP 200 且官方明確回覆無符合資料；視為查詢成功的空結果，不是來源故障。": 63
+        }
+      },
+      "公告有效日期與行情首個交易日對照.csv": {
+        "reason": {
+          "公告上市／恢復交易日期與行情資料首個有效交易日對照；不得直接要求兩日期字串相等。": 3
+        }
+      },
+      "控制組12事件校準結果.csv": {
+        "database_date_matches_v429": {
+          "True": 12
+        },
+        "v431_api_exact_match": {
+          "False": 3,
+          "True": 9
+        },
+        "v431_api_status": {
+          "控制組查核不完整": 1,
+          "控制組成功命中": 9,
+          "控制組未命中；來源完整": 2
+        },
+        "v432_evidence_status": {
+          "公告內容補充確認；v4.31.1 API未直接命中": 3,
+          "v4.31.1官方API精確命中": 9
+        }
+      },
+      "官方來源覆蓋修正後完整紀錄.csv": {
+        "original_status": {
+          "success": 733,
+          "failed": 63
+        },
+        "revised_status": {
+          "success": 733,
+          "success_empty": 63
+        },
+        "matched_rows": {
+          "1": 167,
+          "0": 548,
+          "2": 45,
+          "4": 11,
+          "6": 3,
+          "3": 19,
+          "5": 1,
+          "8": 1,
+          "7": 1
+        },
+        "http_status": {
+          "200": 796
+        },
+        "reclassification_reason": {
+          "維持原判定；非可辨識的官方無資料回覆。": 733,
+          "HTTP 200 且官方明確回覆無符合資料；視為查詢成功的空結果，不是來源故障。": 63
+        }
+      },
+      "官方原始命中資料重複鍵檢查.csv": {},
+      "官方公司行動參考價衝突清單.csv": {
+        "decision": {}
+      },
+      "官方公司行動邏輯重複鍵明細.csv": {
+        "dedup_decision": {
+          "同一邏輯事件且參考價一致；分析統計僅計一次，原始明細不刪除。": 2
+        }
+      },
+      "官方公司行動價格差異浮點容差重分類.csv": {
+        "logical_dedup_status": {
+          "單一邏輯事件": 385,
+          "同鍵同參考價重複明細": 1
+        },
+        "gap_classification_v433": {
+          "小於10%": 376,
+          "約等於10%（浮點容差邊界）": 10
+        }
+      },
+      "100筆事件公司行動與復牌整合診斷.csv": {
+        "resumption_day_timeline_status": {
+          "未出現在逐日行情檔": 98,
+          "有效OHLC收盤": 1,
+          "無OHLC／零量或無量": 1
+        },
+        "mops_action_reason": {
+          "": 94,
+          "減資原因未能由公告文字確定": 3,
+          "彌補虧損": 2,
+          "彌補虧損；減資原因未能由公告文字確定": 1
+        },
+        "selected_baseline_type": {
+          "OFFICIAL_REDUCTION_REFERENCE": 14,
+          "INFERRED_REDUCTION_REFERENCE_NOT_OFFICIAL": 1,
+          "": 84,
+          "PRE_SUSPENSION_CLOSE_ONLY_LONG_GAP": 1
+        },
+        "selected_baseline_price": {
+          "12.95": 1,
+          "36.14": 1,
+          "25": 1,
+          "15.08": 1,
+          "8.36": 1,
+          "24.93": 1,
+          "6.55": 1,
+          "28.91": 1,
+          "19.3904566539": 1,
+          "": 84,
+          "10.73": 1,
+          "41.65": 1,
+          "17.34": 1,
+          "12.36": 1,
+          "15.59": 1,
+          "10.09": 1,
+          "15.65": 1
+        },
+        "timing_classification": {
+          "減資恢復參考價後／事件日為來源序列首筆有效OHLC": 14,
+          "復牌日即事件日／事件日為復牌後首筆有效OHLC": 1,
+          "未由本版來源確認減資恢復價或明確復牌日期": 84,
+          "公告復牌日早於事件日／事件日為復牌後首筆有效OHLC": 1
+        },
+        "baseline_diagnosis": {
+          "": 98,
+          "有官方減資參考價；MOPS換發比例僅作交叉核對": 1,
+          "依MOPS彌補虧損換發比例及停牌前收盤價推算；非交易所正式公布參考價": 1
+        }
+      },
+      "公司行動／復牌日起逐日行情明細.csv": {
+        "row_status": {
+          "有量無OHLC": 2,
+          "有效OHLC收盤": 16,
+          "無OHLC／零量或無量": 29
+        }
+      },
+      "高優先事件公司行動時序複核.csv": {
+        "inferred_baseline_eligibility": {
+          "NOT_APPLICABLE": 16,
+          "NOT_ELIGIBLE_AS_EVENT_BASELINE_LISTING_PRECEDES_ACTUAL_RESUMPTION": 1
+        },
+        "baseline_use_scope": {
+          "OFFICIAL_REFERENCE_TO_EVENT_CLOSE_ENDPOINT_INTERVAL_ONLY_NOT_SINGLE_DAY_RETURN": 14,
+          "NON_OFFICIAL_RATIO_SENSITIVITY_ONLY_NOT_A_CORRECTED_RETURN": 1,
+          "NO_VERIFIED_ACTION_BASELINE_AVAILABLE": 1,
+          "PRE_SUSPENSION_CLOSE_TO_FIRST_VALID_POST_RESUMPTION_OHLC_INTERVAL": 1
+        }
+      },
+      "v4.41 MOPS公告日期明細.csv": {
+        "action_reason": {
+          "減資原因未能由公告文字確定": 6,
+          "彌補虧損": 3,
+          "": 4
+        }
+      },
+      "官方或推算減資參考基準明細.csv": {
+        "mops_action_reason": {
+          "": 11,
+          "減資原因未能由公告文字確定": 2,
+          "彌補虧損": 2,
+          "彌補虧損；減資原因未能由公告文字確定": 1
+        }
+      },
+      "MOPS公告日期與舊股停買新股上櫃時程抽取.csv": {
+        "action_reason": {
+          "減資原因未能由公告文字確定": 6,
+          "彌補虧損": 3,
+          "": 4
+        }
+      },
+      "100筆事件基準使用範圍與時序缺口核驗.csv": {
+        "resumption_day_timeline_status": {
+          "未出現在逐日行情檔": 98,
+          "有效OHLC收盤": 1,
+          "無OHLC／零量或無量": 1
+        },
+        "mops_action_reason": {
+          "": 94,
+          "減資原因未能由公告文字確定": 3,
+          "彌補虧損": 2,
+          "彌補虧損；減資原因未能由公告文字確定": 1
+        },
+        "selected_baseline_type": {
+          "OFFICIAL_REDUCTION_REFERENCE": 14,
+          "INFERRED_SENSITIVITY_ONLY_NOT_SELECTED": 1,
+          "": 84,
+          "PRE_SUSPENSION_CLOSE_ONLY_LONG_GAP": 1
+        },
+        "selected_baseline_price": {
+          "12.95": 1,
+          "36.14": 1,
+          "25": 1,
+          "15.08": 1,
+          "8.36": 1,
+          "24.93": 1,
+          "6.55": 1,
+          "28.91": 1,
+          "": 85,
+          "10.73": 1,
+          "41.65": 1,
+          "17.34": 1,
+          "12.36": 1,
+          "15.59": 1,
+          "10.09": 1,
+          "15.65": 1
+        },
+        "timing_classification": {
+          "減資恢復參考價後／事件日為來源序列首筆有效OHLC": 14,
+          "復牌日即事件日／事件日為復牌後首筆有效OHLC": 1,
+          "未由本版來源確認減資恢復價或明確復牌日期": 84,
+          "公告復牌日早於事件日／事件日為復牌後首筆有效OHLC": 1
+        },
+        "baseline_diagnosis": {
+          "": 98,
+          "有官方減資參考價；MOPS換發比例僅作交叉核對": 1,
+          "依MOPS彌補虧損換發比例及停牌前收盤價推算；非交易所正式公布參考價": 1
+        },
+        "inferred_baseline_eligibility_v441": {
+          "NOT_APPLICABLE": 99,
+          "NOT_ELIGIBLE_AS_EVENT_BASELINE_LISTING_PRECEDES_ACTUAL_RESUMPTION": 1
+        },
+        "baseline_use_scope_v441": {
+          "OFFICIAL_REFERENCE_TO_EVENT_CLOSE_ENDPOINT_INTERVAL_ONLY_NOT_SINGLE_DAY_RETURN": 14,
+          "NON_OFFICIAL_RATIO_SENSITIVITY_ONLY_NOT_A_CORRECTED_RETURN": 1,
+          "NO_VERIFIED_ACTION_BASELINE_AVAILABLE": 84,
+          "PRE_SUSPENSION_CLOSE_TO_FIRST_VALID_POST_RESUMPTION_OHLC_INTERVAL": 1
+        }
+      },
+      "10_v449特殊公司行動排除清單.csv": {
+        "逐日明細交叉核驗": {
+          "PASS": 1
+        },
+        "交叉核驗來源": {
+          "v4.44_17筆既有官方交叉核驗": 1
+        },
+        "交叉核驗收盤": {
+          "10.1500": 1
+        }
+      }
+    },
+    "verified_12_event_summary": {
+      "rows": 12,
+      "status_distributions": {
+        "match_status": {
+          "已配對：原極端報酬已由公司行動解釋，調整值僅供參考": 12
+        }
+      },
+      "numeric": {
+        "raw_return_pct": {
+          "count": 12,
+          "invalid": 0,
+          "min": 221.71581769437,
+          "median": 543.0735438915398,
+          "max": 983.0324909747292,
+          "positive": 12,
+          "negative": 0,
+          "zero": 0
+        },
+        "adjusted_return_pct": {
+          "count": 12,
+          "invalid": 0,
+          "min": -9.855951973684206,
+          "median": 0.8230138813946686,
+          "max": 10.000000000000009,
+          "positive": 6,
+          "negative": 6,
+          "zero": 0
+        },
+        "exchange_ratio": {
+          "count": 12,
+          "invalid": 0,
+          "min": 0.091511335,
+          "median": 0.1605668,
+          "max": 0.27464605,
+          "positive": 12,
+          "negative": 0,
+          "zero": 0
+        },
+        "adjusted_reference_price": {
+          "count": 12,
+          "invalid": 0,
+          "min": 9.499999999999998,
+          "median": 24.393577015635437,
+          "max": 109.40066496496127,
+          "positive": 12,
+          "negative": 0,
+          "zero": 0
+        }
+      }
+    }
+  },
+  "errors": [],
+  "version_notes": {
+    "v4.29核驗摘要.txt": "看股最速適 v4.29｜零股量價狀態與公司行動報酬再核驗\n==============================================================================================\n產生時間：2026-10-31T17:36:22\nDuckDB來源：/content/drive/MyDrive/看股最速適/持久化快取/v4_24_完整證券行情快取/v4_24_security_universe_20261031_122627.duckdb\n讀取模式：read_only=True；只建立 TEMP TABLE；不修改資料庫\n來源行情列數：4501067\n正成交量但OHLC四欄全缺列數：5669\n涉及完整證券數：219\n涉及市場：TWSE\n缺OHLC成交資料最早日期：2016-01-04\n缺OHLC成交資料最晚日期：2026-10-28\n缺OHLC成交資料涉及年度數：11\n缺OHLC成交資料市場分布：[('TWSE', 5669)]\n有量無OHLC資料列匯出數：5669\n有量無OHLC證券彙總列數：219\nv4.28相鄰資料列LAG報酬觀測數：4409853\nv4.29以前一筆有效收盤價計算報酬觀測數：4444713\n前一筆有效收盤價口徑新增觀測數：34860\n逐筆補回因前一列OHLC缺值而漏算報酬數：34860\n絕對報酬至少10%：8213\n絕對報酬至少20%：498\n絕對報酬至少50%：204\n絕對報酬至少100%：84\n已整理減資／現金減資事件數：12\n成功配對到行情報酬列數：12\n已核對且原始報酬至少20%的公司行動事件數：12\n公司行動調整值可計算筆數：12\n已核對公司行動調整後最大絕對報酬百分比：10.0\n極端報酬事件全清單筆數：498\n尚未核實公司行動事件筆數：486\n收盤絕對報酬達100%事件筆數：84\n核心限制：5,669筆有量無OHLC可能與零股／其他交易方式量價揭露規則有關，未逐筆比對交易方式前不定性為零股或資料錯誤。\n報酬限制：12筆公司行動只做有公告比例的參考價重算；其餘極端報酬不自行推估換股率、不自動調整。\n來源安全：不修改原始股票池、v2.8、v4.17主檔及v4.24.1 DuckDB；不補價、不刪列、不去重。\n\n制度及公式說明：\n1. TWSE市場成交統計涵蓋一般、零股、盤後定價及鉅額交易；零股成交價格不作為當日OHLC行情紀錄。\n2. 因此成交量大於0但OHLC全缺，可能是其他交易方式有成交、一般交易沒有價格；本版未逐筆核實交易方式，保留為量價狀態紀錄。\n3. 減資彌補虧損恢復交易參考價=(舊股最後收盤價)/(新股換發比率)。\n4. 現金減資恢復交易參考價=(舊股最後收盤價-每舊股退還現金)/(新股換發比率)。\n5. v4.29報酬以每檔證券前一筆有效收盤價計算；若中間日期只有成交量而沒有OHLC，不會因此漏掉下一筆有效收盤報酬。\n6. 『前一筆有效收盤價補回報酬觀測』逐筆列出 v4.28 相鄰資料列 LAG 因前一列收盤缺值而未計算、但 v4.29 可用前一筆有效收盤補算的日期。\n7. 已核實公司行動調整報酬僅供回測口徑診斷；仍應依正式公告的恢復交易參考價及除權息／增資條件完整處理。\n8. 其餘未核實極端報酬，需查減資、面額變更、除權息、停復牌、合併或其他公司行動後再決定調整。\n",
+    "v4.31.1核驗摘要.txt": "看股最速適 v4.31.1｜官方公司行動逐筆核對\n============================================================================================\n產生時間：2026-10-31T18:29:36\nDuckDB來源：/content/drive/MyDrive/看股最速適/持久化快取/v4_24_完整證券行情快取/v4_24_security_universe_20261031_122627.duckdb\n來源模式：read_only=True；只建立 TEMP TABLE；不修改 DuckDB／原始行情。\n來源行情列數：4,501,067\n重建未核實極端報酬事件：486 筆（應與 v4.30 的 486 筆一致）\n官方控制組：12 筆（v4.29 已核實減資事件）\n官方來源查詢次數：796；成功：733；失敗／未完成：63\n官方來源命中未核實事件：386\n官方來源完整查核但未命中：88\n官方來源查核不完整事件：83\n控制組預期減資事件命中：9/12\n官方命中事件來源類型：{('TWSE', '減資'): 141, ('TPEX', '減資'): 135, ('TWSE', '面額變更'): 10, ('TPEX', '面額變更'): 14, ('TPEX', '除權息'): 48, ('TWSE', '除權息'): 38}\nv4.30優先級分布：{'高優先': 210, '中優先': 148, '一般優先': 128}\n\n判讀規則：\n1. 以完整證券代號＋市場＋事件日期精確比對；不只比舊代號，也不以相近日期推定命中。\n2. 比對 TWSE／TPEx 的減資恢復買賣、面額變更恢復買賣及除權息官方資料。\n3. 官方來源失敗或欄位格式改變時標示查核不完整，不把資料抓取失敗當作沒有公司行動。\n4. 官方參考價與事件日收盤價的差異僅作對照；不重寫或調整原始 OHLC，不推估換股率。\n5. 官方查核完成但未命中，只代表這三類已查來源在該代號／日期未找到紀錄；不排除停復牌、其他公司行動或歷史公告資料缺漏。\n6. v4.29 的 12 件已核實減資作控制組；控制組未命中時，應先檢查官方來源覆蓋，不宜對 486 筆作全面無事件結論。\n\n各項官方來源網址：\nTWSE減資：https://www.twse.com.tw/rwd/zh/reducation/TWTAUU\nTWSE面額變更：https://www.twse.com.tw/rwd/zh/change/TWTB8U\nTWSE除權息：https://www.twse.com.tw/rwd/zh/exRight/TWT49U\nTPEx減資：https://www.tpex.org.tw/www/zh-tw/bulletin/revivt\nTPEx面額變更：https://www.tpex.org.tw/www/zh-tw/bulletin/pvChgRslt\nTPEx除權息：https://www.tpex.org.tw/www/zh-tw/bulletin/exDailyQ\n\n來源安全：不掃描 v4.17／v2.8 CSV；不修改或刪除原始股票池、主檔、v4.24.1 DuckDB 或 v4.30 報告。\n事件結果｜命中官方減資資料：276 筆\n事件結果｜命中官方除權息資料：86 筆\n事件結果｜命中官方面額變更資料：24 筆\n事件結果｜官方來源查核不完整；不可判定未命中：12 筆\n事件結果｜官方來源查核完成但未命中：88 筆",
+    "v4.32核驗摘要.txt": "看股最速適 v4.32｜官方公司行動控制組校準與來源覆蓋修正\n================================================================================================\n產生時間：2026-10-31T18:39:26\nv4.31.1來源資料夾：/content/drive/MyDrive/看股最速適/看股最速適_官方公司行動逐筆核對_v4_31_1_20261031_180538\n來源：v4.29減資控制組、v4.30事件優先清單、v4.31.1官方來源查詢與命中報告。\n本版不重跑796次官方API；重新判讀HTTP 200明確無資料回覆，並補充3件控制組公告證據。\n待核實事件：486；官方API精確命中：386；無精確命中：100。\n官方查詢任務：796；原標示失敗：63；HTTP200明確無資料改列成功空結果：63；真正未完成：0。\n486筆事件來源完整重新判定：486筆完整；0筆仍不完整。\n官方精確命中價格診斷：387筆；收盤相對官方參考價絕對差<=10%：381；>10%：6。\n官方原始資料重複列：0。\n控制組：官方API精確命中 9/12；另補充公告證據 3 件；具API或公告支持 12/12。\n\n重要判讀：\n1. HTTP 200且官方明確回覆沒有符合條件資料，是成功查詢但回傳空集合，不應視為API失敗。\n2. v4.31.1使用精確事件日期比對；但公司公告的新股上市／恢復交易日期可能落在非交易日，實際行情首筆日期可能為下一個交易日。\n3. 1529、2496為公告上市日期與行情首個交易日相差2個日曆日的案例；8101公告明載2024-11-19恢復交易及9.50元參考價，但v4.31.1 API未直接命中。\n4. 上述3件以公告內容補充證據，不計入API精確命中；轉載頁應可追溯至公司公告／公開資訊觀測站，仍保留MOPS入口供人工複核。\n5. 官方API精確命中只表示同市場、同代號、同日期有公司行動資料；收盤價相對官方參考價是恢復交易後的市場反應，不代表官方參考價錯誤。\n6. 調整後殘餘幅度<=10%只作描述性分組，不作公司行動已完全解釋的自動結論。\n7. 尚未命中事件仍需進一步查MOPS重大訊息、停復牌、面額變更、合併及其他公告；不得自行推估換股率或修改原始行情。\n\n來源安全：DuckDB唯讀；不修改或刪除v2.8、v4.17、v4.24.1、v4.29、v4.30、v4.31.1任何既有資料。\n官方參考：TWSE減資參考價頁面說明恢復買賣參考價公式及資料起始期間；TPEx亦公布減資參考價公式。",
+    "v4.41核驗摘要.txt": "看股最速適 v4.41｜公司行動時序缺口與報酬基準可用性核驗\n====================================================================================================\n產生時間：2026-11-01T01:56:53\n唯讀 v4.35：/content/drive/MyDrive/看股最速適/看股最速適_未命中事件行情序列與停復牌換股日期交叉核對_v4_35_20261031_190119\n唯讀 v4.38：/content/drive/MyDrive/看股最速適/看股最速適_官方減資參考價與行情基準影響診斷_v4_38_20261101_012501\n唯讀 v4.39：/content/drive/MyDrive/看股最速適/看股最速適_官方減資與逐日行情時序核驗_v4_39_20261101_013317\n唯讀 v4.40：/content/drive/MyDrive/看股最速適/看股最速適_官方復牌公告與減資基準整合核驗_v4_40_20261101_014309\n事件筆數：100；逐日行情列：4630；MOPS關鍵公告：13；全文成功：13。\n官方減資參考基準：14；非官方比例推算敏感度：1。\n明確復牌公告：2；復牌日即事件日：1。\n有標籤可辨識舊股停買時程之公告：3。\n本版修正 v4.40 的基準口徑：非官方比例推算價不再列為選定事件基準，只保留敏感度試算。\n官方減資參考價只計算參考價至事件日收盤的端點區間變化，不稱為事件日單日報酬。\n新股上櫃日、舊股停止買賣日期及實際復牌日分別保存，不將新股上櫃日自動當成實際復牌成交日。\n未出現在逐日來源檔的日期不代表未開市或沒有成交；本版不補值、不插值、不更動任何來源行情。\nMOPS日期抽取只接受帶有明確欄位標籤的日期；其他公告內未標籤日期不推斷為停買或復牌日期。\n來源逐日區間狀態計數：LONG_CALENDAR_GAP_IN_SOURCE_SERIES_REQUIRES_OFFICIAL_DAILY_CHECK=1；NO_INTERVENING_ROWS_IN_SOURCE_FILE=12；NO_LABELLED_START_DATE=83；SOURCE_ROWS_ZERO_OR_EMPTY_VOLUME_ONLY=3；START_DATE_EQUALS_EVENT_DATE=1\n\n高優先事件時序複核：\n2017-11-28 1418 東華｜原始報酬 141.30434782608697%｜舊股最後交易日 未檢出｜停買期間 未檢出～未檢出｜另記載停止交易日 未檢出｜新股上櫃 未檢出｜明確復牌 未檢出｜上市至復牌間隔 不適用日｜來源時序 NO_INTERVENING_ROWS_IN_SOURCE_FILE｜NO_EXPLICIT_SCHEDULE_RELATION\n2017-01-09 6222 上揚｜原始報酬 100.0%｜舊股最後交易日 2016-12-15｜停買期間 2016-12-16～2016-12-28｜另記載停止交易日 未檢出｜新股上櫃 2016-12-29｜明確復牌 未檢出｜上市至復牌間隔 不適用日｜來源時序 LONG_CALENDAR_GAP_IN_SOURCE_SERIES_REQUIRES_OFFICIAL_DAILY_CHECK｜NEW_SHARE_LISTING_ON_OR_BEFORE_EVENT_CHECK_INTERVENING_TRADING\n2024-12-31 1538 正峰｜原始報酬 62.53602305475503%｜舊股最後交易日 未檢出｜停買期間 未檢出～未檢出｜另記載停止交易日 未檢出｜新股上櫃 未檢出｜明確復牌 未檢出｜上市至復牌間隔 不適用日｜來源時序 NO_INTERVENING_ROWS_IN_SOURCE_FILE｜NO_EXPLICIT_SCHEDULE_RELATION\n2021-02-19 3073 天方能源｜原始報酬 58.95522388059702%｜舊股最後交易日 2020-09-16｜停買期間 2020-09-17～2020-09-25｜另記載停止交易日 2020-08-19｜新股上櫃 2020-09-28｜明確復牌 2021-02-19｜上市至復牌間隔 144日｜來源時序 START_DATE_EQUALS_EVENT_DATE｜NEW_SHARE_LISTING_ON_OR_BEFORE_EVENT_CHECK_INTERVENING_TRADING\n2019-01-04 3219 倚強｜原始報酬 41.36363636363638%｜舊股最後交易日 未檢出｜停買期間 未檢出～未檢出｜另記載停止交易日 未檢出｜新股上櫃 未檢出｜明確復牌 未檢出｜上市至復牌間隔 不適用日｜來源時序 SOURCE_ROWS_ZERO_OR_EMPTY_VOLUME_ONLY｜NO_EXPLICIT_SCHEDULE_RELATION\n2024-12-06 2740 天蔥｜原始報酬 32.745098039215684%｜舊股最後交易日 2024-12-31｜停買期間 2025-01-02～2025-01-10｜另記載停止交易日 未檢出｜新股上櫃 2025-01-13｜明確復牌 未檢出｜上市至復牌間隔 不適用日｜來源時序 NO_INTERVENING_ROWS_IN_SOURCE_FILE｜EVENT_PRECEDES_ANNOUNCED_OLD_SHARE_LAST_TRADE_DATE\n2020-08-24 3219 倚強股份｜原始報酬 20.766773162939288%｜舊股最後交易日 未檢出｜停買期間 未檢出～未檢出｜另記載停止交易日 2020-04-07；2020-05-20｜新股上櫃 未檢出｜明確復牌 2020-08-21｜上市至復牌間隔 不適用日｜來源時序 NO_INTERVENING_ROWS_IN_SOURCE_FILE｜EXPLICIT_RESUMPTION_DATE_PRECEDES_EVENT"
+  },
+  "conclusions": {
+    "v28_quality": "198個平日無資料日期應依既有官方日曆證據重分類；八個補行週六仍需補入。",
+    "v224_partition": "14,845筆事件分成14,207筆影子候選及638筆待處理；需確認事件鍵分割無重複、無遺漏。",
+    "company_action_admission": "影子候選不等於正式准入；待處理事件不得直接套用調整因子。",
+    "cross_version_rule": "優先以官方事件日期配對；只有trade_date的資料標記為弱鍵，不能當作事件日期等價。",
+    "return_adjustment_rule": "未經事件日期、官方參考價、前收盤及復牌時序驗證，不得把推算參考價直接作為正式報酬基準。",
+    "factor_research_gate": "公司行動及行情日期驗收前，不進行24項因子正式重訓或OOS定論。"
+  },
+  "overall_status": "PASS_ANALYSIS",
+  "total_bytes_read": 24378099,
+  "finished_time": "2026-11-08T15:07:23.887462+08:00"
+}
