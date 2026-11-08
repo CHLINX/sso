@@ -1,0 +1,82 @@
+{
+  "version": "v4.87.5.36.1",
+  "branch": "audit/v4875361-top10-realized-pairing-fix-20261108_080419",
+  "result_directory": "audit/sso_v4875361_top10_realized_pairing_fix_20261108_080419",
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "uploaded": [
+    {
+      "file": "01_兩表來源血緣與鍵值對帳.csv",
+      "bytes": 2520,
+      "sha256": "931ca94a563736a3124883e33df022ca989cae7e1adc20cf6ebe0347aeb71333",
+      "git_blob_sha": "fdefaa2bf25d7de5630e9ab6fa3d9d61b0e03686"
+    },
+    {
+      "file": "02_Top10逐筆實際報酬與機率區間配對明細.csv",
+      "bytes": 4504214,
+      "sha256": "ebec379aa30087d4442b679a1876d3af6574981a31b2a2d34a434a70a6d1fc73",
+      "git_blob_sha": "f4d5b0d8c69079f04fb6e20f222558cacf335de3"
+    },
+    {
+      "file": "03_Top10依H績效摘要.csv",
+      "bytes": 1677,
+      "sha256": "eaf547d3ab53bf0142706af7f2b8e0c78b5748d71679fd38051ecfe660cd6932",
+      "git_blob_sha": "33f90b799c6fc7e2f3e87b641aa2fa0d4a84b5f8"
+    },
+    {
+      "file": "04_Top10依H及原始機率區間績效摘要.csv",
+      "bytes": 11735,
+      "sha256": "c7d56466bde991810082ae7d983a33e0364742ecf9e740456f9c0943e2e26783",
+      "git_blob_sha": "b140166d3d751d2dc2c03457e632485a79cbf01c"
+    },
+    {
+      "file": "05_Top10依年度H績效摘要.csv",
+      "bytes": 9249,
+      "sha256": "420028a94c041622be5ab06aeaf7e69da048eb51d31fc9179888f536c4b13e33",
+      "git_blob_sha": "634f05b21e42ada712f2a1a465250b2a090fbbad"
+    },
+    {
+      "file": "06_Top10依年度H及機率區間績效摘要.csv",
+      "bytes": 65639,
+      "sha256": "bd36ae6ce1f5c307c56a68c79881b0de77732de10fd0483c59cb296c5ad9230b",
+      "git_blob_sha": "6395c74cb46cbf2d73adf7cc68d2e18364a695f6"
+    },
+    {
+      "file": "07_預測淨報酬與實際淨報酬相關性.csv",
+      "bytes": 902,
+      "sha256": "ebfe532a77f9d199db4453befa06367b16b92194ed4f09fe8ffd2ce78aea51fb",
+      "git_blob_sha": "4cfd1e0ce294777a93cfd1f6dabe4db12369f32b"
+    },
+    {
+      "file": "08_來源配對與完整母體界線診斷.csv",
+      "bytes": 910,
+      "sha256": "752383fe0e8ed399f0eaf2fb3294cf596fed4c18ec6383ca3033eaf7ffe34df0",
+      "git_blob_sha": "97946c9046bab6524b4bfd4563b003b6411735b9"
+    },
+    {
+      "file": "09_來源副本讀取錯誤.csv",
+      "bytes": 11,
+      "sha256": "ae7c98b95ab4816af3929cf9475d8017aaf11e01e4a591058f35751cd569dd8f",
+      "git_blob_sha": "d45107d301fda4afba76c6fb50390b6c24ff0ebf"
+    },
+    {
+      "file": "10_Top10實績配對與Gate母體界線摘要.json",
+      "bytes": 2749,
+      "sha256": "efd1915fd6b2b72c1e7eda0070ab06d5c8f949cdf7793cad61e5cefae17f0694",
+      "git_blob_sha": "aacda90fdabfa33b74b3be175a9d0ad34d45036d"
+    },
+    {
+      "file": "執行摘要.txt",
+      "bytes": 1349,
+      "sha256": "3c8193028a6bc76f75b2351ec9f63765b3463ca709da0de1e4d8b15f516ae0c9",
+      "git_blob_sha": "8fa6f959a02d6d22518209653593d8bef4e1f02d"
+    },
+    {
+      "file": "看股最速適_v4.87.5.36.1_Top10歷史入選逐股實績與原始機率區間精確配對評估_20261108_080419.zip",
+      "bytes": 1008915,
+      "sha256": "64faf8c52f78e4bac476fe03e3ba6daff19ace43cdc73871f4f4b950a6d8d5ee",
+      "git_blob_sha": "568218185ce24ce62c9e2b758777fdb069f76627"
+    }
+  ],
+  "zip_sha256": "64faf8c52f78e4bac476fe03e3ba6daff19ace43cdc73871f4f4b950a6d8d5ee",
+  "timestamp_taipei": "2026-11-08T08:04:20.265206+08:00"
+}
