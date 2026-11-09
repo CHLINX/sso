@@ -1,0 +1,13 @@
+{
+  "version": "v1.2.2",
+  "run_stamp": "20261109_195549",
+  "output_dir": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549",
+  "zip_path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549.zip",
+  "zip_sha256": "4b7be773d8efff70f8fc3242a7117d91364527dc9464cd32ff464f6b93e59a5f",
+  "github_status": "success",
+  "github_branch": "audit/sso-market-data-continuation-v1-v122-20261109_195549",
+  "github_folder_url": "https://github.com/CHLINX/sso/tree/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549",
+  "file_count": 15,
+  "original_sources_modified": false,
+  "github_main_modified": false
+}
