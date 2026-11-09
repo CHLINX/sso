@@ -1,0 +1,10 @@
+{
+  "source_rows": 4193745,
+  "source_sha256": "a5151cdebe26233389f55bf6189f65d21e1f5df05f025b653963bafc483deb4d",
+  "target_securities": 844,
+  "present_securities": 539,
+  "absent_securities": 305,
+  "absent_target_rows": 1179,
+  "detail_rows": 1888,
+  "v1162_reference_branch": "audit/v48751162-fullscan-20261109_054744"
+}
