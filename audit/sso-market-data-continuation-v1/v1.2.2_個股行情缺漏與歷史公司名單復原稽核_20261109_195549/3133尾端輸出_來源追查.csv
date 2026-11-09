@@ -1,0 +1,6 @@
+﻿來源位置,證據類型,結果／內容,上下文
+IPython In[5],找到v1.2.1候選來源程式但未見3133字面值,source cell found,"log(""原始來源唯讀；未覆寫原始增量、語意層或 manifest。"") | log(""="" * 110) | log_path.write_text(""\n"".join(LOG_LINES) + ""\n"", encoding=""utf-8"")"
+IPython Out[5],獨立輸出值等於3133,Out[5] = 3133,
+/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.1_個股行情續接_20261109_193922/執行紀錄.txt,執行紀錄未出現獨立3133,saved execution log does not contain a standalone 3133 line,
+/content/drive/MyDrive/Colab Notebooks/看股最速適.ipynb,檔案文字含3133,"1: {""cells"":[{""cell_type"":""markdown"",""source"":[""SSO_Market_Data_Continuation_TWSE_TPEX""],""metadata"":{""id"":""u7aHwGdURNlY""}},{""cell_type"":""code"",""source"":[""# -*- coding: utf-8 -*-\n"",""\""\""\""SSO_Market_Data_Continuation_TWSE_TPEX v1.2.2\n"",""個股行情缺漏與歷史公司名單復原稽核。所有來源唯讀；僅寫入新的 v1.2.2 輸出目錄。\n"",""不呼叫 TWSE/TPEx 官方 API、不下載行情、不重訓、不回測、不選股。\n"",""\""\""\""\n"",""\n"",""import os, sys, re, json, csv, hashlib, zipfile, traceback, io, time\n"",""from pathlib import Path\n"",""from datetime import datetime\n"",""from zoneinfo import ",
+整體結論,找到3133相關證據,程式碼命中=0；獨立輸出命中=1；仍須以命中上下文判斷。,
