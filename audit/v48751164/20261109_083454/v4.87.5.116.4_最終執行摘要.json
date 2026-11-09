@@ -1,0 +1,204 @@
+{
+  "version": "v4.87.5.116.4",
+  "run_id": "20261109_083454",
+  "purpose": "只追查上市、上櫃個股母體；明確非普通股不列入個股研究清單",
+  "read_only": true,
+  "official_api_called": false,
+  "database_modified": false,
+  "training_run": false,
+  "backtest_run": false,
+  "stock_selection_run": false,
+  "deletion_performed": false,
+  "confirmed_deletable_rows": 0,
+  "previous_verified_results": {
+    "source_rows": 4193745,
+    "source_sha256": "a5151cdebe26233389f55bf6189f65d21e1f5df05f025b653963bafc483deb4d",
+    "target_securities": 844,
+    "source_present_securities": 539,
+    "source_absent_securities": 305,
+    "absent_target_rows": 1179,
+    "neighbor_relations": 42819,
+    "neighbor_relations_recomputed": false,
+    "ratio_distribution_recomputed": false
+  },
+  "errors": [],
+  "v1162_reference": {
+    "all_target_securities": 844,
+    "source_present": 539,
+    "source_absent": 305,
+    "absent_target_rows": 1179
+  },
+  "source_inventory": {
+    "discovered_files": 130,
+    "selected_files": 74,
+    "unexamined_files": 0,
+    "parsed_files": 74,
+    "parse_errors": 0,
+    "matched_evidence_rows": 3416,
+    "program_filter_rule_hits": 50
+  },
+  "stock_classification": {
+    "total_absent_securities": 305,
+    "target_rows": 1179,
+    "confirmed_common_stock": 0,
+    "confirmed_common_stock_target_rows": 0,
+    "stockpool_or_individual_source_candidates": 257,
+    "stockpool_or_individual_source_target_rows": 1000,
+    "explicit_nonstock_excluded": 48,
+    "explicit_nonstock_target_rows": 179,
+    "classification_unknown_or_conflict": 0,
+    "classification_counts": {
+      "曾出現在SSO個股／股票池來源": 257,
+      "明確非普通股": 48
+    }
+  },
+  "conclusion": {
+    "only_individual_stocks_are_research_targets": true,
+    "confirmed_common_stock_count": 0,
+    "individual_stock_source_candidate_count": 257,
+    "nonstock_is_excluded_from_stock_research": true,
+    "unknown_is_not_assumed_to_be_stock": true,
+    "unknown_is_not_assumed_to_be_nonstock": true,
+    "root_cause_of_v4681_absence": "須依本版找到的個股母體、歷史股票池及建置程式證據判讀；無明確證據者保留待確認"
+  },
+  "unresolved_items": [],
+  "classification_complete": "True",
+  "execution_status": "分析完成；只將有個股證據的項目列入個股追查清單",
+  "completed_at": "2026-11-09T08:37:01.375755",
+  "zip": {
+    "name": "v4.87.5.116.4_個股母體及305檔缺席證券核對_20261109_083454.zip",
+    "bytes": 121245,
+    "sha256": "7c2124a237c938261ac1d738c2795b875a07d93adeaf93c103346d04e207c3b9"
+  },
+  "github": {
+    "status": "PASS",
+    "branch": "audit/v48751164-stock-only-20261109_083454",
+    "report_url": "https://github.com/CHLINX/sso/tree/audit/v48751164-stock-only-20261109_083454/audit/v48751164/20261109_083454",
+    "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_sha_after": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+    "main_unchanged": true,
+    "uploaded_files": [
+      {
+        "file": "v4.87.5.116.4_個股母體及305檔缺席證券核對_20261109_083454.zip",
+        "repo_path": "audit/v48751164/20261109_083454/v4.87.5.116.4_個股母體及305檔缺席證券核對_20261109_083454.zip",
+        "bytes": 121245,
+        "sha256": "7c2124a237c938261ac1d738c2795b875a07d93adeaf93c103346d04e207c3b9",
+        "commit_sha": "77db27aacfe51e294683d4fe6e708f3092f7da5a",
+        "url": "https://github.com/CHLINX/sso/blob/audit/v48751164-stock-only-20261109_083454/audit/v48751164/20261109_083454/v4.87.5.116.4_%E5%80%8B%E8%82%A1%E6%AF%8D%E9%AB%94%E5%8F%8A305%E6%AA%94%E7%BC%BA%E5%B8%AD%E8%AD%89%E5%88%B8%E6%A0%B8%E5%B0%8D_20261109_083454.zip"
+      },
+      {
+        "file": "README_v4.87.5.116.4_稽核報告.md",
+        "repo_path": "audit/v48751164/20261109_083454/README_v4.87.5.116.4_稽核報告.md",
+        "bytes": 2163,
+        "sha256": "1b10be705402b04444f7a10933ad0418286de4b55080e7146786dc7fb54cff0f",
+        "commit_sha": "75e7c3a6c2c7fadc2084f230b0d5fb6185a6f2c7",
+        "url": "https://github.com/CHLINX/sso/blob/audit/v48751164-stock-only-20261109_083454/audit/v48751164/20261109_083454/README_v4.87.5.116.4_%E7%A8%BD%E6%A0%B8%E5%A0%B1%E5%91%8A.md"
+      },
+      {
+        "file": "v4.87.5.116.4_執行紀錄.log",
+        "repo_path": "audit/v48751164/20261109_083454/v4.87.5.116.4_執行紀錄.log",
+        "bytes": 16455,
+        "sha256": "c18a331755bb3758fa4971f0cea0363d758bdfc08860f29b4fd7cb770f70bc58",
+        "commit_sha": "e0c9dc9726a8cf9655982061b880d4ac4d341257",
+        "url": "https://github.com/CHLINX/sso/blob/audit/v48751164-stock-only-20261109_083454/audit/v48751164/20261109_083454/v4.87.5.116.4_%E5%9F%B7%E8%A1%8C%E7%B4%80%E9%8C%84.log"
+      },
+      {
+        "file": "305檔個股母體交叉核對_所有命中證據.csv",
+        "repo_path": "audit/v48751164/20261109_083454/305檔個股母體交叉核對_所有命中證據.csv",
+        "bytes": 4175851,
+        "sha256": "e8fe62514c4ff01b49b1ed7c9123e60246e41c2a14d300f646b282607229df61",
+        "commit_sha": "33931ae1df87efcb488e407c454f5273897cd990",
+        "url": "https://github.com/CHLINX/sso/blob/audit/v48751164-stock-only-20261109_083454/audit/v48751164/20261109_083454/305%E6%AA%94%E5%80%8B%E8%82%A1%E6%AF%8D%E9%AB%94%E4%BA%A4%E5%8F%89%E6%A0%B8%E5%B0%8D_%E6%89%80%E6%9C%89%E5%91%BD%E4%B8%AD%E8%AD%89%E6%93%9A.csv"
+      },
+      {
+        "file": "305檔官方獨有證券_個股分類最終清單.csv",
+        "repo_path": "audit/v48751164/20261109_083454/305檔官方獨有證券_個股分類最終清單.csv",
+        "bytes": 234873,
+        "sha256": "36d578ce37d9bc1019b805d699d6dbc227ab9625511496c78ca3c790b77084fc",
+        "commit_sha": "32655e2a59f7aceb6acbf7f190b17a2787e458a0",
+        "url": "https://github.com/CHLINX/sso/blob/audit/v48751164-stock-only-20261109_083454/audit/v48751164/20261109_083454/305%E6%AA%94%E5%AE%98%E6%96%B9%E7%8D%A8%E6%9C%89%E8%AD%89%E5%88%B8_%E5%80%8B%E8%82%A1%E5%88%86%E9%A1%9E%E6%9C%80%E7%B5%82%E6%B8%85%E5%96%AE.csv"
+      },
+      {
+        "file": "個股優先追查清單_僅含有個股來源佐證者.csv",
+        "repo_path": "audit/v48751164/20261109_083454/個股優先追查清單_僅含有個股來源佐證者.csv",
+        "bytes": 197047,
+        "sha256": "e96d1988423abee657de2729d2a33ff437fa52c37e206fc7df65f9b783db69d6",
+        "commit_sha": "14c05b4791786ef06ee5833314d7b45ed6c32036",
+        "url": "https://github.com/CHLINX/sso/blob/audit/v48751164-stock-only-20261109_083454/audit/v48751164/20261109_083454/%E5%80%8B%E8%82%A1%E5%84%AA%E5%85%88%E8%BF%BD%E6%9F%A5%E6%B8%85%E5%96%AE_%E5%83%85%E5%90%AB%E6%9C%89%E5%80%8B%E8%82%A1%E4%BE%86%E6%BA%90%E4%BD%90%E8%AD%89%E8%80%85.csv"
+      },
+      {
+        "file": "已確認普通股清單.csv",
+        "repo_path": "audit/v48751164/20261109_083454/已確認普通股清單.csv",
+        "bytes": 353,
+        "sha256": "6a671e2c93d70232470177c188f2184fa9e84d6ce850548aac691e67944273b1",
+        "commit_sha": "54003e2b1108d05ba66d17fce574450e24d6bfc1",
+        "url": "https://github.com/CHLINX/sso/blob/audit/v48751164-stock-only-20261109_083454/audit/v48751164/20261109_083454/%E5%B7%B2%E7%A2%BA%E8%AA%8D%E6%99%AE%E9%80%9A%E8%82%A1%E6%B8%85%E5%96%AE.csv"
+      },
+      {
+        "file": "明確非普通股排除清單_不進入個股研究.csv",
+        "repo_path": "audit/v48751164/20261109_083454/明確非普通股排除清單_不進入個股研究.csv",
+        "bytes": 38179,
+        "sha256": "f661103bba23344eab39e4ab8a155e1c6c5983b0959f1c54066fc658bb7e3f57",
+        "commit_sha": "05c14470c77df6fe38ac49a2af162d144c9c435b",
+        "url": "https://github.com/CHLINX/sso/blob/audit/v48751164-stock-only-20261109_083454/audit/v48751164/20261109_083454/%E6%98%8E%E7%A2%BA%E9%9D%9E%E6%99%AE%E9%80%9A%E8%82%A1%E6%8E%92%E9%99%A4%E6%B8%85%E5%96%AE_%E4%B8%8D%E9%80%B2%E5%85%A5%E5%80%8B%E8%82%A1%E7%A0%94%E7%A9%B6.csv"
+      },
+      {
+        "file": "個股類型待確認清單.csv",
+        "repo_path": "audit/v48751164/20261109_083454/個股類型待確認清單.csv",
+        "bytes": 353,
+        "sha256": "6a671e2c93d70232470177c188f2184fa9e84d6ce850548aac691e67944273b1",
+        "commit_sha": "78c0a0180b3846ed62ce8579ccf7a77b02b4fa8b",
+        "url": "https://github.com/CHLINX/sso/blob/audit/v48751164-stock-only-20261109_083454/audit/v48751164/20261109_083454/%E5%80%8B%E8%82%A1%E9%A1%9E%E5%9E%8B%E5%BE%85%E7%A2%BA%E8%AA%8D%E6%B8%85%E5%96%AE.csv"
+      },
+      {
+        "file": "305檔個股分類統計.csv",
+        "repo_path": "audit/v48751164/20261109_083454/305檔個股分類統計.csv",
+        "bytes": 177,
+        "sha256": "e2c5690f540dbb959c8aaa70c7ddad099127f160fa5c597401cf1c2bfbb48ad3",
+        "commit_sha": "12b0d828313e8a06f76e52991d4e35e3cb84aeb1",
+        "url": "https://github.com/CHLINX/sso/blob/audit/v48751164-stock-only-20261109_083454/audit/v48751164/20261109_083454/305%E6%AA%94%E5%80%8B%E8%82%A1%E5%88%86%E9%A1%9E%E7%B5%B1%E8%A8%88.csv"
+      },
+      {
+        "file": "既有個股母體及股票池_Drive來源盤點.csv",
+        "repo_path": "audit/v48751164/20261109_083454/既有個股母體及股票池_Drive來源盤點.csv",
+        "bytes": 38685,
+        "sha256": "2c4910e136462c28f294706ba0d80a079d42a2e148f19dbb7178c5503c0b14cd",
+        "commit_sha": "bbaad4e6bb5e808a575240bba591cb18a2a27228",
+        "url": "https://github.com/CHLINX/sso/blob/audit/v48751164-stock-only-20261109_083454/audit/v48751164/20261109_083454/%E6%97%A2%E6%9C%89%E5%80%8B%E8%82%A1%E6%AF%8D%E9%AB%94%E5%8F%8A%E8%82%A1%E7%A5%A8%E6%B1%A0_Drive%E4%BE%86%E6%BA%90%E7%9B%A4%E9%BB%9E.csv"
+      },
+      {
+        "file": "個股母體來源逐檔解析結果.csv",
+        "repo_path": "audit/v48751164/20261109_083454/個股母體來源逐檔解析結果.csv",
+        "bytes": 9779,
+        "sha256": "cb3c0ad0e49b10bb7b9e771fead09670944b8b47c6f76379cd25be9299b8c915",
+        "commit_sha": "f7e426369824eb8892bbdac0d50ce8c843156982",
+        "url": "https://github.com/CHLINX/sso/blob/audit/v48751164-stock-only-20261109_083454/audit/v48751164/20261109_083454/%E5%80%8B%E8%82%A1%E6%AF%8D%E9%AB%94%E4%BE%86%E6%BA%90%E9%80%90%E6%AA%94%E8%A7%A3%E6%9E%90%E7%B5%90%E6%9E%9C.csv"
+      },
+      {
+        "file": "本版實際檢查來源檔案清單.csv",
+        "repo_path": "audit/v48751164/20261109_083454/本版實際檢查來源檔案清單.csv",
+        "bytes": 10184,
+        "sha256": "b724f3d48441182f0e7bc6425d5d117d98db5b230c64616b3dc2452f75a81bbb",
+        "commit_sha": "68608f04337280b676f975e1935a16325690c528",
+        "url": "https://github.com/CHLINX/sso/blob/audit/v48751164-stock-only-20261109_083454/audit/v48751164/20261109_083454/%E6%9C%AC%E7%89%88%E5%AF%A6%E9%9A%9B%E6%AA%A2%E6%9F%A5%E4%BE%86%E6%BA%90%E6%AA%94%E6%A1%88%E6%B8%85%E5%96%AE.csv"
+      },
+      {
+        "file": "本版未檢查來源檔案清單.csv",
+        "repo_path": "audit/v48751164/20261109_083454/本版未檢查來源檔案清單.csv",
+        "bytes": 4,
+        "sha256": "b42f2099187886def637d6aa840022266e05cb6c987a9394e708e23cd505eb46",
+        "commit_sha": "5a7d92aeb880241d32dca8367a19ca4294704aac",
+        "url": "https://github.com/CHLINX/sso/blob/audit/v48751164-stock-only-20261109_083454/audit/v48751164/20261109_083454/%E6%9C%AC%E7%89%88%E6%9C%AA%E6%AA%A2%E6%9F%A5%E4%BE%86%E6%BA%90%E6%AA%94%E6%A1%88%E6%B8%85%E5%96%AE.csv"
+      },
+      {
+        "file": "個股母體建置程式_篩選規則上下文.csv",
+        "repo_path": "audit/v48751164/20261109_083454/個股母體建置程式_篩選規則上下文.csv",
+        "bytes": 34489,
+        "sha256": "2fd3e6286ff075be02605800c6faf3f70afa9e881916b31c11311c00a2296074",
+        "commit_sha": "e0224c67f71b1b99c1e2c35eb44debb919bdb86b",
+        "url": "https://github.com/CHLINX/sso/blob/audit/v48751164-stock-only-20261109_083454/audit/v48751164/20261109_083454/%E5%80%8B%E8%82%A1%E6%AF%8D%E9%AB%94%E5%BB%BA%E7%BD%AE%E7%A8%8B%E5%BC%8F_%E7%AF%A9%E9%81%B8%E8%A6%8F%E5%89%87%E4%B8%8A%E4%B8%8B%E6%96%87.csv"
+      }
+    ]
+  },
+  "github_upload_status": "PASS"
+}
