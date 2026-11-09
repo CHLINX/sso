@@ -1,0 +1,58 @@
+{
+  "project": "SSO_Market_Data_Continuation_TWSE_TPEX v1",
+  "audit": "v4.87.5.23 漲跌符號／文字備註逐筆驗證＋上市櫃普通股範圍稽核",
+  "run_time_local": "2026-11-09T17:11:48.230271+08:00",
+  "source_files": {
+    "increment_path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/行情增量資料.csv.gz",
+    "increment_sha256": "b5ac265e5bef8f09c5c5bd93bf39d2c78f4a3736a71a7b05c7db01a8b7781074",
+    "semantic_path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/行情備註語意校正層_v4.87.5.23.csv.gz",
+    "semantic_sha256": "04281247a3b9e4e78507063ce6d084d02db64c1fbbe2806bf9e7a9253c730ad8",
+    "manifest_path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/邏輯完整資料庫_manifest.json",
+    "A_path": "/content/drive/MyDrive/看股最速適/看股最速適_官方行情完整證券代號重建_v4_16_20261031_131511/官方行情總表_完整證券代號_v4.17.csv",
+    "A_bytes": 3164892248,
+    "A_expected_bytes": 3164892248
+  },
+  "official_master_sources": {
+    "TWSE": {
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap03_L",
+      "rows": 1099,
+      "sha256": "456cc64f04977bb406de8057f270b3c29f58df56d9c2476b27a2a85dd6298f57"
+    },
+    "TPEx": {
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+      "rows": 887,
+      "sha256": "93039114dbf7dc9516754193ec42110ced57d43195a21e23e921603e26c10502"
+    }
+  },
+  "row_counts": {
+    "increment_rows": 16847,
+    "semantic_rows": 16847,
+    "joined_rows": 16847,
+    "semantic_pass_rows": 0,
+    "semantic_nonpass_or_unverified_rows": 16847,
+    "official_individual_stock_confirmed_rows": 7683,
+    "outside_or_unconfirmed_stock_master_rows": 9164,
+    "A_rows_scanned": 4501067,
+    "A_previous_close_keys_found": 2008,
+    "A_latest_close_conflict_keys": 0
+  },
+  "semantic_status_counts": {
+    "漲跌符號不符或無法辨識": 16191,
+    "前收缺漏或來源衝突": 656
+  },
+  "stock_scope_counts": {
+    "未獲官方上市櫃個股名單確認": 9164,
+    "官方上市個股名單命中": 7683
+  },
+  "overall": {
+    "semantic_layer_pass": false,
+    "stock_only_scope_pass": false,
+    "all_ohlc_logic_pass": true,
+    "final_pass": false
+  },
+  "notes": [
+    "官方名單未命中者僅標記未獲上市櫃個股名單確認，不直接推斷為 ETF 或其他商品。",
+    "本次不修改來源行情增量檔、語意層或 manifest。",
+    "只有同時具有可用前收、符號方向一致、文字備註方向一致的列才列為語意 PASS。"
+  ]
+}
