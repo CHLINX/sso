@@ -1,0 +1,202 @@
+{
+  "version": "v1.3.0",
+  "run_time_taipei": "2026-11-09T20:16:13.969132+08:00",
+  "purpose": "逐交易日個股行情完整性盤點",
+  "scope": {
+    "target_dates": [
+      "2026-10-29",
+      "2026-10-30",
+      "2026-11-02",
+      "2026-11-03",
+      "2026-11-04",
+      "2026-11-05",
+      "2026-11-06",
+      "2026-11-09"
+    ],
+    "read_v121_increment": true,
+    "read_v123_audit": true,
+    "scan_A": false,
+    "official_api_called": false,
+    "database_updated": false,
+    "original_sources_modified": false,
+    "special_shares_in_scope": false,
+    "product_codes_in_scope": false,
+    "github_main_modified": false
+  },
+  "input_rows": 15911,
+  "daily_summary": [
+    {
+      "日期": "2026-10-29",
+      "市場": "上市",
+      "資料列數": 1097,
+      "不重複個股代號數": 1097,
+      "重複列數": 0,
+      "有資料": true
+    },
+    {
+      "日期": "2026-10-29",
+      "市場": "上櫃",
+      "資料列數": 892,
+      "不重複個股代號數": 892,
+      "重複列數": 0,
+      "有資料": true
+    },
+    {
+      "日期": "2026-10-30",
+      "市場": "上市",
+      "資料列數": 1098,
+      "不重複個股代號數": 1098,
+      "重複列數": 0,
+      "有資料": true
+    },
+    {
+      "日期": "2026-10-30",
+      "市場": "上櫃",
+      "資料列數": 893,
+      "不重複個股代號數": 893,
+      "重複列數": 0,
+      "有資料": true
+    },
+    {
+      "日期": "2026-11-02",
+      "市場": "上市",
+      "資料列數": 1098,
+      "不重複個股代號數": 1098,
+      "重複列數": 0,
+      "有資料": true
+    },
+    {
+      "日期": "2026-11-02",
+      "市場": "上櫃",
+      "資料列數": 893,
+      "不重複個股代號數": 893,
+      "重複列數": 0,
+      "有資料": true
+    },
+    {
+      "日期": "2026-11-03",
+      "市場": "上市",
+      "資料列數": 1098,
+      "不重複個股代號數": 1098,
+      "重複列數": 0,
+      "有資料": true
+    },
+    {
+      "日期": "2026-11-03",
+      "市場": "上櫃",
+      "資料列數": 893,
+      "不重複個股代號數": 893,
+      "重複列數": 0,
+      "有資料": true
+    },
+    {
+      "日期": "2026-11-04",
+      "市場": "上市",
+      "資料列數": 1098,
+      "不重複個股代號數": 1098,
+      "重複列數": 0,
+      "有資料": true
+    },
+    {
+      "日期": "2026-11-04",
+      "市場": "上櫃",
+      "資料列數": 893,
+      "不重複個股代號數": 893,
+      "重複列數": 0,
+      "有資料": true
+    },
+    {
+      "日期": "2026-11-05",
+      "市場": "上市",
+      "資料列數": 1097,
+      "不重複個股代號數": 1097,
+      "重複列數": 0,
+      "有資料": true
+    },
+    {
+      "日期": "2026-11-05",
+      "市場": "上櫃",
+      "資料列數": 892,
+      "不重複個股代號數": 892,
+      "重複列數": 0,
+      "有資料": true
+    },
+    {
+      "日期": "2026-11-06",
+      "市場": "上市",
+      "資料列數": 1097,
+      "不重複個股代號數": 1097,
+      "重複列數": 0,
+      "有資料": true
+    },
+    {
+      "日期": "2026-11-06",
+      "市場": "上櫃",
+      "資料列數": 892,
+      "不重複個股代號數": 892,
+      "重複列數": 0,
+      "有資料": true
+    },
+    {
+      "日期": "2026-11-09",
+      "市場": "上市",
+      "資料列數": 1097,
+      "不重複個股代號數": 1097,
+      "重複列數": 0,
+      "有資料": true
+    },
+    {
+      "日期": "2026-11-09",
+      "市場": "上櫃",
+      "資料列數": 883,
+      "不重複個股代號數": 883,
+      "重複列數": 0,
+      "有資料": true
+    }
+  ],
+  "cross_date_missing_candidates": 41,
+  "ohlcv_anomaly_rows": 160,
+  "positive_volume_missing_ohlc": 16,
+  "zero_volume_missing_ohlc": 144,
+  "unknown_volume_missing_ohlc": 0,
+  "duplicate_rows": 0,
+  "v123_known_missing_codes": 16,
+  "next_stage": "依逐日缺漏清單，逐日核對官方歷史行情；確認來源與成交量口徑後才產生補行情增量。",
+  "source_fingerprints": {
+    "combined_increment": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.1_個股行情續接_20261109_193922/行情增量資料_個股專用_更新至20261109_v1.2.1.csv.gz",
+      "bytes": 363571,
+      "sha256": "016e38259abb045ff4cd56443da03cac3f9058eee70dacc47bad39dc6dbb4942"
+    },
+    "official_master": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.1_個股行情續接_20261109_193922/官方上市櫃公司名單.csv",
+      "bytes": 41127,
+      "sha256": "9ef3780f09b8541c477bfa683459d10f154d097d7ad9b5edbee0a3309b2c2dd3"
+    },
+    "v121_manifest": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.1_個股行情續接_20261109_193922/個股行情資料庫_manifest_更新至20261109_v1.2.1.json",
+      "bytes": 2973,
+      "sha256": "90f418d134fe566714345402a4f10a1ddf9b733aed6c14c2e9f81675c261678d"
+    },
+    "v121_daily_summary": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.1_個股行情續接_20261109_193922/逐日市場個股資料摘要.csv",
+      "bytes": 481,
+      "sha256": "ebd228fb246a14b6e1fd8285007443e3b55e9b40489a94a96db8c49bbca14b8a"
+    },
+    "v123_missing": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337/16檔行情缺漏_校正後逐檔結果.csv",
+      "bytes": 8535,
+      "sha256": "2b7662f485c9868fb514630e51f836ba126d869adddbda2871d6f61aac10fd34"
+    },
+    "v123_anomalies": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337/12筆OHLCV異常_校正後分類.csv",
+      "bytes": 8647,
+      "sha256": "5f164a2c26279713aa81df5161763fdc480e7018697329d4828e328d6bfc446e"
+    },
+    "v123_summary": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337/校正摘要.json",
+      "bytes": 4970,
+      "sha256": "f06689e2ed4c433565a2d294f9ba7fe2694b8964669edc6dc9990c818afcb2ef"
+    }
+  }
+}
