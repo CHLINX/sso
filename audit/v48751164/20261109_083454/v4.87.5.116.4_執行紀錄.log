@@ -1,0 +1,176 @@
+[08:34:55] [01] 讀取 v116.2 已核驗的 844 檔證券清單。
+[08:34:55] [PASS] 844 檔；來源存在=539；來源缺席=305；缺席目標資料=1,179
+[08:34:55] [02] 取得 Google Drive 唯讀授權。
+[08:34:56] [03] 盤點既有個股母體、股票池與來源缺漏研究成果。
+[08:34:56] [FOLDER] v4.24.1_完整證券清單與股票池範圍核驗：9 個直接子項目
+[08:34:57] [FOLDER] v4.24_完整證券清單與股票池範圍核驗：0 個直接子項目
+[08:34:57] [FOLDER] v4.16_官方行情完整證券代號重建：13 個直接子項目
+[08:34:57] [FOLDER] v4.42_官方個股日行情與來源缺漏核驗：5 個直接子項目
+[08:34:58] [FOLDER] v4.43_TPEx新站個股歷史日行情核驗：5 個直接子項目
+[08:34:58] [FOLDER] v4.56_SSO股票池與原始行情日期核對：10 個直接子項目
+[08:34:58] [FOLDER] v4.87.5.32_個股候選來源盤點：9 個直接子項目
+[08:34:59] [FOLDER] v4.87.5.34_個股完整母體來源追查：10 個直接子項目
+[08:34:59] [FOLDER] v4.87.5.35_個股候選來源擴充核驗：10 個直接子項目
+[08:34:59] [FOLDER] v231_股票池分析輸出：14 個直接子項目
+[08:35:00] [FOLDER] v4.68.1_候選資料集原始輸出：10 個直接子項目
+[08:35:05] [WARNING] Drive 關鍵字查詢失敗：fullText contains '普通股' | <HttpError 403 when requesting https://www.googleapis.com/drive/v3/files?q=trashed%3Dfalse+and+%28fullText+contains+%27%E6%99%AE%E9%80%9A%E8%82%A1%27%29&pageSize=1000&fields=nextPageToken%2Cfiles%28id%2Cname%2CmimeType%2Cparents%2Csize%2CcreatedTime%2CmodifiedTime%2CwebViewLink%29&orderBy=name&alt=json returned "Sorting is not supported for queries with fullText terms. Results are always in descending relevance order.". Details: "[{'message': 'Sorting is not supported for queries with fullText terms. Results are always in descending relevance order.', 'domain': 'global', 'reason': 'forbidden', 'location': 'orderBy', 'locationType': 'parameter'}]">
+[08:35:05] [WARNING] Drive 關鍵字查詢失敗：fullText contains '股票池' | <HttpError 403 when requesting https://www.googleapis.com/drive/v3/files?q=trashed%3Dfalse+and+%28fullText+contains+%27%E8%82%A1%E7%A5%A8%E6%B1%A0%27%29&pageSize=1000&fields=nextPageToken%2Cfiles%28id%2Cname%2CmimeType%2Cparents%2Csize%2CcreatedTime%2CmodifiedTime%2CwebViewLink%29&orderBy=name&alt=json returned "Sorting is not supported for queries with fullText terms. Results are always in descending relevance order.". Details: "[{'message': 'Sorting is not supported for queries with fullText terms. Results are always in descending relevance order.', 'domain': 'global', 'reason': 'forbidden', 'location': 'orderBy', 'locationType': 'parameter'}]">
+[08:35:05] [PASS] 完成既有成果盤點：130 個項目。
+[08:35:05] [PASS] 個股研究相關檔案=130；本次下載及檢查=74；未檢查=0
+[08:35:05] [04] 開始下載及解析既有個股清單、股票池和建置證據。
+[08:35:05] 檔案 1/74：看股最速適_v4.87.5.34_OOS_Gate個股完整母體來源與原始機率區間公式血緣追查_20261107_195758.zip | size=8,795
+[08:35:05] [ZIP] 看股最速適_v4.87.5.34_OOS_Gate個股完整母體來源與原始機率區間公式血緣追查_20261107_195758.zip：members=9；相關成員=9
+[08:35:05] [PASS] 看股最速適_v4.87.5.34_OOS_Gate個股完整母體來源與原始機率區間公式血緣追查_20261107_195758.zip | status=ZIP_PARSED
+[08:35:05] 檔案 2/74：07_個股完整母體來源能力判定.csv | size=1,837
+[08:35:06] [PASS] 07_個股完整母體來源能力判定.csv | status=NO_CODE_COLUMN
+[08:35:06] 檔案 3/74：01_五日股票池星期六官方報價覆蓋.csv | size=563
+[08:35:06] [PASS] 01_五日股票池星期六官方報價覆蓋.csv | status=NO_CODE_COLUMN
+[08:35:06] 檔案 4/74：03_八日逐日雙市場與股票池覆蓋.csv | size=1,086
+[08:35:07] [PASS] 03_八日逐日雙市場與股票池覆蓋.csv | status=NO_CODE_COLUMN
+[08:35:07] 檔案 5/74：02_v28股票池八日官方行情增補檔.csv.gz | size=1,226,754
+[08:35:09] [PASS] 02_v28股票池八日官方行情增補檔.csv.gz | status=PARSED
+[08:35:09] 檔案 6/74：11_v451股票池內八日官方行情.csv | size=8,193,876
+[08:35:11] [PASS] 11_v451股票池內八日官方行情.csv | status=PARSED
+[08:35:11] 檔案 7/74：10_v451八日官方行情股票池覆蓋.csv | size=3,129
+[08:35:11] [PASS] 10_v451八日官方行情股票池覆蓋.csv | status=NO_CODE_COLUMN
+[08:35:11] 檔案 8/74：09_v28補行日前後股票池逐筆行情.csv.gz | size=5,643,826
+[08:35:37] [PASS] 09_v28補行日前後股票池逐筆行情.csv.gz | status=PARSED
+[08:35:37] 檔案 9/74：08_v28股票池逐日列數與市場分布.csv | size=13,255
+[08:35:37] [PASS] 08_v28股票池逐日列數與市場分布.csv | status=NO_CODE_COLUMN
+[08:35:37] 檔案 10/74：05_v231補行日前後股票池逐筆樣本.csv.gz | size=21,102,782
+[08:36:02] [PASS] 05_v231補行日前後股票池逐筆樣本.csv.gz | status=PARSED
+[08:36:02] 檔案 11/74：04_v231股票池逐日列數與市場分布.csv | size=13,642
+[08:36:02] [PASS] 04_v231股票池逐日列數與市場分布.csv | status=NO_CODE_COLUMN
+[08:36:02] 檔案 12/74：看股最速適_補行交易日SSO股票池與原始行情日期核對_v4_56_20261101_121036.zip | size=1,571,026
+[08:36:04] [ZIP] 看股最速適_補行交易日SSO股票池與原始行情日期核對_v4_56_20261101_121036.zip：members=10；相關成員=10
+[08:36:05] [PASS] 看股最速適_補行交易日SSO股票池與原始行情日期核對_v4_56_20261101_121036.zip | status=ZIP_PARSED
+[08:36:05] 檔案 13/74：08_v28股票池完整成員.csv | size=81,465
+[08:36:06] [PASS] 08_v28股票池完整成員.csv | status=PARSED
+[08:36:06] 檔案 14/74：05_八日逐日市場股票池影響筆數.csv | size=500
+[08:36:06] [PASS] 05_八日逐日市場股票池影響筆數.csv | status=NO_CODE_COLUMN
+[08:36:06] 檔案 15/74：04_v455非零差額逐筆含股票池歸屬.csv | size=4,829,904
+[08:36:08] [PASS] 04_v455非零差額逐筆含股票池歸屬.csv | status=PARSED
+[08:36:08] 檔案 16/74：03_v28股票池內非零報酬基準差額逐筆.csv | size=4,193,095
+[08:36:09] [PASS] 03_v28股票池內非零報酬基準差額逐筆.csv | status=PARSED
+[08:36:09] 檔案 17/74：02_v28股票池與v455影響範圍統計.csv | size=219
+[08:36:10] [PASS] 02_v28股票池與v455影響範圍統計.csv | status=NO_CODE_COLUMN
+[08:36:10] 檔案 18/74：01_v455受影響證券與v28股票池交集.csv | size=325,278
+[08:36:10] [PASS] 01_v455受影響證券與v28股票池交集.csv | status=PARSED
+[08:36:10] 檔案 19/74：股票池與主檔範圍差異.csv | size=107
+[08:36:11] [PASS] 股票池與主檔範圍差異.csv | status=EMPTY
+[08:36:11] 檔案 20/74：原始股票池至完整代號對照.csv | size=80,683
+[08:36:11] [PASS] 原始股票池至完整代號對照.csv | status=NO_CODE_COLUMN
+[08:36:11] 檔案 21/74：完整證券清單_完整代號.csv | size=296,973
+[08:36:11] [PASS] 完整證券清單_完整代號.csv | status=NO_CODE_COLUMN
+[08:36:11] 檔案 22/74：股票池與主檔範圍差異.csv | size=107
+[08:36:12] [PASS] 股票池與主檔範圍差異.csv | status=EMPTY
+[08:36:12] 檔案 23/74：原始股票池至完整代號對照.csv | size=80,683
+[08:36:12] [PASS] 原始股票池至完整代號對照.csv | status=NO_CODE_COLUMN
+[08:36:12] 檔案 24/74：完整證券清單_完整代號.csv | size=296,549
+[08:36:12] [PASS] 完整證券清單_完整代號.csv | status=NO_CODE_COLUMN
+[08:36:12] 檔案 25/74：官方行情總表_完整證券代號_v4.16.csv | size=201
+[08:36:13] [PASS] 官方行情總表_完整證券代號_v4.16.csv | status=EMPTY
+[08:36:13] 檔案 26/74：股票池官方市場對照.csv | size=70,706
+[08:36:13] [PASS] 股票池官方市場對照.csv | status=PARSED
+[08:36:13] 檔案 27/74：股票池官方市場對照.csv | size=70,706
+[08:36:14] [PASS] 股票池官方市場對照.csv | status=PARSED
+[08:36:14] 檔案 28/74：現有股票池全部公司行動事件_v2.24.csv | size=8,558,986
+[08:36:16] [PASS] 現有股票池全部公司行動事件_v2.24.csv | status=PARSED
+[08:36:16] 檔案 29/74：現有股票池待處理公司行動_v2.24.csv | size=339,316
+[08:36:17] [PASS] 現有股票池待處理公司行動_v2.24.csv | status=PARSED
+[08:36:17] 檔案 30/74：現有股票池影子調整測試候選_v2.24.csv | size=8,220,393
+[08:36:19] [PASS] 現有股票池影子調整測試候選_v2.24.csv | status=PARSED
+[08:36:19] 檔案 31/74：官方原始回應表格結構與股票池命中診斷_v2.23.csv | size=105,764
+[08:36:19] [PASS] 官方原始回應表格結構與股票池命中診斷_v2.23.csv | status=NO_CODE_COLUMN
+[08:36:19] 檔案 32/74：官方查詢異常與無股票池列_原始回應稽核_v2.23.csv | size=402,697
+[08:36:20] [PASS] 官方查詢異常與無股票池列_原始回應稽核_v2.23.csv | status=NO_CODE_COLUMN
+[08:36:20] 檔案 33/74：股票池官方市場對照.csv | size=70,706
+[08:36:20] [PASS] 股票池官方市場對照.csv | status=PARSED
+[08:36:20] 檔案 34/74：股票池官方市場對照.csv | size=70,706
+[08:36:21] [PASS] 股票池官方市場對照.csv | status=PARSED
+[08:36:21] 檔案 35/74：股票池官方市場對照.csv | size=70,706
+[08:36:21] [PASS] 股票池官方市場對照.csv | status=PARSED
+[08:36:21] 檔案 36/74：台股股票池.csv | size=119,157
+[08:36:22] [PASS] 台股股票池.csv | status=PARSED
+[08:36:22] 檔案 37/74：台股股票池.csv | size=695,456
+[08:36:23] [PASS] 台股股票池.csv | status=PARSED
+[08:36:23] 檔案 38/74：台股股票池.csv | size=695,456
+[08:36:24] [PASS] 台股股票池.csv | status=PARSED
+[08:36:24] 檔案 39/74：看股最速適_v4.87.5.35_OOS_Gate歷史個股候選來源擴充核驗與完整母體重建可行性判定_20261107_235506.zip | size=20,224
+[08:36:25] [ZIP] 看股最速適_v4.87.5.35_OOS_Gate歷史個股候選來源擴充核驗與完整母體重建可行性判定_20261107_235506.zip：members=9；相關成員=9
+[08:36:25] [PASS] 看股最速適_v4.87.5.35_OOS_Gate歷史個股候選來源擴充核驗與完整母體重建可行性判定_20261107_235506.zip | status=ZIP_PARSED
+[08:36:25] 檔案 40/74：執行摘要.txt | size=1,012
+[08:36:25] [PASS] 執行摘要.txt | status=PROGRAM_SCANNED
+[08:36:25] 檔案 41/74：08_來源擴充核驗與完整母體判定摘要.json | size=4,404
+[08:36:26] [PASS] 08_來源擴充核驗與完整母體判定摘要.json | status=JSON_PARSED
+[08:36:26] 檔案 42/74：06_個股自然鍵重複及成本情境展開檢查.csv | size=1,301
+[08:36:26] [PASS] 06_個股自然鍵重複及成本情境展開檢查.csv | status=NO_CODE_COLUMN
+[08:36:26] 檔案 43/74：01_v532核心欄位候選逐表實際讀取與母體統計.csv | size=129,263
+[08:36:26] [PASS] 01_v532核心欄位候選逐表實際讀取與母體統計.csv | status=NO_CODE_COLUMN
+[08:36:26] 檔案 44/74：看股最速適_v4.87.5.35_OOS_Gate歷史個股候選來源擴充核驗與完整母體重建可行性判定_20261107_200712.zip | size=20,224
+[08:36:27] [ZIP] 看股最速適_v4.87.5.35_OOS_Gate歷史個股候選來源擴充核驗與完整母體重建可行性判定_20261107_200712.zip：members=9；相關成員=9
+[08:36:27] [PASS] 看股最速適_v4.87.5.35_OOS_Gate歷史個股候選來源擴充核驗與完整母體重建可行性判定_20261107_200712.zip | status=ZIP_PARSED
+[08:36:27] 檔案 45/74：執行摘要.txt | size=1,097
+[08:36:27] [PASS] 執行摘要.txt | status=PROGRAM_SCANNED
+[08:36:27] 檔案 46/74：08_來源血緣與完整母體判定摘要.json | size=7,030
+[08:36:28] [PASS] 08_來源血緣與完整母體判定摘要.json | status=JSON_PARSED
+[08:36:28] 檔案 47/74：03_v257_v259既有個股逐筆來源結構.csv | size=4,628
+[08:36:28] [PASS] 03_v257_v259既有個股逐筆來源結構.csv | status=NO_CODE_COLUMN
+[08:36:28] 檔案 48/74：01_v251原始逐筆表母體與欄位統計.csv | size=8,925
+[08:36:28] [PASS] 01_v251原始逐筆表母體與欄位統計.csv | status=NO_CODE_COLUMN
+[08:36:28] 檔案 49/74：v4.87.5.32_20261108_034530.zip | size=16,626
+[08:36:29] [ZIP] v4.87.5.32_20261108_034530.zip：members=7；相關成員=7
+[08:36:29] [PASS] v4.87.5.32_20261108_034530.zip | status=ZIP_PARSED
+[08:36:29] 檔案 50/74：執行摘要.txt | size=1,080
+[08:36:29] [PASS] 執行摘要.txt | status=PROGRAM_SCANNED
+[08:36:29] 檔案 51/74：05_來源版本與個股明細可追溯性稽核摘要.json | size=4,794
+[08:36:29] [PASS] 05_來源版本與個股明細可追溯性稽核摘要.json | status=JSON_PARSED
+[08:36:29] 檔案 52/74：04_個股貢獻分析所需欄位與現有來源能力.csv | size=610
+[08:36:30] [PASS] 04_個股貢獻分析所需欄位與現有來源能力.csv | status=NO_CODE_COLUMN
+[08:36:30] 檔案 53/74：02_Drive及ZIP個股明細候選來源檔案盤點.csv | size=48,237
+[08:36:30] [PASS] 02_Drive及ZIP個股明細候選來源檔案盤點.csv | status=NO_CODE_COLUMN
+[08:36:30] 檔案 54/74：09_v4.68.1_manifest.json | size=4,817
+[08:36:30] [PASS] 09_v4.68.1_manifest.json | status=JSON_PARSED
+[08:36:30] 檔案 55/74：v4.68.1執行摘要.txt | size=2,332
+[08:36:31] [PASS] v4.68.1執行摘要.txt | status=PROGRAM_SCANNED
+[08:36:31] 檔案 56/74：04_候選資料集欄位處理範圍.csv | size=2,252
+[08:36:31] [PASS] 04_候選資料集欄位處理範圍.csv | status=NO_CODE_COLUMN
+[08:36:31] 檔案 57/74：v4.59執行摘要.txt | size=3,426
+[08:36:31] [PASS] v4.59執行摘要.txt | status=PROGRAM_SCANNED
+[08:36:31] 檔案 58/74：06_v231前瞻候選欄位逐日非空統計.csv | size=68,290
+[08:36:31] [PASS] 06_v231前瞻候選欄位逐日非空統計.csv | status=NO_CODE_COLUMN
+[08:36:31] 檔案 59/74：03_v231八補行日前後日期序列摘要.csv | size=663
+[08:36:32] [PASS] 03_v231八補行日前後日期序列摘要.csv | status=NO_CODE_COLUMN
+[08:36:32] 檔案 60/74：02_v231來源與欄位診斷.csv | size=1,970
+[08:36:32] [PASS] 02_v231來源與欄位診斷.csv | status=NO_CODE_COLUMN
+[08:36:32] 檔案 61/74：01_v231完整欄位與角色.csv | size=1,092
+[08:36:32] [PASS] 01_v231完整欄位與角色.csv | status=NO_CODE_COLUMN
+[08:36:32] 檔案 62/74：v4.56執行摘要.txt | size=3,091
+[08:36:32] [PASS] v4.56執行摘要.txt | status=PROGRAM_SCANNED
+[08:36:32] 檔案 63/74：v4.43核驗摘要.txt | size=9,047
+[08:36:33] [PASS] v4.43核驗摘要.txt | status=PROGRAM_SCANNED
+[08:36:33] 檔案 64/74：v4.35來源與官方個股日行情差異.csv | size=13,513
+[08:36:34] [PASS] v4.35來源與官方個股日行情差異.csv | status=NO_CODE_COLUMN
+[08:36:34] 檔案 65/74：優先事件官方個股日行情明細.csv | size=11,671
+[08:36:34] [PASS] 優先事件官方個股日行情明細.csv | status=NO_CODE_COLUMN
+[08:36:34] 檔案 66/74：官方個股逐月行情查詢紀錄.csv | size=7,546
+[08:36:35] [PASS] 官方個股逐月行情查詢紀錄.csv | status=NO_CODE_COLUMN
+[08:36:35] 檔案 67/74：優先事件官方個股日行情時序核驗.csv | size=9,820
+[08:36:36] [PASS] 優先事件官方個股日行情時序核驗.csv | status=NO_CODE_COLUMN
+[08:36:36] 檔案 68/74：v4.42核驗摘要.txt | size=6,446
+[08:36:36] [PASS] v4.42核驗摘要.txt | status=PROGRAM_SCANNED
+[08:36:36] 檔案 69/74：v4.35來源與官方個股日行情差異.csv | size=16,107
+[08:36:37] [PASS] v4.35來源與官方個股日行情差異.csv | status=NO_CODE_COLUMN
+[08:36:37] 檔案 70/74：優先事件官方個股日行情明細.csv | size=1,768
+[08:36:38] [PASS] 優先事件官方個股日行情明細.csv | status=NO_CODE_COLUMN
+[08:36:38] 檔案 71/74：官方個股逐月行情查詢紀錄.csv | size=9,567
+[08:36:39] [PASS] 官方個股逐月行情查詢紀錄.csv | status=NO_CODE_COLUMN
+[08:36:39] 檔案 72/74：優先事件官方個股日行情時序核驗.csv | size=9,876
+[08:36:39] [PASS] 優先事件官方個股日行情時序核驗.csv | status=NO_CODE_COLUMN
+[08:36:39] 檔案 73/74：v4.24.1核驗摘要.txt | size=2,253
+[08:36:39] [PASS] v4.24.1核驗摘要.txt | status=PROGRAM_SCANNED
+[08:36:39] 檔案 74/74：v4.24.1核驗摘要.json | size=1,906
+[08:36:39] [PASS] v4.24.1核驗摘要.json | status=JSON_PARSED
+[08:36:39] [PASS] 候選檔案解析結束：成功／完成=74；錯誤=0；資料列配對證據=3,416
+[08:36:39] [05] 彙整 305 檔與歷史個股來源的逐檔證據。
+[08:36:40] [PASS] 305 檔分類完成：已確認普通股=0；個股來源候選=257；明確非普通股=48；待確認／衝突=0
