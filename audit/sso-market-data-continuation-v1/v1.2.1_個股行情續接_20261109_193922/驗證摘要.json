@@ -1,0 +1,19 @@
+{
+  "version": "v1.2.1",
+  "run_date": "2026-11-09",
+  "TWSE_response_date": "2026-11-09",
+  "TPEx_response_date": "2026-11-09",
+  "TWSE_master_count": 1099,
+  "TPEx_master_count": 897,
+  "TWSE_new_rows": 1097,
+  "TPEx_new_rows": 883,
+  "TWSE_coverage": 0.9981801637852593,
+  "TPEx_coverage": 0.9843924191750278,
+  "old_increment_rows": 16847,
+  "old_stock_rows_retained": 13931,
+  "old_unmatched_rows": 2916,
+  "new_rows": 1980,
+  "combined_rows": 15911,
+  "anomaly_rows": 12,
+  "pass": true
+}

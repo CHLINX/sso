@@ -1,0 +1,65 @@
+{
+  "database_name": "SSO_Market_Data_Continuation_TWSE_TPEX",
+  "version": "v1.2.1",
+  "run_time_taipei": "2026-11-09T19:39:22.473036+08:00",
+  "latest_market_date": "2026-11-09",
+  "purpose": "個股專用官方行情增量續接",
+  "scope": {
+    "上市": true,
+    "上櫃": true,
+    "ETF_selection": false,
+    "company_master_filter": true
+  },
+  "source_files_read_only": {
+    "A_file": "/content/drive/MyDrive/看股最速適/看股最速適_官方行情完整證券代號重建_v4_16_20261031_131511/官方行情總表_完整證券代號_v4.17.csv",
+    "A_bytes": 3164892248,
+    "A_last_date_previously_verified": "2026-10-28",
+    "old_increment": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/行情增量資料.csv.gz",
+    "old_increment_sha256": "b5ac265e5bef8f09c5c5bd93bf39d2c78f4a3736a71a7b05c7db01a8b7781074",
+    "old_semantic_layer": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/行情備註語意校正層_v4.87.5.23.csv.gz",
+    "old_semantic_sha256": "04281247a3b9e4e78507063ce6d084d02db64c1fbbe2806bf9e7a9253c730ad8",
+    "old_manifest": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/邏輯完整資料庫_manifest.json",
+    "old_manifest_sha256": "71d5dbf91f0ecc6f5cdc792c35023a3603857a7bc99db8dfcf53701fd3c73fcb"
+  },
+  "official_sources": {
+    "TWSE_master": "https://openapi.twse.com.tw/v1/opendata/t187ap03_L",
+    "TPEx_master": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+    "TWSE_daily": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&date=20261109&type=ALLBUT0999",
+    "TPEx_daily": "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_daily_close_quotes",
+    "TWSE_daily_response_date": "2026-11-09",
+    "TPEx_daily_response_date": "2026-11-09",
+    "TWSE_master_code_field": "公司代號",
+    "TWSE_master_name_field": "公司簡稱",
+    "TPEx_master_code_field": "SecuritiesCompanyCode",
+    "TPEx_master_name_field": "CompanyAbbreviation"
+  },
+  "counts": {
+    "original_increment_rows": 16847,
+    "retained_old_company_stock_rows": 13931,
+    "old_increment_unmatched_rows": 2916,
+    "new_rows": 1980,
+    "combined_rows": 15911,
+    "new_twse_rows": 1097,
+    "new_tpex_rows": 883,
+    "twse_master_count": 1099,
+    "tpex_master_count": 897,
+    "twse_coverage": 0.9981801637852593,
+    "tpex_coverage": 0.9843924191750278,
+    "anomaly_rows": 12
+  },
+  "validation": {
+    "twse_date_matches_run_date": true,
+    "tpex_date_matches_run_date": true,
+    "twse_tpex_date_match": true,
+    "twse_coverage_ge_95pct": true,
+    "tpex_coverage_ge_95pct": true,
+    "duplicate_key_count": 0,
+    "old_seven_sessions_covered": true,
+    "original_sources_modified": false,
+    "github_main_modified": false
+  },
+  "outputs": {
+    "new_rows": "本次新增缺漏個股行情.csv.gz",
+    "combined_increment": "行情增量資料_個股專用_更新至20261109_v1.2.1.csv.gz"
+  }
+}

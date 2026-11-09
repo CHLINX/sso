@@ -1,0 +1,11 @@
+{
+  "A_path": "/content/drive/MyDrive/看股最速適/看股最速適_官方行情完整證券代號重建_v4_16_20261031_131511/官方行情總表_完整證券代號_v4.17.csv",
+  "A_bytes": 3164892248,
+  "A_last_date_previously_verified": "2026-10-28",
+  "old_increment_path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/行情增量資料.csv.gz",
+  "old_increment_sha256": "b5ac265e5bef8f09c5c5bd93bf39d2c78f4a3736a71a7b05c7db01a8b7781074",
+  "old_semantic_sha256": "04281247a3b9e4e78507063ce6d084d02db64c1fbbe2806bf9e7a9253c730ad8",
+  "old_manifest_sha256": "71d5dbf91f0ecc6f5cdc792c35023a3603857a7bc99db8dfcf53701fd3c73fcb",
+  "run_date": "2026-11-09",
+  "run_time_taipei": "2026-11-09T19:39:22.473036+08:00"
+}
