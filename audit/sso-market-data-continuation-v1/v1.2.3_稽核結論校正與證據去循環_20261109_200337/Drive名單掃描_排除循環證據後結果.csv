@@ -1,0 +1,14 @@
+﻿原始檔案,檔案大小,原掃描狀態,原命中唯一代號數,校正後證據分類,可否作為獨立歷史公司名單證據
+/content/drive/MyDrive/看股最速適/看股最速適_官方行情完整證券代號重建_v4_16_20261031_130344/官方行情總表_完整證券代號_v4.16.csv,201,scanned,0,未命中或非歷史公司名單,False
+/content/drive/MyDrive/看股最速適/看股最速適_補行交易日全歷史行情稽核_v4_50_20261101_101752/06_官方補行日證券代號數涵蓋率核對.csv,2417,skip_no_code_column,0,無可辨識代號欄位_未形成證據,False
+/content/drive/MyDrive/看股最速適/看股最速適_八個補行交易日官方全市場重新下載_v4_51_20261101_103333/05_v451與v448證券代號數核對.csv,3059,skip_no_code_column,0,無可辨識代號欄位_未形成證據,False
+/content/drive/MyDrive/看股最速適/看股最速適_八個補行交易日官方全市場重新下載_v4_51_20261101_130133/05_v451與v448證券代號數核對.csv,3059,skip_no_code_column,0,無可辨識代號欄位_未形成證據,False
+/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/更新成果_v1.1.1_20261109_191146/官方上市櫃公司名單.csv,69571,scanned,0,現行官方公司名單_非歷史名單,False
+/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/更新成果_v1.1.1_20261109_191146/舊增量非公司名單排除明細.csv,914668,matched,417,循環證據_不得作為歷史公司名單,False
+/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/更新成果_v1.1.1_20261109_191146/官方行情非公司名單排除明細.csv,183074,matched,417,循環證據_不得作為歷史公司名單,False
+/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/更新成果_v1.2_20261109_192126/官方上市櫃個股公司名單.csv,41127,scanned,0,未命中或非歷史公司名單,False
+/content/drive/MyDrive/看股最速適/看股最速適_SSO_Market_Data_Continuation_TWSE_TPEX_v1_v4875231原始語意與代號診斷_20261109_185334/缺少前收證券代號彙總.csv,18781,matched,398,循環證據_不得作為歷史公司名單,False
+/content/drive/MyDrive/看股最速適/看股最速適_SSO_Market_Data_Continuation_TWSE_TPEX_v1_v4875231原始語意與代號診斷_20261109_185334/原始市場與公司名單逐筆交叉核對.csv.gz,53234,matched,417,循環證據_不得作為歷史公司名單,False
+/content/drive/MyDrive/看股最速適/看股最速適_SSO_Market_Data_Continuation_TWSE_TPEX_v1_v4875231原始語意與代號診斷_20261109_185334/市場與公司名單命中交叉表.csv,250,skip_no_code_column,0,無可辨識代號欄位_未形成證據,False
+/content/drive/MyDrive/看股最速適/看股最速適_SSO_Market_Data_Continuation_TWSE_TPEX_v1_v4875231原始語意與代號診斷_20261109_185334/代號格式與公司名單命中交叉表.csv,431,skip_no_code_column,0,無可辨識代號欄位_未形成證據,False
+/content/drive/MyDrive/看股最速適/看股最速適_SSO_Market_Data_Continuation_TWSE_TPEX_v1_v4875231原始語意與代號診斷_20261109_185334/公司名單命中唯一證券數.csv,116,skip_no_code_column,0,無可辨識代號欄位_未形成證據,False
