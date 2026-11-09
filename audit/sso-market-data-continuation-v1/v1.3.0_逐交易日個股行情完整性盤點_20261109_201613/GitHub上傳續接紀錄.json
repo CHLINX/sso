@@ -1,0 +1,107 @@
+{
+  "version": "v1.3.0",
+  "upload_recovery": true,
+  "branch": "audit/sso-market-data-continuation-v1-v130-upload-20261109_201735",
+  "base_branch": "audit/sso-market-data-continuation-v1-v123-20261109_200337",
+  "base_sha": "def6903d8a1eb66ce5880d358b28886a0cb76a64",
+  "github_url": "https://github.com/CHLINX/sso/tree/audit/sso-market-data-continuation-v1-v130-upload-20261109_201735/audit/sso-market-data-continuation-v1/v1.3.0_逐交易日個股行情完整性盤點_20261109_201613",
+  "files": [
+    {
+      "file": "v1.3.0盤點摘要.json",
+      "bytes": 6327,
+      "sha256": "82256106a7b3a84cbd999cea3644698f81bd1e204d04da39551ee3c96b2ac013",
+      "github_path": "audit/sso-market-data-continuation-v1/v1.3.0_逐交易日個股行情完整性盤點_20261109_201613/v1.3.0盤點摘要.json",
+      "commit_sha": "96273ceb2182fc5b31e78316f05d06c1e032cc20",
+      "status": "success"
+    },
+    {
+      "file": "v123已知16檔缺漏_本次增量交叉核對.csv",
+      "bytes": 2746,
+      "sha256": "35263ddc03bd500dd16877936128afe390b0dbb5da5cbf9fb098192cd727db21",
+      "github_path": "audit/sso-market-data-continuation-v1/v1.3.0_逐交易日個股行情完整性盤點_20261109_201613/v123已知16檔缺漏_本次增量交叉核對.csv",
+      "commit_sha": "ddaf2ef42f43eb875d7647776d56455512d068a3",
+      "status": "success"
+    },
+    {
+      "file": "下一階段官方行情補取優先清單.csv",
+      "bytes": 21957,
+      "sha256": "c931c0eec1d4b8334b6aaefbddd056e3c9681ad6e51d5bc1e9a8c4f9f9c6d318",
+      "github_path": "audit/sso-market-data-continuation-v1/v1.3.0_逐交易日個股行情完整性盤點_20261109_201613/下一階段官方行情補取優先清單.csv",
+      "commit_sha": "6578c27e6e90cbbb284eb4cd194e8dfe8199da6a",
+      "status": "success"
+    },
+    {
+      "file": "執行紀錄.txt",
+      "bytes": 2458,
+      "sha256": "ea9521b8ed14c6541a1f41ffde658fc7e565eb2cd8cb576c188e6d98637e2f2a",
+      "github_path": "audit/sso-market-data-continuation-v1/v1.3.0_逐交易日個股行情完整性盤點_20261109_201613/執行紀錄.txt",
+      "commit_sha": "580bf96acd1ea00c16612e25b45d91a395fabc48",
+      "status": "success"
+    },
+    {
+      "file": "盤點報告.txt",
+      "bytes": 1994,
+      "sha256": "85b58ff06f94410a64490e46dd00ed00875bb4459d176dfb74512487e0968ddb",
+      "github_path": "audit/sso-market-data-continuation-v1/v1.3.0_逐交易日個股行情完整性盤點_20261109_201613/盤點報告.txt",
+      "commit_sha": "4cb2ed99050986edff3598548cab67717674aa81",
+      "status": "success"
+    },
+    {
+      "file": "範圍檢查_商品型代號格式異常列.csv",
+      "bytes": 294,
+      "sha256": "f2489f8e743137006edd25eee01727eb9222b98e5be510f1da25a7ead8a0dab5",
+      "github_path": "audit/sso-market-data-continuation-v1/v1.3.0_逐交易日個股行情完整性盤點_20261109_201613/範圍檢查_商品型代號格式異常列.csv",
+      "commit_sha": "e50f1b427fa4267965bc950b30777635c076d5c5",
+      "status": "success"
+    },
+    {
+      "file": "範圍檢查_特別股格式異常列.csv",
+      "bytes": 294,
+      "sha256": "f2489f8e743137006edd25eee01727eb9222b98e5be510f1da25a7ead8a0dab5",
+      "github_path": "audit/sso-market-data-continuation-v1/v1.3.0_逐交易日個股行情完整性盤點_20261109_201613/範圍檢查_特別股格式異常列.csv",
+      "commit_sha": "2562f52528363ad4526d533f91f06cd757fa57fa",
+      "status": "success"
+    },
+    {
+      "file": "跨日期缺少個股代號_待確認清單.csv",
+      "bytes": 4731,
+      "sha256": "08a6677cfbb9505e5e48bea177450b301ea80dec83ef8f9ca3862f5ad53cc038",
+      "github_path": "audit/sso-market-data-continuation-v1/v1.3.0_逐交易日個股行情完整性盤點_20261109_201613/跨日期缺少個股代號_待確認清單.csv",
+      "commit_sha": "a0c38b088a337faacceef218c4e011ef649549bd",
+      "status": "success"
+    },
+    {
+      "file": "逐交易日市場個股覆蓋摘要.csv",
+      "bytes": 622,
+      "sha256": "c5ade98596085c05c990e568f7d977d5108bb41bd482c9eb01387f1091e0ffeb",
+      "github_path": "audit/sso-market-data-continuation-v1/v1.3.0_逐交易日個股行情完整性盤點_20261109_201613/逐交易日市場個股覆蓋摘要.csv",
+      "commit_sha": "971b5a099382e365b4e8971c6329193afc86aa6d",
+      "status": "success"
+    },
+    {
+      "file": "逐日OHLCV缺值與成交狀態.csv",
+      "bytes": 45691,
+      "sha256": "0f962c8129e14cc75da4a1a3970d7229c1a66128e6e0df6514721e65c13af0ce",
+      "github_path": "audit/sso-market-data-continuation-v1/v1.3.0_逐交易日個股行情完整性盤點_20261109_201613/逐日OHLCV缺值與成交狀態.csv",
+      "commit_sha": "ff390713565b9791f96d10645d88078457578af5",
+      "status": "success"
+    },
+    {
+      "file": "逐日市場代號重複鍵.csv",
+      "bytes": 307,
+      "sha256": "c308514b34b3848a12bb192049934e7e41f11bb5d5894788e3a159a27eb8739b",
+      "github_path": "audit/sso-market-data-continuation-v1/v1.3.0_逐交易日個股行情完整性盤點_20261109_201613/逐日市場代號重複鍵.csv",
+      "commit_sha": "c014d79dd5953a59fa7e0b227b8b23843bdeb78e",
+      "status": "success"
+    },
+    {
+      "file": "v1.3.0_逐交易日個股行情完整性盤點_20261109_201613.zip",
+      "bytes": 12566,
+      "sha256": "399c0c1004aa28d19fc5230ba0776e28ba4643668c70dee8e16a68fec0282e1e",
+      "github_path": "audit/sso-market-data-continuation-v1/v1.3.0_逐交易日個股行情完整性盤點_20261109_201613/v1.3.0_逐交易日個股行情完整性盤點_20261109_201613.zip",
+      "commit_sha": "744bc1995a7905351cb45eec7fcf87da29de4ae0",
+      "status": "success"
+    }
+  ],
+  "status": "success"
+}
