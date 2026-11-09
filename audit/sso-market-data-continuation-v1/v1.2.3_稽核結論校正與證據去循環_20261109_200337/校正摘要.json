@@ -1,0 +1,101 @@
+{
+  "version": "v1.2.3",
+  "run_time_taipei": "2026-11-09T20:03:37.490317+08:00",
+  "purpose": "v1.2.2 稽核結論校正與證據去循環封存",
+  "scope": {
+    "v122_only": true,
+    "A_rescan": false,
+    "official_api_called": false,
+    "database_updated": false,
+    "original_sources_modified": false,
+    "training_backtest_stock_selection": false,
+    "main_branch_modified": false
+  },
+  "unmatched_security_codes": {
+    "source_rows": 2916,
+    "unique_market_codes": 417,
+    "preferred_share_candidates": 28,
+    "product_like_security_candidates": 389,
+    "ordinary_four_digit_code_candidates": 0,
+    "other_unclassified": 0,
+    "historical_A_hits": 28,
+    "historical_A_hits_confirmed_preferred_shares": 24,
+    "historical_common_stock_candidate_from_A": 4
+  },
+  "historical_master_evidence": {
+    "candidate_files": 13,
+    "circular_derived_files": 4,
+    "verified_independent_historical_master_files": 0,
+    "v122_claim_417_hits_is_valid": false,
+    "correction": "原417組命中主要由前版排除明細／診斷報表產生，屬循環證據，不可當成歷史公司名單。"
+  },
+  "missing_quotes": {
+    "total": 16,
+    "official_snapshot_absent": 4,
+    "zero_volume": 7,
+    "positive_volume_but_ohlc_missing": 5,
+    "absent_codes": [
+      "1589",
+      "3714",
+      "4534",
+      "4804"
+    ]
+  },
+  "ohlcv_anomalies": {
+    "total": 12,
+    "positive_volume_missing_ohlc": 5,
+    "zero_volume_missing_ohlc": 7,
+    "no_price_fabrication": true
+  },
+  "3133_trace": {
+    "resolved": true,
+    "explanation": "已定位。IPython Out[5] = 3133；同一執行的 In[5] 最後運算式是 log_path.write_text(...). pathlib.Path.write_text() 回傳寫入的字元數，因此 3133 是執行紀錄檔寫入字元數，並非股票代號或行情資料。"
+  },
+  "v122_source_fingerprints": {
+    "summary": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/稽核摘要.json",
+      "bytes": 6547,
+      "sha256": "557c390683b1c342eeab5cb675ece28223356ee9e04e03995f688928456dda07"
+    },
+    "A_history": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/A歷史行情總表_未命中代號交叉比對.csv",
+      "bytes": 167316,
+      "sha256": "8d94616d1def53b4a9a6492ccbd9f6eb16e4e95dad7937ffa3e61400aabf1e26"
+    },
+    "drive_inventory": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/Drive舊版公司證券名單來源盤點.csv",
+      "bytes": 16894,
+      "sha256": "17e38111b3d1563b51f676c9dc4a1a95560741d51688e10cdabf867e7781483f"
+    },
+    "unique_codes": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/未命中現行名單_唯一代號分類總表.csv",
+      "bytes": 78060,
+      "sha256": "490cef1149c09a24ded5c5edd85f03285b8631525bc80b6a76e2b1fe0291bfc1"
+    },
+    "preferred": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/未命中資料中的特別股候選_獨立清單.csv",
+      "bytes": 4403,
+      "sha256": "85525361a085b0e98cb62924ea726bce211bd5e5ff1407347d2973bb82ed6a2e"
+    },
+    "missing": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/16檔本次行情缺漏_官方原始回應逐筆核對.csv",
+      "bytes": 7633,
+      "sha256": "85252e85a4a2cac7cf7c24f6d06bf6b8e172d698de9c30eab7da1174874cd957"
+    },
+    "anomalies": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/12筆OHLCV異常_成交狀態分級.csv",
+      "bytes": 8289,
+      "sha256": "724729d0c1823a2b7a78a37604087bf854499bc8cc73c761ba0e1a5ba901636d"
+    },
+    "trace_3133": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/3133尾端輸出_來源追查.csv",
+      "bytes": 1471,
+      "sha256": "786dbbcf72f639206a2694f9316053815303a4251205e5e6921fd62c9c03d88b"
+    },
+    "source_code": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/v1.2.2_完整執行程式碼.txt",
+      "bytes": 57941,
+      "sha256": "5ff3a15c3c1b3769e8f8ae10d059007354a678c407d690349ff6eca1544ce7a4"
+    }
+  }
+}
