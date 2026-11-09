@@ -1,0 +1,657 @@
+﻿date,market,code,expected_direction,previous_close,close,price_change,change_sign,change_note_raw,observed_sign_direction,observed_note_direction,semantic_status
+2026-10-29,上市,00400A,NO_BASE,,14.36,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00401A,NO_BASE,,13.48,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00402A,NO_BASE,,9.71,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00403A,NO_BASE,,10.01,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00404A,NO_BASE,,9.43,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00405A,NO_BASE,,8.43,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00406A,NO_BASE,,8.95,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00407A,NO_BASE,,9.34,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00408A,NO_BASE,,9.6,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00409A,NO_BASE,,9.07,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00410A,NO_BASE,,11.52,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00412A,NO_BASE,,8.97,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00415A,NO_BASE,,9.36,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,00416A,NO_BASE,,9.28,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,0050,NO_BASE,,107.25,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,0051,NO_BASE,,147.85,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,0052,NO_BASE,,62.15,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,0053,NO_BASE,,238.2,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,0055,NO_BASE,,52.5,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,0056,NO_BASE,,56.9,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,0057,NO_BASE,,318.7,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,0061,NO_BASE,,22.22,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,006203,NO_BASE,,193.3,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,006204,NO_BASE,,232.0,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,006205,NO_BASE,,38.6,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,006206,NO_BASE,,36.98,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,006207,NO_BASE,,29.69,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,006208,NO_BASE,,245.75,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00625K,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,00625K,NO_BASE,,7.91,,<NA>,<p>X</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上市,00625K,NO_BASE,7.91,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,00625K,NO_BASE,7.91,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上市,00625K,NO_BASE,7.91,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上市,00625K,NO_BASE,7.87,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00631L,NO_BASE,,35.89,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00632R,NO_BASE,,9.85,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00633L,NO_BASE,,39.21,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00634R,NO_BASE,,3.45,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00635U,NO_BASE,,41.56,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00636,NO_BASE,,25.38,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00636K,NO_BASE,,7.6,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00637L,NO_BASE,,16.33,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00638R,NO_BASE,,7.45,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00639,NO_BASE,,13.54,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00640L,NO_BASE,,103.5,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00641R,NO_BASE,,3.74,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00642U,NO_BASE,,35.45,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00643,NO_BASE,,15.66,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00643K,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,00643K,NO_BASE,,3.16,,<NA>,<p>X</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上市,00643K,NO_BASE,3.16,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,00643K,NO_BASE,3.16,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上市,00643K,NO_BASE,3.16,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00645,NO_BASE,,56.7,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00646,NO_BASE,,78.9,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00647L,NO_BASE,,141.3,,<NA>,<p>X</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00648R,NO_BASE,,3.91,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00650L,NO_BASE,,14.37,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00651R,NO_BASE,,5.65,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00652,NO_BASE,,32.03,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00653L,NO_BASE,,41.5,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00654R,NO_BASE,,7.16,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00655L,NO_BASE,,27.36,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00656R,NO_BASE,,6.59,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00657,NO_BASE,,76.9,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00657K,NO_BASE,,23.52,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00660,NO_BASE,,45.14,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00661,NO_BASE,,83.95,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00662,NO_BASE,,123.6,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00663L,NO_BASE,,103.55,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00664R,NO_BASE,,1.58,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00665L,NO_BASE,,8.14,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00666R,NO_BASE,,9.73,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,00666R,NO_BASE,9.59,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00668,NO_BASE,,62.8,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00668K,NO_BASE,,19.17,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00669R,NO_BASE,,5.32,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00670L,NO_BASE,,197.55,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00671R,NO_BASE,,2.43,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00673R,NO_BASE,,9.53,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00674R,NO_BASE,,30.44,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00675L,NO_BASE,,313.2,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00676R,NO_BASE,,5.42,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00678,NO_BASE,,46.26,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00680L,NO_BASE,,6.28,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00681R,NO_BASE,,22.04,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00682U,NO_BASE,,21.07,,<NA>,<p>X</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,00682U,NO_BASE,21.07,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上市,00682U,NO_BASE,21.07,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上市,00682U,NO_BASE,20.94,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00683L,NO_BASE,,22.65,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00684R,NO_BASE,,14.67,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上市,00684R,NO_BASE,14.82,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,00684R,NO_BASE,14.82,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00685L,NO_BASE,,11.86,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00686R,NO_BASE,,0.97,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00688L,NO_BASE,,6.25,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00689R,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,00689R,NO_BASE,,23.09,,<NA>,<p>X</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,00689R,NO_BASE,23.15,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00690,NO_BASE,,75.85,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00692,NO_BASE,,93.1,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00693U,NO_BASE,,22.24,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00700,NO_BASE,,16.51,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00701,NO_BASE,,42.66,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00702,NO_BASE,,25.01,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00703,NO_BASE,,17.93,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00706L,NO_BASE,,19.08,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00707R,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,00707R,NO_BASE,,32.08,,<NA>,<p>X</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上市,00707R,NO_BASE,32.08,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上市,00707R,NO_BASE,32.1,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00708L,NO_BASE,,67.35,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00709,NO_BASE,,39.7,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00710B,NO_BASE,,18.94,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00711B,NO_BASE,,15.32,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00712,NO_BASE,,7.16,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00713,NO_BASE,,65.95,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00714,NO_BASE,,21.19,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00715L,NO_BASE,,87.8,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00717,NO_BASE,,14.13,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00728,NO_BASE,,64.2,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00730,NO_BASE,,29.18,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00731,NO_BASE,,102.8,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00733,NO_BASE,,71.6,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00735,NO_BASE,,100.3,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00736,NO_BASE,,30.47,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00737,NO_BASE,,41.37,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00738U,NO_BASE,,42.21,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00739,NO_BASE,,24.95,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00752,NO_BASE,,21.24,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00753L,NO_BASE,,7.55,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00757,NO_BASE,,140.4,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00762,NO_BASE,,113.55,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00763U,NO_BASE,,34.95,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00770,NO_BASE,,63.75,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00771,NO_BASE,,14.85,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00775B,NO_BASE,,31.43,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00783,NO_BASE,,24.35,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00830,NO_BASE,,82.95,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00850,NO_BASE,,92.1,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00851,NO_BASE,,67.55,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00852L,NO_BASE,,34.74,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00861,NO_BASE,,82.65,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00865B,NO_BASE,,50.15,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00875,NO_BASE,,63.1,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00876,NO_BASE,,83.75,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00878,NO_BASE,,35.3,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00881,NO_BASE,,48.38,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00882,NO_BASE,,14.85,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00885,NO_BASE,,18.0,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00891,NO_BASE,,35.07,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00892,NO_BASE,,40.34,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00893,NO_BASE,,44.46,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00894,NO_BASE,,46.13,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00895,NO_BASE,,50.75,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00896,NO_BASE,,26.92,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00897,NO_BASE,,14.89,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00898,NO_BASE,,12.37,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00899,NO_BASE,,21.32,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00900,NO_BASE,,19.78,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00901,NO_BASE,,44.29,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00902,NO_BASE,,11.48,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00903,NO_BASE,,21.03,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00904,NO_BASE,,38.39,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00905,NO_BASE,,25.65,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00907,NO_BASE,,18.31,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00908,NO_BASE,,14.75,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00909,NO_BASE,,40.17,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00910,NO_BASE,,52.9,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00911,NO_BASE,,52.45,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00912,NO_BASE,,32.85,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00913,NO_BASE,,47.61,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00915,NO_BASE,,33.62,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00916,NO_BASE,,27.83,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00917,NO_BASE,,23.24,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00918,NO_BASE,,34.71,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00919,NO_BASE,,32.87,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00920,NO_BASE,,23.61,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00921,NO_BASE,,23.58,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00922,NO_BASE,,39.51,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00923,NO_BASE,,39.17,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00924,NO_BASE,,33.77,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00926,NO_BASE,,27.57,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00927,NO_BASE,,35.0,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00929,NO_BASE,,28.58,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00930,NO_BASE,,23.18,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00932,NO_BASE,,17.62,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00934,NO_BASE,,29.74,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00935,NO_BASE,,55.2,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00936,NO_BASE,,21.69,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00938,NO_BASE,,27.58,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00939,NO_BASE,,25.33,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00940,NO_BASE,,13.32,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00941,NO_BASE,,24.86,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00943,NO_BASE,,20.98,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00944,NO_BASE,,22.14,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00945B,NO_BASE,,14.48,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00946,NO_BASE,,15.55,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00947,NO_BASE,,35.5,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00949,NO_BASE,,22.33,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00951,NO_BASE,,16.53,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00952,NO_BASE,,17.48,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00953B,NO_BASE,,9.65,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00954,NO_BASE,,17.71,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00956,NO_BASE,,13.42,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00960,NO_BASE,,23.15,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00961,NO_BASE,,13.52,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00962,NO_BASE,,14.43,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00963,NO_BASE,,12.41,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00964,NO_BASE,,14.5,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00965,NO_BASE,,23.88,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00971,NO_BASE,,18.08,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00972,NO_BASE,,22.05,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009800,NO_BASE,,13.39,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009801,NO_BASE,,11.43,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009802,NO_BASE,,19.42,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009803,NO_BASE,,20.57,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009804,NO_BASE,,22.87,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009805,NO_BASE,,14.57,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009808,NO_BASE,,30.9,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009809,NO_BASE,,17.96,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00980A,NO_BASE,,23.84,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009810,NO_BASE,,21.74,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009811,NO_BASE,,13.68,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009812,NO_BASE,,12.99,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009813,NO_BASE,,11.66,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009816,NO_BASE,,16.01,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009817,NO_BASE,,8.59,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009818,NO_BASE,,20.46,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009819,NO_BASE,,9.71,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00981A,NO_BASE,,27.81,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00981T,NO_BASE,,11.67,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009820,NO_BASE,,10.12,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009821,NO_BASE,,12.26,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009824,NO_BASE,,10.35,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009826,NO_BASE,,10.16,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009827,NO_BASE,,10.0,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009828,NO_BASE,,9.65,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009829,NO_BASE,,9.73,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00982A,NO_BASE,,21.58,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00982D,NO_BASE,,9.58,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00982T,NO_BASE,,14.5,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009831,NO_BASE,,9.9,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,009832,NO_BASE,,10.01,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00983A,NO_BASE,,12.86,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00983D,NO_BASE,,9.9,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00984A,NO_BASE,,15.13,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00984D,NO_BASE,,9.76,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00985A,NO_BASE,,20.37,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00985B,NO_BASE,,10.28,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00986A,NO_BASE,,14.17,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00987A,NO_BASE,,15.57,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00988A,NO_BASE,,15.17,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00989A,NO_BASE,,17.26,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00990A,NO_BASE,,14.7,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00991A,NO_BASE,,16.88,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00991B,NO_BASE,,15.04,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00992A,NO_BASE,,16.63,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00993A,NO_BASE,,12.94,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00994A,NO_BASE,,15.87,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00995A,NO_BASE,,15.69,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00996A,NO_BASE,,12.72,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00997A,NO_BASE,,10.8,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,00999A,NO_BASE,,10.6,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,01001T,NO_BASE,,11.04,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,01002T,NO_BASE,,12.52,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,01004T,NO_BASE,,9.98,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,01007T,NO_BASE,,11.24,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,01009T,NO_BASE,,5.48,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,01010T,NO_BASE,,10.0,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,020000,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,020000,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上市,020000,NO_BASE,,29.85,,<NA>,<p>X</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,020000,NO_BASE,29.85,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上市,020000,NO_BASE,29.85,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上市,020000,NO_BASE,29.85,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,020011,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,020011,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上市,020011,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,020011,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上市,020011,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上市,020011,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上市,020011,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,020012,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,020012,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上市,020012,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,020012,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上市,020012,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上市,020012,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上市,020012,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,02001L,NO_BASE,,133.45,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,020020,NO_BASE,,27.2,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,020028,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,020028,NO_BASE,,18.36,,<NA>,<p>X</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,020029,NO_BASE,,20.05,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上市,020029,NO_BASE,19.1,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,020030,NO_BASE,,18.78,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上市,020030,NO_BASE,18.03,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,020030,NO_BASE,18.03,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,020031,NO_BASE,,11.08,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,020032,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,020032,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上市,020032,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,020032,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上市,020032,NO_BASE,,8.55,,<NA>,<p>X</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上市,020032,NO_BASE,8.55,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上市,020032,NO_BASE,8.55,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,020034,NO_BASE,,16.0,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,020036,NO_BASE,,12.35,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上市,020036,NO_BASE,12.31,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,020036,NO_BASE,12.31,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,020037,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,020037,NO_BASE,,13.71,,<NA>,<p>X</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,020038,NO_BASE,,15.6,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上市,020038,NO_BASE,15.35,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上市,020038,NO_BASE,14.72,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上市,020038,NO_BASE,14.72,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,1213,NO_BASE,7.44,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,1312A,NO_BASE,23.0,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上市,1312A,NO_BASE,22.9,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,1312A,NO_BASE,22.9,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上市,1312A,NO_BASE,22.9,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上市,1312A,NO_BASE,22.9,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上市,1312A,NO_BASE,22.9,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,1413,NO_BASE,9.34,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,1423,NO_BASE,34.3,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,1470,NO_BASE,23.8,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,1538,NO_BASE,8.3,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,1538,NO_BASE,8.3,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,1538,NO_BASE,7.62,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上市,1538,NO_BASE,7.96,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上市,1538,NO_BASE,7.96,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上市,2002A,NO_BASE,37.45,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,2321,NO_BASE,30.9,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,2348A,NO_BASE,37.4,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,2891B,NO_BASE,61.7,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,2891C,NO_BASE,60.5,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,2891C,NO_BASE,60.5,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上市,2891C,NO_BASE,60.5,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,3593,NO_BASE,9.98,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,5906,NO_BASE,38.0,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上市,5906,NO_BASE,38.0,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上市,5906,NO_BASE,38.0,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上市,5906,NO_BASE,39.0,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上市,5906,NO_BASE,39.0,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,6592A,NO_BASE,96.4,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,6592A,NO_BASE,96.4,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上市,6671,NO_BASE,23.45,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,6921,NO_BASE,65.5,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上市,6952,NO_BASE,39.7,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上市,6958A,NO_BASE,20.85,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上市,6958A,NO_BASE,20.35,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,7710,NO_BASE,,134.5,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,7732,NO_BASE,32.8,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,7867,NO_BASE,,44.2,,<NA>,<p>X</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,8481,NO_BASE,40.1,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,8487,NO_BASE,67.5,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,910322,NO_BASE,,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,910322,NO_BASE,,25.65,,<NA>,<p>X</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,910861,NO_BASE,,3.99,,<NA>,<p style= color:red>+</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,9110,NO_BASE,2.8,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,9110,NO_BASE,2.8,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,911608,NO_BASE,,2.78,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,911622,NO_BASE,,3.81,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,911868,NO_BASE,,1.11,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,912000,NO_BASE,,2.51,,<NA>,<p style= color:green>-</p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,9918,NO_BASE,42.35,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上市,9941A,NO_BASE,48.6,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上市,9941A,NO_BASE,48.6,,,<NA>,<p> </p>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00411A,NO_BASE,,10.04,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,006201,NO_BASE,,43.04,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00679B,NO_BASE,,26.23,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00687B,NO_BASE,,27.27,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00687C,NO_BASE,,9.05,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00694B,NO_BASE,,42.41,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00695B,NO_BASE,,34.75,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00696B,NO_BASE,,28.28,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00697B,NO_BASE,,35.32,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00719B,NO_BASE,,31.55,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00720B,NO_BASE,,31.93,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00722B,NO_BASE,,33.56,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00723B,NO_BASE,,29.27,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00724B,NO_BASE,,32.67,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00725B,NO_BASE,,33.94,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00726B,NO_BASE,,31.83,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00727B,NO_BASE,,39.13,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00734B,NO_BASE,,15.37,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00740B,NO_BASE,,37.36,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00741B,NO_BASE,,37.25,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00746B,NO_BASE,,34.54,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00749B,NO_BASE,,30.48,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00750B,NO_BASE,,31.7,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00751B,NO_BASE,,30.49,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00754B,NO_BASE,,31.87,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00755B,NO_BASE,,32.29,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00756B,NO_BASE,,30.26,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00758B,NO_BASE,,51.3,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00759B,NO_BASE,,53.9,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00760B,NO_BASE,,52.2,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00761B,NO_BASE,,33.62,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00764B,NO_BASE,,27.22,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00768B,NO_BASE,,48.85,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00772B,NO_BASE,,32.75,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00773B,NO_BASE,,34.93,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00777B,NO_BASE,,31.55,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00778B,NO_BASE,,33.55,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00779B,NO_BASE,,27.52,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00780B,NO_BASE,,36.84,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00781B,NO_BASE,,27.07,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00782B,NO_BASE,,29.51,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00785B,NO_BASE,,34.01,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00786B,NO_BASE,,32.2,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00787B,NO_BASE,,31.97,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00788B,NO_BASE,,29.41,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00789B,NO_BASE,,46.35,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00791B,NO_BASE,,57.1,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00792B,NO_BASE,,30.89,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00795B,NO_BASE,,26.39,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00799B,NO_BASE,,29.11,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00834B,NO_BASE,,33.06,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00836B,NO_BASE,,27.99,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00840B,NO_BASE,,29.04,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00841B,NO_BASE,,27.8,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00842B,NO_BASE,,29.04,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00844B,NO_BASE,,30.85,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00845B,NO_BASE,,32.76,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00846B,NO_BASE,,35.27,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00848B,NO_BASE,,33.13,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00849B,NO_BASE,,37.9,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00853B,NO_BASE,,26.87,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00856B,NO_BASE,,38.2,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00857B,NO_BASE,,22.68,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00858,NO_BASE,,36.88,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00859B,NO_BASE,,41.65,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00860B,NO_BASE,,38.79,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00862B,NO_BASE,,30.65,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00863B,NO_BASE,,30.41,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00864B,NO_BASE,,47.28,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00867B,NO_BASE,,29.56,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,00867B,NO_BASE,30.17,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00870B,NO_BASE,,27.05,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00877,NO_BASE,,27.53,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00884B,NO_BASE,,28.43,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00886,NO_BASE,,49.9,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00887,NO_BASE,,13.28,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00888,NO_BASE,,31.98,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00890B,NO_BASE,,31.36,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00928,NO_BASE,,31.35,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00931B,NO_BASE,,13.13,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00933B,NO_BASE,,15.63,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00937B,NO_BASE,,14.29,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00942B,NO_BASE,,13.87,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00948B,NO_BASE,,9.19,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00950B,NO_BASE,,13.77,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00955,NO_BASE,,16.57,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00957B,NO_BASE,,13.05,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00958B,NO_BASE,,8.99,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00959B,NO_BASE,,9.06,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00966B,NO_BASE,,13.59,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00967B,NO_BASE,,8.97,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00968B,NO_BASE,,9.01,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00969B,NO_BASE,,8.14,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00970B,NO_BASE,,9.07,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,009806,NO_BASE,,14.05,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,009807,NO_BASE,,17.59,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,009807,NO_BASE,17.59,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00980B,NO_BASE,,9.2,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00980D,NO_BASE,,19.74,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00980T,NO_BASE,,12.19,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,009814,NO_BASE,,11.66,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,009815,NO_BASE,,11.91,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00981B,NO_BASE,,8.98,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00981D,NO_BASE,,10.18,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,009822,NO_BASE,,8.68,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,009823,NO_BASE,,10.74,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,009825,NO_BASE,,9.52,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00982B,NO_BASE,,9.48,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,00982B,NO_BASE,9.52,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00983B,NO_BASE,,15.34,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00984B,NO_BASE,,15.9,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00985D,NO_BASE,,9.87,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00986B,NO_BASE,,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,00986B,NO_BASE,,9.61,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,00986B,NO_BASE,9.61,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上櫃,00986B,NO_BASE,9.59,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,00986B,NO_BASE,9.77,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00986D,NO_BASE,,14.28,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00987B,NO_BASE,,15.98,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00987D,NO_BASE,,10.1,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00988B,NO_BASE,,19.11,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00989B,NO_BASE,,9.93,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00990B,NO_BASE,,9.92,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00992B,NO_BASE,,9.95,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,00998A,NO_BASE,,16.17,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,020001,NO_BASE,,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,020001,NO_BASE,,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,020001,NO_BASE,,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,020001,NO_BASE,,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上櫃,020001,NO_BASE,,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上櫃,020001,NO_BASE,,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,020001,NO_BASE,,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,020025,NO_BASE,,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,020025,NO_BASE,,34.57,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,020033,NO_BASE,,3.01,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,020035,NO_BASE,,12.21,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,020035,NO_BASE,12.21,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,020035,NO_BASE,12.21,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上櫃,020035,NO_BASE,10.99,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上櫃,020035,NO_BASE,10.99,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,020040,NO_BASE,,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,020040,NO_BASE,,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,020040,NO_BASE,,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,020040,NO_BASE,,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上櫃,020040,NO_BASE,,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上櫃,020040,NO_BASE,,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,020040,NO_BASE,,8.3,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,020041,NO_BASE,,19.56,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,2035,NO_BASE,27.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,2064,NO_BASE,11.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上櫃,2235,NO_BASE,32.1,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,2719,NO_BASE,19.4,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,2719,NO_BASE,19.4,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,2724,NO_BASE,11.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,2724,NO_BASE,11.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,2724,NO_BASE,11.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,2937,NO_BASE,44.55,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,2937,NO_BASE,44.55,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,2941,NO_BASE,31.65,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,2947,NO_BASE,57.3,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,2948,NO_BASE,36.3,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上櫃,2949,NO_BASE,65.2,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,3064,NO_BASE,14.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,3064,NO_BASE,14.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,3064,NO_BASE,14.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,3064,NO_BASE,14.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上櫃,3064,NO_BASE,14.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,3067,NO_BASE,18.25,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,3067,NO_BASE,17.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,3067,NO_BASE,17.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,3085,NO_BASE,15.25,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,3085,NO_BASE,15.25,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,3085,NO_BASE,15.25,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,3085,NO_BASE,15.25,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上櫃,3085,NO_BASE,15.25,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,3085,NO_BASE,14.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,3118,NO_BASE,30.6,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,3171,NO_BASE,58.3,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上櫃,3191,NO_BASE,16.15,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上櫃,3226,NO_BASE,49.15,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,3259,NO_BASE,10.1,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,3259,NO_BASE,10.1,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,3523,NO_BASE,13.3,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,3523,NO_BASE,13.3,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上櫃,3523,NO_BASE,12.1,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,3531,NO_BASE,19.55,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,3629,NO_BASE,13.25,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上櫃,3629,NO_BASE,13.2,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上櫃,3629,NO_BASE,13.2,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,3629,NO_BASE,13.2,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,3646,NO_BASE,25.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,3646,NO_BASE,25.1,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,4131,NO_BASE,31.5,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,4153,NO_BASE,31.45,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,4153,NO_BASE,31.45,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,4183,NO_BASE,14.4,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,4183,NO_BASE,14.4,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,4198,NO_BASE,46.1,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,4198,NO_BASE,44.6,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,4305,NO_BASE,41.15,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,4402,NO_BASE,12.2,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,4406,NO_BASE,10.2,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,4406,NO_BASE,10.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,4530,NO_BASE,23.55,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上櫃,4530,NO_BASE,22.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,4550,NO_BASE,23.85,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,4728,NO_BASE,390.5,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,5276,NO_BASE,16.45,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上櫃,5276,NO_BASE,15.95,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,5345,NO_BASE,19.95,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,5348,NO_BASE,16.55,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,5348,NO_BASE,16.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,5348,NO_BASE,16.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上櫃,5348,NO_BASE,16.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,5455,NO_BASE,30.7,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,5455,NO_BASE,30.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,5514,NO_BASE,14.05,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,5520,NO_BASE,83.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,5520,NO_BASE,83.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,5523,NO_BASE,30.35,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,5523,NO_BASE,30.35,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,5523,NO_BASE,30.35,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,5601,NO_BASE,32.3,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上櫃,5601,NO_BASE,32.3,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,5703,NO_BASE,13.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,5703,NO_BASE,13.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,5703,NO_BASE,13.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,5703,NO_BASE,13.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上櫃,5703,NO_BASE,13.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,6198,NO_BASE,19.8,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,6210,NO_BASE,19.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,6212,NO_BASE,35.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,6212,NO_BASE,35.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,6212,NO_BASE,35.5,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上櫃,6222,NO_BASE,18.4,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,6236,NO_BASE,16.85,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,6236,NO_BASE,16.85,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,6236,NO_BASE,16.85,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,6236,NO_BASE,15.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,6242,NO_BASE,33.7,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,6496,NO_BASE,23.2,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,6512,NO_BASE,20.05,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,6542,NO_BASE,35.65,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,6569,NO_BASE,90.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上櫃,6615,NO_BASE,32.95,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,6624,NO_BASE,34.6,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上櫃,6649,NO_BASE,36.45,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,6661,NO_BASE,16.6,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,6661,NO_BASE,16.6,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上櫃,6661,NO_BASE,15.55,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,6662,NO_BASE,28.35,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,6730,NO_BASE,32.15,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,6767,NO_BASE,24.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上櫃,6767,NO_BASE,23.85,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,6825,NO_BASE,,25.95,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,6856,NO_BASE,41.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,6856,NO_BASE,40.7,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,6881,NO_BASE,213.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,6898,NO_BASE,,64.1,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,6899,NO_BASE,49.15,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,6904,NO_BASE,114.5,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,6938,NO_BASE,,79.2,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,6997,NO_BASE,69.7,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,6997,NO_BASE,69.7,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,7713,NO_BASE,71.1,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,7716,NO_BASE,24.6,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,7716,NO_BASE,24.6,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-05,上櫃,7716,NO_BASE,24.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,7728,NO_BASE,531.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,8047,NO_BASE,50.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-06,上櫃,8077,NO_BASE,39.6,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,8080,NO_BASE,28.5,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,8102,NO_BASE,51.7,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,8342,NO_BASE,86.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,8342,NO_BASE,86.0,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上櫃,8342,NO_BASE,84.5,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,8349A,NO_BASE,45.1,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-30,上櫃,8409,NO_BASE,18.05,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,8477,NO_BASE,13.6,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,8477,NO_BASE,13.3,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,8905,NO_BASE,35.6,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,8917,NO_BASE,53.8,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-02,上櫃,8921,NO_BASE,15.95,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-03,上櫃,8921,NO_BASE,15.95,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-11-04,上櫃,8921,NO_BASE,15.95,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
+2026-10-29,上櫃,8923,NO_BASE,17.9,,,<NA>,<NA>,UNKNOWN,UNKNOWN,前收缺漏或來源衝突
