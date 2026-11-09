@@ -1,0 +1,115 @@
+{
+  "project": "SSO_Market_Data_Continuation_TWSE_TPEX v1",
+  "version": "v4.87.5.23.1",
+  "audit": "原始語意值與公司代號交叉診斷",
+  "run_time_local": "2026-11-09T18:53:41.471245+08:00",
+  "source": {
+    "increment_sha256": "b5ac265e5bef8f09c5c5bd93bf39d2c78f4a3736a71a7b05c7db01a8b7781074",
+    "semantic_sha256": "04281247a3b9e4e78507063ce6d084d02db64c1fbbe2806bf9e7a9253c730ad8",
+    "previous_result": "/content/drive/MyDrive/看股最速適/看股最速適_SSO_Market_Data_Continuation_TWSE_TPEX_v1_語意層獨立驗證_20261109_170625/逐筆漲跌符號與文字備註驗證.csv.gz",
+    "previous_master": "/content/drive/MyDrive/看股最速適/看股最速適_SSO_Market_Data_Continuation_TWSE_TPEX_v1_語意層獨立驗證_20261109_170625/官方上市櫃個股正向名單.csv"
+  },
+  "row_counts": {
+    "increment": 16847,
+    "semantic": 16847,
+    "previous_result": 16847,
+    "natural_key_all_equal": true
+  },
+  "semantic_raw": {
+    "change_sign_unique_values": 1,
+    "change_note_raw_unique_values": 5,
+    "change_sign_top_values": [
+      {
+        "field": "change_sign",
+        "raw_value": "<NA>",
+        "count": 16847,
+        "share": 1.0,
+        "raw_value_repr": "'<NA>'",
+        "unicode_codepoints": "U+003C U+004E U+0041 U+003E"
+      }
+    ],
+    "change_note_raw_top_values": [
+      {
+        "field": "change_note_raw",
+        "raw_value": "<NA>",
+        "count": 7123,
+        "share": 0.4228052472250252,
+        "raw_value_repr": "'<NA>'",
+        "unicode_codepoints": "U+003C U+004E U+0041 U+003E"
+      },
+      {
+        "field": "change_note_raw",
+        "raw_value": "<p style= color:green>-</p>",
+        "count": 6874,
+        "share": 0.40802516768564134,
+        "raw_value_repr": "'<p style= color:green>-</p>'",
+        "unicode_codepoints": "U+003C U+0070 U+0020 U+0073 U+0074 U+0079 U+006C U+0065 U+003D U+0020 U+0063 U+006F U+006C U+006F U+0072 U+003A U+0067 U+0072 U+0065 U+0065 U+006E U+003E U+002D U+003C U+002F U+0070 U+003E"
+      },
+      {
+        "field": "change_note_raw",
+        "raw_value": "<p style= color:red>+</p>",
+        "count": 2104,
+        "share": 0.12488870422033596,
+        "raw_value_repr": "'<p style= color:red>+</p>'",
+        "unicode_codepoints": "U+003C U+0070 U+0020 U+0073 U+0074 U+0079 U+006C U+0065 U+003D U+0020 U+0063 U+006F U+006C U+006F U+0072 U+003A U+0072 U+0065 U+0064 U+003E U+002B U+003C U+002F U+0070 U+003E"
+      },
+      {
+        "field": "change_note_raw",
+        "raw_value": "<p> </p>",
+        "count": 681,
+        "share": 0.040422627173977564,
+        "raw_value_repr": "'<p> </p>'",
+        "unicode_codepoints": "U+003C U+0070 U+003E U+0020 U+003C U+002F U+0070 U+003E"
+      },
+      {
+        "field": "change_note_raw",
+        "raw_value": "<p>X</p>",
+        "count": 65,
+        "share": 0.003858253695019885,
+        "raw_value_repr": "'<p>X</p>'",
+        "unicode_codepoints": "U+003C U+0070 U+003E U+0058 U+003C U+002F U+0070 U+003E"
+      }
+    ],
+    "old_sign_direction_counts": {
+      "UNKNOWN": 16847
+    },
+    "expected_direction_counts": {
+      "DOWN": 11379,
+      "UP": 3803,
+      "FLAT": 1009,
+      "NO_BASE": 656
+    },
+    "old_note_direction_counts": {
+      "UNKNOWN": 16847
+    },
+    "sign_raw_matches_previous_output": 0,
+    "note_raw_matches_previous_output": 9724,
+    "no_previous_close_rows": 656,
+    "no_previous_close_unique_codes": 502
+  },
+  "company_master_crosscheck": {
+    "master_rows": 1984,
+    "master_unique_codes": 1984,
+    "increment_unique_codes": 2408,
+    "row_status_counts": {
+      "公司基本資料名單未命中": 9164,
+      "公司基本資料名單命中_市場一致": 7683
+    },
+    "unique_security_status_counts": {
+      "公司基本資料名單未命中": 1310,
+      "公司基本資料名單命中_市場一致": 1098
+    },
+    "important_limitation": "目前使用的是上市櫃公司基本資料，不是完整的證券商品類型主檔；命中只表示公司代號與公司資料相符，不直接作為普通股最終認定。"
+  },
+  "conclusion": {
+    "semantic_layer_final_pass": false,
+    "reason": "本版只盤點實際原始值與前版判定關係，不自動建立或套用新的正式符號映射規則。",
+    "ordinary_share_classification_final": "尚未認定",
+    "unmatched_codes_are_etf": false,
+    "source_files_modified": false,
+    "market_data_appended": false,
+    "A_rescanned": false,
+    "official_api_called": false,
+    "model_or_backtest_run": false
+  }
+}
