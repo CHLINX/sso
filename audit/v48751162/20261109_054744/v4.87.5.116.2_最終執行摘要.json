@@ -1,0 +1,162 @@
+{
+  "version": "v4.87.5.116.2",
+  "run_id": "20261109_054744",
+  "branch": "audit/v48751162-fullscan-20261109_054744",
+  "started_at": "2026-11-09T05:47:44.516021",
+  "read_only": true,
+  "official_api_called": false,
+  "database_modified": false,
+  "training_run": false,
+  "backtest_run": false,
+  "stock_selection_run": false,
+  "deletion_performed": false,
+  "confirmed_deletable_rows": 0,
+  "errors": [],
+  "source": {
+    "path": "/content/SSO_v4681_source.csv.gz",
+    "bytes": 480672355,
+    "sha256": "a5151cdebe26233389f55bf6189f65d21e1f5df05f025b653963bafc483deb4d",
+    "expected_bytes": 480672355,
+    "expected_sha256": "a5151cdebe26233389f55bf6189f65d21e1f5df05f025b653963bafc483deb4d",
+    "size_match": true,
+    "sha256_match": true
+  },
+  "source_scan": {
+    "source_file": "/content/SSO_v4681_source.csv.gz",
+    "source_rows_scanned": 4193745,
+    "expected_source_rows": 4193745,
+    "source_row_count_matches_expected": true,
+    "chunk_count": 28,
+    "target_security_count": 844,
+    "selected_source_rows": 1290628,
+    "selected_valid_date_rows": 1290628,
+    "selected_invalid_date_rows": 0,
+    "invalid_market_or_code_rows_in_full_source": 0,
+    "elapsed_seconds": 109.93,
+    "source_market_column": "市場",
+    "source_code_column": "股票代號",
+    "source_date_column": "日期"
+  },
+  "full_history_tracking": {
+    "target_rows": 1888,
+    "target_distinct_securities": 844,
+    "target_security_expected": 844,
+    "target_security_count_matches_expected": true,
+    "target_rows_with_full_history_security_present": 709,
+    "target_rows_with_full_history_security_absent": 1179,
+    "distinct_securities_present_in_full_database": 539,
+    "distinct_securities_absent_from_full_database": 305,
+    "target_rows_with_exact_target_date_in_source": 0,
+    "target_rows_with_no_neighbor_within_45_days": 1179,
+    "target_rows_with_any_neighbor_within_45_days": 709,
+    "target_security_count_with_any_neighbor": 539,
+    "target_security_count_all_target_dates_without_45d_neighbor": 305,
+    "neighbor_target_relations_within_45_days": 42819,
+    "classification_counts": {
+      "完整資料庫未見此證券": 1179,
+      "前後45日皆有行情": 709
+    }
+  },
+  "neighbor_45d_crosscheck": {
+    "v1161_reference_relations": 42819,
+    "v1162_rebuilt_relations": 42819,
+    "difference": 0,
+    "exactly_equal": true,
+    "interpretation": "以完整 v4.68.1 全期間資料重新計算每筆目標日前後45日的有效日期關係；不以 42,819 推定全部 1,888 筆均已涵蓋。"
+  },
+  "ratio_reconstruction": {
+    "source_rows": 7022,
+    "selected_ratio_columns": {
+      "開盤": "開盤倍率",
+      "最高": "最高倍率",
+      "最低": "最低倍率",
+      "收盤": "收盤倍率"
+    },
+    "valid_ratio_rows": 7022,
+    "invalid_ratio_rows": 0,
+    "four_OHLC_all_within_1e-8_rows": 7022,
+    "four_OHLC_max_spread": 4.059828806468602e-09,
+    "mean_ratio": 0.7334188959439267,
+    "median_ratio": 0.7203813884688516,
+    "min_ratio": 0.10949905555067366,
+    "max_ratio": 1.0,
+    "unique_unrounded_ratio_count": 6532
+  },
+  "old_ratio_source": {
+    "source": "GitHub ZIP",
+    "branch": "audit/v4875111-dedup-ratio-20261108_164352",
+    "zip_path": "audit/v4875111/v4.87.5.111_精簡稽核包_20261108_164352.zip",
+    "internal_path": "報告/影子價格倍率分布.csv",
+    "zip_bytes": 1704110,
+    "zip_sha256": "a42e7681d88fe51b86275fd7acd24e21bc3356c6ce20c827e8c84a91128cc097",
+    "bytes": 67330,
+    "sha256": "d9c6c894ac75f49a65cb7b12e2491d487cae66ea6dbb1e73b68c0f8f9ed6ec2e",
+    "rows": 4522,
+    "columns": [
+      "倍率分組",
+      "股票日期筆數"
+    ]
+  },
+  "old_new_ratio_comparison": {
+    "old_table_found": true,
+    "old_rows": 4522,
+    "old_valid_rows": 4522,
+    "old_columns": [
+      "倍率分組",
+      "股票日期筆數"
+    ],
+    "ratio_column": "倍率分組",
+    "count_column": "股票日期筆數",
+    "old_ratio_unique_unrounded": 4522,
+    "old_frequency_sum": 7022.0,
+    "new_observation_count": 7022,
+    "new_unique_unrounded": 6532,
+    "best_candidate_precision": 10,
+    "best_candidate_overlap": 4522,
+    "best_candidate_old_only": 0,
+    "best_candidate_new_only": 0,
+    "best_candidate_frequency_mismatch": 0,
+    "exact_match_precisions": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      10
+    ],
+    "consistency_status": "已找到倍率值及頻數完全一致的精度",
+    "numeric_column_diagnostics": {
+      "倍率分組": {
+        "valid": 4522,
+        "unique": 4522
+      },
+      "股票日期筆數": {
+        "valid": 4522,
+        "unique": 6
+      }
+    }
+  },
+  "unresolved_items": [
+    {
+      "item": "目標日前後45日沒有鄰近行情",
+      "rows": 1179,
+      "note": "已逐筆追查完整資料庫存在性及最近前後日期；不能再把這些列漏掉，也不能只因超過45日就判定資料庫不存在。"
+    },
+    {
+      "item": "完整 v4.68.1 資料庫未見該證券",
+      "securities": 305,
+      "note": "此結論僅表示該證券未出現在本次驗證的完整 v4.68.1 資料集中；不直接推論其上市櫃歷史或市場不存在。"
+    }
+  ],
+  "unresolved_item_count": 2,
+  "target_classification_complete": "True",
+  "completed_at": "2026-11-09T05:50:43.222513",
+  "execution_status": "分析及報表產生完成；依待釐清項目分別判讀",
+  "zip": {
+    "name": "v4.87.5.116.2_全期間追查及倍率口徑核驗_20261109_054744.zip",
+    "bytes": 1569680,
+    "sha256": "ca636a2ba0cf8b439ea54d24f1f3d7de777140252f0a323aad5bbe0db324ca5b"
+  }
+}
