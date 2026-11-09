@@ -1,0 +1,31 @@
+{
+  "version": "v1.3.1",
+  "run_time": "2026-11-09T20:19:41.028966+08:00",
+  "target_dates": [
+    "2026-10-29",
+    "2026-10-30",
+    "2026-11-02",
+    "2026-11-03",
+    "2026-11-04",
+    "2026-11-05",
+    "2026-11-06",
+    "2026-11-09"
+  ],
+  "input_candidate_rows": 41,
+  "input_anomaly_rows": 160,
+  "official_requests_expected": 16,
+  "official_requests_success": 16,
+  "official_requests_failed": 0,
+  "candidate_official_found": 12,
+  "candidate_official_not_found": 29,
+  "anomaly_official_found": 160,
+  "positive_volume_missing_ohlc_rows": 16,
+  "positive_missing_official_complete_ohlc": 16,
+  "positive_missing_official_not_found": 0,
+  "repair_candidates_only": 16,
+  "database_updated": false,
+  "original_sources_modified": false,
+  "official_api_called": true,
+  "github_main_modified": false,
+  "important_note": "本版只取得官方歷史行情證據；不直接寫入或覆蓋原始增量資料庫。"
+}
