@@ -1,0 +1,15 @@
+﻿change_note_raw,expected_direction,rows
+<p style= color:green>-</p>,DOWN,6704
+<NA>,DOWN,4640
+<p style= color:red>+</p>,UP,2021
+<NA>,UP,1767
+<p> </p>,FLAT,576
+<NA>,FLAT,430
+<NA>,NO_BASE,286
+<p style= color:green>-</p>,NO_BASE,170
+<p> </p>,NO_BASE,105
+<p style= color:red>+</p>,NO_BASE,83
+<p>X</p>,DOWN,35
+<p>X</p>,UP,15
+<p>X</p>,NO_BASE,12
+<p>X</p>,FLAT,3
