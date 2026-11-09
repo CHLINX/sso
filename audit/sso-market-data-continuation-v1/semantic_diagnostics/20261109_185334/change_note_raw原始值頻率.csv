@@ -1,0 +1,6 @@
+﻿field,raw_value,count,share,raw_value_repr,unicode_codepoints
+change_note_raw,<NA>,7123,0.4228052472250252,'<NA>',U+003C U+004E U+0041 U+003E
+change_note_raw,<p style= color:green>-</p>,6874,0.40802516768564134,'<p style= color:green>-</p>',U+003C U+0070 U+0020 U+0073 U+0074 U+0079 U+006C U+0065 U+003D U+0020 U+0063 U+006F U+006C U+006F U+0072 U+003A U+0067 U+0072 U+0065 U+0065 U+006E U+003E U+002D U+003C U+002F U+0070 U+003E
+change_note_raw,<p style= color:red>+</p>,2104,0.12488870422033596,'<p style= color:red>+</p>',U+003C U+0070 U+0020 U+0073 U+0074 U+0079 U+006C U+0065 U+003D U+0020 U+0063 U+006F U+006C U+006F U+0072 U+003A U+0072 U+0065 U+0064 U+003E U+002B U+003C U+002F U+0070 U+003E
+change_note_raw,<p> </p>,681,0.040422627173977564,'<p> </p>',U+003C U+0070 U+003E U+0020 U+003C U+002F U+0070 U+003E
+change_note_raw,<p>X</p>,65,0.003858253695019885,'<p>X</p>',U+003C U+0070 U+003E U+0058 U+003C U+002F U+0070 U+003E
