@@ -1,0 +1,172 @@
+{
+  "project": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.1.1",
+  "version": "v1.1.1",
+  "run_time_local": "2026-11-09T19:14:13.090090+08:00",
+  "scope": {
+    "markets": [
+      "上市",
+      "上櫃"
+    ],
+    "included": "命中證交所上市公司基本資料及櫃買中心上櫃公司基本資料之公司個股代號",
+    "excluded": "未命中公司名單者不納入新版個股專用資料",
+    "exclusion_note": "未命中公司名單不直接推斷為 ETF，排除項目另存明細"
+  },
+  "date_coverage": {
+    "A_last_date": "2026-10-28",
+    "old_increment_last_date": "2026-11-06",
+    "query_start_date": "2026-10-29",
+    "query_end_date": "2026-11-09",
+    "new_increment_last_date": "2026-11-06"
+  },
+  "old_sources": {
+    "A_path": "/content/drive/MyDrive/看股最速適/看股最速適_官方行情完整證券代號重建_v4_16_20261031_131511/官方行情總表_完整證券代號_v4.17.csv",
+    "A_bytes": 3164892248,
+    "old_increment_path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/行情增量資料.csv.gz",
+    "old_increment_sha256": "b5ac265e5bef8f09c5c5bd93bf39d2c78f4a3736a71a7b05c7db01a8b7781074",
+    "old_semantic_path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/行情備註語意校正層_v4.87.5.23.csv.gz",
+    "old_semantic_sha256": "04281247a3b9e4e78507063ce6d084d02db64c1fbbe2806bf9e7a9253c730ad8",
+    "old_manifest_path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/邏輯完整資料庫_manifest.json",
+    "old_manifest_sha256": "71d5dbf91f0ecc6f5cdc792c35023a3603857a7bc99db8dfcf53701fd3c73fcb"
+  },
+  "official_sources": {
+    "TWSE_company_master": {
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap03_L",
+      "rows": 1099,
+      "sha256": "456cc64f04977bb406de8057f270b3c29f58df56d9c2476b27a2a85dd6298f57",
+      "columns": [
+        "出表日期",
+        "公司代號",
+        "公司名稱",
+        "公司簡稱",
+        "外國企業註冊地國",
+        "產業別",
+        "住址",
+        "營利事業統一編號",
+        "董事長",
+        "總經理",
+        "發言人",
+        "發言人職稱",
+        "代理發言人",
+        "總機電話",
+        "成立日期",
+        "上市日期",
+        "普通股每股面額",
+        "實收資本額",
+        "私募股數",
+        "特別股",
+        "編制財務報表類型",
+        "股票過戶機構",
+        "過戶電話",
+        "過戶地址",
+        "簽證會計師事務所",
+        "簽證會計師1",
+        "簽證會計師2",
+        "英文簡稱",
+        "英文通訊地址",
+        "傳真機號碼",
+        "電子郵件信箱",
+        "網址",
+        "已發行普通股數或TDR原股發行股數"
+      ]
+    },
+    "TPEx_company_master": {
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+      "rows": 885,
+      "sha256": "93039114dbf7dc9516754193ec42110ced57d43195a21e23e921603e26c10502",
+      "columns": [
+        "Date",
+        "SecuritiesCompanyCode",
+        "CompanyName",
+        "CompanyAbbreviation",
+        "Registration",
+        "SecuritiesIndustryCode",
+        "Address",
+        "UnifiedBusinessNo.",
+        "Chairman",
+        "GeneralManager",
+        "Spokesman",
+        "TitleOfSpokesman",
+        "DeputySpokesperson",
+        "Telephone",
+        "DateOfIncorporation",
+        "DateOfListing",
+        "ParValueOfCommonStock",
+        "Paidin.Capital.NTDollars",
+        "PrivateStock.shares",
+        "PreferredStock.shares",
+        "PreparationOfFinancialReportType",
+        "StockTransferAgent",
+        "StockTransferAgentTelephone",
+        "StockTransferAgentAddress",
+        "AccountingFirm",
+        "CPA.CharteredPublicAccountant.First",
+        "CPA.CharteredPublicAccountant.Second",
+        "Symbol",
+        "Fax",
+        "EmailAddress",
+        "WebAddress",
+        "IssueShares"
+      ]
+    },
+    "TWSE_history_endpoint": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+    "TPEx_history_endpoint": "https://www.tpex.org.tw/www/zh-tw/afterTrading/otc"
+  },
+  "output": {
+    "combined_increment": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/更新成果_v1.1.1_20261109_191146/行情增量資料_個股專用_更新至20261109_v1.1.1.csv.gz",
+    "combined_increment_sha256": "8fa18fbd2a7d0727d3480bc12fefbd9275cde44bf646bd49ad4cfb4e1864c1d5",
+    "new_rows": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/更新成果_v1.1.1_20261109_191146/本次新增缺漏個股行情.csv.gz",
+    "new_rows_sha256": "5788e1c6be04c109f133392956e7853034a9d62eb6feecef211a51ffe9065e73"
+  },
+  "counts": {
+    "old_increment_original_rows": 16847,
+    "old_increment_stock_rows_retained": 7683,
+    "old_increment_noncompany_rows_excluded": 9164,
+    "old_market_label_corrected_rows": 0,
+    "official_history_rows_downloaded": 0,
+    "existing_rows_verified": 0,
+    "new_missing_rows_added": 0,
+    "existing_mismatch_fields": 0,
+    "official_noncompany_rows_excluded": 2622,
+    "new_combined_rows": 7683,
+    "api_errors": 6
+  },
+  "days": {
+    "candidate_calendar_days": 12,
+    "both_markets_successful_days": 0,
+    "weekend_no_data_days": 4,
+    "weekday_no_data_days_pending": 0,
+    "incomplete_dates": [
+      "2026-10-29",
+      "2026-10-30",
+      "2026-11-02",
+      "2026-11-03",
+      "2026-11-04",
+      "2026-11-05",
+      "2026-11-06",
+      "2026-11-09"
+    ]
+  },
+  "validation": {
+    "old_increment_unchanged": true,
+    "old_semantic_unchanged": true,
+    "old_manifest_unchanged": true,
+    "A_unchanged": true,
+    "new_natural_keys_unique": true,
+    "no_existing_rows_overwritten": true,
+    "only_missing_natural_keys_appended": true,
+    "unconfirmed_noncompany_codes_excluded_from_new_scope": true,
+    "official_api_complete": false,
+    "existing_official_value_match": true,
+    "overall_pass": false
+  },
+  "protection": {
+    "old_increment_modified": false,
+    "old_semantic_modified": false,
+    "old_manifest_modified": false,
+    "A_modified": false,
+    "github_main_modified": false,
+    "retrain": false,
+    "backtest": false,
+    "stock_selection": false
+  }
+}
