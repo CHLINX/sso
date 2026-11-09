@@ -1,0 +1,1555 @@
+# -*- coding: utf-8 -*-
+"""SSO_Market_Data_Continuation_TWSE_TPEX v1.2.2
+個股行情缺漏與歷史公司名單復原稽核。所有來源唯讀；僅寫入新的 v1.2.2 輸出目錄。
+不呼叫 TWSE/TPEx 官方 API、不下載行情、不重訓、不回測、不選股。
+"""
+
+import os, sys, re, json, csv, hashlib, zipfile, traceback, io, time
+from pathlib import Path
+from datetime import datetime
+from zoneinfo import ZoneInfo
+from urllib.parse import quote
+
+import pandas as pd
+import requests
+
+# ---------- 0. Google Drive ----------
+DRIVE_ROOT = Path('/content/drive/MyDrive')
+if not DRIVE_ROOT.exists():
+    try:
+        from google.colab import drive
+        drive.mount('/content/drive')
+    except Exception as e:
+        raise RuntimeError('找不到 Google Drive，請在 Colab 執行本程式。') from e
+
+ROOT = DRIVE_ROOT / '看股最速適' / 'SSO_Market_Data_Continuation_TWSE_TPEX_v1'
+A_PATH = DRIVE_ROOT / '看股最速適' / '看股最速適_官方行情完整證券代號重建_v4_16_20261031_131511' / '官方行情總表_完整證券代號_v4.17.csv'
+PREV_NAME = 'v1.2.1_個股行情續接_20261109_193922'
+PREV_DIR = ROOT / PREV_NAME
+PREV_ZIP = ROOT / (PREV_NAME + '.zip')
+BASE_BRANCH = 'audit/sso-market-data-continuation-v1-v121-20261109_193922'
+REPO = 'CHLINX/sso'
+
+TZ = ZoneInfo('Asia/Taipei')
+RUN_DT = datetime.now(TZ)
+RUN_STAMP = RUN_DT.strftime('%Y%m%d_%H%M%S')
+OUT_NAME = f'v1.2.2_個股行情缺漏與歷史公司名單復原稽核_{RUN_STAMP}'
+OUT_DIR = ROOT / OUT_NAME
+if OUT_DIR.exists():
+    RUN_STAMP = datetime.now(TZ).strftime('%Y%m%d_%H%M%S_%f')
+    OUT_NAME = f'v1.2.2_個股行情缺漏與歷史公司名單復原稽核_{RUN_STAMP}'
+    OUT_DIR = ROOT / OUT_NAME
+LOG_LINES = []
+
+
+def log(message):
+    line = f'[{datetime.now(TZ).strftime("%H:%M:%S")}] {message}'
+    LOG_LINES.append(line)
+    print(line, flush=True)
+
+
+def sha256_file(path, block_size=8 * 1024 * 1024):
+    h = hashlib.sha256()
+    with open(path, 'rb') as f:
+        for block in iter(lambda: f.read(block_size), b''):
+            h.update(block)
+    return h.hexdigest()
+
+
+def write_csv(df, filename):
+    path = OUT_DIR / filename
+    df.to_csv(path, index=False, encoding='utf-8-sig', quoting=csv.QUOTE_MINIMAL)
+    return path
+
+
+def norm_code(value):
+    s = str(value if value is not None else '').strip()
+    if s.endswith('.0') and s[:-2].isdigit():
+        s = s[:-2]
+    return s.upper()
+
+
+def norm_market(value):
+    s = str(value if value is not None else '').strip()
+    u = s.upper()
+    if '上市' in s or u in {'TWSE', 'TSE', 'LISTED', '1'}:
+        return '上市'
+    if '上櫃' in s or u in {'TPEX', 'OTC', 'TPEx'.upper(), '2'}:
+        return '上櫃'
+    return s
+
+
+def parse_num(value):
+    if value is None:
+        return None
+    s = str(value).strip().replace(',', '').replace(' ', '')
+    if not s or s in {'---', '--', '-', 'N/A', 'NA', 'None', 'nan'}:
+        return None
+    s = re.sub(r'<[^>]*>', '', s)
+    try:
+        return float(s)
+    except Exception:
+        return None
+
+
+def pick_col(columns, aliases):
+    exact = {str(c).strip(): c for c in columns}
+    for a in aliases:
+        if a in exact:
+            return exact[a]
+    lower = {str(c).strip().lower(): c for c in columns}
+    for a in aliases:
+        if a.lower() in lower:
+            return lower[a.lower()]
+    return None
+
+
+def read_csv_safely(path, **kwargs):
+    return pd.read_csv(path, encoding='utf-8-sig', dtype=str, low_memory=False, **kwargs)
+
+
+# ---------- 1. 輸入檔案與來源指紋 ----------
+log('啟動 SSO_Market_Data_Continuation_TWSE_TPEX v1.2.2')
+log('Drive 唯讀；官方原始回應僅讀取 v1.2.1 已保存檔；不呼叫官方 API。')
+log('不修改來源、不更新資料庫、不重訓、不回測、不選股、不刪除。')
+
+INPUTS = {
+    'A': A_PATH,
+    'old_increment': ROOT / '行情增量資料.csv.gz',
+    'old_semantic': ROOT / '行情備註語意校正層_v4.87.5.23.csv.gz',
+    'old_manifest': ROOT / '邏輯完整資料庫_manifest.json',
+    'v121_unmatched': PREV_DIR / '原始增量未命中現行公司名單.csv',
+    'v121_anomalies': PREV_DIR / 'OHLCV異常資料.csv',
+    'v121_missing': PREV_DIR / '本次行情缺漏公司代號.csv',
+    'v121_master': PREV_DIR / '官方上市櫃公司名單.csv',
+    'v121_twse_raw': PREV_DIR / '官方原始回應' / 'TWSE_MI_INDEX_指定日期官方原始回應.json',
+    'v121_tpex_raw': PREV_DIR / '官方原始回應' / 'TPEx_官方上櫃每日行情原始回應.json',
+    'v121_manifest': PREV_DIR / '個股行情資料庫_manifest_更新至20261109_v1.2.1.json',
+    'v121_log': PREV_DIR / '執行紀錄.txt',
+    'v121_zip': PREV_ZIP,
+}
+
+missing_inputs = [k for k, p in INPUTS.items() if not p.exists()]
+if missing_inputs:
+    raise FileNotFoundError(
+        '必要來源檔案不存在：' + ', '.join(missing_inputs) + '\n' +
+        '\n'.join(str(INPUTS[k]) for k in missing_inputs)
+    )
+
+# 僅在全部必要來源檔確認存在後，才建立新的輸出目錄。
+OUT_DIR.mkdir(parents=True, exist_ok=False)
+
+source_fingerprints = {}
+for key, path in INPUTS.items():
+    info = {'path': str(path), 'exists': True, 'bytes': path.stat().st_size}
+    if key in {
+        'old_increment', 'old_semantic', 'old_manifest',
+        'v121_unmatched', 'v121_anomalies', 'v121_missing',
+        'v121_manifest', 'v121_twse_raw', 'v121_tpex_raw', 'v121_zip'
+    }:
+        info['sha256'] = sha256_file(path)
+    source_fingerprints[key] = info
+
+expected_hashes = {
+    'old_increment': 'b5ac265e5bef8f09c5c5bd93bf39d2c78f4a3736a71a7b05c7db01a8b7781074',
+    'old_semantic': '04281247a3b9e4e78507063ce6d084d02db64c1fbbe2806bf9e7a9253c730ad8',
+    'old_manifest': '71d5dbf91f0ecc6f5cdc792c35023a3603857a7bc99db8dfcf53701fd3c73fcb',
+}
+for k, expected in expected_hashes.items():
+    actual = source_fingerprints[k].get('sha256')
+    log(
+        f'{k} SHA256={actual}；' +
+        ('與 v1.2.1 基準一致' if actual == expected else '與 v1.2.1 基準不同，保留差異並繼續稽核')
+    )
+log(f'A 檔 bytes={A_PATH.stat().st_size:,}；前次核實最後日期=2026-10-28')
+
+
+# ---------- 2. 讀取 v1.2.1 未命中資料，建立唯一代號摘要 ----------
+log('階段 1/7：重建 v1.2.1 未命中現行公司名單的唯一代號分布。')
+unmatched_rows = read_csv_safely(INPUTS['v121_unmatched'])
+required_unmatched_cols = {'日期', '市場', '股票代號', '原始名稱'}
+if not required_unmatched_cols.issubset(set(unmatched_rows.columns)):
+    raise ValueError(f'未命中 CSV 欄位不符：{unmatched_rows.columns.tolist()}')
+
+unmatched_rows['股票代號'] = unmatched_rows['股票代號'].map(norm_code)
+unmatched_rows['市場_norm'] = unmatched_rows['市場'].map(norm_market)
+unmatched_rows['日期'] = unmatched_rows['日期'].astype(str).str.strip()
+unmatched_rows['原始名稱'] = unmatched_rows['原始名稱'].astype(str).str.strip()
+
+grouped = unmatched_rows.groupby(['市場_norm', '股票代號'], dropna=False)
+unique_rows = []
+
+for (market, code), g in grouped:
+    names = sorted({x for x in g['原始名稱'].tolist() if x and x.lower() != 'nan'})
+    dates = sorted({x for x in g['日期'].tolist() if x})
+    name = names[0] if names else ''
+
+    special_code = bool(re.fullmatch(r'[1-9]\d{3}[A-Z]\d?', code))
+    special_name = bool(re.search(
+        r'(?:甲特|乙特|丙特|丁特|戊特|己特|庚特|辛特|壬特|癸特|特(?:一|二)?)$',
+        name
+    ))
+    is_preferred = special_code and special_name
+    product_prefix = code.startswith(('00', '01', '02'))
+
+    if is_preferred:
+        category = '特別股／特別股代號（非 ETF；獨立保留）'
+    elif product_prefix:
+        category = '商品型證券代號候選（ETF／ETN／債券／指數等；尚未逐碼定性）'
+    else:
+        category = '其他未命中代號（需歷史公司名單交叉核對）'
+
+    unique_rows.append({
+        '市場': market,
+        '股票代號': code,
+        '原始名稱': name,
+        '原始名稱集合': '｜'.join(names[:10]),
+        '原始增量列數': int(len(g)),
+        '出現日期數': int(len(dates)),
+        '最早出現日期': min(dates) if dates else '',
+        '最晚出現日期': max(dates) if dates else '',
+        '代號前綴00': code.startswith('00'),
+        '代號前綴01': code.startswith('01'),
+        '代號前綴02': code.startswith('02'),
+        '特別股候選': is_preferred,
+        '初步分類': category,
+    })
+
+unique_df = pd.DataFrame(unique_rows).sort_values(['市場', '股票代號']).reset_index(drop=True)
+
+row_distribution = (
+    unmatched_rows.groupby(['市場_norm', '股票代號'])
+    .size().value_counts().sort_index().to_dict()
+)
+unique_count = len(unique_df)
+preferred_count = int(unique_df['特別股候選'].sum()) if unique_count else 0
+product_candidate_count = (
+    int(unique_df['初步分類'].str.startswith('商品型').sum()) if unique_count else 0
+)
+
+log(f'未命中原始列={len(unmatched_rows):,}；市場／代號唯一組合={unique_count:,}')
+log(f'各代號列數分布={row_distribution}')
+log(f'特別股候選={preferred_count}；商品型代號候選={product_candidate_count}')
+
+# 特別股完整名單獨立輸出，避免和 ETF 混為一類。
+preferred_df = unique_df[unique_df['特別股候選']].copy()
+write_csv(unique_df, '未命中現行名單_唯一代號分類總表.csv')
+write_csv(preferred_df, '未命中資料中的特別股候選_獨立清單.csv')
+
+# 保留完整未命中原始列，v1.2.2 不刪除、不改寫。
+write_csv(unmatched_rows.drop(columns=['市場_norm']), '未命中現行名單_原始逐列保留.csv')
+
+
+# ---------- 3. 以 A 歷史行情總表交叉比對 ----------
+log('階段 2/7：以 A/v4.17 歷史行情總表掃描未命中代號；只讀取必要欄位，不載入整張 3.16GB 表。')
+A_SCAN = {
+    'status': 'not_started',
+    'rows_scanned': 0,
+    'chunks': 0,
+    'error': None,
+    'columns': []
+}
+hist_by_key = {}
+hist_by_code = {}
+
+try:
+    try:
+        a_header = pd.read_csv(A_PATH, encoding='utf-8-sig', nrows=0).columns.tolist()
+        a_encoding = 'utf-8-sig'
+    except Exception:
+        a_header = pd.read_csv(A_PATH, encoding='cp950', nrows=0).columns.tolist()
+        a_encoding = 'cp950'
+
+    code_col = pick_col(
+        a_header,
+        ['股票代號', '證券代號', '證券代碼', '代號', 'Code', 'SecurityCode', 'SecuritiesCompanyCode']
+    )
+    market_col = pick_col(
+        a_header,
+        ['市場', '市場別', '交易市場', 'Market', 'MarketName']
+    )
+    date_col = pick_col(
+        a_header,
+        ['日期', '交易日期', '交易日', 'Date', 'TradeDate']
+    )
+    name_col = pick_col(
+        a_header,
+        ['官方名稱', '股票名稱', '證券名稱', '公司簡稱', '名稱', 'CompanyName', 'Name']
+    )
+
+    A_SCAN['columns'] = a_header
+    if not code_col:
+        raise ValueError('A/v4.17 找不到可識別的股票／證券代號欄位。')
+
+    usecols = list(dict.fromkeys([x for x in [code_col, market_col, date_col, name_col] if x]))
+    target_codes = set(unique_df['股票代號'].tolist())
+
+    reader = pd.read_csv(
+        A_PATH,
+        encoding=a_encoding,
+        dtype=str,
+        keep_default_na=False,
+        usecols=usecols,
+        chunksize=250000,
+        low_memory=False
+    )
+
+    for chunk in reader:
+        A_SCAN['chunks'] += 1
+        A_SCAN['rows_scanned'] += len(chunk)
+        code_s = chunk[code_col].map(norm_code)
+        sub = chunk.loc[code_s.isin(target_codes)].copy()
+
+        if len(sub):
+            for _, row in sub.iterrows():
+                code = norm_code(row.get(code_col, ''))
+                market = norm_market(row.get(market_col, '')) if market_col else ''
+                date = str(row.get(date_col, '')).strip() if date_col else ''
+                name = str(row.get(name_col, '')).strip() if name_col else ''
+
+                key = (market, code)
+                rec = hist_by_key.setdefault(
+                    key, {'rows': 0, 'dates': set(), 'names': set()}
+                )
+                rec['rows'] += 1
+                if date:
+                    rec['dates'].add(date)
+                if name and name.lower() != 'nan' and len(rec['names']) < 20:
+                    rec['names'].add(name)
+
+                rec2 = hist_by_code.setdefault(
+                    code, {'rows': 0, 'markets': set(), 'dates': set(), 'names': set()}
+                )
+                rec2['rows'] += 1
+                if market:
+                    rec2['markets'].add(market)
+                if date:
+                    rec2['dates'].add(date)
+                if name and name.lower() != 'nan' and len(rec2['names']) < 20:
+                    rec2['names'].add(name)
+
+        log(
+            f'A 歷史掃描進度：第 {A_SCAN["chunks"]} 區塊／'
+            f'{A_SCAN["rows_scanned"]:,} 列；命中代號數={len(hist_by_code)}'
+        )
+
+    A_SCAN['status'] = 'completed'
+    A_SCAN['code_column'] = str(code_col)
+    A_SCAN['market_column'] = str(market_col or '')
+    A_SCAN['date_column'] = str(date_col or '')
+    A_SCAN['name_column'] = str(name_col or '')
+    log(
+        f'A 歷史掃描完成：{A_SCAN["rows_scanned"]:,} 列；'
+        f'命中唯一代號={len(hist_by_code)}'
+    )
+
+except Exception as e:
+    A_SCAN['status'] = 'failed'
+    A_SCAN['error'] = repr(e)
+    log(f'[WARN] A 歷史掃描未完成：{e}')
+
+
+hist_rows = []
+for _, row in unique_df.iterrows():
+    market, code = row['市場'], row['股票代號']
+    hit = hist_by_key.get((market, code)) or hist_by_key.get(('', code))
+    code_hit = hist_by_code.get(code)
+
+    if hit is None and code_hit is not None:
+        # 市場欄位可能在 A 中採用不同代碼；僅標示代號命中，不當成市場完全吻合。
+        hit = code_hit
+        market_match = False
+    else:
+        market_match = hit is not None
+
+    if hit is None:
+        hist_rows.append({
+            **row.to_dict(),
+            'A歷史行情命中': False,
+            'A市場完全吻合': False,
+            'A歷史列數': 0,
+            'A最早日期': '',
+            'A最後日期': '',
+            'A歷史名稱': ''
+        })
+    else:
+        dates = sorted(hit.get('dates', set()))
+        names = sorted(hit.get('names', set()))
+        hist_rows.append({
+            **row.to_dict(),
+            'A歷史行情命中': True,
+            'A市場完全吻合': market_match,
+            'A歷史列數': int(hit.get('rows', 0)),
+            'A最早日期': dates[0] if dates else '',
+            'A最後日期': dates[-1] if dates else '',
+            'A歷史名稱': '｜'.join(names[:10])
+        })
+
+history_df = pd.DataFrame(hist_rows)
+
+
+# ---------- 3A. 盤點 Drive 內舊版官方公司／證券名單 ----------
+log('補充盤點 Drive 內舊版公司／證券名單檔（只讀；每檔及總讀取量均設上限）。')
+
+MASTER_ROOT = DRIVE_ROOT / '看股最速適'
+MASTER_KEYWORDS = (
+    '公司名單', '上市公司', '上櫃公司', '歷史公司',
+    '證券代號', '證券代碼', '股票代號', '證券名錄',
+    '股票名錄', '公司清單'
+)
+MASTER_EXTS = ('.csv', '.csv.gz', '.xlsx', '.xlsm')
+MASTER_MAX_FILE_BYTES = 40 * 1024 * 1024
+MASTER_MAX_TOTAL_BYTES = 400 * 1024 * 1024
+MASTER_MAX_FILES = 120
+
+master_files = []
+master_hits = {}
+master_hits_by_key = {}
+master_total_bytes = 0
+master_scanned = 0
+master_skipped = []
+target_codes = set(unique_df['股票代號'].tolist())
+
+for dirpath, dirnames, filenames in os.walk(MASTER_ROOT):
+    # 跳過隱藏版本控制目錄。
+    dirnames[:] = [d for d in dirnames if d not in {'.git', '__pycache__'}]
+
+    for filename in filenames:
+        lower_name = filename.lower()
+        if not any(k.lower() in lower_name for k in MASTER_KEYWORDS):
+            continue
+        if not any(lower_name.endswith(ext) for ext in MASTER_EXTS):
+            continue
+
+        p = Path(dirpath) / filename
+        try:
+            if (
+                p.resolve().is_relative_to(PREV_DIR.resolve()) or
+                p.resolve().is_relative_to(OUT_DIR.resolve())
+            ):
+                continue
+        except Exception:
+            pass
+
+        if p.resolve() == A_PATH.resolve():
+            continue
+
+        size = p.stat().st_size
+        if size > MASTER_MAX_FILE_BYTES:
+            master_skipped.append({
+                'file': str(p),
+                'reason': f'單檔超過上限 {size:,} bytes'
+            })
+            continue
+
+        if master_total_bytes + size > MASTER_MAX_TOTAL_BYTES:
+            master_skipped.append({
+                'file': str(p),
+                'reason': '超過總讀取量上限'
+            })
+            continue
+
+        if master_scanned >= MASTER_MAX_FILES:
+            master_skipped.append({
+                'file': str(p),
+                'reason': '超過檔案數上限'
+            })
+            continue
+
+        info = {
+            'file': str(p),
+            'bytes': size,
+            'status': 'scanned',
+            'matched_codes': 0
+        }
+
+        try:
+            if lower_name.endswith(('.csv', '.csv.gz')):
+                try:
+                    header = pd.read_csv(
+                        p, encoding='utf-8-sig', nrows=0, compression='infer'
+                    ).columns.tolist()
+                    enc = 'utf-8-sig'
+                except Exception:
+                    header = pd.read_csv(
+                        p, encoding='cp950', nrows=0, compression='infer'
+                    ).columns.tolist()
+                    enc = 'cp950'
+
+                ccol = pick_col(
+                    header,
+                    [
+                        '股票代號', '證券代號', '證券代碼',
+                        '公司代號', '代號', 'Code',
+                        'SecurityCode', 'SecuritiesCompanyCode'
+                    ]
+                )
+                mcol = pick_col(
+                    header,
+                    ['市場', '市場別', '交易市場', 'Market', 'MarketName']
+                )
+                ncol = pick_col(
+                    header,
+                    [
+                        '官方名稱', '股票名稱', '證券名稱',
+                        '公司簡稱', '公司名稱', '名稱',
+                        'CompanyName', 'Name'
+                    ]
+                )
+
+                if not ccol:
+                    info['status'] = 'skip_no_code_column'
+                else:
+                    cols = list(dict.fromkeys([x for x in [ccol, mcol, ncol] if x]))
+                    reader = pd.read_csv(
+                        p,
+                        encoding=enc,
+                        dtype=str,
+                        keep_default_na=False,
+                        usecols=cols,
+                        chunksize=100000,
+                        compression='infer',
+                        low_memory=False
+                    )
+                    matched = set()
+
+                    for ch in reader:
+                        cs = ch[ccol].map(norm_code)
+                        sub = ch.loc[cs.isin(target_codes)]
+
+                        for _, rr in sub.iterrows():
+                            code = norm_code(rr.get(ccol, ''))
+                            market = norm_market(rr.get(mcol, '')) if mcol else ''
+                            name = str(rr.get(ncol, '')).strip() if ncol else ''
+                            ev = f'{p.name}｜{market}｜{name}'
+
+                            master_hits.setdefault(code, set()).add(ev)
+                            master_hits_by_key.setdefault((market, code), set()).add(ev)
+                            matched.add(code)
+
+                    info['code_column'] = str(ccol)
+                    info['matched_codes'] = len(matched)
+                    info['matched_code_list'] = '｜'.join(sorted(matched))
+
+            else:
+                # Excel 歷史名單也以唯讀串流方式逐工作表檢查，不整本載入記憶體。
+                from openpyxl import load_workbook
+
+                wb = load_workbook(p, read_only=True, data_only=True)
+                matched = set()
+                sheets_scanned = 0
+
+                for ws in wb.worksheets:
+                    row_iter = ws.iter_rows(values_only=True)
+                    header_row = next(row_iter, None)
+                    if not header_row:
+                        continue
+
+                    header_text = [
+                        str(v).strip() if v is not None else ''
+                        for v in header_row
+                    ]
+                    hmap = {v: i for i, v in enumerate(header_text) if v}
+
+                    cidx = next((
+                        hmap[a] for a in [
+                            '股票代號', '證券代號', '證券代碼',
+                            '公司代號', '代號', 'Code',
+                            'SecurityCode', 'SecuritiesCompanyCode'
+                        ] if a in hmap
+                    ), None)
+
+                    midx = next((
+                        hmap[a] for a in [
+                            '市場', '市場別', '交易市場',
+                            'Market', 'MarketName'
+                        ] if a in hmap
+                    ), None)
+
+                    nidx = next((
+                        hmap[a] for a in [
+                            '官方名稱', '股票名稱', '證券名稱',
+                            '公司簡稱', '公司名稱', '名稱',
+                            'CompanyName', 'Name'
+                        ] if a in hmap
+                    ), None)
+
+                    if cidx is None:
+                        continue
+
+                    sheets_scanned += 1
+                    for excel_row in row_iter:
+                        if cidx >= len(excel_row):
+                            continue
+
+                        code = norm_code(excel_row[cidx])
+                        if code not in target_codes:
+                            continue
+
+                        market = (
+                            norm_market(excel_row[midx])
+                            if midx is not None and midx < len(excel_row)
+                            else ''
+                        )
+                        name = (
+                            str(excel_row[nidx]).strip()
+                            if nidx is not None and nidx < len(excel_row)
+                            and excel_row[nidx] is not None
+                            else ''
+                        )
+
+                        ev = f'{p.name}｜{ws.title}｜{market}｜{name}'
+                        master_hits.setdefault(code, set()).add(ev)
+                        master_hits_by_key.setdefault((market, code), set()).add(ev)
+                        matched.add(code)
+
+                wb.close()
+                info['sheets_with_code_column'] = sheets_scanned
+                info['matched_codes'] = len(matched)
+                info['matched_code_list'] = '｜'.join(sorted(matched))
+
+            if info.get('matched_codes', 0):
+                info['status'] = 'matched'
+
+        except Exception as e:
+            info['status'] = 'read_error'
+            info['error'] = repr(e)
+
+        master_files.append(info)
+        master_total_bytes += size
+        master_scanned += 1
+
+
+for i, rr in history_df.iterrows():
+    code = rr['股票代號']
+    ev = sorted(
+        master_hits_by_key.get((rr['市場'], code), set()) or
+        master_hits.get(code, set())
+    )
+    history_df.at[i, '歷史公司名單檔命中'] = bool(ev)
+    history_df.at[i, '歷史公司名單證據'] = '；'.join(ev[:20])
+
+write_csv(history_df, 'A歷史行情總表_未命中代號交叉比對.csv')
+
+master_file_df = pd.DataFrame(master_files + master_skipped)
+write_csv(master_file_df, 'Drive舊版公司證券名單來源盤點.csv')
+
+history_master_hit_codes = len(master_hits)
+log(
+    f'Drive 舊版名單檔盤點={master_scanned} 檔；'
+    f'命中未命中代號={history_master_hit_codes} 組；'
+    f'讀取量={master_total_bytes:,} bytes'
+)
+
+
+# ---------- 4. 重新核對 16 檔本次缺漏與 12 筆 OHLCV 異常 ----------
+log('階段 3/7：核對 16 檔缺漏個股與 12 筆 OHLCV 異常；比對 v1.2.1 保存的官方原始 JSON。')
+
+missing_df = read_csv_safely(INPUTS['v121_missing'])
+anomaly_df = read_csv_safely(INPUTS['v121_anomalies'])
+
+CODE_KEYS = [
+    'SecuritiesCompanyCode', 'Code', '證券代號',
+    '股票代號', '公司代號', 'SecurityCode'
+]
+NAME_KEYS = [
+    'CompanyName', 'CompanyAbbreviation', 'Name',
+    '證券名稱', '股票名稱', '公司簡稱', '官方名稱'
+]
+VOL_KEYS = ['TradingShares', 'TradeVolume', '成交股數', '成交量']
+TX_KEYS = [
+    'TransactionNumber', 'Transaction', 'TransactionCount',
+    '成交筆數', '成交筆數'
+]
+OPEN_KEYS = ['Open', 'OpeningPrice', '開盤', '開盤價']
+HIGH_KEYS = ['High', 'HighestPrice', '最高', '最高價']
+LOW_KEYS = ['Low', 'LowestPrice', '最低', '最低價']
+CLOSE_KEYS = ['Close', 'ClosingPrice', '收盤', '收盤價']
+
+
+def first_value(d, keys):
+    for k in keys:
+        if k in d:
+            return d.get(k)
+    return None
+
+
+def walk_official_rows(obj, out=None):
+    if out is None:
+        out = []
+
+    if isinstance(obj, dict):
+        # TWSE MI_INDEX tables use fields + data arrays.
+        fields = obj.get('fields')
+        data = obj.get('data')
+
+        if isinstance(fields, list) and isinstance(data, list):
+            for item in data:
+                if isinstance(item, list):
+                    out.append({str(k): v for k, v in zip(fields, item)})
+                elif isinstance(item, dict):
+                    out.append(item)
+
+        if any(k in obj for k in CODE_KEYS):
+            out.append(obj)
+
+        for k, v in obj.items():
+            if k not in {'fields', 'data'} and isinstance(v, (dict, list)):
+                walk_official_rows(v, out)
+
+    elif isinstance(obj, list):
+        for item in obj:
+            walk_official_rows(item, out)
+
+    return out
+
+
+def load_official_map(path, market):
+    raw_map = {}
+    if not path.exists():
+        return raw_map
+
+    with open(path, 'r', encoding='utf-8-sig') as f:
+        payload = json.load(f)
+
+    candidates = walk_official_rows(payload)
+    for rec in candidates:
+        code = norm_code(first_value(rec, CODE_KEYS))
+        if not code:
+            continue
+        # Some recursive walks can discover the same table row more than once.
+        raw_map[code] = rec
+
+    return raw_map
+
+
+twse_raw_map = load_official_map(INPUTS['v121_twse_raw'], '上市')
+tpex_raw_map = load_official_map(INPUTS['v121_tpex_raw'], '上櫃')
+log(
+    f'官方原始回應可解析代號：'
+    f'TWSE={len(twse_raw_map):,}；TPEx={len(tpex_raw_map):,}'
+)
+
+missing_checks = []
+for _, row in missing_df.iterrows():
+    market = norm_market(row.get('市場', ''))
+    code = norm_code(row.get('股票代號', ''))
+    src = twse_raw_map if market == '上市' else tpex_raw_map
+    rec = src.get(code)
+
+    volume = parse_num(first_value(rec, VOL_KEYS)) if rec else None
+    tx_count = parse_num(first_value(rec, TX_KEYS)) if rec else None
+
+    prices = {
+        k: parse_num(first_value(rec, keys)) if rec else None
+        for k, keys in {
+            '開盤': OPEN_KEYS,
+            '最高': HIGH_KEYS,
+            '最低': LOW_KEYS,
+            '收盤': CLOSE_KEYS
+        }.items()
+    }
+
+    if rec is None:
+        status = '官方原始快照未列出該代號'
+    elif all(v is not None for v in prices.values()):
+        status = '官方原始快照有完整 OHLC；v1.2.1 未收錄，需查解析／篩選流程'
+    elif volume is not None and volume > 0:
+        status = '官方原始快照有成交量但 OHLC 缺值；不得判成無交易'
+    elif volume == 0:
+        status = '官方原始快照顯示成交量為 0 且 OHLC 缺值'
+    else:
+        status = '官方原始快照有列示但成交量與 OHLC 狀態不完整'
+
+    missing_checks.append({
+        '市場': market,
+        '股票代號': code,
+        'v1.2.1官方名稱': row.get('官方名稱', ''),
+        '官方原始列存在': rec is not None,
+        '原始回應名稱': first_value(rec, NAME_KEYS) if rec else '',
+        '成交量': volume,
+        '成交筆數': tx_count,
+        **prices,
+        '核對分類': status,
+        '官方原始列JSON': json.dumps(rec, ensure_ascii=False) if rec else ''
+    })
+
+missing_check_df = pd.DataFrame(missing_checks)
+write_csv(missing_check_df, '16檔本次行情缺漏_官方原始回應逐筆核對.csv')
+
+
+anomaly_checks = []
+for _, row in anomaly_df.iterrows():
+    raw_text = row.get('原始列', '')
+    try:
+        rec = json.loads(raw_text) if raw_text else {}
+    except Exception:
+        rec = {}
+
+    volume = parse_num(first_value(rec, VOL_KEYS))
+    tx_count = parse_num(first_value(rec, TX_KEYS))
+    avg = parse_num(first_value(rec, ['Average', '平均價', '均價']))
+
+    if volume is not None and volume > 0:
+        cat = '有成交股數但 OHLC 缺值'
+        note = (
+            '不可標示為無交易；原始快照有成交量，需後續取得該日官方成交明細'
+            '或分盤資料才能確認價格缺值成因。'
+        )
+    elif volume == 0 and (tx_count == 0 or tx_count is None):
+        cat = '成交量為 0 且 OHLC 缺值'
+        note = (
+            '僅能確認該快照成交量為 0；不可由此推論休市，'
+            '也不可自行填補 OHLC。'
+        )
+    else:
+        cat = '成交量／OHLC 狀態不完整'
+        note = '原始資料不足以判斷交易狀態；維持缺值。'
+
+    anomaly_checks.append({
+        '日期': row.get('日期', ''),
+        '市場': row.get('市場', ''),
+        '股票代號': norm_code(row.get('股票代號', '')),
+        '官方名稱': row.get('官方名稱', ''),
+        '成交量': volume,
+        '成交筆數': tx_count,
+        '平均價': avg,
+        '異常分類': cat,
+        '處理結論': note,
+        '官方原始列JSON': json.dumps(rec, ensure_ascii=False)
+    })
+
+anomaly_check_df = pd.DataFrame(anomaly_checks)
+write_csv(anomaly_check_df, '12筆OHLCV異常_成交狀態分級.csv')
+
+
+# ---------- 5. 追查 3133 尾端輸出 ----------
+log('階段 4/7：追查 v1.2.1 結尾出現的 3133；不將其視為股票代號。')
+
+trace_rows = []
+source_hits = []
+output_hits = []
+
+
+def add_trace(where, kind, detail, evidence=''):
+    trace_rows.append({
+        '來源位置': where,
+        '證據類型': kind,
+        '結果／內容': detail,
+        '上下文': evidence
+    })
+
+
+# 5A. 目前 Colab/IPython kernel 的輸入歷史及 Out。
+try:
+    ip = get_ipython()
+    ns = ip.user_ns if ip else {}
+    history = ns.get('In', [])
+
+    for idx, src in enumerate(history):
+        if not isinstance(src, str) or not src.strip():
+            continue
+
+        if 'v1.2.1' in src and 'v1.2.2' not in src:
+            hit_lines = [
+                (i + 1, line.strip())
+                for i, line in enumerate(src.splitlines())
+                if re.search(r'(?<!\d)3133(?!\d)', line)
+            ]
+
+            if hit_lines:
+                for line_no, text_line in hit_lines:
+                    item = f'In[{idx}] line {line_no}: {text_line[:500]}'
+                    source_hits.append(item)
+                    add_trace(
+                        f'IPython In[{idx}]',
+                        'v1.2.1來源程式含3133',
+                        item
+                    )
+            else:
+                last_lines = [
+                    x.strip() for x in src.splitlines()
+                    if x.strip() and not x.strip().startswith('#')
+                ]
+                tail = ' | '.join(last_lines[-3:])[:800]
+                add_trace(
+                    f'IPython In[{idx}]',
+                    '找到v1.2.1候選來源程式但未見3133字面值',
+                    'source cell found',
+                    tail
+                )
+
+    out_hist = ns.get('Out', {})
+    if isinstance(out_hist, dict):
+        for idx, value in out_hist.items():
+            if (
+                isinstance(value, (int, float)) and value == 3133
+            ) or (
+                isinstance(value, str) and value.strip() == '3133'
+            ):
+                item = f'Out[{idx}] = {repr(value)}'
+                output_hits.append(item)
+                add_trace(
+                    f'IPython Out[{idx}]',
+                    '獨立輸出值等於3133',
+                    item
+                )
+
+except Exception as e:
+    add_trace('IPython kernel', '無法讀取輸入／輸出歷史', repr(e))
+
+
+# 5B. v1.2.1 ZIP 內的程式碼、筆記本和文字執行紀錄。
+source_file_found = False
+zip_text_scanned = 0
+
+try:
+    with zipfile.ZipFile(PREV_ZIP, 'r') as zf:
+        for info in zf.infolist():
+            suffix = Path(info.filename).suffix.lower()
+            if suffix not in {'.py', '.ipynb', '.txt', '.log'}:
+                continue
+            if info.file_size > 20 * 1024 * 1024 or info.is_dir():
+                continue
+
+            raw = zf.read(info.filename)
+            text_value = raw.decode('utf-8-sig', errors='replace')
+            zip_text_scanned += 1
+
+            if suffix in {'.py', '.ipynb'}:
+                source_file_found = True
+
+            if suffix == '.ipynb':
+                try:
+                    nb = json.loads(text_value)
+
+                    for ci, cell in enumerate(nb.get('cells', [])):
+                        cell_src = (
+                            ''.join(cell.get('source', []))
+                            if isinstance(cell.get('source'), list)
+                            else str(cell.get('source', ''))
+                        )
+
+                        if 'v1.2.1' in cell_src or 'SSO_Market_Data_Continuation_TWSE_TPEX' in cell_src:
+                            for li, line in enumerate(cell_src.splitlines(), 1):
+                                if re.search(r'(?<!\d)3133(?!\d)', line):
+                                    item = (
+                                        f'{info.filename} cell {ci} line {li}: '
+                                        f'{line.strip()[:500]}'
+                                    )
+                                    source_hits.append(item)
+                                    add_trace(
+                                        info.filename,
+                                        'notebook來源程式含3133',
+                                        item
+                                    )
+
+                        for oi, output in enumerate(cell.get('outputs', [])):
+                            text_out = (
+                                ''.join(output.get('text', []))
+                                if isinstance(output.get('text'), list)
+                                else str(output.get('text', ''))
+                            )
+                            data = output.get('data', {}) if isinstance(output, dict) else {}
+                            text_out += '\n' + str(data.get('text/plain', ''))
+
+                            if any(x.strip() == '3133' for x in text_out.splitlines()):
+                                item = (
+                                    f'{info.filename} cell {ci} output {oi} '
+                                    f'contains standalone 3133'
+                                )
+                                output_hits.append(item)
+                                add_trace(
+                                    info.filename,
+                                    'notebook輸出含獨立3133',
+                                    item
+                                )
+
+                except Exception as e:
+                    add_trace(info.filename, 'notebook解析失敗', repr(e))
+
+            else:
+                for li, line in enumerate(text_value.splitlines(), 1):
+                    if re.search(r'(?<!\d)3133(?!\d)', line):
+                        item = f'{info.filename} line {li}: {line.strip()[:500]}'
+                        if suffix == '.py':
+                            source_hits.append(item)
+                        add_trace(
+                            info.filename,
+                            '文字來源含3133',
+                            item
+                        )
+
+except Exception as e:
+    add_trace(str(PREV_ZIP), 'ZIP檢查失敗', repr(e))
+
+
+# 5C. 執行紀錄與 v1.2.1 目錄內可讀的程式／筆記本檔案。
+for p in [INPUTS['v121_log']]:
+    try:
+        txt = p.read_text(encoding='utf-8-sig', errors='replace')
+        standalone = [
+            f'{i+1}: {line.strip()}'
+            for i, line in enumerate(txt.splitlines())
+            if line.strip() == '3133'
+        ]
+
+        if standalone:
+            for item in standalone:
+                add_trace(str(p), '執行紀錄獨立行3133', item)
+        else:
+            add_trace(
+                str(p),
+                '執行紀錄未出現獨立3133',
+                'saved execution log does not contain a standalone 3133 line'
+            )
+
+    except Exception as e:
+        add_trace(str(p), '執行紀錄讀取失敗', repr(e))
+
+
+for base in [PREV_DIR, DRIVE_ROOT / 'Colab Notebooks']:
+    if not base.exists():
+        continue
+
+    for p in base.rglob('*'):
+        if not p.is_file() or p.suffix.lower() not in {'.py', '.ipynb', '.txt', '.log'}:
+            continue
+        if p.stat().st_size > 20 * 1024 * 1024:
+            continue
+        if p == INPUTS['v121_log']:
+            continue
+
+        try:
+            txt = p.read_text(encoding='utf-8-sig', errors='replace')
+
+            if '3133' in txt:
+                lines_hit = [
+                    f'{i+1}: {line.strip()[:500]}'
+                    for i, line in enumerate(txt.splitlines())
+                    if re.search(r'(?<!\d)3133(?!\d)', line)
+                ]
+
+                for item in lines_hit[:50]:
+                    add_trace(str(p), '檔案文字含3133', item)
+
+                if p.suffix.lower() in {'.py', '.ipynb'}:
+                    source_file_found = True
+
+        except Exception:
+            pass
+
+
+# 嘗試保存本次執行程式碼，讓後續版本可追溯，不另外建立 .py 檔。
+current_code_saved = False
+try:
+    ip = get_ipython()
+    ns = ip.user_ns if ip else {}
+    hist = ns.get('In', [])
+
+    candidates = [
+        x for x in hist
+        if isinstance(x, str)
+        and 'SSO_Market_Data_Continuation_TWSE_TPEX v1.2.2' in x
+    ]
+
+    if candidates:
+        (OUT_DIR / 'v1.2.2_完整執行程式碼.txt').write_text(
+            candidates[-1],
+            encoding='utf-8'
+        )
+        current_code_saved = True
+
+except Exception:
+    pass
+
+
+if not source_hits and not output_hits:
+    add_trace(
+        '整體結論',
+        '尚未找到可歸因的3133來源',
+        'v1.2.1已保存執行紀錄未含獨立3133；若Colab kernel歷史與筆記本來源未保存，'
+        '單靠既有CSV/manifest無法判定是print、最後運算式或變數輸出。'
+    )
+else:
+    add_trace(
+        '整體結論',
+        '找到3133相關證據',
+        f'程式碼命中={len(source_hits)}；獨立輸出命中={len(output_hits)}；仍須以命中上下文判斷。'
+    )
+
+trace_df = pd.DataFrame(trace_rows)
+write_csv(trace_df, '3133尾端輸出_來源追查.csv')
+
+log(
+    f'3133追查：程式碼證據={len(source_hits)}；'
+    f'獨立輸出證據={len(output_hits)}；'
+    f'ZIP可讀文字檔掃描={zip_text_scanned}；'
+    f'本次程式碼保存={current_code_saved}'
+)
+
+
+# ---------- 6. 摘要、報告與來源指紋 ----------
+log('階段 5/7：建立稽核摘要、報告與新的唯讀證據包。')
+
+hist_hit_codes = int(history_df['A歷史行情命中'].sum()) if len(history_df) else 0
+raw_not_found = int((~missing_check_df['官方原始列存在']).sum()) if len(missing_check_df) else 0
+anomaly_positive_volume = (
+    int((anomaly_check_df['成交量'].fillna(0) > 0).sum())
+    if len(anomaly_check_df) else 0
+)
+anomaly_zero_volume = (
+    int((anomaly_check_df['成交量'].fillna(-1) == 0).sum())
+    if len(anomaly_check_df) else 0
+)
+
+summary = {
+    'version': 'v1.2.2',
+    'run_time_taipei': RUN_DT.isoformat(),
+    'purpose': '個股行情缺漏與歷史公司名單復原稽核',
+    'scope': {
+        'drive_sources_read_only': True,
+        'official_api_called': False,
+        'database_updated': False,
+        'training_backtest_stock_selection': False,
+        'source_files_deleted_or_moved': False,
+        'individual_common_stocks_only_as_primary_scope': True,
+        'preferred_shares_reported_separately': True,
+    },
+    'v121_unmatched': {
+        'rows': int(len(unmatched_rows)),
+        'unique_market_codes': int(unique_count),
+        'dates': sorted(unmatched_rows['日期'].dropna().unique().tolist()),
+        'row_count_distribution_per_code': {
+            str(k): int(v) for k, v in row_distribution.items()
+        },
+        'preferred_share_candidates': preferred_count,
+        'product_like_code_candidates': product_candidate_count,
+        'historical_A_hit_unique_codes': hist_hit_codes,
+        'historical_company_master_file_hit_unique_codes': history_master_hit_codes,
+        'historical_master_files_scanned': master_scanned,
+        'historical_master_bytes_scanned': master_total_bytes,
+        'A_scan': A_SCAN,
+    },
+    'v121_missing_quotes': {
+        'code_count': int(len(missing_check_df)),
+        'official_raw_rows_not_found': raw_not_found,
+        'by_classification': (
+            missing_check_df['核對分類'].value_counts(dropna=False).to_dict()
+            if len(missing_check_df) else {}
+        ),
+    },
+    'v121_ohlcv_anomalies': {
+        'rows': int(len(anomaly_check_df)),
+        'positive_volume_ohlc_missing': anomaly_positive_volume,
+        'zero_volume_ohlc_missing': anomaly_zero_volume,
+        'classification': (
+            anomaly_check_df['異常分類'].value_counts(dropna=False).to_dict()
+            if len(anomaly_check_df) else {}
+        ),
+    },
+    '3133_trace': {
+        'source_code_evidence_count': len(source_hits),
+        'standalone_output_evidence_count': len(output_hits),
+        'source_artifact_found_in_scanned_locations': source_file_found,
+        'current_v122_source_saved_as_txt': current_code_saved,
+        'conclusion': (
+            '已找到需人工判讀的來源證據'
+            if source_hits or output_hits
+            else '現有可讀證據不足，不能推定3133由何處輸出'
+        ),
+    },
+    'source_fingerprints': source_fingerprints,
+}
+
+(OUT_DIR / '稽核摘要.json').write_text(
+    json.dumps(summary, ensure_ascii=False, indent=2, default=str),
+    encoding='utf-8'
+)
+(OUT_DIR / '來源指紋.json').write_text(
+    json.dumps(source_fingerprints, ensure_ascii=False, indent=2, default=str),
+    encoding='utf-8'
+)
+
+report_lines = [
+    'SSO_Market_Data_Continuation_TWSE_TPEX v1.2.2',
+    '個股行情缺漏與歷史公司名單復原稽核',
+    f'執行時間（台北）：{RUN_DT.isoformat()}',
+    '',
+    '一、稽核界線',
+    '本版只讀 v1.2.1 成果、原始增量、A/v4.17 歷史行情表及 v1.2.1 保存的官方原始 JSON；'
+    '不呼叫 TWSE／TPEx API，不修改原始資料，不更新資料庫，不重訓、不回測、不選股。',
+    '',
+    '二、未命中現行公司名單',
+    f'原始未命中列數：{len(unmatched_rows):,}；唯一市場／代號組合：{unique_count:,}。',
+    f'各代號列數分布：{row_distribution}。',
+    f'辨識出的特別股候選：{preferred_count} 組，獨立列示，不與 ETF 混同。',
+    f'商品型代號候選：{product_candidate_count} 組；這只是代號／名稱型態初分，不將其全部宣稱為 ETF。',
+    f'A/v4.17 歷史行情掃描狀態：{A_SCAN["status"]}；命中唯一代號：{hist_hit_codes}。'
+    f'Drive 舊版公司／證券名單檔掃描 {master_scanned} 檔，命中未命中代號 '
+    f'{history_master_hit_codes} 組。命中僅作為歷史證據，不單獨推定普通股身分。',
+    '',
+    '三、16 檔本次行情缺漏',
+    f'共 {len(missing_check_df)} 檔；官方原始回應未列出：{raw_not_found} 檔。'
+    '逐檔狀態見「16檔本次行情缺漏_官方原始回應逐筆核對.csv」。',
+    '',
+    '四、12 筆 OHLCV 異常',
+    f'成交量大於 0 但 OHLC 缺值：{anomaly_positive_volume} 筆；'
+    f'成交量為 0 且 OHLC 缺值：{anomaly_zero_volume} 筆。',
+    '成交量大於 0 的列不得標成無交易；成交量為 0 也不等於市場休市。'
+    '所有缺值維持缺值，不補造價格。',
+    '',
+    '五、尾端 3133 輸出追查',
+    f'程式碼證據：{len(source_hits)}；獨立輸出證據：{len(output_hits)}。',
+    '若未找到 v1.2.1 原始程式碼或同一 Colab kernel 的歷史，'
+    '無法僅憑已保存的 CSV／manifest 判定 3133 的精確來源；本版不把它當成股票資料。',
+    '',
+    '六、輸出檔案',
+    '未命中現行名單_唯一代號分類總表.csv',
+    '未命中資料中的特別股候選_獨立清單.csv',
+    '未命中現行名單_原始逐列保留.csv',
+    'A歷史行情總表_未命中代號交叉比對.csv',
+    'Drive舊版公司證券名單來源盤點.csv',
+    '16檔本次行情缺漏_官方原始回應逐筆核對.csv',
+    '12筆OHLCV異常_成交狀態分級.csv',
+    '3133尾端輸出_來源追查.csv',
+    '稽核摘要.json、來源指紋.json、執行紀錄.txt、報告.html',
+]
+
+(OUT_DIR / '稽核報告.txt').write_text(
+    '\n'.join(report_lines) + '\n',
+    encoding='utf-8'
+)
+
+html_rows = ''.join(
+    f'<tr><td>{r["市場"]}</td><td>{r["股票代號"]}</td>'
+    f'<td>{r["原始名稱"]}</td><td>{r["初步分類"]}</td>'
+    f'<td>{r["原始增量列數"]}</td></tr>'
+    for _, r in unique_df.head(100).iterrows()
+)
+
+html = f'''<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><title>SSO v1.2.2 稽核報告</title>
+<style>body{{font-family:Arial,"Noto Sans TC",sans-serif;max-width:1100px;margin:32px auto;padding:0 20px;line-height:1.65}}table{{border-collapse:collapse;width:100%}}th,td{{border:1px solid #bbb;padding:6px;text-align:left}}th{{background:#eee}}small{{color:#555}}</style>
+<h1>SSO_Market_Data_Continuation_TWSE_TPEX v1.2.2</h1><h2>個股行情缺漏與歷史公司名單復原稽核</h2>
+<p>執行時間（台北）：{RUN_DT.isoformat()}</p>
+<h3>未命中現行公司名單</h3><p>原始列 {len(unmatched_rows):,}；唯一市場／代號組合 {unique_count:,}；特別股候選 {preferred_count}；商品型代號候選 {product_candidate_count}。</p>
+<p>A 歷史行情掃描：{A_SCAN['status']}；唯一代號命中 {hist_hit_codes}。Drive 舊版公司／證券名單檔掃描 {master_scanned} 檔，命中代號 {history_master_hit_codes} 組；命中不等同普通股身分確認。</p>
+<h3>行情缺漏</h3><p>16 檔缺漏逐筆結果：原始快照未列出 {raw_not_found} 檔。</p>
+<h3>OHLCV 異常</h3><p>總數 {len(anomaly_check_df)}；成交量大於 0 而 OHLC 缺值 {anomaly_positive_volume}；成交量為 0 而 OHLC 缺值 {anomaly_zero_volume}。不補造 OHLC。</p>
+<h3>未命中代號樣本（前 100 組）</h3><table><thead><tr><th>市場</th><th>代號</th><th>名稱</th><th>分類</th><th>列數</th></tr></thead><tbody>{html_rows}</tbody></table>
+<p><small>完整結果請看同資料夾 CSV；所有原始來源唯讀。</small></p></html>'''
+
+(OUT_DIR / '報告.html').write_text(html, encoding='utf-8')
+
+
+# ---------- 7. 日誌、ZIP 與 GitHub audit branch ----------
+log('階段 6/7：完成分析檔；建立 ZIP。')
+log(f'唯一未命中代號={unique_count}；特別股候選={preferred_count}；商品型代號候選={product_candidate_count}')
+log(f'A 歷史行情掃描={A_SCAN["status"]}；命中唯一代號={hist_hit_codes}')
+log(f'16 檔缺漏中原始快照未列出={raw_not_found}')
+log(
+    f'12 筆異常：成交量>0且OHLC缺值={anomaly_positive_volume}；'
+    f'成交量=0且OHLC缺值={anomaly_zero_volume}'
+)
+log('未命中原始列全部另檔保留；v1.2.2 不會將其刪除或併入普通股資料庫。')
+
+# Write initial execution log before packaging.
+(OUT_DIR / '執行紀錄.txt').write_text(
+    '\n'.join(LOG_LINES) + '\n',
+    encoding='utf-8'
+)
+
+ZIP_PATH = ROOT / (OUT_NAME + '.zip')
+with zipfile.ZipFile(
+    ZIP_PATH, 'w',
+    compression=zipfile.ZIP_DEFLATED,
+    compresslevel=6
+) as zf:
+    for p in sorted(OUT_DIR.iterdir()):
+        if p.is_file() and p.name != 'GitHub上傳紀錄.json':
+            zf.write(p, arcname=f'{OUT_NAME}/{p.name}')
+
+log('ZIP 完成：' + str(ZIP_PATH))
+log('階段 7/7：上傳至獨立 GitHub audit branch；不觸碰 main。')
+
+
+def get_github_token():
+    token = os.environ.get('GITHUB_TOKEN') or os.environ.get('GH_TOKEN')
+    if token:
+        return token
+
+    try:
+        from google.colab import userdata
+        token = userdata.get('GITHUB_TOKEN')
+        if token:
+            return token
+    except Exception:
+        pass
+
+    return None
+
+
+def github_request(method, url, token, **kwargs):
+    headers = kwargs.pop('headers', {})
+    headers.update({
+        'Authorization': f'Bearer {token}',
+        'Accept': 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28'
+    })
+
+    response = requests.request(
+        method, url,
+        headers=headers,
+        timeout=90,
+        **kwargs
+    )
+
+    if response.status_code >= 400:
+        raise RuntimeError(
+            f'GitHub API {method} {url} failed: '
+            f'{response.status_code} {response.text[:1200]}'
+        )
+
+    if response.text:
+        try:
+            return response.json()
+        except Exception:
+            return {'text': response.text[:2000]}
+
+    return {}
+
+
+github_record = {
+    'repository': REPO,
+    'base_branch': BASE_BRANCH,
+    'branch': None,
+    'remote_directory': None,
+    'uploaded_files': [],
+    'failed_files': [],
+    'status': 'not_started',
+}
+
+token = get_github_token()
+
+if not token:
+    github_record['status'] = 'skipped_no_token'
+    log('[WARN] 找不到 GITHUB_TOKEN；本機輸出與 ZIP 已完成，GitHub 未上傳。')
+
+else:
+    try:
+        api = 'https://api.github.com'
+        base_ref_url = (
+            f'{api}/repos/{REPO}/git/ref/heads/'
+            f'{quote(BASE_BRANCH, safe="")}'
+        )
+        base_ref = github_request('GET', base_ref_url, token)
+        base_sha = base_ref['object']['sha']
+
+        branch = f'audit/sso-market-data-continuation-v1-v122-{RUN_STAMP}'
+        github_request(
+            'POST',
+            f'{api}/repos/{REPO}/git/refs',
+            token,
+            json={'ref': f'refs/heads/{branch}', 'sha': base_sha}
+        )
+
+        remote_dir = f'audit/sso-market-data-continuation-v1/{OUT_NAME}'
+        github_record.update({
+            'branch': branch,
+            'remote_directory': remote_dir,
+            'base_sha': base_sha
+        })
+
+        files_to_upload = [
+            p for p in sorted(OUT_DIR.iterdir())
+            if p.is_file() and p.name != 'GitHub上傳紀錄.json'
+        ]
+        files_to_upload.append(ZIP_PATH)
+
+        for p in files_to_upload:
+            rel = f'{remote_dir}/{p.name}'
+
+            if p.stat().st_size > 90 * 1024 * 1024:
+                github_record['failed_files'].append({
+                    'path': rel,
+                    'error': 'file exceeds 90 MiB safety threshold'
+                })
+                continue
+
+            url = f'{api}/repos/{REPO}/contents/{quote(rel, safe="/")}'
+            payload = {
+                'message': f'Add SSO v1.2.2 audit artifact: {p.name}',
+                'content': __import__('base64').b64encode(
+                    p.read_bytes()
+                ).decode('ascii'),
+                'branch': branch
+            }
+
+            try:
+                res = github_request('PUT', url, token, json=payload)
+                github_record['uploaded_files'].append({
+                    'path': rel,
+                    'bytes': p.stat().st_size,
+                    'commit_sha': res.get('commit', {}).get('sha'),
+                    'html_url': (
+                        res.get('content', {}).get('html_url') or
+                        f'https://github.com/{REPO}/blob/{branch}/{rel}'
+                    )
+                })
+                log(f'[GITHUB PASS] {p.name} ({p.stat().st_size:,} bytes)')
+
+            except Exception as e:
+                github_record['failed_files'].append({
+                    'path': rel,
+                    'error': repr(e)
+                })
+                log(f'[GITHUB FAIL] {p.name}: {e}')
+
+        github_record['status'] = (
+            'success' if not github_record['failed_files'] else 'partial'
+        )
+        github_record['folder_url'] = (
+            f'https://github.com/{REPO}/tree/{branch}/{remote_dir}'
+        )
+        github_record['zip_url'] = (
+            f'https://github.com/{REPO}/blob/{branch}/{remote_dir}/{ZIP_PATH.name}'
+        )
+
+    except Exception as e:
+        github_record['status'] = 'failed'
+        github_record['error'] = repr(e)
+        log(f'[GITHUB FAIL] 分支／上傳流程失敗：{e}')
+
+
+# GitHub上傳紀錄單獨存放並最後上傳，避免 ZIP 內出現不完整的上傳狀態。
+github_record['completed_at_taipei'] = datetime.now(TZ).isoformat()
+(OUT_DIR / 'GitHub上傳紀錄.json').write_text(
+    json.dumps(github_record, ensure_ascii=False, indent=2),
+    encoding='utf-8'
+)
+
+if token and github_record.get('branch'):
+    try:
+        p = OUT_DIR / 'GitHub上傳紀錄.json'
+        rel = f'{github_record["remote_directory"]}/{p.name}'
+        url = f'https://api.github.com/repos/{REPO}/contents/{quote(rel, safe="/")}'
+        payload = {
+            'message': 'Add SSO v1.2.2 GitHub upload record',
+            'content': __import__('base64').b64encode(
+                p.read_bytes()
+            ).decode('ascii'),
+            'branch': github_record['branch']
+        }
+
+        res = github_request('PUT', url, token, json=payload)
+        github_record['upload_record_commit_sha'] = res.get('commit', {}).get('sha')
+        github_record['upload_record_url'] = (
+            f'https://github.com/{REPO}/blob/{github_record["branch"]}/{rel}'
+        )
+
+        (OUT_DIR / 'GitHub上傳紀錄.json').write_text(
+            json.dumps(github_record, ensure_ascii=False, indent=2),
+            encoding='utf-8'
+        )
+        log('[GITHUB PASS] GitHub上傳紀錄.json')
+
+    except Exception as e:
+        log(f'[GITHUB FAIL] 上傳紀錄檔失敗：{e}')
+        github_record['status'] = 'partial'
+        github_record['upload_record_error'] = repr(e)
+
+        (OUT_DIR / 'GitHub上傳紀錄.json').write_text(
+            json.dumps(github_record, ensure_ascii=False, indent=2),
+            encoding='utf-8'
+        )
+
+
+# 最終日誌寫回本機；ZIP 和其他成果已上傳，不覆寫任何來源檔。
+log(f'GitHub 狀態={github_record["status"]}')
+log(f'本機輸出目錄={OUT_DIR}')
+log(f'本機 ZIP={ZIP_PATH}')
+
+if github_record.get('folder_url'):
+    log(f'GitHub audit folder={github_record["folder_url"]}')
+
+(OUT_DIR / '執行紀錄.txt').write_text(
+    '\n'.join(LOG_LINES) + '\n',
+    encoding='utf-8'
+)
+
+
+# final SHA / local check
+zip_sha = sha256_file(ZIP_PATH) if ZIP_PATH.exists() else None
+
+final_check = {
+    'version': 'v1.2.2',
+    'run_stamp': RUN_STAMP,
+    'output_dir': str(OUT_DIR),
+    'zip_path': str(ZIP_PATH),
+    'zip_sha256': zip_sha,
+    'github_status': github_record.get('status'),
+    'github_branch': github_record.get('branch'),
+    'github_folder_url': github_record.get('folder_url'),
+    'file_count': sum(1 for p in OUT_DIR.iterdir() if p.is_file()),
+    'original_sources_modified': False,
+    'github_main_modified': False,
+}
+
+final_check_path = OUT_DIR / '最終完成檢查.json'
+final_check_path.write_text(
+    json.dumps(final_check, ensure_ascii=False, indent=2),
+    encoding='utf-8'
+)
+
+
+# 最終完成檢查檔也上傳；它在 ZIP 生成後產生，因此獨立存放於 audit branch。
+if token and github_record.get('branch'):
+    try:
+        rel = f'{github_record["remote_directory"]}/{final_check_path.name}'
+        url = f'https://api.github.com/repos/{REPO}/contents/{quote(rel, safe="/")}'
+        payload = {
+            'message': 'Add SSO v1.2.2 final completion check',
+            'content': __import__('base64').b64encode(
+                final_check_path.read_bytes()
+            ).decode('ascii'),
+            'branch': github_record['branch']
+        }
+
+        res = github_request('PUT', url, token, json=payload)
+        final_check['github_final_check_url'] = (
+            f'https://github.com/{REPO}/blob/{github_record["branch"]}/{rel}'
+        )
+        final_check['github_final_check_commit_sha'] = (
+            res.get('commit', {}).get('sha')
+        )
+
+        final_check_path.write_text(
+            json.dumps(final_check, ensure_ascii=False, indent=2),
+            encoding='utf-8'
+        )
+        log('[GITHUB PASS] 最終完成檢查.json')
+
+    except Exception as e:
+        final_check['github_final_check_error'] = repr(e)
+        final_check_path.write_text(
+            json.dumps(final_check, ensure_ascii=False, indent=2),
+            encoding='utf-8'
+        )
+        log(f'[GITHUB FAIL] 最終完成檢查.json：{e}')
+
+
+# 保證最後輸出是明確結束標記；避免 cell 最後一行回傳游離數字。
+print('\n' + '=' * 100, flush=True)
+print(
+    f'[END_OF_RUN] SSO_Market_Data_Continuation_TWSE_TPEX v1.2.2 | {RUN_STAMP}',
+    flush=True
+)
+print(f'[END_OF_RUN] ZIP_SHA256={zip_sha}', flush=True)
+print(f'[END_OF_RUN] GITHUB_STATUS={github_record.get("status")}', flush=True)
+print(
+    '[END_OF_RUN] 不存在未解釋的尾端運算值；本次程式最後一行為明確完成訊息。',
+    flush=True
+)
+print('=' * 100, flush=True)
+
+# The cell intentionally ends with a None-returning function call, not a bare scalar expression.
