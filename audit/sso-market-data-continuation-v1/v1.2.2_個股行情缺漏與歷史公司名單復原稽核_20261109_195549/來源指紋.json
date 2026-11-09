@@ -1,0 +1,77 @@
+{
+  "A": {
+    "path": "/content/drive/MyDrive/看股最速適/看股最速適_官方行情完整證券代號重建_v4_16_20261031_131511/官方行情總表_完整證券代號_v4.17.csv",
+    "exists": true,
+    "bytes": 3164892248
+  },
+  "old_increment": {
+    "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/行情增量資料.csv.gz",
+    "exists": true,
+    "bytes": 387180,
+    "sha256": "b5ac265e5bef8f09c5c5bd93bf39d2c78f4a3736a71a7b05c7db01a8b7781074"
+  },
+  "old_semantic": {
+    "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/行情備註語意校正層_v4.87.5.23.csv.gz",
+    "exists": true,
+    "bytes": 922679,
+    "sha256": "04281247a3b9e4e78507063ce6d084d02db64c1fbbe2806bf9e7a9253c730ad8"
+  },
+  "old_manifest": {
+    "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/邏輯完整資料庫_manifest.json",
+    "exists": true,
+    "bytes": 1338,
+    "sha256": "71d5dbf91f0ecc6f5cdc792c35023a3603857a7bc99db8dfcf53701fd3c73fcb"
+  },
+  "v121_unmatched": {
+    "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.1_個股行情續接_20261109_193922/原始增量未命中現行公司名單.csv",
+    "exists": true,
+    "bytes": 336695,
+    "sha256": "3267f4fd66db5a5f8856483c08bef87b833510aa54a17883048fbf1dbd367e65"
+  },
+  "v121_anomalies": {
+    "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.1_個股行情續接_20261109_193922/OHLCV異常資料.csv",
+    "exists": true,
+    "bytes": 6506,
+    "sha256": "73387cb1ec9e8dfa2b3f98bb927e8c5851c2ccba8da9b04eb31ca76a85f4724c"
+  },
+  "v121_missing": {
+    "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.1_個股行情續接_20261109_193922/本次行情缺漏公司代號.csv",
+    "exists": true,
+    "bytes": 1320,
+    "sha256": "7eb5b3a1aec60272d3254f085afad212661fe1a88eba69c11847136cd975ffe1"
+  },
+  "v121_master": {
+    "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.1_個股行情續接_20261109_193922/官方上市櫃公司名單.csv",
+    "exists": true,
+    "bytes": 41127
+  },
+  "v121_twse_raw": {
+    "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.1_個股行情續接_20261109_193922/官方原始回應/TWSE_MI_INDEX_指定日期官方原始回應.json",
+    "exists": true,
+    "bytes": 248473,
+    "sha256": "50fb42ec1ed8dbed8e09414aed557525c4d421bd7026c177be32449b81c9c5ec"
+  },
+  "v121_tpex_raw": {
+    "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.1_個股行情續接_20261109_193922/官方原始回應/TPEx_官方上櫃每日行情原始回應.json",
+    "exists": true,
+    "bytes": 5313603,
+    "sha256": "c25cfda73f41bac234e3d651ef95f01b0be0f1ffcce5e3b55dccc6d1e9f47ffb"
+  },
+  "v121_manifest": {
+    "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.1_個股行情續接_20261109_193922/個股行情資料庫_manifest_更新至20261109_v1.2.1.json",
+    "exists": true,
+    "bytes": 2973,
+    "sha256": "90f418d134fe566714345402a4f10a1ddf9b733aed6c14c2e9f81675c261678d"
+  },
+  "v121_log": {
+    "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.1_個股行情續接_20261109_193922/執行紀錄.txt",
+    "exists": true,
+    "bytes": 4253
+  },
+  "v121_zip": {
+    "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.1_個股行情續接_20261109_193922.zip",
+    "exists": true,
+    "bytes": 1557912,
+    "sha256": "9d66d121cd98dd15a0cae8ddcf20dbd8c21e12c68cbb687545bea70d7fb530e4"
+  }
+}
