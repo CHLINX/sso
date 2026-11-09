@@ -1,0 +1,41 @@
+{
+  "old_table_found": true,
+  "old_rows": 4522,
+  "old_valid_rows": 4522,
+  "old_columns": [
+    "倍率分組",
+    "股票日期筆數"
+  ],
+  "ratio_column": "倍率分組",
+  "count_column": "股票日期筆數",
+  "old_ratio_unique_unrounded": 4522,
+  "old_frequency_sum": 7022.0,
+  "new_observation_count": 7022,
+  "new_unique_unrounded": 6532,
+  "best_candidate_precision": 10,
+  "best_candidate_overlap": 4522,
+  "best_candidate_old_only": 0,
+  "best_candidate_new_only": 0,
+  "best_candidate_frequency_mismatch": 0,
+  "exact_match_precisions": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    10
+  ],
+  "consistency_status": "已找到倍率值及頻數完全一致的精度",
+  "numeric_column_diagnostics": {
+    "倍率分組": {
+      "valid": 4522,
+      "unique": 4522
+    },
+    "股票日期筆數": {
+      "valid": 4522,
+      "unique": 6
+    }
+  }
+}
