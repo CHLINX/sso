@@ -1,0 +1,74 @@
+{
+  "repository": "CHLINX/sso",
+  "base_branch": "audit/sso-market-data-continuation-v1-v122-20261109_195549",
+  "branch": "audit/sso-market-data-continuation-v1-v123-20261109_200337",
+  "status": "success",
+  "uploaded_files": [
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337/12筆OHLCV異常_校正後分類.csv",
+      "bytes": 8647,
+      "commit_sha": "b5cc32c8c37812e06d7ca43d90108a478d02ecfe"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337/16檔行情缺漏_校正後逐檔結果.csv",
+      "bytes": 8535,
+      "commit_sha": "cbcd9547b2b1bc78fa4c491b1e992c9d706c5555"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337/A歷史行情命中_逐檔證據校正.csv",
+      "bytes": 11771,
+      "commit_sha": "fbb426ebe60d35c33abdab484e36477033b8f788"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337/Drive名單掃描_排除循環證據後結果.csv",
+      "bytes": 3264,
+      "commit_sha": "1e2bcca600490397bdb97a1640bf7b183dac5575"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337/v1.2.3_完整執行程式碼.txt",
+      "bytes": 29638,
+      "commit_sha": "2214432a48d0b936fb7d5c95433f935000559149"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337/執行紀錄.txt",
+      "bytes": 1758,
+      "commit_sha": "a5acf6c9916f56d280df680bfe724f151a67650c"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337/報告.html",
+      "bytes": 1670,
+      "commit_sha": "f584b2ed1be3c05c9a30ff1ba209b7c4713da3ee"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337/官方原始快照未列出_獨立清單.csv",
+      "bytes": 620,
+      "commit_sha": "fa4985fe58d607b205b78e3874079540c4562452"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337/未命中代號_校正後分類摘要.csv",
+      "bytes": 378,
+      "commit_sha": "9aedf37e93a9560a085c092dc0cc00ae1db1591d"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337/校正報告.txt",
+      "bytes": 2295,
+      "commit_sha": "4f17eafdd20406ca55331f6e87c918a2b24477a6"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337/校正摘要.json",
+      "bytes": 4970,
+      "commit_sha": "2d3513f0a4842200753840e603e2fe2639e80272"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337/v1.2.3_稽核結論校正與證據去循環_20261109_200337.zip",
+      "bytes": 23153,
+      "commit_sha": "73ea39b47b66e49b4caf5d02b652638f61c10d51"
+    }
+  ],
+  "failed_files": [],
+  "base_sha": "d2674306de281b8f178f4b9a9cbba32fbae92a3b",
+  "remote_directory": "audit/sso-market-data-continuation-v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337",
+  "folder_url": "https://github.com/CHLINX/sso/tree/audit/sso-market-data-continuation-v1-v123-20261109_200337/audit/sso-market-data-continuation-v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337",
+  "zip_url": "https://github.com/CHLINX/sso/blob/audit/sso-market-data-continuation-v1-v123-20261109_200337/audit/sso-market-data-continuation-v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337/v1.2.3_稽核結論校正與證據去循環_20261109_200337.zip",
+  "completed_at_taipei": "2026-11-09T20:03:56.788438+08:00"
+}
