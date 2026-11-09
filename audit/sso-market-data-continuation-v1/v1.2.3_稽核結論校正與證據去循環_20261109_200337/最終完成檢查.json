@@ -1,0 +1,14 @@
+{
+  "version": "v1.2.3",
+  "run_stamp": "20261109_200337",
+  "output_dir": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337",
+  "zip_path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337.zip",
+  "zip_sha256": "d7615a00210665dabb7cb2a67f448feb7f53d14cbce26cf0f7de0f465bc648b2",
+  "github_status": "success",
+  "github_branch": "audit/sso-market-data-continuation-v1-v123-20261109_200337",
+  "github_folder_url": "https://github.com/CHLINX/sso/tree/audit/sso-market-data-continuation-v1-v123-20261109_200337/audit/sso-market-data-continuation-v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337",
+  "source_files_modified": false,
+  "database_updated": false,
+  "github_main_modified": false,
+  "3133_explanation_resolved": true
+}
