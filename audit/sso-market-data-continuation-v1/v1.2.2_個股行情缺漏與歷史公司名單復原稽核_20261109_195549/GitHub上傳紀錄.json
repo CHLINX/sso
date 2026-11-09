@@ -1,0 +1,104 @@
+{
+  "repository": "CHLINX/sso",
+  "base_branch": "audit/sso-market-data-continuation-v1-v121-20261109_193922",
+  "branch": "audit/sso-market-data-continuation-v1-v122-20261109_195549",
+  "remote_directory": "audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549",
+  "uploaded_files": [
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/12筆OHLCV異常_成交狀態分級.csv",
+      "bytes": 8289,
+      "commit_sha": "b98c12a9d2d2e37ba1a8a15d308f12d457bbcb36",
+      "html_url": "https://github.com/CHLINX/sso/blob/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_%E5%80%8B%E8%82%A1%E8%A1%8C%E6%83%85%E7%BC%BA%E6%BC%8F%E8%88%87%E6%AD%B7%E5%8F%B2%E5%85%AC%E5%8F%B8%E5%90%8D%E5%96%AE%E5%BE%A9%E5%8E%9F%E7%A8%BD%E6%A0%B8_20261109_195549/12%E7%AD%86OHLCV%E7%95%B0%E5%B8%B8_%E6%88%90%E4%BA%A4%E7%8B%80%E6%85%8B%E5%88%86%E7%B4%9A.csv"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/16檔本次行情缺漏_官方原始回應逐筆核對.csv",
+      "bytes": 7633,
+      "commit_sha": "6a7b3c56e150ed28dfe8b02b56fd315a52e22b3c",
+      "html_url": "https://github.com/CHLINX/sso/blob/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_%E5%80%8B%E8%82%A1%E8%A1%8C%E6%83%85%E7%BC%BA%E6%BC%8F%E8%88%87%E6%AD%B7%E5%8F%B2%E5%85%AC%E5%8F%B8%E5%90%8D%E5%96%AE%E5%BE%A9%E5%8E%9F%E7%A8%BD%E6%A0%B8_20261109_195549/16%E6%AA%94%E6%9C%AC%E6%AC%A1%E8%A1%8C%E6%83%85%E7%BC%BA%E6%BC%8F_%E5%AE%98%E6%96%B9%E5%8E%9F%E5%A7%8B%E5%9B%9E%E6%87%89%E9%80%90%E7%AD%86%E6%A0%B8%E5%B0%8D.csv"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/3133尾端輸出_來源追查.csv",
+      "bytes": 1471,
+      "commit_sha": "ddd260a6d43b1a72935945a57dd72aa544ac7f2a",
+      "html_url": "https://github.com/CHLINX/sso/blob/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_%E5%80%8B%E8%82%A1%E8%A1%8C%E6%83%85%E7%BC%BA%E6%BC%8F%E8%88%87%E6%AD%B7%E5%8F%B2%E5%85%AC%E5%8F%B8%E5%90%8D%E5%96%AE%E5%BE%A9%E5%8E%9F%E7%A8%BD%E6%A0%B8_20261109_195549/3133%E5%B0%BE%E7%AB%AF%E8%BC%B8%E5%87%BA_%E4%BE%86%E6%BA%90%E8%BF%BD%E6%9F%A5.csv"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/A歷史行情總表_未命中代號交叉比對.csv",
+      "bytes": 167316,
+      "commit_sha": "394035d95acd93a6d4796258c2226017e312c964",
+      "html_url": "https://github.com/CHLINX/sso/blob/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_%E5%80%8B%E8%82%A1%E8%A1%8C%E6%83%85%E7%BC%BA%E6%BC%8F%E8%88%87%E6%AD%B7%E5%8F%B2%E5%85%AC%E5%8F%B8%E5%90%8D%E5%96%AE%E5%BE%A9%E5%8E%9F%E7%A8%BD%E6%A0%B8_20261109_195549/A%E6%AD%B7%E5%8F%B2%E8%A1%8C%E6%83%85%E7%B8%BD%E8%A1%A8_%E6%9C%AA%E5%91%BD%E4%B8%AD%E4%BB%A3%E8%99%9F%E4%BA%A4%E5%8F%89%E6%AF%94%E5%B0%8D.csv"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/Drive舊版公司證券名單來源盤點.csv",
+      "bytes": 16894,
+      "commit_sha": "3d1c38221a1835cfee5993aabda6cdd541766ef6",
+      "html_url": "https://github.com/CHLINX/sso/blob/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_%E5%80%8B%E8%82%A1%E8%A1%8C%E6%83%85%E7%BC%BA%E6%BC%8F%E8%88%87%E6%AD%B7%E5%8F%B2%E5%85%AC%E5%8F%B8%E5%90%8D%E5%96%AE%E5%BE%A9%E5%8E%9F%E7%A8%BD%E6%A0%B8_20261109_195549/Drive%E8%88%8A%E7%89%88%E5%85%AC%E5%8F%B8%E8%AD%89%E5%88%B8%E5%90%8D%E5%96%AE%E4%BE%86%E6%BA%90%E7%9B%A4%E9%BB%9E.csv"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/v1.2.2_完整執行程式碼.txt",
+      "bytes": 57941,
+      "commit_sha": "e00f7e5f38134143c08e59d0a4d608f876f11d69",
+      "html_url": "https://github.com/CHLINX/sso/blob/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_%E5%80%8B%E8%82%A1%E8%A1%8C%E6%83%85%E7%BC%BA%E6%BC%8F%E8%88%87%E6%AD%B7%E5%8F%B2%E5%85%AC%E5%8F%B8%E5%90%8D%E5%96%AE%E5%BE%A9%E5%8E%9F%E7%A8%BD%E6%A0%B8_20261109_195549/v1.2.2_%E5%AE%8C%E6%95%B4%E5%9F%B7%E8%A1%8C%E7%A8%8B%E5%BC%8F%E7%A2%BC.txt"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/來源指紋.json",
+      "bytes": 3815,
+      "commit_sha": "797fa5b41dedb2d4b02b70a9807e99fdef4aeff7",
+      "html_url": "https://github.com/CHLINX/sso/blob/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_%E5%80%8B%E8%82%A1%E8%A1%8C%E6%83%85%E7%BC%BA%E6%BC%8F%E8%88%87%E6%AD%B7%E5%8F%B2%E5%85%AC%E5%8F%B8%E5%90%8D%E5%96%AE%E5%BE%A9%E5%8E%9F%E7%A8%BD%E6%A0%B8_20261109_195549/%E4%BE%86%E6%BA%90%E6%8C%87%E7%B4%8B.json"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/執行紀錄.txt",
+      "bytes": 3922,
+      "commit_sha": "0dffd077b59ccee9b3724dd42f8aa4bf4ea1a1d6",
+      "html_url": "https://github.com/CHLINX/sso/blob/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_%E5%80%8B%E8%82%A1%E8%A1%8C%E6%83%85%E7%BC%BA%E6%BC%8F%E8%88%87%E6%AD%B7%E5%8F%B2%E5%85%AC%E5%8F%B8%E5%90%8D%E5%96%AE%E5%BE%A9%E5%8E%9F%E7%A8%BD%E6%A0%B8_20261109_195549/%E5%9F%B7%E8%A1%8C%E7%B4%80%E9%8C%84.txt"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/報告.html",
+      "bytes": 18267,
+      "commit_sha": "949d372fa81fc5cca4b71c0592a2068fbc0315c4",
+      "html_url": "https://github.com/CHLINX/sso/blob/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_%E5%80%8B%E8%82%A1%E8%A1%8C%E6%83%85%E7%BC%BA%E6%BC%8F%E8%88%87%E6%AD%B7%E5%8F%B2%E5%85%AC%E5%8F%B8%E5%90%8D%E5%96%AE%E5%BE%A9%E5%8E%9F%E7%A8%BD%E6%A0%B8_20261109_195549/%E5%A0%B1%E5%91%8A.html"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/未命中現行名單_原始逐列保留.csv",
+      "bytes": 336695,
+      "commit_sha": "a8690cac5da841f2cac220a6817b6a23b632e137",
+      "html_url": "https://github.com/CHLINX/sso/blob/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_%E5%80%8B%E8%82%A1%E8%A1%8C%E6%83%85%E7%BC%BA%E6%BC%8F%E8%88%87%E6%AD%B7%E5%8F%B2%E5%85%AC%E5%8F%B8%E5%90%8D%E5%96%AE%E5%BE%A9%E5%8E%9F%E7%A8%BD%E6%A0%B8_20261109_195549/%E6%9C%AA%E5%91%BD%E4%B8%AD%E7%8F%BE%E8%A1%8C%E5%90%8D%E5%96%AE_%E5%8E%9F%E5%A7%8B%E9%80%90%E5%88%97%E4%BF%9D%E7%95%99.csv"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/未命中現行名單_唯一代號分類總表.csv",
+      "bytes": 78060,
+      "commit_sha": "4266a0978e18773df6fa949c8d9e51b96e12eea0",
+      "html_url": "https://github.com/CHLINX/sso/blob/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_%E5%80%8B%E8%82%A1%E8%A1%8C%E6%83%85%E7%BC%BA%E6%BC%8F%E8%88%87%E6%AD%B7%E5%8F%B2%E5%85%AC%E5%8F%B8%E5%90%8D%E5%96%AE%E5%BE%A9%E5%8E%9F%E7%A8%BD%E6%A0%B8_20261109_195549/%E6%9C%AA%E5%91%BD%E4%B8%AD%E7%8F%BE%E8%A1%8C%E5%90%8D%E5%96%AE_%E5%94%AF%E4%B8%80%E4%BB%A3%E8%99%9F%E5%88%86%E9%A1%9E%E7%B8%BD%E8%A1%A8.csv"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/未命中資料中的特別股候選_獨立清單.csv",
+      "bytes": 4403,
+      "commit_sha": "2d5b8ad9e34137e89c14cbf60a706073b3ce700a",
+      "html_url": "https://github.com/CHLINX/sso/blob/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_%E5%80%8B%E8%82%A1%E8%A1%8C%E6%83%85%E7%BC%BA%E6%BC%8F%E8%88%87%E6%AD%B7%E5%8F%B2%E5%85%AC%E5%8F%B8%E5%90%8D%E5%96%AE%E5%BE%A9%E5%8E%9F%E7%A8%BD%E6%A0%B8_20261109_195549/%E6%9C%AA%E5%91%BD%E4%B8%AD%E8%B3%87%E6%96%99%E4%B8%AD%E7%9A%84%E7%89%B9%E5%88%A5%E8%82%A1%E5%80%99%E9%81%B8_%E7%8D%A8%E7%AB%8B%E6%B8%85%E5%96%AE.csv"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/稽核報告.txt",
+      "bytes": 2086,
+      "commit_sha": "bccddbd6ef3f28ae2c534d5919fe99c62b6619ab",
+      "html_url": "https://github.com/CHLINX/sso/blob/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_%E5%80%8B%E8%82%A1%E8%A1%8C%E6%83%85%E7%BC%BA%E6%BC%8F%E8%88%87%E6%AD%B7%E5%8F%B2%E5%85%AC%E5%8F%B8%E5%90%8D%E5%96%AE%E5%BE%A9%E5%8E%9F%E7%A8%BD%E6%A0%B8_20261109_195549/%E7%A8%BD%E6%A0%B8%E5%A0%B1%E5%91%8A.txt"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/稽核摘要.json",
+      "bytes": 6547,
+      "commit_sha": "5cb7dc17f810f8146de72743a24642eb14d4a559",
+      "html_url": "https://github.com/CHLINX/sso/blob/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_%E5%80%8B%E8%82%A1%E8%A1%8C%E6%83%85%E7%BC%BA%E6%BC%8F%E8%88%87%E6%AD%B7%E5%8F%B2%E5%85%AC%E5%8F%B8%E5%90%8D%E5%96%AE%E5%BE%A9%E5%8E%9F%E7%A8%BD%E6%A0%B8_20261109_195549/%E7%A8%BD%E6%A0%B8%E6%91%98%E8%A6%81.json"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549.zip",
+      "bytes": 91328,
+      "commit_sha": "be3aaaff3a6365d3b46bade0d6f17981da521c15",
+      "html_url": "https://github.com/CHLINX/sso/blob/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_%E5%80%8B%E8%82%A1%E8%A1%8C%E6%83%85%E7%BC%BA%E6%BC%8F%E8%88%87%E6%AD%B7%E5%8F%B2%E5%85%AC%E5%8F%B8%E5%90%8D%E5%96%AE%E5%BE%A9%E5%8E%9F%E7%A8%BD%E6%A0%B8_20261109_195549/v1.2.2_%E5%80%8B%E8%82%A1%E8%A1%8C%E6%83%85%E7%BC%BA%E6%BC%8F%E8%88%87%E6%AD%B7%E5%8F%B2%E5%85%AC%E5%8F%B8%E5%90%8D%E5%96%AE%E5%BE%A9%E5%8E%9F%E7%A8%BD%E6%A0%B8_20261109_195549.zip"
+    }
+  ],
+  "failed_files": [],
+  "status": "success",
+  "base_sha": "3a6882a447fbcbfc93edf9ed2619124e4acc3f91",
+  "folder_url": "https://github.com/CHLINX/sso/tree/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549",
+  "zip_url": "https://github.com/CHLINX/sso/blob/audit/sso-market-data-continuation-v1-v122-20261109_195549/audit/sso-market-data-continuation-v1/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549/v1.2.2_個股行情缺漏與歷史公司名單復原稽核_20261109_195549.zip",
+  "completed_at_taipei": "2026-11-09T19:59:17.647100+08:00"
+}
