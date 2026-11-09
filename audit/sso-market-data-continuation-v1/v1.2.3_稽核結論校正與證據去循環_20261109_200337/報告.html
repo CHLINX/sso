@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>SSO v1.2.3 稽核結論校正</title>
+<style>
+body{font-family:Arial,"Noto Sans TC",sans-serif;max-width:1000px;margin:32px auto;padding:0 20px;line-height:1.7}
+table{border-collapse:collapse;width:100%}
+td,th{border:1px solid #bbb;padding:7px;text-align:left}
+th{background:#eee}
+</style>
+</head>
+<body>
+<h1>SSO_Market_Data_Continuation_TWSE_TPEX v1.2.3</h1>
+<h2>稽核結論校正與證據去循環封存</h2>
+<p>執行時間：2026-11-09T20:03:37.490317+08:00</p>
+<h3>未命中代號分類</h3>
+<table>
+<tr><th>分類</th><th>數量</th></tr>
+<tr><td>特別股候選</td><td>28</td></tr>
+<tr><td>商品型證券代號候選</td><td>389</td></tr>
+<tr><td>四位數普通股格式候選</td><td>0</td></tr>
+<tr><td>其他未分類</td><td>0</td></tr>
+</table>
+<h3>歷史公司名單證據</h3>
+<p>v1.2.2 的 417 組命中主要來自先前排除明細及診斷報表，屬循環證據，已撤回其歷史名單證明效力。</p>
+<p>候選檔案 13 個；循環證據 4 個；獨立歷史名單證據 0 個。</p>
+<h3>行情缺漏與 OHLCV 異常</h3>
+<p>16 檔缺漏：官方快照未列出 4；成交量為 0：7；有成交量但 OHLC 缺值：5。</p>
+<p>12 筆異常：有成交量但 OHLC 缺值 5；成交量為 0 且 OHLC 缺值 7。</p>
+<h3>3133 原因</h3>
+<p>已定位。IPython Out[5] = 3133；同一執行的 In[5] 最後運算式是 log_path.write_text(...). pathlib.Path.write_text() 回傳寫入的字元數，因此 3133 是執行紀錄檔寫入字元數，並非股票代號或行情資料。</p>
+<p>原始來源唯讀；本版不更新個股資料庫。</p>
+</body>
+</html>
