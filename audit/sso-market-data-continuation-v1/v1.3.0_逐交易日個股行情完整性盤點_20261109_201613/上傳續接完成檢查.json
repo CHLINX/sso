@@ -1,0 +1,12 @@
+{
+  "version": "v1.3.0",
+  "upload_recovery_completed": true,
+  "github_status": "success",
+  "github_branch": "audit/sso-market-data-continuation-v1-v130-upload-20261109_201735",
+  "github_url": "https://github.com/CHLINX/sso/tree/audit/sso-market-data-continuation-v1-v130-upload-20261109_201735/audit/sso-market-data-continuation-v1/v1.3.0_逐交易日個股行情完整性盤點_20261109_201613",
+  "original_zip_sha256": "399c0c1004aa28d19fc5230ba0776e28ba4643668c70dee8e16a68fec0282e1e",
+  "original_sources_modified": false,
+  "database_updated": false,
+  "official_api_called": false,
+  "github_main_modified": false
+}
