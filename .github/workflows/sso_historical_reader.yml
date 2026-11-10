@@ -1,0 +1,169 @@
+name: Isolated SSO historical archive reader
+
+on:
+  push:
+    branches:
+      - "audit/sso-historical-reader-20261110_2345"
+    paths:
+      - ".github/workflows/sso_historical_reader.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sso-historical-archive-reader
+  cancel-in-progress: false
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout isolated read branch
+        uses: actions/checkout@v4
+        with:
+          ref: "audit/sso-historical-reader-20261110_2345"
+      - name: Inspect archived results without changing historical sources
+        run: |
+          python - <<'PY'
+          import csv, gzip, hashlib, io, json, time, urllib.parse, urllib.request, zipfile
+          from pathlib import Path
+
+          SOURCE_BRANCH = "audit/v4.84.9.3-rebuild-pipeline"
+          ARCHIVES = [
+              ("SSO_v2.48.1_樣本外校準門檻與公司名稱結果.zip", 21010200),
+              ("SSO_v2.50_日成交量特徵與500日檢查點結果.zip", 21654521),
+              ("SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip", 23606997),
+              ("SSO_v2.51_量能消融_停用量能特徵與配對比較結果.zip", 21011289),
+              ("SSO_v2.56_實際淨報酬與分層核算結果_20261029_055725.zip", 17713),
+          ]
+
+          def log(msg):
+              print(msg, flush=True)
+
+          def download_zip(filename, expected_size):
+              url = "https://raw.githubusercontent.com/CHLINX/sso/" + SOURCE_BRANCH + "/" + urllib.parse.quote(filename, safe="")
+              req = urllib.request.Request(url, headers={"User-Agent":"SSO-Historical-Archive-Reader/1.0"})
+              last_error = None
+              for attempt in range(5):
+                  try:
+                      with urllib.request.urlopen(req, timeout=180) as response:
+                          data = response.read()
+                      if len(data) != expected_size:
+                          raise RuntimeError(f"SIZE_MISMATCH expected={expected_size} actual={len(data)}")
+                      return data, url
+                  except Exception as exc:
+                      last_error = exc
+                      time.sleep(3 * (attempt + 1))
+              raise RuntimeError(f"DOWNLOAD_FAILED {filename}: {last_error}")
+
+          def decode_text(raw):
+              for encoding in ("utf-8-sig", "cp950", "big5"):
+                  try:
+                      return raw.decode(encoding), encoding
+                  except UnicodeDecodeError:
+                      pass
+              return raw.decode("utf-8", errors="replace"), "utf-8-replace"
+
+          def inspect_csv(zf, info):
+              raw = zf.open(info, "r")
+              stream = gzip.GzipFile(fileobj=raw, mode="rb") if info.filename.lower().endswith(".gz") else raw
+              text = io.TextIOWrapper(stream, encoding="utf-8-sig", errors="replace", newline="")
+              reader = csv.reader(text)
+              header, samples, rows = None, [], 0
+              try:
+                  for row in reader:
+                      if header is None:
+                          header = row
+                      else:
+                          rows += 1
+                          if len(samples) < 2:
+                              samples.append(row[:10])
+              finally:
+                  text.close()
+              return header or [], rows, samples
+
+          all_summaries = []
+          for filename, expected_size in ARCHIVES:
+              log("\n" + "=" * 112)
+              log("ARCHIVE " + filename)
+              data, url = download_zip(filename, expected_size)
+              archive_sha = hashlib.sha256(data).hexdigest()
+              log(f"DOWNLOAD_PASS bytes={len(data)} sha256={archive_sha}")
+              archive_result = {
+                  "filename": filename, "bytes": len(data), "sha256": archive_sha,
+                  "source_branch": SOURCE_BRANCH, "source_url": url, "members": []
+              }
+
+              with zipfile.ZipFile(io.BytesIO(data), "r") as zf:
+                  bad = zf.testzip()
+                  if bad:
+                      raise RuntimeError(f"ZIP_CRC_FAIL archive={filename} member={bad}")
+                  log(f"ZIP_CRC_PASS members={len(zf.infolist())}")
+
+                  for info in zf.infolist():
+                      member = {"name": info.filename, "size": info.file_size, "compressed_size": info.compress_size}
+                      archive_result["members"].append(member)
+                      log(f"MEMBER {info.filename} | bytes={info.file_size} | compressed={info.compress_size}")
+                      low = info.filename.lower()
+
+                      if low.endswith((".csv", ".csv.gz", ".tsv", ".tsv.gz")):
+                          header, row_count, samples = inspect_csv(zf, info)
+                          member.update({"data_rows": row_count, "header": header, "sample_first_10_columns": samples})
+                          log("  HEADER=" + json.dumps(header, ensure_ascii=False))
+                          log(f"  DATA_ROWS={row_count}")
+                          log("  SAMPLE=" + json.dumps(samples, ensure_ascii=False))
+                      elif low.endswith(".json") and info.file_size <= 15000000:
+                          raw = zf.read(info.filename)
+                          txt, enc = decode_text(raw)
+                          try:
+                              obj = json.loads(txt)
+                              if isinstance(obj, dict):
+                                  preview = {}
+                                  for k, v in list(obj.items())[:100]:
+                                      if isinstance(v, (str, int, float, bool)) or v is None:
+                                          preview[k] = v
+                                      elif isinstance(v, (dict, list)):
+                                          preview[k] = {"type": type(v).__name__, "length": len(v), "sample": v[:2] if isinstance(v, list) else list(v.keys())[:12]}
+                                      else:
+                                          preview[k] = str(type(v).__name__)
+                              elif isinstance(obj, list):
+                                  preview = {"type":"list","length":len(obj),"sample":obj[:2]}
+                              else:
+                                  preview = {"type":type(obj).__name__,"value":str(obj)[:500]}
+                              member.update({"json_encoding":enc,"json_summary":preview})
+                              log("  JSON=" + json.dumps(preview, ensure_ascii=False)[:6000])
+                          except Exception as exc:
+                              member["json_parse_error"] = str(exc)
+                              log(f"  JSON_PARSE_ERROR={exc}")
+                      elif low.endswith((".md", ".txt")) and info.file_size <= 300000:
+                          raw = zf.read(info.filename)
+                          txt, enc = decode_text(raw)
+                          member["text_preview"] = txt[:5000]
+                          log("  TEXT_BEGIN\n" + txt[:5000] + "\n  TEXT_END")
+                      elif low.endswith((".parquet", ".feather", ".pkl", ".pickle", ".xlsx", ".xls")):
+                          member["binary_format"] = low.rsplit(".", 1)[-1]
+                          log("  BINARY_DATASET_FORMAT=" + member["binary_format"])
+
+              all_summaries.append(archive_result)
+              log("ARCHIVE_READ_COMPLETE " + filename)
+
+          outdir = Path("audit_readout/historical_zip_inspection")
+          outdir.mkdir(parents=True, exist_ok=True)
+          payload = {
+              "status":"READ_ONLY_INSPECTION_COMPLETE",
+              "source_branch":SOURCE_BRANCH,
+              "archives":all_summaries
+          }
+          (outdir / "歷史ZIP檔案清單欄位與筆數.json").write_text(
+              json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
+          )
+          print("\nSSO_HISTORICAL_ARCHIVES_READ_ONLY_INSPECTION_COMPLETE", flush=True)
+          PY
+      - name: Preserve inspection summary on isolated branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audit_readout/historical_zip_inspection/
+          git commit -m "Archive read-only historical ZIP inspection summary"
+          git push origin "HEAD:refs/heads/audit/sso-historical-reader-20261110_2345"
