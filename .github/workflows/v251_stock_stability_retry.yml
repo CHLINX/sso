@@ -1,0 +1,192 @@
+name: SSO v2.51 per-stock repeat-pick stability against 2026-11-10 ordinary universe
+
+on:
+  push:
+    branches:
+      - "audit/sso-historical-reader-retry-20261110_2358"
+    paths:
+      - ".github/workflows/v251_stock_stability_retry.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout isolated audit reader branch
+        uses: actions/checkout@v4
+        with:
+          ref: "audit/sso-historical-reader-retry-20261110_2358"
+      - name: Read historical per-stock results and today's official ordinary universe
+        run: |
+          python - <<'PY'
+          import csv, io, json, hashlib, urllib.parse, urllib.request, zipfile
+          from collections import defaultdict, Counter
+          from pathlib import Path
+
+          SOURCES = [
+            {
+              "key":"v251",
+              "branch":"audit/v4.84.9.3-rebuild-pipeline",
+              "path":"SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip",
+              "bytes":23606997,
+              "sha256":"3b78213b0618678bd883b153e1b8d8d72b074daa4d9d3a2ecd225e80d1f8fdb7",
+              "member":"個股歷史重複入選績效_v2.51停用量能.csv"
+            },
+            {
+              "key":"universe",
+              "branch":"audit/sso-market-data-continuation-v1-v141-isin-20261110-20261110_230801",
+              "path":"audit/sso-market-data-continuation-v1/v1.4.1_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_230801/v1.4.1_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_230801.zip",
+              "bytes":5398656,
+              "sha256":"b5785140fd80552f4c8bd6fbeeba2df65fa4b15252ef687f058545edc4fd916d",
+              "member":"normalized/已確認普通股行情.csv"
+            }
+          ]
+
+          def download(src):
+            url="https://raw.githubusercontent.com/CHLINX/sso/"+src["branch"]+"/"+urllib.parse.quote(src["path"],safe="/")
+            req=urllib.request.Request(url,headers={"User-Agent":"SSO-v251-stock-stability-audit/1.0"})
+            with urllib.request.urlopen(req,timeout=180) as response:
+              data=response.read()
+            if len(data)!=src["bytes"]:
+              raise RuntimeError(f"{src['key']} size mismatch {len(data)} != {src['bytes']}")
+            sha=hashlib.sha256(data).hexdigest()
+            if sha!=src["sha256"]:
+              raise RuntimeError(f"{src['key']} SHA mismatch {sha}")
+            return data, url
+
+          blobs={}
+          for s in SOURCES:
+            blobs[s["key"]],url=download(s)
+            print(f"SOURCE_PASS key={s['key']} bytes={len(blobs[s['key']])} sha256={hashlib.sha256(blobs[s['key']]).hexdigest()} url={url}",flush=True)
+
+          with zipfile.ZipFile(io.BytesIO(blobs["v251"])) as z:
+            bad=z.testzip()
+            if bad: raise RuntimeError("v251 ZIP CRC failed: "+bad)
+            with z.open(SOURCES[0]["member"]) as f:
+              rows=list(csv.DictReader(io.TextIOWrapper(f,encoding="utf-8-sig",errors="replace",newline="")))
+
+          with zipfile.ZipFile(io.BytesIO(blobs["universe"])) as z:
+            bad=z.testzip()
+            if bad: raise RuntimeError("universe ZIP CRC failed: "+bad)
+            matches=[n for n in z.namelist() if n.endswith("/normalized/已確認普通股行情.csv") or n=="normalized/已確認普通股行情.csv"]
+            if len(matches)!=1:
+              raise RuntimeError("ordinary universe member path ambiguous or missing: "+repr(matches[:10]))
+            print("ORDINARY_MEMBER="+matches[0],flush=True)
+            with z.open(matches[0]) as f:
+              ordinary_rows=list(csv.DictReader(io.TextIOWrapper(f,encoding="utf-8-sig",errors="replace",newline="")))
+
+          if len(rows)!=4325:
+            raise RuntimeError(f"Unexpected per-stock row count {len(rows)}")
+          if len(ordinary_rows)!=1951:
+            raise RuntimeError(f"Unexpected current ordinary stock row count {len(ordinary_rows)}")
+
+          current={}
+          for r in ordinary_rows:
+            code=str(r.get("instrument_code","")).strip()
+            if not code: continue
+            current[code]={
+              "name":r.get("instrument_name",""),
+              "market":r.get("market",""),
+              "date":r.get("trade_date","")
+            }
+          horizons=sorted({int(float(r["持有期間H"])) for r in rows})
+          summaries=[]
+          tops=[]
+          all_repeated_codes=set()
+          per_horizon={}
+          for h in horizons:
+            group=[r for r in rows if int(float(r["持有期間H"]))==h]
+            parsed=[]
+            for r in group:
+              code=str(r.get("股票代號","")).strip()
+              count=int(float(r.get("歷史入選次數") or 0))
+              valid=int(float(r.get("有效個股結果筆數") or 0))
+              mean=float(r["平均實際淨報酬"]) if str(r.get("平均實際淨報酬","")).strip() else None
+              median=float(r["中位數實際淨報酬"]) if str(r.get("中位數實際淨報酬","")).strip() else None
+              win=float(r["個股淨獲利勝率"]) if str(r.get("個股淨獲利勝率","")).strip() else None
+              current_match=code in current
+              x={
+                "H":h,"stock_code":code,"historic_name":r.get("公司名稱",""),
+                "historical_selections":count,"valid_realized_trades":valid,
+                "mean_net_return":mean,"median_net_return":median,
+                "net_win_rate":win,"current_ordinary_confirmed":current_match,
+                "current_name":current.get(code,{}).get("name",""),
+                "current_market":current.get(code,{}).get("market","")
+              }
+              parsed.append(x)
+              if count>=5: all_repeated_codes.add(code)
+            per_horizon[h]=parsed
+            def eligible(min_n):
+              return [x for x in parsed if x["historical_selections"]>=min_n and x["valid_realized_trades"]>=min_n and x["mean_net_return"] is not None and x["median_net_return"] is not None and x["net_win_rate"] is not None]
+            for min_n in (5,10,20):
+              q=eligible(min_n)
+              winners=[x for x in q if x["mean_net_return"]>0 and x["median_net_return"]>0 and x["net_win_rate"]>0.5]
+              summaries.append({
+                "H":h,"minimum_repeated_observations":min_n,
+                "ticker_rows":len(q),
+                "current_ordinary_intersection":sum(x["current_ordinary_confirmed"] for x in q),
+                "strict_positive_mean_median_winrate50":len(winners),
+                "strict_positive_current_ordinary":sum(x["current_ordinary_confirmed"] for x in winners)
+              })
+              ranked=sorted(winners,key=lambda x:(x["net_win_rate"],x["median_net_return"],x["mean_net_return"],x["valid_realized_trades"]),reverse=True)
+              for rank,x in enumerate(ranked[:30],1):
+                tops.append({"H":h,"minimum_repeated_observations":min_n,"descriptive_rank":rank,**x})
+            print(f"H={h} all_tickers={len(parsed)} >=5={sum(x['historical_selections']>=5 for x in parsed)} current_ordinary_matches={sum(x['historical_selections']>=5 and x['current_ordinary_confirmed'] for x in parsed)}",flush=True)
+
+          # Cross-horizon robustness within the selected historic dataset.
+          current_picks={}
+          for h, parsed in per_horizon.items():
+            candidates=[x for x in parsed if x["historical_selections"]>=5 and x["valid_realized_trades"]>=5 and x["mean_net_return"] is not None and x["median_net_return"] is not None and x["net_win_rate"] is not None and x["mean_net_return"]>0 and x["median_net_return"]>0 and x["net_win_rate"]>0.5 and x["current_ordinary_confirmed"]]
+            current_picks[h]={x["stock_code"]:x for x in candidates}
+          cross=[]
+          for code in sorted(set().union(*(set(v) for v in current_picks.values()))):
+            vals=[current_picks[h][code] for h in current_picks if code in current_picks[h]]
+            cross.append({
+              "stock_code":code,
+              "current_name":current.get(code,{}).get("name",""),
+              "current_market":current.get(code,{}).get("market",""),
+              "qualifying_horizons":[x["H"] for x in vals],
+              "qualifying_horizon_count":len(vals),
+              "min_historical_selections":min(x["historical_selections"] for x in vals),
+              "min_valid_realized_trades":min(x["valid_realized_trades"] for x in vals),
+              "worst_mean_net_return":min(x["mean_net_return"] for x in vals),
+              "worst_median_net_return":min(x["median_net_return"] for x in vals),
+              "worst_net_win_rate":min(x["net_win_rate"] for x in vals)
+            })
+          cross.sort(key=lambda x:(x["qualifying_horizon_count"],x["worst_net_win_rate"],x["worst_median_net_return"],x["worst_mean_net_return"]),reverse=True)
+
+          result={
+            "status":"READ_ONLY_DESCRIPTIVE_PER_STOCK_STABILITY_AUDIT",
+            "sources":{s["key"]:{"branch":s["branch"],"path":s["path"],"bytes":s["bytes"],"sha256":s["sha256"]} for s in SOURCES},
+            "v251_per_stock_rows":len(rows),
+            "current_confirmed_ordinary_stock_rows":len(ordinary_rows),
+            "current_confirmed_ordinary_unique_codes":len(current),
+            "v251_horizons":horizons,
+            "note":"Historical repeated-candidate observations are overlapping, selected samples; this is descriptive only, not independent forward validation or a recommendation. Today's universe is used only for ticker identity/intersection, never to truncate historical calculations.",
+            "horizon_threshold_counts":summaries,
+            "cross_horizon_current_ordinary_candidates":cross,
+            "top_descriptive_candidates":tops
+          }
+          out=Path("audit_readout/v251_stock_stability_20261110")
+          out.mkdir(parents=True,exist_ok=True)
+          (out/"v251_個股重複入選績效與今日普通股交集.json").write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding="utf-8")
+          with (out/"v251_個股正報酬候選描述排行.csv").open("w",encoding="utf-8-sig",newline="") as f:
+            fields=list(tops[0]) if tops else ["H"]
+            w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(tops)
+          with (out/"跨持有期穩定正報酬普通股候選.csv").open("w",encoding="utf-8-sig",newline="") as f:
+            fields=list(cross[0]) if cross else ["stock_code"]
+            w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(cross)
+          print("THRESHOLD_COUNTS="+json.dumps(summaries,ensure_ascii=False),flush=True)
+          print("CROSS_HORIZON="+json.dumps(cross[:50],ensure_ascii=False),flush=True)
+          print("V251_STOCK_STABILITY_AUDIT_COMPLETE",flush=True)
+          PY
+      - name: Preserve descriptive result on isolated branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audit_readout/v251_stock_stability_20261110/
+          git commit -m "Add read-only v2.51 per-stock repeat-pick stability audit"
+          git push origin "HEAD:refs/heads/audit/sso-historical-reader-retry-20261110_2358"
