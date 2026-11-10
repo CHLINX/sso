@@ -1,0 +1,44 @@
+{
+  "url": "https://isin.twse.com.tw/isin/e_single_main.jsp",
+  "http_status": 200,
+  "retrieved_at": "2026-11-10T23:29:58.491580+08:00",
+  "response_headers": {
+    "Cache-Control": "private",
+    "Content-Type": "text/html;charset=big5",
+    "Date": "Tue, 10 Nov 2026 15:08:11 GMT"
+  },
+  "raw_bytes": 38804760,
+  "raw_sha256": "3480b0c574b72243ace3fc53ee3d8e6e7f19dbc5d589f4c6e7ba21598dd6d2ef",
+  "archive": {
+    "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.4.1_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_230801/raw/official_isin/TWSE_ISIN_綜合證券名錄.html.gz",
+    "raw_bytes": 38804760,
+    "gzip_bytes": 1513412,
+    "raw_sha256": "3480b0c574b72243ace3fc53ee3d8e6e7f19dbc5d589f4c6e7ba21598dd6d2ef",
+    "gzip_sha256": "1bb3137051b292a212b58fb572d7439abfa64f265c12a5c2b130357918098da3"
+  },
+  "parse": {
+    "encoding": "cp950",
+    "table_count": 1,
+    "selected_table_rows": 76493,
+    "header_row_1based_in_table": 1,
+    "header_map": {
+      "isin": 1,
+      "code": 2,
+      "name": 3,
+      "market": 4,
+      "type": 5,
+      "cfi": 8,
+      "listed_date": 7,
+      "industry": 6,
+      "remarks": 9
+    },
+    "malformed_rows": 0,
+    "unique_security_records": 66774,
+    "html_title": ""
+  },
+  "market_counts": {
+    "TWSE": 42820,
+    "TPEX": 17065
+  },
+  "classification_source": "Official TWSE ISIN List of ISIN Code; Security Code / Market / Type of security / CFICode"
+}
