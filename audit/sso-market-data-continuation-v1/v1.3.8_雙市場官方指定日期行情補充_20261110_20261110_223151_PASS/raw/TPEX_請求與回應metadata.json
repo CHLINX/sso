@@ -1,0 +1,30 @@
+{
+  "market": "TPEX",
+  "base_url": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php",
+  "params": {
+    "l": "zh-tw",
+    "o": "json",
+    "d": "115/11/10",
+    "se": "EW",
+    "s": "0,asc,0"
+  },
+  "requested_trade_date": "2026-11-10",
+  "response_url": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&o=json&d=115%2F11%2F10&se=EW&s=0%2Casc%2C0",
+  "http_status": 200,
+  "retrieved_at": "2026-11-10T22:31:54.158258+08:00",
+  "response_headers": {
+    "Date": "Tue, 10 Nov 2026 14:31:56 GMT",
+    "Content-Type": "application/json;charset=UTF-8",
+    "Cache-Control": "max-age=600, private, must-revalidate, private"
+  },
+  "raw_bytes": 147006,
+  "raw_sha256": "e2898fbe52ce5e0e1965d469564a32afa6ff771722f4ee3777465b6835c5589b",
+  "error": null,
+  "raw_archive": {
+    "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS/raw/TPEX_指定日期原始回應_20261110.json.gz",
+    "bytes_original": 147006,
+    "bytes_gzip": 50515,
+    "sha256_original": "e2898fbe52ce5e0e1965d469564a32afa6ff771722f4ee3777465b6835c5589b",
+    "sha256_gzip": "17d9434cdf3337ebaf9a9c0459ad835babbb1074de7c016c8971bf65ca1a847b"
+  }
+}
