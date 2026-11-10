@@ -1,0 +1,182 @@
+{
+  "version": "v1.4.2",
+  "status": "PARTIAL_EXPECTED_TRADING_DAY_DATA_GAPS_OR_API_ERRORS",
+  "range_start": "2026-10-23",
+  "range_end": "2026-11-10",
+  "calendar_days_queried": 19,
+  "weekday_count": 13,
+  "official_weekday_market_closures": [
+    {
+      "date": "2026-10-26",
+      "markets": {
+        "TWSE": "臺灣光復暨金門古寧頭大捷紀念日補假；依 TWSE 115 年市場開休市日期",
+        "TPEX": "臺灣光復暨金門古寧頭大捷紀念日補假；依 TPEx 115 年市場開休市日期公告"
+      }
+    }
+  ],
+  "expected_trading_weekdays_for_verification": 12,
+  "market_date_requests": 38,
+  "passed_market_days": 22,
+  "passed_TWSE_days": 11,
+  "passed_TPEX_days": 11,
+  "normalized_quote_rows": 26477,
+  "weekday_missing_or_failed_market_days": [
+    {
+      "trade_date": "2026-10-23",
+      "market": "TWSE",
+      "status": "NO_DATA_RESPONSE",
+      "error": "很抱歉，沒有符合條件的資料!"
+    },
+    {
+      "trade_date": "2026-10-23",
+      "market": "TPEX",
+      "status": "DATA_VALIDATION_FAIL",
+      "error": "ValueError: TPEX 找不到含代號、收盤價及成交股數的個股行情表"
+    }
+  ],
+  "official_closure_api_results": [
+    {
+      "market": "TWSE",
+      "trade_date": "2026-10-26",
+      "status": "OFFICIAL_MARKET_CLOSED_CONFIRMED",
+      "passed": false,
+      "row_count": 0,
+      "unique_code_count": 0,
+      "duplicate_code_count": 0,
+      "missing_code_rows": 0,
+      "zero_volume_rows": 0,
+      "ohlc_missing": {},
+      "response_dates": [],
+      "table_title": null,
+      "error": "很抱歉，沒有符合條件的資料!",
+      "official_market_closure": "臺灣光復暨金門古寧頭大捷紀念日補假；依 TWSE 115 年市場開休市日期",
+      "is_weekday": true,
+      "calendar_interpretation": "依官方指定日期端點回應記錄"
+    },
+    {
+      "market": "TPEX",
+      "trade_date": "2026-10-26",
+      "status": "OFFICIAL_MARKET_CLOSED_CONFIRMED",
+      "passed": false,
+      "row_count": 0,
+      "unique_code_count": 0,
+      "duplicate_code_count": 0,
+      "missing_code_rows": 0,
+      "zero_volume_rows": 0,
+      "ohlc_missing": {},
+      "response_dates": [],
+      "table_title": null,
+      "error": "官方休市日；官方歷史端點未提供可解析行情表：ValueError: TPEX 找不到含代號、收盤價及成交股數的個股行情表",
+      "official_market_closure": "臺灣光復暨金門古寧頭大捷紀念日補假；依 TPEx 115 年市場開休市日期公告",
+      "is_weekday": true,
+      "calendar_interpretation": "依官方指定日期端點回應記錄"
+    }
+  ],
+  "official_closure_data_conflicts": [],
+  "weekend_data_days": [],
+  "weekend_no_data_days": [
+    {
+      "market": "TWSE",
+      "trade_date": "2026-10-24",
+      "status": "NO_DATA_RESPONSE",
+      "passed": false,
+      "row_count": 0,
+      "unique_code_count": 0,
+      "duplicate_code_count": 0,
+      "missing_code_rows": 0,
+      "zero_volume_rows": 0,
+      "ohlc_missing": {},
+      "response_dates": [],
+      "table_title": null,
+      "error": "很抱歉，沒有符合條件的資料!",
+      "is_weekday": false,
+      "calendar_interpretation": "週末無資料回應；若為補班交易日，官方 API 應回傳行情列"
+    },
+    {
+      "market": "TWSE",
+      "trade_date": "2026-10-25",
+      "status": "NO_DATA_RESPONSE",
+      "passed": false,
+      "row_count": 0,
+      "unique_code_count": 0,
+      "duplicate_code_count": 0,
+      "missing_code_rows": 0,
+      "zero_volume_rows": 0,
+      "ohlc_missing": {},
+      "response_dates": [],
+      "table_title": null,
+      "error": "很抱歉，沒有符合條件的資料!",
+      "is_weekday": false,
+      "calendar_interpretation": "週末無資料回應；若為補班交易日，官方 API 應回傳行情列"
+    },
+    {
+      "market": "TWSE",
+      "trade_date": "2026-10-31",
+      "status": "NO_DATA_RESPONSE",
+      "passed": false,
+      "row_count": 0,
+      "unique_code_count": 0,
+      "duplicate_code_count": 0,
+      "missing_code_rows": 0,
+      "zero_volume_rows": 0,
+      "ohlc_missing": {},
+      "response_dates": [],
+      "table_title": null,
+      "error": "很抱歉，沒有符合條件的資料!",
+      "is_weekday": false,
+      "calendar_interpretation": "週末無資料回應；若為補班交易日，官方 API 應回傳行情列"
+    },
+    {
+      "market": "TWSE",
+      "trade_date": "2026-11-01",
+      "status": "NO_DATA_RESPONSE",
+      "passed": false,
+      "row_count": 0,
+      "unique_code_count": 0,
+      "duplicate_code_count": 0,
+      "missing_code_rows": 0,
+      "zero_volume_rows": 0,
+      "ohlc_missing": {},
+      "response_dates": [],
+      "table_title": null,
+      "error": "很抱歉，沒有符合條件的資料!",
+      "is_weekday": false,
+      "calendar_interpretation": "週末無資料回應；若為補班交易日，官方 API 應回傳行情列"
+    },
+    {
+      "market": "TWSE",
+      "trade_date": "2026-11-07",
+      "status": "NO_DATA_RESPONSE",
+      "passed": false,
+      "row_count": 0,
+      "unique_code_count": 0,
+      "duplicate_code_count": 0,
+      "missing_code_rows": 0,
+      "zero_volume_rows": 0,
+      "ohlc_missing": {},
+      "response_dates": [],
+      "table_title": null,
+      "error": "很抱歉，沒有符合條件的資料!",
+      "is_weekday": false,
+      "calendar_interpretation": "週末無資料回應；若為補班交易日，官方 API 應回傳行情列"
+    },
+    {
+      "market": "TWSE",
+      "trade_date": "2026-11-08",
+      "status": "NO_DATA_RESPONSE",
+      "passed": false,
+      "row_count": 0,
+      "unique_code_count": 0,
+      "duplicate_code_count": 0,
+      "missing_code_rows": 0,
+      "zero_volume_rows": 0,
+      "ohlc_missing": {},
+      "response_dates": [],
+      "table_title": null,
+      "error": "很抱歉，沒有符合條件的資料!",
+      "is_weekday": false,
+      "calendar_interpretation": "週末無資料回應；若為補班交易日，官方 API 應回傳行情列"
+    }
+  ],
+  "note": "平日無資料回應一律列為未完成，沒有自行推定為休市；週末有行情列則保留作補班交易日資料。原始回應與異常列不刪除、不補值。"
+}
