@@ -1,0 +1,2128 @@
+# -*- coding: utf-8 -*-
+"""SSO Market Data Continuation v1.3.7
+五檔正成交量上游生成程式追溯；Drive 唯讀；不呼叫 TWSE/TPEX API；不修改 main。
+請在 Google Colab 單一儲存格完整執行本程式。
+"""
+from __future__ import annotations
+
+import os
+import re
+import csv
+import json
+import gzip
+import io
+import hashlib
+import zipfile
+import traceback
+from pathlib import Path
+from datetime import datetime
+from urllib.parse import quote
+
+VERSION = "v1.3.7"
+
+PROJECT_ROOT = Path("/content/drive/MyDrive/看股最速適")
+V123_DIR = (
+    PROJECT_ROOT
+    / "SSO_Market_Data_Continuation_TWSE_TPEX_v1"
+    / "v1.2.3_稽核結論校正與證據去循環_20261109_200337"
+)
+
+TARGET_NAMES = [
+    "12筆OHLCV異常_校正後分類.csv",
+    "16檔行情缺漏_校正後逐檔結果.csv",
+]
+
+TARGETS = {
+    "3085": 919,
+    "4305": 1,
+    "4406": 31,
+    "4530": 106,
+    "6512": 859,
+}
+
+TARGET_DATE = "2026-11-09"
+REPO = "CHLINX/sso"
+
+EXPECTED_MAIN_SHA = "aaabc2433fb5df2bb68af06461178305d6bd30d1"
+
+PRIOR_BRANCHES = [
+    "audit/sso-market-data-continuation-v1-v1335-target-csv-lineage-20261110_134614",
+    "audit/sso-market-data-continuation-v1-v1336-target-csv-lineage-20261110_135515",
+]
+
+
+# ============================================================
+# 基礎工具
+# ============================================================
+
+def log(message):
+    print(
+        f"[{datetime.now().strftime('%H:%M:%S')}] {message}",
+        flush=True
+    )
+
+
+def sha256_file(path):
+    h = hashlib.sha256()
+
+    with open(path, "rb") as f:
+        for block in iter(
+            lambda: f.read(1024 * 1024),
+            b""
+        ):
+            h.update(block)
+
+    return h.hexdigest()
+
+
+def sha256_bytes(data):
+    return hashlib.sha256(data).hexdigest()
+
+
+def decode_bytes(data):
+    for encoding in (
+        "utf-8-sig",
+        "utf-8",
+        "cp950",
+        "big5",
+        "latin-1",
+    ):
+        try:
+            return data.decode(encoding)
+        except Exception:
+            pass
+
+    return data.decode(
+        "utf-8",
+        errors="replace"
+    )
+
+
+def relpath(path, root=PROJECT_ROOT):
+    try:
+        return str(Path(path).relative_to(root))
+    except Exception:
+        return str(path)
+
+
+def get_github_token():
+    token = (
+        os.environ.get("GITHUB_TOKEN")
+        or os.environ.get("GH_TOKEN")
+    )
+
+    if token:
+        return token
+
+    try:
+        from google.colab import userdata
+        token = userdata.get("GITHUB_TOKEN")
+    except Exception:
+        token = None
+
+    return token
+
+
+def github_request(method, url, token, **kwargs):
+    import requests
+
+    headers = kwargs.pop("headers", {})
+
+    headers.update({
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    })
+
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+
+    headers.setdefault(
+        "User-Agent",
+        "SSO-v1.3.7-lineage-audit"
+    )
+
+    response = requests.request(
+        method,
+        url,
+        headers=headers,
+        timeout=90,
+        **kwargs
+    )
+
+    if response.status_code >= 400:
+        raise RuntimeError(
+            f"GitHub {method} {url} "
+            f"HTTP {response.status_code}: "
+            f"{response.text[:1200]}"
+        )
+
+    return response
+
+
+def mount_drive():
+    if not Path("/content/drive/MyDrive").exists():
+        try:
+            from google.colab import drive
+            drive.mount("/content/drive")
+        except Exception as exc:
+            raise RuntimeError(
+                f"無法掛載 Google Drive：{exc}"
+            )
+
+    if not PROJECT_ROOT.exists():
+        raise FileNotFoundError(
+            f"找不到專案根目錄：{PROJECT_ROOT}"
+        )
+
+    if not V123_DIR.exists():
+        raise FileNotFoundError(
+            f"找不到 v1.2.3 來源資料夾：{V123_DIR}"
+        )
+
+
+# ============================================================
+# 檔案讀取工具
+# ============================================================
+
+TEXT_EXTS = {
+    ".txt", ".md", ".py", ".ipynb",
+    ".json", ".jsonl", ".csv", ".tsv",
+    ".log", ".yaml", ".yml", ".xml",
+    ".html", ".htm", ".sql", ".gs",
+    ".r", ".toml", ".ini",
+}
+
+CODE_EXTS = {
+    ".py", ".ipynb", ".gs", ".r", ".sql"
+}
+
+SKIP_DIR_NAMES = {
+    ".git",
+    ".ipynb_checkpoints",
+    "node_modules",
+    "__pycache__",
+}
+
+
+def walk_files(root, limit=60000):
+    results = []
+
+    for base, dirs, files in os.walk(root):
+        dirs[:] = [
+            d for d in dirs
+            if d not in SKIP_DIR_NAMES
+            and not d.startswith(".")
+        ]
+
+        for name in files:
+            path = Path(base) / name
+
+            try:
+                if path.is_symlink():
+                    continue
+
+                stat = path.stat()
+
+                results.append({
+                    "path": path,
+                    "size": stat.st_size,
+                    "mtime": stat.st_mtime,
+                })
+
+            except Exception:
+                pass
+
+            if len(results) >= limit:
+                return results
+
+    return results
+
+
+def read_text_file(path, max_bytes=15 * 1024 * 1024):
+    path = Path(path)
+
+    try:
+        if path.stat().st_size > max_bytes:
+            return None
+
+        raw = path.read_bytes()
+
+        if path.name.lower().endswith(".gz"):
+            raw = gzip.decompress(raw)
+
+        return decode_bytes(raw)
+
+    except Exception:
+        return None
+
+
+def read_zip_member(zip_file, member_name, max_bytes=15 * 1024 * 1024):
+    try:
+        info = zip_file.getinfo(member_name)
+
+        if info.file_size > max_bytes:
+            return None
+
+        return decode_bytes(
+            zip_file.read(member_name)
+        )
+
+    except Exception:
+        return None
+
+
+def read_xlsx_rows(path):
+    try:
+        import openpyxl
+
+        workbook = openpyxl.load_workbook(
+            path,
+            read_only=True,
+            data_only=True
+        )
+
+        results = []
+
+        for worksheet in workbook.worksheets:
+            iterator = worksheet.iter_rows(
+                values_only=True
+            )
+
+            first_row = next(iterator, None)
+
+            if not first_row:
+                continue
+
+            headers = [
+                str(value).strip()
+                if value is not None
+                else f"欄{i + 1}"
+                for i, value in enumerate(first_row)
+            ]
+
+            for row_number, values in enumerate(
+                iterator,
+                start=2
+            ):
+                row = {
+                    headers[i]: (
+                        values[i]
+                        if i < len(values)
+                        else None
+                    )
+                    for i in range(len(headers))
+                }
+
+                results.append((
+                    worksheet.title,
+                    row_number,
+                    row
+                ))
+
+        workbook.close()
+
+        return results
+
+    except Exception:
+        return []
+
+
+def parse_csv_text(text):
+    if text is None:
+        return [], []
+
+    try:
+        sample = text[:8192]
+
+        try:
+            dialect = csv.Sniffer().sniff(
+                sample,
+                delimiters=",\t;|"
+            )
+        except Exception:
+            dialect = csv.excel
+
+        rows = list(
+            csv.DictReader(
+                io.StringIO(text),
+                dialect=dialect
+            )
+        )
+
+        headers = (
+            list(rows[0].keys())
+            if rows
+            else []
+        )
+
+        return headers, rows
+
+    except Exception:
+        return [], []
+
+
+def has_target_date(row):
+    for key, value in row.items():
+        if re.search(
+            r"日期|date|交易日",
+            str(key),
+            re.I
+        ):
+            text = str(value).strip()
+            digits = re.sub(r"\D", "", text)
+
+            # 同時辨識西元及民國日期
+            if (
+                "20261109" in digits
+                or "1151109" in digits
+            ):
+                return True
+
+    return False
+
+
+def norm_ticker(value):
+    text = str(value or "").strip()
+
+    match = re.fullmatch(
+        r"(?:股票代號[:：]?\s*)?(\d{4,6})(?:\.0)?",
+        text
+    )
+
+    return match.group(1) if match else None
+
+
+def find_ticker_in_row(row):
+    # 優先從股票代號欄位辨識
+    for key, value in row.items():
+        if any(
+            word in str(key).lower()
+            for word in (
+                "代號",
+                "證券代號",
+                "stock",
+                "ticker",
+                "symbol",
+                "code",
+            )
+        ):
+            ticker = norm_ticker(value)
+
+            if ticker in TARGETS:
+                return ticker
+
+    # 再檢查其他欄位
+    for value in row.values():
+        ticker = norm_ticker(value)
+
+        if ticker in TARGETS:
+            return ticker
+
+    return None
+
+
+def json_walk(obj, prefix="$"):
+    if isinstance(obj, dict):
+        yield prefix, obj
+
+        for key, value in obj.items():
+            yield from json_walk(
+                value,
+                f"{prefix}.{key}"
+            )
+
+    elif isinstance(obj, list):
+        for index, value in enumerate(
+            obj[:200000]
+        ):
+            yield from json_walk(
+                value,
+                f"{prefix}[{index}]"
+            )
+
+
+# ============================================================
+# 上游檔案、SHA256、程式參照擷取
+# ============================================================
+
+def extract_refs_from_text(text, origin):
+    refs = []
+
+    if not text:
+        return refs
+
+    hashes = set(
+        re.findall(
+            r"(?i)\b[a-f0-9]{64}\b",
+            text
+        )
+    )
+
+    for sha in hashes:
+        refs.append({
+            "kind": "sha256",
+            "value": sha.lower(),
+            "origin": origin,
+        })
+
+    patterns = re.findall(
+        r"""[^\r\n\t"'<>|;，；]{1,260}?"""
+        r"""\.(?:csv|tsv|xlsx|xlsm|json|jsonl|json\.gz|zip|py|ipynb|gs|sql|txt|md|parquet)""",
+        text,
+        re.I
+    )
+
+    for value in patterns:
+        value = value.strip(" ,()[]{}:：")
+
+        if value and len(value) < 300:
+            refs.append({
+                "kind": "filename",
+                "value": value,
+                "origin": origin,
+            })
+
+    return refs
+
+
+def extract_code_refs(text, origin):
+    results = []
+
+    if not text:
+        return results
+
+    patterns = re.findall(
+        r"""[^\r\n\t"'<>|;，；]{1,260}?"""
+        r"""\.(?:py|ipynb|gs|sql)""",
+        text,
+        re.I
+    )
+
+    for value in patterns:
+        value = value.strip(" ,()[]{}:：")
+
+        if value:
+            results.append({
+                "kind": "program",
+                "value": value,
+                "origin": origin,
+            })
+
+    return results
+
+
+# ============================================================
+# 讀取 v1.3.5 / v1.3.6 前次 GitHub 稽核包
+# ============================================================
+
+def fetch_previous_audit_zips(token, workspace):
+    import requests
+
+    downloads = []
+    errors = []
+
+    for branch in PRIOR_BRANCHES:
+        try:
+            branch_api = (
+                f"https://api.github.com/repos/{REPO}"
+                f"/branches/{quote(branch, safe='')}"
+            )
+
+            branch_data = github_request(
+                "GET",
+                branch_api,
+                token
+            ).json()
+
+            tree_sha = (
+                branch_data["commit"]["commit"]["tree"]["sha"]
+            )
+
+            tree_api = (
+                f"https://api.github.com/repos/{REPO}"
+                f"/git/trees/{tree_sha}?recursive=1"
+            )
+
+            tree_data = github_request(
+                "GET",
+                tree_api,
+                token
+            ).json()
+
+            tree_items = tree_data.get("tree", [])
+
+            zip_paths = [
+                item["path"]
+                for item in tree_items
+                if (
+                    item.get("type") == "blob"
+                    and item["path"].lower().endswith(".zip")
+                    and (
+                        "v1.3.5" in item["path"].lower()
+                        or "v1335" in item["path"].lower()
+                        or "v1.3.6" in item["path"].lower()
+                        or "v1336" in item["path"].lower()
+                    )
+                )
+            ]
+
+            if not zip_paths:
+                errors.append(
+                    f"{branch}: 找不到 v1.3.5/v1.3.6 ZIP"
+                )
+                continue
+
+            zip_paths.sort(
+                key=lambda value: (len(value), value)
+            )
+
+            remote_path = zip_paths[0]
+
+            raw_url = (
+                f"https://raw.githubusercontent.com/{REPO}/"
+                f"{branch}/{quote(remote_path, safe='/')}"
+            )
+
+            response = requests.get(
+                raw_url,
+                headers={"User-Agent": "SSO-v1.3.7"},
+                timeout=120
+            )
+
+            response.raise_for_status()
+
+            local_path = (
+                workspace
+                / (branch.split("-v")[-1] + ".zip")
+            )
+
+            local_path.write_bytes(response.content)
+
+            downloads.append({
+                "branch": branch,
+                "path": remote_path,
+                "local": local_path,
+                "sha256": sha256_bytes(response.content),
+                "bytes": len(response.content),
+            })
+
+            log(
+                f"[PASS] 取得前次稽核包：{branch} / "
+                f"{remote_path} "
+                f"({len(response.content):,} bytes)"
+            )
+
+        except Exception as exc:
+            errors.append(
+                f"{branch}: {type(exc).__name__}: {exc}"
+            )
+
+            log(
+                f"[WARN] 前次稽核包讀取失敗："
+                f"{branch} / {exc}"
+            )
+
+    return downloads, errors
+
+
+# ============================================================
+# 主分析流程
+# ============================================================
+
+def main():
+    stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+    work = (
+        Path("/content")
+        / f"sso_v1337_五檔正成交量上游生成追溯_{stamp}"
+    )
+
+    work.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    report_dir = work / "reports"
+    report_dir.mkdir()
+
+    log("=" * 100)
+    log(
+        f"啟動 {VERSION}｜"
+        "五檔正成交量上游生成程式追溯"
+    )
+
+    log(
+        "Drive 唯讀；不呼叫 TWSE/TPEX API；"
+        "不訓練、不回測、不選股、不更新正式資料庫；"
+        "不刪除或移動來源。"
+    )
+
+    mount_drive()
+
+    token = get_github_token()
+
+    log(f"[INPUT] v1.2.3={V123_DIR}")
+
+    # --------------------------------------------------------
+    # 核對 GitHub main SHA
+    # --------------------------------------------------------
+
+    main_sha_before = None
+    github_upload_allowed = False
+    gh_error = None
+
+    if token:
+        try:
+            ref = github_request(
+                "GET",
+                f"https://api.github.com/repos/{REPO}/git/ref/heads/main",
+                token
+            ).json()
+
+            main_sha_before = ref["object"]["sha"]
+
+            github_upload_allowed = (
+                main_sha_before == EXPECTED_MAIN_SHA
+            )
+
+            log(
+                f"[GITHUB] main SHA before={main_sha_before}"
+            )
+
+            if not github_upload_allowed:
+                gh_error = (
+                    "main SHA 與預期基準不同："
+                    f"{main_sha_before} != {EXPECTED_MAIN_SHA}；"
+                    "為避免接錯基線，本次跳過上傳。"
+                )
+
+        except Exception as exc:
+            gh_error = f"無法核對 main SHA：{exc}"
+
+    else:
+        gh_error = (
+            "未取得 GITHUB_TOKEN；"
+            "本次只產生本機報告，不上傳。"
+        )
+
+    # --------------------------------------------------------
+    # 取得 v1.3.5 / v1.3.6 前次稽核 ZIP
+    # --------------------------------------------------------
+
+    if token:
+        prev_zips, prev_errors = fetch_previous_audit_zips(
+            token,
+            work
+        )
+    else:
+        prev_zips = []
+        prev_errors = [
+            "無 GITHUB_TOKEN，未讀取 GitHub 前次稽核包"
+        ]
+
+    # --------------------------------------------------------
+    # 盤點 v1.2.3 資料夾
+    # --------------------------------------------------------
+
+    v123_files = walk_files(
+        V123_DIR,
+        limit=10000
+    )
+
+    log(
+        f"[INPUT] v1.2.3 檔案數={len(v123_files)}"
+    )
+
+    inventory = []
+    refs = []
+    program_refs = []
+    target_rows = []
+    secondary_rows = []
+    parse_errors = []
+    target_hits_by_file = {}
+
+    for item in v123_files:
+        path = item["path"]
+        ext = path.suffix.lower()
+        name = path.name.lower()
+
+        inventory.append({
+            "path": str(path),
+            "relative_path": relpath(path),
+            "size": item["size"],
+            "sha256": (
+                sha256_file(path)
+                if item["size"] <= 100 * 1024 * 1024
+                else "SKIPPED_GT_100MB"
+            ),
+        })
+
+        if (
+            ext not in TEXT_EXTS
+            and not name.endswith(".json.gz")
+        ):
+            continue
+
+        text = read_text_file(path)
+
+        if text is None:
+            continue
+
+        refs.extend(
+            extract_refs_from_text(
+                text,
+                str(path)
+            )
+        )
+
+        program_refs.extend(
+            extract_code_refs(
+                text,
+                str(path)
+            )
+        )
+
+        if ext in (".csv", ".tsv"):
+            headers, rows = parse_csv_text(text)
+
+            for line_number, row in enumerate(
+                rows,
+                start=2
+            ):
+                ticker = find_ticker_in_row(row)
+
+                if ticker:
+                    record = {
+                        "source_path": str(path),
+                        "source_relative_path": relpath(path),
+                        "source_file_sha256": sha256_file(path),
+                        "csv_line": line_number,
+                        "ticker": ticker,
+                        "expected_old_positive_volume": TARGETS[ticker],
+                        "row": row,
+                    }
+
+                    target_hits_by_file.setdefault(
+                        str(path),
+                        []
+                    ).append(record)
+
+                    if path.name == TARGET_NAMES[0]:
+                        target_rows.append(record)
+
+                    if path.name == TARGET_NAMES[1]:
+                        secondary_rows.append(record)
+
+        elif (
+            ext in (".json", ".jsonl")
+            or name.endswith(".json.gz")
+        ):
+            try:
+                obj = json.loads(text)
+
+                for json_path, node in json_walk(obj):
+                    if isinstance(node, dict):
+                        ticker = find_ticker_in_row(node)
+
+                        if ticker:
+                            target_hits_by_file.setdefault(
+                                str(path),
+                                []
+                            ).append({
+                                "source_path": str(path),
+                                "source_relative_path": relpath(path),
+                                "json_path": json_path,
+                                "ticker": ticker,
+                                "expected_old_positive_volume": TARGETS[ticker],
+                                "row": node,
+                            })
+
+            except Exception as exc:
+                parse_errors.append({
+                    "file": str(path),
+                    "error": str(exc)[:500],
+                })
+
+    # 檢查兩份指定 CSV 是否唯一定址
+    named_files = {
+        name: [
+            item
+            for item in v123_files
+            if item["path"].name == name
+        ]
+        for name in TARGET_NAMES
+    }
+
+    for name, items in named_files.items():
+        log(f"[CHECK] {name}：{len(items)} 個")
+
+    # --------------------------------------------------------
+    # 解析前次 v1.3.5 / v1.3.6 ZIP 內的引用
+    # --------------------------------------------------------
+
+    archive_texts = []
+    previous_members = []
+    prior_archive_rows = []
+
+    for zip_info in prev_zips:
+        try:
+            with zipfile.ZipFile(zip_info["local"]) as zf:
+                bad_member = zf.testzip()
+
+                if bad_member:
+                    raise RuntimeError(
+                        f"ZIP CRC error: {bad_member}"
+                    )
+
+                for info in zf.infolist():
+                    previous_members.append({
+                        "archive": str(zip_info["local"]),
+                        "member": info.filename,
+                        "size": info.file_size,
+                    })
+
+                    low = info.filename.lower()
+
+                    if (
+                        info.is_dir()
+                        or info.file_size > 25 * 1024 * 1024
+                    ):
+                        continue
+
+                    if low.endswith((
+                        ".csv",
+                        ".tsv",
+                        ".txt",
+                        ".md",
+                        ".json",
+                        ".jsonl",
+                        ".py",
+                        ".ipynb",
+                        ".log",
+                    )):
+                        text = read_zip_member(
+                            zf,
+                            info.filename
+                        )
+
+                        if not text:
+                            continue
+
+                        origin = (
+                            f"{zip_info['branch']}::"
+                            f"{info.filename}"
+                        )
+
+                        archive_texts.append(
+                            (origin, text)
+                        )
+
+                        refs.extend(
+                            extract_refs_from_text(
+                                text,
+                                origin
+                            )
+                        )
+
+                        program_refs.extend(
+                            extract_code_refs(
+                                text,
+                                origin
+                            )
+                        )
+
+                        if low.endswith((".csv", ".tsv")):
+                            _, rows = parse_csv_text(text)
+
+                            for line_number, row in enumerate(
+                                rows,
+                                start=2
+                            ):
+                                ticker = find_ticker_in_row(row)
+
+                                if ticker:
+                                    prior_archive_rows.append({
+                                        "source_path": origin,
+                                        "source_relative_path": info.filename,
+                                        "csv_line": line_number,
+                                        "ticker": ticker,
+                                        "expected_old_positive_volume": TARGETS[ticker],
+                                        "row": row,
+                                    })
+
+        except Exception as exc:
+            parse_errors.append({
+                "file": str(zip_info["local"]),
+                "error": f"ZIP: {exc}",
+            })
+
+    # --------------------------------------------------------
+    # 整理檔名、SHA256、程式引用
+    # --------------------------------------------------------
+
+    def uniq_refs(items):
+        seen = set()
+        output = []
+
+        for item in items:
+            key = (
+                item["kind"],
+                item["value"].strip(),
+                item["origin"],
+            )
+
+            if key not in seen:
+                seen.add(key)
+                output.append(item)
+
+        return output
+
+    refs = uniq_refs(refs)
+    program_refs = uniq_refs(program_refs)
+
+    code_names = {
+        Path(
+            item["value"].replace("\\", "/")
+        ).name.lower()
+        for item in program_refs
+    }
+
+    referenced_names = {
+        Path(
+            item["value"].replace("\\", "/")
+        ).name.lower()
+        for item in refs
+        if item["kind"] == "filename"
+    }
+
+    referenced_names |= code_names
+
+    referenced_shas = {
+        item["value"].lower()
+        for item in refs
+        if item["kind"] == "sha256"
+    }
+
+    log(
+        f"[REF] filename refs={len(referenced_names)}；"
+        f"SHA256 refs={len(referenced_shas)}；"
+        f"program refs={len(code_names)}"
+    )
+
+    # --------------------------------------------------------
+    # 專案範圍內定位引用檔案
+    # --------------------------------------------------------
+
+    project_files = walk_files(
+        PROJECT_ROOT,
+        limit=60000
+    )
+
+    basename_index = {}
+
+    for item in project_files:
+        basename_index.setdefault(
+            item["path"].name.lower(),
+            []
+        ).append(item)
+
+    candidate_files = {}
+
+    for basename in referenced_names:
+        for item in basename_index.get(basename, []):
+            candidate_files[str(item["path"])] = item
+
+    # v1.2.3 目錄內檔案也納入候選盤點
+    for item in v123_files:
+        candidate_files[str(item["path"])] = item
+
+    # 只對候選檔案核對引用 SHA，不對整個 Drive 做全檔雜湊
+    sha_match = []
+
+    for item in list(candidate_files.values()):
+        if item["size"] <= 100 * 1024 * 1024:
+            try:
+                file_sha = sha256_file(item["path"])
+
+                if file_sha in referenced_shas:
+                    sha_match.append({
+                        "path": str(item["path"]),
+                        "sha256": file_sha,
+                        "size": item["size"],
+                    })
+
+            except Exception:
+                pass
+
+    # --------------------------------------------------------
+    # 搜尋可能的生成程式
+    # --------------------------------------------------------
+
+    code_hits = []
+    source_value_hits = []
+    candidate_programs = []
+    candidate_sources = []
+
+    scan_code_files = {}
+
+    # 先找被檔名直接引用的程式
+    for item in project_files:
+        path = item["path"]
+
+        if (
+            path.suffix.lower() in CODE_EXTS
+            and (
+                path.name.lower() in referenced_names
+                or str(path) in candidate_files
+            )
+        ):
+            scan_code_files[str(path)] = item
+
+    # 再搜尋其他程式中的五檔代號、數值及目標 CSV 名稱
+    code_scan_count = 0
+    code_scan_bytes = 0
+
+    for item in project_files:
+        path = item["path"]
+
+        if (
+            path.suffix.lower() not in CODE_EXTS
+            or str(path) in scan_code_files
+        ):
+            continue
+
+        if (
+            item["size"] > 8 * 1024 * 1024
+            or code_scan_count >= 12000
+            or code_scan_bytes > 700 * 1024 * 1024
+        ):
+            continue
+
+        text = read_text_file(
+            path,
+            max_bytes=8 * 1024 * 1024
+        )
+
+        if text is None:
+            continue
+
+        code_scan_count += 1
+        code_scan_bytes += item["size"]
+
+        matched_names = [
+            name
+            for name in TARGET_NAMES
+            if name in text
+        ]
+
+        ticker_matched = [
+            ticker
+            for ticker in TARGETS
+            if ticker in text
+        ]
+
+        value_matched = [
+            str(value)
+            for value in TARGETS.values()
+            if re.search(
+                rf"(?<!\d){value}(?!\d)",
+                text
+            )
+        ]
+
+        if (
+            matched_names
+            or len(ticker_matched) >= 2
+            or (
+                len(value_matched) >= 3
+                and len(ticker_matched) >= 1
+            )
+        ):
+            scan_code_files[str(path)] = item
+
+    # 擷取命中程式上下文
+    for path_text, item in scan_code_files.items():
+        path = Path(path_text)
+
+        text = read_text_file(
+            path,
+            max_bytes=15 * 1024 * 1024
+        )
+
+        if text is None:
+            continue
+
+        lines = text.splitlines()
+
+        needles = (
+            TARGET_NAMES
+            + list(TARGETS.keys())
+            + [
+                str(value)
+                for value in TARGETS.values()
+            ]
+        )
+
+        line_ids = [
+            index
+            for index, line in enumerate(lines)
+            if any(needle in line for needle in needles)
+        ]
+
+        keep = set()
+
+        for index in line_ids:
+            for nearby in range(
+                max(0, index - 3),
+                min(len(lines), index + 4)
+            ):
+                keep.add(nearby)
+
+        context_lines = [
+            f"{index + 1}: {lines[index][:1200]}"
+            for index in sorted(keep)
+        ]
+
+        if context_lines:
+            code_hits.append({
+                "path": path_text,
+                "relative_path": relpath(path),
+                "sha256": (
+                    sha256_file(path)
+                    if path.stat().st_size <= 100 * 1024 * 1024
+                    else ""
+                ),
+                "hit_line_count": len(line_ids),
+                "context": "\n".join(context_lines[:1200]),
+            })
+
+        if path.suffix.lower() in CODE_EXTS:
+            candidate_programs.append({
+                "path": path_text,
+                "relative_path": relpath(path),
+                "size": item["size"],
+                "sha256": (
+                    sha256_file(path)
+                    if item["size"] <= 100 * 1024 * 1024
+                    else ""
+                ),
+                "referenced_by_name": (
+                    path.name.lower() in code_names
+                    or path.name.lower() in referenced_names
+                ),
+                "keyword_hits": len(line_ids),
+            })
+
+    # --------------------------------------------------------
+    # 追查候選來源資料列
+    # 排除已知衍生報表，避免把報表自身當成上游證據
+    # --------------------------------------------------------
+
+    data_paths = {}
+
+    for path_text, item in candidate_files.items():
+        path = Path(path_text)
+
+        if path.name in TARGET_NAMES:
+            continue
+
+        # 僅採用前次稽核明確引用的檔案
+        if path.name.lower() not in referenced_names:
+            continue
+
+        if (
+            path.suffix.lower() in (
+                ".csv",
+                ".tsv",
+                ".xlsx",
+                ".xlsm",
+            )
+            or path.name.lower().endswith(".json.gz")
+            or path.suffix.lower() in (
+                ".json",
+                ".jsonl",
+            )
+        ):
+            data_paths[path_text] = item
+
+    for path_text, item in data_paths.items():
+        path = Path(path_text)
+
+        if path.suffix.lower() in (".xlsx", ".xlsm"):
+            for sheet, line_number, row in read_xlsx_rows(path):
+                ticker = find_ticker_in_row(row)
+
+                if not ticker:
+                    continue
+
+                for key, value in row.items():
+                    if not re.search(
+                        r"成交股數|成交量|量|volume|trade.?volume",
+                        str(key),
+                        re.I
+                    ):
+                        continue
+
+                    try:
+                        number = float(
+                            str(value).replace(",", "").strip()
+                        )
+                    except Exception:
+                        continue
+
+                    if number == TARGETS[ticker]:
+                        source_value_hits.append({
+                            "file": path_text,
+                            "sheet": sheet,
+                            "line": line_number,
+                            "ticker": ticker,
+                            "target_date_match": has_target_date(row),
+                            "matched_volume_column": key,
+                            "matched_volume": value,
+                            "date_fields": json.dumps(
+                                {
+                                    k: v
+                                    for k, v in row.items()
+                                    if re.search(
+                                        r"日期|date|交易日",
+                                        str(k),
+                                        re.I
+                                    )
+                                },
+                                ensure_ascii=False,
+                                default=str
+                            ),
+                            "row": json.dumps(
+                                row,
+                                ensure_ascii=False,
+                                default=str
+                            ),
+                        })
+
+            continue
+
+        text = read_text_file(
+            path,
+            max_bytes=30 * 1024 * 1024
+        )
+
+        if text is None:
+            continue
+
+        if path.suffix.lower() in (".csv", ".tsv"):
+            _, rows = parse_csv_text(text)
+
+            for line_number, row in enumerate(
+                rows,
+                start=2
+            ):
+                ticker = find_ticker_in_row(row)
+
+                if not ticker:
+                    continue
+
+                volume_values = []
+
+                for key, value in row.items():
+                    if re.search(
+                        r"成交股數|成交量|量|volume|trade.?volume",
+                        str(key),
+                        re.I
+                    ):
+                        volume_values.append((key, str(value)))
+
+                for key, value in volume_values:
+                    try:
+                        number = float(
+                            value.replace(",", "").strip()
+                        )
+                    except Exception:
+                        continue
+
+                    if number == TARGETS[ticker]:
+                        source_value_hits.append({
+                            "file": path_text,
+                            "line": line_number,
+                            "ticker": ticker,
+                            "target_date_match": has_target_date(row),
+                            "matched_volume_column": key,
+                            "matched_volume": value,
+                            "date_fields": json.dumps(
+                                {
+                                    k: v
+                                    for k, v in row.items()
+                                    if re.search(
+                                        r"日期|date|交易日",
+                                        str(k),
+                                        re.I
+                                    )
+                                },
+                                ensure_ascii=False
+                            ),
+                            "row": json.dumps(
+                                row,
+                                ensure_ascii=False
+                            ),
+                        })
+
+        elif (
+            path.suffix.lower() in (".json", ".jsonl")
+            or path.name.lower().endswith(".json.gz")
+        ):
+            try:
+                obj = json.loads(text)
+
+                for json_path, node in json_walk(obj):
+                    if not isinstance(node, dict):
+                        continue
+
+                    ticker = find_ticker_in_row(node)
+
+                    if not ticker:
+                        continue
+
+                    for key, value in node.items():
+                        if not re.search(
+                            r"成交股數|成交量|量|volume|trade.?volume",
+                            str(key),
+                            re.I
+                        ):
+                            continue
+
+                        try:
+                            number = float(
+                                str(value).replace(",", "").strip()
+                            )
+                        except Exception:
+                            continue
+
+                        if number == TARGETS[ticker]:
+                            source_value_hits.append({
+                                "file": path_text,
+                                "json_path": json_path,
+                                "ticker": ticker,
+                                "target_date_match": has_target_date(node),
+                                "matched_volume_column": key,
+                                "matched_volume": value,
+                                "row": json.dumps(
+                                    node,
+                                    ensure_ascii=False
+                                ),
+                            })
+
+            except Exception:
+                pass
+
+    # --------------------------------------------------------
+    # 報告輸出工具
+    # --------------------------------------------------------
+
+    def flatten_row(record):
+        row = dict(record.get("row") or {})
+
+        return {
+            "來源": record.get("source_path"),
+            "相對路徑": record.get("source_relative_path"),
+            "列號": record.get(
+                "csv_line",
+                record.get("json_path", "")
+            ),
+            "股票代號": record.get("ticker"),
+            "舊正成交量": record.get(
+                "expected_old_positive_volume"
+            ),
+            "完整原始列JSON": json.dumps(
+                row,
+                ensure_ascii=False,
+                default=str
+            ),
+        }
+
+    def write_csv(path, rows):
+        rows = list(rows)
+
+        if not rows:
+            path.write_text(
+                "無資料\n",
+                encoding="utf-8-sig"
+            )
+            return
+
+        fields = []
+
+        for row in rows:
+            for key in row:
+                if key not in fields:
+                    fields.append(key)
+
+        with open(
+            path,
+            "w",
+            encoding="utf-8-sig",
+            newline=""
+        ) as f:
+            writer = csv.DictWriter(
+                f,
+                fieldnames=fields,
+                extrasaction="ignore"
+            )
+
+            writer.writeheader()
+            writer.writerows(rows)
+
+    write_csv(
+        report_dir / "01_v123_五檔完整原始列.csv",
+        [flatten_row(row) for row in target_rows]
+    )
+
+    write_csv(
+        report_dir / "02_v123_次級報表五檔完整原始列.csv",
+        [flatten_row(row) for row in secondary_rows]
+    )
+
+    write_csv(
+        report_dir / "13_前次稽核ZIP中五檔引用列.csv",
+        [flatten_row(row) for row in prior_archive_rows]
+    )
+
+    write_csv(
+        report_dir / "03_檔案盤點.csv",
+        inventory
+    )
+
+    write_csv(
+        report_dir / "04_引用檔名與SHA256.csv",
+        refs
+    )
+
+    write_csv(
+        report_dir / "05_候選生成程式.csv",
+        candidate_programs
+    )
+
+    write_csv(
+        report_dir / "06_SHA256命中檔案.csv",
+        sha_match
+    )
+
+    write_csv(
+        report_dir / "07_候選來源資料命中正成交量.csv",
+        source_value_hits
+    )
+
+    write_csv(
+        report_dir / "08_前次稽核ZIP成員.csv",
+        previous_members
+    )
+
+    write_csv(
+        report_dir / "09_解析錯誤.csv",
+        parse_errors
+    )
+
+    write_csv(
+        report_dir / "10_前次稽核包取得狀態.csv",
+        [
+            {
+                "status": item["branch"],
+                "path": item["path"],
+                "sha256": item["sha256"],
+                "bytes": item["bytes"],
+            }
+            for item in prev_zips
+        ] + [
+            {
+                "status": "ERROR",
+                "path": error,
+            }
+            for error in prev_errors
+        ]
+    )
+
+    with open(
+        report_dir / "11_候選程式碼命中上下文.txt",
+        "w",
+        encoding="utf-8"
+    ) as f:
+        for item in sorted(
+            code_hits,
+            key=lambda x: (
+                -x["hit_line_count"],
+                x["path"]
+            )
+        ):
+            f.write(
+                "\n"
+                + "=" * 120
+                + "\n"
+                + item["path"]
+                + "\nSHA256="
+                + item["sha256"]
+                + "\n"
+                + item["context"]
+                + "\n"
+            )
+
+    # --------------------------------------------------------
+    # 統計及結論
+    # --------------------------------------------------------
+
+    target_count = {
+        ticker: sum(
+            1
+            for row in target_rows
+            if row.get("ticker") == ticker
+        )
+        for ticker in TARGETS
+    }
+
+    secondary_count = {
+        ticker: sum(
+            1
+            for row in secondary_rows
+            if row.get("ticker") == ticker
+        )
+        for ticker in TARGETS
+    }
+
+    value_count = {
+        ticker: sum(
+            1
+            for row in source_value_hits
+            if row.get("ticker") == ticker
+        )
+        for ticker in TARGETS
+    }
+
+    date_value_count = {
+        ticker: sum(
+            1
+            for row in source_value_hits
+            if (
+                row.get("ticker") == ticker
+                and row.get("target_date_match") is True
+            )
+        )
+        for ticker in TARGETS
+    }
+
+    status = (
+        "UPSTREAM_SOURCE_AND_DATE_IDENTIFIED"
+        if all(
+            date_value_count[ticker] > 0
+            for ticker in TARGETS
+        )
+        else "UPSTREAM_GENERATOR_TRACE_INCOMPLETE"
+    )
+
+    summary = {
+        "version": VERSION,
+        "run_time_local": datetime.now().astimezone().isoformat(),
+        "target_date": TARGET_DATE,
+        "target_positive_values": TARGETS,
+        "v123_folder": str(V123_DIR),
+        "v123_file_count": len(v123_files),
+
+        "target_file_counts": {
+            name: len(named_files[name])
+            for name in TARGET_NAMES
+        },
+
+        "v123_target_csv_rows_by_ticker": target_count,
+        "v123_secondary_report_rows_by_ticker": secondary_count,
+
+        "prior_audit_archive_rows_by_ticker": {
+            ticker: sum(
+                1
+                for row in prior_archive_rows
+                if row.get("ticker") == ticker
+            )
+            for ticker in TARGETS
+        },
+
+        "matching_upstream_source_value_hits_by_ticker": value_count,
+
+        "matching_upstream_source_value_and_target_date_hits_by_ticker": (
+            date_value_count
+        ),
+
+        "candidate_program_reference_count": len(code_names),
+        "candidate_program_file_count": len(candidate_programs),
+
+        "source_value_hit_total": len(source_value_hits),
+
+        "sha256_reference_count": len(referenced_shas),
+        "sha256_match_count": len(sha_match),
+
+        "code_files_scanned": code_scan_count,
+        "code_scan_bytes": code_scan_bytes,
+
+        "parse_error_count": len(parse_errors),
+        "prior_zip_count": len(prev_zips),
+        "prior_zip_errors": prev_errors,
+
+        "status": status,
+
+        "interpretation": (
+            "只有在來源資料檔中找到同一股票、"
+            "同一成交量欄位及相同量值，才列為來源值命中；"
+            "候選生成程式或相同字串本身不足以證明資料生成鏈。"
+            "需再人工核對程式執行入口、輸入檔、"
+            "欄位映射、日期對齊及寫出步驟。"
+        ),
+
+        "limitations": [
+            "本次不呼叫 TWSE/TPEX API。",
+            "Google Drive 僅讀取；報告僅寫入 /content。",
+            "若原始來源檔未保留或候選引用無法解析，"
+            "報告會明確列為未完成，不推定正成交量正確。",
+        ],
+
+        "github_main_sha_before": main_sha_before,
+        "github_upload_allowed_initially": github_upload_allowed,
+        "github_precheck_error": gh_error,
+    }
+
+    (
+        report_dir / "12_稽核結論.json"
+    ).write_text(
+        json.dumps(
+            summary,
+            ensure_ascii=False,
+            indent=2
+        ),
+        encoding="utf-8"
+    )
+
+    # --------------------------------------------------------
+    # 保存本次 Colab 儲存格程式碼
+    # 使用 TXT，不另外產生獨立 .py 檔
+    # --------------------------------------------------------
+
+    script_text = ""
+
+    try:
+        script_path = Path(__file__)
+
+        if script_path.exists():
+            script_text = script_path.read_text(
+                encoding="utf-8"
+            )
+
+    except Exception:
+        pass
+
+    if not script_text:
+        try:
+            ip = get_ipython()
+            history = ip.history_manager.input_hist_raw
+
+            if history:
+                script_text = history[-1]
+
+        except Exception:
+            pass
+
+    script_out = (
+        work
+        / "SSO_v1337_五檔正成交量上游生成追溯_程式碼.txt"
+    )
+
+    if script_text:
+        script_out.write_text(
+            script_text,
+            encoding="utf-8"
+        )
+    else:
+        script_out.write_text(
+            "本次在 notebook 執行，無法從執行環境擷取"
+            "儲存格原始碼；請以對話中的完整程式碼為準。\n",
+            encoding="utf-8"
+        )
+
+    # --------------------------------------------------------
+    # README
+    # --------------------------------------------------------
+
+    readme = f"""# SSO Market Data Continuation {VERSION}｜五檔正成交量上游生成追溯
+
+執行時間：{datetime.now().astimezone().isoformat()}
+目標日期：{TARGET_DATE}
+目標股票：{', '.join(TARGETS)}
+
+## 本次範圍
+
+- 追查 v1.2.3 的五筆正成交量資料，以及其上游檔名、SHA256、欄位與產生程式。
+- 交叉檢視 v1.3.5 / v1.3.6 的既有稽核包；不重新解析官方行情 API。
+- Google Drive 僅讀取，報告只寫入 Colab `/content`。
+- 不呼叫 TWSE/TPEX API，不更新正式資料庫，不訓練、不回測、不選股、不修改 GitHub main。
+
+## 初步狀態
+
+`{status}`
+
+請先查看 `reports/12_稽核結論.json`，再依序查看 `01`、`02`、`04`、`05`、`07`、`11`。
+
+候選程式不等於已證實生成鏈；必須核對輸入檔、欄位映射、日期對齊及輸出步驟。
+"""
+
+    (work / "README.md").write_text(
+        readme,
+        encoding="utf-8"
+    )
+
+    # --------------------------------------------------------
+    # ZIP 封存
+    # --------------------------------------------------------
+
+    zip_path = Path(str(work) + ".zip")
+
+    with zipfile.ZipFile(
+        zip_path,
+        "w",
+        zipfile.ZIP_DEFLATED,
+        compresslevel=6
+    ) as zf:
+        for path in work.rglob("*"):
+            if path.is_file():
+                zf.write(
+                    path,
+                    path.relative_to(work.parent)
+                )
+
+    zip_sha = sha256_file(zip_path)
+
+    log(f"[OUTPUT] {work}")
+
+    log(
+        f"[ZIP] {zip_path} / "
+        f"{zip_path.stat().st_size:,} bytes / "
+        f"SHA256={zip_sha}"
+    )
+
+    # --------------------------------------------------------
+    # GitHub 獨立 audit branch 上傳
+    # --------------------------------------------------------
+
+    upload_result = {
+        "attempted": False,
+        "success": False,
+        "branch": None,
+        "commit": None,
+        "files": [],
+        "error": None,
+    }
+
+    branch = None
+
+    if token and github_upload_allowed:
+        try:
+            branch = (
+                "audit/sso-market-data-continuation-v1-"
+                f"v1337-generator-trace-{stamp}"
+            )
+
+            github_request(
+                "POST",
+                f"https://api.github.com/repos/{REPO}/git/refs",
+                token,
+                json={
+                    "ref": f"refs/heads/{branch}",
+                    "sha": main_sha_before,
+                }
+            )
+
+            upload_result["attempted"] = True
+            upload_result["branch"] = branch
+
+            base = (
+                "audit/sso-market-data-continuation-v1/"
+                f"v1.3.7_五檔正成交量上游生成追溯_{stamp}"
+            )
+
+            files_to_upload = [
+                (
+                    f"{base}/{zip_path.name}",
+                    zip_path.read_bytes()
+                ),
+                (
+                    f"{base}/README.md",
+                    (work / "README.md").read_bytes()
+                ),
+                (
+                    f"{base}/{script_out.name}",
+                    script_out.read_bytes()
+                ),
+            ]
+
+            # 同時上傳報告，方便直接檢視
+            for path in sorted(report_dir.iterdir()):
+                if (
+                    path.is_file()
+                    and path.suffix.lower() in (
+                        ".csv",
+                        ".json",
+                        ".txt",
+                    )
+                ):
+                    files_to_upload.append((
+                        f"{base}/reports/{path.name}",
+                        path.read_bytes()
+                    ))
+
+            for remote_path, content in files_to_upload:
+                import base64
+
+                payload = {
+                    "message": (
+                        "SSO v1.3.7 audit: "
+                        f"{Path(remote_path).name}"
+                    ),
+                    "content": base64.b64encode(
+                        content
+                    ).decode(),
+                    "branch": branch,
+                }
+
+                response = github_request(
+                    "PUT",
+                    (
+                        f"https://api.github.com/repos/{REPO}"
+                        f"/contents/{quote(remote_path, safe='/')}"
+                    ),
+                    token,
+                    json=payload
+                )
+
+                upload_result["files"].append({
+                    "path": remote_path,
+                    "sha256": sha256_bytes(content),
+                    "bytes": len(content),
+                    "commit": (
+                        response.json()
+                        .get("commit", {})
+                        .get("sha")
+                    ),
+                })
+
+            branch_ref = github_request(
+                "GET",
+                (
+                    f"https://api.github.com/repos/{REPO}"
+                    f"/git/ref/heads/{quote(branch, safe='/')}"
+                ),
+                token
+            ).json()
+
+            upload_result["commit"] = (
+                branch_ref["object"]["sha"]
+            )
+
+            # 逐檔讀回 GitHub，核對 SHA256
+            for item in upload_result["files"]:
+                raw_url = (
+                    f"https://raw.githubusercontent.com/{REPO}/"
+                    f"{branch}/{quote(item['path'], safe='/')}"
+                )
+
+                response = github_request(
+                    "GET",
+                    raw_url,
+                    token
+                )
+
+                if sha256_bytes(response.content) != item["sha256"]:
+                    raise RuntimeError(
+                        "GitHub readback SHA256 不符："
+                        f"{item['path']}"
+                    )
+
+            upload_result["success"] = True
+
+            log(
+                f"[GITHUB PASS] branch={branch} "
+                f"commit={upload_result['commit']} "
+                f"files={len(upload_result['files'])} "
+                "readback=PASS"
+            )
+
+        except Exception as exc:
+            upload_result["error"] = (
+                f"{type(exc).__name__}: {exc}"
+            )
+
+            log(
+                f"[GITHUB FAIL] {upload_result['error']}"
+            )
+
+    else:
+        upload_result["error"] = (
+            gh_error or "GitHub 上傳條件未通過"
+        )
+
+        log(
+            f"[GITHUB SKIP] {upload_result['error']}"
+        )
+
+    # --------------------------------------------------------
+    # 再次確認 main SHA，並保存上傳核對紀錄
+    # --------------------------------------------------------
+
+    main_sha_after = None
+    main_unchanged = None
+
+    if token:
+        try:
+            ref = github_request(
+                "GET",
+                f"https://api.github.com/repos/{REPO}/git/ref/heads/main",
+                token
+            ).json()
+
+            main_sha_after = ref["object"]["sha"]
+
+            main_unchanged = (
+                main_sha_before == main_sha_after
+            )
+
+        except Exception as exc:
+            gh_error = (
+                f"{gh_error or ''}; "
+                f"main after-check failed: {exc}"
+            )
+
+    confirmation = {
+        "version": VERSION,
+        "branch": upload_result.get("branch"),
+        "branch_commit_after_upload": upload_result.get("commit"),
+        "upload_attempted": upload_result.get("attempted"),
+        "upload_success": upload_result.get("success"),
+        "uploaded_files": upload_result.get("files"),
+        "upload_error": upload_result.get("error"),
+        "main_sha_before": main_sha_before,
+        "main_sha_after": main_sha_after,
+        "main_unchanged": main_unchanged,
+        "evidence_zip_path": str(zip_path),
+        "evidence_zip_sha256": zip_sha,
+        "note": (
+            "此確認檔為上傳後產生的獨立紀錄；"
+            "證據 ZIP 在上傳前封存，"
+            "ZIP 內容與 GitHub 已核對版本一致。"
+        ),
+    }
+
+    confirmation_path = (
+        work / "GITHUB_上傳與main核對結果.json"
+    )
+
+    confirmation_path.write_text(
+        json.dumps(
+            confirmation,
+            ensure_ascii=False,
+            indent=2
+        ),
+        encoding="utf-8"
+    )
+
+    if upload_result.get("success") and branch and token:
+        try:
+            remote_path = (
+                "audit/sso-market-data-continuation-v1/"
+                f"v1.3.7_五檔正成交量上游生成追溯_{stamp}/"
+                "GITHUB_上傳與main核對結果.json"
+            )
+
+            import base64
+
+            payload = {
+                "message": (
+                    "SSO v1.3.7 audit: "
+                    "GitHub upload and main verification"
+                ),
+                "content": base64.b64encode(
+                    confirmation_path.read_bytes()
+                ).decode(),
+                "branch": branch,
+            }
+
+            github_request(
+                "PUT",
+                (
+                    f"https://api.github.com/repos/{REPO}"
+                    f"/contents/{quote(remote_path, safe='/')}"
+                ),
+                token,
+                json=payload
+            )
+
+            raw_url = (
+                f"https://raw.githubusercontent.com/{REPO}/"
+                f"{branch}/{quote(remote_path, safe='/')}"
+            )
+
+            response = github_request(
+                "GET",
+                raw_url,
+                token
+            )
+
+            if (
+                sha256_bytes(response.content)
+                != sha256_file(confirmation_path)
+            ):
+                raise RuntimeError(
+                    "上傳確認檔 readback SHA256 不符"
+                )
+
+            log(
+                "[GITHUB PASS] 上傳確認 sidecar readback=PASS"
+            )
+
+        except Exception as exc:
+            log(
+                f"[GITHUB WARN] 上傳確認 sidecar 未完成：{exc}"
+            )
+
+    # --------------------------------------------------------
+    # 最終輸出
+    # --------------------------------------------------------
+
+    log("=" * 100)
+
+    log(f"[FINAL] status={status}")
+
+    log(
+        f"[FINAL] v123 rows={target_count}; "
+        f"secondary rows={secondary_count}; "
+        f"source-value hits={value_count}"
+    )
+
+    log(
+        f"[FINAL] candidate programs={len(candidate_programs)}; "
+        f"code contexts={len(code_hits)}; "
+        f"parse errors={len(parse_errors)}"
+    )
+
+    log(
+        f"[FINAL] GitHub upload={upload_result['success']}; "
+        f"main unchanged={main_unchanged}; "
+        f"main before={main_sha_before}; "
+        f"after={main_sha_after}"
+    )
+
+    log(f"[FINAL] OUTPUT={work}")
+    log(f"[FINAL] ZIP={zip_path} SHA256={zip_sha}")
+    log("原始 Drive 資料未修改。")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+
+    except Exception as exc:
+        log(
+            f"[FATAL] {type(exc).__name__}: {exc}"
+        )
+
+        traceback.print_exc()
+        raise
