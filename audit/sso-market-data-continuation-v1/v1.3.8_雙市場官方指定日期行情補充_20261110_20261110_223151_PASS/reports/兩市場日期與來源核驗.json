@@ -1,0 +1,36 @@
+{
+  "target_date": "2026-11-10",
+  "overall_pass": true,
+  "market_checks": {
+    "TWSE": {
+      "market": "TWSE",
+      "requested_date": "2026-11-10",
+      "passed": true,
+      "error": null,
+      "http_status": 200,
+      "response_url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20261110&type=ALLBUT0999&response=json",
+      "response_dates": [
+        "2026-11-10"
+      ],
+      "date_confirmation_basis": "官方回應 metadata 日期與指定日期相符",
+      "row_count": 1389,
+      "table_title": "115年11月10日 每日收盤行情(全部(不含權證、牛熊證、可展延牛熊證))",
+      "malformed_rows": 0
+    },
+    "TPEX": {
+      "market": "TPEX",
+      "requested_date": "2026-11-10",
+      "passed": true,
+      "error": null,
+      "http_status": 200,
+      "response_url": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&o=json&d=115%2F11%2F10&se=EW&s=0%2Casc%2C0",
+      "response_dates": [
+        "2026-11-10"
+      ],
+      "date_confirmation_basis": "官方回應 metadata 日期與指定日期相符",
+      "row_count": 1020,
+      "table_title": "上櫃股票每日收盤行情(不含定價)",
+      "malformed_rows": 0
+    }
+  }
+}
