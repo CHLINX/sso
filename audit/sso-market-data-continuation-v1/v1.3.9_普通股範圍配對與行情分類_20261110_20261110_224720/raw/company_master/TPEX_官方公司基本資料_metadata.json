@@ -1,0 +1,12 @@
+{
+  "market": "TPEX",
+  "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+  "http_status": 200,
+  "retrieved_at": "2026-11-10T22:47:25.402852+08:00",
+  "raw_sha256": "cc172e23eaf34744b6aa9fa8e42a70da0425cbbc7d57ba65bdc5e70698f23be5",
+  "record_count": 897,
+  "recognized_code_count": 897,
+  "gzip_sha256": "d73789b7fa0ba5c03812fb440e3a3ca727182b3d8ccb6d716ed5a58afd7c1f76",
+  "original_sha256": "cc172e23eaf34744b6aa9fa8e42a70da0425cbbc7d57ba65bdc5e70698f23be5",
+  "gzip_bytes": 182568
+}
