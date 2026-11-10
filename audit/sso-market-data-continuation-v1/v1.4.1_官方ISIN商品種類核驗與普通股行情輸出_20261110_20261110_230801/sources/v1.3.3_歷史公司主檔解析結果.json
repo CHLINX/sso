@@ -1,0 +1,35 @@
+{
+  "zip_sha256": "48fbd3a78edcde0efbb4b39f7dc24197d55047fbac00b3b7f9a41f586d32480d",
+  "member_count": 35,
+  "company_master_member_count": 3,
+  "parsed_members": [
+    {
+      "encoding": "utf-8-sig",
+      "delimiter": ",",
+      "header_row_1based": 1,
+      "recognized_codes": 1093,
+      "member": "v1.3.3_官方普通股範圍與逐日行情交叉驗證_20261109_125127/官方公司基本資料_上市.csv",
+      "market": "TWSE",
+      "member_sha256": "d2247a5f1d19b47d517e5699723b39522361c1fe33c24d3dd519d43ed49f0e5d"
+    },
+    {
+      "encoding": "utf-8-sig",
+      "delimiter": ",",
+      "header_row_1based": 1,
+      "recognized_codes": 897,
+      "member": "v1.3.3_官方普通股範圍與逐日行情交叉驗證_20261109_125127/官方公司基本資料_上櫃.csv",
+      "market": "TPEX",
+      "member_sha256": "e6103f8274f0f8e578ea23157c46e489acf3f503502f9408f94cce0296addaa1"
+    },
+    {
+      "encoding": "utf-8-sig",
+      "delimiter": ",",
+      "header_row_1based": 1,
+      "recognized_codes": 6,
+      "member": "v1.3.3_官方普通股範圍與逐日行情交叉驗證_20261109_125127/官方公司基本資料_非四位數字代號排除清單.csv",
+      "market": "UNKNOWN",
+      "member_sha256": "30bc636deb46e60eb40cd31cc9bd7e6a5b49c3225001603a4f3401f52e92efc2"
+    }
+  ],
+  "errors": []
+}
