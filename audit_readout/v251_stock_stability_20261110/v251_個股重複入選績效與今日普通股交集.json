@@ -1,0 +1,5558 @@
+{
+  "status": "READ_ONLY_DESCRIPTIVE_PER_STOCK_STABILITY_AUDIT",
+  "sources": {
+    "v251": {
+      "branch": "audit/v4.84.9.3-rebuild-pipeline",
+      "path": "SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip",
+      "bytes": 23606997,
+      "sha256": "3b78213b0618678bd883b153e1b8d8d72b074daa4d9d3a2ecd225e80d1f8fdb7"
+    },
+    "universe": {
+      "branch": "audit/sso-market-data-continuation-v1-v141-isin-20261110-20261110_230801",
+      "path": "audit/sso-market-data-continuation-v1/v1.4.1_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_230801/v1.4.1_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_230801.zip",
+      "bytes": 5398656,
+      "sha256": "b5785140fd80552f4c8bd6fbeeba2df65fa4b15252ef687f058545edc4fd916d"
+    }
+  },
+  "v251_per_stock_rows": 4325,
+  "current_confirmed_ordinary_stock_rows": 1951,
+  "current_confirmed_ordinary_unique_codes": 1951,
+  "v251_horizons": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "note": "Historical repeated-candidate observations are overlapping, selected samples; this is descriptive only, not independent forward validation or a recommendation. Today's universe is used only for ticker identity/intersection, never to truncate historical calculations.",
+  "horizon_threshold_counts": [
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "ticker_rows": 820,
+      "current_ordinary_intersection": 812,
+      "strict_positive_mean_median_winrate50": 49,
+      "strict_positive_current_ordinary": 48
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "ticker_rows": 597,
+      "current_ordinary_intersection": 589,
+      "strict_positive_mean_median_winrate50": 29,
+      "strict_positive_current_ordinary": 28
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 20,
+      "ticker_rows": 319,
+      "current_ordinary_intersection": 313,
+      "strict_positive_mean_median_winrate50": 9,
+      "strict_positive_current_ordinary": 9
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "ticker_rows": 474,
+      "current_ordinary_intersection": 468,
+      "strict_positive_mean_median_winrate50": 107,
+      "strict_positive_current_ordinary": 105
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "ticker_rows": 157,
+      "current_ordinary_intersection": 152,
+      "strict_positive_mean_median_winrate50": 34,
+      "strict_positive_current_ordinary": 33
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 20,
+      "ticker_rows": 10,
+      "current_ordinary_intersection": 9,
+      "strict_positive_mean_median_winrate50": 5,
+      "strict_positive_current_ordinary": 4
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "ticker_rows": 231,
+      "current_ordinary_intersection": 226,
+      "strict_positive_mean_median_winrate50": 71,
+      "strict_positive_current_ordinary": 69
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 10,
+      "ticker_rows": 30,
+      "current_ordinary_intersection": 30,
+      "strict_positive_mean_median_winrate50": 6,
+      "strict_positive_current_ordinary": 6
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 20,
+      "ticker_rows": 1,
+      "current_ordinary_intersection": 1,
+      "strict_positive_mean_median_winrate50": 0,
+      "strict_positive_current_ordinary": 0
+    },
+    {
+      "H": 10,
+      "minimum_repeated_observations": 5,
+      "ticker_rows": 34,
+      "current_ordinary_intersection": 33,
+      "strict_positive_mean_median_winrate50": 11,
+      "strict_positive_current_ordinary": 11
+    },
+    {
+      "H": 10,
+      "minimum_repeated_observations": 10,
+      "ticker_rows": 0,
+      "current_ordinary_intersection": 0,
+      "strict_positive_mean_median_winrate50": 0,
+      "strict_positive_current_ordinary": 0
+    },
+    {
+      "H": 10,
+      "minimum_repeated_observations": 20,
+      "ticker_rows": 0,
+      "current_ordinary_intersection": 0,
+      "strict_positive_mean_median_winrate50": 0,
+      "strict_positive_current_ordinary": 0
+    }
+  ],
+  "cross_horizon_current_ordinary_candidates": [
+    {
+      "stock_code": "5608",
+      "current_name": "四維航",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3,
+        5,
+        10
+      ],
+      "qualifying_horizon_count": 3,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.009247125511128412,
+      "worst_median_net_return": 0.0019689823809090345,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "3710",
+      "current_name": "連展投控",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1,
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 3,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.015915891070044066,
+      "worst_median_net_return": 0.005284439397347684,
+      "worst_net_win_rate": 0.5333333333333333
+    },
+    {
+      "stock_code": "4764",
+      "current_name": "雙鍵",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1,
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 3,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.005638506919045477,
+      "worst_median_net_return": 0.0011409312751143874,
+      "worst_net_win_rate": 0.5192307692307693
+    },
+    {
+      "stock_code": "6442",
+      "current_name": "光聖",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.03758166293983213,
+      "worst_median_net_return": 0.04423406626499382,
+      "worst_net_win_rate": 0.75
+    },
+    {
+      "stock_code": "3653",
+      "current_name": "健策",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.009785535651255672,
+      "worst_median_net_return": 0.01882102288643628,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "3522",
+      "current_name": "御嵿",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5,
+        10
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.003191415347582919,
+      "worst_median_net_return": 0.015501248791671474,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "3149",
+      "current_name": "正達",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.08703986125252856,
+      "worst_median_net_return": 0.038085127415106834,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "3529",
+      "current_name": "力旺",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 10,
+      "min_valid_realized_trades": 10,
+      "worst_mean_net_return": 0.025773996876251724,
+      "worst_median_net_return": 0.027788481640778517,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "2438",
+      "current_name": "翔耀",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.009421755764776463,
+      "worst_median_net_return": 0.023179911820504273,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "2615",
+      "current_name": "萬海",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.012822988593638115,
+      "worst_median_net_return": 0.014575856440330215,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "4806",
+      "current_name": "桂田文創",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.005963214213951939,
+      "worst_median_net_return": 0.012420392456327756,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "6679",
+      "current_name": "鈺太",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.008221740781925401,
+      "worst_median_net_return": 0.010477707209551435,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "1519",
+      "current_name": "華城",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.00898191644901083,
+      "worst_median_net_return": 0.0075545129402014854,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "3535",
+      "current_name": "晶彩科",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.035825757860979544,
+      "worst_median_net_return": 0.0047510141027993225,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "1303",
+      "current_name": "南亞",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.04664857860379072,
+      "worst_median_net_return": 0.00434591839685039,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "4979",
+      "current_name": "華星光",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 8,
+      "min_valid_realized_trades": 8,
+      "worst_mean_net_return": 0.016532209536214978,
+      "worst_median_net_return": 0.020968562370498045,
+      "worst_net_win_rate": 0.5882352941176471
+    },
+    {
+      "stock_code": "3664",
+      "current_name": "安瑞-KY",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1,
+        3
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.002724305994239932,
+      "worst_median_net_return": 0.0075093906009842115,
+      "worst_net_win_rate": 0.5833333333333334
+    },
+    {
+      "stock_code": "3228",
+      "current_name": "金麗科",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3,
+        10
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 8,
+      "min_valid_realized_trades": 8,
+      "worst_mean_net_return": 0.0053695730690107215,
+      "worst_median_net_return": 0.007988172328774246,
+      "worst_net_win_rate": 0.575
+    },
+    {
+      "stock_code": "8021",
+      "current_name": "尖點",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.057554525492360384,
+      "worst_median_net_return": 0.026384898942240387,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "3661",
+      "current_name": "世芯-KY",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 14,
+      "min_valid_realized_trades": 14,
+      "worst_mean_net_return": 0.026891082712204233,
+      "worst_median_net_return": 0.018589083418008467,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "6643",
+      "current_name": "M31",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.011807299747658151,
+      "worst_median_net_return": 0.005274031098917664,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "1802",
+      "current_name": "台玻",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.026594019568086904,
+      "worst_median_net_return": 0.003789902363663389,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "4763",
+      "current_name": "材料*-KY",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1,
+        3
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.005904190488270578,
+      "worst_median_net_return": 0.010134647327769142,
+      "worst_net_win_rate": 0.5666666666666667
+    },
+    {
+      "stock_code": "3441",
+      "current_name": "聯一光",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1,
+        3
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 8,
+      "min_valid_realized_trades": 8,
+      "worst_mean_net_return": 0.011994969970922304,
+      "worst_median_net_return": 0.0196730840442918,
+      "worst_net_win_rate": 0.5652173913043478
+    },
+    {
+      "stock_code": "3363",
+      "current_name": "上詮",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.025436845625815538,
+      "worst_median_net_return": 0.009030835451632746,
+      "worst_net_win_rate": 0.5625
+    },
+    {
+      "stock_code": "8932",
+      "current_name": "智通*",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3,
+        10
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.011043060485206325,
+      "worst_median_net_return": 0.017290293360483266,
+      "worst_net_win_rate": 0.5555555555555556
+    },
+    {
+      "stock_code": "5452",
+      "current_name": "佶優",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.03148827690436478,
+      "worst_median_net_return": 0.0029064980343989077,
+      "worst_net_win_rate": 0.5555555555555556
+    },
+    {
+      "stock_code": "1569",
+      "current_name": "濱川",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 8,
+      "min_valid_realized_trades": 8,
+      "worst_mean_net_return": 0.01715494112734617,
+      "worst_median_net_return": 0.014628607589192821,
+      "worst_net_win_rate": 0.5454545454545454
+    },
+    {
+      "stock_code": "1435",
+      "current_name": "中福",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1,
+        3
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 8,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.009409458811780841,
+      "worst_median_net_return": 0.0032321713267580154,
+      "worst_net_win_rate": 0.5454545454545454
+    },
+    {
+      "stock_code": "2221",
+      "current_name": "大甲",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1,
+        3
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.007892552910568746,
+      "worst_median_net_return": 0.0039909717651563925,
+      "worst_net_win_rate": 0.5384615384615384
+    },
+    {
+      "stock_code": "6488",
+      "current_name": "環球晶",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1,
+        3
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.00026897243485781195,
+      "worst_median_net_return": 0.0013103618149017393,
+      "worst_net_win_rate": 0.5384615384615384
+    },
+    {
+      "stock_code": "6441",
+      "current_name": "廣錠",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1,
+        3
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 10,
+      "min_valid_realized_trades": 10,
+      "worst_mean_net_return": 0.002330884558188793,
+      "worst_median_net_return": 0.00044008613479329384,
+      "worst_net_win_rate": 0.5384615384615384
+    },
+    {
+      "stock_code": "6593",
+      "current_name": "台灣銘板",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1,
+        3
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.002150757990567496,
+      "worst_median_net_return": 0.0020040512500517638,
+      "worst_net_win_rate": 0.5357142857142857
+    },
+    {
+      "stock_code": "5328",
+      "current_name": "華容",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.0029110242080061127,
+      "worst_median_net_return": 0.0008158493633478869,
+      "worst_net_win_rate": 0.5357142857142857
+    },
+    {
+      "stock_code": "1471",
+      "current_name": "首利",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 10,
+      "min_valid_realized_trades": 10,
+      "worst_mean_net_return": 0.015514953051271292,
+      "worst_median_net_return": 0.015591848298461719,
+      "worst_net_win_rate": 0.5333333333333333
+    },
+    {
+      "stock_code": "5475",
+      "current_name": "德宏",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 15,
+      "min_valid_realized_trades": 15,
+      "worst_mean_net_return": 0.015909028851266792,
+      "worst_median_net_return": 0.003620057857461445,
+      "worst_net_win_rate": 0.5333333333333333
+    },
+    {
+      "stock_code": "6834",
+      "current_name": "天二科技",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3,
+        5
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.026138632293321664,
+      "worst_median_net_return": 0.0031612647937022675,
+      "worst_net_win_rate": 0.5333333333333333
+    },
+    {
+      "stock_code": "3605",
+      "current_name": "宏致",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1,
+        3
+      ],
+      "qualifying_horizon_count": 2,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.0019219894115013575,
+      "worst_median_net_return": 0.013858866609830711,
+      "worst_net_win_rate": 0.5263157894736842
+    },
+    {
+      "stock_code": "6584",
+      "current_name": "南俊國際",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.07905305739463975,
+      "worst_median_net_return": 0.06633721160468387,
+      "worst_net_win_rate": 1.0
+    },
+    {
+      "stock_code": "2467",
+      "current_name": "志聖",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.07198251891427869,
+      "worst_median_net_return": 0.062179273795990087,
+      "worst_net_win_rate": 1.0
+    },
+    {
+      "stock_code": "8101",
+      "current_name": "華冠",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.0895437717506833,
+      "worst_median_net_return": 0.048944767513614984,
+      "worst_net_win_rate": 0.8571428571428571
+    },
+    {
+      "stock_code": "2413",
+      "current_name": "環科",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.09898017841838945,
+      "worst_median_net_return": 0.09090469901190479,
+      "worst_net_win_rate": 0.8333333333333334
+    },
+    {
+      "stock_code": "2375",
+      "current_name": "凱美",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.03597984207438817,
+      "worst_median_net_return": 0.05890089634270912,
+      "worst_net_win_rate": 0.8333333333333334
+    },
+    {
+      "stock_code": "1781",
+      "current_name": "合世",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.04844688419268319,
+      "worst_median_net_return": 0.04414671935146308,
+      "worst_net_win_rate": 0.8333333333333334
+    },
+    {
+      "stock_code": "3324",
+      "current_name": "雙鴻",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.039687956091644126,
+      "worst_median_net_return": 0.04091393734187365,
+      "worst_net_win_rate": 0.8333333333333334
+    },
+    {
+      "stock_code": "3552",
+      "current_name": "同致",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        10
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.017836799993740816,
+      "worst_median_net_return": 0.09494672622444367,
+      "worst_net_win_rate": 0.8
+    },
+    {
+      "stock_code": "3135",
+      "current_name": "凌航",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.14773386650954207,
+      "worst_median_net_return": 0.0923432323034672,
+      "worst_net_win_rate": 0.8
+    },
+    {
+      "stock_code": "6547",
+      "current_name": "高端疫苗",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        10
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.08678336766189487,
+      "worst_median_net_return": 0.08666455930083639,
+      "worst_net_win_rate": 0.8
+    },
+    {
+      "stock_code": "6222",
+      "current_name": "立軒",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.10725909274873738,
+      "worst_median_net_return": 0.0686890730834977,
+      "worst_net_win_rate": 0.8
+    },
+    {
+      "stock_code": "2364",
+      "current_name": "倫飛",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        10
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.1434751219650296,
+      "worst_median_net_return": 0.06332383179495826,
+      "worst_net_win_rate": 0.8
+    },
+    {
+      "stock_code": "2243",
+      "current_name": "宏旭-KY",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.04410958065024621,
+      "worst_median_net_return": 0.05750015227101546,
+      "worst_net_win_rate": 0.8
+    },
+    {
+      "stock_code": "6113",
+      "current_name": "亞矽",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.06875522491658892,
+      "worst_median_net_return": 0.03548932144183481,
+      "worst_net_win_rate": 0.8
+    },
+    {
+      "stock_code": "6182",
+      "current_name": "合晶",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.08562458104586812,
+      "worst_median_net_return": 0.031999466288630485,
+      "worst_net_win_rate": 0.8
+    },
+    {
+      "stock_code": "1529",
+      "current_name": "樂事綠能",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.05233881901081359,
+      "worst_median_net_return": 0.027925918490504742,
+      "worst_net_win_rate": 0.8
+    },
+    {
+      "stock_code": "3593",
+      "current_name": "力銘",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.023095663741278628,
+      "worst_median_net_return": 0.020120522600672652,
+      "worst_net_win_rate": 0.8
+    },
+    {
+      "stock_code": "3689",
+      "current_name": "湧德",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.00435839652735488,
+      "worst_median_net_return": 0.00331999134476324,
+      "worst_net_win_rate": 0.8
+    },
+    {
+      "stock_code": "5508",
+      "current_name": "永信建",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.019577067491273036,
+      "worst_median_net_return": 0.0024802309032341263,
+      "worst_net_win_rate": 0.8
+    },
+    {
+      "stock_code": "6133",
+      "current_name": "金橋",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 9,
+      "min_valid_realized_trades": 9,
+      "worst_mean_net_return": 0.046350972234357704,
+      "worst_median_net_return": 0.016670171671056,
+      "worst_net_win_rate": 0.7777777777777778
+    },
+    {
+      "stock_code": "3287",
+      "current_name": "廣寰科",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 8,
+      "min_valid_realized_trades": 8,
+      "worst_mean_net_return": 0.02284796250160584,
+      "worst_median_net_return": 0.026819327125583214,
+      "worst_net_win_rate": 0.75
+    },
+    {
+      "stock_code": "6791",
+      "current_name": "虎門科技",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 8,
+      "min_valid_realized_trades": 8,
+      "worst_mean_net_return": 0.027993239778717857,
+      "worst_median_net_return": 0.0234802148854395,
+      "worst_net_win_rate": 0.75
+    },
+    {
+      "stock_code": "4304",
+      "current_name": "勝昱",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 8,
+      "min_valid_realized_trades": 8,
+      "worst_mean_net_return": 0.005025791702905444,
+      "worst_median_net_return": 0.006312318005390893,
+      "worst_net_win_rate": 0.75
+    },
+    {
+      "stock_code": "6118",
+      "current_name": "建達",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 11,
+      "min_valid_realized_trades": 11,
+      "worst_mean_net_return": 0.006039336723834721,
+      "worst_median_net_return": 0.02695853811708715,
+      "worst_net_win_rate": 0.7272727272727273
+    },
+    {
+      "stock_code": "3006",
+      "current_name": "晶豪科",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.09343405070315418,
+      "worst_median_net_return": 0.09435581873629162,
+      "worst_net_win_rate": 0.7142857142857143
+    },
+    {
+      "stock_code": "2344",
+      "current_name": "華邦電",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.035182682156264,
+      "worst_median_net_return": 0.04883914693977198,
+      "worst_net_win_rate": 0.7142857142857143
+    },
+    {
+      "stock_code": "6141",
+      "current_name": "柏承",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.027691495223587954,
+      "worst_median_net_return": 0.04439161005486958,
+      "worst_net_win_rate": 0.7142857142857143
+    },
+    {
+      "stock_code": "4760",
+      "current_name": "勤凱",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.01152703603651847,
+      "worst_median_net_return": 0.02477847270043121,
+      "worst_net_win_rate": 0.7142857142857143
+    },
+    {
+      "stock_code": "5340",
+      "current_name": "建榮",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.035435843739672866,
+      "worst_median_net_return": 0.02105939842952531,
+      "worst_net_win_rate": 0.7142857142857143
+    },
+    {
+      "stock_code": "6245",
+      "current_name": "立端",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.020583683432522943,
+      "worst_median_net_return": 0.016730729043740844,
+      "worst_net_win_rate": 0.7142857142857143
+    },
+    {
+      "stock_code": "3051",
+      "current_name": "力特",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.028553685886165643,
+      "worst_median_net_return": 0.013432954307021516,
+      "worst_net_win_rate": 0.7142857142857143
+    },
+    {
+      "stock_code": "3715",
+      "current_name": "定穎投控",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.0073319003885488065,
+      "worst_median_net_return": 0.00910322043617029,
+      "worst_net_win_rate": 0.7142857142857143
+    },
+    {
+      "stock_code": "3017",
+      "current_name": "奇鋐",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.006079406983132267,
+      "worst_median_net_return": 0.008089120995935506,
+      "worst_net_win_rate": 0.7142857142857143
+    },
+    {
+      "stock_code": "2236",
+      "current_name": "百達-KY",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.020778281440673618,
+      "worst_median_net_return": 0.007674681476623091,
+      "worst_net_win_rate": 0.7142857142857143
+    },
+    {
+      "stock_code": "2481",
+      "current_name": "強茂",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.005839238876172738,
+      "worst_median_net_return": 0.0058314664455267895,
+      "worst_net_win_rate": 0.7142857142857143
+    },
+    {
+      "stock_code": "3141",
+      "current_name": "晶宏",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 10,
+      "min_valid_realized_trades": 10,
+      "worst_mean_net_return": 0.0331724992631337,
+      "worst_median_net_return": 0.04673146650765314,
+      "worst_net_win_rate": 0.7
+    },
+    {
+      "stock_code": "6756",
+      "current_name": "威鋒電子",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 10,
+      "min_valid_realized_trades": 10,
+      "worst_mean_net_return": 0.02200935081687815,
+      "worst_median_net_return": 0.03054265933675593,
+      "worst_net_win_rate": 0.7
+    },
+    {
+      "stock_code": "6173",
+      "current_name": "信昌電",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 10,
+      "min_valid_realized_trades": 10,
+      "worst_mean_net_return": 0.021300303227737506,
+      "worst_median_net_return": 0.021086838489023263,
+      "worst_net_win_rate": 0.7
+    },
+    {
+      "stock_code": "6291",
+      "current_name": "沛亨",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 10,
+      "min_valid_realized_trades": 10,
+      "worst_mean_net_return": 0.026626791346042056,
+      "worst_median_net_return": 0.016807608520782225,
+      "worst_net_win_rate": 0.7
+    },
+    {
+      "stock_code": "1325",
+      "current_name": "恆大",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 10,
+      "min_valid_realized_trades": 10,
+      "worst_mean_net_return": 0.01750013293616487,
+      "worst_median_net_return": 0.01581882016991154,
+      "worst_net_win_rate": 0.7
+    },
+    {
+      "stock_code": "5351",
+      "current_name": "鈺創",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 10,
+      "min_valid_realized_trades": 10,
+      "worst_mean_net_return": 0.0050802297649080955,
+      "worst_median_net_return": 0.008197402782445184,
+      "worst_net_win_rate": 0.7
+    },
+    {
+      "stock_code": "8054",
+      "current_name": "安國",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 16,
+      "min_valid_realized_trades": 16,
+      "worst_mean_net_return": 0.0519023431721686,
+      "worst_median_net_return": 0.050123980415310965,
+      "worst_net_win_rate": 0.6875
+    },
+    {
+      "stock_code": "8906",
+      "current_name": "花王",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 16,
+      "min_valid_realized_trades": 16,
+      "worst_mean_net_return": 0.013139888262088506,
+      "worst_median_net_return": 0.006837168281346395,
+      "worst_net_win_rate": 0.6875
+    },
+    {
+      "stock_code": "8440",
+      "current_name": "綠電",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 25,
+      "min_valid_realized_trades": 25,
+      "worst_mean_net_return": 0.007824336249393075,
+      "worst_median_net_return": 0.005539560985006631,
+      "worst_net_win_rate": 0.68
+    },
+    {
+      "stock_code": "7728",
+      "current_name": "光焱科技",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.057137862663629614,
+      "worst_median_net_return": 0.06771619287056874,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "3037",
+      "current_name": "欣興",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.05554264308405086,
+      "worst_median_net_return": 0.06715041905760366,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "3532",
+      "current_name": "台勝科",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.07152191425463755,
+      "worst_median_net_return": 0.060009912368060636,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "6805",
+      "current_name": "富世達",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.05573680318895324,
+      "worst_median_net_return": 0.05260872511328818,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "8937",
+      "current_name": "合騏*",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.020608194750038222,
+      "worst_median_net_return": 0.03620406402608223,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "4924",
+      "current_name": "欣厚-KY",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.019199240344450252,
+      "worst_median_net_return": 0.0357858988090366,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "3564",
+      "current_name": "其陽",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.005827247930632644,
+      "worst_median_net_return": 0.030488666288649102,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "3189",
+      "current_name": "景碩",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.03382027785160976,
+      "worst_median_net_return": 0.02015766130188945,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "6698",
+      "current_name": "旭暉應材",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.011372318201046358,
+      "worst_median_net_return": 0.01751673298939993,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "8403",
+      "current_name": "盛弘",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.0014900232389414108,
+      "worst_median_net_return": 0.01746859460916006,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "8096",
+      "current_name": "擎亞",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.023024063321660754,
+      "worst_median_net_return": 0.016510380634928268,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "4503",
+      "current_name": "金雨",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.02942748309689806,
+      "worst_median_net_return": 0.014844816333856703,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "5302",
+      "current_name": "太欣",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.011463627364547794,
+      "worst_median_net_return": 0.010659970708198685,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "3545",
+      "current_name": "敦泰",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.027143137569075586,
+      "worst_median_net_return": 0.007726841244892757,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "3666",
+      "current_name": "光耀",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.016778039491150865,
+      "worst_median_net_return": 0.00743960769105434,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "2030",
+      "current_name": "彰源",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 12,
+      "min_valid_realized_trades": 12,
+      "worst_mean_net_return": 0.013453692053136438,
+      "worst_median_net_return": 0.005111283159826896,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "2929",
+      "current_name": "淘帝-KY",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.008039523876900526,
+      "worst_median_net_return": 0.004765502927318477,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "6669",
+      "current_name": "緯穎",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.005034995063378234,
+      "worst_median_net_return": 0.003948392362487452,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "2460",
+      "current_name": "建通",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 6,
+      "worst_mean_net_return": 0.00044856258995433035,
+      "worst_median_net_return": 0.0014862384031486542,
+      "worst_net_win_rate": 0.6666666666666666
+    },
+    {
+      "stock_code": "5245",
+      "current_name": "智晶",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 14,
+      "min_valid_realized_trades": 14,
+      "worst_mean_net_return": 0.011051794143990126,
+      "worst_median_net_return": 0.02201270394483834,
+      "worst_net_win_rate": 0.6428571428571429
+    },
+    {
+      "stock_code": "3323",
+      "current_name": "加百裕",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 11,
+      "min_valid_realized_trades": 11,
+      "worst_mean_net_return": 0.01161358266618247,
+      "worst_median_net_return": 0.01175437963291226,
+      "worst_net_win_rate": 0.6363636363636364
+    },
+    {
+      "stock_code": "2314",
+      "current_name": "台揚",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 11,
+      "min_valid_realized_trades": 11,
+      "worst_mean_net_return": 0.00847599680344408,
+      "worst_median_net_return": 0.007634349320206013,
+      "worst_net_win_rate": 0.6363636363636364
+    },
+    {
+      "stock_code": "8043",
+      "current_name": "蜜望實",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 8,
+      "min_valid_realized_trades": 8,
+      "worst_mean_net_return": 0.023222328593510255,
+      "worst_median_net_return": 0.03746873142341289,
+      "worst_net_win_rate": 0.625
+    },
+    {
+      "stock_code": "2603",
+      "current_name": "長榮",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 9,
+      "min_valid_realized_trades": 8,
+      "worst_mean_net_return": 0.023632369719664828,
+      "worst_median_net_return": 0.03520528134319645,
+      "worst_net_win_rate": 0.625
+    },
+    {
+      "stock_code": "2025",
+      "current_name": "千興",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 8,
+      "min_valid_realized_trades": 8,
+      "worst_mean_net_return": 0.056139888200887014,
+      "worst_median_net_return": 0.026294654263805617,
+      "worst_net_win_rate": 0.625
+    },
+    {
+      "stock_code": "8046",
+      "current_name": "南電",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 8,
+      "min_valid_realized_trades": 8,
+      "worst_mean_net_return": 0.00957189694808376,
+      "worst_median_net_return": 0.014093585567043987,
+      "worst_net_win_rate": 0.625
+    },
+    {
+      "stock_code": "8431",
+      "current_name": "匯鑽科",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 8,
+      "min_valid_realized_trades": 8,
+      "worst_mean_net_return": 0.013267441663660506,
+      "worst_median_net_return": 0.009764206524548347,
+      "worst_net_win_rate": 0.625
+    },
+    {
+      "stock_code": "8068",
+      "current_name": "全達",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 8,
+      "min_valid_realized_trades": 8,
+      "worst_mean_net_return": 0.021409532701646958,
+      "worst_median_net_return": 0.006285587602604226,
+      "worst_net_win_rate": 0.625
+    },
+    {
+      "stock_code": "3058",
+      "current_name": "立德",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 16,
+      "min_valid_realized_trades": 16,
+      "worst_mean_net_return": 0.010644520890216398,
+      "worst_median_net_return": 0.0022843065128971274,
+      "worst_net_win_rate": 0.625
+    },
+    {
+      "stock_code": "5274",
+      "current_name": "信驊",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 13,
+      "min_valid_realized_trades": 13,
+      "worst_mean_net_return": 0.0023632922146646917,
+      "worst_median_net_return": 0.010293787845244928,
+      "worst_net_win_rate": 0.6153846153846154
+    },
+    {
+      "stock_code": "3521",
+      "current_name": "台鋼建設",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        10
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.06320277618764789,
+      "worst_median_net_return": 0.1824515383735219,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "6763",
+      "current_name": "綠界科技*",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.10108046659310037,
+      "worst_median_net_return": 0.08921991484157288,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "2605",
+      "current_name": "新興",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        10
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.05882484479849755,
+      "worst_median_net_return": 0.07576151186682956,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "4919",
+      "current_name": "新唐",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.03477970021351917,
+      "worst_median_net_return": 0.048612884725033334,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "2408",
+      "current_name": "南亞科",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.022510906611290137,
+      "worst_median_net_return": 0.040410199353074994,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "3016",
+      "current_name": "嘉晶",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.025344873376824673,
+      "worst_median_net_return": 0.03968977951513808,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "2492",
+      "current_name": "華新科",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.03746436703463931,
+      "worst_median_net_return": 0.03796460405032964,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "2007",
+      "current_name": "燁興",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.016964348033051736,
+      "worst_median_net_return": 0.037428931509529084,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "8277",
+      "current_name": "商丞",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.012982972814092641,
+      "worst_median_net_return": 0.034971508594931366,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "8436",
+      "current_name": "大江",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.014726149904140385,
+      "worst_median_net_return": 0.026277977331093494,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "2727",
+      "current_name": "王品",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.007520307486724076,
+      "worst_median_net_return": 0.025354950502122886,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "5536",
+      "current_name": "聖暉*",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        10
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.0026676275854255137,
+      "worst_median_net_return": 0.022136893869289853,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "2022",
+      "current_name": "聚亨",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 10,
+      "min_valid_realized_trades": 10,
+      "worst_mean_net_return": 0.011614092328729609,
+      "worst_median_net_return": 0.02138010412490643,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "6169",
+      "current_name": "昱泉",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.0279528026522456,
+      "worst_median_net_return": 0.018791217304567898,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "6446",
+      "current_name": "藥華藥",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 10,
+      "min_valid_realized_trades": 10,
+      "worst_mean_net_return": 8.634000570226786e-05,
+      "worst_median_net_return": 0.017559430668187437,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "4973",
+      "current_name": "廣穎",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.06086870343706008,
+      "worst_median_net_return": 0.01755310289584644,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "2740",
+      "current_name": "華軒",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.00975162194553716,
+      "worst_median_net_return": 0.016371287919542565,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "5210",
+      "current_name": "寶碩",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.022049050196061137,
+      "worst_median_net_return": 0.015765595916575226,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "3090",
+      "current_name": "日電貿",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.002877425764465413,
+      "worst_median_net_return": 0.01513885076451027,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "6830",
+      "current_name": "汎銓",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.017905506590992215,
+      "worst_median_net_return": 0.01162628659654974,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "8040",
+      "current_name": "九暘",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 10,
+      "min_valid_realized_trades": 10,
+      "worst_mean_net_return": 0.01867578572669325,
+      "worst_median_net_return": 0.010421466915192745,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "1721",
+      "current_name": "國慶科技",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.00879917984588947,
+      "worst_median_net_return": 0.009477327799065405,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "3260",
+      "current_name": "威剛",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.01865379228245363,
+      "worst_median_net_return": 0.008378069553492518,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "1593",
+      "current_name": "祺驊",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.012252747885929938,
+      "worst_median_net_return": 0.007920695803155464,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "6499",
+      "current_name": "益安",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.020795973858346084,
+      "worst_median_net_return": 0.0072702954273855536,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "2070",
+      "current_name": "精湛",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.007064270256526606,
+      "worst_median_net_return": 0.0060163320187816005,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "6237",
+      "current_name": "驊訊",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 15,
+      "min_valid_realized_trades": 15,
+      "worst_mean_net_return": 0.011160653230602299,
+      "worst_median_net_return": 0.005648020185694103,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "8291",
+      "current_name": "尚茂",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 6,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.04512178767258475,
+      "worst_median_net_return": 0.004946761078958417,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "9950",
+      "current_name": "萬國通",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.01238134950960248,
+      "worst_median_net_return": 0.004892117512199867,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "5498",
+      "current_name": "凱崴",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.03819240385460922,
+      "worst_median_net_return": 0.0027769856846140417,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "3040",
+      "current_name": "遠見",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.012605896720622489,
+      "worst_median_net_return": 0.0027591259907167043,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "3354",
+      "current_name": "律勝",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.0007842223292542138,
+      "worst_median_net_return": 0.00235852477727172,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "4961",
+      "current_name": "天鈺",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.021206652197089303,
+      "worst_median_net_return": 0.0015467957758337203,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "8028",
+      "current_name": "昇陽半導體",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.009300587795153215,
+      "worst_median_net_return": 0.0007252498565575305,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "3008",
+      "current_name": "大立光",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.017825977728895825,
+      "worst_median_net_return": 0.0006702514614433941,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "3163",
+      "current_name": "波若威",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.06151883177775745,
+      "worst_median_net_return": 0.0003944315530426401,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "6431",
+      "current_name": "光麗-KY",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.008184380581795558,
+      "worst_median_net_return": 0.00031790690435662405,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "8454",
+      "current_name": "富邦媒",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 5,
+      "min_valid_realized_trades": 5,
+      "worst_mean_net_return": 0.004725951393283712,
+      "worst_median_net_return": 9.128986126261118e-05,
+      "worst_net_win_rate": 0.6
+    },
+    {
+      "stock_code": "3713",
+      "current_name": "新晶投控",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 17,
+      "min_valid_realized_trades": 17,
+      "worst_mean_net_return": 0.012918421883052785,
+      "worst_median_net_return": 0.0039036839896846587,
+      "worst_net_win_rate": 0.5882352941176471
+    },
+    {
+      "stock_code": "2609",
+      "current_name": "陽明",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 12,
+      "min_valid_realized_trades": 12,
+      "worst_mean_net_return": 0.020431711996683883,
+      "worst_median_net_return": 0.03640253135296756,
+      "worst_net_win_rate": 0.5833333333333334
+    },
+    {
+      "stock_code": "6150",
+      "current_name": "撼訊",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 12,
+      "min_valid_realized_trades": 12,
+      "worst_mean_net_return": 0.01897397854854746,
+      "worst_median_net_return": 0.007263435412511177,
+      "worst_net_win_rate": 0.5833333333333334
+    },
+    {
+      "stock_code": "5703",
+      "current_name": "亞都",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 12,
+      "min_valid_realized_trades": 12,
+      "worst_mean_net_return": 0.008458398750657478,
+      "worst_median_net_return": 0.0029965652986559954,
+      "worst_net_win_rate": 0.5833333333333334
+    },
+    {
+      "stock_code": "4729",
+      "current_name": "熒茂",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.028280248396723735,
+      "worst_median_net_return": 0.06200221444655796,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "3093",
+      "current_name": "港建*",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        10
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.06682365593529525,
+      "worst_median_net_return": 0.05031428669001814,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "2337",
+      "current_name": "旺宏",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.06050673965221982,
+      "worst_median_net_return": 0.03634398467429767,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "7402",
+      "current_name": "邑錡",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.03332658347654246,
+      "worst_median_net_return": 0.036268524510678635,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "5464",
+      "current_name": "霖宏",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.002414351105215643,
+      "worst_median_net_return": 0.034572444971027405,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "6231",
+      "current_name": "系微",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.059371618397851135,
+      "worst_median_net_return": 0.03192507061007843,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "4551",
+      "current_name": "智伸科",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.013030494468857163,
+      "worst_median_net_return": 0.029754230730667075,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "3588",
+      "current_name": "通嘉",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.008487635480717626,
+      "worst_median_net_return": 0.026051005459643672,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "4171",
+      "current_name": "瑞基",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.00241462145062946,
+      "worst_median_net_return": 0.016730729043740844,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "3218",
+      "current_name": "大學光",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.01413907118291118,
+      "worst_median_net_return": 0.016224625532571535,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "8478",
+      "current_name": "東哥遊艇",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.012075871019652113,
+      "worst_median_net_return": 0.01587038855758882,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "3169",
+      "current_name": "亞信",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.005086681727173652,
+      "worst_median_net_return": 0.015738983789907124,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "3373",
+      "current_name": "熱映",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.005344126595732087,
+      "worst_median_net_return": 0.014058161869545671,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "2641",
+      "current_name": "正德",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 14,
+      "min_valid_realized_trades": 14,
+      "worst_mean_net_return": 0.0023265860011229228,
+      "worst_median_net_return": 0.013990567067808657,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "3623",
+      "current_name": "富晶通",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.0011403483428158287,
+      "worst_median_net_return": 0.011437517911383255,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "6265",
+      "current_name": "方土昶",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.0058909255399681405,
+      "worst_median_net_return": 0.008931601788190413,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "3313",
+      "current_name": "斐成",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.013181431692683663,
+      "worst_median_net_return": 0.006265421524395576,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "5348",
+      "current_name": "正能量智能",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 7,
+      "min_valid_realized_trades": 7,
+      "worst_mean_net_return": 0.012744578848910908,
+      "worst_median_net_return": 0.0003944315530426401,
+      "worst_net_win_rate": 0.5714285714285714
+    },
+    {
+      "stock_code": "2465",
+      "current_name": "麗臺",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 23,
+      "min_valid_realized_trades": 23,
+      "worst_mean_net_return": 0.016610655642457995,
+      "worst_median_net_return": 0.012587043507329643,
+      "worst_net_win_rate": 0.5652173913043478
+    },
+    {
+      "stock_code": "6492",
+      "current_name": "生華科",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 9,
+      "min_valid_realized_trades": 9,
+      "worst_mean_net_return": 0.05384980299586825,
+      "worst_median_net_return": 0.04580299897723061,
+      "worst_net_win_rate": 0.5555555555555556
+    },
+    {
+      "stock_code": "3680",
+      "current_name": "家登",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 9,
+      "min_valid_realized_trades": 9,
+      "worst_mean_net_return": 0.027101836205576157,
+      "worst_median_net_return": 0.03568838014931264,
+      "worst_net_win_rate": 0.5555555555555556
+    },
+    {
+      "stock_code": "6541",
+      "current_name": "泰福-KY",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 9,
+      "min_valid_realized_trades": 9,
+      "worst_mean_net_return": 0.0079768309631867,
+      "worst_median_net_return": 0.02695286086339821,
+      "worst_net_win_rate": 0.5555555555555556
+    },
+    {
+      "stock_code": "2745",
+      "current_name": "五福",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 9,
+      "min_valid_realized_trades": 9,
+      "worst_mean_net_return": 0.013902990172936218,
+      "worst_median_net_return": 0.020655485484762037,
+      "worst_net_win_rate": 0.5555555555555556
+    },
+    {
+      "stock_code": "6235",
+      "current_name": "華孚",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 9,
+      "min_valid_realized_trades": 9,
+      "worst_mean_net_return": 0.0054618864296128965,
+      "worst_median_net_return": 0.018454721747363623,
+      "worst_net_win_rate": 0.5555555555555556
+    },
+    {
+      "stock_code": "3026",
+      "current_name": "禾伸堂",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 9,
+      "min_valid_realized_trades": 9,
+      "worst_mean_net_return": 0.013239034039804136,
+      "worst_median_net_return": 0.009427178724810803,
+      "worst_net_win_rate": 0.5555555555555556
+    },
+    {
+      "stock_code": "7751",
+      "current_name": "竑騰",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 9,
+      "min_valid_realized_trades": 9,
+      "worst_mean_net_return": 0.010338364800137846,
+      "worst_median_net_return": 0.00434591839685039,
+      "worst_net_win_rate": 0.5555555555555556
+    },
+    {
+      "stock_code": "3686",
+      "current_name": "達能",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 18,
+      "min_valid_realized_trades": 18,
+      "worst_mean_net_return": 0.009052525977591356,
+      "worst_median_net_return": 0.0037850530428040763,
+      "worst_net_win_rate": 0.5555555555555556
+    },
+    {
+      "stock_code": "9906",
+      "current_name": "欣巴巴",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 9,
+      "min_valid_realized_trades": 9,
+      "worst_mean_net_return": 0.006632806861221264,
+      "worst_median_net_return": 0.003472330985423433,
+      "worst_net_win_rate": 0.5555555555555556
+    },
+    {
+      "stock_code": "8996",
+      "current_name": "高力",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 20,
+      "min_valid_realized_trades": 20,
+      "worst_mean_net_return": 0.01954967769912555,
+      "worst_median_net_return": 0.009672897361046928,
+      "worst_net_win_rate": 0.55
+    },
+    {
+      "stock_code": "3046",
+      "current_name": "建碁",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 11,
+      "min_valid_realized_trades": 11,
+      "worst_mean_net_return": 0.012209877093914351,
+      "worst_median_net_return": 0.020982755504721062,
+      "worst_net_win_rate": 0.5454545454545454
+    },
+    {
+      "stock_code": "6781",
+      "current_name": "AES-KY",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 11,
+      "min_valid_realized_trades": 11,
+      "worst_mean_net_return": 0.013913590819397581,
+      "worst_median_net_return": 0.020930595736451618,
+      "worst_net_win_rate": 0.5454545454545454
+    },
+    {
+      "stock_code": "6415",
+      "current_name": "矽力*-KY",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        5
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 11,
+      "min_valid_realized_trades": 11,
+      "worst_mean_net_return": 0.036886200034927485,
+      "worst_median_net_return": 0.013207401748994041,
+      "worst_net_win_rate": 0.5454545454545454
+    },
+    {
+      "stock_code": "6556",
+      "current_name": "勝品",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 11,
+      "min_valid_realized_trades": 11,
+      "worst_mean_net_return": 0.013889634529208973,
+      "worst_median_net_return": 0.003331345852141343,
+      "worst_net_win_rate": 0.5454545454545454
+    },
+    {
+      "stock_code": "7734",
+      "current_name": "印能科技",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 11,
+      "min_valid_realized_trades": 11,
+      "worst_mean_net_return": 0.0009940430882804283,
+      "worst_median_net_return": 0.00044008613479329384,
+      "worst_net_win_rate": 0.5454545454545454
+    },
+    {
+      "stock_code": "3018",
+      "current_name": "隆銘綠能",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 13,
+      "min_valid_realized_trades": 13,
+      "worst_mean_net_return": 0.006336878496310782,
+      "worst_median_net_return": 0.0007437009310475862,
+      "worst_net_win_rate": 0.5384615384615384
+    },
+    {
+      "stock_code": "4946",
+      "current_name": "辣椒",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        3
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 15,
+      "min_valid_realized_trades": 15,
+      "worst_mean_net_return": 0.030485681787925115,
+      "worst_median_net_return": 0.0017736493711646428,
+      "worst_net_win_rate": 0.5333333333333333
+    },
+    {
+      "stock_code": "6517",
+      "current_name": "保勝光學",
+      "current_market": "TPEX",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 17,
+      "min_valid_realized_trades": 17,
+      "worst_mean_net_return": 0.011190174717872203,
+      "worst_median_net_return": 0.001867560609273733,
+      "worst_net_win_rate": 0.5294117647058824
+    },
+    {
+      "stock_code": "6706",
+      "current_name": "惠特",
+      "current_market": "TWSE",
+      "qualifying_horizons": [
+        1
+      ],
+      "qualifying_horizon_count": 1,
+      "min_historical_selections": 19,
+      "min_valid_realized_trades": 19,
+      "worst_mean_net_return": 0.008708953220125513,
+      "worst_median_net_return": 5.888220478689199e-05,
+      "worst_net_win_rate": 0.5263157894736842
+    }
+  ],
+  "top_descriptive_candidates": [
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 1,
+      "stock_code": "3689",
+      "historic_name": "湧德電子股份有限公司",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.00435839652735488,
+      "median_net_return": 0.00331999134476324,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "湧德",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 2,
+      "stock_code": "5508",
+      "historic_name": "永信建設開發股份有限公司",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.019577067491273036,
+      "median_net_return": 0.0024802309032341263,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "永信建",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 3,
+      "stock_code": "4304",
+      "historic_name": "勝昱科技股份有限公司",
+      "historical_selections": 8,
+      "valid_realized_trades": 8,
+      "mean_net_return": 0.005025791702905444,
+      "median_net_return": 0.006312318005390893,
+      "net_win_rate": 0.75,
+      "current_ordinary_confirmed": true,
+      "current_name": "勝昱",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 4,
+      "stock_code": "6245",
+      "historic_name": "立端科技股份有限公司",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.020583683432522943,
+      "median_net_return": 0.016730729043740844,
+      "net_win_rate": 0.7142857142857143,
+      "current_ordinary_confirmed": true,
+      "current_name": "立端",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 5,
+      "stock_code": "2236",
+      "historic_name": "百達-KY",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.020778281440673618,
+      "median_net_return": 0.007674681476623091,
+      "net_win_rate": 0.7142857142857143,
+      "current_ordinary_confirmed": true,
+      "current_name": "百達-KY",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 6,
+      "stock_code": "6756",
+      "historic_name": "威鋒電子",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.02200935081687815,
+      "median_net_return": 0.03054265933675593,
+      "net_win_rate": 0.7,
+      "current_ordinary_confirmed": true,
+      "current_name": "威鋒電子",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 7,
+      "stock_code": "8906",
+      "historic_name": "花王企業股份有限公司",
+      "historical_selections": 16,
+      "valid_realized_trades": 16,
+      "mean_net_return": 0.013139888262088506,
+      "median_net_return": 0.006837168281346395,
+      "net_win_rate": 0.6875,
+      "current_ordinary_confirmed": true,
+      "current_name": "花王",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 8,
+      "stock_code": "8440",
+      "historic_name": "綠電再生股份有限公司",
+      "historical_selections": 25,
+      "valid_realized_trades": 25,
+      "mean_net_return": 0.007824336249393075,
+      "median_net_return": 0.005539560985006631,
+      "net_win_rate": 0.68,
+      "current_ordinary_confirmed": true,
+      "current_name": "綠電",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 9,
+      "stock_code": "6698",
+      "historic_name": "旭暉應材",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.011372318201046358,
+      "median_net_return": 0.01751673298939993,
+      "net_win_rate": 0.6666666666666666,
+      "current_ordinary_confirmed": true,
+      "current_name": "旭暉應材",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 10,
+      "stock_code": "8403",
+      "historic_name": "盛弘醫藥股份有限公司",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.0014900232389414108,
+      "median_net_return": 0.01746859460916006,
+      "net_win_rate": 0.6666666666666666,
+      "current_ordinary_confirmed": true,
+      "current_name": "盛弘",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 11,
+      "stock_code": "2030",
+      "historic_name": "彰源",
+      "historical_selections": 12,
+      "valid_realized_trades": 12,
+      "mean_net_return": 0.013453692053136438,
+      "median_net_return": 0.005111283159826896,
+      "net_win_rate": 0.6666666666666666,
+      "current_ordinary_confirmed": true,
+      "current_name": "彰源",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 12,
+      "stock_code": "3323",
+      "historic_name": "加百裕工業股份有限公司",
+      "historical_selections": 11,
+      "valid_realized_trades": 11,
+      "mean_net_return": 0.01161358266618247,
+      "median_net_return": 0.01175437963291226,
+      "net_win_rate": 0.6363636363636364,
+      "current_ordinary_confirmed": true,
+      "current_name": "加百裕",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 13,
+      "stock_code": "6679",
+      "historic_name": "鈺太科技股份有限公司",
+      "historical_selections": 11,
+      "valid_realized_trades": 11,
+      "mean_net_return": 0.008221740781925401,
+      "median_net_return": 0.010477707209551435,
+      "net_win_rate": 0.6363636363636364,
+      "current_ordinary_confirmed": true,
+      "current_name": "鈺太",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 14,
+      "stock_code": "8431",
+      "historic_name": "匯鑽科技股份有限公司",
+      "historical_selections": 8,
+      "valid_realized_trades": 8,
+      "mean_net_return": 0.013267441663660506,
+      "median_net_return": 0.009764206524548347,
+      "net_win_rate": 0.625,
+      "current_ordinary_confirmed": true,
+      "current_name": "匯鑽科",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 15,
+      "stock_code": "3058",
+      "historic_name": "立德",
+      "historical_selections": 16,
+      "valid_realized_trades": 16,
+      "mean_net_return": 0.010644520890216398,
+      "median_net_return": 0.0022843065128971274,
+      "net_win_rate": 0.625,
+      "current_ordinary_confirmed": true,
+      "current_name": "立德",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 16,
+      "stock_code": "7610",
+      "historic_name": "聯友金屬-創",
+      "historical_selections": 18,
+      "valid_realized_trades": 18,
+      "mean_net_return": 0.0012717578039941459,
+      "median_net_return": 0.0072309094799166695,
+      "net_win_rate": 0.6111111111111112,
+      "current_ordinary_confirmed": false,
+      "current_name": "",
+      "current_market": ""
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 17,
+      "stock_code": "8436",
+      "historic_name": "大江生醫股份有限公司",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.014726149904140385,
+      "median_net_return": 0.026277977331093494,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "大江",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 18,
+      "stock_code": "2727",
+      "historic_name": "王品",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.007520307486724076,
+      "median_net_return": 0.025354950502122886,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "王品",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 19,
+      "stock_code": "2022",
+      "historic_name": "聚亨",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.011614092328729609,
+      "median_net_return": 0.02138010412490643,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "聚亨",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 20,
+      "stock_code": "2740",
+      "historic_name": "華軒地產股份有限公司",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.00975162194553716,
+      "median_net_return": 0.016371287919542565,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "華軒",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 21,
+      "stock_code": "6830",
+      "historic_name": "汎銓",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.017905506590992215,
+      "median_net_return": 0.01162628659654974,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "汎銓",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 22,
+      "stock_code": "9950",
+      "historic_name": "萬國通路股份有限公司",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.01238134950960248,
+      "median_net_return": 0.004892117512199867,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "萬國通",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 23,
+      "stock_code": "3040",
+      "historic_name": "遠見",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.012605896720622489,
+      "median_net_return": 0.0027591259907167043,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "遠見",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 24,
+      "stock_code": "8028",
+      "historic_name": "昇陽半導體",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.009300587795153215,
+      "median_net_return": 0.0007252498565575305,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "昇陽半導體",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 25,
+      "stock_code": "3008",
+      "historic_name": "大立光",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.017825977728895825,
+      "median_net_return": 0.0006702514614433941,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "大立光",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 26,
+      "stock_code": "6431",
+      "historic_name": "光麗-KY",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.008184380581795558,
+      "median_net_return": 0.00031790690435662405,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "光麗-KY",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 27,
+      "stock_code": "3713",
+      "historic_name": "新晶投資控股股份有限公司",
+      "historical_selections": 17,
+      "valid_realized_trades": 17,
+      "mean_net_return": 0.012918421883052785,
+      "median_net_return": 0.0039036839896846587,
+      "net_win_rate": 0.5882352941176471,
+      "current_ordinary_confirmed": true,
+      "current_name": "新晶投控",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 28,
+      "stock_code": "3664",
+      "historic_name": "安瑞科技股份有限公司",
+      "historical_selections": 24,
+      "valid_realized_trades": 24,
+      "mean_net_return": 0.002724305994239932,
+      "median_net_return": 0.0075093906009842115,
+      "net_win_rate": 0.5833333333333334,
+      "current_ordinary_confirmed": true,
+      "current_name": "安瑞-KY",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 29,
+      "stock_code": "5703",
+      "historic_name": "亞都麗緻大飯店股份有限公司",
+      "historical_selections": 12,
+      "valid_realized_trades": 12,
+      "mean_net_return": 0.008458398750657478,
+      "median_net_return": 0.0029965652986559954,
+      "net_win_rate": 0.5833333333333334,
+      "current_ordinary_confirmed": true,
+      "current_name": "亞都",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 30,
+      "stock_code": "5464",
+      "historic_name": "霖宏科技股份有限公司",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.002414351105215643,
+      "median_net_return": 0.034572444971027405,
+      "net_win_rate": 0.5714285714285714,
+      "current_ordinary_confirmed": true,
+      "current_name": "霖宏",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 1,
+      "stock_code": "6756",
+      "historic_name": "威鋒電子",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.02200935081687815,
+      "median_net_return": 0.03054265933675593,
+      "net_win_rate": 0.7,
+      "current_ordinary_confirmed": true,
+      "current_name": "威鋒電子",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 2,
+      "stock_code": "8906",
+      "historic_name": "花王企業股份有限公司",
+      "historical_selections": 16,
+      "valid_realized_trades": 16,
+      "mean_net_return": 0.013139888262088506,
+      "median_net_return": 0.006837168281346395,
+      "net_win_rate": 0.6875,
+      "current_ordinary_confirmed": true,
+      "current_name": "花王",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 3,
+      "stock_code": "8440",
+      "historic_name": "綠電再生股份有限公司",
+      "historical_selections": 25,
+      "valid_realized_trades": 25,
+      "mean_net_return": 0.007824336249393075,
+      "median_net_return": 0.005539560985006631,
+      "net_win_rate": 0.68,
+      "current_ordinary_confirmed": true,
+      "current_name": "綠電",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 4,
+      "stock_code": "2030",
+      "historic_name": "彰源",
+      "historical_selections": 12,
+      "valid_realized_trades": 12,
+      "mean_net_return": 0.013453692053136438,
+      "median_net_return": 0.005111283159826896,
+      "net_win_rate": 0.6666666666666666,
+      "current_ordinary_confirmed": true,
+      "current_name": "彰源",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 5,
+      "stock_code": "3323",
+      "historic_name": "加百裕工業股份有限公司",
+      "historical_selections": 11,
+      "valid_realized_trades": 11,
+      "mean_net_return": 0.01161358266618247,
+      "median_net_return": 0.01175437963291226,
+      "net_win_rate": 0.6363636363636364,
+      "current_ordinary_confirmed": true,
+      "current_name": "加百裕",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 6,
+      "stock_code": "6679",
+      "historic_name": "鈺太科技股份有限公司",
+      "historical_selections": 11,
+      "valid_realized_trades": 11,
+      "mean_net_return": 0.008221740781925401,
+      "median_net_return": 0.010477707209551435,
+      "net_win_rate": 0.6363636363636364,
+      "current_ordinary_confirmed": true,
+      "current_name": "鈺太",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 7,
+      "stock_code": "3058",
+      "historic_name": "立德",
+      "historical_selections": 16,
+      "valid_realized_trades": 16,
+      "mean_net_return": 0.010644520890216398,
+      "median_net_return": 0.0022843065128971274,
+      "net_win_rate": 0.625,
+      "current_ordinary_confirmed": true,
+      "current_name": "立德",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 8,
+      "stock_code": "7610",
+      "historic_name": "聯友金屬-創",
+      "historical_selections": 18,
+      "valid_realized_trades": 18,
+      "mean_net_return": 0.0012717578039941459,
+      "median_net_return": 0.0072309094799166695,
+      "net_win_rate": 0.6111111111111112,
+      "current_ordinary_confirmed": false,
+      "current_name": "",
+      "current_market": ""
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 9,
+      "stock_code": "2022",
+      "historic_name": "聚亨",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.011614092328729609,
+      "median_net_return": 0.02138010412490643,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "聚亨",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 10,
+      "stock_code": "3713",
+      "historic_name": "新晶投資控股股份有限公司",
+      "historical_selections": 17,
+      "valid_realized_trades": 17,
+      "mean_net_return": 0.012918421883052785,
+      "median_net_return": 0.0039036839896846587,
+      "net_win_rate": 0.5882352941176471,
+      "current_ordinary_confirmed": true,
+      "current_name": "新晶投控",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 11,
+      "stock_code": "3664",
+      "historic_name": "安瑞科技股份有限公司",
+      "historical_selections": 24,
+      "valid_realized_trades": 24,
+      "mean_net_return": 0.002724305994239932,
+      "median_net_return": 0.0075093906009842115,
+      "net_win_rate": 0.5833333333333334,
+      "current_ordinary_confirmed": true,
+      "current_name": "安瑞-KY",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 12,
+      "stock_code": "5703",
+      "historic_name": "亞都麗緻大飯店股份有限公司",
+      "historical_selections": 12,
+      "valid_realized_trades": 12,
+      "mean_net_return": 0.008458398750657478,
+      "median_net_return": 0.0029965652986559954,
+      "net_win_rate": 0.5833333333333334,
+      "current_ordinary_confirmed": true,
+      "current_name": "亞都",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 13,
+      "stock_code": "2641",
+      "historic_name": "正德海運股份有限公司",
+      "historical_selections": 14,
+      "valid_realized_trades": 14,
+      "mean_net_return": 0.0023265860011229228,
+      "median_net_return": 0.013990567067808657,
+      "net_win_rate": 0.5714285714285714,
+      "current_ordinary_confirmed": true,
+      "current_name": "正德",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 14,
+      "stock_code": "4763",
+      "historic_name": "材料*-KY",
+      "historical_selections": 30,
+      "valid_realized_trades": 30,
+      "mean_net_return": 0.005904190488270578,
+      "median_net_return": 0.010134647327769142,
+      "net_win_rate": 0.5666666666666667,
+      "current_ordinary_confirmed": true,
+      "current_name": "材料*-KY",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 15,
+      "stock_code": "3441",
+      "historic_name": "聯一光電股份有限公司",
+      "historical_selections": 46,
+      "valid_realized_trades": 46,
+      "mean_net_return": 0.011994969970922304,
+      "median_net_return": 0.0196730840442918,
+      "net_win_rate": 0.5652173913043478,
+      "current_ordinary_confirmed": true,
+      "current_name": "聯一光",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 16,
+      "stock_code": "3686",
+      "historic_name": "達能",
+      "historical_selections": 18,
+      "valid_realized_trades": 18,
+      "mean_net_return": 0.009052525977591356,
+      "median_net_return": 0.0037850530428040763,
+      "net_win_rate": 0.5555555555555556,
+      "current_ordinary_confirmed": true,
+      "current_name": "達能",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 17,
+      "stock_code": "1435",
+      "historic_name": "中福",
+      "historical_selections": 22,
+      "valid_realized_trades": 22,
+      "mean_net_return": 0.009409458811780841,
+      "median_net_return": 0.0032321713267580154,
+      "net_win_rate": 0.5454545454545454,
+      "current_ordinary_confirmed": true,
+      "current_name": "中福",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 18,
+      "stock_code": "7734",
+      "historic_name": "印能科技股份有限公司",
+      "historical_selections": 11,
+      "valid_realized_trades": 11,
+      "mean_net_return": 0.0009940430882804283,
+      "median_net_return": 0.00044008613479329384,
+      "net_win_rate": 0.5454545454545454,
+      "current_ordinary_confirmed": true,
+      "current_name": "印能科技",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 19,
+      "stock_code": "6488",
+      "historic_name": "環球晶圓股份有限公司",
+      "historical_selections": 13,
+      "valid_realized_trades": 13,
+      "mean_net_return": 0.00026897243485781195,
+      "median_net_return": 0.005445176642423499,
+      "net_win_rate": 0.5384615384615384,
+      "current_ordinary_confirmed": true,
+      "current_name": "環球晶",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 20,
+      "stock_code": "2221",
+      "historic_name": "大甲永和機械工業股份有限公司",
+      "historical_selections": 26,
+      "valid_realized_trades": 26,
+      "mean_net_return": 0.007892552910568746,
+      "median_net_return": 0.0039909717651563925,
+      "net_win_rate": 0.5384615384615384,
+      "current_ordinary_confirmed": true,
+      "current_name": "大甲",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 21,
+      "stock_code": "3018",
+      "historic_name": "隆銘綠能",
+      "historical_selections": 13,
+      "valid_realized_trades": 13,
+      "mean_net_return": 0.006336878496310782,
+      "median_net_return": 0.0007437009310475862,
+      "net_win_rate": 0.5384615384615384,
+      "current_ordinary_confirmed": true,
+      "current_name": "隆銘綠能",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 22,
+      "stock_code": "6441",
+      "historic_name": "廣錠科技股份有限公司",
+      "historical_selections": 13,
+      "valid_realized_trades": 13,
+      "mean_net_return": 0.002330884558188793,
+      "median_net_return": 0.00044008613479329384,
+      "net_win_rate": 0.5384615384615384,
+      "current_ordinary_confirmed": true,
+      "current_name": "廣錠",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 23,
+      "stock_code": "6593",
+      "historic_name": "台灣銘板股份有限公司",
+      "historical_selections": 28,
+      "valid_realized_trades": 28,
+      "mean_net_return": 0.002150757990567496,
+      "median_net_return": 0.0020040512500517638,
+      "net_win_rate": 0.5357142857142857,
+      "current_ordinary_confirmed": true,
+      "current_name": "台灣銘板",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 24,
+      "stock_code": "5328",
+      "historic_name": "華容股份有限公司",
+      "historical_selections": 28,
+      "valid_realized_trades": 28,
+      "mean_net_return": 0.0029110242080061127,
+      "median_net_return": 0.0008158493633478869,
+      "net_win_rate": 0.5357142857142857,
+      "current_ordinary_confirmed": true,
+      "current_name": "華容",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 25,
+      "stock_code": "3710",
+      "historic_name": "連展投資控股股份有限公司",
+      "historical_selections": 15,
+      "valid_realized_trades": 15,
+      "mean_net_return": 0.01958948254118085,
+      "median_net_return": 0.005284439397347684,
+      "net_win_rate": 0.5333333333333333,
+      "current_ordinary_confirmed": true,
+      "current_name": "連展投控",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 26,
+      "stock_code": "6517",
+      "historic_name": "保勝光學股份有限公司",
+      "historical_selections": 17,
+      "valid_realized_trades": 17,
+      "mean_net_return": 0.011190174717872203,
+      "median_net_return": 0.001867560609273733,
+      "net_win_rate": 0.5294117647058824,
+      "current_ordinary_confirmed": true,
+      "current_name": "保勝光學",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 27,
+      "stock_code": "3605",
+      "historic_name": "宏致",
+      "historical_selections": 19,
+      "valid_realized_trades": 19,
+      "mean_net_return": 0.0019219894115013575,
+      "median_net_return": 0.013858866609830711,
+      "net_win_rate": 0.5263157894736842,
+      "current_ordinary_confirmed": true,
+      "current_name": "宏致",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 28,
+      "stock_code": "6706",
+      "historic_name": "惠特",
+      "historical_selections": 19,
+      "valid_realized_trades": 19,
+      "mean_net_return": 0.008708953220125513,
+      "median_net_return": 5.888220478689199e-05,
+      "net_win_rate": 0.5263157894736842,
+      "current_ordinary_confirmed": true,
+      "current_name": "惠特",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 29,
+      "stock_code": "4764",
+      "historic_name": "雙鍵",
+      "historical_selections": 52,
+      "valid_realized_trades": 52,
+      "mean_net_return": 0.005638506919045477,
+      "median_net_return": 0.0011409312751143874,
+      "net_win_rate": 0.5192307692307693,
+      "current_ordinary_confirmed": true,
+      "current_name": "雙鍵",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 20,
+      "descriptive_rank": 1,
+      "stock_code": "8440",
+      "historic_name": "綠電再生股份有限公司",
+      "historical_selections": 25,
+      "valid_realized_trades": 25,
+      "mean_net_return": 0.007824336249393075,
+      "median_net_return": 0.005539560985006631,
+      "net_win_rate": 0.68,
+      "current_ordinary_confirmed": true,
+      "current_name": "綠電",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 20,
+      "descriptive_rank": 2,
+      "stock_code": "3664",
+      "historic_name": "安瑞科技股份有限公司",
+      "historical_selections": 24,
+      "valid_realized_trades": 24,
+      "mean_net_return": 0.002724305994239932,
+      "median_net_return": 0.0075093906009842115,
+      "net_win_rate": 0.5833333333333334,
+      "current_ordinary_confirmed": true,
+      "current_name": "安瑞-KY",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 20,
+      "descriptive_rank": 3,
+      "stock_code": "4763",
+      "historic_name": "材料*-KY",
+      "historical_selections": 30,
+      "valid_realized_trades": 30,
+      "mean_net_return": 0.005904190488270578,
+      "median_net_return": 0.010134647327769142,
+      "net_win_rate": 0.5666666666666667,
+      "current_ordinary_confirmed": true,
+      "current_name": "材料*-KY",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 20,
+      "descriptive_rank": 4,
+      "stock_code": "3441",
+      "historic_name": "聯一光電股份有限公司",
+      "historical_selections": 46,
+      "valid_realized_trades": 46,
+      "mean_net_return": 0.011994969970922304,
+      "median_net_return": 0.0196730840442918,
+      "net_win_rate": 0.5652173913043478,
+      "current_ordinary_confirmed": true,
+      "current_name": "聯一光",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 20,
+      "descriptive_rank": 5,
+      "stock_code": "1435",
+      "historic_name": "中福",
+      "historical_selections": 22,
+      "valid_realized_trades": 22,
+      "mean_net_return": 0.009409458811780841,
+      "median_net_return": 0.0032321713267580154,
+      "net_win_rate": 0.5454545454545454,
+      "current_ordinary_confirmed": true,
+      "current_name": "中福",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 20,
+      "descriptive_rank": 6,
+      "stock_code": "2221",
+      "historic_name": "大甲永和機械工業股份有限公司",
+      "historical_selections": 26,
+      "valid_realized_trades": 26,
+      "mean_net_return": 0.007892552910568746,
+      "median_net_return": 0.0039909717651563925,
+      "net_win_rate": 0.5384615384615384,
+      "current_ordinary_confirmed": true,
+      "current_name": "大甲",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 20,
+      "descriptive_rank": 7,
+      "stock_code": "6593",
+      "historic_name": "台灣銘板股份有限公司",
+      "historical_selections": 28,
+      "valid_realized_trades": 28,
+      "mean_net_return": 0.002150757990567496,
+      "median_net_return": 0.0020040512500517638,
+      "net_win_rate": 0.5357142857142857,
+      "current_ordinary_confirmed": true,
+      "current_name": "台灣銘板",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 20,
+      "descriptive_rank": 8,
+      "stock_code": "5328",
+      "historic_name": "華容股份有限公司",
+      "historical_selections": 28,
+      "valid_realized_trades": 28,
+      "mean_net_return": 0.0029110242080061127,
+      "median_net_return": 0.0008158493633478869,
+      "net_win_rate": 0.5357142857142857,
+      "current_ordinary_confirmed": true,
+      "current_name": "華容",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 1,
+      "minimum_repeated_observations": 20,
+      "descriptive_rank": 9,
+      "stock_code": "4764",
+      "historic_name": "雙鍵",
+      "historical_selections": 52,
+      "valid_realized_trades": 52,
+      "mean_net_return": 0.005638506919045477,
+      "median_net_return": 0.0011409312751143874,
+      "net_win_rate": 0.5192307692307693,
+      "current_ordinary_confirmed": true,
+      "current_name": "雙鍵",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 1,
+      "stock_code": "6584",
+      "historic_name": "南俊國際股份有限公司",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.07905305739463975,
+      "median_net_return": 0.06633721160468387,
+      "net_win_rate": 1.0,
+      "current_ordinary_confirmed": true,
+      "current_name": "南俊國際",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 2,
+      "stock_code": "2467",
+      "historic_name": "志聖",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.07198251891427869,
+      "median_net_return": 0.062179273795990087,
+      "net_win_rate": 1.0,
+      "current_ordinary_confirmed": true,
+      "current_name": "志聖",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 3,
+      "stock_code": "4764",
+      "historic_name": "雙鍵",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.043713793274825455,
+      "median_net_return": 0.031247348450929024,
+      "net_win_rate": 1.0,
+      "current_ordinary_confirmed": true,
+      "current_name": "雙鍵",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 4,
+      "stock_code": "2413",
+      "historic_name": "環科",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.09898017841838945,
+      "median_net_return": 0.09090469901190479,
+      "net_win_rate": 0.8333333333333334,
+      "current_ordinary_confirmed": true,
+      "current_name": "環科",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 5,
+      "stock_code": "2375",
+      "historic_name": "凱美",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.03597984207438817,
+      "median_net_return": 0.05890089634270912,
+      "net_win_rate": 0.8333333333333334,
+      "current_ordinary_confirmed": true,
+      "current_name": "凱美",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 6,
+      "stock_code": "1781",
+      "historic_name": "合世生醫科技股份有限公司",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.04844688419268319,
+      "median_net_return": 0.04414671935146308,
+      "net_win_rate": 0.8333333333333334,
+      "current_ordinary_confirmed": true,
+      "current_name": "合世",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 7,
+      "stock_code": "3529",
+      "historic_name": "力旺電子股份有限公司",
+      "historical_selections": 17,
+      "valid_realized_trades": 17,
+      "mean_net_return": 0.0377111418070396,
+      "median_net_return": 0.027788481640778517,
+      "net_win_rate": 0.8235294117647058,
+      "current_ordinary_confirmed": true,
+      "current_name": "力旺",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 8,
+      "stock_code": "3605",
+      "historic_name": "宏致",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.032119279996696615,
+      "median_net_return": 0.03765838717946801,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "宏致",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 9,
+      "stock_code": "6182",
+      "historic_name": "合晶科技股份有限公司",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.08562458104586812,
+      "median_net_return": 0.031999466288630485,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "合晶",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 10,
+      "stock_code": "1529",
+      "historic_name": "樂事綠能",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.05233881901081359,
+      "median_net_return": 0.027925918490504742,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "樂事綠能",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 11,
+      "stock_code": "3593",
+      "historic_name": "力銘",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.023095663741278628,
+      "median_net_return": 0.020120522600672652,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "力銘",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 12,
+      "stock_code": "6133",
+      "historic_name": "金橋",
+      "historical_selections": 9,
+      "valid_realized_trades": 9,
+      "mean_net_return": 0.046350972234357704,
+      "median_net_return": 0.016670171671056,
+      "net_win_rate": 0.7777777777777778,
+      "current_ordinary_confirmed": true,
+      "current_name": "金橋",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 13,
+      "stock_code": "3441",
+      "historic_name": "聯一光電股份有限公司",
+      "historical_selections": 8,
+      "valid_realized_trades": 8,
+      "mean_net_return": 0.08067017776883194,
+      "median_net_return": 0.0960839511040632,
+      "net_win_rate": 0.75,
+      "current_ordinary_confirmed": true,
+      "current_name": "聯一光",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 14,
+      "stock_code": "6442",
+      "historic_name": "光聖",
+      "historical_selections": 8,
+      "valid_realized_trades": 8,
+      "mean_net_return": 0.03758166293983213,
+      "median_net_return": 0.04423406626499382,
+      "net_win_rate": 0.75,
+      "current_ordinary_confirmed": true,
+      "current_name": "光聖",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 15,
+      "stock_code": "3287",
+      "historic_name": "廣寰科技股份有限公司",
+      "historical_selections": 8,
+      "valid_realized_trades": 8,
+      "mean_net_return": 0.02284796250160584,
+      "median_net_return": 0.026819327125583214,
+      "net_win_rate": 0.75,
+      "current_ordinary_confirmed": true,
+      "current_name": "廣寰科",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 16,
+      "stock_code": "6791",
+      "historic_name": "虎門科技股份有限公司",
+      "historical_selections": 8,
+      "valid_realized_trades": 8,
+      "mean_net_return": 0.027993239778717857,
+      "median_net_return": 0.0234802148854395,
+      "net_win_rate": 0.75,
+      "current_ordinary_confirmed": true,
+      "current_name": "虎門科技",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 17,
+      "stock_code": "6643",
+      "historic_name": "&#20870;星科技股份有限公司",
+      "historical_selections": 8,
+      "valid_realized_trades": 8,
+      "mean_net_return": 0.02471129186510901,
+      "median_net_return": 0.023056372414704707,
+      "net_win_rate": 0.75,
+      "current_ordinary_confirmed": true,
+      "current_name": "M31",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 18,
+      "stock_code": "3661",
+      "historic_name": "世芯-KY",
+      "historical_selections": 19,
+      "valid_realized_trades": 19,
+      "mean_net_return": 0.02785540724868721,
+      "median_net_return": 0.026270999040100662,
+      "net_win_rate": 0.7368421052631579,
+      "current_ordinary_confirmed": true,
+      "current_name": "世芯-KY",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 19,
+      "stock_code": "6118",
+      "historic_name": "建達國際股份有限公司",
+      "historical_selections": 11,
+      "valid_realized_trades": 11,
+      "mean_net_return": 0.006039336723834721,
+      "median_net_return": 0.02695853811708715,
+      "net_win_rate": 0.7272727272727273,
+      "current_ordinary_confirmed": true,
+      "current_name": "建達",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 20,
+      "stock_code": "6141",
+      "historic_name": "柏承",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.027691495223587954,
+      "median_net_return": 0.04439161005486958,
+      "net_win_rate": 0.7142857142857143,
+      "current_ordinary_confirmed": true,
+      "current_name": "柏承",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 21,
+      "stock_code": "4806",
+      "historic_name": "桂田文創娛樂股份有限公司",
+      "historical_selections": 8,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.024980150379104997,
+      "median_net_return": 0.04096727987132831,
+      "net_win_rate": 0.7142857142857143,
+      "current_ordinary_confirmed": true,
+      "current_name": "桂田文創",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 22,
+      "stock_code": "4760",
+      "historic_name": "勤凱科技股份有限公司",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.01152703603651847,
+      "median_net_return": 0.02477847270043121,
+      "net_win_rate": 0.7142857142857143,
+      "current_ordinary_confirmed": true,
+      "current_name": "勤凱",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 23,
+      "stock_code": "3051",
+      "historic_name": "力特",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.028553685886165643,
+      "median_net_return": 0.013432954307021516,
+      "net_win_rate": 0.7142857142857143,
+      "current_ordinary_confirmed": true,
+      "current_name": "力特",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 24,
+      "stock_code": "3715",
+      "historic_name": "定穎投控",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.0073319003885488065,
+      "median_net_return": 0.00910322043617029,
+      "net_win_rate": 0.7142857142857143,
+      "current_ordinary_confirmed": true,
+      "current_name": "定穎投控",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 25,
+      "stock_code": "3017",
+      "historic_name": "奇鋐",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.006079406983132267,
+      "median_net_return": 0.008089120995935506,
+      "net_win_rate": 0.7142857142857143,
+      "current_ordinary_confirmed": true,
+      "current_name": "奇鋐",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 26,
+      "stock_code": "6593",
+      "historic_name": "台灣銘板股份有限公司",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.025249617170282117,
+      "median_net_return": 0.006000246466662196,
+      "net_win_rate": 0.7142857142857143,
+      "current_ordinary_confirmed": true,
+      "current_name": "台灣銘板",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 27,
+      "stock_code": "2481",
+      "historic_name": "強茂",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.005839238876172738,
+      "median_net_return": 0.0058314664455267895,
+      "net_win_rate": 0.7142857142857143,
+      "current_ordinary_confirmed": true,
+      "current_name": "強茂",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 28,
+      "stock_code": "3141",
+      "historic_name": "晶宏半導體股份有限公司",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.0331724992631337,
+      "median_net_return": 0.04673146650765314,
+      "net_win_rate": 0.7,
+      "current_ordinary_confirmed": true,
+      "current_name": "晶宏",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 29,
+      "stock_code": "6173",
+      "historic_name": "信昌電子陶瓷股份有限公司",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.021300303227737506,
+      "median_net_return": 0.021086838489023263,
+      "net_win_rate": 0.7,
+      "current_ordinary_confirmed": true,
+      "current_name": "信昌電",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 30,
+      "stock_code": "6291",
+      "historic_name": "沛亨半導體股份有限公司",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.026626791346042056,
+      "median_net_return": 0.016807608520782225,
+      "net_win_rate": 0.7,
+      "current_ordinary_confirmed": true,
+      "current_name": "沛亨",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 1,
+      "stock_code": "3529",
+      "historic_name": "力旺電子股份有限公司",
+      "historical_selections": 17,
+      "valid_realized_trades": 17,
+      "mean_net_return": 0.0377111418070396,
+      "median_net_return": 0.027788481640778517,
+      "net_win_rate": 0.8235294117647058,
+      "current_ordinary_confirmed": true,
+      "current_name": "力旺",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 2,
+      "stock_code": "3661",
+      "historic_name": "世芯-KY",
+      "historical_selections": 19,
+      "valid_realized_trades": 19,
+      "mean_net_return": 0.02785540724868721,
+      "median_net_return": 0.026270999040100662,
+      "net_win_rate": 0.7368421052631579,
+      "current_ordinary_confirmed": true,
+      "current_name": "世芯-KY",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 3,
+      "stock_code": "6118",
+      "historic_name": "建達國際股份有限公司",
+      "historical_selections": 11,
+      "valid_realized_trades": 11,
+      "mean_net_return": 0.006039336723834721,
+      "median_net_return": 0.02695853811708715,
+      "net_win_rate": 0.7272727272727273,
+      "current_ordinary_confirmed": true,
+      "current_name": "建達",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 4,
+      "stock_code": "3141",
+      "historic_name": "晶宏半導體股份有限公司",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.0331724992631337,
+      "median_net_return": 0.04673146650765314,
+      "net_win_rate": 0.7,
+      "current_ordinary_confirmed": true,
+      "current_name": "晶宏",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 5,
+      "stock_code": "6173",
+      "historic_name": "信昌電子陶瓷股份有限公司",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.021300303227737506,
+      "median_net_return": 0.021086838489023263,
+      "net_win_rate": 0.7,
+      "current_ordinary_confirmed": true,
+      "current_name": "信昌電",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 6,
+      "stock_code": "6291",
+      "historic_name": "沛亨半導體股份有限公司",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.026626791346042056,
+      "median_net_return": 0.016807608520782225,
+      "net_win_rate": 0.7,
+      "current_ordinary_confirmed": true,
+      "current_name": "沛亨",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 7,
+      "stock_code": "1325",
+      "historic_name": "恆大",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.01750013293616487,
+      "median_net_return": 0.01581882016991154,
+      "net_win_rate": 0.7,
+      "current_ordinary_confirmed": true,
+      "current_name": "恆大",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 8,
+      "stock_code": "5351",
+      "historic_name": "鈺創科技股份有限公司",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.0050802297649080955,
+      "median_net_return": 0.008197402782445184,
+      "net_win_rate": 0.7,
+      "current_ordinary_confirmed": true,
+      "current_name": "鈺創",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 9,
+      "stock_code": "6441",
+      "historic_name": "廣錠科技股份有限公司",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.007938301203397936,
+      "median_net_return": 0.005724308282142765,
+      "net_win_rate": 0.7,
+      "current_ordinary_confirmed": true,
+      "current_name": "廣錠",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 10,
+      "stock_code": "8054",
+      "historic_name": "安國國際科技股份有限公司",
+      "historical_selections": 16,
+      "valid_realized_trades": 16,
+      "mean_net_return": 0.0519023431721686,
+      "median_net_return": 0.050123980415310965,
+      "net_win_rate": 0.6875,
+      "current_ordinary_confirmed": true,
+      "current_name": "安國",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 11,
+      "stock_code": "3535",
+      "historic_name": "晶彩科",
+      "historical_selections": 15,
+      "valid_realized_trades": 15,
+      "mean_net_return": 0.03897169365927333,
+      "median_net_return": 0.019296138054551992,
+      "net_win_rate": 0.6666666666666666,
+      "current_ordinary_confirmed": true,
+      "current_name": "晶彩科",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 12,
+      "stock_code": "5245",
+      "historic_name": "智晶光電股份有限公司",
+      "historical_selections": 14,
+      "valid_realized_trades": 14,
+      "mean_net_return": 0.011051794143990126,
+      "median_net_return": 0.02201270394483834,
+      "net_win_rate": 0.6428571428571429,
+      "current_ordinary_confirmed": true,
+      "current_name": "智晶",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 13,
+      "stock_code": "2314",
+      "historic_name": "台揚",
+      "historical_selections": 11,
+      "valid_realized_trades": 11,
+      "mean_net_return": 0.00847599680344408,
+      "median_net_return": 0.007634349320206013,
+      "net_win_rate": 0.6363636363636364,
+      "current_ordinary_confirmed": true,
+      "current_name": "台揚",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 14,
+      "stock_code": "5274",
+      "historic_name": "信驊科技股份有限公司",
+      "historical_selections": 13,
+      "valid_realized_trades": 13,
+      "mean_net_return": 0.0023632922146646917,
+      "median_net_return": 0.010293787845244928,
+      "net_win_rate": 0.6153846153846154,
+      "current_ordinary_confirmed": true,
+      "current_name": "信驊",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 15,
+      "stock_code": "2438",
+      "historic_name": "翔耀",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.009421755764776463,
+      "median_net_return": 0.023179911820504273,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "翔耀",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 16,
+      "stock_code": "6446",
+      "historic_name": "藥華藥",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 8.634000570226786e-05,
+      "median_net_return": 0.017559430668187437,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "藥華藥",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 17,
+      "stock_code": "2615",
+      "historic_name": "萬海",
+      "historical_selections": 15,
+      "valid_realized_trades": 15,
+      "mean_net_return": 0.012822988593638115,
+      "median_net_return": 0.014575856440330215,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "萬海",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 18,
+      "stock_code": "6237",
+      "historic_name": "驊訊電子企業股份有限公司",
+      "historical_selections": 15,
+      "valid_realized_trades": 15,
+      "mean_net_return": 0.011160653230602299,
+      "median_net_return": 0.005648020185694103,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "驊訊",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 19,
+      "stock_code": "4979",
+      "historic_name": "華星光通科技股份有限公司",
+      "historical_selections": 17,
+      "valid_realized_trades": 17,
+      "mean_net_return": 0.016532209536214978,
+      "median_net_return": 0.020968562370498045,
+      "net_win_rate": 0.5882352941176471,
+      "current_ordinary_confirmed": true,
+      "current_name": "華星光",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 20,
+      "stock_code": "2609",
+      "historic_name": "陽明",
+      "historical_selections": 12,
+      "valid_realized_trades": 12,
+      "mean_net_return": 0.020431711996683883,
+      "median_net_return": 0.03640253135296756,
+      "net_win_rate": 0.5833333333333334,
+      "current_ordinary_confirmed": true,
+      "current_name": "陽明",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 21,
+      "stock_code": "6150",
+      "historic_name": "撼訊科技股份有限公司",
+      "historical_selections": 12,
+      "valid_realized_trades": 12,
+      "mean_net_return": 0.01897397854854746,
+      "median_net_return": 0.007263435412511177,
+      "net_win_rate": 0.5833333333333334,
+      "current_ordinary_confirmed": true,
+      "current_name": "撼訊",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 22,
+      "stock_code": "3228",
+      "historic_name": "金麗科技股份有限公司",
+      "historical_selections": 40,
+      "valid_realized_trades": 40,
+      "mean_net_return": 0.0053695730690107215,
+      "median_net_return": 0.007988172328774246,
+      "net_win_rate": 0.575,
+      "current_ordinary_confirmed": true,
+      "current_name": "金麗科",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 23,
+      "stock_code": "2465",
+      "historic_name": "麗臺",
+      "historical_selections": 23,
+      "valid_realized_trades": 23,
+      "mean_net_return": 0.016610655642457995,
+      "median_net_return": 0.012587043507329643,
+      "net_win_rate": 0.5652173913043478,
+      "current_ordinary_confirmed": true,
+      "current_name": "麗臺",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 24,
+      "stock_code": "5475",
+      "historic_name": "德宏工業股份有限公司",
+      "historical_selections": 23,
+      "valid_realized_trades": 23,
+      "mean_net_return": 0.015909028851266792,
+      "median_net_return": 0.010211467666751073,
+      "net_win_rate": 0.5652173913043478,
+      "current_ordinary_confirmed": true,
+      "current_name": "德宏",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 25,
+      "stock_code": "3363",
+      "historic_name": "上詮光纖通信股份有限公司",
+      "historical_selections": 16,
+      "valid_realized_trades": 16,
+      "mean_net_return": 0.025436845625815538,
+      "median_net_return": 0.009030835451632746,
+      "net_win_rate": 0.5625,
+      "current_ordinary_confirmed": true,
+      "current_name": "上詮",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 26,
+      "stock_code": "8996",
+      "historic_name": "高力",
+      "historical_selections": 20,
+      "valid_realized_trades": 20,
+      "mean_net_return": 0.01954967769912555,
+      "median_net_return": 0.009672897361046928,
+      "net_win_rate": 0.55,
+      "current_ordinary_confirmed": true,
+      "current_name": "高力",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 27,
+      "stock_code": "3046",
+      "historic_name": "建碁",
+      "historical_selections": 11,
+      "valid_realized_trades": 11,
+      "mean_net_return": 0.012209877093914351,
+      "median_net_return": 0.020982755504721062,
+      "net_win_rate": 0.5454545454545454,
+      "current_ordinary_confirmed": true,
+      "current_name": "建碁",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 28,
+      "stock_code": "6781",
+      "historic_name": "AES-KY",
+      "historical_selections": 11,
+      "valid_realized_trades": 11,
+      "mean_net_return": 0.013913590819397581,
+      "median_net_return": 0.020930595736451618,
+      "net_win_rate": 0.5454545454545454,
+      "current_ordinary_confirmed": true,
+      "current_name": "AES-KY",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 29,
+      "stock_code": "1569",
+      "historic_name": "濱川企業股份有限公司",
+      "historical_selections": 11,
+      "valid_realized_trades": 11,
+      "mean_net_return": 0.02226875023669657,
+      "median_net_return": 0.014628607589192821,
+      "net_win_rate": 0.5454545454545454,
+      "current_ordinary_confirmed": true,
+      "current_name": "濱川",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 30,
+      "stock_code": "6556",
+      "historic_name": "勝品電通股份有限公司",
+      "historical_selections": 11,
+      "valid_realized_trades": 11,
+      "mean_net_return": 0.013889634529208973,
+      "median_net_return": 0.003331345852141343,
+      "net_win_rate": 0.5454545454545454,
+      "current_ordinary_confirmed": true,
+      "current_name": "勝品",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 20,
+      "descriptive_rank": 1,
+      "stock_code": "3228",
+      "historic_name": "金麗科技股份有限公司",
+      "historical_selections": 40,
+      "valid_realized_trades": 40,
+      "mean_net_return": 0.0053695730690107215,
+      "median_net_return": 0.007988172328774246,
+      "net_win_rate": 0.575,
+      "current_ordinary_confirmed": true,
+      "current_name": "金麗科",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 20,
+      "descriptive_rank": 2,
+      "stock_code": "2465",
+      "historic_name": "麗臺",
+      "historical_selections": 23,
+      "valid_realized_trades": 23,
+      "mean_net_return": 0.016610655642457995,
+      "median_net_return": 0.012587043507329643,
+      "net_win_rate": 0.5652173913043478,
+      "current_ordinary_confirmed": true,
+      "current_name": "麗臺",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 20,
+      "descriptive_rank": 3,
+      "stock_code": "5475",
+      "historic_name": "德宏工業股份有限公司",
+      "historical_selections": 23,
+      "valid_realized_trades": 23,
+      "mean_net_return": 0.015909028851266792,
+      "median_net_return": 0.010211467666751073,
+      "net_win_rate": 0.5652173913043478,
+      "current_ordinary_confirmed": true,
+      "current_name": "德宏",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 20,
+      "descriptive_rank": 4,
+      "stock_code": "8996",
+      "historic_name": "高力",
+      "historical_selections": 20,
+      "valid_realized_trades": 20,
+      "mean_net_return": 0.01954967769912555,
+      "median_net_return": 0.009672897361046928,
+      "net_win_rate": 0.55,
+      "current_ordinary_confirmed": true,
+      "current_name": "高力",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 3,
+      "minimum_repeated_observations": 20,
+      "descriptive_rank": 5,
+      "stock_code": "9103",
+      "historic_name": "美德醫療-DR",
+      "historical_selections": 23,
+      "valid_realized_trades": 23,
+      "mean_net_return": 0.015102599134182364,
+      "median_net_return": 0.005952108086422436,
+      "net_win_rate": 0.5217391304347826,
+      "current_ordinary_confirmed": false,
+      "current_name": "",
+      "current_market": ""
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 1,
+      "stock_code": "6442",
+      "historic_name": "光聖",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.09006153390782133,
+      "median_net_return": 0.06529691400419546,
+      "net_win_rate": 1.0,
+      "current_ordinary_confirmed": true,
+      "current_name": "光聖",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 2,
+      "stock_code": "3653",
+      "historic_name": "健策",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.07030815486998891,
+      "median_net_return": 0.031080697399926915,
+      "net_win_rate": 1.0,
+      "current_ordinary_confirmed": true,
+      "current_name": "健策",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 3,
+      "stock_code": "8101",
+      "historic_name": "華冠",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.0895437717506833,
+      "median_net_return": 0.048944767513614984,
+      "net_win_rate": 0.8571428571428571,
+      "current_ordinary_confirmed": true,
+      "current_name": "華冠",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 4,
+      "stock_code": "3363",
+      "historic_name": "上詮光纖通信股份有限公司",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.0693504140002313,
+      "median_net_return": 0.0657628627731256,
+      "net_win_rate": 0.8333333333333334,
+      "current_ordinary_confirmed": true,
+      "current_name": "上詮",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 5,
+      "stock_code": "6834",
+      "historic_name": "天二科技",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.03536582146140795,
+      "median_net_return": 0.0444412268865908,
+      "net_win_rate": 0.8333333333333334,
+      "current_ordinary_confirmed": true,
+      "current_name": "天二科技",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 6,
+      "stock_code": "3324",
+      "historic_name": "雙鴻科技股份有限公司",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.039687956091644126,
+      "median_net_return": 0.04091393734187365,
+      "net_win_rate": 0.8333333333333334,
+      "current_ordinary_confirmed": true,
+      "current_name": "雙鴻",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 7,
+      "stock_code": "2615",
+      "historic_name": "萬海",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.019570716063708193,
+      "median_net_return": 0.03387721794633636,
+      "net_win_rate": 0.8333333333333334,
+      "current_ordinary_confirmed": true,
+      "current_name": "萬海",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 8,
+      "stock_code": "3135",
+      "historic_name": "凌航",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.14773386650954207,
+      "median_net_return": 0.0923432323034672,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "凌航",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 9,
+      "stock_code": "8021",
+      "historic_name": "尖點",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.08369391265273418,
+      "median_net_return": 0.08109316273770761,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "尖點",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 10,
+      "stock_code": "6222",
+      "historic_name": "立軒開發建設股份有限公司",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.10725909274873738,
+      "median_net_return": 0.0686890730834977,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "立軒",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 11,
+      "stock_code": "2243",
+      "historic_name": "宏旭-KY",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.04410958065024621,
+      "median_net_return": 0.05750015227101546,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "宏旭-KY",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 12,
+      "stock_code": "4764",
+      "historic_name": "雙鍵",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.09764181317160592,
+      "median_net_return": 0.04439161005486958,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "雙鍵",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 13,
+      "stock_code": "6113",
+      "historic_name": "亞矽科技股份有限公司",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.06875522491658892,
+      "median_net_return": 0.03548932144183481,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "亞矽",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 14,
+      "stock_code": "1519",
+      "historic_name": "華城",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.0463435799769498,
+      "median_net_return": 0.030628291246568073,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "華城",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 15,
+      "stock_code": "1802",
+      "historic_name": "台玻",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.08828553350522397,
+      "median_net_return": 0.029349371576955496,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "台玻",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 16,
+      "stock_code": "4534",
+      "historic_name": "慶騰精密科技股份有限公司",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.04877172955221258,
+      "median_net_return": 0.022544591649845902,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": false,
+      "current_name": "",
+      "current_market": ""
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 17,
+      "stock_code": "1471",
+      "historic_name": "首利",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.02858423153860421,
+      "median_net_return": 0.015591848298461719,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "首利",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 18,
+      "stock_code": "3006",
+      "historic_name": "晶豪科",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.09343405070315418,
+      "median_net_return": 0.09435581873629162,
+      "net_win_rate": 0.7142857142857143,
+      "current_ordinary_confirmed": true,
+      "current_name": "晶豪科",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 19,
+      "stock_code": "2344",
+      "historic_name": "華邦電",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.035182682156264,
+      "median_net_return": 0.04883914693977198,
+      "net_win_rate": 0.7142857142857143,
+      "current_ordinary_confirmed": true,
+      "current_name": "華邦電",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 20,
+      "stock_code": "5328",
+      "historic_name": "華容股份有限公司",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.050167108957101844,
+      "median_net_return": 0.045152007220867985,
+      "net_win_rate": 0.7142857142857143,
+      "current_ordinary_confirmed": true,
+      "current_name": "華容",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 21,
+      "stock_code": "5608",
+      "historic_name": "四維航",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.05629714052461337,
+      "median_net_return": 0.027046180720914803,
+      "net_win_rate": 0.7142857142857143,
+      "current_ordinary_confirmed": true,
+      "current_name": "四維航",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 22,
+      "stock_code": "5340",
+      "historic_name": "建榮工業材料股份有限公司",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.035435843739672866,
+      "median_net_return": 0.02105939842952531,
+      "net_win_rate": 0.7142857142857143,
+      "current_ordinary_confirmed": true,
+      "current_name": "建榮",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 23,
+      "stock_code": "6805",
+      "historic_name": "富世達",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.05573680318895324,
+      "median_net_return": 0.05260872511328818,
+      "net_win_rate": 0.6666666666666666,
+      "current_ordinary_confirmed": true,
+      "current_name": "富世達",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 24,
+      "stock_code": "6854",
+      "historic_name": "錼創科技-KY創",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.036251482893267774,
+      "median_net_return": 0.04195104148716167,
+      "net_win_rate": 0.6666666666666666,
+      "current_ordinary_confirmed": false,
+      "current_name": "",
+      "current_market": ""
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 25,
+      "stock_code": "4924",
+      "historic_name": "欣厚科技股份有限公司",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.019199240344450252,
+      "median_net_return": 0.0357858988090366,
+      "net_win_rate": 0.6666666666666666,
+      "current_ordinary_confirmed": true,
+      "current_name": "欣厚-KY",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 26,
+      "stock_code": "3564",
+      "historic_name": "其陽科技股份有限公司",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.005827247930632644,
+      "median_net_return": 0.030488666288649102,
+      "net_win_rate": 0.6666666666666666,
+      "current_ordinary_confirmed": true,
+      "current_name": "其陽",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 27,
+      "stock_code": "8096",
+      "historic_name": "擎亞電子股份有限公司",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.023024063321660754,
+      "median_net_return": 0.016510380634928268,
+      "net_win_rate": 0.6666666666666666,
+      "current_ordinary_confirmed": true,
+      "current_name": "擎亞",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 28,
+      "stock_code": "3522",
+      "historic_name": "御嵿國際股份有限公司",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.003191415347582919,
+      "median_net_return": 0.015501248791671474,
+      "net_win_rate": 0.6666666666666666,
+      "current_ordinary_confirmed": true,
+      "current_name": "御嵿",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 29,
+      "stock_code": "3666",
+      "historic_name": "光耀科技股份有限公司",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.016778039491150865,
+      "median_net_return": 0.00743960769105434,
+      "net_win_rate": 0.6666666666666666,
+      "current_ordinary_confirmed": true,
+      "current_name": "光耀",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 30,
+      "stock_code": "6669",
+      "historic_name": "緯穎",
+      "historical_selections": 6,
+      "valid_realized_trades": 6,
+      "mean_net_return": 0.005034995063378234,
+      "median_net_return": 0.003948392362487452,
+      "net_win_rate": 0.6666666666666666,
+      "current_ordinary_confirmed": true,
+      "current_name": "緯穎",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 1,
+      "stock_code": "1471",
+      "historic_name": "首利",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.02858423153860421,
+      "median_net_return": 0.015591848298461719,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "首利",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 2,
+      "stock_code": "3529",
+      "historic_name": "力旺電子股份有限公司",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.025773996876251724,
+      "median_net_return": 0.04199669606891243,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "力旺",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 3,
+      "stock_code": "8040",
+      "historic_name": "九暘電子股份有限公司",
+      "historical_selections": 10,
+      "valid_realized_trades": 10,
+      "mean_net_return": 0.01867578572669325,
+      "median_net_return": 0.010421466915192745,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "九暘",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 4,
+      "stock_code": "3661",
+      "historic_name": "世芯-KY",
+      "historical_selections": 14,
+      "valid_realized_trades": 14,
+      "mean_net_return": 0.026891082712204233,
+      "median_net_return": 0.018589083418008467,
+      "net_win_rate": 0.5714285714285714,
+      "current_ordinary_confirmed": true,
+      "current_name": "世芯-KY",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 5,
+      "stock_code": "6415",
+      "historic_name": "矽力*-KY",
+      "historical_selections": 11,
+      "valid_realized_trades": 11,
+      "mean_net_return": 0.036886200034927485,
+      "median_net_return": 0.013207401748994041,
+      "net_win_rate": 0.5454545454545454,
+      "current_ordinary_confirmed": true,
+      "current_name": "矽力*-KY",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 5,
+      "minimum_repeated_observations": 10,
+      "descriptive_rank": 6,
+      "stock_code": "5475",
+      "historic_name": "德宏工業股份有限公司",
+      "historical_selections": 15,
+      "valid_realized_trades": 15,
+      "mean_net_return": 0.02236019918106536,
+      "median_net_return": 0.003620057857461445,
+      "net_win_rate": 0.5333333333333333,
+      "current_ordinary_confirmed": true,
+      "current_name": "德宏",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 10,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 1,
+      "stock_code": "3552",
+      "historic_name": "同致電子企業股份有限公司",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.017836799993740816,
+      "median_net_return": 0.09494672622444367,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "同致",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 10,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 2,
+      "stock_code": "6547",
+      "historic_name": "高端疫苗生物製劑股份有限公司",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.08678336766189487,
+      "median_net_return": 0.08666455930083639,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "高端疫苗",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 10,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 3,
+      "stock_code": "2364",
+      "historic_name": "倫飛",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.1434751219650296,
+      "median_net_return": 0.06332383179495826,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "倫飛",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 10,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 4,
+      "stock_code": "8932",
+      "historic_name": "智通科創股份有限公司",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.053109943820762215,
+      "median_net_return": 0.05053498992718608,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "智通*",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 10,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 5,
+      "stock_code": "3522",
+      "historic_name": "御嵿國際股份有限公司",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.05169199057382308,
+      "median_net_return": 0.038499093829944986,
+      "net_win_rate": 0.8,
+      "current_ordinary_confirmed": true,
+      "current_name": "御嵿",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 10,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 6,
+      "stock_code": "3228",
+      "historic_name": "金麗科技股份有限公司",
+      "historical_selections": 8,
+      "valid_realized_trades": 8,
+      "mean_net_return": 0.054954414057166515,
+      "median_net_return": 0.050881893782820375,
+      "net_win_rate": 0.625,
+      "current_ordinary_confirmed": true,
+      "current_name": "金麗科",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 10,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 7,
+      "stock_code": "3521",
+      "historic_name": "台鋼建設事業股份有限公司",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.06320277618764789,
+      "median_net_return": 0.1824515383735219,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "台鋼建設",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 10,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 8,
+      "stock_code": "2605",
+      "historic_name": "新興",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.05882484479849755,
+      "median_net_return": 0.07576151186682956,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "新興",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 10,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 9,
+      "stock_code": "5608",
+      "historic_name": "四維航",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.15804575807554827,
+      "median_net_return": 0.05677287241820417,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "四維航",
+      "current_market": "TWSE"
+    },
+    {
+      "H": 10,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 10,
+      "stock_code": "5536",
+      "historic_name": "聖暉工程科技股份有限公司",
+      "historical_selections": 5,
+      "valid_realized_trades": 5,
+      "mean_net_return": 0.0026676275854255137,
+      "median_net_return": 0.022136893869289853,
+      "net_win_rate": 0.6,
+      "current_ordinary_confirmed": true,
+      "current_name": "聖暉*",
+      "current_market": "TPEX"
+    },
+    {
+      "H": 10,
+      "minimum_repeated_observations": 5,
+      "descriptive_rank": 11,
+      "stock_code": "3093",
+      "historic_name": "台灣港建股份有限公司",
+      "historical_selections": 7,
+      "valid_realized_trades": 7,
+      "mean_net_return": 0.06682365593529525,
+      "median_net_return": 0.05031428669001814,
+      "net_win_rate": 0.5714285714285714,
+      "current_ordinary_confirmed": true,
+      "current_name": "港建*",
+      "current_market": "TPEX"
+    }
+  ]
+}
