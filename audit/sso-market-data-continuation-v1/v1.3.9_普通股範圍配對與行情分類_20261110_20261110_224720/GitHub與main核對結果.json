@@ -1,0 +1,133 @@
+{
+  "version": "v1.3.9",
+  "status": "PASS_WITH_PRODUCT_CLASSIFICATION_LIMITS",
+  "output_dir": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720",
+  "zip_path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720.zip",
+  "zip_sha256": "21885b2bd3bcc2db262c18e3cd72d097bb0847b52ccd69717cbd74a39d257476",
+  "github": {
+    "attempted": true,
+    "success": true,
+    "error": null,
+    "branch": "audit/sso-market-data-continuation-v1-v139-universe-20261110-20261110_224720",
+    "remote_root": "audit/sso-market-data-continuation-v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720",
+    "uploaded_files": [
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720.zip",
+        "bytes": 3620676,
+        "sha256": "21885b2bd3bcc2db262c18e3cd72d097bb0847b52ccd69717cbd74a39d257476",
+        "commit": "505789c2819a8145add9fd53757ec0a896a59b12",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/README.md",
+        "bytes": 1794,
+        "sha256": "3a00ec03e4c51c7176f8321cfc734511514eda34ed1b69c8223c9f7418ad3d8a",
+        "commit": "60ee409a380c8ecb0e0bcf735ef5f47ebdc61504",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/normalized/公司主檔匹配個股候選行情.csv",
+        "bytes": 918051,
+        "sha256": "488266154400c15306ba27ca891687a21977aa55e5dbbc79ad4fbd41085f89fc",
+        "commit": "2350e6064bc8c6cba0cb308a781e089d48473ba5",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/raw/company_master/TPEX_官方公司基本資料.json.gz",
+        "bytes": 182568,
+        "sha256": "d73789b7fa0ba5c03812fb440e3a3ca727182b3d8ccb6d716ed5a58afd7c1f76",
+        "commit": "73c41e1d04ec05924afdf5fcbf25156df3e3378c",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/raw/company_master/TPEX_官方公司基本資料_metadata.json",
+        "bytes": 501,
+        "sha256": "e304aa7bd6a0ba28aaf01f0a676a6c74bfa7329cd4b0518940b2854450abc359",
+        "commit": "b9d4b2beb2b2ccd4b0fe1433915467ab18fd1b6a",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/raw/company_master/TWSE_官方公司基本資料.json.gz",
+        "bytes": 241291,
+        "sha256": "a1a955215d50bafd28b6abd64e5f5a6a0e70f2f3527292d7393ef84af8cb1ec0",
+        "commit": "ce89855c208c52b73d56393fa9ecb1be08bbdb74",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/raw/company_master/TWSE_官方公司基本資料_metadata.json",
+        "bytes": 500,
+        "sha256": "33e055381fac9393b86c4e6e5f5b2d6f5ad6b65485cae2ac6f027f836c2ed587",
+        "commit": "dc16134fe911aa35a9ff23a2011a696a4687b5f6",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/reports/官方商品名錄配對與TDR候選.csv",
+        "bytes": 4723,
+        "sha256": "11bf9b7435d64374312943df6b3553aea471dd557c145d36a6bc43fae0baeb92",
+        "commit": "e79a800612ad51ec6e1928fcd2704c51a3e1780f",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/reports/官方當前公司主檔.csv",
+        "bytes": 3074052,
+        "sha256": "24f8e3ac7393b88dd68ffc818be3df8e20ef105ad42a9fba395ef1144e30511d",
+        "commit": "83e1a2b1f0a1679801dfb8a630559bf1e78f33cf",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/reports/普通股範圍主檔交叉比對摘要.json",
+        "bytes": 38426,
+        "sha256": "afca323620def246bb801514bec06779c707decead14ccd43122578fb5f2fbc9",
+        "commit": "ee2c507b7f5d1fb3fea70a3f323a12065e07b53d",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/reports/未匹配商品種類待確認.csv",
+        "bytes": 183138,
+        "sha256": "bcbe57036033c19090e532ca82076602d109be4f26e62ccd268a528d1122e236",
+        "commit": "f9d9f59ce4f7cb9e560759f2ea358598a38f3e64",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/reports/逐筆證券分類與主檔配對.csv",
+        "bytes": 1104074,
+        "sha256": "6917e842470a2c17cb9a86ed8a0f133457c0558ef77fd4fcdc2a01aefb0e945b",
+        "commit": "3bc0d35067869c3efc8a76eb0d90c4e9ffb6ed4f",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/reports/重複代號檢查.csv",
+        "bytes": 11,
+        "sha256": "68a0c24aee9704835c6b06add1ca86d409ec30bc7683ac784f292f3ce47e92d1",
+        "commit": "fc47fccd21aea01595cdb42dc1a629cac67879be",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/sources/v1.3.3_官方普通股範圍來源.zip",
+        "bytes": 1601639,
+        "sha256": "48fbd3a78edcde0efbb4b39f7dc24197d55047fbac00b3b7f9a41f586d32480d",
+        "commit": "ddd589d3f2495a1df644d25b05503645bac34804",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/sources/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS.zip",
+        "bytes": 599659,
+        "sha256": "97fb3ab0bc6bc6c508f800f68d14c2bd47baa5d963fb2452a40eabda3c62c1c8",
+        "commit": "75fd2d989f73d59365465a1a33b279c2d7e7c6de",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/程式碼/SSO_v139_普通股範圍配對與行情分類.py",
+        "bytes": 44934,
+        "sha256": "829c1244f2f4f00ebd23d72cdb7ab9845e3dbfb76cf7b9e3a5676dd588103faa",
+        "commit": "2c420dd760d597b3f13d65cbc152229342ea0bdd",
+        "readback": "PASS"
+      }
+    ]
+  },
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_sha_after_package": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_unchanged": true,
+  "original_sources_modified": false,
+  "formal_database_modified": false
+}
