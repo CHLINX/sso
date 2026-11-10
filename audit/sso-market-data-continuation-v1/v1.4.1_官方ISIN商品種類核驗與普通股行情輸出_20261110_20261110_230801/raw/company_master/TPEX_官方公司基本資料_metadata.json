@@ -1,0 +1,15 @@
+{
+  "market": "TPEX",
+  "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+  "http_status": 200,
+  "retrieved_at": "2026-11-10T23:08:09.120513+08:00",
+  "raw_sha256": "cc172e23eaf34744b6aa9fa8e42a70da0425cbbc7d57ba65bdc5e70698f23be5",
+  "record_count": 897,
+  "raw_archive": {
+    "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.4.1_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_230801/raw/company_master/TPEX_官方公司基本資料.json.gz",
+    "raw_bytes": 1079373,
+    "gzip_bytes": 182568,
+    "raw_sha256": "cc172e23eaf34744b6aa9fa8e42a70da0425cbbc7d57ba65bdc5e70698f23be5",
+    "gzip_sha256": "d73789b7fa0ba5c03812fb440e3a3ca727182b3d8ccb6d716ed5a58afd7c1f76"
+  }
+}
