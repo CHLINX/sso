@@ -1,0 +1,269 @@
+{
+  "version": "v1.4.3",
+  "status": "PASS_COVERAGE_COMPLETE_ORDINARY_CLASSIFIED_INCREMENT",
+  "range_start": "2026-10-23",
+  "range_end": "2026-11-10",
+  "calendar_days": 19,
+  "weekdays": 13,
+  "official_closure_weekdays": 2,
+  "expected_trading_dates": [
+    "2026-10-27",
+    "2026-10-28",
+    "2026-10-29",
+    "2026-10-30",
+    "2026-11-02",
+    "2026-11-03",
+    "2026-11-04",
+    "2026-11-05",
+    "2026-11-06",
+    "2026-11-09",
+    "2026-11-10"
+  ],
+  "expected_market_days": 22,
+  "passed_market_days": 22,
+  "v142_normalized_source_rows": 26477,
+  "v141_confirmed_ordinary_rows": 1951,
+  "v141_unique_confirmed_ordinary_market_code_keys": 1951,
+  "confirmed_ordinary_increment_rows": 21434,
+  "unmatched_or_unconfirmed_increment_rows": 5043,
+  "duplicates_in_ordinary_universe": 0,
+  "duplicate_quote_keys_in_expected_dates": 0,
+  "2026_11_10_ordinary_universe_key_check": {
+    "ordinary_keys_in_v142_quote_rows": 1951,
+    "official_ordinary_universe_keys": 1951,
+    "exact_match": true,
+    "missing_from_v142": 0
+  },
+  "daily_market_counts": [
+    {
+      "trade_date": "2026-10-27",
+      "market": "TWSE",
+      "source_market_rows": 1386,
+      "source_unique_codes": 1386,
+      "confirmed_ordinary_rows": 1055,
+      "not_matched_to_current_ordinary_universe": 331,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-10-27",
+      "market": "TPEX",
+      "source_market_rows": 1020,
+      "source_unique_codes": 1020,
+      "confirmed_ordinary_rows": 894,
+      "not_matched_to_current_ordinary_universe": 126,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-10-28",
+      "market": "TWSE",
+      "source_market_rows": 1386,
+      "source_unique_codes": 1386,
+      "confirmed_ordinary_rows": 1055,
+      "not_matched_to_current_ordinary_universe": 331,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-10-28",
+      "market": "TPEX",
+      "source_market_rows": 1020,
+      "source_unique_codes": 1020,
+      "confirmed_ordinary_rows": 894,
+      "not_matched_to_current_ordinary_universe": 126,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-10-29",
+      "market": "TWSE",
+      "source_market_rows": 1388,
+      "source_unique_codes": 1388,
+      "confirmed_ordinary_rows": 1055,
+      "not_matched_to_current_ordinary_universe": 333,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-10-29",
+      "market": "TPEX",
+      "source_market_rows": 1017,
+      "source_unique_codes": 1017,
+      "confirmed_ordinary_rows": 891,
+      "not_matched_to_current_ordinary_universe": 126,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-10-30",
+      "market": "TWSE",
+      "source_market_rows": 1389,
+      "source_unique_codes": 1389,
+      "confirmed_ordinary_rows": 1056,
+      "not_matched_to_current_ordinary_universe": 333,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-10-30",
+      "market": "TPEX",
+      "source_market_rows": 1018,
+      "source_unique_codes": 1018,
+      "confirmed_ordinary_rows": 892,
+      "not_matched_to_current_ordinary_universe": 126,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-11-02",
+      "market": "TWSE",
+      "source_market_rows": 1389,
+      "source_unique_codes": 1389,
+      "confirmed_ordinary_rows": 1056,
+      "not_matched_to_current_ordinary_universe": 333,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-11-02",
+      "market": "TPEX",
+      "source_market_rows": 1018,
+      "source_unique_codes": 1018,
+      "confirmed_ordinary_rows": 892,
+      "not_matched_to_current_ordinary_universe": 126,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-11-03",
+      "market": "TWSE",
+      "source_market_rows": 1390,
+      "source_unique_codes": 1390,
+      "confirmed_ordinary_rows": 1056,
+      "not_matched_to_current_ordinary_universe": 334,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-11-03",
+      "market": "TPEX",
+      "source_market_rows": 1018,
+      "source_unique_codes": 1018,
+      "confirmed_ordinary_rows": 892,
+      "not_matched_to_current_ordinary_universe": 126,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-11-04",
+      "market": "TWSE",
+      "source_market_rows": 1390,
+      "source_unique_codes": 1390,
+      "confirmed_ordinary_rows": 1056,
+      "not_matched_to_current_ordinary_universe": 334,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-11-04",
+      "market": "TPEX",
+      "source_market_rows": 1018,
+      "source_unique_codes": 1018,
+      "confirmed_ordinary_rows": 892,
+      "not_matched_to_current_ordinary_universe": 126,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-11-05",
+      "market": "TWSE",
+      "source_market_rows": 1389,
+      "source_unique_codes": 1389,
+      "confirmed_ordinary_rows": 1056,
+      "not_matched_to_current_ordinary_universe": 333,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-11-05",
+      "market": "TPEX",
+      "source_market_rows": 1017,
+      "source_unique_codes": 1017,
+      "confirmed_ordinary_rows": 892,
+      "not_matched_to_current_ordinary_universe": 125,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-11-06",
+      "market": "TWSE",
+      "source_market_rows": 1389,
+      "source_unique_codes": 1389,
+      "confirmed_ordinary_rows": 1056,
+      "not_matched_to_current_ordinary_universe": 333,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-11-06",
+      "market": "TPEX",
+      "source_market_rows": 1017,
+      "source_unique_codes": 1017,
+      "confirmed_ordinary_rows": 892,
+      "not_matched_to_current_ordinary_universe": 125,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-11-09",
+      "market": "TWSE",
+      "source_market_rows": 1389,
+      "source_unique_codes": 1389,
+      "confirmed_ordinary_rows": 1056,
+      "not_matched_to_current_ordinary_universe": 333,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-11-09",
+      "market": "TPEX",
+      "source_market_rows": 1020,
+      "source_unique_codes": 1020,
+      "confirmed_ordinary_rows": 895,
+      "not_matched_to_current_ordinary_universe": 125,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-11-10",
+      "market": "TWSE",
+      "source_market_rows": 1389,
+      "source_unique_codes": 1389,
+      "confirmed_ordinary_rows": 1056,
+      "not_matched_to_current_ordinary_universe": 333,
+      "duplicate_market_date_code_rows": 0
+    },
+    {
+      "trade_date": "2026-11-10",
+      "market": "TPEX",
+      "source_market_rows": 1020,
+      "source_unique_codes": 1020,
+      "confirmed_ordinary_rows": 895,
+      "not_matched_to_current_ordinary_universe": 125,
+      "duplicate_market_date_code_rows": 0
+    }
+  ],
+  "corrected_official_closures": [
+    {
+      "trade_date": "2026-10-23",
+      "status": "OFFICIAL_EXTRAORDINARY_MARKET_CLOSURE",
+      "reason": "薔琵颱風來襲；證交所及櫃買中心宣布集中市場及櫃買市場全日休市",
+      "sources": "[{\"publisher\": \"中央社\", \"url\": \"https://www.cna.com.tw/news/afe/202610220388.aspx\", \"note\": \"報導證交所及櫃買中心於10月22日宣布10月23日兩市場全日休市\"}, {\"publisher\": \"國泰證券公告\", \"url\": \"https://www.cathaysec.com.tw/cathaysec/News/nContent.aspx?CSeqNO=E9832133&NewsDate=20261022\", \"note\": \"記錄證交所宣布10月23日集中交易市場全日休市\"}]"
+    },
+    {
+      "trade_date": "2026-10-26",
+      "status": "OFFICIAL_STATUTORY_SUBSTITUTE_HOLIDAY",
+      "reason": "臺灣光復暨金門古寧頭大捷紀念日補假",
+      "sources": "[{\"publisher\": \"臺灣證券交易所\", \"url\": \"https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=html\", \"note\": \"115年市場開休市日期表列示10月26日補假\"}]"
+    }
+  ],
+  "sources": {
+    "v142": {
+      "branch": "audit/sso-market-data-continuation-v1-v142-gap-20261023-20261110_20261111_001022",
+      "path": "audit/sso-market-data-continuation-v1/v1.4.2_雙市場官方歷史行情缺口補齊_20261023_20261110_20261111_001022/v1.4.2_雙市場官方歷史行情缺口補齊_20261023_20261110_20261111_001022.zip",
+      "bytes": 5142093,
+      "sha256": "73730575b4921823dd51f2124fa4764a6dbf1855d9afac5ccb8f2b5da05fc205",
+      "url": "https://raw.githubusercontent.com/CHLINX/sso/audit/sso-market-data-continuation-v1-v142-gap-20261023-20261110_20261111_001022/audit/sso-market-data-continuation-v1/v1.4.2_%E9%9B%99%E5%B8%82%E5%A0%B4%E5%AE%98%E6%96%B9%E6%AD%B7%E5%8F%B2%E8%A1%8C%E6%83%85%E7%BC%BA%E5%8F%A3%E8%A3%9C%E9%BD%8A_20261023_20261110_20261111_001022/v1.4.2_%E9%9B%99%E5%B8%82%E5%A0%B4%E5%AE%98%E6%96%B9%E6%AD%B7%E5%8F%B2%E8%A1%8C%E6%83%85%E7%BC%BA%E5%8F%A3%E8%A3%9C%E9%BD%8A_20261023_20261110_20261111_001022.zip"
+    },
+    "v141": {
+      "branch": "audit/sso-market-data-continuation-v1-v141-isin-20261110-20261110_230801",
+      "path": "audit/sso-market-data-continuation-v1/v1.4.1_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_230801/v1.4.1_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_230801.zip",
+      "bytes": 5398656,
+      "sha256": "b5785140fd80552f4c8bd6fbeeba2df65fa4b15252ef687f058545edc4fd916d",
+      "url": "https://raw.githubusercontent.com/CHLINX/sso/audit/sso-market-data-continuation-v1-v141-isin-20261110-20261110_230801/audit/sso-market-data-continuation-v1/v1.4.1_%E5%AE%98%E6%96%B9ISIN%E5%95%86%E5%93%81%E7%A8%AE%E9%A1%9E%E6%A0%B8%E9%A9%97%E8%88%87%E6%99%AE%E9%80%9A%E8%82%A1%E8%A1%8C%E6%83%85%E8%BC%B8%E5%87%BA_20261110_20261110_230801/v1.4.1_%E5%AE%98%E6%96%B9ISIN%E5%95%86%E5%93%81%E7%A8%AE%E9%A1%9E%E6%A0%B8%E9%A9%97%E8%88%87%E6%99%AE%E9%80%9A%E8%82%A1%E8%A1%8C%E6%83%85%E8%BC%B8%E5%87%BA_20261110_20261110_230801.zip"
+    }
+  },
+  "critical_note": "This is an isolated 11-day market-data increment. It does not append to or rewrite historical shadow OHLC data. ISIN classification uses the official ordinary list as of 2026-11-10. Unmatched securities remain separate and are not silently dropped from the audit.",
+  "next_gate": "Before appending this increment to a historical source, verify the historical source's shadow OHLC/corporate-action adjustment basis and market-segment reset rules. Do not concatenate raw close values into adjusted/shadow prices."
+}
