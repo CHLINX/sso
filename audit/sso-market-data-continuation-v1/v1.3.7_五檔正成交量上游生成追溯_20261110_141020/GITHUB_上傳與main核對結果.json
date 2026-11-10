@@ -1,0 +1,112 @@
+{
+  "version": "v1.3.7",
+  "branch": "audit/sso-market-data-continuation-v1-v1337-generator-trace-20261110_141020",
+  "branch_commit_after_upload": "c59c3733214c3dc8e6657191d69cebc8b651d37b",
+  "upload_attempted": true,
+  "upload_success": true,
+  "uploaded_files": [
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.3.7_五檔正成交量上游生成追溯_20261110_141020/sso_v1337_五檔正成交量上游生成追溯_20261110_141020.zip",
+      "sha256": "fb43dd1dae3a5c24e406d1191b9bc9248c55dcbcd55891ed75998b85f4f2b012",
+      "bytes": 223156,
+      "commit": "c7223255da0bf2c59b807d6ae91a8fe183a0f6d0"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.3.7_五檔正成交量上游生成追溯_20261110_141020/README.md",
+      "sha256": "d12b226bfcf322e79dcb90c98c84527235d8e190d27516812adf1ce4c157e4fb",
+      "bytes": 859,
+      "commit": "172beba9cb64f3137da415dfa7c1e80b7285bb1a"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.3.7_五檔正成交量上游生成追溯_20261110_141020/SSO_v1337_五檔正成交量上游生成追溯_程式碼.txt",
+      "sha256": "6450d548188c951229675a85dbde871242253df49130f22e33eb529a0c1b7c47",
+      "bytes": 57287,
+      "commit": "d56ab935fd11c6047431cb112534c9367273005e"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.3.7_五檔正成交量上游生成追溯_20261110_141020/reports/01_v123_五檔完整原始列.csv",
+      "sha256": "852d5be13964a9924c762178465bc984290faea55c81d0eec6978093f1c158cc",
+      "bytes": 7033,
+      "commit": "9c61f6a500b703688b74eca244253d11dbd16881"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.3.7_五檔正成交量上游生成追溯_20261110_141020/reports/02_v123_次級報表五檔完整原始列.csv",
+      "sha256": "ce0434a5f9e5e005017784a02b869f3a7753d8776dcd75cd82cd0806d239b3f1",
+      "bytes": 7177,
+      "commit": "7f3b101b0052946f8e677592f32396b70e0971f1"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.3.7_五檔正成交量上游生成追溯_20261110_141020/reports/03_檔案盤點.csv",
+      "sha256": "0685b4932291831148bd3d2edd4874f99f2de27ecda42f756148a641d4342a45",
+      "bytes": 4928,
+      "commit": "ac8618fe32e3b50649e4ca267d874363cf331a95"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.3.7_五檔正成交量上游生成追溯_20261110_141020/reports/04_引用檔名與SHA256.csv",
+      "sha256": "e4ed531745edfd90b64b8116f1ab450fec3256a41d29fab3f1d0f06b5bd2acf6",
+      "bytes": 239200,
+      "commit": "2c3a58dfed82fef56972ebe21820d2b0a657e8df"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.3.7_五檔正成交量上游生成追溯_20261110_141020/reports/05_候選生成程式.csv",
+      "sha256": "b40e77af0633d9527ff5c463407da86555123c34293743252cab2b0ad3e9daa9",
+      "bytes": 13,
+      "commit": "40db6fc579869e6417932551965e3c071bf2cdf5"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.3.7_五檔正成交量上游生成追溯_20261110_141020/reports/06_SHA256命中檔案.csv",
+      "sha256": "6ea15a0f3b387f502b22c6947b37fd9e275ddb7c7de518482fc09c45239bfab3",
+      "bytes": 5834,
+      "commit": "0615a0df6b5b0702d57201c63b8aad09d5655702"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.3.7_五檔正成交量上游生成追溯_20261110_141020/reports/07_候選來源資料命中正成交量.csv",
+      "sha256": "06ccd2c31c0bad3f7f239839f521691648ba2bd7d9d1e1c843c201e7de1d78b6",
+      "bytes": 12512,
+      "commit": "6ee4eabf5d7082874df2692385f1e5826e32ce0e"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.3.7_五檔正成交量上游生成追溯_20261110_141020/reports/08_前次稽核ZIP成員.csv",
+      "sha256": "5e59c167ff8f88323e70b84504e6ca0d4cd8d0b173337d7839dbc1fa03ae023e",
+      "bytes": 9465,
+      "commit": "80b8e0580beb5315bd6bc9497d73cd9db15076b1"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.3.7_五檔正成交量上游生成追溯_20261110_141020/reports/09_解析錯誤.csv",
+      "sha256": "b40e77af0633d9527ff5c463407da86555123c34293743252cab2b0ad3e9daa9",
+      "bytes": 13,
+      "commit": "68e48edd6e84d483698c2fb58a9d2979d48129a1"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.3.7_五檔正成交量上游生成追溯_20261110_141020/reports/10_前次稽核包取得狀態.csv",
+      "sha256": "b04655c885d93161bd0af9d13efcec93e4205640434960c1b3e24540c9c7ac26",
+      "bytes": 699,
+      "commit": "4ebc1b82dabcacf8898cde88638541c87fc2c1b5"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.3.7_五檔正成交量上游生成追溯_20261110_141020/reports/11_候選程式碼命中上下文.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "commit": "49a004cfad189a165e15ecb6806f3c66b4a9583e"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.3.7_五檔正成交量上游生成追溯_20261110_141020/reports/12_稽核結論.json",
+      "sha256": "33122e630c3e9874b21a75a16692db018ee6e27348e998530e4cecf7e342f82e",
+      "bytes": 2252,
+      "commit": "290917605b6da8a5be4050ad297344702c52aa23"
+    },
+    {
+      "path": "audit/sso-market-data-continuation-v1/v1.3.7_五檔正成交量上游生成追溯_20261110_141020/reports/13_前次稽核ZIP中五檔引用列.csv",
+      "sha256": "82511983cbc203a242d5ee6bc0edd3e4f5d6dcabcf74ed525cd4744cc098b412",
+      "bytes": 138206,
+      "commit": "c59c3733214c3dc8e6657191d69cebc8b651d37b"
+    }
+  ],
+  "upload_error": null,
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_sha_after": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_unchanged": true,
+  "evidence_zip_path": "/content/sso_v1337_五檔正成交量上游生成追溯_20261110_141020.zip",
+  "evidence_zip_sha256": "fb43dd1dae3a5c24e406d1191b9bc9248c55dcbcd55891ed75998b85f4f2b012",
+  "note": "此確認檔為上傳後產生的獨立紀錄；證據 ZIP 在上傳前封存，ZIP 內容與 GitHub 已核對版本一致。"
+}
