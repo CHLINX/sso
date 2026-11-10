@@ -1,0 +1,12 @@
+{
+  "quote_rows": 2409,
+  "zero_volume_rows": 40,
+  "missing_volume_rows": 0,
+  "ohlc_missing_rows": {
+    "open": 42,
+    "high": 42,
+    "low": 1034,
+    "close": 42
+  },
+  "handling": "不刪除零成交量列、不補值、不修正 OHLC；原始值完整保留。"
+}
