@@ -1,0 +1,110 @@
+{
+  "version": "v1.3.8",
+  "data_date": "2026-11-10",
+  "status": "PASS",
+  "output_folder": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS",
+  "zip_path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS.zip",
+  "zip_sha256": "97fb3ab0bc6bc6c508f800f68d14c2bd47baa5d963fb2452a40eabda3c62c1c8",
+  "github": {
+    "attempted": true,
+    "success": true,
+    "branch": "audit/sso-market-data-continuation-v1-v138-daily-20261110-20261110_223151",
+    "error": null,
+    "commit_after_package_upload": "0bff2971c86ed82694a83e42b64b62397d7f0214",
+    "uploaded_files": [
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS.zip",
+        "bytes": 599659,
+        "sha256": "97fb3ab0bc6bc6c508f800f68d14c2bd47baa5d963fb2452a40eabda3c62c1c8",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS/README.md",
+        "bytes": 1221,
+        "sha256": "7aec3dc332c3aed4daacc9ecb2808119135ebc84c8280996fa601b531bf4ca54",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS/normalized/TPEX_官方行情.csv",
+        "bytes": 215894,
+        "sha256": "3db63b87af0d6e11c0260fdad3559763b36e55a490edd8ca2f0323bbfe2ac67e",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS/normalized/TWSE_官方行情.csv",
+        "bytes": 308303,
+        "sha256": "2d489ee1fa4e71fc8fa35c110d58ff11615667703027cc687877d2e0370f5f48",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS/normalized/雙市場官方行情.csv",
+        "bytes": 564058,
+        "sha256": "4f8d4ef52f030534d807f39cd2df06317017bca41ce3f24770059059352a8d2b",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS/raw/TPEX_指定日期原始回應_20261110.json.gz",
+        "bytes": 50515,
+        "sha256": "17d9434cdf3337ebaf9a9c0459ad835babbb1074de7c016c8971bf65ca1a847b",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS/raw/TPEX_請求與回應metadata.json",
+        "bytes": 1314,
+        "sha256": "eb97fd61d740973f1de494fb31e02a8066eb9287c805d6ee8e8bc82874e826cc",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS/raw/TWSE_指定日期原始回應_20261110.json.gz",
+        "bytes": 72381,
+        "sha256": "a2fd3e8c22e2656b06bc371fae6e2ee73a4a0fd97dc7e6d5a7dab0b090763238",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS/raw/TWSE_請求與回應metadata.json",
+        "bytes": 1149,
+        "sha256": "42ba848af6e06ab9c4d6a48fa72982708f37eb9c56c8fb8cb5c9454df149a72b",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS/raw/原始回應清單.json",
+        "bytes": 2583,
+        "sha256": "c2df14d72ded4a58f82e68d7c482f51690645952980a464da17a5cda9e145a28",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS/reports/兩市場日期與來源核驗.json",
+        "bytes": 1241,
+        "sha256": "0aad05a56cfeed5f6c5793bb260c334762afc8872e48d18d98c9b1e0b1b2a098",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS/reports/每日行情摘要.json",
+        "bytes": 5772,
+        "sha256": "9c201ce401b177557b1f84d6e7d2a0b4c14bc8b385592e0f68f234067e365295",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS/reports/資料品質檢查.csv",
+        "bytes": 238,
+        "sha256": "e30056d9d908d66272dd48e40ce813f52e23c283ac7aaaaacabb2e89d9df7b91",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS/程式碼/SSO_v138_daily.py",
+        "bytes": 46739,
+        "sha256": "670846202ddd61dd651561d7245c2f7001d32386410a09b890ebf32a519ea349",
+        "readback": "PASS"
+      }
+    ],
+    "readback": "PASS",
+    "remote_root": "audit/sso-market-data-continuation-v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS"
+  },
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_sha_after_package_upload": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_unchanged_after_package_upload": true,
+  "drive_original_data_modified": false,
+  "formal_database_modified": false,
+  "main_sha_before_final_record": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_unchanged_before_final_record": true
+}
