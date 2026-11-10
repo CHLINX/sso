@@ -1,0 +1,15 @@
+{
+  "market": "TWSE",
+  "url": "https://openapi.twse.com.tw/v1/opendata/t187ap03_L",
+  "http_status": 200,
+  "retrieved_at": "2026-11-10T22:59:52.259702+08:00",
+  "raw_sha256": "7e875b16d3f8cda461d064b97f3292a867251f29f61cc52dc72a6f6b4f2d27fc",
+  "record_count": 1099,
+  "raw_archive": {
+    "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/raw/company_master/TWSE_官方公司基本資料.json.gz",
+    "raw_bytes": 1332396,
+    "gzip_bytes": 241291,
+    "raw_sha256": "7e875b16d3f8cda461d064b97f3292a867251f29f61cc52dc72a6f6b4f2d27fc",
+    "gzip_sha256": "a1a955215d50bafd28b6abd64e5f5a6a0e70f2f3527292d7393ef84af8cb1ec0"
+  }
+}
