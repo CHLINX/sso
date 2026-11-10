@@ -1,0 +1,191 @@
+{
+  "version": "v1.4.0",
+  "status": "PARTIAL_ISIN_COVERAGE_OR_CLASSIFICATION",
+  "output_dir": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948",
+  "zip_path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948.zip",
+  "zip_sha256": "0bfcfdcb37dfe366f8cde9dd384f3989eda6b5a8413b8fc6de732e0aa6519b5b",
+  "github": {
+    "attempted": true,
+    "success": true,
+    "error": null,
+    "branch": "audit/sso-market-data-continuation-v1-v140-isin-20261110-20261110_225948",
+    "remote_root": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948",
+    "uploaded_files": [
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948.zip",
+        "bytes": 5214505,
+        "sha256": "0bfcfdcb37dfe366f8cde9dd384f3989eda6b5a8413b8fc6de732e0aa6519b5b",
+        "commit": "ef0953fe70646c7cef234513ae2e04635e31fa65",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/README.md",
+        "bytes": 1470,
+        "sha256": "4750d9a44b02bbd8cf6dfdf130fb49daf225ca48d2be15f21691ba6bc7248e7e",
+        "commit": "099f4f4e97eef2974ec16e991558eca47aab67c1",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/normalized/已確認普通股行情.csv",
+        "bytes": 11,
+        "sha256": "68a0c24aee9704835c6b06add1ca86d409ec30bc7683ac784f292f3ce47e92d1",
+        "commit": "ed6c03f6fd0ddb9e6ae0c4163cef0d127de06ec2",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/raw/company_master/TWSE_官方公司基本資料.json.gz",
+        "bytes": 241291,
+        "sha256": "a1a955215d50bafd28b6abd64e5f5a6a0e70f2f3527292d7393ef84af8cb1ec0",
+        "commit": "5c3fbfcbe79b00db1a37c671c735e6ce5e22f84f",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/raw/company_master/TWSE_官方公司基本資料_metadata.json",
+        "bytes": 755,
+        "sha256": "047f9f65c57845d5b4038e05b38a746493de294c9d4a5cc9e5a04a0032986456",
+        "commit": "87ed9708373d244aca33ca8c53cf256b59c4d985",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/raw/official_isin/ISIN_名錄metadata.json",
+        "bytes": 1477,
+        "sha256": "eacefc615140b3fc0054f8674509fd13e972768cc50434e8f7fb16594d47de6e",
+        "commit": "9a28b759d7d2ecd4df816f8f60b8810447b20c68",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/raw/official_isin/TWSE_ISIN_綜合證券名錄.html.gz",
+        "bytes": 1513412,
+        "sha256": "1bb3137051b292a212b58fb572d7439abfa64f265c12a5c2b130357918098da3",
+        "commit": "58f18d56ed5e754898b273507e1f9996e410328b",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/reports/ETF行情.csv",
+        "bytes": 164019,
+        "sha256": "99e7c25a95371dafdd8426f03affcd75aaab0bc0265fe97755ebe1353b6cdac5",
+        "commit": "37dafbd152d8ac49945c656dbae541e79f84df24",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/reports/ETN行情.csv",
+        "bytes": 9722,
+        "sha256": "7cffaa8da2e1ed12adb73c18cb0b154ba704d47a61715527de2ae6b380095b66",
+        "commit": "fcf1951842ba57b33c5b2a47290331290dcbe369",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/reports/ISIN來源衝突與隔離列.csv",
+        "bytes": 11,
+        "sha256": "68a0c24aee9704835c6b06add1ca86d409ec30bc7683ac784f292f3ce47e92d1",
+        "commit": "dd1614e015889c0e571b3a11ee932d8693a1e43b",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/reports/ISIN名錄同市場代號重複列.csv",
+        "bytes": 11,
+        "sha256": "68a0c24aee9704835c6b06add1ca86d409ec30bc7683ac784f292f3ce47e92d1",
+        "commit": "cb216d39b237b80de5c51035b68ece06b9126ac1",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/reports/ISIN未匹配與待確認.csv",
+        "bytes": 1135081,
+        "sha256": "06e2a5a5f74617e20f4fa53c919b53a631232417f6dd6dc05db3e3a0f7fd9834",
+        "commit": "bd2f41494142545333d9f3877761fc9470372f63",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/reports/TDR行情.csv",
+        "bytes": 5272,
+        "sha256": "b0b3eba95b0439b39646139ad61e701ae2ef52f992307b979a2c0c1a006f37c8",
+        "commit": "725b2f9aaa88a0a7fe919801256e91c67c118838",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/reports/v1.3.3歷史公司主檔交叉核對.json",
+        "bytes": 1861,
+        "sha256": "0b7d6985077f279990452799871f0f36eda93e3e0687f8603880944bb5c39829",
+        "commit": "7b5a7474049596493b393ca5b2a102b9435d454f",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/reports/其他非普通股行情.csv",
+        "bytes": 16790,
+        "sha256": "0dbb7789f2f8b96ed2734509891cb1eee06ab90785d92eb8e1c16c65fb94ba6e",
+        "commit": "2bf54da75424f8aa981abf37a3b6f081e1e13608",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/reports/官方ISIN名錄完整解析.csv",
+        "bytes": 6250465,
+        "sha256": "4adf5afca383c4d33c7cf34c2e9ba2fb9c2539af723bd6d305b265344fe0976e",
+        "commit": "5e74fad7057bf2300c55b2c4d6b3be8397483b1c",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/reports/官方ISIN普通股分類摘要.json",
+        "bytes": 6752,
+        "sha256": "647131bc2f56fd48da6103f7fca7f8066f6d23f813ca43a4d34042e0c53f0096",
+        "commit": "42c571107faf3db41c9322122665977f7de6e191",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/reports/行情同市場代號重複列.csv",
+        "bytes": 11,
+        "sha256": "68a0c24aee9704835c6b06add1ca86d409ec30bc7683ac784f292f3ce47e92d1",
+        "commit": "2871e575f6ef0f0c020a1c9848c0587d3e45a170",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/reports/行情品質檢查.json",
+        "bytes": 271,
+        "sha256": "c533a779e9344fb2f1644ef421213fa38e88b1f808af252d29366244dd62b6ee",
+        "commit": "fd2fcec4707c4958e16010444e7fd37783aa0dc3",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/reports/逐筆官方ISIN對照與證券分類.csv",
+        "bytes": 1326552,
+        "sha256": "d2966a0c719651c01ebb2b11b7ed565e6d0d88953ca6a03474583687c8454954",
+        "commit": "077c2e242b6655b3f85095f6abd8a0835795eb5a",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/sources/v1.3.3_官方普通股範圍來源.zip",
+        "bytes": 1601639,
+        "sha256": "48fbd3a78edcde0efbb4b39f7dc24197d55047fbac00b3b7f9a41f586d32480d",
+        "commit": "5cde83c7c5021573f2036d765d52ae5ab410c7d9",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/sources/v1.3.3_歷史公司主檔解析結果.json",
+        "bytes": 1325,
+        "sha256": "d89dc262eb991c448018c484c4dd51bd78b9da34370f615ec7648fc46c5fb3f0",
+        "commit": "8e044ff6e92b03f722fe02f8913bdc6b3555de82",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/sources/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS.zip",
+        "bytes": 599659,
+        "sha256": "97fb3ab0bc6bc6c508f800f68d14c2bd47baa5d963fb2452a40eabda3c62c1c8",
+        "commit": "14f9df71ce608aadc2daf7f84ce2b3fcf8f96ddf",
+        "readback": "PASS"
+      },
+      {
+        "path": "audit/sso-market-data-continuation-v1/v1.4.0_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_225948/程式碼/SSO_v140_官方ISIN商品種類核驗與普通股行情輸出.py",
+        "bytes": 58066,
+        "sha256": "e1195aaaad4fc53a47a378b1296015588605696f900df76b4214e96502da0b79",
+        "commit": "887a23981dc26ff5c8aaedeba29856e242e91d42",
+        "readback": "PASS"
+      }
+    ]
+  },
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_sha_after_package": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_unchanged": true,
+  "original_sources_modified": false,
+  "formal_database_modified": false,
+  "main_sha_before_final_record": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_unchanged_before_final_record": true
+}
