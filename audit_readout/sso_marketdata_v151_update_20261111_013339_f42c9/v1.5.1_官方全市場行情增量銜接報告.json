@@ -1,0 +1,107 @@
+{
+  "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.1",
+  "run_time_taipei": "2026-11-11T01:33:39.758904+08:00",
+  "purpose": "沿用已保存的 v1.4.2 全市場官方行情，建立 v2.8 至 2026-11-10 的 append-only 增量覆蓋層",
+  "mode": "APPEND_ONLY_OVERLAY",
+  "source_v142": {
+    "zip_path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.4.2_雙市場官方歷史行情缺口補齊_20261023_20261110_20261111_001022.zip",
+    "zip_bytes": 5142093,
+    "zip_sha256": "73730575b4921823dd51f2124fa4764a6dbf1855d9afac5ccb8f2b5da05fc205",
+    "git_blob_sha": "e6d78650c3023dcee85991ab2a6cc2b5e2d6ffe2",
+    "branch": "audit/sso-market-data-continuation-v1-v142-gap-20261023-20261110_20261111_001022",
+    "expected_rows": 26477,
+    "parsed_rows": 26477,
+    "source_dates": [
+      "2026-10-27",
+      "2026-10-28",
+      "2026-10-29",
+      "2026-10-30",
+      "2026-11-02",
+      "2026-11-03",
+      "2026-11-04",
+      "2026-11-05",
+      "2026-11-06",
+      "2026-11-09",
+      "2026-11-10"
+    ],
+    "markets": [
+      "TPEX",
+      "TWSE"
+    ]
+  },
+  "base_v28": {
+    "zip_path": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318/SFAS_v2.8_十年官方行情完整底稿_20261029_205318.zip",
+    "zip_bytes": 530349419,
+    "zip_sha256": "d12a1c2fbc0415b16d92781ab27c8dd20d829c8bb7ef318150744efed4f2935a",
+    "known_max_date": "2026-10-28",
+    "security_market_file_count": 2010,
+    "unique_security_market_keys": 2010,
+    "original_zip_modified": false
+  },
+  "overlap_not_reappended": {
+    "dates": [
+      "2026-10-27",
+      "2026-10-28"
+    ],
+    "rows": 4812,
+    "reason": "已在 v2.8 歷史底稿範圍內，不重複加入"
+  },
+  "append": {
+    "dates": [
+      "2026-10-29",
+      "2026-10-30",
+      "2026-11-02",
+      "2026-11-03",
+      "2026-11-04",
+      "2026-11-05",
+      "2026-11-06",
+      "2026-11-09",
+      "2026-11-10"
+    ],
+    "max_date": "2026-11-10",
+    "rows": 21665,
+    "markets": [
+      "TPEX",
+      "TWSE"
+    ],
+    "date_market_pairs": 18,
+    "expected_date_market_pairs": 18,
+    "unique_instruments": 2411,
+    "new_overlay_files": 2411,
+    "matched_existing_base_files": 1983,
+    "new_instrument_overlay_files": 428
+  },
+  "duplicates": {
+    "duplicate_key_groups": 0,
+    "rows_in_duplicate_groups": 0,
+    "extra_duplicate_rows": 0,
+    "deduplicated": false,
+    "source_rows_preserved": true
+  },
+  "quality_policy": {
+    "zero_volume_rows_preserved": true,
+    "missing_ohlc_preserved": true,
+    "no_price_fill": true,
+    "no_row_deletion": true,
+    "no_instrument_category_filter": true,
+    "etf_etn_tdr_and_other_official_instruments_preserved": true
+  },
+  "safety": {
+    "official_api_called": false,
+    "source_v142_modified": false,
+    "source_v28_modified": false,
+    "formal_database_written": false,
+    "shadow_ohlc_written": false,
+    "model_training_performed": false,
+    "backtest_performed": false,
+    "stock_selection_performed": false,
+    "github_main_modified": false
+  },
+  "updated_dataset_definition": {
+    "base_archive": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318/SFAS_v2.8_十年官方行情完整底稿_20261029_205318.zip",
+    "overlay_directory": "overlay/官方歷史行情/",
+    "logical_max_date": "2026-11-10",
+    "integration_rule": "以 v2.8 ZIP 作為歷史底稿；依個股代號及市場讀取 overlay 中新日期資料，按 trade_date、market、instrument_code 合併。"
+  },
+  "next_step": "使用 v2.8 原始底稿加上本次 append-only overlay，建立截至 2026-11-10 的分析快照，直接進入全市場個股特徵與淨報酬分析。"
+}

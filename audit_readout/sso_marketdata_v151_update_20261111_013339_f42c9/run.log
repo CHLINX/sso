@@ -1,0 +1,27 @@
+[01:33:39] Google Drive 已掛載。
+[01:33:39] 資料根目錄：/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1
+[01:33:39] 本次輸出目錄：/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9
+[01:33:40] 已取得 GITHUB_TOKEN。
+[01:33:40] [V142 FOUND] /content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.4.2_雙市場官方歷史行情缺口補齊_20261023_20261110_20261111_001022.zip
+[01:33:40] [V142 SIZE] 5,142,093 bytes
+[01:33:40] [V142 SHA256] 73730575b4921823dd51f2124fa4764a6dbf1855d9afac5ccb8f2b5da05fc205
+[01:33:40] [V142 GIT BLOB SHA] e6d78650c3023dcee85991ab2a6cc2b5e2d6ffe2
+[01:33:40] [V142 SOURCE PASS] 已確認使用先前保存的同一份行情封存。
+[01:33:40] [V28 FOUND] /content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方市場行情資料底稿_v2.8_十年重建_20261029_205318/SFAS_v2.8_十年官方行情完整底稿_20261029_205318.zip
+[01:33:40] [V28 SIZE] 530,349,419 bytes
+[01:33:51] [V28 SHA256] d12a1c2fbc0415b16d92781ab27c8dd20d829c8bb7ef318150744efed4f2935a
+[01:34:08] [V28 INDEX PASS] 個股歷史檔=2,010；唯一市場／代號組合=2,010
+[01:34:08] [V142 SCAN] 掃描既有官方行情封存，不呼叫官方 API。
+[01:34:09] [QUOTE CANDIDATE] v1.4.2_雙市場官方歷史行情缺口補齊_20261023_20261110_20261111_001022/normalized/雙市場逐日官方行情.csv；rows=26,477；date_market_pairs=22
+[01:34:09] [QUOTE SOURCE SELECTED] v1.4.2_雙市場官方歷史行情缺口補齊_20261023_20261110_20261111_001022/normalized/雙市場逐日官方行情.csv
+[01:34:09] [V142 ROWS] 標準化全市場行情=26,477
+[01:34:09] [V142 SOURCE PASS] 26,477 筆、11 個交易日、兩市場資料均完整辨識。
+[01:34:09] [APPEND RANGE] 2026-10-29 至 2026-11-10
+[01:34:09] [OVERLAP ROWS] 10/27、10/28 保留但不重複加入：4,812
+[01:34:09] [APPEND ROWS] 本次實際新增全市場行情：21,665
+[01:34:09] [DAILY COVERAGE PASS] 18 組日期／市場均有行情。
+[01:34:09] [DUPLICATE AUDIT] 重複鍵值群組=0；涉及列數=0；超出唯一鍵值的列數=0
+[01:34:09] [DUPLICATE POLICY] 不去重、不刪列、不補值，依官方封存原樣保留。
+[01:35:28] [OVERLAY CREATED] 個股／市場增量檔=2,411
+[01:35:30] [RAW DELTA] /content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/v1.4.2_全市場官方原始欄位增量_20261029_20261110.csv；rows=21,665
+[01:35:30] [NORMALIZED DELTA] /content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv；rows=21,665
