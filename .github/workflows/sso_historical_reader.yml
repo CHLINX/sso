@@ -1,0 +1,117 @@
+name: Read historical SSO audit ZIPs
+
+on:
+  push:
+    branches:
+      - "audit/sso-historical-reader-20261110_2335"
+    paths:
+      - ".github/workflows/sso_historical_reader.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout isolated reader branch
+        uses: actions/checkout@v4
+        with:
+          ref: "audit/sso-historical-reader-20261110_2335"
+      - name: Download and inspect historical archives without modifying source
+        run: |
+          python - <<'PY'
+          import csv, gzip, hashlib, io, json, os, sys, time, urllib.parse, urllib.request, zipfile
+          from pathlib import Path
+
+          SOURCE_BRANCH = "audit/v4.84.9.3-rebuild-pipeline"
+          ARCHIVES = [
+              ("SSO_v2.48.1_樣本外校準門檻與公司名稱結果.zip", 21010200),
+              ("SSO_v2.50_日成交量特徵與500日檢查點結果.zip", 21654521),
+              ("SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip", 23606997),
+              ("SSO_v2.51_量能消融_停用量能特徵與配對比較結果.zip", 21011289),
+              ("SSO_v2.56_實際淨報酬與分層核算結果_20261029_055725.zip", 17713),
+          ]
+
+          def log(s):
+              print(s, flush=True)
+
+          def get_bytes(name, expected_size):
+              url = "https://raw.githubusercontent.com/CHLINX/sso/" + SOURCE_BRANCH + "/" + urllib.parse.quote(name)
+              req = urllib.request.Request(url, headers={"User-Agent":"SSO-Historical-ReadOnly-Audit/1.0"})
+              last = None
+              for attempt in range(4):
+                  try:
+                      with urllib.request.urlopen(req, timeout=120) as r:
+                          status = getattr(r, "status", 200)
+                          data = r.read()
+                      if len(data) != expected_size:
+                          raise RuntimeError(f"SIZE_MISMATCH expected={expected_size} actual={len(data)}")
+                      return data, status, url
+                  except Exception as e:
+                      last = e
+                      time.sleep(2 * (attempt + 1))
+              raise RuntimeError(f"DOWNLOAD_FAILED {name}: {last}")
+
+          def inspect_csv(zf, info):
+              raw = zf.open(info, "r")
+              if info.filename.lower().endswith(".gz"):
+                  stream = gzip.GzipFile(fileobj=raw, mode="rb")
+              else:
+                  stream = raw
+              text = io.TextIOWrapper(stream, encoding="utf-8-sig", errors="replace", newline="")
+              reader = csv.reader(text)
+              header = None
+              samples = []
+              rows = 0
+              try:
+                  for row in reader:
+                      if header is None:
+                          header = row
+                      else:
+                          rows += 1
+                          if len(samples) < 2:
+                              samples.append(row[:12])
+              finally:
+                  text.close()
+              return header or [], rows, samples
+
+          for filename, expected_size in ARCHIVES:
+              log("\n" + "#" * 110)
+              log("ARCHIVE " + filename)
+              blob, status, url = get_bytes(filename, expected_size)
+              sha = hashlib.sha256(blob).hexdigest()
+              log(f"DOWNLOAD_OK status={status} bytes={len(blob)} sha256={sha}")
+              with zipfile.ZipFile(io.BytesIO(blob), "r") as zf:
+                  bad = zf.testzip()
+                  if bad:
+                      raise RuntimeError("ZIP_CRC_FAIL " + bad)
+                  infos = zf.infolist()
+                  log(f"ZIP_CRC=PASS members={len(infos)}")
+                  for info in infos:
+                      name = info.filename
+                      log(f"MEMBER name={name} bytes={info.file_size} compressed={info.compress_size}")
+                      low = name.lower()
+                      if low.endswith((".csv", ".csv.gz", ".tsv", ".tsv.gz")):
+                          header, rows, samples = inspect_csv(zf, info)
+                          log("CSV_HEADER " + json.dumps(header, ensure_ascii=False))
+                          log(f"CSV_DATA_ROWS={rows}")
+                          log("CSV_SAMPLE " + json.dumps(samples, ensure_ascii=False))
+                      elif low.endswith(".json") and info.file_size <= 8_000_000:
+                          obj = json.loads(zf.read(name).decode("utf-8-sig", errors="replace"))
+                          if isinstance(obj, dict):
+                              preview = {k: (v if isinstance(v,(str,int,float,bool)) or v is None else ({"type":type(v).__name__,"len":len(v)} if hasattr(v,"__len__") else type(v).__name__)) for k,v in list(obj.items())[:80]}
+                          elif isinstance(obj, list):
+                              preview = {"type":"list","len":len(obj),"sample":obj[:2]}
+                          else:
+                              preview = {"type":type(obj).__name__,"value":str(obj)[:1000]}
+                          log("JSON_SUMMARY " + json.dumps(preview, ensure_ascii=False)[:9000])
+                      elif low.endswith((".md", ".txt")) and info.file_size <= 300_000:
+                          content = zf.read(name).decode("utf-8-sig", errors="replace")
+                          log("TEXT_BEGIN\n" + content[:5000] + "\nTEXT_END")
+                      elif low.endswith((".parquet", ".feather", ".pkl", ".pickle", ".xlsx", ".xls")):
+                          log("BINARY_DATASET_FORMAT=" + low.rsplit(".",1)[-1])
+              log(f"ARCHIVE_COMPLETE {filename}")
+          log("\nSSO_HISTORICAL_ARCHIVES_READ_ONLY_INSPECTION_COMPLETE")
+          PY
