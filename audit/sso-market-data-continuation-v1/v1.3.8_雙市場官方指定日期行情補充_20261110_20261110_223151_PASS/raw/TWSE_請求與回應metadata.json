@@ -1,0 +1,27 @@
+{
+  "market": "TWSE",
+  "base_url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+  "params": {
+    "date": "20261110",
+    "type": "ALLBUT0999",
+    "response": "json"
+  },
+  "requested_trade_date": "2026-11-10",
+  "response_url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20261110&type=ALLBUT0999&response=json",
+  "http_status": 200,
+  "retrieved_at": "2026-11-10T22:31:52.288439+08:00",
+  "response_headers": {
+    "Date": "Tue, 10 Nov 2026 14:31:52 GMT",
+    "Content-Type": "application/json;charset=UTF-8"
+  },
+  "raw_bytes": 248709,
+  "raw_sha256": "e5cdb5fd66f44853a2dd674891f6c96feafb38e0b164bc73eeb1a885c0aea560",
+  "error": null,
+  "raw_archive": {
+    "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS/raw/TWSE_指定日期原始回應_20261110.json.gz",
+    "bytes_original": 248709,
+    "bytes_gzip": 72381,
+    "sha256_original": "e5cdb5fd66f44853a2dd674891f6c96feafb38e0b164bc73eeb1a885c0aea560",
+    "sha256_gzip": "a2fd3e8c22e2656b06bc371fae6e2ee73a4a0fd97dc7e6d5a7dab0b090763238"
+  }
+}
