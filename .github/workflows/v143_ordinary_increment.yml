@@ -1,0 +1,345 @@
+name: SSO v1.4.3 correct calendar and classify official ordinary-stock increment
+
+on:
+  push:
+    branches:
+      - "audit/sso-marketdata-v143-ordinary-increment-20261111_0040"
+    paths:
+      - ".github/workflows/v143_ordinary_increment.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout isolated audit branch
+        uses: actions/checkout@v4
+        with:
+          ref: "audit/sso-marketdata-v143-ordinary-increment-20261111_0040"
+
+      - name: Verify source ZIPs, correct closure calendar, classify ordinary shares
+        run: |
+          python - <<'PY'
+          import csv, io, json, hashlib, urllib.parse, urllib.request, zipfile
+          from pathlib import Path
+          from collections import Counter, defaultdict
+          from datetime import date, timedelta
+
+          SOURCES = [
+            {
+              "key":"v142",
+              "branch":"audit/sso-market-data-continuation-v1-v142-gap-20261023-20261110_20261111_001022",
+              "path":"audit/sso-market-data-continuation-v1/v1.4.2_雙市場官方歷史行情缺口補齊_20261023_20261110_20261111_001022/v1.4.2_雙市場官方歷史行情缺口補齊_20261023_20261110_20261111_001022.zip",
+              "bytes":5142093,
+              "sha256":"73730575b4921823dd51f2124fa4764a6dbf1855d9afac5ccb8f2b5da05fc205",
+              "member_suffix":"normalized/雙市場逐日官方行情.csv"
+            },
+            {
+              "key":"v141",
+              "branch":"audit/sso-market-data-continuation-v1-v141-isin-20261110-20261110_230801",
+              "path":"audit/sso-market-data-continuation-v1/v1.4.1_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_230801/v1.4.1_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_230801.zip",
+              "bytes":5398656,
+              "sha256":"b5785140fd80552f4c8bd6fbeeba2df65fa4b15252ef687f058545edc4fd916d",
+              "member_suffix":"normalized/已確認普通股行情.csv"
+            }
+          ]
+
+          def log(s):
+            print(s, flush=True)
+
+          def download(src):
+            url="https://raw.githubusercontent.com/CHLINX/sso/"+src["branch"]+"/"+urllib.parse.quote(src["path"],safe="/")
+            req=urllib.request.Request(url,headers={"User-Agent":"SSO-v143-official-ordinary-increment/1.0"})
+            with urllib.request.urlopen(req,timeout=180) as r:
+              data=r.read()
+            if len(data)!=src["bytes"]:
+              raise RuntimeError(f"{src['key']} SIZE mismatch: {len(data)} != {src['bytes']}")
+            sha=hashlib.sha256(data).hexdigest()
+            if sha!=src["sha256"]:
+              raise RuntimeError(f"{src['key']} SHA256 mismatch: {sha}")
+            return data,url
+
+          def member_by_suffix(zf,suffix):
+            matches=[n for n in zf.namelist() if n.endswith(suffix)]
+            if len(matches)!=1:
+              raise RuntimeError(f"member suffix {suffix}: expected 1 match, got {matches[:10]}")
+            return matches[0]
+
+          def read_csv_member(zf,name):
+            with zf.open(name) as f:
+              return list(csv.DictReader(io.TextIOWrapper(f,encoding="utf-8-sig",errors="replace",newline="")))
+
+          blobs={}
+          src_records={}
+          for s in SOURCES:
+            blobs[s["key"]],url=download(s)
+            src_records[s["key"]]={
+              "branch":s["branch"],"path":s["path"],"bytes":len(blobs[s["key"]]),
+              "sha256":hashlib.sha256(blobs[s["key"]]).hexdigest(),"url":url
+            }
+            log(f"SOURCE_PASS {s['key']} bytes={len(blobs[s['key']])} sha256={src_records[s['key']]['sha256']}")
+
+          with zipfile.ZipFile(io.BytesIO(blobs["v142"])) as z:
+            bad=z.testzip()
+            if bad: raise RuntimeError("v1.4.2 ZIP CRC error: "+bad)
+            quote_member=member_by_suffix(z,SOURCES[0]["member_suffix"])
+            quote_rows=read_csv_member(z,quote_member)
+          with zipfile.ZipFile(io.BytesIO(blobs["v141"])) as z:
+            bad=z.testzip()
+            if bad: raise RuntimeError("v1.4.1 ZIP CRC error: "+bad)
+            ordinary_member=member_by_suffix(z,SOURCES[1]["member_suffix"])
+            ordinary_rows=read_csv_member(z,ordinary_member)
+
+          required_quote={"market","trade_date","instrument_code"}
+          if not quote_rows or not required_quote.issubset(quote_rows[0]):
+            raise RuntimeError(f"v1.4.2 CSV schema invalid: {list(quote_rows[0]) if quote_rows else []}")
+          required_universe={"market","instrument_code","ordinary_stock_confirmed"}
+          if not ordinary_rows or not required_universe.issubset(ordinary_rows[0]):
+            raise RuntimeError(f"v1.4.1 ordinary schema invalid: {list(ordinary_rows[0]) if ordinary_rows else []}")
+
+          def truth(v):
+            return str(v or "").strip().lower() in ("true","1","yes","y","是")
+
+          # 2026-10-23 is an extraordinary Typhoon 薔琵 closure; confirmed by TWSE and TPEx announcements reported contemporaneously.
+          # 2026-10-26 is the statutory substitute holiday for Taiwan Retrocession Day.
+          closure_evidence={
+            "2026-10-23":{
+              "status":"OFFICIAL_EXTRAORDINARY_MARKET_CLOSURE",
+              "reason":"薔琵颱風來襲；證交所及櫃買中心宣布集中市場及櫃買市場全日休市",
+              "announcement_date":"2026-10-22",
+              "sources":[
+                {"publisher":"中央社","url":"https://www.cna.com.tw/news/afe/202610220388.aspx","note":"報導證交所及櫃買中心於10月22日宣布10月23日兩市場全日休市"},
+                {"publisher":"國泰證券公告","url":"https://www.cathaysec.com.tw/cathaysec/News/nContent.aspx?CSeqNO=E9832133&NewsDate=20261022","note":"記錄證交所宣布10月23日集中交易市場全日休市"}
+              ]
+            },
+            "2026-10-26":{
+              "status":"OFFICIAL_STATUTORY_SUBSTITUTE_HOLIDAY",
+              "reason":"臺灣光復暨金門古寧頭大捷紀念日補假",
+              "sources":[
+                {"publisher":"臺灣證券交易所","url":"https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=html","note":"115年市場開休市日期表列示10月26日補假"}
+              ]
+            }
+          }
+
+          start=date(2026,10,23); end=date(2026,11,10)
+          dates=[]
+          d=start
+          while d<=end:
+            dates.append(d)
+            d+=timedelta(days=1)
+          weekdays=[d for d in dates if d.weekday()<5]
+          trading_dates=[d for d in weekdays if d.isoformat() not in closure_evidence]
+          expected_dates=[d.isoformat() for d in trading_dates]
+          if len(expected_dates)!=11:
+            raise RuntimeError(f"Expected trading-day count unexpected: {expected_dates}")
+
+          # Latest official ISIN-confirmed ordinary-stock universe as of 2026-11-10.
+          ordinary_map={}
+          ordinary_dups=[]
+          for r in ordinary_rows:
+            key=(str(r.get("market","")).strip(),str(r.get("instrument_code","")).strip())
+            if not key[0] or not key[1]:
+              continue
+            if not truth(r.get("ordinary_stock_confirmed")):
+              continue
+            if key in ordinary_map:
+              ordinary_dups.append(key)
+              continue
+            ordinary_map[key]={
+              "instrument_name":r.get("instrument_name",""),
+              "isin_code":r.get("isin_code",""),
+              "isin_cfi_code":r.get("isin_cfi_code",""),
+              "security_category":r.get("security_category",""),
+              "classification_code":r.get("classification_code","")
+            }
+          if len(ordinary_map)!=1951:
+            raise RuntimeError(f"Unexpected official ordinary universe size: {len(ordinary_map)}")
+          if ordinary_dups:
+            raise RuntimeError(f"Duplicate confirmed ordinary market/code keys: {ordinary_dups[:10]}")
+
+          # Correctly evaluate only the 11 official trading days; weekends and both official closure days are not missing-data failures.
+          ordinary_increment=[]
+          unmatched=[]
+          daily=defaultdict(lambda:{"source_rows":0,"unique_codes":set(),"ordinary_rows":0,"unmatched_rows":0,"other_or_unconfirmed_rows":0})
+          seen=set()
+          duplicate_quote_keys=[]
+          for r in quote_rows:
+            market=str(r.get("market","")).strip()
+            td=str(r.get("trade_date","")).strip()
+            code=str(r.get("instrument_code","")).strip()
+            if not market or not td or not code:
+              unmatched.append({**r,"classification_status":"MISSING_MARKET_DATE_OR_CODE"})
+              continue
+            if td not in expected_dates:
+              # Weekend/closure rows, should not be included as daily quote coverage.
+              continue
+            k=(market,td,code)
+            if k in seen:
+              duplicate_quote_keys.append(k)
+            seen.add(k)
+            daily[(td,market)]["source_rows"]+=1
+            daily[(td,market)]["unique_codes"].add(code)
+            ordinary_key=(market,code)
+            if ordinary_key in ordinary_map:
+              m=ordinary_map[ordinary_key]
+              row={**r,
+                "official_isin_confirmed_ordinary":True,
+                "isin_code_as_of_2026_11_10":m["isin_code"],
+                "isin_cfi_code_as_of_2026_11_10":m["isin_cfi_code"],
+                "classification_code":m["classification_code"],
+                "security_category":m["security_category"],
+                "classification_reference_date":"2026-11-10"
+              }
+              ordinary_increment.append(row)
+              daily[(td,market)]["ordinary_rows"]+=1
+            else:
+              row={**r,"classification_status":"NOT_MATCHED_TO_2026_11_10_CONFIRMED_ORDINARY_UNIVERSE"}
+              unmatched.append(row)
+              daily[(td,market)]["unmatched_rows"]+=1
+
+          # A valid package must have two PASS markets for every expected date.
+          date_market_gaps=[]
+          for td in expected_dates:
+            for market in ("TWSE","TPEX"):
+              x=daily[(td,market)]
+              if x["source_rows"]<500:
+                date_market_gaps.append({"trade_date":td,"market":market,"rows":x["source_rows"]})
+          if date_market_gaps:
+            raise RuntimeError(f"Expected market-date rows missing: {date_market_gaps}")
+          if duplicate_quote_keys:
+            raise RuntimeError(f"Duplicate normalized market/date/code keys: {duplicate_quote_keys[:20]}")
+
+          # The 2026-11-10 daily subset should match the official ordinary-stock rows in v1.4.1 exactly by market/code.
+          on_1110={(str(r["market"]).strip(),str(r["instrument_code"]).strip()) for r in quote_rows if r.get("trade_date")=="2026-11-10"}
+          expected_current=set(ordinary_map)
+          intersection=on_1110 & expected_current
+          missing_from_quote=sorted(expected_current-on_1110)
+          ordinary_on_1110={ (str(r["market"]).strip(),str(r["instrument_code"]).strip()) for r in ordinary_increment if r.get("trade_date")=="2026-11-10"}
+          if ordinary_on_1110 != expected_current:
+            raise RuntimeError(
+              "2026-11-10 ordinary key mismatch: "
+              f"daily_rows={len(ordinary_on_1110)} universe={len(expected_current)} "
+              f"missing={sorted(expected_current-ordinary_on_1110)[:10]} "
+              f"extra={sorted(ordinary_on_1110-expected_current)[:10]}"
+            )
+
+          daily_rows=[]
+          for td in expected_dates:
+            for market in ("TWSE","TPEX"):
+              x=daily[(td,market)]
+              daily_rows.append({
+                "trade_date":td,"market":market,
+                "source_market_rows":x["source_rows"],
+                "source_unique_codes":len(x["unique_codes"]),
+                "confirmed_ordinary_rows":x["ordinary_rows"],
+                "not_matched_to_current_ordinary_universe":x["unmatched_rows"],
+                "duplicate_market_date_code_rows":0
+              })
+
+          def write_csv(path, rows):
+            path.parent.mkdir(parents=True,exist_ok=True)
+            if not rows:
+              path.write_text("NO_DATA\n",encoding="utf-8-sig")
+              return
+            fields=list(dict.fromkeys(k for x in rows for k in x))
+            with path.open("w",encoding="utf-8-sig",newline="") as f:
+              w=csv.DictWriter(f,fieldnames=fields,extrasaction="ignore")
+              w.writeheader();w.writerows(rows)
+
+          out=Path("audit_readout/v143_corrected_ordinary_increment_20261111")
+          out.mkdir(parents=True,exist_ok=True)
+
+          closure_rows=[]
+          for td,info in closure_evidence.items():
+            closure_rows.append({
+              "trade_date":td,"status":info["status"],"reason":info["reason"],
+              "sources":json.dumps(info["sources"],ensure_ascii=False)
+            })
+
+          summary={
+            "version":"v1.4.3",
+            "status":"PASS_COVERAGE_COMPLETE_ORDINARY_CLASSIFIED_INCREMENT",
+            "range_start":start.isoformat(),"range_end":end.isoformat(),
+            "calendar_days":len(dates),"weekdays":len(weekdays),
+            "official_closure_weekdays":len(closure_evidence),
+            "expected_trading_dates":expected_dates,
+            "expected_market_days":len(expected_dates)*2,
+            "passed_market_days":len(daily_rows),
+            "v142_normalized_source_rows":len(quote_rows),
+            "v141_confirmed_ordinary_rows":len(ordinary_rows),
+            "v141_unique_confirmed_ordinary_market_code_keys":len(ordinary_map),
+            "confirmed_ordinary_increment_rows":len(ordinary_increment),
+            "unmatched_or_unconfirmed_increment_rows":len(unmatched),
+            "duplicates_in_ordinary_universe":len(ordinary_dups),
+            "duplicate_quote_keys_in_expected_dates":len(duplicate_quote_keys),
+            "2026_11_10_ordinary_universe_key_check":{
+              "ordinary_keys_in_v142_quote_rows":len(ordinary_on_1110),
+              "official_ordinary_universe_keys":len(expected_current),
+              "exact_match":ordinary_on_1110==expected_current,
+              "missing_from_v142":len(missing_from_quote)
+            },
+            "daily_market_counts":daily_rows,
+            "corrected_official_closures":closure_rows,
+            "sources":src_records,
+            "critical_note":"This is an isolated 11-day market-data increment. It does not append to or rewrite historical shadow OHLC data. ISIN classification uses the official ordinary list as of 2026-11-10. Unmatched securities remain separate and are not silently dropped from the audit.",
+            "next_gate":"Before appending this increment to a historical source, verify the historical source's shadow OHLC/corporate-action adjustment basis and market-segment reset rules. Do not concatenate raw close values into adjusted/shadow prices."
+          }
+
+          write_csv(out/"10月27日至11月10日_已確認普通股官方行情增量.csv",ordinary_increment)
+          write_csv(out/"10月27日至11月10日_未匹配及待確認行情.csv",unmatched)
+          write_csv(out/"逐日雙市場普通股行情列數.csv",daily_rows)
+          write_csv(out/"修正後官方休市日期與依據.csv",closure_rows)
+          (out/"v143_區間連續性與普通股增量核驗.json").write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding="utf-8")
+          readme=[
+            "# v1.4.3｜修正臨時休市日並產生官方普通股行情增量",
+            "",
+            "狀態：PASS_COVERAGE_COMPLETE_ORDINARY_CLASSIFIED_INCREMENT",
+            "資料區間：2026-10-23 至 2026-11-10",
+            "實際交易日：2026-10-27 至 2026-11-10，共 11 日",
+            "官方休市：2026-10-23 薔琵颱風臨時休市；2026-10-26 臺灣光復暨金門古寧頭大捷紀念日補假。",
+            "",
+            f"v1.4.2 source rows：{len(quote_rows)}",
+            f"Official confirmed ordinary universe：{len(ordinary_map)}",
+            f"Ordinary increment rows：{len(ordinary_increment)}",
+            f"Unmatched/unconfirmed rows：{len(unmatched)}",
+            "",
+            "原始 v1.4.2 / v1.4.1 ZIP 唯讀；本報告只新增獨立增量，不修改正式歷史資料庫。",
+            "不將未確認代號猜成普通股；不把原始收盤價直接併入 shadow OHLC。",
+          ]
+          (out/"README.md").write_text("\n".join(readme)+"\n",encoding="utf-8")
+          log("SUMMARY="+json.dumps({
+            "expected_trading_dates":expected_dates,
+            "source_rows":len(quote_rows),
+            "ordinary_universe":len(ordinary_map),
+            "ordinary_increment_rows":len(ordinary_increment),
+            "unmatched_rows":len(unmatched),
+            "daily_market_counts":daily_rows,
+            "status":summary["status"]
+          },ensure_ascii=False))
+          log("V143_ORDINARY_INCREMENT_AUDIT_COMPLETE")
+          PY
+
+      - name: Check main branch remained unchanged
+        run: |
+          python - <<'PY'
+          import json, urllib.request
+          url="https://api.github.com/repos/CHLINX/sso/branches/main"
+          with urllib.request.urlopen(url,timeout=30) as r:
+            o=json.load(r)
+          sha=o["commit"]["sha"]
+          expected="aaabc2433fb5df2bb68af06461178305d6bd30d1"
+          print(f"MAIN_SHA={sha} EXPECTED={expected} UNCHANGED={sha==expected}")
+          if sha!=expected:
+            raise SystemExit("main SHA changed unexpectedly")
+          PY
+
+      - name: Commit read-only increment outputs to isolated audit branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audit_readout/v143_corrected_ordinary_increment_20261111/
+          git commit -m "Add corrected market-closure and ordinary-stock increment audit"
+          git push origin "HEAD:refs/heads/audit/sso-marketdata-v143-ordinary-increment-20261111_0040"
