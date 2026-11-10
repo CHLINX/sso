@@ -1,0 +1,73 @@
+{
+  "version": "v1.3.7",
+  "run_time_local": "2026-11-10T14:11:53.679908+00:00",
+  "target_date": "2026-11-09",
+  "target_positive_values": {
+    "3085": 919,
+    "4305": 1,
+    "4406": 31,
+    "4530": 106,
+    "6512": 859
+  },
+  "v123_folder": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.2.3_稽核結論校正與證據去循環_20261109_200337",
+  "v123_file_count": 13,
+  "target_file_counts": {
+    "12筆OHLCV異常_校正後分類.csv": 1,
+    "16檔行情缺漏_校正後逐檔結果.csv": 1
+  },
+  "v123_target_csv_rows_by_ticker": {
+    "3085": 1,
+    "4305": 1,
+    "4406": 1,
+    "4530": 1,
+    "6512": 1
+  },
+  "v123_secondary_report_rows_by_ticker": {
+    "3085": 1,
+    "4305": 1,
+    "4406": 1,
+    "4530": 1,
+    "6512": 1
+  },
+  "prior_audit_archive_rows_by_ticker": {
+    "3085": 19,
+    "4305": 19,
+    "4406": 19,
+    "4530": 19,
+    "6512": 19
+  },
+  "matching_upstream_source_value_hits_by_ticker": {
+    "3085": 2,
+    "4305": 2,
+    "4406": 2,
+    "4530": 2,
+    "6512": 2
+  },
+  "matching_upstream_source_value_and_target_date_hits_by_ticker": {
+    "3085": 1,
+    "4305": 1,
+    "4406": 1,
+    "4530": 1,
+    "6512": 1
+  },
+  "candidate_program_reference_count": 6,
+  "candidate_program_file_count": 0,
+  "source_value_hit_total": 10,
+  "sha256_reference_count": 55,
+  "sha256_match_count": 23,
+  "code_files_scanned": 29,
+  "code_scan_bytes": 1495089,
+  "parse_error_count": 0,
+  "prior_zip_count": 2,
+  "prior_zip_errors": [],
+  "status": "UPSTREAM_SOURCE_AND_DATE_IDENTIFIED",
+  "interpretation": "只有在來源資料檔中找到同一股票、同一成交量欄位及相同量值，才列為來源值命中；候選生成程式或相同字串本身不足以證明資料生成鏈。需再人工核對程式執行入口、輸入檔、欄位映射、日期對齊及寫出步驟。",
+  "limitations": [
+    "本次不呼叫 TWSE/TPEX API。",
+    "Google Drive 僅讀取；報告僅寫入 /content。",
+    "若原始來源檔未保留或候選引用無法解析，報告會明確列為未完成，不推定正成交量正確。"
+  ],
+  "github_main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "github_upload_allowed_initially": true,
+  "github_precheck_error": null
+}
