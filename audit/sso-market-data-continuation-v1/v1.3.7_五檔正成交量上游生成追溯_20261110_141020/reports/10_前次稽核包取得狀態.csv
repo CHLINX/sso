@@ -1,0 +1,3 @@
+﻿status,path,sha256,bytes
+audit/sso-market-data-continuation-v1-v1335-target-csv-lineage-20261110_134614,audit/sso-market-data-continuation-v1/v1.3.5_五檔OHLCV校正分類檔上游生成來源追溯_20261110_134614/sso_v1335_五檔OHLCV上游生成追溯_20261110_134614_n4tl5jir.zip,24bf8bcfe12b9e42b4bbb403c39b6a9aad83eae828a974601600ff743d93c9fa,17858
+audit/sso-market-data-continuation-v1-v1336-target-csv-lineage-20261110_135515,audit/sso-market-data-continuation-v1/v1.3.6_五檔官方原始回應修正解析與成交量核驗_20261110_135515/sso_v1336_五檔官方原始回應核驗_20261110_135515_ib10axdg.zip,04ffef291b5804e9ccfd221cebf877936f5f189ed96ebf47f320698b50f4db13,163483
