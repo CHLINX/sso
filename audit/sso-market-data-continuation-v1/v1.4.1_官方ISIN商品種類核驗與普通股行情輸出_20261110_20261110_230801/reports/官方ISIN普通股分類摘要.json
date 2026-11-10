@@ -1,0 +1,212 @@
+{
+  "version": "v1.4.1",
+  "target_trade_date": "2026-11-10",
+  "run_time_taipei": "2026-11-10T23:08:01.098867+08:00",
+  "status": "PASS_CONFIRMED_ORDINARY_STOCKS",
+  "input": {
+    "v138_directory": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.3.8_雙市場官方指定日期行情補充_20261110_20261110_223151_PASS",
+    "v138_zip_sha256": "97fb3ab0bc6bc6c508f800f68d14c2bd47baa5d963fb2452a40eabda3c62c1c8",
+    "v138_csv_sha256": "4f8d4ef52f030534d807f39cd2df06317017bca41ce3f24770059059352a8d2b",
+    "quote_rows": 2409,
+    "quote_dates": [
+      "2026-11-10"
+    ],
+    "v133_zip_sha256": "48fbd3a78edcde0efbb4b39f7dc24197d55047fbac00b3b7f9a41f586d32480d",
+    "v133_zip_members": 35,
+    "v133_company_master_members_parsed": 3,
+    "v133_parse_errors": []
+  },
+  "current_company_masters": {
+    "TWSE": {
+      "market": "TWSE",
+      "url": "https://openapi.twse.com.tw/v1/opendata/t187ap03_L",
+      "http_status": 200,
+      "retrieved_at": "2026-11-10T23:08:03.575431+08:00",
+      "raw_sha256": "7e875b16d3f8cda461d064b97f3292a867251f29f61cc52dc72a6f6b4f2d27fc",
+      "record_count": 1099,
+      "raw_archive": {
+        "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.4.1_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_230801/raw/company_master/TWSE_官方公司基本資料.json.gz",
+        "raw_bytes": 1332396,
+        "gzip_bytes": 241291,
+        "raw_sha256": "7e875b16d3f8cda461d064b97f3292a867251f29f61cc52dc72a6f6b4f2d27fc",
+        "gzip_sha256": "a1a955215d50bafd28b6abd64e5f5a6a0e70f2f3527292d7393ef84af8cb1ec0"
+      }
+    },
+    "TPEX": {
+      "market": "TPEX",
+      "url": "https://www.tpex.org.tw/openapi/v1/mopsfin_t187ap03_O",
+      "http_status": 200,
+      "retrieved_at": "2026-11-10T23:08:09.120513+08:00",
+      "raw_sha256": "cc172e23eaf34744b6aa9fa8e42a70da0425cbbc7d57ba65bdc5e70698f23be5",
+      "record_count": 897,
+      "raw_archive": {
+        "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.4.1_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_230801/raw/company_master/TPEX_官方公司基本資料.json.gz",
+        "raw_bytes": 1079373,
+        "gzip_bytes": 182568,
+        "raw_sha256": "cc172e23eaf34744b6aa9fa8e42a70da0425cbbc7d57ba65bdc5e70698f23be5",
+        "gzip_sha256": "d73789b7fa0ba5c03812fb440e3a3ca727182b3d8ccb6d716ed5a58afd7c1f76"
+      }
+    }
+  },
+  "isin_source": {
+    "url": "https://isin.twse.com.tw/isin/e_single_main.jsp",
+    "http_status": 200,
+    "retrieved_at": "2026-11-10T23:29:58.491580+08:00",
+    "response_headers": {
+      "Cache-Control": "private",
+      "Content-Type": "text/html;charset=big5",
+      "Date": "Tue, 10 Nov 2026 15:08:11 GMT"
+    },
+    "raw_bytes": 38804760,
+    "raw_sha256": "3480b0c574b72243ace3fc53ee3d8e6e7f19dbc5d589f4c6e7ba21598dd6d2ef",
+    "archive": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.4.1_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_230801/raw/official_isin/TWSE_ISIN_綜合證券名錄.html.gz",
+      "raw_bytes": 38804760,
+      "gzip_bytes": 1513412,
+      "raw_sha256": "3480b0c574b72243ace3fc53ee3d8e6e7f19dbc5d589f4c6e7ba21598dd6d2ef",
+      "gzip_sha256": "1bb3137051b292a212b58fb572d7439abfa64f265c12a5c2b130357918098da3"
+    },
+    "parse": {
+      "encoding": "cp950",
+      "table_count": 1,
+      "selected_table_rows": 76493,
+      "header_row_1based_in_table": 1,
+      "header_map": {
+        "isin": 1,
+        "code": 2,
+        "name": 3,
+        "market": 4,
+        "type": 5,
+        "cfi": 8,
+        "listed_date": 7,
+        "industry": 6,
+        "remarks": 9
+      },
+      "malformed_rows": 0,
+      "unique_security_records": 66774,
+      "html_title": ""
+    },
+    "market_counts": {
+      "TWSE": 42820,
+      "TPEX": 17065
+    },
+    "classification_source": "Official TWSE ISIN List of ISIN Code; Security Code / Market / Type of security / CFICode"
+  },
+  "isin_coverage": {
+    "TWSE": {
+      "current_company_master_codes": 1099,
+      "isin_matched_codes": 1068,
+      "overlap_ratio": 0.971793,
+      "minimum_required": 0.7,
+      "passed": true
+    },
+    "TPEX": {
+      "current_company_master_codes": 897,
+      "isin_matched_codes": 897,
+      "overlap_ratio": 1.0,
+      "minimum_required": 0.7,
+      "passed": true
+    }
+  },
+  "isin_coverage_pass": true,
+  "counts": {
+    "all_quote_rows": 2409,
+    "confirmed_ordinary_stock_rows": 1951,
+    "etf_rows": 363,
+    "etn_rows": 20,
+    "tdr_rows": 10,
+    "other_non_ordinary_rows": 34,
+    "unknown_or_conflict_rows": 31,
+    "isin_conflict_or_isolated_rows": 0,
+    "duplicate_quote_rows": 0,
+    "duplicate_isin_rows": 0,
+    "category_counts": {
+      "ETF": 363,
+      "其他非普通股／需再確認": 6,
+      "ETN": 20,
+      "普通股": 1951,
+      "其他非普通股": 28,
+      "ISIN未匹配／證券種類待確認": 31,
+      "TDR": 10
+    },
+    "market_category_counts": {
+      "TWSE": {
+        "ETF": 245,
+        "其他非普通股／需再確認": 6,
+        "ETN": 14,
+        "普通股": 1056,
+        "其他非普通股": 27,
+        "ISIN未匹配／證券種類待確認": 31,
+        "TDR": 10
+      },
+      "TPEX": {
+        "ETF": 118,
+        "普通股": 895,
+        "其他非普通股": 1,
+        "ETN": 6
+      }
+    },
+    "cfi_counts": {
+      "CEOJEU": 19,
+      "CEOILU": 1,
+      "CEOIEU": 108,
+      "CEOGEU": 79,
+      "CEOGDU": 33,
+      "CEOGMU": 3,
+      "CEOGBU": 10,
+      "CEOGCU": 2,
+      "CEOIBU": 83,
+      "CEOIRU": 1,
+      "CEOJLU": 4,
+      "CBCIXU": 6,
+      "CMXXXU": 20,
+      "ESVUFR": 1950,
+      "EPNRAR": 16,
+      "EPNRQR": 1,
+      "EPRRQR": 1,
+      "(未命中)": 31,
+      "EPNNFB": 1,
+      "EPRRAR": 1,
+      "EPNRCR": 1,
+      "EPNCAR": 1,
+      "EFNRAR": 1,
+      "ESVTFR": 1,
+      "EPNTAR": 3,
+      "EPRNAR": 1,
+      "EDSDDR": 10,
+      "EPNRFR": 1,
+      "CEOJBU": 20
+    }
+  },
+  "classification_policy": {
+    "primary_source": "TWSE official ISIN comprehensive list",
+    "official_fields": [
+      "Security Code",
+      "Market",
+      "Type of security",
+      "CFICode"
+    ],
+    "ordinary_stock_rule": "CFI 前兩碼 ES（Equities / Common or Ordinary Shares），或 ISIN Type of security 明確標示 Common Stock / Ordinary Share；不得以公司主檔命中、代號或名稱單獨確認普通股。",
+    "company_master_role": "僅作交叉參考，不單獨作普通股法律分類依據。",
+    "unmatched_rule": "沒有確切 ISIN 記錄、欄位缺漏、同代號記錄衝突或整體名錄覆蓋不足者，不納入已確認普通股行情。"
+  },
+  "quality": {
+    "quote_rows": 2409,
+    "zero_volume_rows": 40,
+    "missing_volume_rows": 0,
+    "ohlc_missing_rows": {
+      "open": 42,
+      "high": 42,
+      "low": 1034,
+      "close": 42
+    },
+    "handling": "不刪除零成交量列、不補值、不修正 OHLC；原始值完整保留。"
+  },
+  "non_mutation": {
+    "v138_original_modified": false,
+    "v133_original_zip_modified": false,
+    "formal_database_modified": false,
+    "main_branch_modified": false,
+    "training_or_backtest_performed": false
+  }
+}
