@@ -71,7 +71,11 @@ jobs:
           with zipfile.ZipFile(io.BytesIO(blobs["universe"])) as z:
             bad=z.testzip()
             if bad: raise RuntimeError("universe ZIP CRC failed: "+bad)
-            with z.open(SOURCES[1]["member"]) as f:
+            matches=[n for n in z.namelist() if n.endswith("/normalized/已確認普通股行情.csv") or n=="normalized/已確認普通股行情.csv"]
+            if len(matches)!=1:
+              raise RuntimeError("ordinary universe member path ambiguous or missing: "+repr(matches[:10]))
+            print("ORDINARY_MEMBER="+matches[0],flush=True)
+            with z.open(matches[0]) as f:
               ordinary_rows=list(csv.DictReader(io.TextIOWrapper(f,encoding="utf-8-sig",errors="replace",newline="")))
 
           if len(rows)!=4325:
