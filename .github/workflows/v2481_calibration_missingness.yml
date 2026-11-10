@@ -1,0 +1,140 @@
+name: SSO v2.48.1 calibration-support missingness audit
+
+on:
+  push:
+    branches:
+      - "audit/sso-historical-reader-20261110_2345"
+    paths:
+      - ".github/workflows/v2481_calibration_missingness.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout isolated read branch
+        uses: actions/checkout@v4
+        with:
+          ref: "audit/sso-historical-reader-20261110_2345"
+      - name: Audit calibration-support fields in frozen v2.48.1 outputs
+        run: |
+          python - <<'PY'
+          import csv, io, json, hashlib, urllib.parse, urllib.request, zipfile
+          from collections import Counter, defaultdict
+          from pathlib import Path
+
+          BRANCH="audit/v4.84.9.3-rebuild-pipeline"
+          ZIP_NAME="SSO_v2.48.1_樣本外校準門檻與公司名稱結果.zip"
+          EXPECTED=21010200
+          URL="https://raw.githubusercontent.com/CHLINX/sso/"+BRANCH+"/"+urllib.parse.quote(ZIP_NAME,safe="")
+          req=urllib.request.Request(URL,headers={"User-Agent":"SSO-v2481-calibration-audit/1.0"})
+          with urllib.request.urlopen(req,timeout=180) as r:
+              blob=r.read()
+          if len(blob)!=EXPECTED:
+              raise RuntimeError(f"ZIP_SIZE_MISMATCH {len(blob)} != {EXPECTED}")
+          sha=hashlib.sha256(blob).hexdigest()
+          print(f"ZIP_PASS bytes={len(blob)} sha256={sha}",flush=True)
+
+          TARGETS=[
+              "最新全市場候選持續評估_v2.48.1.csv",
+              "最新10檔獲利可能性排行_v2.48.1.csv",
+              "最新達標獲利候選最多10檔_v2.48.1.csv",
+              "歷史樣本外每日10檔候選_v2.48.1.csv",
+              "獲利機率校準檢驗總結_v2.48.1.csv",
+          ]
+          BOOL_FIELDS=[
+              "校準方向受支持","分類模型已收斂","機率校準已收斂",
+              "符合獲利候選條件","優先獲利候選","歷史同機率區間通過門檻"
+          ]
+          def norm_bool(v):
+              if v is None or str(v).strip()=="":
+                  return "MISSING"
+              s=str(v).strip().lower()
+              if s in ("true","1","yes","y","是","通過"):
+                  return "TRUE"
+              if s in ("false","0","no","n","否","未通過"):
+                  return "FALSE"
+              return "OTHER:"+str(v).strip()
+          def num(v):
+              try:
+                  x=float(str(v).strip())
+                  return x if x==x and abs(x)!=float("inf") else None
+              except Exception:
+                  return None
+          def read_csv(zf,name):
+              with zf.open(name) as raw:
+                  txt=io.TextIOWrapper(raw,encoding="utf-8-sig",errors="replace",newline="")
+                  reader=csv.DictReader(txt)
+                  rows=list(reader)
+                  fields=reader.fieldnames or []
+              return fields,rows
+          result={"zip":{"name":ZIP_NAME,"bytes":len(blob),"sha256":sha},"files":{}}
+          with zipfile.ZipFile(io.BytesIO(blob)) as zf:
+              bad=zf.testzip()
+              if bad: raise RuntimeError("ZIP_CRC_FAIL "+bad)
+              names=set(zf.namelist())
+              for name in TARGETS:
+                  if name not in names:
+                      print("MISSING_MEMBER "+name,flush=True)
+                      continue
+                  fields,rows=read_csv(zf,name)
+                  item={"rows":len(rows),"fields":fields,"by_horizon":{}}
+                  horizons=sorted(set((r.get("持有期間H") or "MISSING").strip() for r in rows))
+                  for h in horizons:
+                      subset=[r for r in rows if (r.get("持有期間H") or "MISSING").strip()==h]
+                      hres={"rows":len(subset)}
+                      for field in BOOL_FIELDS:
+                          if field in fields:
+                              c=Counter(norm_bool(r.get(field)) for r in subset)
+                              hres[field]=dict(c)
+                      if "機率校準斜率" in fields:
+                          vals=[num(r.get("機率校準斜率")) for r in subset]
+                          valid=[v for v in vals if v is not None]
+                          hres["機率校準斜率"]={
+                              "valid":len(valid),"missing":len(vals)-len(valid),
+                              "positive":sum(v>1e-12 for v in valid),
+                              "zero":sum(abs(v)<=1e-12 for v in valid),
+                              "negative":sum(v< -1e-12 for v in valid),
+                              "min":min(valid) if valid else None,
+                              "median":sorted(valid)[len(valid)//2] if valid else None,
+                              "max":max(valid) if valid else None
+                          }
+                      for field in ("候選狀態","歷史同機率區間未通過原因","歷史同機率區間","名單用途"):
+                          if field in fields:
+                              c=Counter((r.get(field) or "MISSING").strip() for r in subset)
+                              hres[field+"_top"]=[{"value":k,"count":v} for k,v in c.most_common(12)]
+                      if "校準方向受支持" in fields:
+                          badrows=[r for r in subset if norm_bool(r.get("校準方向受支持"))!="TRUE"]
+                          sample=[]
+                          for r in badrows[:4]:
+                              sample.append({k:r.get(k,"") for k in [
+                                  "訊號日期","市場","股票代號","公司名稱","排名","估計淨獲利機率_校準",
+                                  "機率校準斜率","分類模型已收斂","機率校準已收斂",
+                                  "校準方向受支持","符合獲利候選條件","候選狀態",
+                                  "歷史同機率區間樣本數","歷史同區間實際淨獲利率_成交加權",
+                                  "歷史同區間平均實際淨報酬_成交加權","歷史同機率區間通過門檻",
+                                  "歷史同機率區間未通過原因"
+                              ] if k in fields})
+                          hres["not_supported_examples"]=sample
+                      item["by_horizon"][h]=hres
+                  result["files"][name]=item
+                  print("\nFILE "+name+" rows="+str(len(rows)),flush=True)
+                  print("FIELDS "+json.dumps(fields,ensure_ascii=False),flush=True)
+                  print("BY_HORIZON "+json.dumps(item["by_horizon"],ensure_ascii=False),flush=True)
+
+          out=Path("audit_readout/v2481_calibration_audit")
+          out.mkdir(parents=True,exist_ok=True)
+          (out/"v2481_校準方向受支持缺漏與失敗原因.json").write_text(
+              json.dumps(result,ensure_ascii=False,indent=2),encoding="utf-8")
+          print("\nV2481_CALIBRATION_SUPPORT_AUDIT_COMPLETE",flush=True)
+          PY
+      - name: Preserve read-only diagnostic summary
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audit_readout/v2481_calibration_audit/
+          git commit -m "Add v2.48.1 calibration support missingness audit"
+          git push origin "HEAD:refs/heads/audit/sso-historical-reader-20261110_2345"
