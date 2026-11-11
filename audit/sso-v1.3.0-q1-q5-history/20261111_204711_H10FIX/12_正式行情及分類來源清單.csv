@@ -1,0 +1,7 @@
+﻿來源,路徑,SHA256,檔案大小bytes,讀取列數,起日,迄日
+v4.69歷史影子行情,/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/v4.69/01_v231補行日日期排序與已驗證特徵重建候選.csv.gz,7debd5cde9d47a42091f7e8a0dec3b5c50808e28c6f1f6c59a55ddaaeb182dd8,646062522.0,195026.0,2026-06-01,2026-10-22
+v4.17官方行情主檔,/content/drive/MyDrive/看股最速適/看股最速適_官方行情完整證券代號重建_v4_16_20261031_131511/官方行情總表_完整證券代號_v4.17.csv,25f736d96b8d81008a0325375837b5a663d06fdfc597b5b19793a8c003ac3444,3164892248.0,201904.0,2026-06-01,2026-10-28
+官方行情append-only delta,/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/行情增量資料.csv.gz,b5ac265e5bef8f09c5c5bd93bf39d2c78f4a3736a71a7b05c7db01a8b7781074,387180.0,16847.0,2026-10-29,2026-11-06
+v1.5.1官方全市場行情增量,/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9.zip,527ed90bd333162d169a7c0df03630ee0b132eddf4c6f57b583e60f72925bc43,,4818.0,2026-11-09,2026-11-10
+v1.4.1官方ISIN CFI普通股分類,/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.4.1_官方ISIN商品種類核驗與普通股行情輸出_20261110_20261110_230801.zip,b5785140fd80552f4c8bd6fbeeba2df65fa4b15252ef687f058545edc4fd916d,,1951.0,2026-11-10,2026-11-10
+v1.2.9固定程式,audit/sso-v1.2.9-multi-horizon/20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,bab6929d4eb6c070b341ba15c596a428831fea81,,,,
