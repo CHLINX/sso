@@ -1,0 +1,20 @@
+{
+  "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.6",
+  "correction_date": "2026-11-11",
+  "market": "TPEX",
+  "previous_v1_5_2_query_type": "AL",
+  "correct_query_type": "EW",
+  "correction_pass": true,
+  "correction_reused": true,
+  "correction_source_version": "v1.5.5_官方行情即時驗證與增量續接_20261112_002745_2459",
+  "correction_source_path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.5_官方行情即時驗證與增量續接_20261112_002745_2459/修正_TPEX_20261111.csv",
+  "correction_rows": 1020,
+  "correction_new_rows": 0,
+  "correction_unique_codes": 1020,
+  "correction_source_file_sha256": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742",
+  "correction_export_file_sha256": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742",
+  "correction_canonical_sha256": "eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627",
+  "old_v1_5_2_file_modified": false,
+  "replacement_rule": "分析 2026-11-11 TPEx 行情時，以本次 corrections/官方歷史行情/TPEX/20261111.csv 替代 v1.5.2 同日期 TPEx 全部資料列；不可將兩者相加。",
+  "reason": "v1.5.2 使用 type=AL，資料母體包含權證及牛熊證；本次以 type=EW 與既有母體一致。"
+}

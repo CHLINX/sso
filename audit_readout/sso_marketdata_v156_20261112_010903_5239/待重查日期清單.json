@@ -1,0 +1,17 @@
+{
+  "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.6",
+  "created_at_taipei": "2026-11-12T01:09:03.997793+08:00",
+  "count": 0,
+  "items": [],
+  "deferred_not_yet_due_count": 1,
+  "deferred_not_yet_due_items": [
+    {
+      "market": "TWSE",
+      "trade_date": "2026-11-12",
+      "status": "NO_DATA_NOT_CONFIRMED_CLOSED",
+      "previous_raw_file": "",
+      "previous_response_sha256": ""
+    }
+  ],
+  "rule": "未取得官方資料、品質拒絕及下載錯誤均保留；不推定休市；後續執行持續重新查詢。"
+}
