@@ -1,0 +1,4 @@
+﻿trade_date,market,rows,unique_codes,zero_volume_rows,zero_volume_ratio,missing_ohlc_rows,missing_ohlc_ratio,duplicate_rows,status
+2026-11-11,TPEX,1020,1020,27,0.026471,27,0.026471,0,CORRECTION_REPLACEMENT
+2026-11-12,TWSE,0,0,0,0.0,0,0.0,0,NO_DATA
+2026-11-12,TPEX,0,0,0,0.0,0,0.0,0,REJECTED

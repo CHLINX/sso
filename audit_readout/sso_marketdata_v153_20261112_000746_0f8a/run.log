@@ -1,0 +1,14 @@
+[00:07:46] 啟動：SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.3
+[00:08:32] 資料根目錄：/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1
+[00:08:32] TWSE 最後行情日：2026-11-11
+[00:08:32] TPEx 最後行情日：2026-11-11
+[00:08:32] 歷史合理筆數基準：TWSE=1389；TPEX=1018
+[00:08:32] TPEx 查詢參數固定使用 type=EW；與既有不含權證、牛熊證的行情母體接合。
+[00:08:32] 下載後立即驗證，通過才可寫入；未通過者只保存原始回應。
+[00:08:32] [CORRECTION] 重取 2026-11-11 TPEx，以 type=EW 修正 v1.5.2 的 type=AL 資料。
+[00:08:38] [DOWNLOAD + CHECK PASS] TPEX 2026-11-11：1,020 筆；唯一代號=1,020；零成交量=2.6%；OHLC缺值=2.6%
+[00:08:40] [CORRECTION PASS] TPEx 2026-11-11 修正行情 1,020 筆。
+[00:08:41] [REJECTED] TPEX 2026-11-12：資料筆數低於 500：0; 資料筆數偏離既有母體：本次=0；既有中位數=1018；允許=560~1629; 沒有可寫入行情列
+[00:08:42] [SOURCE PASS] 本次完整程式碼已封存
+[00:08:42] [ZIP PASS] v1.5.3_官方行情即時驗證與增量續接_20261112_000746_0f8a.zip；bytes=127,143；SHA256=dba2f088c884be52830f960c46ec36c6b70b77fc62c8dbee8309a6aa21d6aa12
+[00:08:42] [ZIP CRC PASS] 封存完整性檢查通過。
