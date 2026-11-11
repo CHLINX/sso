@@ -1,0 +1,72 @@
+{
+  "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.5",
+  "created_at_taipei": "2026-11-12T00:29:26.137291+08:00",
+  "file_count": 13,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1975,
+      "sha256": "4e279a4adea432876b21f5bdffc724804dc6834ce6f728af9ef3de203e7398ba"
+    },
+    {
+      "path": "SSO_Market_Data_Continuation_v1.5.5.py",
+      "bytes": 74630,
+      "sha256": "9c3aa101ce1065b9fd270dc2bc1efc06d5d432162cd1cb31508a3821e1268a90"
+    },
+    {
+      "path": "corrections/官方歷史行情/TPEX/20261111.csv",
+      "bytes": 103751,
+      "sha256": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742"
+    },
+    {
+      "path": "latest_market_dates.json",
+      "bytes": 323,
+      "sha256": "60bd0787d2fbd0857b184a0aa0e6c88b00560e8429375fa29c29986578bc70ef"
+    },
+    {
+      "path": "run.log",
+      "bytes": 1360,
+      "sha256": "9006ecfd9b7eee8af11ef86af41a708de37cd05f65ab9fe337a043c864203495"
+    },
+    {
+      "path": "v1.5.5_修正替代規則.json",
+      "bytes": 1296,
+      "sha256": "3a18c8498e8fc054e7c751ccae9c6c1774caf4a215e5b14753b21d90fa52f93a"
+    },
+    {
+      "path": "v1.5.5_官方增量行情續接報告.json",
+      "bytes": 3737,
+      "sha256": "e386b8fa9592bec6880a118c84de0231d7638e895871e1ffda42505695fda44d"
+    },
+    {
+      "path": "修正_TPEX_20261111.csv",
+      "bytes": 103751,
+      "sha256": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742"
+    },
+    {
+      "path": "個股增量覆蓋檔索引.csv",
+      "bytes": 4,
+      "sha256": "b42f2099187886def637d6aa840022266e05cb6c987a9394e708e23cd505eb46"
+    },
+    {
+      "path": "全市場標準化增量_無新增_20261112_002745_2459.csv",
+      "bytes": 134,
+      "sha256": "689fc669adf8035bc34ac7ddcd2593d533a05512791a6bdc875f3e6d8680620a"
+    },
+    {
+      "path": "官方API下載及即時驗證索引.csv",
+      "bytes": 4,
+      "sha256": "b42f2099187886def637d6aa840022266e05cb6c987a9394e708e23cd505eb46"
+    },
+    {
+      "path": "待重查日期清單.json",
+      "bytes": 469,
+      "sha256": "4ce43258036a176ef0c54842e144c312123dc99dc04ba9c9101667a3aa360703"
+    },
+    {
+      "path": "逐日雙市場行情驗證統計.csv",
+      "bytes": 4,
+      "sha256": "b42f2099187886def637d6aa840022266e05cb6c987a9394e708e23cd505eb46"
+    }
+  ]
+}

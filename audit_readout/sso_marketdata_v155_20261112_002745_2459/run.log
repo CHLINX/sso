@@ -1,0 +1,14 @@
+[00:27:45] 啟動：SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.5
+[00:27:45] 台灣時間：2026-11-12T00:27:45.667914+08:00；當日查詢門檻：17:00；本次查詢截止日：2026-11-11
+[00:27:45] [SAME-DAY GATE] 尚未到 17:00，跳過 2026-11-12 當日行情查詢。
+[00:29:17] 資料根目錄：/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1
+[00:29:17] TWSE 最後行情日：2026-11-11
+[00:29:17] TPEx 最後行情日：2026-11-11
+[00:29:17] 歷史合理筆數基準：TWSE=1389；TPEX=1018
+[00:29:17] 既有增量掃描：36,807 列；異常列=0
+[00:29:19] [CORRECTION SOURCE CHECK PASS] 修正_TPEX_20261111.csv：1,020 筆；唯一代號=1,020；SHA256=002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742
+[00:29:20] [CORRECTION SOURCE CHECK PASS] 20261111.csv：1,020 筆；唯一代號=1,020；SHA256=002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742
+[00:29:20] [CORRECTION REUSE PASS] 採用 v1.5.3_官方行情即時驗證與增量續接_20261112_000746_0f8a 的既有修正資料。
+[00:29:25] [CORRECTION CARRY-FORWARD PASS] 沿用 1,020 筆既有修正資料；來源=v1.5.3_官方行情即時驗證與增量續接_20261112_000746_0f8a
+[00:29:25] [WRITE CHECK PASS] 標準化增量=0 列；個股 overlay=0 檔。
+[00:29:26] [SOURCE PASS] v1.5.5 完整來源程式已封存。
