@@ -1,0 +1,13 @@
+{
+  "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.4",
+  "correction_date": "2026-11-11",
+  "market": "TPEX",
+  "previous_v1_5_2_query_type": "AL",
+  "correct_query_type": "EW",
+  "correction_pass": true,
+  "old_v1_5_2_file_modified": false,
+  "replacement_rule": "分析 2026-11-11 TPEx 行情時，以本次 corrections/官方歷史行情/TPEX/20261111.csv 替代 v1.5.2 同日期 TPEx 全部資料列；不可將兩者相加。",
+  "reason": "v1.5.2 使用 type=AL，資料母體包含權證及牛熊證；本次改用 type=EW 與既有 v1.5.1 母體一致。",
+  "correction_rows": 0,
+  "correction_sha256": null
+}

@@ -1,0 +1,80 @@
+{
+  "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.4",
+  "run_id": "20261112_001733_4d45",
+  "run_time_taipei": "2026-11-12T00:17:33.890901+08:00",
+  "market_close_gate": {
+    "timezone": "Asia/Taipei",
+    "cutoff_local": "17:00",
+    "run_time_local": "2026-11-12T00:17:33.890901+08:00",
+    "today": "2026-11-12",
+    "same_day_download_allowed": false,
+    "target_end_date": "2026-11-11",
+    "rule": "台灣時間 17:00 前不查詢當日行情；17:00 起才允許查詢當日。"
+  },
+  "status": "NO_NEW_ROWS",
+  "previous_market_last_date": {
+    "TWSE": "2026-11-11",
+    "TPEX": "2026-11-11"
+  },
+  "baseline_daily_rows_v151": {
+    "TWSE": 1389,
+    "TPEX": 1018
+  },
+  "tpex_query_type": "EW",
+  "correction": {
+    "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.4",
+    "correction_date": "2026-11-11",
+    "market": "TPEX",
+    "previous_v1_5_2_query_type": "AL",
+    "correct_query_type": "EW",
+    "correction_pass": true,
+    "old_v1_5_2_file_modified": false,
+    "replacement_rule": "分析 2026-11-11 TPEx 行情時，以本次 corrections/官方歷史行情/TPEX/20261111.csv 替代 v1.5.2 同日期 TPEx 全部資料列；不可將兩者相加。",
+    "reason": "v1.5.2 使用 type=AL，資料母體包含權證及牛熊證；本次改用 type=EW 與既有 v1.5.1 母體一致。",
+    "correction_rows": 0,
+    "correction_sha256": null
+  },
+  "forward_new_rows": 0,
+  "correction_new_rows": 0,
+  "forward_new_instruments": 0,
+  "forward_trade_dates": [],
+  "market_last_date_after_update": {
+    "TWSE": "2026-11-11",
+    "TPEX": "2026-11-11"
+  },
+  "api_requests": 0,
+  "rejected_download_count": 0,
+  "download_error_count": 0,
+  "waiting_official_data_count": 0,
+  "unresolved_weekday_no_data": [],
+  "immediate_validation": {
+    "enabled": true,
+    "before_write": true,
+    "checks": [
+      "HTTP 狀態及 JSON 回應",
+      "行情資料表欄位",
+      "最低及最高列數",
+      "相對於 v1.5.1 母體筆數",
+      "證券代號格式",
+      "唯一代號及重複代號",
+      "成交量數值及零成交量比例",
+      "OHLC 缺值比例",
+      "OHLC 價格高低關係",
+      "日期及市場一致性"
+    ],
+    "failed_data_written_to_increment": false,
+    "raw_response_preserved": true
+  },
+  "preservation": {
+    "v2_8_original_zip_modified": false,
+    "v1_4_2_original_zip_modified": false,
+    "v1_5_1_original_files_modified": false,
+    "v1_5_2_original_files_modified": false,
+    "zero_volume_rows_deleted": false,
+    "missing_ohlc_rows_deleted": false,
+    "duplicate_rows_removed": false,
+    "old_tpex_al_data_physically_deleted": false,
+    "replacement_layer_created": true
+  },
+  "scope": "僅針對已知錯誤的 2026-11-11 TPEx 建立一次替代層；除此之外，各市場均從既有最後行情日的下一日起向前增量。"
+}
