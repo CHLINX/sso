@@ -1,0 +1,79 @@
+name: Inspect archived SSO v1.2.2 return methodology
+
+on:
+  push:
+    branches:
+      - audit/sso-v122-cost-formula-inspection-20261111
+    paths:
+      - .github/workflows/inspect-v122-cost.yml
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout audit branch
+        uses: actions/checkout@v4
+      - name: Inspect archived result ZIP and trade rows
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv, gzip, pathlib, re, zipfile
+          root = pathlib.Path(".")
+          zip_path = root / "audit/sso-v1.2.2-individual-profit-validation/20261110_081353/看股最速適_全市場個股實際獲利驗證_v1_2_2_20261110_081353.zip"
+          gz_path = root / "audit/sso-v1.2.2-individual-profit-validation/20261110_081353/05_Q5個股逐筆訊號與淨報酬.csv.gz"
+          print("=== ZIP MEMBERS ===")
+          if not zip_path.exists():
+              raise SystemExit(f"missing ZIP: {zip_path}")
+          with zipfile.ZipFile(zip_path) as z:
+              names = z.namelist()
+              for n in names[:250]:
+                  info = z.getinfo(n)
+                  print(f"{info.file_size}\t{n}")
+              print("=== ARCHIVED SOURCE CODE / FORMULA SNIPPETS ===")
+              patterns = re.compile(r"slippage|slip|fee|tax|淨報酬|毛報酬|成本|entry_price|exit_price|net_return|gross_return|return_rate", re.I)
+              source_files = [n for n in names if n.lower().endswith((".py", ".r", ".ipynb", ".txt", ".md"))]
+              print("source_files:", source_files[:100])
+              hits = 0
+              for n in source_files:
+                  try:
+                      s = z.read(n).decode("utf-8-sig", "replace").splitlines()
+                  except Exception:
+                      continue
+                  for i, line in enumerate(s):
+                      if patterns.search(line):
+                          lo=max(0,i-2); hi=min(len(s),i+3)
+                          print(f"--- {n}:{i+1} ---")
+                          for j in range(lo,hi):
+                              print(f"{j+1}: {s[j][:500]}")
+                          hits += 1
+                          if hits >= 80:
+                              break
+                  if hits >= 80:
+                      break
+              print("formula_snippet_hits:", hits)
+              print("=== ZIP CSV/JSON SAMPLE ===")
+              for n in names:
+                  if n.lower().endswith((".json", ".csv")) and ("來源檢核" in n or "逐筆" in n or "個股候選" in n):
+                      try:
+                          raw=z.read(n)
+                          print("---",n,"bytes",len(raw),"---")
+                          if n.lower().endswith(".json"):
+                              print(raw.decode("utf-8-sig","replace")[:4000])
+                          else:
+                              print(raw.decode("utf-8-sig","replace").splitlines()[:3])
+                      except Exception as e:
+                          print("read_error",n,repr(e))
+          print("=== TRADE DETAIL GZIP ===")
+          if gz_path.exists():
+              with gzip.open(gz_path,"rt",encoding="utf-8-sig",newline="") as f:
+                  reader=csv.DictReader(f)
+                  print("columns:", reader.fieldnames)
+                  for i,row in enumerate(reader):
+                      if i>=3: break
+                      print("row",i+1,{k:row[k] for k in reader.fieldnames[:80]})
+          else:
+              print("trade detail gzip not present as standalone file; checking ZIP members only")
+          PY
