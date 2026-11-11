@@ -1,0 +1,3 @@
+﻿trade_date,market,rows,unique_codes,zero_volume_rows,missing_open,missing_high,missing_low,missing_close,status
+2026-11-11,TWSE,1390,1390,7,14,14,14,14,APPENDED
+2026-11-11,TPEX,13752,13752,7703,7703,7703,7703,7703,APPENDED

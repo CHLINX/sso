@@ -1,0 +1,3 @@
+﻿trade_date,market,url,params,http_status,content_type,sha256,raw_file,row_count,status,error
+2026-11-11,TWSE,https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX,"{""date"": ""20261111"", ""type"": ""ALLBUT0999"", ""response"": ""json""}",200,application/json;charset=UTF-8,e4ff525e7611335616ce3d3a28b3a2efadf822f531271e26b2cb98a6e696df63,raw/TWSE/20261111.json.gz,1390,OK,
+2026-11-11,TPEX,https://www.tpex.org.tw/www/zh-tw/afterTrading/otc,"{""date"": ""2026/11/11"", ""type"": ""AL"", ""response"": ""json""}",200,application/json;charset=UTF-8,71182f24afbe0ce857a39ffdf6ceadbe5f8453f6b6491ae2e40ae7fb6fd99f12,raw/TPEX/20261111.json.gz,13752,OK,

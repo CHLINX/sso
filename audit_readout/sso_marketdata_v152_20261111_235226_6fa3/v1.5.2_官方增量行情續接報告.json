@@ -1,0 +1,87 @@
+{
+  "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.2",
+  "run_id": "20261111_235226_6fa3",
+  "run_time_taipei": "2026-11-11T23:52:26.954334+08:00",
+  "status": "SUCCESS",
+  "previous_market_last_date": {
+    "TWSE": "2026-11-10",
+    "TPEX": "2026-11-10"
+  },
+  "market_start_date": {
+    "TWSE": "2026-11-11",
+    "TPEX": "2026-11-11"
+  },
+  "requested_through": "2026-11-11",
+  "new_rows": 15142,
+  "new_instruments": 15142,
+  "new_trade_dates": [
+    "2026-11-11"
+  ],
+  "market_last_date_after_update": {
+    "TWSE": "2026-11-11",
+    "TPEX": "2026-11-11"
+  },
+  "api_requests": 2,
+  "api_status_counts": {
+    "OK": 2
+  },
+  "format": {
+    "standard_columns": [
+      "trade_date",
+      "market",
+      "instrument_code",
+      "instrument_name",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "transaction_count",
+      "traded_value",
+      "source_archive_member"
+    ],
+    "twse_overlay_columns": [
+      "trade_date",
+      "market",
+      "instrument_code",
+      "instrument_name",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "transaction_count",
+      "traded_value",
+      "source_archive_member"
+    ],
+    "tpex_overlay_columns": [
+      "trade_date",
+      "market",
+      "instrument_code",
+      "instrument_name",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "transaction_count",
+      "traded_value",
+      "source_archive_member"
+    ],
+    "format_check": "PASS"
+  },
+  "preservation": {
+    "original_v2_8_zip_modified": false,
+    "previous_v1_5_x_outputs_modified": false,
+    "zero_volume_rows_preserved": true,
+    "missing_ohlc_rows_preserved": true,
+    "duplicate_rows_removed": false,
+    "instrument_category_filter": false,
+    "all_official_instrument_types_retained": true
+  },
+  "scope": "從每個市場最後留有行情的日期之次日起，只向前逐日查詢到執行日；未回查、未修訂任何舊日期。",
+  "api_endpoints": {
+    "TWSE": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+    "TPEX": "https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?type=AL"
+  }
+}
