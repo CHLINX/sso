@@ -1,0 +1,4 @@
+{
+  "status": "FAILED",
+  "error": "NameError: name 'OUTPUT_DIR' is not defined"
+}

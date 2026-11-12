@@ -1,0 +1,72 @@
+{
+  "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.10",
+  "created_at_taipei": "2026-11-12T18:09:01.436357+08:00",
+  "target_end_date": "2026-11-12",
+  "v159_correction_source_pass": true,
+  "replacement_20261111": {
+    "TWSE_rows": 1390,
+    "TWSE_expected_rows": 1390,
+    "TPEX_rows": 1020,
+    "TPEX_expected_rows": 1020,
+    "old_same_day_rows_replaced": true,
+    "correction_layer_added_as_new_increment": false
+  },
+  "forward_increment": {
+    "rows": 0,
+    "dates": [],
+    "TWSE_rows": 0,
+    "TPEX_rows": 0
+  },
+  "current_target_day": {
+    "date": "2026-11-12",
+    "same_day_gate_pass": true,
+    "TWSE": {
+      "rows": 1389,
+      "unique_codes": 1389,
+      "pass": true
+    },
+    "TPEX": {
+      "rows": 1020,
+      "unique_codes": 1020,
+      "pass": true
+    },
+    "both_markets_pass": true
+  },
+  "historical_continuity": {
+    "previous_unique_keys": 24074,
+    "identical_duplicate_copies": 0,
+    "historical_conflict_keys": 0,
+    "old_20261111_rows_replaced": 15142,
+    "effective_unique_keys_after_replacement": 26484
+  },
+  "schema": {
+    "standard_columns": [
+      "trade_date",
+      "market",
+      "instrument_code",
+      "instrument_name",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "transaction_count",
+      "traded_value",
+      "source_archive_member",
+      "price_change"
+    ],
+    "price_change_available": true,
+    "schema_ready": true
+  },
+  "pending": {
+    "due_unresolved_count": 0,
+    "due_unresolved_dates": []
+  },
+  "downstream_preflight_ready": true,
+  "model_execution": {
+    "training_performed": false,
+    "scoring_performed": false,
+    "Q5_performance_test_performed": false,
+    "reason": "本版本屬官方行情資料續接及資料品質驗證；不在行情更新程序內重訓模型或產生選股分數。"
+  }
+}

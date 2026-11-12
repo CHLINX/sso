@@ -1,0 +1,194 @@
+{
+  "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.10",
+  "run_id": "20261112_180751_3bd3",
+  "run_time_taipei": "2026-11-12T18:07:51.274711+08:00",
+  "status": "NO_NEW_ROWS",
+  "market_close_gate": {
+    "timezone": "Asia/Taipei",
+    "cutoff_local": "17:00",
+    "same_day_download_allowed": true,
+    "target_end_date": "2026-11-12"
+  },
+  "previous_market_last_date": {
+    "TWSE": "2026-11-12",
+    "TPEX": "2026-11-12"
+  },
+  "market_last_date_after_update": {
+    "TWSE": "2026-11-12",
+    "TPEX": "2026-11-12"
+  },
+  "baseline_daily_rows": {
+    "TWSE": 1389,
+    "TPEX": 1018
+  },
+  "baseline_source": {
+    "TWSE": "v1.5.1 歷史逐日統計中位數",
+    "TPEX": "v1.5.1 歷史逐日統計中位數"
+  },
+  "previous_data_scan": {
+    "previous_rows_scanned": 39216,
+    "previous_bad_rows": 0,
+    "unique_previous_keys_excluding_correction": 24074,
+    "identical_duplicate_copies": 0,
+    "conflict_key_count": 0,
+    "old_20261111_rows_replaced": 15142
+  },
+  "correction_source": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.9_TWSE_price_change欄位補正_20261112_152447_f573",
+  "correction": {
+    "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.10",
+    "correction_date": "2026-11-11",
+    "source_version": "v1.5.9",
+    "source_sealed_zip_sha256": "dae83e95a57dd76820c020050e56f33d54b24cbd8bcb7502a754f0625ce8be38",
+    "markets": {
+      "TWSE": {
+        "rows": 1390,
+        "file_sha256": "b390cd3b3e3fd339395818cee683eac91414540364baff9a851143094fec428b",
+        "canonical_sha256": "b366ce6fc4910caba953e3bff3d3cb2ed479b12ee33cf462e927f4931b22533f",
+        "replacement_file": "corrections/官方歷史行情/TWSE/20261111.csv",
+        "rule": "以完整官方 1,390 列替代同日舊資料，不可相加。"
+      },
+      "TPEX": {
+        "rows": 1020,
+        "file_sha256": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742",
+        "canonical_sha256": "eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627",
+        "replacement_file": "corrections/官方歷史行情/TPEX/20261111.csv",
+        "rule": "以既有 type=EW 1,020 列替代同日舊資料，不可相加。",
+        "price_change_policy": "原始資料缺欄時正規化為 None；不補造數值。"
+      }
+    },
+    "old_files_modified": false,
+    "old_files_deleted": false
+  },
+  "forward_new_rows": 0,
+  "forward_new_by_market": {
+    "TWSE": 0,
+    "TPEX": 0
+  },
+  "forward_new_instruments": 2410,
+  "forward_trade_dates": [],
+  "api_requests": 0,
+  "api_pass_count": 0,
+  "rejected_download_count": 0,
+  "download_error_count": 0,
+  "waiting_official_data_count": 0,
+  "duplicate_existing_count": 0,
+  "unresolved_dates": [],
+  "deferred_not_yet_due_dates": [],
+  "downstream_preflight": {
+    "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.10",
+    "created_at_taipei": "2026-11-12T18:09:01.436357+08:00",
+    "target_end_date": "2026-11-12",
+    "v159_correction_source_pass": true,
+    "replacement_20261111": {
+      "TWSE_rows": 1390,
+      "TWSE_expected_rows": 1390,
+      "TPEX_rows": 1020,
+      "TPEX_expected_rows": 1020,
+      "old_same_day_rows_replaced": true,
+      "correction_layer_added_as_new_increment": false
+    },
+    "forward_increment": {
+      "rows": 0,
+      "dates": [],
+      "TWSE_rows": 0,
+      "TPEX_rows": 0
+    },
+    "current_target_day": {
+      "date": "2026-11-12",
+      "same_day_gate_pass": true,
+      "TWSE": {
+        "rows": 1389,
+        "unique_codes": 1389,
+        "pass": true
+      },
+      "TPEX": {
+        "rows": 1020,
+        "unique_codes": 1020,
+        "pass": true
+      },
+      "both_markets_pass": true
+    },
+    "historical_continuity": {
+      "previous_unique_keys": 24074,
+      "identical_duplicate_copies": 0,
+      "historical_conflict_keys": 0,
+      "old_20261111_rows_replaced": 15142,
+      "effective_unique_keys_after_replacement": 26484
+    },
+    "schema": {
+      "standard_columns": [
+        "trade_date",
+        "market",
+        "instrument_code",
+        "instrument_name",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "transaction_count",
+        "traded_value",
+        "source_archive_member",
+        "price_change"
+      ],
+      "price_change_available": true,
+      "schema_ready": true
+    },
+    "pending": {
+      "due_unresolved_count": 0,
+      "due_unresolved_dates": []
+    },
+    "downstream_preflight_ready": true,
+    "model_execution": {
+      "training_performed": false,
+      "scoring_performed": false,
+      "Q5_performance_test_performed": false,
+      "reason": "本版本屬官方行情資料續接及資料品質驗證；不在行情更新程序內重訓模型或產生選股分數。"
+    }
+  },
+  "immediate_validation": {
+    "enabled": true,
+    "before_write": true,
+    "after_write": true,
+    "checks": [
+      "v1.5.9 封存 ZIP SHA256",
+      "v1.5.9 artifact manifest SHA256",
+      "TWSE 2026-11-11 correction canonical SHA",
+      "TPEx 2026-11-11 correction canonical SHA",
+      "官方 API HTTP 狀態及 JSON",
+      "官方原始 GZIP 解壓核對",
+      "官方行情欄位",
+      "最低及最高列數",
+      "歷史母體筆數範圍",
+      "證券代號格式",
+      "唯一代號及重複代號",
+      "日期及市場一致性",
+      "成交量缺值及負值",
+      "零成交量比例",
+      "OHLC 缺值比例",
+      "OHLC 高低價格關係",
+      "成交金額負值",
+      "成交筆數負值",
+      "TPEx type=EW 來源",
+      "標準化增量寫入後再讀取",
+      "逐股 overlay 寫入後再讀取",
+      "雙市場修正層完整替代",
+      "SSO 下游資料接續預檢",
+      "ZIP CRC 及 SHA256",
+      "GitHub blob 逐檔回讀",
+      "GitHub main SHA 前後核對"
+    ],
+    "failed_data_written_to_increment": false,
+    "raw_response_preserved": true
+  },
+  "preservation": {
+    "v1_5_9_original_files_modified": false,
+    "v1_5_8_original_files_modified": false,
+    "v1_5_7_original_files_modified": false,
+    "v1_5_6_original_files_modified": false,
+    "old_history_files_deleted": false,
+    "old_tpex_al_data_physically_deleted": false,
+    "github_main_modified": false,
+    "model_training_performed": false
+  }
+}

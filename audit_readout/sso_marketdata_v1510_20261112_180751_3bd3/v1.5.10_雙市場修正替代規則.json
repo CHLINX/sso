@@ -1,0 +1,25 @@
+{
+  "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.10",
+  "correction_date": "2026-11-11",
+  "source_version": "v1.5.9",
+  "source_sealed_zip_sha256": "dae83e95a57dd76820c020050e56f33d54b24cbd8bcb7502a754f0625ce8be38",
+  "markets": {
+    "TWSE": {
+      "rows": 1390,
+      "file_sha256": "b390cd3b3e3fd339395818cee683eac91414540364baff9a851143094fec428b",
+      "canonical_sha256": "b366ce6fc4910caba953e3bff3d3cb2ed479b12ee33cf462e927f4931b22533f",
+      "replacement_file": "corrections/官方歷史行情/TWSE/20261111.csv",
+      "rule": "以完整官方 1,390 列替代同日舊資料，不可相加。"
+    },
+    "TPEX": {
+      "rows": 1020,
+      "file_sha256": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742",
+      "canonical_sha256": "eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627",
+      "replacement_file": "corrections/官方歷史行情/TPEX/20261111.csv",
+      "rule": "以既有 type=EW 1,020 列替代同日舊資料，不可相加。",
+      "price_change_policy": "原始資料缺欄時正規化為 None；不補造數值。"
+    }
+  },
+  "old_files_modified": false,
+  "old_files_deleted": false
+}

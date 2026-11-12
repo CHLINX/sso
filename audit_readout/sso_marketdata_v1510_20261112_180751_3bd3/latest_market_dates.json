@@ -1,0 +1,16 @@
+{
+  "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.10",
+  "updated_at_taipei": "2026-11-12T18:07:51.274711+08:00",
+  "market_last_date": {
+    "TWSE": "2026-11-12",
+    "TPEX": "2026-11-12"
+  },
+  "correction_20261111": {
+    "TWSE_pass": true,
+    "TWSE_rows": 1390,
+    "TPEX_pass": true,
+    "TPEX_rows": 1020
+  },
+  "tpex_query_type": "EW",
+  "unresolved_dates_count": 0
+}
