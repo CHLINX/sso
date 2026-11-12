@@ -1,0 +1,27 @@
+[15:33:54] [SCAN] 重新核對 v1.5.8 TWSE 證據候選資料夾。
+[15:33:54] [PASS] TWSE 證據候選數：2
+[15:33:54] [TWSE CANDIDATE 1] /content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_143616_7dc9
+[15:33:54] [TWSE CANDIDATE 2] /content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_144440_6842
+[15:33:54] [PASS] TWSE 原始證據來源：v1.5.8_官方行情即時驗證與增量續接_20261112_143616_7dc9
+[15:33:54] [PASS] TWSE 官方 JSON：1,390 列
+[15:33:54] [PASS] TWSE 官方 canonical SHA：b366ce6fc4910caba953e3bff3d3cb2ed479b12ee33cf462e927f4931b22533f
+[15:33:56] [PASS] TWSE root/nested 1,390 筆逐筆比對。
+[15:33:56] [PASS] TWSE 已完成補正成果可接續使用。
+[15:33:56] [PASS] TWSE price_change 明細：1,390/1,390
+[15:33:56] [SCAN] 逐一驗證兩個 TWSE 候選資料夾的 TPEx 修正檔。
+[15:33:56] [TPEX CANDIDATE PASS] v1.5.8_官方行情即時驗證與增量續接_20261112_143616_7dc9
+[15:33:56]   rows=1,020 unique=1,020
+[15:33:56]   price_change 欄位：原始 CSV 未提供；正規化為 None
+[15:33:56]   canonical=eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627
+[15:33:57] [TPEX CANDIDATE PASS] v1.5.8_官方行情即時驗證與增量續接_20261112_144440_6842
+[15:33:57]   rows=1,020 unique=1,020
+[15:33:57]   price_change 欄位：原始 CSV 未提供；正規化為 None
+[15:33:57]   canonical=eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627
+[15:33:57] [PASS] TPEx 實際採用來源：v1.5.8_官方行情即時驗證與增量續接_20261112_143616_7dc9
+[15:33:57] [PASS] TPEx 通過候選資料夾數：2
+[15:33:58] [PASS] TPEx root 複製後重新讀回驗證。
+[15:33:58] [PASS] TPEx nested 複製後重新讀回驗證。
+[15:33:58] [TPEX CANONICAL SHA256] eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627
+[15:33:58] [PASS] TWSE 官方 raw evidence 已保存及驗證。
+[15:33:58] [PASS] 舊版 TWSE / TPEx 原始檔 SHA 均未變更。
+[15:33:58] [PASS] SHA256 manifest：13 個成果檔案

@@ -1,0 +1,17 @@
+{
+  "trade_date": "2026-11-11",
+  "market": "TPEX",
+  "query_type": "EW",
+  "source_directory": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_143616_7dc9",
+  "rows": 1020,
+  "unique_codes": 1020,
+  "source_file_sha256": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742",
+  "canonical_sha256": "eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627",
+  "root_csv_sha256_after_copy": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742",
+  "nested_csv_sha256_after_copy": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742",
+  "root_canonical_sha256_after_copy": "eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627",
+  "nested_canonical_sha256_after_copy": "eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627",
+  "price_change_column_missing_in_source": true,
+  "price_change_normalization": "None",
+  "status": "PASS"
+}

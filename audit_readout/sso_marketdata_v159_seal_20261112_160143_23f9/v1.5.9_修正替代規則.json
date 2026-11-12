@@ -1,0 +1,65 @@
+{
+  "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.9",
+  "completion_run_id": "20261112_153354_c26a",
+  "created_at_taipei": "2026-11-12T15:33:58.695596+08:00",
+  "markets": {
+    "TWSE": {
+      "trade_date": "2026-11-11",
+      "market": "TWSE",
+      "query_type": "ALLBUT0999",
+      "official_rows": 1390,
+      "official_unique_codes": 1390,
+      "original_source_directory": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_143616_7dc9",
+      "original_root_csv_sha256": "b12be818de20557c2241d06c96d78070bc4dcf7c15fb02f961b607902c15439b",
+      "original_nested_csv_sha256": "b12be818de20557c2241d06c96d78070bc4dcf7c15fb02f961b607902c15439b",
+      "original_missing_schema_field": "price_change",
+      "original_non_price_change_field_mismatch": 0,
+      "added_field": "price_change",
+      "added_values_from": "TWSE official raw JSON",
+      "root_rows": 1390,
+      "nested_rows": 1390,
+      "root_csv_sha256": "b390cd3b3e3fd339395818cee683eac91414540364baff9a851143094fec428b",
+      "nested_csv_sha256": "b390cd3b3e3fd339395818cee683eac91414540364baff9a851143094fec428b",
+      "root_canonical_sha256": "b366ce6fc4910caba953e3bff3d3cb2ed479b12ee33cf462e927f4931b22533f",
+      "nested_canonical_sha256": "b366ce6fc4910caba953e3bff3d3cb2ed479b12ee33cf462e927f4931b22533f",
+      "official_canonical_sha256": "b366ce6fc4910caba953e3bff3d3cb2ed479b12ee33cf462e927f4931b22533f",
+      "all_rows_price_change_verified": true,
+      "status": "PASS"
+    },
+    "TPEX": {
+      "trade_date": "2026-11-11",
+      "market": "TPEX",
+      "query_type": "EW",
+      "source_directory": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_143616_7dc9",
+      "rows": 1020,
+      "unique_codes": 1020,
+      "source_file_sha256": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742",
+      "canonical_sha256": "eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627",
+      "root_csv_sha256_after_copy": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742",
+      "nested_csv_sha256_after_copy": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742",
+      "root_canonical_sha256_after_copy": "eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627",
+      "nested_canonical_sha256_after_copy": "eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627",
+      "price_change_column_missing_in_source": true,
+      "price_change_normalization": "None",
+      "status": "PASS"
+    }
+  },
+  "replacement_rules": [
+    {
+      "trade_date": "2026-11-11",
+      "market": "TWSE",
+      "replacement_file": "corrections/官方歷史行情/TWSE/20261111.csv",
+      "rule": "以完整官方 1,390 列替代同日舊資料，不可相加。"
+    },
+    {
+      "trade_date": "2026-11-11",
+      "market": "TPEX",
+      "replacement_file": "corrections/官方歷史行情/TPEX/20261111.csv",
+      "rule": "以既有 type=EW 1,020 列替代同日舊資料，不可相加。"
+    }
+  ],
+  "old_files_modified": false,
+  "old_files_deleted": false,
+  "github_main_modified": false,
+  "status": "PASS_TWSE_PRICE_CHANGE_REPAIRED"
+}

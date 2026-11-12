@@ -1,0 +1,54 @@
+{
+  "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.9",
+  "completion_run_id": "20261112_153354_c26a",
+  "partial_output_directory": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.9_TWSE_price_change欄位補正_20261112_152447_f573",
+  "twse": {
+    "candidate_count": 2,
+    "selected_directory": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_143616_7dc9",
+    "raw_sha256": "a67de6bb81d7e73aac3c17b8f54a8030f952924867dd86f643364262ad88e0fc",
+    "old_root_csv_sha256": "b12be818de20557c2241d06c96d78070bc4dcf7c15fb02f961b607902c15439b",
+    "old_nested_csv_sha256": "b12be818de20557c2241d06c96d78070bc4dcf7c15fb02f961b607902c15439b",
+    "candidates": [
+      {
+        "directory": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_143616_7dc9",
+        "raw_sha256": "a67de6bb81d7e73aac3c17b8f54a8030f952924867dd86f643364262ad88e0fc",
+        "root_sha256": "b12be818de20557c2241d06c96d78070bc4dcf7c15fb02f961b607902c15439b",
+        "nested_sha256": "b12be818de20557c2241d06c96d78070bc4dcf7c15fb02f961b607902c15439b"
+      },
+      {
+        "directory": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_144440_6842",
+        "raw_sha256": "a67de6bb81d7e73aac3c17b8f54a8030f952924867dd86f643364262ad88e0fc",
+        "root_sha256": "b12be818de20557c2241d06c96d78070bc4dcf7c15fb02f961b607902c15439b",
+        "nested_sha256": "b12be818de20557c2241d06c96d78070bc4dcf7c15fb02f961b607902c15439b"
+      }
+    ]
+  },
+  "tpex": {
+    "candidate_count": 2,
+    "selected_directory": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_143616_7dc9",
+    "selected_root_sha256": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742",
+    "selected_canonical_sha256": "eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627",
+    "price_change_schema_policy": "TPEx 原始 CSV 若缺少 price_change，依原 v1.5.5 正規化方式記錄為 None；不補值、不推算、不虛構。",
+    "candidates_passed": [
+      {
+        "directory": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_143616_7dc9",
+        "root_file_sha256": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742",
+        "root_canonical_sha256": "eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627",
+        "nested_canonical_sha256": "eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627",
+        "price_change_column_missing": true,
+        "rows": 1020,
+        "unique_codes": 1020
+      },
+      {
+        "directory": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_144440_6842",
+        "root_file_sha256": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742",
+        "root_canonical_sha256": "eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627",
+        "nested_canonical_sha256": "eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627",
+        "price_change_column_missing": true,
+        "rows": 1020,
+        "unique_codes": 1020
+      }
+    ],
+    "candidates_rejected": []
+  }
+}

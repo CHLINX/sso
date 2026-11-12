@@ -1,0 +1,84 @@
+{
+  "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.9",
+  "seal_run_id": "20261112_160143_23f9",
+  "created_at_taipei": "2026-11-12T16:01:44.324609+08:00",
+  "file_count": 14,
+  "excluded_mutable_files": [
+    "GitHub上傳結果.json",
+    "artifact_sha256_manifest.json",
+    "v1.5.9_補跑完成版執行紀錄.txt"
+  ],
+  "zip_files_excluded": true,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1772,
+      "sha256": "e4295421ddc2b4b91af1b09ee018c7f15d40f67bae1fda221eb9e0c00e52b48e"
+    },
+    {
+      "path": "TWSE_20261111_price_change逐筆補正核驗.csv",
+      "bytes": 56702,
+      "sha256": "534a8c12c1efaa32b619bb64758380029054dd24258035349ed5839325b77f42"
+    },
+    {
+      "path": "corrections/官方歷史行情/TPEX/20261111.csv",
+      "bytes": 103751,
+      "sha256": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742"
+    },
+    {
+      "path": "corrections/官方歷史行情/TWSE/20261111.csv",
+      "bytes": 130341,
+      "sha256": "b390cd3b3e3fd339395818cee683eac91414540364baff9a851143094fec428b"
+    },
+    {
+      "path": "raw/TWSE/20261111.json.gz",
+      "bytes": 71777,
+      "sha256": "a67de6bb81d7e73aac3c17b8f54a8030f952924867dd86f643364262ad88e0fc"
+    },
+    {
+      "path": "v1.5.9_TPEX_20261111修正承接.json",
+      "bytes": 995,
+      "sha256": "eec1eaa10982df3a5269d2b69a11276b685781c9e959fc55ebc7c10c5ac08382"
+    },
+    {
+      "path": "v1.5.9_TWSE_20261111欄位修正.json",
+      "bytes": 1280,
+      "sha256": "5b87de8d82d789d38fee793b060f1060a26db35fd2a79ae0ef012fa00fd15b60"
+    },
+    {
+      "path": "v1.5.9_修正替代規則.json",
+      "bytes": 3276,
+      "sha256": "9376805f8362bc9ac209e706354e931e07d3ac0d00ef905038cf233072a99c73"
+    },
+    {
+      "path": "v1.5.9_原始證據來源選取紀錄.json",
+      "bytes": 3547,
+      "sha256": "6401c466c5edd085d900656bd5928e02b5a05658666e4cba5febcf5b384da5f9"
+    },
+    {
+      "path": "v1.5.9_補跑完成版執行紀錄_封存快照_20261112_160143_23f9.txt",
+      "bytes": 2173,
+      "sha256": "2841b64e8c7bc1d6a3f45ef5db80f8fd59b1b834365d0a961e4436e81975ac49"
+    },
+    {
+      "path": "v1.5.9_重新封存補充報告.json",
+      "bytes": 2586,
+      "sha256": "3a2fbf2b686131f19af960f19b4c85300e3595fde40d5ab319b6833107fcb507"
+    },
+    {
+      "path": "v1.5.9_雙市場行情補正總報告.json",
+      "bytes": 6797,
+      "sha256": "d50230a93cb1f5223acd1f345d23fc8dfa1df1bf94e8588a7a0c285284f38f5d"
+    },
+    {
+      "path": "修正_TPEX_20261111.csv",
+      "bytes": 103751,
+      "sha256": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742"
+    },
+    {
+      "path": "修正_TWSE_20261111.csv",
+      "bytes": 130341,
+      "sha256": "b390cd3b3e3fd339395818cee683eac91414540364baff9a851143094fec428b"
+    }
+  ]
+}

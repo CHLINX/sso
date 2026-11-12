@@ -1,0 +1,46 @@
+{
+  "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.9",
+  "seal_run_id": "20261112_160143_23f9",
+  "created_at_taipei": "2026-11-12T16:01:44.117251+08:00",
+  "status": "PASS_DATA_VALIDATION_PENDING_GITHUB",
+  "reason_for_repackaging": "前次 ZIP SHA 驗證失敗係因執行紀錄檔在計算 manifest 後仍被追加內容；本次改採固定紀錄快照，排除持續變動的原始執行紀錄檔。",
+  "twse": {
+    "rows": 1390,
+    "root_canonical_sha256": "b366ce6fc4910caba953e3bff3d3cb2ed479b12ee33cf462e927f4931b22533f",
+    "nested_canonical_sha256": "b366ce6fc4910caba953e3bff3d3cb2ed479b12ee33cf462e927f4931b22533f",
+    "price_change_detail_rows": 1390,
+    "official_raw_gzip_sha256": "a67de6bb81d7e73aac3c17b8f54a8030f952924867dd86f643364262ad88e0fc"
+  },
+  "tpex": {
+    "rows": 1020,
+    "root_canonical_sha256": "eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627",
+    "nested_canonical_sha256": "eb4bd7a5e16831f74f6cc700c8076163d0ba4c5b782023f3858951035a31e627",
+    "price_change_column": "missing_and_normalized_as_None"
+  },
+  "source_candidates": [
+    {
+      "directory": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_143616_7dc9",
+      "raw_sha256": "a67de6bb81d7e73aac3c17b8f54a8030f952924867dd86f643364262ad88e0fc",
+      "twse_root_sha256": "b12be818de20557c2241d06c96d78070bc4dcf7c15fb02f961b607902c15439b",
+      "twse_nested_sha256": "b12be818de20557c2241d06c96d78070bc4dcf7c15fb02f961b607902c15439b",
+      "tpex_root_sha256": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742"
+    },
+    {
+      "directory": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_144440_6842",
+      "raw_sha256": "a67de6bb81d7e73aac3c17b8f54a8030f952924867dd86f643364262ad88e0fc",
+      "twse_root_sha256": "b12be818de20557c2241d06c96d78070bc4dcf7c15fb02f961b607902c15439b",
+      "twse_nested_sha256": "b12be818de20557c2241d06c96d78070bc4dcf7c15fb02f961b607902c15439b",
+      "tpex_root_sha256": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742"
+    }
+  ],
+  "execution_log_snapshot": {
+    "path": "v1.5.9_補跑完成版執行紀錄_封存快照_20261112_160143_23f9.txt",
+    "sha256": "2841b64e8c7bc1d6a3f45ef5db80f8fd59b1b834365d0a961e4436e81975ac49"
+  },
+  "preservation": {
+    "old_source_files_modified": false,
+    "old_source_files_deleted": false,
+    "old_zip_deleted": false,
+    "github_main_modified": false
+  }
+}
