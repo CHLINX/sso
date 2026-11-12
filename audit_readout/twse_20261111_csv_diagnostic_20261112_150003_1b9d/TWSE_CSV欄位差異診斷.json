@@ -1,0 +1,1830 @@
+{
+  "run_id": "20261112_150003_1b9d",
+  "created_at_taipei": "2026-11-12T15:00:04.417859+08:00",
+  "failed_v158_directory": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_144440_6842",
+  "official_source": {
+    "trade_date": "2026-11-11",
+    "endpoint": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+    "query_type": "ALLBUT0999",
+    "raw_json_sha256": "e4ff525e7611335616ce3d3a28b3a2efadf822f531271e26b2cb98a6e696df63",
+    "raw_gzip_sha256": "a67de6bb81d7e73aac3c17b8f54a8030f952924867dd86f643364262ad88e0fc",
+    "rows": 1390,
+    "unique_codes": 1390,
+    "duplicate_codes": 0
+  },
+  "exports": {
+    "root": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_144440_6842/修正_TWSE_20261111.csv",
+      "sha256": "b12be818de20557c2241d06c96d78070bc4dcf7c15fb02f961b607902c15439b",
+      "rows": 1390,
+      "unique_codes": 1390,
+      "missing_codes": 0,
+      "extra_codes": 0,
+      "duplicate_codes": 0,
+      "duplicate_rows": 0,
+      "missing_schema_fields": [
+        "price_change"
+      ],
+      "field_mismatch_counts": {
+        "price_change": 1390
+      },
+      "field_examples": {
+        "price_change": [
+          {
+            "file": "root",
+            "code": "00400A",
+            "field": "price_change",
+            "official": 0.49,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "root",
+            "code": "00401A",
+            "field": "price_change",
+            "official": 0.39,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "root",
+            "code": "00402A",
+            "field": "price_change",
+            "official": 0.08,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "root",
+            "code": "00403A",
+            "field": "price_change",
+            "official": 0.32,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "root",
+            "code": "00404A",
+            "field": "price_change",
+            "official": 0.27,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "root",
+            "code": "00405A",
+            "field": "price_change",
+            "official": 0.29,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "root",
+            "code": "00406A",
+            "field": "price_change",
+            "official": 0.31,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "root",
+            "code": "00407A",
+            "field": "price_change",
+            "official": 0.31,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "root",
+            "code": "00408A",
+            "field": "price_change",
+            "official": 0.27,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "root",
+            "code": "00409A",
+            "field": "price_change",
+            "official": 0.18,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          }
+        ]
+      },
+      "empty_code_rows": 0,
+      "missing_code_examples": [],
+      "extra_code_examples": []
+    },
+    "nested": {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_144440_6842/corrections/官方歷史行情/TWSE/20261111.csv",
+      "sha256": "b12be818de20557c2241d06c96d78070bc4dcf7c15fb02f961b607902c15439b",
+      "rows": 1390,
+      "unique_codes": 1390,
+      "missing_codes": 0,
+      "extra_codes": 0,
+      "duplicate_codes": 0,
+      "duplicate_rows": 0,
+      "missing_schema_fields": [
+        "price_change"
+      ],
+      "field_mismatch_counts": {
+        "price_change": 1390
+      },
+      "field_examples": {
+        "price_change": [
+          {
+            "file": "nested",
+            "code": "00400A",
+            "field": "price_change",
+            "official": 0.49,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "nested",
+            "code": "00401A",
+            "field": "price_change",
+            "official": 0.39,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "nested",
+            "code": "00402A",
+            "field": "price_change",
+            "official": 0.08,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "nested",
+            "code": "00403A",
+            "field": "price_change",
+            "official": 0.32,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "nested",
+            "code": "00404A",
+            "field": "price_change",
+            "official": 0.27,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "nested",
+            "code": "00405A",
+            "field": "price_change",
+            "official": 0.29,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "nested",
+            "code": "00406A",
+            "field": "price_change",
+            "official": 0.31,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "nested",
+            "code": "00407A",
+            "field": "price_change",
+            "official": 0.31,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "nested",
+            "code": "00408A",
+            "field": "price_change",
+            "official": 0.27,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          },
+          {
+            "file": "nested",
+            "code": "00409A",
+            "field": "price_change",
+            "official": 0.18,
+            "exported": null,
+            "difference": "VALUE_MISMATCH"
+          }
+        ]
+      },
+      "empty_code_rows": 0,
+      "missing_code_examples": [],
+      "extra_code_examples": []
+    }
+  },
+  "root_nested_mismatch_rows": 0,
+  "root_nested_mismatch_examples": [],
+  "all_field_differences": 2780,
+  "critical_differences": [
+    {
+      "file": "root",
+      "code": "00400A",
+      "field": "price_change",
+      "official": 0.49,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00401A",
+      "field": "price_change",
+      "official": 0.39,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00402A",
+      "field": "price_change",
+      "official": 0.08,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00403A",
+      "field": "price_change",
+      "official": 0.32,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00404A",
+      "field": "price_change",
+      "official": 0.27,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00405A",
+      "field": "price_change",
+      "official": 0.29,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00406A",
+      "field": "price_change",
+      "official": 0.31,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00407A",
+      "field": "price_change",
+      "official": 0.31,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00408A",
+      "field": "price_change",
+      "official": 0.27,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00409A",
+      "field": "price_change",
+      "official": 0.18,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00410A",
+      "field": "price_change",
+      "official": 0.42,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00412A",
+      "field": "price_change",
+      "official": 0.3,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00413A",
+      "field": "price_change",
+      "official": 0.37,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00415A",
+      "field": "price_change",
+      "official": 0.4,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00416A",
+      "field": "price_change",
+      "official": 0.53,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00418A",
+      "field": "price_change",
+      "official": 0.43,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "0050",
+      "field": "price_change",
+      "official": 3.5,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "0051",
+      "field": "price_change",
+      "official": 1.85,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "0052",
+      "field": "price_change",
+      "official": 2.3,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "0053",
+      "field": "price_change",
+      "official": 8.45,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "0055",
+      "field": "price_change",
+      "official": 0.4,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "0056",
+      "field": "price_change",
+      "official": 0.85,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "0057",
+      "field": "price_change",
+      "official": 9.45,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "0061",
+      "field": "price_change",
+      "official": 0.03,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "006203",
+      "field": "price_change",
+      "official": 6.65,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "006204",
+      "field": "price_change",
+      "official": 5.9,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "006205",
+      "field": "price_change",
+      "official": 0.37,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "006206",
+      "field": "price_change",
+      "official": 0.29,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "006207",
+      "field": "price_change",
+      "official": 0.05,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "006208",
+      "field": "price_change",
+      "official": 7.7,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00625K",
+      "field": "price_change",
+      "official": 0.0,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00631L",
+      "field": "price_change",
+      "official": 2.28,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00632R",
+      "field": "price_change",
+      "official": 0.39,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00633L",
+      "field": "price_change",
+      "official": 0.18,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00634R",
+      "field": "price_change",
+      "official": 0.01,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00635U",
+      "field": "price_change",
+      "official": 0.65,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00636",
+      "field": "price_change",
+      "official": 0.02,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00636K",
+      "field": "price_change",
+      "official": 0.01,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00637L",
+      "field": "price_change",
+      "official": 0.06,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00638R",
+      "field": "price_change",
+      "official": 0.03,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00639",
+      "field": "price_change",
+      "official": 0.07,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00640L",
+      "field": "price_change",
+      "official": 1.85,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00641R",
+      "field": "price_change",
+      "official": 0.04,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00642U",
+      "field": "price_change",
+      "official": 0.2,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00643",
+      "field": "price_change",
+      "official": 0.0,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00643K",
+      "field": "price_change",
+      "official": 0.0,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00645",
+      "field": "price_change",
+      "official": 0.45,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00646",
+      "field": "price_change",
+      "official": 0.1,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00647L",
+      "field": "price_change",
+      "official": 0.1,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00648R",
+      "field": "price_change",
+      "official": 0.02,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00650L",
+      "field": "price_change",
+      "official": 0.3,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00651R",
+      "field": "price_change",
+      "official": 0.03,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00652",
+      "field": "price_change",
+      "official": 0.13,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00653L",
+      "field": "price_change",
+      "official": 0.5,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00654R",
+      "field": "price_change",
+      "official": 0.04,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00655L",
+      "field": "price_change",
+      "official": 0.15,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00656R",
+      "field": "price_change",
+      "official": 0.02,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00657",
+      "field": "price_change",
+      "official": 1.05,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00657K",
+      "field": "price_change",
+      "official": 0.48,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00660",
+      "field": "price_change",
+      "official": 0.11,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00661",
+      "field": "price_change",
+      "official": 1.0,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00663L",
+      "field": "price_change",
+      "official": 6.0,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00664R",
+      "field": "price_change",
+      "official": 0.06,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00665L",
+      "field": "price_change",
+      "official": 0.17,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00666R",
+      "field": "price_change",
+      "official": 0.0,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00668",
+      "field": "price_change",
+      "official": 0.35,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00668K",
+      "field": "price_change",
+      "official": 0.05,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00669R",
+      "field": "price_change",
+      "official": 0.01,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00670L",
+      "field": "price_change",
+      "official": 2.95,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00671R",
+      "field": "price_change",
+      "official": 0.03,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00673R",
+      "field": "price_change",
+      "official": 0.07,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00674R",
+      "field": "price_change",
+      "official": 0.47,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00675L",
+      "field": "price_change",
+      "official": 18.3,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00676R",
+      "field": "price_change",
+      "official": 0.2,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00678",
+      "field": "price_change",
+      "official": 0.13,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00680L",
+      "field": "price_change",
+      "official": 0.17,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00681R",
+      "field": "price_change",
+      "official": 0.36,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00682U",
+      "field": "price_change",
+      "official": 0.0,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00683L",
+      "field": "price_change",
+      "official": 0.21,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00684R",
+      "field": "price_change",
+      "official": 0.13,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00685L",
+      "field": "price_change",
+      "official": 0.69,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00686R",
+      "field": "price_change",
+      "official": 0.03,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00688L",
+      "field": "price_change",
+      "official": 0.17,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00689R",
+      "field": "price_change",
+      "official": 0.32,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00690",
+      "field": "price_change",
+      "official": 2.85,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00692",
+      "field": "price_change",
+      "official": 3.0,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00693U",
+      "field": "price_change",
+      "official": 0.6,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00700",
+      "field": "price_change",
+      "official": 0.18,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00701",
+      "field": "price_change",
+      "official": 0.33,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00702",
+      "field": "price_change",
+      "official": 0.03,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00703",
+      "field": "price_change",
+      "official": 0.14,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00706L",
+      "field": "price_change",
+      "official": 0.2,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00707R",
+      "field": "price_change",
+      "official": 0.0,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00708L",
+      "field": "price_change",
+      "official": 2.1,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00709",
+      "field": "price_change",
+      "official": 0.4,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00710B",
+      "field": "price_change",
+      "official": 0.05,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00711B",
+      "field": "price_change",
+      "official": 0.1,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00712",
+      "field": "price_change",
+      "official": 0.13,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00713",
+      "field": "price_change",
+      "official": 0.65,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00714",
+      "field": "price_change",
+      "official": 0.08,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00715L",
+      "field": "price_change",
+      "official": 0.8,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00717",
+      "field": "price_change",
+      "official": 0.04,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00728",
+      "field": "price_change",
+      "official": 1.95,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00730",
+      "field": "price_change",
+      "official": 0.41,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00731",
+      "field": "price_change",
+      "official": 1.55,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00733",
+      "field": "price_change",
+      "official": 2.05,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00735",
+      "field": "price_change",
+      "official": 3.55,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00736",
+      "field": "price_change",
+      "official": 0.4,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00737",
+      "field": "price_change",
+      "official": 0.08,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00738U",
+      "field": "price_change",
+      "official": 0.51,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00739",
+      "field": "price_change",
+      "official": 0.06,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00752",
+      "field": "price_change",
+      "official": 0.21,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00753L",
+      "field": "price_change",
+      "official": 0.17,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00757",
+      "field": "price_change",
+      "official": 0.7,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00762",
+      "field": "price_change",
+      "official": 1.55,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00763U",
+      "field": "price_change",
+      "official": 0.12,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00770",
+      "field": "price_change",
+      "official": 0.45,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00771",
+      "field": "price_change",
+      "official": 0.1,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00775B",
+      "field": "price_change",
+      "official": 0.42,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00783",
+      "field": "price_change",
+      "official": 0.07,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00830",
+      "field": "price_change",
+      "official": 2.45,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00850",
+      "field": "price_change",
+      "official": 2.7,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00851",
+      "field": "price_change",
+      "official": 0.85,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00852L",
+      "field": "price_change",
+      "official": 0.33,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00861",
+      "field": "price_change",
+      "official": 1.9,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00865B",
+      "field": "price_change",
+      "official": 0.2,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00875",
+      "field": "price_change",
+      "official": 0.8,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00876",
+      "field": "price_change",
+      "official": 2.5,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00878",
+      "field": "price_change",
+      "official": 0.55,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00881",
+      "field": "price_change",
+      "official": 1.51,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00882",
+      "field": "price_change",
+      "official": 0.06,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00885",
+      "field": "price_change",
+      "official": 0.12,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00891",
+      "field": "price_change",
+      "official": 1.19,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00892",
+      "field": "price_change",
+      "official": 1.47,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00893",
+      "field": "price_change",
+      "official": 0.61,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00894",
+      "field": "price_change",
+      "official": 1.64,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00895",
+      "field": "price_change",
+      "official": 0.66,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00896",
+      "field": "price_change",
+      "official": 0.56,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00897",
+      "field": "price_change",
+      "official": 0.18,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00898",
+      "field": "price_change",
+      "official": 0.27,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00899",
+      "field": "price_change",
+      "official": 0.41,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00900",
+      "field": "price_change",
+      "official": 0.3,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00901",
+      "field": "price_change",
+      "official": 1.62,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00902",
+      "field": "price_change",
+      "official": 0.09,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00903",
+      "field": "price_change",
+      "official": 0.1,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00904",
+      "field": "price_change",
+      "official": 1.71,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00905",
+      "field": "price_change",
+      "official": 0.7,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00907",
+      "field": "price_change",
+      "official": 0.22,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00908",
+      "field": "price_change",
+      "official": 0.02,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00909",
+      "field": "price_change",
+      "official": 0.13,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00910",
+      "field": "price_change",
+      "official": 0.7,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00911",
+      "field": "price_change",
+      "official": 1.34,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00912",
+      "field": "price_change",
+      "official": 0.86,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00913",
+      "field": "price_change",
+      "official": 1.72,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00915",
+      "field": "price_change",
+      "official": 0.51,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00916",
+      "field": "price_change",
+      "official": 0.06,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00917",
+      "field": "price_change",
+      "official": 0.02,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00918",
+      "field": "price_change",
+      "official": 0.44,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00919",
+      "field": "price_change",
+      "official": 0.32,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00920",
+      "field": "price_change",
+      "official": 0.04,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00921",
+      "field": "price_change",
+      "official": 0.49,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00922",
+      "field": "price_change",
+      "official": 1.34,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00923",
+      "field": "price_change",
+      "official": 1.13,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00924",
+      "field": "price_change",
+      "official": 0.01,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00926",
+      "field": "price_change",
+      "official": 0.15,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00927",
+      "field": "price_change",
+      "official": 0.82,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00929",
+      "field": "price_change",
+      "official": 0.48,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00930",
+      "field": "price_change",
+      "official": 0.28,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00932",
+      "field": "price_change",
+      "official": 0.12,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00934",
+      "field": "price_change",
+      "official": 0.29,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00935",
+      "field": "price_change",
+      "official": 1.9,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00936",
+      "field": "price_change",
+      "official": 0.12,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00938",
+      "field": "price_change",
+      "official": 0.81,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00939",
+      "field": "price_change",
+      "official": 0.44,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00940",
+      "field": "price_change",
+      "official": 0.23,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00941",
+      "field": "price_change",
+      "official": 0.51,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00943",
+      "field": "price_change",
+      "official": 0.31,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00944",
+      "field": "price_change",
+      "official": 0.51,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00945B",
+      "field": "price_change",
+      "official": 0.03,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00946",
+      "field": "price_change",
+      "official": 0.22,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00947",
+      "field": "price_change",
+      "official": 1.11,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00949",
+      "field": "price_change",
+      "official": 0.03,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00951",
+      "field": "price_change",
+      "official": 0.73,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00952",
+      "field": "price_change",
+      "official": 0.1,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00953B",
+      "field": "price_change",
+      "official": 0.01,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00954",
+      "field": "price_change",
+      "official": 0.66,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00956",
+      "field": "price_change",
+      "official": 0.06,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00960",
+      "field": "price_change",
+      "official": 0.13,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00961",
+      "field": "price_change",
+      "official": 0.09,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00962",
+      "field": "price_change",
+      "official": 0.14,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00963",
+      "field": "price_change",
+      "official": 0.04,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00964",
+      "field": "price_change",
+      "official": 0.07,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00965",
+      "field": "price_change",
+      "official": 0.24,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00971",
+      "field": "price_change",
+      "official": 0.08,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "00972",
+      "field": "price_change",
+      "official": 0.18,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "009800",
+      "field": "price_change",
+      "official": 0.09,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "009801",
+      "field": "price_change",
+      "official": 0.08,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "009802",
+      "field": "price_change",
+      "official": 0.26,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "009803",
+      "field": "price_change",
+      "official": 0.65,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    },
+    {
+      "file": "root",
+      "code": "009804",
+      "field": "price_change",
+      "official": 0.76,
+      "exported": null,
+      "difference": "VALUE_MISMATCH"
+    }
+  ],
+  "source_only_differences": [],
+  "interpretation": "DIAGNOSIS_ONLY_NOT_APPROVED_FOR_SSO"
+}

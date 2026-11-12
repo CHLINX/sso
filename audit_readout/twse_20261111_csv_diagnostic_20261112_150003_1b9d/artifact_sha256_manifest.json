@@ -1,0 +1,31 @@
+{
+  "run_id": "20261112_150003_1b9d",
+  "created_at_taipei": "2026-11-12T15:00:04.684563+08:00",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 6175,
+      "sha256": "b55c38387b9fcb4e9a5d24ea70d36e0c9f056d9d71995b37526f67fe4ead2902"
+    },
+    {
+      "path": "TWSE_CSV欄位差異診斷.json",
+      "bytes": 41781,
+      "sha256": "578b0d1793c312ed8cbcedbe335592e7abf60eb945265899c5d46e1ff5234fec"
+    },
+    {
+      "path": "root與nested差異.csv",
+      "bytes": 27,
+      "sha256": "2f6ff19c906487ed97a6dda5c71aa527b730ba48a798aa687f2963362a3d0043"
+    },
+    {
+      "path": "官方原始回應SHA256.json",
+      "bytes": 265,
+      "sha256": "6a0d26d145094dbe506390c6cbd38f89269dae8294d656a8c0e61361530ed793"
+    },
+    {
+      "path": "逐欄差異明細.csv",
+      "bytes": 127339,
+      "sha256": "29ab1619b41282751803b5784aaf14febe85e44acb1c92ecab2f850e6345d655"
+    }
+  ]
+}
