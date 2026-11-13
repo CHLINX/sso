@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00642U,期元大S&P石油,31.16,31.22,31.03,31.1,1356460,524,42245725,TWSE_MI_INDEX,0.95

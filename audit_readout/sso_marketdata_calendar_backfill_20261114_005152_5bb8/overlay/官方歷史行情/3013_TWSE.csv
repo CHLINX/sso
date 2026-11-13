@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,3013,晟銘電,76.1,77.1,74.8,75.5,822939,984,62550275,TWSE_MI_INDEX,1.0

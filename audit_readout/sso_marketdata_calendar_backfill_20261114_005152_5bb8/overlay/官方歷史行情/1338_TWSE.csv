@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,1338,廣華-KY,13.85,13.85,13.55,13.7,69036,67,947049,TWSE_MI_INDEX,0.05

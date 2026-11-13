@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2637,慧洋-KY,96.4,98.3,95.3,98.3,3559543,3345,344912776,TWSE_MI_INDEX,3.0

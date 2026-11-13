@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00842B,台新美元銀行債,29.24,29.24,29.05,29.05,89000,39,2587470,TPEX_afterTrading_otc_type_EW,-0.3

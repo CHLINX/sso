@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,009820,元大納斯達克精選,9.63,9.68,9.59,9.6,2789344,505,26865586,TWSE_MI_INDEX,0.08

@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00723B,群益投資級科技債,28.73,28.73,28.67,28.69,171000,17,4907730,TPEX_afterTrading_otc_type_EW,-0.48

@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00983D,主動富邦複合收益,9.99,9.99,9.9,9.92,1235672,234,12250724,TWSE_MI_INDEX,0.08

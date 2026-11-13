@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,5871A,中租-KY甲特,99.5,99.6,99.5,99.5,33000,12,3283700,TWSE_MI_INDEX,0.0

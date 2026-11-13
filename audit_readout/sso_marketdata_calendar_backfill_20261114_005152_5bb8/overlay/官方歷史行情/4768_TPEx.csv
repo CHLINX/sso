@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,4768,晶呈科技,288.5,305.0,288.5,301.0,299000,269,89896500,TPEX_afterTrading_otc_type_EW,14.0

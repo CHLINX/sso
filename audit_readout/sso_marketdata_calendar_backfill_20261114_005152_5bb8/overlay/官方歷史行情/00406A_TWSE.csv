@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00406A,主動中信台灣收益,7.85,8.05,7.73,7.75,660553589,71294,5211404900,TWSE_MI_INDEX,0.14

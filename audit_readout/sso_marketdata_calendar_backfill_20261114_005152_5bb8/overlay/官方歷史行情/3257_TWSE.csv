@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,3257,虹冠電,39.7,40.6,39.7,40.3,202492,154,8141624,TWSE_MI_INDEX,0.2

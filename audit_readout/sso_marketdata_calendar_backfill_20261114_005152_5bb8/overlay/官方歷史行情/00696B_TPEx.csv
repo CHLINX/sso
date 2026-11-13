@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00696B,富邦美債20年,28.15,28.15,28.07,28.08,1072000,78,30114600,TPEX_afterTrading_otc_type_EW,-0.59

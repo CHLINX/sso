@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,3712,永崴投控,17.55,18.2,17.5,17.95,750545,570,13452720,TWSE_MI_INDEX,1.35

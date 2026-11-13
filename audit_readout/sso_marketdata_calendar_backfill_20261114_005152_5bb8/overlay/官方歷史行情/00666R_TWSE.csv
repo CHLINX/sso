@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00666R,富邦恒生國企反1,9.51,9.57,9.51,9.57,3097,4,29520,TWSE_MI_INDEX,0.16

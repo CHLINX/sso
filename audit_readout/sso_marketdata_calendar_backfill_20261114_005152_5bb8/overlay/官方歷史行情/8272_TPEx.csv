@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,8272,全景軟體,103.5,109.0,99.8,109.0,1037000,675,109944600,TPEX_afterTrading_otc_type_EW,9.5

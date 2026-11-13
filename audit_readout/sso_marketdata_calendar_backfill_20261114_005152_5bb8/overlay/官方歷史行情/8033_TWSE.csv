@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,8033,雷虎,143.5,146.5,142.5,145.0,1192282,1354,172185211,TWSE_MI_INDEX,2.5

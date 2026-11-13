@@ -1,0 +1,5 @@
+﻿trade_date,market,calendar_evidence,reason,api_status,rows,http_status,error,raw_file,response_sha256
+2026-10-23,TWSE,TWSE official holiday schedule + weekday trading rule,MISSING_EXPECTED_SESSION,WAITING_FOR_OFFICIAL_DATA,0,200,官方端點目前沒有行情列；原始回應已保存；不推定休市、不寫入增量，後續保留重查。,raw/TWSE/20261023.json.gz,a5691b2512d7068ab2f69df75c3ef8fbc38dc565086422b1602656895c92c652
+2026-11-13,TWSE,TWSE official holiday schedule + weekday trading rule,MISSING_EXPECTED_SESSION,PASS,1389,200,,raw/TWSE/20261113.json.gz,b51f87609d6e47eb82c818ab7bf1ef5a9e706504e10146cd49c24954969a9429
+2026-10-23,TPEX,TWSE official holiday schedule + weekday trading rule,MISSING_EXPECTED_SESSION,REJECTED,0,200,legacy: 資料筆數低於絕對下限：0; 資料筆數偏離歷史母體：本次=0；基準=893；允許=491~1429 | modern: 資料筆數低於絕對下限：0; 資料筆數偏離歷史母體：本次=0；基準=893；允許=491~1429,raw/TPEX/20261023.json.gz,e54273f1ab19c61dcf1a03017bb0af5f2d1e610b14865c74a3cc40f87c54a6aa
+2026-11-13,TPEX,TWSE official holiday schedule + weekday trading rule,MISSING_EXPECTED_SESSION,PASS,1020,200,,raw/TPEX/20261113_legacy.json.gz,4d33a047f427f7a4ac2418aa0b46fdefc524497fe882a672d0491f2495fa3bf2

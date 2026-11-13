@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00407A,主動凱基台灣,8.47,8.65,8.31,8.36,46831189,3158,399167310,TWSE_MI_INDEX,0.23

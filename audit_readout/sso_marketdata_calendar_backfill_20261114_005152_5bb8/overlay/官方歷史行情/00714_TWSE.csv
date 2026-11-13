@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00714,群益道瓊美國地產,22.43,22.46,22.38,22.38,113118,84,2540282,TWSE_MI_INDEX,0.26

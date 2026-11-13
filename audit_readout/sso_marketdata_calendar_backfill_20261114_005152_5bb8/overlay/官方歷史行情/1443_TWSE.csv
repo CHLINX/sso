@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,1443,立益物流,23.5,23.5,23.3,23.35,4374,18,102142,TWSE_MI_INDEX,0.25

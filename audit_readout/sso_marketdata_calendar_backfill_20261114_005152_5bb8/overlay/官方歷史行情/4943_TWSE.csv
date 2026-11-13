@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,4943,康控-KY,6.18,6.18,5.92,5.95,23135,42,137729,TWSE_MI_INDEX,0.05

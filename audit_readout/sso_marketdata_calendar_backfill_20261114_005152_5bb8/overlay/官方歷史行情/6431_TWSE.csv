@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,6431,光麗-KY,15.2,16.75,14.95,16.75,126061,108,2028827,TWSE_MI_INDEX,1.5

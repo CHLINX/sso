@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00996A,主動兆豐台灣豐收,11.75,11.94,11.45,11.46,15453311,1540,181226962,TWSE_MI_INDEX,0.23

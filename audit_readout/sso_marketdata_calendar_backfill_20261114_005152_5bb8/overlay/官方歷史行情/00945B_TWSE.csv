@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00945B,凱基美國非投等債,14.68,14.69,14.66,14.67,2682946,347,39356899,TWSE_MI_INDEX,0.02

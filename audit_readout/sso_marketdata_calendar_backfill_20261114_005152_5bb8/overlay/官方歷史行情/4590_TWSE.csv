@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,4590,富田-創,71.2,71.7,70.6,70.9,91875,80,6531839,TWSE_MI_INDEX,0.3

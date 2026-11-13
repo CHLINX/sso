@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,6968,萬達寵物,39.05,39.75,39.05,39.45,16000,13,631500,TPEX_afterTrading_otc_type_EW,0.65

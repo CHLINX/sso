@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,6654,天正國際,171.0,171.0,161.0,161.0,28000,25,4700000,TPEX_afterTrading_otc_type_EW,-12.5

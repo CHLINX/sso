@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00648R,元大S&P500反1,4.0,4.0,3.97,3.99,3281000,73,13030140,TWSE_MI_INDEX,0.02

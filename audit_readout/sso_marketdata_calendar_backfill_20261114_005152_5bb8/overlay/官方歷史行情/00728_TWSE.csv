@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00728,第一金工業30,58.0,59.0,57.5,57.75,187006,479,10923401,TWSE_MI_INDEX,0.9

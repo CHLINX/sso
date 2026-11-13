@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00412A,主動安聯亞半導體,8.06,8.24,7.99,8.01,18616526,1724,151398198,TWSE_MI_INDEX,0.15

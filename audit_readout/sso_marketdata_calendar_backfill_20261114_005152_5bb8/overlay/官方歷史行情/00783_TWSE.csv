@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00783,富邦中証500,24.7,24.7,24.29,24.29,18951,109,462070,TWSE_MI_INDEX,0.76

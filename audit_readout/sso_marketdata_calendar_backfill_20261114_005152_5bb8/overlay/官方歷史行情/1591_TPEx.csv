@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,1591,駿吉-KY,32.35,32.8,32.25,32.7,74000,48,2403700,TPEX_afterTrading_otc_type_EW,0.75

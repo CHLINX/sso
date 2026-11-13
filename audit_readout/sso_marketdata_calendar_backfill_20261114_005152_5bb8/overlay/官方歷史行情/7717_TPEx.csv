@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,7717,萊德光電-KY,461.5,489.5,461.5,489.5,859000,630,417786500,TPEX_afterTrading_otc_type_EW,44.5

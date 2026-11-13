@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00851,台新全球AI,65.85,66.05,65.65,65.9,53929,99,3544071,TWSE_MI_INDEX,0.1

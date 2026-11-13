@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,009826,貝萊德世界股票,10.15,10.17,10.13,10.14,5732718,1489,58188878,TWSE_MI_INDEX,0.01

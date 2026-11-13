@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2436,偉詮電,54.9,56.3,54.5,55.0,2336518,1770,129469515,TWSE_MI_INDEX,1.1

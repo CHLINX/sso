@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00757,統一FANG+,136.05,136.45,135.2,135.4,510018,1238,69386173,TWSE_MI_INDEX,0.55

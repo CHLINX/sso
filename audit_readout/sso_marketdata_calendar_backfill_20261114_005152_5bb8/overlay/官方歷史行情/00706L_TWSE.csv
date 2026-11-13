@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00706L,期元大S&P日圓正2,18.62,18.62,18.58,18.59,421550,172,7835620,TWSE_MI_INDEX,0.05

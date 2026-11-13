@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2887G,台新新光庚特一,44.0,44.0,43.95,44.0,35031,26,1541238,TWSE_MI_INDEX,0.0

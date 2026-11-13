@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00987A,主動台新優勢成長,14.37,14.75,14.14,14.22,2151024,566,31260998,TWSE_MI_INDEX,0.42

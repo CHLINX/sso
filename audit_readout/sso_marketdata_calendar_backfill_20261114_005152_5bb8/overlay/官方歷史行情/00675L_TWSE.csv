@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00675L,富邦臺灣加權正2,278.45,286.35,273.15,274.4,2654827,1700,744851878,TWSE_MI_INDEX,8.6

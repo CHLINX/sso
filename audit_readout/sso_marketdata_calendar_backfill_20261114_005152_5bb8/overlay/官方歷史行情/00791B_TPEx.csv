@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00791B,復華信用債1-5,57.75,57.75,57.75,57.75,100000,3,5775000,TPEX_afterTrading_otc_type_EW,-0.2

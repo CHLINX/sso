@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,3229,晟鈦,39.25,40.9,39.25,40.0,211019,215,8457777,TWSE_MI_INDEX,1.15

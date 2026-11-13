@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,6770,力積電,57.9,58.5,56.5,57.0,66041719,33562,3807495082,TWSE_MI_INDEX,0.9

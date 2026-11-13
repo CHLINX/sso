@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,7714,創泓科技,147.5,156.0,147.5,154.5,116000,106,17681500,TPEX_afterTrading_otc_type_EW,10.0

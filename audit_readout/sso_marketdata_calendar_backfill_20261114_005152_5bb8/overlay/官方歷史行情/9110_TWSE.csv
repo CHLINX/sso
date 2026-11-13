@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,9110,越南控-DR,2.48,2.75,2.48,2.75,39000,20,101440,TWSE_MI_INDEX,0.0

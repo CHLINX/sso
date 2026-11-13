@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,7799,禾榮科,470.0,494.0,456.0,478.0,1346146,2005,640308442,TWSE_MI_INDEX,17.0

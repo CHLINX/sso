@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00836B,永豐10年A公司債,27.92,27.92,27.88,27.88,13000,13,362880,TPEX_afterTrading_otc_type_EW,-0.52

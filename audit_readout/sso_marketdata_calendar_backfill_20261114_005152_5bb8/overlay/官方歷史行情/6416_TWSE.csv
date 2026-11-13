@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,6416,瑞祺電通,104.0,113.0,104.0,113.0,786553,734,87234597,TWSE_MI_INDEX,10.0

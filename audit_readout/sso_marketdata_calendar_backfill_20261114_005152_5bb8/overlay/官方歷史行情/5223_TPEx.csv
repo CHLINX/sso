@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,5223,安力-KY,22.6,23.2,22.5,22.65,38000,22,865500,TPEX_afterTrading_otc_type_EW,0.85

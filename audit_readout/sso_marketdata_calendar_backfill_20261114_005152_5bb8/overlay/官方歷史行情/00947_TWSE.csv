@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00947,台新臺灣IC設計,31.48,32.49,31.13,31.3,29808092,5343,955128427,TWSE_MI_INDEX,1.04

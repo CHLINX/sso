@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00708L,期元大S&P黃金正2,61.85,63.0,61.8,62.9,6227512,3476,388792318,TWSE_MI_INDEX,1.7

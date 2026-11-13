@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00780B,國泰A級金融債,37.05,37.05,37.03,37.04,110000,8,4074450,TPEX_afterTrading_otc_type_EW,-0.37

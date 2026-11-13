@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00981D,主動中信非投等債,10.28,10.28,10.22,10.25,2739000,302,28061820,TPEX_afterTrading_otc_type_EW,-0.02

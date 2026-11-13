@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,3092,鴻碩,17.6,18.05,17.3,17.8,987276,600,17501096,TWSE_MI_INDEX,0.75

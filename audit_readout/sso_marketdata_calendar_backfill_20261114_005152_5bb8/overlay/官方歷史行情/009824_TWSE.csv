@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,009824,群益美國科技巨頭,9.79,9.83,9.72,9.75,4341030,1156,42460097,TWSE_MI_INDEX,0.12

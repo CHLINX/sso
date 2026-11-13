@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,6727,亞泰金屬,378.0,391.5,355.0,368.0,1126000,987,420915000,TPEX_afterTrading_otc_type_EW,1.0

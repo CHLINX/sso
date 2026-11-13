@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2211,長榮鋼,78.2,79.5,78.2,79.2,332196,341,26217322,TWSE_MI_INDEX,1.2

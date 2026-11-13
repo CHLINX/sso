@@ -1,0 +1,27 @@
+Version=SSO_Market_Data_Unknown_Trading_Day_Backfill_v1.5.12
+Run time=2026-11-14T00:51:52.186821+08:00
+v1.5.10 base source=/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.10_官方行情即時驗證與增量續接_20261112_180751_3bd3/SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.10.py
+[FUNCTION TEST PASS] 日期與市場正規化
+[FUNCTION TEST PASS] 近30日窗口邊界與2026休市日
+[FUNCTION TEST PASS] 資料庫掃描僅納入窗口內日期
+[FUNCTION TEST PASS] 官方開休市日曆分類
+[FUNCTION TEST PASS] payload解析／OHLC驗證／CSV round-trip
+[00:51:53] [DOWNLOAD + CHECK PASS] TWSE 2026-11-12：501 筆；唯一代號=501；零成交量=0.00%；OHLC缺值=0.00%；price_change缺值=0
+[TPEX LEGACY PASS] 2026-11-12 rows=501 type=EW
+[FUNCTION TEST PASS] 官方下載函數介面（TWSE + TPEx 假資料）
+[DATABASE SCAN] 主資料庫：/content/drive/MyDrive/看股最速適/看股最速適_官方行情完整證券代號重建_v4_16_20261031_131511/官方行情總表_完整證券代號_v4.17.csv
+[DATABASE WINDOW] 僅統計 2026-10-15 至 2026-11-13，共 30 個日曆日。
+[DATABASE WINDOW PASS] 2026-10-15 .. 2026-11-13; market-date groups=38
+[CALENDAR PASS] 2026：rows=27 closed=24 explicit_open=3
+[CALENDAR RESULT] expected sessions=21; missing market-days=4; partial suspects=0
+[CALENDAR POLICY] 官方日曆列為休市才排除；API空資料/錯誤一律不推定休市。
+[BACKFILL 1/4] TWSE 2026-10-23; local baseline=1116
+[00:53:01] [WAITING] TWSE 2026-10-23：官方目前沒有行情列。
+[BACKFILL 2/4] TWSE 2026-11-13; local baseline=1389
+[00:53:02] [DOWNLOAD + CHECK PASS] TWSE 2026-11-13：1,389 筆；唯一代號=1,389；零成交量=0.58%；OHLC缺值=0.86%；price_change缺值=0
+[BACKFILL 3/4] TPEX 2026-10-23; local baseline=893
+[00:53:03] [REJECTED] TPEX 2026-10-23：資料筆數低於絕對下限：0; 資料筆數偏離歷史母體：本次=0；基準=893；允許=491~1429
+[BACKFILL 4/4] TPEX 2026-11-13; local baseline=1020
+[TPEX LEGACY PASS] 2026-11-13 rows=1020 type=EW
+[INCREMENT ROUNDTRIP PASS] rows=2409
+[ZIP PASS] v1.5.12_未知營業日補充與官方日曆核驗_20261114_005152_5bb8.zip; sha256=86bb0bb2f4e0f5d1bff17c7ad6fb92f81a667e2dda5db04c10056e03f95806e5

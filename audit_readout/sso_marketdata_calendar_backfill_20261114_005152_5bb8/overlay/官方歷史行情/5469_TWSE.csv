@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,5469,瀚宇博,77.5,79.4,76.6,78.0,4063978,3188,317299513,TWSE_MI_INDEX,1.6

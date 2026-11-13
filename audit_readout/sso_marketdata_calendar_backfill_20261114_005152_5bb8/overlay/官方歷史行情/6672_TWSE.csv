@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,6672,騰輝電子-KY,515.0,543.0,491.0,510.0,10721840,14404,5556613360,TWSE_MI_INDEX,13.0

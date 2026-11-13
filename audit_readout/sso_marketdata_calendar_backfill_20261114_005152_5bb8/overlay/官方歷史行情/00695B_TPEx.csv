@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00695B,富邦美債7-10,34.8,34.95,34.8,34.9,271000,20,9458210,TPEX_afterTrading_otc_type_EW,-0.44

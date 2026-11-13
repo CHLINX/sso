@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,3023,信邦,264.0,269.0,260.0,260.0,551483,891,145308297,TWSE_MI_INDEX,3.0

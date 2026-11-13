@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00937B,群益ESG投等債20+,14.28,14.3,14.24,14.26,61846000,6148,881817260,TPEX_afterTrading_otc_type_EW,-0.18

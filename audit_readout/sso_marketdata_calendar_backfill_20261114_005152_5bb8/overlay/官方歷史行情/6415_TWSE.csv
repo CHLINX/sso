@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,6415,矽力*-KY,449.5,476.0,426.5,437.5,5682311,6050,2575891638,TWSE_MI_INDEX,0.5

@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,910322,康師傅-DR,28.15,28.35,27.85,28.35,69276,52,1959224,TWSE_MI_INDEX,0.05

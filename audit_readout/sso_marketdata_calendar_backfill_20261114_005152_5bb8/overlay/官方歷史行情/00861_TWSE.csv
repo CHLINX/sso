@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00861,元大全球未來通訊,79.8,80.15,79.0,79.0,218547,272,17454526,TWSE_MI_INDEX,0.5

@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,6865,偉康科技,37.7,37.7,37.7,37.7,183000,105,6899100,TPEX_afterTrading_otc_type_EW,3.4

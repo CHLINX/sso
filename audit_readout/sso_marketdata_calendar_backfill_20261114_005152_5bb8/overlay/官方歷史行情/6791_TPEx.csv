@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,6791,虎門科技,88.9,93.8,88.9,93.6,11000,11,1016900,TPEX_afterTrading_otc_type_EW,5.6

@@ -1,0 +1,197 @@
+[
+  {
+    "trade_date": "2026-10-23",
+    "market": "TWSE",
+    "query_type": "ALLBUT0999",
+    "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+    "params": {
+      "date": "20261023",
+      "type": "ALLBUT0999",
+      "response": "json"
+    },
+    "http_status": 200,
+    "response_sha256": "a5691b2512d7068ab2f69df75c3ef8fbc38dc565086422b1602656895c92c652",
+    "raw_gzip_sha256": "8b1d0015b896ed0c64040d1f1ed7d32ff277ca2c0a8e1a325e671a72bb63ab23",
+    "raw_file": "raw/TWSE/20261023.json.gz",
+    "table_title": "",
+    "status": "WAITING_FOR_OFFICIAL_DATA",
+    "validation": {
+      "rows": 0,
+      "validation_errors": []
+    },
+    "error": "官方端點目前沒有行情列；原始回應已保存；不推定休市、不寫入增量，後續保留重查。",
+    "parse_stats": {}
+  },
+  {
+    "trade_date": "2026-11-13",
+    "market": "TWSE",
+    "query_type": "ALLBUT0999",
+    "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+    "params": {
+      "date": "20261113",
+      "type": "ALLBUT0999",
+      "response": "json"
+    },
+    "http_status": 200,
+    "response_sha256": "b51f87609d6e47eb82c818ab7bf1ef5a9e706504e10146cd49c24954969a9429",
+    "raw_gzip_sha256": "79a65f84aa71132496b47f3f4b4be754f89c1c036fd0f6a9834c89edfcac450e",
+    "raw_file": "raw/TWSE/20261113.json.gz",
+    "table_title": "115年11月13日 每日收盤行情(全部(不含權證、牛熊證、可展延牛熊證))",
+    "status": "PASS",
+    "validation": {
+      "rows": 1389,
+      "unique_codes": 1389,
+      "duplicate_rows": 0,
+      "invalid_code_rows": 0,
+      "wrong_date_rows": 0,
+      "wrong_market_rows": 0,
+      "missing_volume_rows": 0,
+      "negative_volume_rows": 0,
+      "zero_volume_rows": 8,
+      "zero_volume_ratio": 0.00576,
+      "missing_ohlc_rows": 12,
+      "missing_ohlc_ratio": 0.008639,
+      "complete_ohlc_rows": 1377,
+      "invalid_ohlc_rows": 0,
+      "invalid_ohlc_ratio": 0.0,
+      "negative_trade_value_rows": 0,
+      "negative_transactions_rows": 0,
+      "missing_price_change_rows": 0,
+      "tpex_ew_source_fail_rows": 0,
+      "expected_rows": 1389,
+      "count_ratio": 1.0,
+      "validation_errors": [],
+      "parse_stats": {
+        "table_rows": 1389,
+        "blank_code_rows": 0,
+        "invalid_code_rows": 0,
+        "malformed_rows": 0
+      }
+    },
+    "error": "",
+    "parse_stats": {
+      "table_rows": 1389,
+      "blank_code_rows": 0,
+      "invalid_code_rows": 0,
+      "malformed_rows": 0
+    }
+  },
+  {
+    "trade_date": "2026-10-23",
+    "market": "TPEX",
+    "query_type": "EW",
+    "url": "https://www.tpex.org.tw/www/zh-tw/afterTrading/otc",
+    "params": {
+      "date": "2026/10/23",
+      "type": "EW",
+      "response": "json"
+    },
+    "http_status": 200,
+    "response_sha256": "e54273f1ab19c61dcf1a03017bb0af5f2d1e610b14865c74a3cc40f87c54a6aa",
+    "raw_gzip_sha256": "046bcd8cbf098749e931afb1804625e491f37f0d65448b61d90142c14a3eb4c9",
+    "raw_file": "raw/TPEX/20261023.json.gz",
+    "table_title": "上櫃股票每日收盤行情(不含定價)",
+    "status": "REJECTED",
+    "validation": {
+      "rows": 0,
+      "unique_codes": 0,
+      "duplicate_rows": 0,
+      "invalid_code_rows": 0,
+      "wrong_date_rows": 0,
+      "wrong_market_rows": 0,
+      "missing_volume_rows": 0,
+      "negative_volume_rows": 0,
+      "zero_volume_rows": 0,
+      "zero_volume_ratio": 0,
+      "missing_ohlc_rows": 0,
+      "missing_ohlc_ratio": 0,
+      "complete_ohlc_rows": 0,
+      "invalid_ohlc_rows": 0,
+      "invalid_ohlc_ratio": 0,
+      "negative_trade_value_rows": 0,
+      "negative_transactions_rows": 0,
+      "missing_price_change_rows": 0,
+      "tpex_ew_source_fail_rows": 0,
+      "expected_rows": 893,
+      "count_ratio": 0.0,
+      "validation_errors": [
+        "資料筆數低於絕對下限：0",
+        "資料筆數偏離歷史母體：本次=0；基準=893；允許=491~1429"
+      ],
+      "parse_stats": {
+        "table_rows": 0,
+        "blank_code_rows": 0,
+        "invalid_code_rows": 0,
+        "malformed_rows": 0
+      }
+    },
+    "error": "legacy: 資料筆數低於絕對下限：0; 資料筆數偏離歷史母體：本次=0；基準=893；允許=491~1429 | modern: 資料筆數低於絕對下限：0; 資料筆數偏離歷史母體：本次=0；基準=893；允許=491~1429",
+    "parse_stats": {
+      "table_rows": 0,
+      "blank_code_rows": 0,
+      "invalid_code_rows": 0,
+      "malformed_rows": 0
+    },
+    "legacy_attempt": {
+      "status": "REJECTED",
+      "http_status": 200,
+      "error": "資料筆數低於絕對下限：0; 資料筆數偏離歷史母體：本次=0；基準=893；允許=491~1429",
+      "raw_file": "raw/TPEX/20261023_legacy.json.gz"
+    }
+  },
+  {
+    "trade_date": "2026-11-13",
+    "market": "TPEX",
+    "query_type": "EW_LEGACY_OFFICIAL",
+    "url": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php",
+    "params": {
+      "l": "zh-tw",
+      "d": "115/11/13",
+      "se": "EW",
+      "o": "json"
+    },
+    "http_status": 200,
+    "response_sha256": "4d33a047f427f7a4ac2418aa0b46fdefc524497fe882a672d0491f2495fa3bf2",
+    "raw_gzip_sha256": "1c2c696162dab99806151ce714d62735da1b163ae3d9342d80b5503da04956a3",
+    "raw_file": "raw/TPEX/20261113_legacy.json.gz",
+    "table_title": "上櫃股票每日收盤行情(不含定價)",
+    "status": "PASS",
+    "validation": {
+      "rows": 1020,
+      "unique_codes": 1020,
+      "duplicate_rows": 0,
+      "invalid_code_rows": 0,
+      "wrong_date_rows": 0,
+      "wrong_market_rows": 0,
+      "missing_volume_rows": 0,
+      "negative_volume_rows": 0,
+      "zero_volume_rows": 23,
+      "zero_volume_ratio": 0.022549,
+      "missing_ohlc_rows": 23,
+      "missing_ohlc_ratio": 0.022549,
+      "complete_ohlc_rows": 997,
+      "invalid_ohlc_rows": 0,
+      "invalid_ohlc_ratio": 0.0,
+      "negative_trade_value_rows": 0,
+      "negative_transactions_rows": 0,
+      "missing_price_change_rows": 23,
+      "tpex_ew_source_fail_rows": 0,
+      "expected_rows": 1020,
+      "count_ratio": 1.0,
+      "validation_errors": [],
+      "parse_stats": {
+        "table_rows": 1020,
+        "blank_code_rows": 0,
+        "invalid_code_rows": 0,
+        "malformed_rows": 0
+      }
+    },
+    "error": "",
+    "parse_stats": {
+      "table_rows": 1020,
+      "blank_code_rows": 0,
+      "invalid_code_rows": 0,
+      "malformed_rows": 0
+    }
+  }
+]

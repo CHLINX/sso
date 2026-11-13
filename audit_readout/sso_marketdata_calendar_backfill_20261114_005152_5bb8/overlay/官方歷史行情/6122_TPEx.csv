@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,6122,擎邦,53.1,55.7,53.0,54.4,286000,224,15626200,TPEX_afterTrading_otc_type_EW,1.3

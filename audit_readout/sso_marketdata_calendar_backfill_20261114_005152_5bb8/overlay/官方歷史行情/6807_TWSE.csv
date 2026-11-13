@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,6807,峰源-KY,34.55,34.55,34.5,34.55,318156,142,10992235,TWSE_MI_INDEX,3.1

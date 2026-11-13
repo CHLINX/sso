@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00687B,國泰20年美債,27.18,27.2,27.08,27.11,13852000,1450,375574180,TPEX_afterTrading_otc_type_EW,-0.54

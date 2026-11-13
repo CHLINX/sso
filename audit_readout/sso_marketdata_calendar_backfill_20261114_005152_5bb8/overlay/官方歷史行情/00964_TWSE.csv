@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00964,中信亞太高股息,13.93,13.97,13.87,13.92,1556045,463,21668782,TWSE_MI_INDEX,0.08

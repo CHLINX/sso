@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2330,台積電,2375.0,2390.0,2340.0,2350.0,30973127,76864,73326711390,TWSE_MI_INDEX,10.0

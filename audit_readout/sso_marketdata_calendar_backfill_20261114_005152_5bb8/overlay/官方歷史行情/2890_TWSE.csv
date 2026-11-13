@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2890,永豐金,43.25,44.3,43.05,43.85,21758333,8465,953610444,TWSE_MI_INDEX,0.6

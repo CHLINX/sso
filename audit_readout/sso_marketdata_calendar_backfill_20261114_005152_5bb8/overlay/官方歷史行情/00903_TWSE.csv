@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00903,富邦元宇宙,19.73,19.81,19.62,19.62,333111,90,6573501,TWSE_MI_INDEX,0.15

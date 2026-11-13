@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,6844,諾貝兒,56.9,57.4,56.2,56.8,39000,29,2220300,TPEX_afterTrading_otc_type_EW,0.2

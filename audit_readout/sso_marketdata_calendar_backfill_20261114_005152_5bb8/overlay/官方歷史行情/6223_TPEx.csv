@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,6223,旺矽,4910.0,5100.0,4630.0,4670.0,1606000,1537,7842200000,TPEX_afterTrading_otc_type_EW,15.0

@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,6971,惠民實業,24.3,25.25,24.05,24.35,42000,36,1029900,TPEX_afterTrading_otc_type_EW,-0.95

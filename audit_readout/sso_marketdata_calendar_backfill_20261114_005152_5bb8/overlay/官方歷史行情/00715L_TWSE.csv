@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00715L,期街口布蘭特正2,65.0,65.5,64.45,64.95,3514163,1608,228393697,TWSE_MI_INDEX,4.5

@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,4139,馬光-KY,35.4,35.4,33.5,33.9,16000,14,544650,TPEX_afterTrading_otc_type_EW,-1.05

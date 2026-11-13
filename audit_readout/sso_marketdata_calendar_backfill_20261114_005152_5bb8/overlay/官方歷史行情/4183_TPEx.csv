@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,4183,福永生技,13.4,14.5,13.4,14.4,11000,6,153900,TPEX_afterTrading_otc_type_EW,0.0

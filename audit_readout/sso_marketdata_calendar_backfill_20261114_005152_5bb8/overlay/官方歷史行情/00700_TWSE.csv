@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00700,富邦恒生國企,17.14,17.19,17.04,17.04,299662,143,5142598,TWSE_MI_INDEX,0.33

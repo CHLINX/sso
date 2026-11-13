@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,01010T,京城樂富R1,10.0,10.0,10.0,10.0,237004,12,2370036,TWSE_MI_INDEX,0.0

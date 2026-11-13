@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2845,遠東銀,12.55,12.75,12.5,12.7,3872392,1142,49136932,TWSE_MI_INDEX,0.1

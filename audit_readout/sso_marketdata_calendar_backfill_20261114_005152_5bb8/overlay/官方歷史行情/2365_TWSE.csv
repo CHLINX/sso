@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2365,昆盈,23.55,24.3,23.55,23.9,551552,544,13224822,TWSE_MI_INDEX,0.5

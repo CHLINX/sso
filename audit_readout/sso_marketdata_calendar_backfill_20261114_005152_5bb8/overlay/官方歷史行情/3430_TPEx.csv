@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,3430,奇鈦科,81.7,84.7,81.6,83.9,200000,162,16712600,TPEX_afterTrading_otc_type_EW,3.4

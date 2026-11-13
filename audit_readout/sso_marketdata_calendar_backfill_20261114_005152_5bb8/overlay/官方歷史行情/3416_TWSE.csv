@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,3416,融程電,146.0,147.0,143.5,143.5,273355,415,39562414,TWSE_MI_INDEX,1.0

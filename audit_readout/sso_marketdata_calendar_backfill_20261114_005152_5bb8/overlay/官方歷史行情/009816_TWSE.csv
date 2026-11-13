@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,009816,凱基台灣TOP50,15.32,15.56,15.21,15.22,305993319,23243,4709058148,TWSE_MI_INDEX,0.19

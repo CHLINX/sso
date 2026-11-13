@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,6834,天二科技,104.0,108.0,100.0,101.5,2854834,2531,296506179,TWSE_MI_INDEX,0.5

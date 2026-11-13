@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00983B,大華優利美公債20,15.17,15.17,15.14,15.17,1122000,36,17007000,TPEX_afterTrading_otc_type_EW,-0.29

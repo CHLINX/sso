@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,4960,誠美材,32.15,34.75,31.8,32.85,51895174,19634,1749689416,TWSE_MI_INDEX,1.25

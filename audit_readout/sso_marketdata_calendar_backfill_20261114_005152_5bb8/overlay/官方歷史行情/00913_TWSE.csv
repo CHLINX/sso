@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00913,兆豐台灣晶圓製造,42.92,43.47,41.96,42.23,971408,688,41634514,TWSE_MI_INDEX,1.02

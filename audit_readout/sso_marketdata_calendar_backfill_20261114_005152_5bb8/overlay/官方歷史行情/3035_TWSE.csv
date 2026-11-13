@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,3035,智原,191.5,196.0,191.0,196.0,8099113,6243,1575712611,TWSE_MI_INDEX,17.5

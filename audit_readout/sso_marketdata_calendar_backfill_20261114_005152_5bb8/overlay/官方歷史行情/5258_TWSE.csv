@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,5258,虹堡,37.45,38.9,37.4,38.9,389155,359,14866284,TWSE_MI_INDEX,2.7

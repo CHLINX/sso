@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,6862,三集瑞-KY,120.0,121.5,117.0,117.0,68237,102,8129944,TWSE_MI_INDEX,1.0

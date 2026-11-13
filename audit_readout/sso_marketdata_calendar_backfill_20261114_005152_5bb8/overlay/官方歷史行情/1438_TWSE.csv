@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,1438,三地開發,21.6,21.65,21.45,21.5,36312,36,781777,TWSE_MI_INDEX,0.0

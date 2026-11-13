@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,6732,昇佳電子,118.0,121.0,118.0,119.5,61000,57,7311500,TPEX_afterTrading_otc_type_EW,1.5

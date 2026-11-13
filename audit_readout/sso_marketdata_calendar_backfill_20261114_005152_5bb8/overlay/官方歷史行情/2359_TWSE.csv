@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2359,所羅門,98.6,101.5,98.1,98.2,825411,1030,82245808,TWSE_MI_INDEX,1.2

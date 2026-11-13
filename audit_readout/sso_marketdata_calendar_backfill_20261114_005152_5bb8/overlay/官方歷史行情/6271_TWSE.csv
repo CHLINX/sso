@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,6271,同欣電,226.0,230.5,219.5,221.0,5370675,5645,1209011427,TWSE_MI_INDEX,6.0

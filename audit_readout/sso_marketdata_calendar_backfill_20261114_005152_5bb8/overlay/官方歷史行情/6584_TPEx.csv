@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,6584,南俊國際,306.0,323.5,306.0,309.0,686000,650,215638500,TPEX_afterTrading_otc_type_EW,5.5

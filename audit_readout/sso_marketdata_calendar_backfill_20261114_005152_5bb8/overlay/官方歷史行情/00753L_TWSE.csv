@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00753L,中信中國50正2,7.89,7.93,7.73,7.74,20410329,2771,160184293,TWSE_MI_INDEX,0.33

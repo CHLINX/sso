@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,4938,和碩,92.5,92.6,86.5,89.1,18530549,11817,1640933461,TWSE_MI_INDEX,3.1

@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00845B,富邦新興投等債,32.98,33.05,32.96,32.97,351000,13,11579380,TPEX_afterTrading_otc_type_EW,-0.43

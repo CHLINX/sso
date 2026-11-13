@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00401A,主動摩根台灣鑫收,12.66,12.78,12.49,12.53,10983555,1326,139136968,TWSE_MI_INDEX,0.0

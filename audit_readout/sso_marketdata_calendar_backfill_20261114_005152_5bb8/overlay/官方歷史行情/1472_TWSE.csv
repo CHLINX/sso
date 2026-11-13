@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,1472,三洋實業,89.3,89.3,88.3,89.2,34001,26,3020089,TWSE_MI_INDEX,0.5

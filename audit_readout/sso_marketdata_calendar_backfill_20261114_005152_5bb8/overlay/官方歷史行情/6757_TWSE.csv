@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,6757,台灣虎航,57.3,59.1,56.8,59.1,2200836,1907,128961617,TWSE_MI_INDEX,1.5

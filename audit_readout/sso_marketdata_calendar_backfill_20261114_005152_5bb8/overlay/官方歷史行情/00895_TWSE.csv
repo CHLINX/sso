@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00895,富邦未來車,47.9,48.26,47.75,47.79,1194847,453,57531710,TWSE_MI_INDEX,0.49

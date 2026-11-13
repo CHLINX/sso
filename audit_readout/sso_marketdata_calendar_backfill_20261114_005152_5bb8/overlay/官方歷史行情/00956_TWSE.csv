@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00956,中信日經高股息,13.6,13.65,13.6,13.61,200670,157,2733629,TWSE_MI_INDEX,0.1

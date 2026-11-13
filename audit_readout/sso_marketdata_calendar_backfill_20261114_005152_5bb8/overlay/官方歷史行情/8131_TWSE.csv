@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,8131,福懋科,54.6,55.2,53.2,54.1,876837,767,47592332,TWSE_MI_INDEX,0.9

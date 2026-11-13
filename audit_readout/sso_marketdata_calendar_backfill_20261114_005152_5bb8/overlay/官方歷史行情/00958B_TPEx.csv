@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00958B,永豐ESG銀行債15+,9.04,9.05,9.02,9.02,208000,19,1878810,TPEX_afterTrading_otc_type_EW,-0.13

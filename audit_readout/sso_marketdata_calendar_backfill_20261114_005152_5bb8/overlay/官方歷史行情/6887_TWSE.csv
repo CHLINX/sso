@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,6887,寶綠特-KY,26.25,27.35,25.4,27.0,122570,88,3244703,TWSE_MI_INDEX,0.75

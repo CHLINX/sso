@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,7827,漢康-KY創,118.0,120.0,117.5,119.5,106517,100,12659380,TWSE_MI_INDEX,1.0

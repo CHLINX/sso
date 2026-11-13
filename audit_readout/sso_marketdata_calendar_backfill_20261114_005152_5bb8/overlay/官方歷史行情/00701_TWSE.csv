@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00701,國泰股利精選30,42.0,42.3,41.39,42.3,172721,1272,7242754,TWSE_MI_INDEX,0.57

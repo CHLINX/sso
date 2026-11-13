@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00844B,台新15年IG金融債,30.8,30.8,30.8,30.8,80000,2,2464000,TPEX_afterTrading_otc_type_EW,-0.49

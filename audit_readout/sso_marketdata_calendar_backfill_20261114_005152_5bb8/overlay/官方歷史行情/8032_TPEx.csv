@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,8032,光菱,31.2,31.45,30.85,31.05,34000,29,1058350,TPEX_afterTrading_otc_type_EW,0.05

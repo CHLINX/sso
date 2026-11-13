@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00410A,主動永豐科技趨勢,10.77,10.92,10.5,10.54,7601168,674,82186106,TWSE_MI_INDEX,0.23

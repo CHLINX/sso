@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00664R,國泰臺灣加權反1,1.66,1.67,1.62,1.66,51258651,1768,84677798,TWSE_MI_INDEX,0.04

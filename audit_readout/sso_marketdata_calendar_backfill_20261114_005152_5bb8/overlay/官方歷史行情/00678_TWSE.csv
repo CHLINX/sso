@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00678,群益那斯達克生技,46.19,46.19,45.58,45.62,264673,1128,12101856,TWSE_MI_INDEX,1.16

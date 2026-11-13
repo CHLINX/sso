@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00892,富邦台灣半導體,37.53,38.07,36.78,37.05,17338579,6812,649366120,TWSE_MI_INDEX,1.03

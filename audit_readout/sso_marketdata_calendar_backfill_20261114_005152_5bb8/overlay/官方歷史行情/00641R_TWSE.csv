@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00641R,富邦日本反1,3.75,3.77,3.72,3.76,641590,65,2392085,TWSE_MI_INDEX,0.02

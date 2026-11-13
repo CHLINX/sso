@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,7805,威聯通,396.5,404.0,395.5,396.0,17000,17,6780500,TPEX_afterTrading_otc_type_EW,5.5

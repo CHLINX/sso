@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00865B,國泰US短期公債,50.85,50.9,50.7,50.8,2429733,599,123393813,TWSE_MI_INDEX,0.05

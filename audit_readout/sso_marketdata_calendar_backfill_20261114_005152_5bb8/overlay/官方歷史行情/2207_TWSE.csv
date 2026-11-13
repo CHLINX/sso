@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2207,和泰車,522.0,530.0,519.0,527.0,201779,431,105926624,TWSE_MI_INDEX,6.0

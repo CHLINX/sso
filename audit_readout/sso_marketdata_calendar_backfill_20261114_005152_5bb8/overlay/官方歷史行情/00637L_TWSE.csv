@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00637L,元大滬深300正2,16.5,16.5,16.12,16.14,13705595,1874,223551962,TWSE_MI_INDEX,0.35

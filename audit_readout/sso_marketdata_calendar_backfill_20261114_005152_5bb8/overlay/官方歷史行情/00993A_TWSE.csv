@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00993A,主動安聯台灣,11.35,11.62,11.11,11.15,5972164,1073,68208152,TWSE_MI_INDEX,0.24

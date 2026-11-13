@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2014,中鴻,15.1,15.1,14.7,14.8,2062993,1099,30539868,TWSE_MI_INDEX,0.1

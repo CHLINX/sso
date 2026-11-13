@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00926,凱基全球菁英55,27.32,27.4,27.27,27.29,748531,253,20443286,TWSE_MI_INDEX,0.03

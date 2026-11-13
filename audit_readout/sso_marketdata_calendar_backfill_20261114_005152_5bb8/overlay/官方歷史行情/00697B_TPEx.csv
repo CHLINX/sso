@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00697B,元大美債7-10,35.65,35.65,35.53,35.57,421000,132,14970960,TPEX_afterTrading_otc_type_EW,-0.34

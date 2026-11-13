@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,6606,建德工業,23.7,24.0,23.55,23.65,31011,23,734859,TWSE_MI_INDEX,0.0

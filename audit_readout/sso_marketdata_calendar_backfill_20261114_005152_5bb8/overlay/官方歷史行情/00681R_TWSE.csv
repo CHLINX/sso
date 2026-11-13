@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00681R,元大美債20反1,22.6,22.62,22.55,22.59,23000,9,519610,TWSE_MI_INDEX,0.0

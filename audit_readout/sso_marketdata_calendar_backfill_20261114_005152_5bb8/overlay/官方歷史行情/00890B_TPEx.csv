@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00890B,凱基ESG BBB債15+,31.14,31.15,31.14,31.15,101000,3,3145150,TPEX_afterTrading_otc_type_EW,-0.5

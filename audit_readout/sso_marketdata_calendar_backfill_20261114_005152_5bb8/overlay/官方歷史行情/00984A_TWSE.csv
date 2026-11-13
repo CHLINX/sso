@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00984A,主動安聯台灣高息,13.84,14.1,13.69,13.75,4069436,1506,56623596,TWSE_MI_INDEX,0.21

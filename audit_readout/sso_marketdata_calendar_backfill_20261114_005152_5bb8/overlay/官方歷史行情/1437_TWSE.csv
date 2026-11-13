@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,1437,勤益控,30.0,30.2,30.0,30.0,81605,70,2454567,TWSE_MI_INDEX,0.0

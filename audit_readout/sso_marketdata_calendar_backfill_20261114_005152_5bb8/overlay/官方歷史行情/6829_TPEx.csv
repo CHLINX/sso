@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,6829,千附精密,182.0,186.0,179.5,182.0,229000,189,41954000,TPEX_afterTrading_otc_type_EW,5.5

@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,020031,統一IC設計臺灣N,10.35,10.4,10.19,10.29,142000,19,1461990,TWSE_MI_INDEX,0.48

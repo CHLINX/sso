@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00877,復華中國5G,26.56,26.71,25.03,25.03,5432000,1341,139934270,TPEX_afterTrading_otc_type_EW,-1.53

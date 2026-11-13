@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00942B,台新美A公司債20+,13.92,13.92,13.81,13.82,1658000,73,22923230,TPEX_afterTrading_otc_type_EW,-0.22

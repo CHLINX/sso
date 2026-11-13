@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,6958,日盛台駿,16.45,16.8,16.4,16.4,30231,32,500602,TWSE_MI_INDEX,0.05

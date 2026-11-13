@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,3530,晶相光,45.85,49.25,45.85,48.05,113849,135,5447492,TWSE_MI_INDEX,2.55

@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00709,富邦歐洲,40.87,40.89,40.73,40.82,22476,158,918108,TWSE_MI_INDEX,0.31

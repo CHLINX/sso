@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,912000,晨訊科-DR,2.36,2.4,2.33,2.37,101380,41,237960,TWSE_MI_INDEX,0.01

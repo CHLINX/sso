@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00946,群益科技高息成長,13.85,14.03,13.83,13.86,1492064,488,20789020,TWSE_MI_INDEX,0.1

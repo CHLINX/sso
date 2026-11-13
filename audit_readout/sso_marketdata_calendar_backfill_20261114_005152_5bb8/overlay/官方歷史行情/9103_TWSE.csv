@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,9103,美德醫療-DR,5.06,5.07,5.03,5.04,334600,161,1688073,TWSE_MI_INDEX,0.0

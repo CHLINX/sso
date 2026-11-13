@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,00860B,群益1-5Y投資級債,39.1,39.12,39.1,39.12,110000,5,4302100,TPEX_afterTrading_otc_type_EW,-0.13

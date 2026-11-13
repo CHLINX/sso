@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,1529,樂事綠能,13.15,13.45,13.15,13.2,308216,237,4098846,TWSE_MI_INDEX,0.1

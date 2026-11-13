@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00954,中信日本半導體,15.0,15.0,14.55,14.63,2828264,521,41721213,TWSE_MI_INDEX,0.07

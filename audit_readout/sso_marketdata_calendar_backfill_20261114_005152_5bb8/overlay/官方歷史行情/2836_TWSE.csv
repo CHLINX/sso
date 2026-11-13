@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2836,高雄銀,11.65,11.8,11.6,11.7,1020041,419,11963495,TWSE_MI_INDEX,0.05

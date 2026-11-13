@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,7712,博盛半導體,133.5,135.5,131.0,131.0,221000,172,29399500,TPEX_afterTrading_otc_type_EW,1.0

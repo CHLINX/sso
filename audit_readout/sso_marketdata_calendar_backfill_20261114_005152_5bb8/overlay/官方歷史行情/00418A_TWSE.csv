@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00418A,主動復華台灣新星,10.32,10.52,10.04,10.08,51393794,6106,530979524,TWSE_MI_INDEX,0.18

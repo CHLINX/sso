@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2812,台中銀,17.35,17.55,17.25,17.45,6710550,2147,116995344,TWSE_MI_INDEX,0.1

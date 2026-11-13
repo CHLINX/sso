@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00875,國泰網路資安,59.0,59.85,58.85,59.4,348469,1157,20587971,TWSE_MI_INDEX,0.4

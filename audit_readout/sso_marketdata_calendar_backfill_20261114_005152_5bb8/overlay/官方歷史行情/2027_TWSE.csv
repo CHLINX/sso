@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2027,大成鋼,48.55,48.7,44.25,44.5,69673388,24503,3143070320,TWSE_MI_INDEX,4.55

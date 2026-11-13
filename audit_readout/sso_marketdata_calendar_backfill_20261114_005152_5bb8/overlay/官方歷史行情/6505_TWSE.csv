@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,6505,台塑化,91.7,94.3,91.2,92.5,13378079,9535,1237858566,TWSE_MI_INDEX,2.3

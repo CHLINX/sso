@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2002A,中鋼特,37.4,37.4,37.0,37.35,4629,13,172451,TWSE_MI_INDEX,0.3

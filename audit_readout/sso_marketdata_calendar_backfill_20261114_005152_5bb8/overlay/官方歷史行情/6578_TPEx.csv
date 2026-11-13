@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,6578,達邦蛋白,16.85,16.85,16.6,16.6,34000,23,569100,TPEX_afterTrading_otc_type_EW,-0.1

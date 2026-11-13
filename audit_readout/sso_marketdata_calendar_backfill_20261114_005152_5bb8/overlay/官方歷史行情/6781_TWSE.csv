@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,6781,AES-KY,760.0,779.0,755.0,759.0,275421,896,211029686,TWSE_MI_INDEX,18.0

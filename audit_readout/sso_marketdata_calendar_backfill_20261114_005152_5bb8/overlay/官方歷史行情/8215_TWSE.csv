@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,8215,明基材,25.4,26.15,25.35,25.5,606024,510,15568225,TWSE_MI_INDEX,0.65

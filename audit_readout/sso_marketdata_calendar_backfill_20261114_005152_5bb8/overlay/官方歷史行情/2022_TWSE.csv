@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2022,聚亨,6.45,6.45,6.2,6.36,372082,305,2336360,TWSE_MI_INDEX,0.09

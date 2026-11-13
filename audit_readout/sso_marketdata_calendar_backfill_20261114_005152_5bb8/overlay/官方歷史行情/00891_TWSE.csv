@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00891,中信關鍵半導體,32.98,33.59,32.5,32.56,43729252,14274,1445850060,TWSE_MI_INDEX,0.59

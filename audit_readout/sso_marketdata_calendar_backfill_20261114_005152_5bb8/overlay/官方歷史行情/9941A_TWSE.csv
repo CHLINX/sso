@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,9941A,裕融甲特,48.45,48.45,48.25,48.25,2016,3,97474,TWSE_MI_INDEX,0.2

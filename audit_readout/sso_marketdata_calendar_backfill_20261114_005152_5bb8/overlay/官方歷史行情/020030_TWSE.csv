@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,020030,統一智慧電動車N,17.48,17.48,16.94,17.06,8000,8,138220,TWSE_MI_INDEX,0.56

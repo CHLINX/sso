@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,3022,威強電,71.7,73.4,71.5,73.2,695161,625,50583089,TWSE_MI_INDEX,2.1

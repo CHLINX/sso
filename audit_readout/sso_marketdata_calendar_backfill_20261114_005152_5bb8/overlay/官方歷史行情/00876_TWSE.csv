@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00876,元大全球5G,78.95,78.95,77.35,77.35,115398,347,9019466,TWSE_MI_INDEX,0.95

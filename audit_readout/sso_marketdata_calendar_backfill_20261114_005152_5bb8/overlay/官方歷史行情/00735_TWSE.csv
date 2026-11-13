@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00735,國泰臺韓科技,91.9,93.25,90.0,90.15,1790732,1110,164644282,TWSE_MI_INDEX,0.3

@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,3661,世芯-KY,4040.0,4040.0,3900.0,4020.0,4208801,21443,16942837175,TWSE_MI_INDEX,345.0

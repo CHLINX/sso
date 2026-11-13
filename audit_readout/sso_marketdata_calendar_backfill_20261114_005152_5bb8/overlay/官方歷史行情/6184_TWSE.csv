@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,6184,大豐電,35.6,36.3,34.95,36.3,354722,252,12478223,TWSE_MI_INDEX,0.8

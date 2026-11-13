@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2383,台光電,4310.0,4510.0,4180.0,4215.0,3589981,19506,15593485770,TWSE_MI_INDEX,110.0

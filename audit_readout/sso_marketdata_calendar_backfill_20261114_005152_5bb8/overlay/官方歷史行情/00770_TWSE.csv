@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00770,國泰北美科技,60.0,60.8,60.0,60.35,331213,425,20054468,TWSE_MI_INDEX,0.6

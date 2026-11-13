@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,1528,恩德,29.25,30.0,28.2,29.25,30376955,17021,884026914,TWSE_MI_INDEX,1.25

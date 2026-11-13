@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TPEX,4991,環宇-KY,363.0,368.0,355.5,364.0,2451000,2076,888909500,TPEX_afterTrading_otc_type_EW,17.0

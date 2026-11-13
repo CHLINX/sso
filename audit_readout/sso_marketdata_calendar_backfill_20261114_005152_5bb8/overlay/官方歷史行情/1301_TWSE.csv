@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,1301,台塑,69.7,71.7,69.7,71.1,23907230,13645,1695265771,TWSE_MI_INDEX,2.8

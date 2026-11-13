@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,2006,東和鋼鐵,86.1,86.2,84.8,85.3,607715,1754,51921471,TWSE_MI_INDEX,0.6

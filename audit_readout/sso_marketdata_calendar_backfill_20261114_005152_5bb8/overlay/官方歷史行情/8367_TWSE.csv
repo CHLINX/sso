@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,8367,建新國際,40.8,41.0,40.1,40.1,20641,32,835607,TWSE_MI_INDEX,0.7

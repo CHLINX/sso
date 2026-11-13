@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,8429,金麗-KY,5.49,5.54,5.43,5.5,195578,114,1070884,TWSE_MI_INDEX,0.02

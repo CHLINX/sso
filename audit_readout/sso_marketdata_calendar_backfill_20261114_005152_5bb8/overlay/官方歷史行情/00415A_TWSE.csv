@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00415A,主動群益核心50,8.33,8.47,8.1,8.12,30451540,3643,252477972,TWSE_MI_INDEX,0.17

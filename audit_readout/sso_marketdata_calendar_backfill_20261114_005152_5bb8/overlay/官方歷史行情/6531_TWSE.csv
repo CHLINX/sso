@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,6531,愛普*,714.0,744.0,710.0,716.0,6100005,5931,4460276628,TWSE_MI_INDEX,39.0

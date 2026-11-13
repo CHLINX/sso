@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,7710,東擎科技,119.0,120.5,118.5,119.0,212450,279,25329159,TWSE_MI_INDEX,1.5

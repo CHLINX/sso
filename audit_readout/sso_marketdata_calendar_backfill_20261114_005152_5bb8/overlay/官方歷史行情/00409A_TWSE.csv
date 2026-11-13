@@ -1,0 +1,2 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-13,TWSE,00409A,主動復華全球50,7.78,7.85,7.7,7.73,6503415,1475,50669718,TWSE_MI_INDEX,0.11
