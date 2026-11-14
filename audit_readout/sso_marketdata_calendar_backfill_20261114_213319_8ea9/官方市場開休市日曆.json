@@ -1,0 +1,237 @@
+{
+  "version": "SSO_Market_Data_Unknown_Trading_Day_Backfill_v1.5.13",
+  "start_date": "2026-10-15",
+  "end_date": "2026-11-13",
+  "source": "TWSE official holidaySchedule annual JSON; market-by-market daily OHLC validation",
+  "scope_calendar_days": 30,
+  "years": {
+    "2026": {
+      "year": 2026,
+      "requested_date": "20260101",
+      "response_date": "20260101",
+      "title": "115 年市場開休市日期",
+      "rows": [
+        {
+          "trade_date": "2026-01-01",
+          "name": "中華民國開國紀念日",
+          "description": "依規定放假1日。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-01-02",
+          "name": "國曆新年開始交易日",
+          "description": "國曆新年開始交易。",
+          "calendar_class": "EXPLICIT_OPEN"
+        },
+        {
+          "trade_date": "2026-02-11",
+          "name": "農曆春節前最後交易日",
+          "description": "農曆春節前最後交易。",
+          "calendar_class": "EXPLICIT_OPEN"
+        },
+        {
+          "trade_date": "2026-02-12",
+          "name": "市場無交易，僅辦理結算交割作業",
+          "description": "",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-02-13",
+          "name": "市場無交易，僅辦理結算交割作業",
+          "description": "",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-02-15",
+          "name": "農曆除夕及春節",
+          "description": "依規定於2月15日至2月19日放假5日。2月15日適逢星期日，於2月20日（星期五）補假。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-02-16",
+          "name": "農曆除夕及春節",
+          "description": "依規定於2月15日至2月19日放假5日。2月15日適逢星期日，於2月20日（星期五）補假。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-02-17",
+          "name": "農曆除夕及春節",
+          "description": "依規定於2月15日至2月19日放假5日。2月15日適逢星期日，於2月20日（星期五）補假。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-02-18",
+          "name": "農曆除夕及春節",
+          "description": "依規定於2月15日至2月19日放假5日。2月15日適逢星期日，於2月20日（星期五）補假。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-02-19",
+          "name": "農曆除夕及春節",
+          "description": "依規定於2月15日至2月19日放假5日。2月15日適逢星期日，於2月20日（星期五）補假。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-02-20",
+          "name": "農曆除夕及春節",
+          "description": "依規定於2月15日至2月19日放假5日。2月15日適逢星期日，於2月20日（星期五）補假。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-02-23",
+          "name": "農曆春節後開始交易日",
+          "description": "農曆春節後開始交易。",
+          "calendar_class": "EXPLICIT_OPEN"
+        },
+        {
+          "trade_date": "2026-02-27",
+          "name": "和平紀念日",
+          "description": "和平紀念日為2月28日適逢星期六，於2月27日（星期五）補假。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-02-28",
+          "name": "和平紀念日",
+          "description": "依規定放假1日。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-04-03",
+          "name": "兒童節及民族掃墓節",
+          "description": "兒童節為4月4日適逢星期六，於4月3日（星期五）補假。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-04-04",
+          "name": "兒童節及民族掃墓節",
+          "description": "依規定放假1日。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-04-05",
+          "name": "兒童節及民族掃墓節",
+          "description": "依規定放假1日。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-04-06",
+          "name": "兒童節及民族掃墓節",
+          "description": "民族掃墓節為4月5日適逢星期日，於4月6日（星期一）補假。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-05-01",
+          "name": "勞動節",
+          "description": "依規定放假1日。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-06-19",
+          "name": "端午節",
+          "description": "依規定放假1日。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-09-25",
+          "name": "中秋節",
+          "description": "依規定放假1日。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-09-28",
+          "name": "孔子誕辰紀念日/ 教師節",
+          "description": "依規定放假1日。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-10-09",
+          "name": "國慶日",
+          "description": "國慶日為10月10日適逢星期六，於10月9日（星期五）補假。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-10-10",
+          "name": "國慶日",
+          "description": "依規定放假1日。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-10-25",
+          "name": "臺灣光復暨金門古寧頭大捷紀念日",
+          "description": "依規定放假1日。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-10-26",
+          "name": "臺灣光復暨金門古寧頭大捷紀念日",
+          "description": "臺灣光復暨金門古寧頭大捷紀念日為10月25日適逢星期日，於10月26日（星期一）補假。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        },
+        {
+          "trade_date": "2026-12-25",
+          "name": "行憲紀念日",
+          "description": "依規定放假1日。",
+          "calendar_class": "EXPLICIT_CLOSED"
+        }
+      ],
+      "closed_dates": [
+        "2026-01-01",
+        "2026-02-12",
+        "2026-02-13",
+        "2026-02-15",
+        "2026-02-16",
+        "2026-02-17",
+        "2026-02-18",
+        "2026-02-19",
+        "2026-02-20",
+        "2026-02-27",
+        "2026-02-28",
+        "2026-04-03",
+        "2026-04-04",
+        "2026-04-05",
+        "2026-04-06",
+        "2026-05-01",
+        "2026-06-19",
+        "2026-09-25",
+        "2026-09-28",
+        "2026-10-09",
+        "2026-10-10",
+        "2026-10-25",
+        "2026-10-26",
+        "2026-12-25"
+      ],
+      "explicit_open_dates": [
+        "2026-01-02",
+        "2026-02-11",
+        "2026-02-23"
+      ],
+      "source_url": "https://www.twse.com.tw/rwd/zh/holidaySchedule/holidaySchedule?date=20260101&response=json"
+    }
+  },
+  "known_v448_makeup_saturdays": [
+    "2016-01-30",
+    "2016-06-04",
+    "2016-09-10",
+    "2017-02-18",
+    "2017-06-03",
+    "2017-09-30",
+    "2018-03-31",
+    "2018-12-22"
+  ],
+  "verified_special_closed_sessions": [
+    {
+      "trade_date": "2026-10-23",
+      "markets": [
+        "TWSE",
+        "TPEX"
+      ],
+      "name": "薔琵颱風臨時休市",
+      "reason": "2026-10-22 公告：2026-10-23 集中交易市場及櫃檯買賣市場全日休市；後續 2026-10-26 為例行補假。",
+      "source_urls": [
+        "https://www.cna.com.tw/news/afe/202610220388.aspx",
+        "https://www.knews.com.tw/news/B650912BDC1E5A2A91FE108A84816BB8"
+      ]
+    }
+  ],
+  "policy": "週一至週五先依官方日曆排除明示休市日；另僅依有公開公告證據的臨時休市事件排除；補行星期六納入候選；API 空資料、HTTP錯誤或解析失敗仍不得自行推定休市。"
+}

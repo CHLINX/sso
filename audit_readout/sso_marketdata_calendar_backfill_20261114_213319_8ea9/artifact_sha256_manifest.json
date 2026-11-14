@@ -1,0 +1,74 @@
+{
+  "version": "SSO_Market_Data_Unknown_Trading_Day_Backfill_v1.5.13",
+  "created_at_taipei": "2026-11-14T13:36:16.022769+00:00",
+  "file_count": 13,
+  "self_excluded": true,
+  "zip_excluded": true,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 577,
+      "sha256": "5b8cf84576438c13e71c6b7f7b9bd26aa2322f149465ad6718c5d7a044c18c2d"
+    },
+    {
+      "path": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.13.py",
+      "bytes": 83,
+      "sha256": "e58a94177a4a02138326e186d5525070c9c2879b9e74b9de70b6cb03c5ed9d35"
+    },
+    {
+      "path": "run.log",
+      "bytes": 1582,
+      "sha256": "2ac0c545c0a3951b02a52c369f6c37eec86dee0570b8d25a70707a6146724330"
+    },
+    {
+      "path": "v1.5.13_未知營業日補充報告.json",
+      "bytes": 3019,
+      "sha256": "67da68702ef2d8cab891dfbf0630e5a0c6760b5faf064858e021605af7eaa808"
+    },
+    {
+      "path": "全市場標準化增量_無新增_20261114_213319_8ea9.csv",
+      "bytes": 147,
+      "sha256": "62585f5f0037ec8597dda1c7a43a033f27aba946813b8b0d821aba8be3848556"
+    },
+    {
+      "path": "函數自我測試.json",
+      "bytes": 697,
+      "sha256": "0cd9fa069a92dc396da5b64361d723c15c0ebf2ffc754d0cd24ae45c346a3e3e"
+    },
+    {
+      "path": "官方API查詢索引.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "官方交易日曆與資料庫覆蓋.csv",
+      "bytes": 4531,
+      "sha256": "71bb670eeae75f64b87245488f67f44636d74df641c2d458a1eb5f3f6c756e6f"
+    },
+    {
+      "path": "官方市場開休市日曆.json",
+      "bytes": 8409,
+      "sha256": "9421de223c622661cb1915a0740bdbda75178c602b3916b1397a0388619cb499"
+    },
+    {
+      "path": "未知營業日補充查詢結果.csv",
+      "bytes": 106,
+      "sha256": "505a0b5a61c5e86218ae0f6e74ddc3d7419a229e95731b4fdb3517bbfc045d97"
+    },
+    {
+      "path": "疑似不完整交易日清單.csv",
+      "bytes": 55,
+      "sha256": "a5c800e1c90c2c8366e14a3cce6a551ee4bbec0b52a9e2d6aa49bc34604e827c"
+    },
+    {
+      "path": "資料庫來源掃描紀錄.json",
+      "bytes": 12420,
+      "sha256": "d35a8c79d51f2f6fe6bb747c3f3414f5f2ffc7892f8e23232e11eabc90bdec7c"
+    },
+    {
+      "path": "逐股增量覆蓋索引.csv",
+      "bytes": 52,
+      "sha256": "9b8a31eb19b4ee33abed851484e25c5edfe8ce4e25bb8a48b710fb655ed0a65d"
+    }
+  ]
+}

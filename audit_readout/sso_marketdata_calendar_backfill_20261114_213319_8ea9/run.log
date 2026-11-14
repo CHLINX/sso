@@ -1,0 +1,18 @@
+Version=SSO_Market_Data_Unknown_Trading_Day_Backfill_v1.5.13
+Run time=2026-11-14T21:33:19.707470+08:00
+v1.5.10 base source=/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.10_官方行情即時驗證與增量續接_20261112_180751_3bd3/SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.10.py
+[FUNCTION TEST PASS] 日期與市場正規化
+[FUNCTION TEST PASS] 近30日窗口邊界與2026休市日
+[FUNCTION TEST PASS] 資料庫掃描僅納入窗口內日期
+[FUNCTION TEST PASS] 官方開休市日曆分類
+[FUNCTION TEST PASS] payload解析／OHLC驗證／CSV round-trip
+[FUNCTION TEST PASS] 官方下載函數介面（TWSE + TPEx 假資料）
+[DATABASE SCAN] 主資料庫：/content/drive/MyDrive/看股最速適/看股最速適_官方行情完整證券代號重建_v4_16_20261031_131511/官方行情總表_完整證券代號_v4.17.csv
+[DATABASE WINDOW] 僅統計 2026-10-15 至 2026-11-13，共 30 個日曆日。
+[DATABASE WINDOW PASS] 2026-10-15 .. 2026-11-13; market-date groups=40
+[CALENDAR PASS] 2026：rows=27 closed=24 explicit_open=3
+[SPECIAL CLOSED PASS] 2026-10-23 薔琵颱風臨時休市；市場=TWSE,TPEX；不建立補抓任務。
+[CALENDAR RESULT] expected sessions=20; missing market-days=0; partial suspects=0
+[CALENDAR POLICY] 僅依年度官方日曆或有證據的臨時休市公告排除；API空資料本身一律不推定休市。
+[INCREMENT ROUNDTRIP PASS] rows=0
+[ZIP PASS] v1.5.13_未知營業日補充與官方日曆核驗_20261114_213319_8ea9.zip; sha256=87a6935483fd0502cf010ae0112458e0327950c2ff31d288cce9ad52afc6b95a

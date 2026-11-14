@@ -1,0 +1,94 @@
+{
+  "version": "SSO_Market_Data_Unknown_Trading_Day_Backfill_v1.5.13",
+  "run_id": "20261114_213319_8ea9",
+  "run_time_taipei": "2026-11-14T21:33:19.707470+08:00",
+  "status": "SUCCESS",
+  "source_base_version": "v1.5.10",
+  "source_base_origin": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.10_官方行情即時驗證與增量續接_20261112_180751_3bd3/SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.10.py",
+  "check_window": {
+    "start": "2026-10-15",
+    "end": "2026-11-13",
+    "calendar_days": 30,
+    "end_rule": "台北時間執行日之前一天"
+  },
+  "official_calendar_years": [
+    2026
+  ],
+  "expected_session_dates": 20,
+  "lookback_calendar_days": 30,
+  "verified_special_closed_sessions": [
+    {
+      "trade_date": "2026-10-23",
+      "markets": [
+        "TWSE",
+        "TPEX"
+      ],
+      "name": "薔琵颱風臨時休市",
+      "reason": "2026-10-22 公告：2026-10-23 集中交易市場及櫃檯買賣市場全日休市；後續 2026-10-26 為例行補假。",
+      "source_urls": [
+        "https://www.cna.com.tw/news/afe/202610220388.aspx",
+        "https://www.knews.com.tw/news/B650912BDC1E5A2A91FE108A84816BB8"
+      ]
+    }
+  ],
+  "expected_market_days": 40,
+  "missing_market_days_found": 0,
+  "backfill_rows": 0,
+  "backfill_by_market": {
+    "TWSE": 0,
+    "TPEX": 0
+  },
+  "backfill_trade_dates": [],
+  "unresolved_market_days": [],
+  "partial_day_suspects": [],
+  "function_tests": [
+    {
+      "test": "日期與市場正規化",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "test": "近30日窗口邊界與2026休市日",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "test": "資料庫掃描僅納入窗口內日期",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "test": "官方開休市日曆分類",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "test": "payload解析／OHLC驗證／CSV round-trip",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "test": "官方下載函數介面（TWSE + TPEx 假資料）",
+      "status": "PASS",
+      "error": ""
+    }
+  ],
+  "increment_file": "全市場標準化增量_無新增_20261114_213319_8ea9.csv",
+  "downstream_ready": true,
+  "integration": {
+    "standardized_increment_saved_under_v1_5_12": true,
+    "future_v1_5_x_version_dirs_glob_can_discover_file": true,
+    "per_stock_overlay_written": true,
+    "old_v4_17_database_modified": false,
+    "old_v1_5_x_files_modified": false,
+    "any_existing_file_deleted": false,
+    "partial_day_overwrite_performed": false,
+    "unknown_no_data_days_misclassified_as_holidays": false
+  },
+  "note": "若有 HTTP/解析/空表失敗或疑似半日資料，結果保持 PARTIAL_BLOCKED，不假裝完成；重新執行會重新掃描及補查。",
+  "zip": {
+    "file": "v1.5.13_未知營業日補充與官方日曆核驗_20261114_213319_8ea9.zip",
+    "sha256": "8bd7ae2e1f8582db32a2860cf174853fd8a48943c6414ead448e980c5bc335d6",
+    "bytes": 10022
+  }
+}
