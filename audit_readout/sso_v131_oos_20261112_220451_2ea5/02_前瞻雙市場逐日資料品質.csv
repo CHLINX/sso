@@ -1,0 +1,3 @@
+﻿trade_date,market,rows,unique_codes,duplicate_rows,missing_ohlc_rows,missing_ohlc_ratio,invalid_ohlc_rows,invalid_ohlc_ratio,api_statuses,status
+2026-11-12,TWSE,1389,1389,0,11,0.007919366450683946,0,0.0,FORMAL_REPORT_VERIFIED_EXISTING,PASS
+2026-11-12,TPEx,1020,1020,0,28,0.027450980392156862,0,0.0,FORMAL_REPORT_VERIFIED_EXISTING,PASS
