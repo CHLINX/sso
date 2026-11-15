@@ -1,0 +1,129 @@
+﻿{
+  "version": "SSO_v1.3.1_凍結12檔前瞻樣本外追蹤",
+  "created_at_taipei": "2026-11-15T03:40:23.255256+08:00",
+  "file_count": 24,
+  "self_excluded": true,
+  "github_result_excluded": true,
+  "files": [
+    {
+      "path": "01_v129凍結12檔候選名單.csv",
+      "bytes": 1031,
+      "sha256": "53d73d0b3d999b8bf388295a6391ee7b8536f58dc040463070e4374892039578"
+    },
+    {
+      "path": "02_前瞻雙市場逐日資料品質.csv",
+      "bytes": 586,
+      "sha256": "421eea2c76ce78578e5b3cfe62a8caeed5779f5713f987144c9697403febd808"
+    },
+    {
+      "path": "03_凍結12檔逐日行情覆蓋.csv",
+      "bytes": 1172,
+      "sha256": "474667744e97261374db24ff82007008fa94e23adb12b36ebcec7af1ad99c33f"
+    },
+    {
+      "path": "04_凍結12檔前瞻OHLC行情.csv",
+      "bytes": 1542,
+      "sha256": "a8412f9d2538eafb85f768720c9cd03bddfbe4ae7e7e8e69e1257ed58887c290"
+    },
+    {
+      "path": "05_凍結12檔每日重新進場訊號.csv",
+      "bytes": 1197,
+      "sha256": "1ca9c333262d82b2df26b450bfebba076b81a44738fdfe8d637c5084cf87a649"
+    },
+    {
+      "path": "06_20261112第一批凍結候選訊號.csv",
+      "bytes": 663,
+      "sha256": "6508698b1189db6f747f1472abf9ae46b957514c4747fd91b161fe8dba28a99d"
+    },
+    {
+      "path": "07_凍結12檔H1H3H5H10完整前瞻排程.csv.gz",
+      "bytes": 2128,
+      "sha256": "0936596738a63ea438be6b2a6fc8f51333cb91888831dcc51c09e3442c934740"
+    },
+    {
+      "path": "08_凍結12檔已成熟實際淨報酬.csv.gz",
+      "bytes": 1191,
+      "sha256": "da81ff092e5168f4a7b0b1abafe6341d1049df11b20558815c4fe501dcf2a54a"
+    },
+    {
+      "path": "09_凍結12檔各週期整體績效摘要.csv",
+      "bytes": 1525,
+      "sha256": "d023c62f1a4b74e26c0ce594b6d8c92ca64509221225cb181fc3a5b8be4c7b29"
+    },
+    {
+      "path": "10_凍結12檔逐訊號日週期成熟概況.csv",
+      "bytes": 1003,
+      "sha256": "1123fbc12a4e890098c7ea21d0d07f116307a397a17ee06b171a624bf0c1ad43"
+    },
+    {
+      "path": "11_凍結12檔個股各週期成熟報酬彙總.csv",
+      "bytes": 7823,
+      "sha256": "0971fb407e3c682b307cee052474d2888c6580b48fca0feebc417166d2723749"
+    },
+    {
+      "path": "12_凍結12檔個股跨週期表現總表.csv",
+      "bytes": 8089,
+      "sha256": "91e6d1e793916eef0e9c304d303cdb62bceada85611304337a77c5554fa3995a"
+    },
+    {
+      "path": "13_第一批OOS_H1H3H5H10排程.csv",
+      "bytes": 13309,
+      "sha256": "bcb7c9c4d20f36156b47ca81e896063549dc846002cbc36cca7049ab4bb2f9f8"
+    },
+    {
+      "path": "14_第一批OOS已成熟淨報酬.csv",
+      "bytes": 4312,
+      "sha256": "6ed0f2a7f8f167e1f2e59aa3286f33b1494c3e23beba3aeec8271bcb0853e80d"
+    },
+    {
+      "path": "15_每日重新進場_H1H3H5H10排程.csv.gz",
+      "bytes": 1802,
+      "sha256": "e451eb19bdeb1d58378da5a784f51a80f23d45f726e79f575bc6620b6f42bfed"
+    },
+    {
+      "path": "16_每日重新進場已成熟淨報酬.csv.gz",
+      "bytes": 1111,
+      "sha256": "15de1b9dfd15beffda7cad7c2e934980fea36cce0e391931cb89b2479de72c84"
+    },
+    {
+      "path": "17_v126原始126項相容性核對.csv",
+      "bytes": 7482,
+      "sha256": "baa479de88fc3a5b1f2bc5e73955c2b94cbf658cfed9c296f37d015bc2cd8a60"
+    },
+    {
+      "path": "18_行情來源及SHA256清單.csv",
+      "bytes": 4479,
+      "sha256": "64286a45a8b16df6e0940b44d831cb4026f9f19268f97d2c96e1d5322ea48982"
+    },
+    {
+      "path": "19_v131前瞻樣本外研究結論.json",
+      "bytes": 7328,
+      "sha256": "fe0555bc87163c29f31663f037679300f3e6a91bea69721c6327bf9480393273"
+    },
+    {
+      "path": "20_執行摘要.txt",
+      "bytes": 2734,
+      "sha256": "38f1e3c5079db478aaaae7971f1fd4276d33343440d40ab99a0afe8eb98225bc"
+    },
+    {
+      "path": "21_前瞻無效資料剔除明細.csv",
+      "bytes": 13682,
+      "sha256": "e8e544911bfc70194ad95b0d9cda4f70e679c84ff704e97aa6f3a4102c894b2f"
+    },
+    {
+      "path": "22_早期v1510官方後續修正逐列明細.csv",
+      "bytes": 7573,
+      "sha256": "4327a6810ab34ef7be3651ee2368845eea9983edfc0e64230135595159c632c5"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1445,
+      "sha256": "ab3a800bcaa5ac16eda8693d3e643ddce65a688229c6d1297667c4eead8e8dbf"
+    },
+    {
+      "path": "run.log",
+      "bytes": 5408,
+      "sha256": "9e578bcacecd0e25b4d6c9401a93bcbfa9c1f353213d4c98cdd83fcc7f6fdbe3"
+    }
+  ]
+}

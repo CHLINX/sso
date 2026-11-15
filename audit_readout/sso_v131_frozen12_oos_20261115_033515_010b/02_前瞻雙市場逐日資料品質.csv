@@ -1,0 +1,5 @@
+﻿trade_date,market,rows,raw_rows,unique_codes,duplicate_rows,missing_ohlc_rows,missing_ohlc_ratio,invalid_ohlc_rows,invalid_ohlc_ratio,invalid_code_rows,invalid_code_ratio,quarantined_rows,api_statuses,status
+2026-11-12,TWSE,1378,1389,1378,0,11,0.007919366450683946,0,0.0,0,0.0,11,APPENDED；OFFICIAL_API_REFRESHED_17_FIELDS,PASS
+2026-11-12,TPEx,992,1020,992,0,28,0.027450980392156862,0,0.0,0,0.0,28,APPENDED,PASS
+2026-11-13,TWSE,1377,1389,1377,0,12,0.008639308855291577,0,0.0,0,0.0,12,APPENDED,PASS
+2026-11-13,TPEx,997,1020,997,0,23,0.022549019607843137,0,0.0,0,0.0,23,APPENDED,PASS
