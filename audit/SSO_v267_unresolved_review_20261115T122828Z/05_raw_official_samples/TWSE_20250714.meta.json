@@ -1,0 +1,10 @@
+{
+  "HTTP狀態碼": 200,
+  "查詢網址": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20250714&type=ALLBUT0999&response=json",
+  "實際回應網址": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20250714&type=ALLBUT0999&response=json",
+  "使用端點": "TWSE_RWD_JSON",
+  "查詢時間": "2026-10-30T00:13:37+08:00",
+  "回應SHA256": "18b7d7d20d4ffd23f864f516b6bd2ec3a3a347bb865d88f94f120eec0a614a06",
+  "回應位元組數": 231814,
+  "錯誤": ""
+}

@@ -1,0 +1,11 @@
+{
+  "HTTP狀態碼": 200,
+  "查詢網址": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20170116&type=ALLBUT0999&response=json",
+  "實際回應網址": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=20170116&type=ALLBUT0999&response=json",
+  "使用端點": "TWSE_RWD_JSON",
+  "查詢時間": "2026-10-29T19:35:58+08:00",
+  "回應SHA256": "beaa82f4c0a2d6508ac3bfb22ca372c66990ad406109a8baf2389c972694ea3f",
+  "回應位元組數": 162442,
+  "錯誤": "",
+  "快取匯入來源": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_v2.8"
+}
