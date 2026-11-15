@@ -1,0 +1,94 @@
+{
+  "version": "SSO_v2.70",
+  "run_utc": "2026-11-15T12:55:37.981398+00:00",
+  "source_folder": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方市場行情資料底稿_v2.8_十年重建修正_20261115_164504",
+  "source_run_taipei": "2026-11-15T19:19:15+08:00",
+  "source_archive_sha256": "d12a1c2fbc0415b16d92781ab27c8dd20d829c8bb7ef318150744efed4f2935a",
+  "unresolved_key_count": 4673,
+  "unresolved_date_market_groups": 2037,
+  "keys_by_market": {
+    "TWSE": 4673
+  },
+  "keys_by_year": {
+    "2016": 603,
+    "2018": 536,
+    "2019": 623,
+    "2023": 306,
+    "2025": 505,
+    "2017": 503,
+    "2022": 388,
+    "2024": 300,
+    "2021": 325,
+    "2020": 329,
+    "2026": 255
+  },
+  "raw_cache_roots": [
+    "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_十年重建_v1",
+    "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_v2.8",
+    "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_v2.7",
+    "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SFAS_官方API快取_v2.6"
+  ],
+  "totals": {
+    "cache_found_days": 2037,
+    "raw_json_bytes": 398395532,
+    "matched_rows": 4673,
+    "ohlc_ALL_OHLC_MISSING": 4673,
+    "OFFICIAL_ROW_FOUND": 4673
+  },
+  "status_by_year": {
+    "2016": {
+      "ALL_OHLC_MISSING": 603
+    },
+    "2017": {
+      "ALL_OHLC_MISSING": 503
+    },
+    "2018": {
+      "ALL_OHLC_MISSING": 536
+    },
+    "2019": {
+      "ALL_OHLC_MISSING": 623
+    },
+    "2020": {
+      "ALL_OHLC_MISSING": 329
+    },
+    "2021": {
+      "ALL_OHLC_MISSING": 325
+    },
+    "2022": {
+      "ALL_OHLC_MISSING": 388
+    },
+    "2023": {
+      "ALL_OHLC_MISSING": 306
+    },
+    "2024": {
+      "ALL_OHLC_MISSING": 300
+    },
+    "2025": {
+      "ALL_OHLC_MISSING": 505
+    },
+    "2026": {
+      "ALL_OHLC_MISSING": 255
+    }
+  },
+  "status_by_market": {
+    "TWSE": {
+      "ALL_OHLC_MISSING": 4673
+    }
+  },
+  "match_row_count": 4673,
+  "key_status_count": 4673,
+  "table_schema_count": 2037,
+  "cache_audit_count": 2037,
+  "interpretation": {
+    "ALL_OHLC_MISSING": "官方原始 JSON 的命中列四個 OHLC 欄均為空白或 --；不得推算價格。",
+    "ALL_OHLC_PRESENT": "官方原始 JSON 含完整 OHLC；需回頭檢查 v2.67 欄位解析／映射。",
+    "PARTIAL_OHLC_MISSING": "官方原始 JSON 僅部分 OHLC 缺值；應保留為部分缺價，不得自行補值。",
+    "OFFICIAL_CODE_NOT_FOUND": "該日 JSON 找不到該代號；需檢查股票池、代號正規化或官方表格範圍。",
+    "MULTIPLE_OFFICIAL_ROWS": "同一官方日報出現多筆同代號列，需依表格名稱／市場類型釐清，不任意挑選。"
+  },
+  "no_price_repair_performed": true,
+  "drive_source_modified": false,
+  "full_master_uploaded": false,
+  "raw_full_json_uploaded": false,
+  "github_main_modified": false
+}
