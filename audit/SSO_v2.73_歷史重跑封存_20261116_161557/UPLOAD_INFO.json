@@ -1,0 +1,13 @@
+{
+  "repository": "CHLINX/sso",
+  "branch": "audit/sso-v273-archive-retry-20261116_162737-721a95",
+  "audit_path": "audit/SSO_v2.73_歷史重跑封存_20261116_161557/",
+  "zip_file": "SSO_v2.73_歷史重跑封存_20261116_161557.zip",
+  "zip_sha256": "528cfb8e084efb5b84e28bab6c5c63ba61dbf36832d0a0569ab759e609d92f46",
+  "main_base_sha": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "candidate_count": 848,
+  "signal_date": "2026-11-06",
+  "research_chain_rerun": false,
+  "source_files_modified": false,
+  "main_modified": false
+}
