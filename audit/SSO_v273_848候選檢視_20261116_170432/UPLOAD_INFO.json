@@ -1,0 +1,10 @@
+{
+  "repository": "CHLINX/sso",
+  "branch": "audit/sso-v273-848-review-20261116_170434-c53134",
+  "audit_folder": "audit/SSO_v273_848候選檢視_20261116_170432/",
+  "zip_file": "SSO_v273_848候選檢視_20261116_170432.zip",
+  "zip_sha256": "7d9777509da7937b97107283da2c9d01e27ae570dee982a5e8693033f0b10135",
+  "main_base_sha": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "main_modified": false,
+  "source_csv_modified": false
+}
