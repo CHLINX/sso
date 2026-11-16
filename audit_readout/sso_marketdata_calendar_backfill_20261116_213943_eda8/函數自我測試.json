@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "tests": [
+    {
+      "test": "日期與市場正規化",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "test": "近30日窗口邊界與2026休市日",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "test": "資料庫掃描僅納入窗口內日期",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "test": "官方開休市日曆分類",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "test": "payload解析／OHLC驗證／CSV round-trip",
+      "status": "PASS",
+      "error": ""
+    },
+    {
+      "test": "官方下載函數介面（TWSE + TPEx 假資料）",
+      "status": "PASS",
+      "error": ""
+    }
+  ]
+}
