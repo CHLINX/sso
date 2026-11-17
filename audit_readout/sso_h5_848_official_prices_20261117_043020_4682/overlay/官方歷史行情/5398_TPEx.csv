@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,5398,慕康生醫,14.25,16.1,14.25,15.85,176000,86,2651550,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-09,TPEX,5398,慕康生醫,16.45,16.8,15.85,16.4,63000,44,1032200,TPEX_afterTrading_otc_type_EW,0.55
+2026-11-10,TPEX,5398,慕康生醫,17.55,17.95,16.7,17.2,247000,120,4295050,TPEX_afterTrading_otc_type_EW,0.8
+2026-11-11,TPEX,5398,慕康生醫,17.4,18.7,17.25,17.9,205000,109,3711850,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,5398,慕康生醫,18.9,18.9,16.85,16.85,93000,62,1613250,TPEX_afterTrading_otc_type_EW,-1.05
+2026-11-13,TPEX,5398,慕康生醫,17.65,17.65,16.5,16.65,51000,32,855100,TPEX_afterTrading_otc_type_EW,-0.2

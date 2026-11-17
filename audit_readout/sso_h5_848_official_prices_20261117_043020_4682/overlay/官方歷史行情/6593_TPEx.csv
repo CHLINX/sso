@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6593,台灣銘板,30.0,31.25,29.85,30.9,46000,42,1407050,TPEX_afterTrading_otc_type_EW,-0.4
+2026-11-09,TPEX,6593,台灣銘板,31.5,31.5,31.4,31.4,6000,6,188600,TPEX_afterTrading_otc_type_EW,0.5
+2026-11-10,TPEX,6593,台灣銘板,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,
+2026-11-11,TPEX,6593,台灣銘板,30.3,31.85,30.3,31.85,29000,29,898950,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6593,台灣銘板,32.0,32.0,30.35,30.35,24000,20,741800,TPEX_afterTrading_otc_type_EW,-1.5
+2026-11-13,TPEX,6593,台灣銘板,30.35,30.65,30.35,30.4,17000,16,517900,TPEX_afterTrading_otc_type_EW,0.05

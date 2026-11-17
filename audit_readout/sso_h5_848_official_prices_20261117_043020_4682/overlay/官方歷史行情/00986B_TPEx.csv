@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00986B,FT金融債10+,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,
+2026-11-09,TPEX,00986B,FT金融債10+,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,
+2026-11-10,TPEX,00986B,FT金融債10+,9.74,9.76,9.74,9.76,27000,7,263200,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-11,TPEX,00986B,FT金融債10+,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00986B,FT金融債10+,9.73,9.74,9.73,9.74,5000,3,48670,TPEX_afterTrading_otc_type_EW,0.01
+2026-11-13,TPEX,00986B,FT金融債10+,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,

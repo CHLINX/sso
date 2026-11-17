@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6517,保勝光學,51.6,54.9,51.6,53.8,489000,366,25823500,TPEX_afterTrading_otc_type_EW,-3.5
+2026-11-09,TPEX,6517,保勝光學,55.0,58.8,55.0,57.1,268000,227,15368900,TPEX_afterTrading_otc_type_EW,3.3
+2026-11-10,TPEX,6517,保勝光學,58.0,59.9,55.4,55.9,473000,335,27198200,TPEX_afterTrading_otc_type_EW,-1.2
+2026-11-11,TPEX,6517,保勝光學,56.0,56.3,53.8,55.2,307000,228,16957500,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6517,保勝光學,55.5,60.7,55.5,56.6,872000,615,51301500,TPEX_afterTrading_otc_type_EW,1.4
+2026-11-13,TPEX,6517,保勝光學,57.9,59.7,57.2,57.6,398000,343,23297100,TPEX_afterTrading_otc_type_EW,1.0

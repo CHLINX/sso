@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6739,竹陞科技,656.0,699.0,656.0,684.0,298000,263,199650000,TPEX_afterTrading_otc_type_EW,-44.0
+2026-11-09,TPEX,6739,竹陞科技,735.0,748.0,707.0,740.0,112000,109,81775000,TPEX_afterTrading_otc_type_EW,56.0
+2026-11-10,TPEX,6739,竹陞科技,752.0,800.0,752.0,781.0,113000,111,88191000,TPEX_afterTrading_otc_type_EW,41.0
+2026-11-11,TPEX,6739,竹陞科技,789.0,794.0,770.0,787.0,84000,80,65504000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6739,竹陞科技,794.0,820.0,743.0,748.0,173000,167,136676000,TPEX_afterTrading_otc_type_EW,-39.0
+2026-11-13,TPEX,6739,竹陞科技,761.0,783.0,737.0,758.0,99000,93,75483000,TPEX_afterTrading_otc_type_EW,10.0

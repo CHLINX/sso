@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00734B,台新JPM新興債,15.86,15.86,15.47,15.64,32000,9,496280,TPEX_afterTrading_otc_type_EW,-0.11
+2026-11-09,TPEX,00734B,台新JPM新興債,15.6,15.64,15.6,15.64,74000,4,1155080,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-10,TPEX,00734B,台新JPM新興債,15.83,15.83,15.83,15.83,13000,1,205790,TPEX_afterTrading_otc_type_EW,0.19
+2026-11-11,TPEX,00734B,台新JPM新興債,15.8,15.8,15.54,15.54,240000,8,3733140,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00734B,台新JPM新興債,15.8,15.8,15.62,15.64,104000,5,1624700,TPEX_afterTrading_otc_type_EW,0.1
+2026-11-13,TPEX,00734B,台新JPM新興債,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,

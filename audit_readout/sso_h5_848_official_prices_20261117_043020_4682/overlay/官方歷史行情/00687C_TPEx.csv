@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00687C,國泰20年美債+櫃U,9.13,9.14,9.11,9.14,32800,6,299614,TPEX_afterTrading_otc_type_EW,-0.03
+2026-11-09,TPEX,00687C,國泰20年美債+櫃U,9.1,9.12,9.09,9.12,31000,7,282370,TPEX_afterTrading_otc_type_EW,-0.02
+2026-11-10,TPEX,00687C,國泰20年美債+櫃U,9.13,9.13,9.13,9.13,25000,2,228250,TPEX_afterTrading_otc_type_EW,0.01
+2026-11-11,TPEX,00687C,國泰20年美債+櫃U,9.0,9.01,9.0,9.01,38000,6,342379,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00687C,國泰20年美債+櫃U,9.06,9.06,9.06,9.06,25000,2,226500,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-13,TPEX,00687C,國泰20年美債+櫃U,8.9,8.9,8.89,8.89,25100,3,223140,TPEX_afterTrading_otc_type_EW,-0.17

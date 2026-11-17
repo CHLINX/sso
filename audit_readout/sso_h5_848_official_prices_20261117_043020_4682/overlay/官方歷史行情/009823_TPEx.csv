@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,009823,群益S&P500,10.3,10.36,10.2,10.3,5007000,1628,51676340,TPEX_afterTrading_otc_type_EW,-0.44
+2026-11-09,TPEX,009823,群益S&P500,10.33,10.39,10.29,10.38,5308000,774,54904350,TPEX_afterTrading_otc_type_EW,0.08
+2026-11-10,TPEX,009823,群益S&P500,10.56,10.6,10.54,10.6,2987000,364,31584990,TPEX_afterTrading_otc_type_EW,0.22
+2026-11-11,TPEX,009823,群益S&P500,10.59,10.6,10.55,10.58,3213000,433,33978800,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,009823,群益S&P500,10.6,10.65,10.6,10.62,3650000,423,38790290,TPEX_afterTrading_otc_type_EW,0.04
+2026-11-13,TPEX,009823,群益S&P500,10.66,10.67,10.62,10.63,2127000,409,22640590,TPEX_afterTrading_otc_type_EW,0.01

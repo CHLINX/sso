@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,7810,捷創科技,170.5,186.5,170.5,181.5,88000,84,15691000,TPEX_afterTrading_otc_type_EW,-7.5
+2026-11-09,TPEX,7810,捷創科技,189.0,198.0,189.0,197.5,36000,34,6989500,TPEX_afterTrading_otc_type_EW,16.0
+2026-11-10,TPEX,7810,捷創科技,206.0,207.0,195.5,197.0,164000,114,33121500,TPEX_afterTrading_otc_type_EW,-0.5
+2026-11-11,TPEX,7810,捷創科技,189.0,190.0,182.0,184.0,112000,106,20677500,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,7810,捷創科技,184.0,190.5,182.0,182.0,59000,53,10983000,TPEX_afterTrading_otc_type_EW,-2.0
+2026-11-13,TPEX,7810,捷創科技,188.0,196.0,186.0,188.0,37000,36,7012500,TPEX_afterTrading_otc_type_EW,6.0

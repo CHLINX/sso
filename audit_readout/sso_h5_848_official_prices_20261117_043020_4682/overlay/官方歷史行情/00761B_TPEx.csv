@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00761B,國泰A級公司債,34.71,34.71,34.05,34.18,769000,68,26275240,TPEX_afterTrading_otc_type_EW,-0.14
+2026-11-09,TPEX,00761B,國泰A級公司債,34.15,34.15,33.97,34.07,627000,379,21331240,TPEX_afterTrading_otc_type_EW,-0.11
+2026-11-10,TPEX,00761B,國泰A級公司債,34.12,34.32,34.11,34.2,165000,20,5649550,TPEX_afterTrading_otc_type_EW,0.13
+2026-11-11,TPEX,00761B,國泰A級公司債,34.0,34.0,33.81,33.83,139000,26,4702450,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00761B,國泰A級公司債,33.99,34.06,33.9,34.02,576000,49,19582170,TPEX_afterTrading_otc_type_EW,0.19
+2026-11-13,TPEX,00761B,國泰A級公司債,33.52,33.57,33.47,33.51,323000,61,10822510,TPEX_afterTrading_otc_type_EW,-0.51

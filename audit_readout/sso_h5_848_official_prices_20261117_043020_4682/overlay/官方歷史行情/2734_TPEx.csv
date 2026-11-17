@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,2734,易飛網,13.25,13.45,12.5,13.35,103000,62,1348950,TPEX_afterTrading_otc_type_EW,-0.2
+2026-11-09,TPEX,2734,易飛網,13.35,13.5,13.35,13.35,22000,17,295250,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-10,TPEX,2734,易飛網,13.45,13.5,13.3,13.45,32000,24,428850,TPEX_afterTrading_otc_type_EW,0.1
+2026-11-11,TPEX,2734,易飛網,13.45,13.95,13.3,13.95,119000,56,1618550,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,2734,易飛網,13.95,14.0,13.8,14.0,61000,29,850200,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-13,TPEX,2734,易飛網,13.95,14.2,13.95,14.2,61000,39,860700,TPEX_afterTrading_otc_type_EW,0.2

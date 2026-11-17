@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00857B,永豐20年美公債,23.29,23.32,23.15,23.23,2675000,417,62143190,TPEX_afterTrading_otc_type_EW,-0.08
+2026-11-09,TPEX,00857B,永豐20年美公債,23.03,23.12,23.02,23.09,4593000,183,105924520,TPEX_afterTrading_otc_type_EW,-0.14
+2026-11-10,TPEX,00857B,永豐20年美公債,23.07,23.18,23.07,23.13,1331000,135,30804250,TPEX_afterTrading_otc_type_EW,0.04
+2026-11-11,TPEX,00857B,永豐20年美公債,22.94,22.94,22.81,22.82,402000,91,9187430,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00857B,永豐20年美公債,22.91,23.02,22.91,22.99,1514000,119,34761060,TPEX_afterTrading_otc_type_EW,0.17
+2026-11-13,TPEX,00857B,永豐20年美公債,22.62,22.62,22.53,22.55,311000,136,7015600,TPEX_afterTrading_otc_type_EW,-0.44

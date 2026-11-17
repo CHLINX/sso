@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,4116,明基醫,39.5,41.0,39.5,40.35,118000,103,4752550,TPEX_afterTrading_otc_type_EW,-1.55
+2026-11-09,TPEX,4116,明基醫,42.0,42.0,40.35,40.4,270000,156,11059300,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-10,TPEX,4116,明基醫,41.0,41.1,40.4,40.95,147000,100,5984550,TPEX_afterTrading_otc_type_EW,0.55
+2026-11-11,TPEX,4116,明基醫,42.0,42.25,40.65,40.7,108000,81,4435650,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,4116,明基醫,40.9,41.3,40.5,40.8,98000,64,4015550,TPEX_afterTrading_otc_type_EW,0.1
+2026-11-13,TPEX,4116,明基醫,41.0,41.95,40.95,41.25,97000,79,3999900,TPEX_afterTrading_otc_type_EW,0.45

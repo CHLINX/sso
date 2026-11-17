@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6859,伯特光,99.0,99.3,95.0,99.3,43000,38,4162400,TPEX_afterTrading_otc_type_EW,-1.7
+2026-11-09,TPEX,6859,伯特光,102.5,106.0,102.0,104.0,29000,23,2994000,TPEX_afterTrading_otc_type_EW,4.7
+2026-11-10,TPEX,6859,伯特光,104.0,104.0,100.0,103.0,25000,21,2543000,TPEX_afterTrading_otc_type_EW,-1.0
+2026-11-11,TPEX,6859,伯特光,102.0,106.0,102.0,106.0,15000,14,1579000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6859,伯特光,103.5,109.0,103.5,106.0,24000,21,2551000,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-13,TPEX,6859,伯特光,108.0,111.0,107.0,107.0,36000,34,3910000,TPEX_afterTrading_otc_type_EW,1.0

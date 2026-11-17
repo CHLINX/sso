@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,4754,國碳科,36.45,36.45,35.9,36.1,47000,31,1693800,TPEX_afterTrading_otc_type_EW,-0.5
+2026-11-09,TPEX,4754,國碳科,36.25,37.55,36.25,37.55,65000,38,2370550,TPEX_afterTrading_otc_type_EW,1.45
+2026-11-10,TPEX,4754,國碳科,37.55,37.6,36.8,37.55,44000,29,1646000,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-11,TPEX,4754,國碳科,38.05,39.0,38.05,38.8,150000,70,5794500,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,4754,國碳科,39.0,40.05,38.9,39.25,141000,109,5566950,TPEX_afterTrading_otc_type_EW,0.45
+2026-11-13,TPEX,4754,國碳科,40.0,40.0,39.1,39.4,47000,36,1847800,TPEX_afterTrading_otc_type_EW,0.15

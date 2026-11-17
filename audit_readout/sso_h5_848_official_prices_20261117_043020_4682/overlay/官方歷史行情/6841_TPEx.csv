@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6841,長佳智能,46.3,49.0,46.3,48.5,299000,211,14315800,TPEX_afterTrading_otc_type_EW,-2.6
+2026-11-09,TPEX,6841,長佳智能,48.5,48.95,47.35,48.1,146000,118,7081000,TPEX_afterTrading_otc_type_EW,-0.4
+2026-11-10,TPEX,6841,長佳智能,48.3,49.2,47.75,48.15,124000,98,6004400,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-11,TPEX,6841,長佳智能,48.15,48.85,47.6,48.8,112000,80,5404200,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6841,長佳智能,48.85,49.35,48.25,48.25,118000,97,5742900,TPEX_afterTrading_otc_type_EW,-0.55
+2026-11-13,TPEX,6841,長佳智能,48.65,50.4,48.65,50.0,120000,86,5934400,TPEX_afterTrading_otc_type_EW,1.75

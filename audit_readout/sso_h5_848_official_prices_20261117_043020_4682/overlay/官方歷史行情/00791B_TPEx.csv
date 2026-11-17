@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00791B,復華信用債1-5,58.05,58.05,57.95,57.95,111000,4,6438450,TPEX_afterTrading_otc_type_EW,-0.1
+2026-11-09,TPEX,00791B,復華信用債1-5,58.0,58.0,57.85,57.85,101000,3,5843000,TPEX_afterTrading_otc_type_EW,-0.1
+2026-11-10,TPEX,00791B,復華信用債1-5,58.0,58.0,58.0,58.0,100000,2,5800000,TPEX_afterTrading_otc_type_EW,0.15
+2026-11-11,TPEX,00791B,復華信用債1-5,57.75,57.75,57.7,57.7,120000,4,6924500,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00791B,復華信用債1-5,57.85,57.95,57.85,57.95,111000,4,6426450,TPEX_afterTrading_otc_type_EW,0.25
+2026-11-13,TPEX,00791B,復華信用債1-5,57.75,57.75,57.75,57.75,100000,3,5775000,TPEX_afterTrading_otc_type_EW,-0.2

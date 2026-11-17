@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6016,康和證,18.1,19.2,18.0,18.8,4839000,1972,89752950,TPEX_afterTrading_otc_type_EW,-0.95
+2026-11-09,TPEX,6016,康和證,18.9,19.8,18.7,19.45,2993000,1333,57633800,TPEX_afterTrading_otc_type_EW,0.65
+2026-11-10,TPEX,6016,康和證,19.8,20.2,19.4,19.4,2859000,1191,56494250,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-11,TPEX,6016,康和證,19.5,19.65,19.1,19.55,1869000,783,36138400,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6016,康和證,19.8,20.25,19.4,19.4,2647000,1127,52603700,TPEX_afterTrading_otc_type_EW,-0.15
+2026-11-13,TPEX,6016,康和證,19.55,20.3,19.55,20.15,2271000,854,45468600,TPEX_afterTrading_otc_type_EW,0.75

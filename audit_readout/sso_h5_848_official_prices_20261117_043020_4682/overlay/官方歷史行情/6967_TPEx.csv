@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6967,汎瑋材料,61.0,62.0,58.7,61.0,116000,101,7017400,TPEX_afterTrading_otc_type_EW,-3.5
+2026-11-09,TPEX,6967,汎瑋材料,64.8,67.1,64.0,65.2,93000,82,6132400,TPEX_afterTrading_otc_type_EW,4.2
+2026-11-10,TPEX,6967,汎瑋材料,65.0,67.4,64.6,64.6,42000,38,2746300,TPEX_afterTrading_otc_type_EW,-0.6
+2026-11-11,TPEX,6967,汎瑋材料,65.0,65.4,63.0,65.4,35000,28,2256900,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6967,汎瑋材料,64.7,65.4,63.5,63.6,71000,60,4559200,TPEX_afterTrading_otc_type_EW,-1.8
+2026-11-13,TPEX,6967,汎瑋材料,63.7,65.2,63.6,63.8,27000,22,1742900,TPEX_afterTrading_otc_type_EW,0.2

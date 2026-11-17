@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00720B,元大投資級公司債,32.51,32.52,32.26,32.4,17511000,2453,566898780,TPEX_afterTrading_otc_type_EW,-0.17
+2026-11-09,TPEX,00720B,元大投資級公司債,32.15,32.32,32.15,32.29,12786000,1082,411883700,TPEX_afterTrading_otc_type_EW,-0.11
+2026-11-10,TPEX,00720B,元大投資級公司債,32.31,32.5,32.31,32.42,9772000,842,316907460,TPEX_afterTrading_otc_type_EW,0.13
+2026-11-11,TPEX,00720B,元大投資級公司債,32.21,32.21,32.02,32.03,5160000,812,165525360,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00720B,元大投資級公司債,32.09,32.32,32.09,32.25,5564000,731,179413640,TPEX_afterTrading_otc_type_EW,0.22
+2026-11-13,TPEX,00720B,元大投資級公司債,31.85,31.85,31.77,31.79,4262000,894,135527920,TPEX_afterTrading_otc_type_EW,-0.46

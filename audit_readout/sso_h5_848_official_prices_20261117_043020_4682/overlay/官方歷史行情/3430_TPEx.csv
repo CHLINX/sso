@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,3430,奇鈦科,68.4,73.1,68.4,72.7,265000,222,18672500,TPEX_afterTrading_otc_type_EW,-3.2
+2026-11-09,TPEX,3430,奇鈦科,72.7,79.1,72.7,78.0,118000,108,9189500,TPEX_afterTrading_otc_type_EW,5.3
+2026-11-10,TPEX,3430,奇鈦科,78.7,81.2,77.0,78.7,165000,144,13082300,TPEX_afterTrading_otc_type_EW,0.7
+2026-11-11,TPEX,3430,奇鈦科,82.0,84.7,82.0,84.7,196000,168,16347300,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,3430,奇鈦科,85.7,85.7,80.5,80.5,164000,148,13643600,TPEX_afterTrading_otc_type_EW,-4.2
+2026-11-13,TPEX,3430,奇鈦科,81.7,84.7,81.6,83.9,200000,162,16712600,TPEX_afterTrading_otc_type_EW,3.4

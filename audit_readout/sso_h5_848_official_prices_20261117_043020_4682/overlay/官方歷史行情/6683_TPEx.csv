@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6683,雍智科技,771.0,799.0,771.0,782.0,708000,653,552036000,TPEX_afterTrading_otc_type_EW,-74.0
+2026-11-09,TPEX,6683,雍智科技,787.0,860.0,778.0,860.0,466000,446,386048000,TPEX_afterTrading_otc_type_EW,78.0
+2026-11-10,TPEX,6683,雍智科技,876.0,946.0,876.0,932.0,1019000,715,949616000,TPEX_afterTrading_otc_type_EW,72.0
+2026-11-11,TPEX,6683,雍智科技,932.0,979.0,914.0,971.0,712000,681,680206000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6683,雍智科技,989.0,1035.0,954.0,955.0,964000,921,960741000,TPEX_afterTrading_otc_type_EW,-16.0
+2026-11-13,TPEX,6683,雍智科技,999.0,1035.0,945.0,965.0,707000,689,698785000,TPEX_afterTrading_otc_type_EW,10.0

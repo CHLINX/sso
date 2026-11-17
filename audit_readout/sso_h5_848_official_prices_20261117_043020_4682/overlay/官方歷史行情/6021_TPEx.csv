@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6021,美好證,45.55,51.9,45.55,50.6,322000,215,15479300,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-09,TPEX,6021,美好證,52.5,52.8,50.1,51.3,184000,138,9496700,TPEX_afterTrading_otc_type_EW,0.7
+2026-11-10,TPEX,6021,美好證,52.0,53.1,50.6,50.7,106000,93,5484400,TPEX_afterTrading_otc_type_EW,-0.6
+2026-11-11,TPEX,6021,美好證,50.3,51.4,50.0,51.4,96000,72,4834600,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6021,美好證,51.4,52.6,50.2,50.2,142000,89,7340900,TPEX_afterTrading_otc_type_EW,-1.2
+2026-11-13,TPEX,6021,美好證,50.8,52.4,50.8,51.6,67000,61,3465900,TPEX_afterTrading_otc_type_EW,1.4

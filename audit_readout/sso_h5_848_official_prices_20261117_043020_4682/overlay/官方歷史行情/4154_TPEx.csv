@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,4154,樂威科-KY,10.15,10.5,10.15,10.5,23000,11,234700,TPEX_afterTrading_otc_type_EW,-0.75
+2026-11-09,TPEX,4154,樂威科-KY,10.85,11.55,10.85,11.55,7000,7,79800,TPEX_afterTrading_otc_type_EW,1.05
+2026-11-10,TPEX,4154,樂威科-KY,11.2,11.2,10.4,10.95,77000,39,807450,TPEX_afterTrading_otc_type_EW,-0.6
+2026-11-11,TPEX,4154,樂威科-KY,10.3,10.8,10.3,10.75,17000,9,177750,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,4154,樂威科-KY,11.1,11.1,10.6,10.9,8000,7,86950,TPEX_afterTrading_otc_type_EW,0.15
+2026-11-13,TPEX,4154,樂威科-KY,11.15,11.15,11.1,11.1,2000,2,22250,TPEX_afterTrading_otc_type_EW,0.2

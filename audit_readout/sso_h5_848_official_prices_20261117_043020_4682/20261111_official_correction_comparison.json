@@ -1,0 +1,18 @@
+{
+  "TWSE": {
+    "status": "PASS",
+    "rows": 1390,
+    "natural_key_equal": true,
+    "ohlcv_trade_fields_equal": true,
+    "price_change_differences": 0,
+    "selected_source": "v1.5.9 sealed correction layer"
+  },
+  "TPEX": {
+    "status": "PASS",
+    "rows": 1020,
+    "natural_key_equal": true,
+    "ohlcv_trade_fields_equal": true,
+    "price_change_differences": 0,
+    "selected_source": "v1.5.9 sealed correction layer"
+  }
+}

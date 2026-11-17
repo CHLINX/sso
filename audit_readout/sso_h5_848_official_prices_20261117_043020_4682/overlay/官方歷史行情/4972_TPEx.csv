@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,4972,湯石照明,15.0,15.0,14.05,14.45,21000,18,306000,TPEX_afterTrading_otc_type_EW,-0.6
+2026-11-09,TPEX,4972,湯石照明,15.8,15.8,14.1,14.3,113000,71,1656700,TPEX_afterTrading_otc_type_EW,-0.15
+2026-11-10,TPEX,4972,湯石照明,14.25,14.25,13.9,13.9,44000,28,617100,TPEX_afterTrading_otc_type_EW,-0.4
+2026-11-11,TPEX,4972,湯石照明,13.9,13.95,13.85,13.95,21000,12,292000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,4972,湯石照明,13.95,14.05,13.95,14.05,12000,11,167900,TPEX_afterTrading_otc_type_EW,0.1
+2026-11-13,TPEX,4972,湯石照明,13.8,14.05,13.8,13.95,25000,14,346600,TPEX_afterTrading_otc_type_EW,-0.1

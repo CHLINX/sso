@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00722B,群益投資級電信債,34.09,34.4,34.09,34.28,4460000,331,152678020,TPEX_afterTrading_otc_type_EW,-0.1
+2026-11-09,TPEX,00722B,群益投資級電信債,34.1,34.2,34.04,34.19,2778000,136,94827000,TPEX_afterTrading_otc_type_EW,-0.09
+2026-11-10,TPEX,00722B,群益投資級電信債,34.19,34.4,34.19,34.34,3448000,176,118420440,TPEX_afterTrading_otc_type_EW,0.15
+2026-11-11,TPEX,00722B,群益投資級電信債,34.01,34.01,33.85,33.87,4826000,178,163490160,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00722B,群益投資級電信債,33.87,34.16,33.87,34.14,2604000,133,88756530,TPEX_afterTrading_otc_type_EW,0.27
+2026-11-13,TPEX,00722B,群益投資級電信債,33.85,33.85,33.58,33.59,9248000,304,310729130,TPEX_afterTrading_otc_type_EW,-0.55

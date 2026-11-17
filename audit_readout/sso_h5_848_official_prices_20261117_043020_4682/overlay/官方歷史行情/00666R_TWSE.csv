@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TWSE,00666R,富邦恒生國企反1,9.23,9.23,9.12,9.19,46000,7,423280,TWSE_MI_INDEX,0.03
+2026-11-09,TWSE,00666R,富邦恒生國企反1,9.18,9.18,9.16,9.16,18000,2,164900,TWSE_MI_INDEX,0.03
+2026-11-10,TWSE,00666R,富邦恒生國企反1,,,,,0,0,0,TWSE_MI_INDEX,0.0
+2026-11-11,TWSE,00666R,富邦恒生國企反1,9.3,9.3,9.26,9.27,15000,3,139180,TWSE_MI_INDEX,0.0
+2026-11-12,TWSE,00666R,富邦恒生國企反1,9.45,9.45,9.41,9.41,24000,5,226260,TWSE_MI_INDEX,0.14
+2026-11-13,TWSE,00666R,富邦恒生國企反1,9.51,9.57,9.51,9.57,3097,4,29520,TWSE_MI_INDEX,0.16

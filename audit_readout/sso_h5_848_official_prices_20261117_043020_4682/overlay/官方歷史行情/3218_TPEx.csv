@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,3218,大學光,121.5,126.5,115.5,126.5,399000,323,48223000,TPEX_afterTrading_otc_type_EW,2.0
+2026-11-09,TPEX,3218,大學光,126.5,127.5,124.0,124.5,206000,178,25771500,TPEX_afterTrading_otc_type_EW,-2.0
+2026-11-10,TPEX,3218,大學光,126.0,127.0,125.5,126.0,87000,73,10978500,TPEX_afterTrading_otc_type_EW,1.5
+2026-11-11,TPEX,3218,大學光,126.0,126.0,124.5,126.0,100000,79,12523000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,3218,大學光,126.5,127.0,125.0,125.5,107000,78,13503500,TPEX_afterTrading_otc_type_EW,-0.5
+2026-11-13,TPEX,3218,大學光,126.0,128.0,126.0,127.0,106000,85,13451000,TPEX_afterTrading_otc_type_EW,1.5

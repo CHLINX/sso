@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-09,TPEX,4207,環泰,19.6,19.65,19.4,19.6,150000,46,2928050,TPEX_afterTrading_otc_type_EW,-0.15
+2026-11-10,TPEX,4207,環泰,19.65,19.65,19.5,19.55,42000,19,823900,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-11,TPEX,4207,環泰,19.5,19.65,19.45,19.65,67000,45,1308700,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,4207,環泰,19.5,19.5,19.4,19.5,63000,29,1225350,TPEX_afterTrading_otc_type_EW,-0.15
+2026-11-13,TPEX,4207,環泰,19.5,19.6,19.3,19.5,171000,51,3316000,TPEX_afterTrading_otc_type_EW,0.0

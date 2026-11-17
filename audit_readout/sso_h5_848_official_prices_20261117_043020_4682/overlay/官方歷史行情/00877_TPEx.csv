@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00877,復華中國5G,24.2,24.61,23.85,24.1,4374000,1038,105847840,TPEX_afterTrading_otc_type_EW,-1.22
+2026-11-09,TPEX,00877,復華中國5G,24.17,25.0,24.1,24.65,2361000,576,58025010,TPEX_afterTrading_otc_type_EW,0.55
+2026-11-10,TPEX,00877,復華中國5G,25.1,25.45,24.85,25.28,2426000,549,60961650,TPEX_afterTrading_otc_type_EW,0.63
+2026-11-11,TPEX,00877,復華中國5G,25.32,26.36,25.06,26.28,2678000,619,69186210,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00877,復華中國5G,26.6,27.59,26.52,26.56,3982000,1033,107765030,TPEX_afterTrading_otc_type_EW,0.28
+2026-11-13,TPEX,00877,復華中國5G,26.56,26.71,25.03,25.03,5432000,1341,139934270,TPEX_afterTrading_otc_type_EW,-1.53

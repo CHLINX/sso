@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00992B,街口優息非投債,10.06,10.11,10.06,10.11,705000,26,7103950,TPEX_afterTrading_otc_type_EW,-0.06
+2026-11-09,TPEX,00992B,街口優息非投債,10.09,10.13,10.09,10.12,325000,12,3286840,TPEX_afterTrading_otc_type_EW,0.01
+2026-11-10,TPEX,00992B,街口優息非投債,10.16,10.17,10.16,10.17,219000,10,2226040,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-11,TPEX,00992B,街口優息非投債,10.12,10.19,10.12,10.15,348000,23,3539770,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00992B,街口優息非投債,10.15,10.16,10.15,10.16,101000,3,1026150,TPEX_afterTrading_otc_type_EW,0.01
+2026-11-13,TPEX,00992B,街口優息非投債,10.16,10.16,10.15,10.15,101000,3,1025160,TPEX_afterTrading_otc_type_EW,-0.01

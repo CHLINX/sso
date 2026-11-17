@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00860B,群益1-5Y投資級債,39.13,39.24,39.13,39.24,93000,10,3645670,TPEX_afterTrading_otc_type_EW,-0.11
+2026-11-09,TPEX,00860B,群益1-5Y投資級債,39.2,39.2,39.19,39.19,100000,4,3919500,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-10,TPEX,00860B,群益1-5Y投資級債,39.22,39.26,39.21,39.21,114000,6,4474540,TPEX_afterTrading_otc_type_EW,0.02
+2026-11-11,TPEX,00860B,群益1-5Y投資級債,39.05,39.22,39.05,39.13,146000,11,5716810,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00860B,群益1-5Y投資級債,39.22,39.25,39.2,39.25,141000,11,5530800,TPEX_afterTrading_otc_type_EW,0.12
+2026-11-13,TPEX,00860B,群益1-5Y投資級債,39.1,39.12,39.1,39.12,110000,5,4302100,TPEX_afterTrading_otc_type_EW,-0.13

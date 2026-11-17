@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,5014,建錩,8.8,9.2,8.75,9.03,296000,101,2657180,TPEX_afterTrading_otc_type_EW,-0.4
+2026-11-09,TPEX,5014,建錩,9.12,9.15,9.03,9.1,264000,55,2402490,TPEX_afterTrading_otc_type_EW,0.07
+2026-11-10,TPEX,5014,建錩,9.4,9.4,9.11,9.11,170000,36,1555890,TPEX_afterTrading_otc_type_EW,0.01
+2026-11-11,TPEX,5014,建錩,9.85,9.85,9.2,9.38,34000,21,327560,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,5014,建錩,9.38,9.5,9.25,9.29,29000,17,270660,TPEX_afterTrading_otc_type_EW,-0.09
+2026-11-13,TPEX,5014,建錩,9.78,9.78,9.02,9.35,137000,59,1282130,TPEX_afterTrading_otc_type_EW,0.06

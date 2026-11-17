@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00948B,中信優息投資級債,9.33,9.37,9.28,9.32,18265000,1232,170129860,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-09,TPEX,00948B,中信優息投資級債,9.24,9.3,9.24,9.29,8023000,339,74445110,TPEX_afterTrading_otc_type_EW,-0.03
+2026-11-10,TPEX,00948B,中信優息投資級債,9.3,9.36,9.3,9.33,4606000,842,43007180,TPEX_afterTrading_otc_type_EW,0.04
+2026-11-11,TPEX,00948B,中信優息投資級債,9.25,9.27,9.22,9.23,4339000,252,40071080,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00948B,中信優息投資級債,9.23,9.3,9.23,9.29,9986000,304,92692510,TPEX_afterTrading_otc_type_EW,0.06
+2026-11-13,TPEX,00948B,中信優息投資級債,9.17,9.18,9.15,9.16,2364000,270,21654050,TPEX_afterTrading_otc_type_EW,-0.13

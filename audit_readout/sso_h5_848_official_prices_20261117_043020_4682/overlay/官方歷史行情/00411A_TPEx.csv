@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00411A,主動統一前沿科技,8.11,8.55,8.11,8.38,10917000,1540,91722620,TPEX_afterTrading_otc_type_EW,-0.53
+2026-11-09,TPEX,00411A,主動統一前沿科技,8.37,8.71,8.37,8.7,4014000,764,34528250,TPEX_afterTrading_otc_type_EW,0.32
+2026-11-10,TPEX,00411A,主動統一前沿科技,8.97,9.13,8.97,9.12,8708000,572,79155390,TPEX_afterTrading_otc_type_EW,0.42
+2026-11-11,TPEX,00411A,主動統一前沿科技,9.13,9.28,9.12,9.28,6832000,468,62955790,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00411A,主動統一前沿科技,9.19,9.33,9.15,9.15,8652000,693,79992080,TPEX_afterTrading_otc_type_EW,-0.13
+2026-11-13,TPEX,00411A,主動統一前沿科技,9.35,9.46,9.32,9.34,8497000,655,80037660,TPEX_afterTrading_otc_type_EW,0.19

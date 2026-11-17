@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,5348,正能量智能,16.85,16.85,15.7,16.75,5000,5,81200,TPEX_afterTrading_otc_type_EW,-0.35
+2026-11-09,TPEX,5348,正能量智能,16.7,16.7,16.7,16.7,1000,1,16700,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-10,TPEX,5348,正能量智能,17.25,17.25,16.2,16.2,9000,9,149100,TPEX_afterTrading_otc_type_EW,-0.5
+2026-11-11,TPEX,5348,正能量智能,16.6,16.6,16.6,16.6,1000,1,16600,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,5348,正能量智能,17.15,17.15,17.15,17.15,1000,1,17150,TPEX_afterTrading_otc_type_EW,0.55
+2026-11-13,TPEX,5348,正能量智能,16.8,16.9,16.05,16.9,6000,6,99650,TPEX_afterTrading_otc_type_EW,-0.25

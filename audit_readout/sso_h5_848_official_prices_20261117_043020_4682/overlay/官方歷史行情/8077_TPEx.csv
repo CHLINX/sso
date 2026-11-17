@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,8077,洛碁,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,
+2026-11-09,TPEX,8077,洛碁,40.1,40.4,40.0,40.4,4000,4,160600,TPEX_afterTrading_otc_type_EW,0.8
+2026-11-10,TPEX,8077,洛碁,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,
+2026-11-11,TPEX,8077,洛碁,40.0,40.4,40.0,40.0,7000,7,280800,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,8077,洛碁,40.0,40.0,40.0,40.0,4000,4,160000,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-13,TPEX,8077,洛碁,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,

@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00845B,富邦新興投等債,33.34,33.47,33.34,33.43,103000,5,3443170,TPEX_afterTrading_otc_type_EW,-0.04
+2026-11-09,TPEX,00845B,富邦新興投等債,33.3,33.36,33.3,33.35,165000,13,5500180,TPEX_afterTrading_otc_type_EW,-0.08
+2026-11-10,TPEX,00845B,富邦新興投等債,33.14,33.45,33.14,33.45,101000,3,3378140,TPEX_afterTrading_otc_type_EW,0.1
+2026-11-11,TPEX,00845B,富邦新興投等債,33.3,33.3,33.23,33.23,170000,4,5653500,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00845B,富邦新興投等債,33.38,33.4,33.36,33.4,103000,30,3439850,TPEX_afterTrading_otc_type_EW,0.17
+2026-11-13,TPEX,00845B,富邦新興投等債,32.98,33.05,32.96,32.97,351000,13,11579380,TPEX_afterTrading_otc_type_EW,-0.43

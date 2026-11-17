@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6733,博晟生醫,20.9,21.0,20.15,21.0,128000,64,2606050,TPEX_afterTrading_otc_type_EW,-0.5
+2026-11-09,TPEX,6733,博晟生醫,21.0,21.5,20.7,21.0,86000,45,1810850,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-10,TPEX,6733,博晟生醫,21.0,21.1,20.7,20.85,83000,58,1728050,TPEX_afterTrading_otc_type_EW,-0.15
+2026-11-11,TPEX,6733,博晟生醫,20.6,21.0,20.4,21.0,56000,37,1152100,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6733,博晟生醫,20.6,20.95,20.5,20.55,69000,44,1423150,TPEX_afterTrading_otc_type_EW,-0.45
+2026-11-13,TPEX,6733,博晟生醫,20.35,20.65,20.2,20.4,97000,48,1971050,TPEX_afterTrading_otc_type_EW,-0.15

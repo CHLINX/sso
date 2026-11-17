@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6547,高端疫苗,44.25,47.35,44.25,46.9,3071000,1807,140365700,TPEX_afterTrading_otc_type_EW,-0.65
+2026-11-09,TPEX,6547,高端疫苗,47.4,49.2,47.0,48.7,1814000,1007,88280800,TPEX_afterTrading_otc_type_EW,1.8
+2026-11-10,TPEX,6547,高端疫苗,48.7,51.8,48.45,51.5,2952000,1740,149097500,TPEX_afterTrading_otc_type_EW,2.8
+2026-11-11,TPEX,6547,高端疫苗,48.2,48.2,46.35,46.35,6367000,3327,296742700,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6547,高端疫苗,45.65,47.9,45.65,46.8,2826000,1775,132549100,TPEX_afterTrading_otc_type_EW,0.45
+2026-11-13,TPEX,6547,高端疫苗,46.7,48.1,46.55,46.85,1832000,970,86650000,TPEX_afterTrading_otc_type_EW,0.05

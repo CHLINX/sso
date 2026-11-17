@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00759B,復華製藥債,54.8,54.8,54.65,54.65,119000,7,6504450,TPEX_afterTrading_otc_type_EW,-0.5
+2026-11-09,TPEX,00759B,復華製藥債,54.45,54.45,54.45,54.45,100000,2,5445000,TPEX_afterTrading_otc_type_EW,-0.2
+2026-11-10,TPEX,00759B,復華製藥債,54.85,54.85,54.85,54.85,100000,2,5485000,TPEX_afterTrading_otc_type_EW,0.4
+2026-11-11,TPEX,00759B,復華製藥債,54.1,54.1,54.1,54.1,100000,2,5410000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00759B,復華製藥債,54.45,54.45,54.45,54.45,100000,2,5445000,TPEX_afterTrading_otc_type_EW,0.35
+2026-11-13,TPEX,00759B,復華製藥債,53.55,53.55,53.55,53.55,100000,2,5355000,TPEX_afterTrading_otc_type_EW,-0.9

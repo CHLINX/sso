@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,4171,瑞基,14.45,15.2,14.35,15.0,76000,58,1135800,TPEX_afterTrading_otc_type_EW,-0.7
+2026-11-09,TPEX,4171,瑞基,15.2,15.55,15.15,15.15,65000,39,997050,TPEX_afterTrading_otc_type_EW,0.15
+2026-11-10,TPEX,4171,瑞基,15.1,15.55,15.0,15.45,78000,55,1184250,TPEX_afterTrading_otc_type_EW,0.3
+2026-11-11,TPEX,4171,瑞基,15.25,15.6,15.25,15.5,24000,21,369800,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,4171,瑞基,15.6,15.6,15.2,15.2,31000,21,476100,TPEX_afterTrading_otc_type_EW,-0.3
+2026-11-13,TPEX,4171,瑞基,15.05,15.25,15.0,15.2,131000,48,1975950,TPEX_afterTrading_otc_type_EW,0.0

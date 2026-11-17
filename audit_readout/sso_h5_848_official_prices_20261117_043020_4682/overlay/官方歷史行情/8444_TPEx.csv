@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,8444,綠河-KY,2.83,2.9,2.83,2.89,26000,13,74140,TPEX_afterTrading_otc_type_EW,-0.25
+2026-11-09,TPEX,8444,綠河-KY,3.12,3.12,3.03,3.03,3000,2,9270,TPEX_afterTrading_otc_type_EW,0.14
+2026-11-10,TPEX,8444,綠河-KY,3.0,3.25,3.0,3.25,2000,2,6250,TPEX_afterTrading_otc_type_EW,0.22
+2026-11-11,TPEX,8444,綠河-KY,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,8444,綠河-KY,2.93,2.93,2.93,2.93,45000,20,131850,TPEX_afterTrading_otc_type_EW,-0.32
+2026-11-13,TPEX,8444,綠河-KY,2.93,2.93,2.64,2.66,27000,15,72770,TPEX_afterTrading_otc_type_EW,-0.27

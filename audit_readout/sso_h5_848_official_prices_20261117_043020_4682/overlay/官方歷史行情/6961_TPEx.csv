@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6961,旅天下,40.0,40.9,40.0,40.7,32000,26,1291650,TPEX_afterTrading_otc_type_EW,-1.25
+2026-11-09,TPEX,6961,旅天下,40.7,40.85,40.7,40.7,36000,27,1466800,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-10,TPEX,6961,旅天下,40.5,40.7,40.4,40.5,5000,5,202600,TPEX_afterTrading_otc_type_EW,-0.2
+2026-11-11,TPEX,6961,旅天下,40.05,40.3,39.8,40.0,69000,49,2759000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6961,旅天下,40.45,40.45,40.2,40.2,6000,6,242250,TPEX_afterTrading_otc_type_EW,0.2
+2026-11-13,TPEX,6961,旅天下,40.0,41.0,40.0,40.7,15000,15,611100,TPEX_afterTrading_otc_type_EW,0.5

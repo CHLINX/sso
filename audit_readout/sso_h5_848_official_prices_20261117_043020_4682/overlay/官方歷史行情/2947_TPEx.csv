@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,2947,振宇五金,54.5,54.5,54.5,54.5,3000,3,163500,TPEX_afterTrading_otc_type_EW,-0.1
+2026-11-09,TPEX,2947,振宇五金,55.0,55.0,54.9,54.9,4000,3,219900,TPEX_afterTrading_otc_type_EW,0.4
+2026-11-10,TPEX,2947,振宇五金,55.5,55.5,54.5,54.5,11000,9,603500,TPEX_afterTrading_otc_type_EW,-0.4
+2026-11-11,TPEX,2947,振宇五金,55.5,55.5,54.9,54.9,91000,47,5006900,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,2947,振宇五金,54.9,54.9,54.4,54.4,11000,11,601000,TPEX_afterTrading_otc_type_EW,-0.5
+2026-11-13,TPEX,2947,振宇五金,54.9,55.0,54.5,54.5,4000,4,218900,TPEX_afterTrading_otc_type_EW,0.1

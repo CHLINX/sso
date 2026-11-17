@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6895,宏碩系統,116.0,122.5,113.0,120.0,109000,68,12912500,TPEX_afterTrading_otc_type_EW,-1.5
+2026-11-09,TPEX,6895,宏碩系統,116.5,126.0,116.5,125.5,33000,31,4073500,TPEX_afterTrading_otc_type_EW,5.5
+2026-11-10,TPEX,6895,宏碩系統,128.0,128.0,120.0,123.0,231000,65,28399000,TPEX_afterTrading_otc_type_EW,-2.5
+2026-11-11,TPEX,6895,宏碩系統,124.0,126.5,118.0,125.0,237000,100,28799500,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6895,宏碩系統,126.5,126.5,120.0,120.0,26000,26,3209500,TPEX_afterTrading_otc_type_EW,-5.0
+2026-11-13,TPEX,6895,宏碩系統,120.0,127.0,118.5,125.5,97000,49,11977500,TPEX_afterTrading_otc_type_EW,5.5

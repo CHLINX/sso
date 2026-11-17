@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,8432,東生華,56.5,59.9,56.2,58.7,292000,242,16957900,TPEX_afterTrading_otc_type_EW,-0.9
+2026-11-09,TPEX,8432,東生華,59.3,62.6,59.3,61.4,204000,167,12467900,TPEX_afterTrading_otc_type_EW,2.7
+2026-11-10,TPEX,8432,東生華,62.1,63.4,61.4,61.5,207000,163,12855000,TPEX_afterTrading_otc_type_EW,0.1
+2026-11-11,TPEX,8432,東生華,62.8,62.8,60.2,61.9,214000,168,13155200,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,8432,東生華,61.8,61.8,60.2,61.2,170000,122,10348400,TPEX_afterTrading_otc_type_EW,-0.7
+2026-11-13,TPEX,8432,東生華,61.0,61.5,60.6,61.3,92000,54,5604300,TPEX_afterTrading_otc_type_EW,0.1

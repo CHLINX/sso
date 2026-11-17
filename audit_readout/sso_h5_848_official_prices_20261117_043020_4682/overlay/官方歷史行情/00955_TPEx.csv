@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00955,中信日本商社,15.98,16.0,15.67,15.72,11958000,1701,188407070,TPEX_afterTrading_otc_type_EW,-1.22
+2026-11-09,TPEX,00955,中信日本商社,16.06,16.26,16.06,16.26,3448000,651,55702180,TPEX_afterTrading_otc_type_EW,0.54
+2026-11-10,TPEX,00955,中信日本商社,16.64,16.78,16.64,16.74,7116000,951,118980260,TPEX_afterTrading_otc_type_EW,0.48
+2026-11-11,TPEX,00955,中信日本商社,16.78,16.89,16.76,16.85,4026000,800,67785970,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00955,中信日本商社,16.97,16.98,16.85,16.87,4112000,763,69595820,TPEX_afterTrading_otc_type_EW,0.02
+2026-11-13,TPEX,00955,中信日本商社,16.87,16.9,16.75,16.75,1186000,563,19974100,TPEX_afterTrading_otc_type_EW,-0.12

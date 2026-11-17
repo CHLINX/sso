@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,4205,中華食,66.6,66.6,64.4,64.7,118000,88,7628600,TPEX_afterTrading_otc_type_EW,-1.1
+2026-11-09,TPEX,4205,中華食,64.4,65.0,64.4,65.0,39000,32,2520600,TPEX_afterTrading_otc_type_EW,0.3
+2026-11-10,TPEX,4205,中華食,65.0,65.0,64.0,64.2,47000,41,3019500,TPEX_afterTrading_otc_type_EW,-0.8
+2026-11-11,TPEX,4205,中華食,64.2,65.0,64.2,64.5,15000,15,972000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,4205,中華食,64.9,65.0,64.7,64.7,25000,23,1622300,TPEX_afterTrading_otc_type_EW,0.2
+2026-11-13,TPEX,4205,中華食,65.0,65.3,64.7,65.3,35000,30,2276200,TPEX_afterTrading_otc_type_EW,0.6

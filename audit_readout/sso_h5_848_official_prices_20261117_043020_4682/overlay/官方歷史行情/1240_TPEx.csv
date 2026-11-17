@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,1240,茂生農經,53.0,54.0,53.0,53.4,50000,35,2671500,TPEX_afterTrading_otc_type_EW,-0.6
+2026-11-09,TPEX,1240,茂生農經,53.3,53.6,53.3,53.6,16000,10,854500,TPEX_afterTrading_otc_type_EW,0.2
+2026-11-10,TPEX,1240,茂生農經,54.0,54.8,53.3,54.8,21000,12,1138000,TPEX_afterTrading_otc_type_EW,1.2
+2026-11-11,TPEX,1240,茂生農經,53.7,53.7,53.7,53.7,20000,14,1074000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,1240,茂生農經,54.0,54.0,53.7,54.0,7000,7,377000,TPEX_afterTrading_otc_type_EW,0.3
+2026-11-13,TPEX,1240,茂生農經,54.0,54.0,54.0,54.0,16000,9,864000,TPEX_afterTrading_otc_type_EW,0.0

@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00969B,元大零息超長美債,8.37,8.37,8.3,8.34,874000,59,7273150,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-09,TPEX,00969B,元大零息超長美債,8.3,8.32,8.27,8.32,1938000,62,16067110,TPEX_afterTrading_otc_type_EW,-0.02
+2026-11-10,TPEX,00969B,元大零息超長美債,8.32,8.36,8.29,8.34,2149000,52,17942670,TPEX_afterTrading_otc_type_EW,0.02
+2026-11-11,TPEX,00969B,元大零息超長美債,8.24,8.24,8.16,8.17,1373000,74,11231330,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00969B,元大零息超長美債,8.2,8.25,8.2,8.23,3185000,58,26254220,TPEX_afterTrading_otc_type_EW,0.06
+2026-11-13,TPEX,00969B,元大零息超長美債,8.09,8.09,7.99,8.02,1173000,89,9398410,TPEX_afterTrading_otc_type_EW,-0.21

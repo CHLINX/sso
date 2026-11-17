@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6898,程曦資訊,57.0,60.7,57.0,60.1,208000,170,12339400,TPEX_afterTrading_otc_type_EW,-2.9
+2026-11-09,TPEX,6898,程曦資訊,60.1,62.5,59.5,61.8,88000,76,5347200,TPEX_afterTrading_otc_type_EW,1.7
+2026-11-10,TPEX,6898,程曦資訊,62.1,64.9,62.1,63.5,79000,71,5016300,TPEX_afterTrading_otc_type_EW,1.7
+2026-11-11,TPEX,6898,程曦資訊,61.8,63.1,60.8,62.5,98000,84,6059900,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6898,程曦資訊,62.5,65.5,62.5,62.5,135000,122,8625800,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-13,TPEX,6898,程曦資訊,63.9,68.7,62.9,68.7,199000,141,13433300,TPEX_afterTrading_otc_type_EW,6.2

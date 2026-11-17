@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6263,普萊德,138.0,147.5,136.5,145.0,270000,216,38327500,TPEX_afterTrading_otc_type_EW,-3.0
+2026-11-09,TPEX,6263,普萊德,148.5,159.5,147.0,156.0,184000,158,28301000,TPEX_afterTrading_otc_type_EW,11.0
+2026-11-10,TPEX,6263,普萊德,160.0,161.5,156.0,157.5,77000,72,12242000,TPEX_afterTrading_otc_type_EW,1.5
+2026-11-11,TPEX,6263,普萊德,157.0,157.0,155.5,157.0,61000,54,9533500,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6263,普萊德,157.0,158.5,151.5,152.5,96000,89,14931500,TPEX_afterTrading_otc_type_EW,-4.5
+2026-11-13,TPEX,6263,普萊德,154.0,156.5,153.5,155.5,86000,68,13329500,TPEX_afterTrading_otc_type_EW,3.0

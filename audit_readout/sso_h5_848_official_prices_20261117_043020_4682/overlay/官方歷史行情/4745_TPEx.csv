@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,4745,合富-KY,10.35,10.65,10.1,10.4,46000,31,473900,TPEX_afterTrading_otc_type_EW,-0.15
+2026-11-09,TPEX,4745,合富-KY,10.45,10.55,10.25,10.25,60000,38,620850,TPEX_afterTrading_otc_type_EW,-0.15
+2026-11-10,TPEX,4745,合富-KY,10.25,10.35,10.15,10.35,77000,45,788100,TPEX_afterTrading_otc_type_EW,0.1
+2026-11-11,TPEX,4745,合富-KY,10.3,10.3,10.3,10.3,2000,2,20600,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,4745,合富-KY,10.35,10.55,10.35,10.55,23000,15,240850,TPEX_afterTrading_otc_type_EW,0.25
+2026-11-13,TPEX,4745,合富-KY,10.3,10.5,10.3,10.45,27000,15,280700,TPEX_afterTrading_otc_type_EW,-0.1

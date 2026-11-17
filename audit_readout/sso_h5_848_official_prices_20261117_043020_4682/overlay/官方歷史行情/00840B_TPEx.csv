@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00840B,凱基IG精選15+,29.48,29.49,29.36,29.41,137000,8,4032130,TPEX_afterTrading_otc_type_EW,-0.19
+2026-11-09,TPEX,00840B,凱基IG精選15+,29.22,29.31,29.22,29.31,101000,3,2960220,TPEX_afterTrading_otc_type_EW,-0.1
+2026-11-10,TPEX,00840B,凱基IG精選15+,29.55,29.55,29.55,29.55,100000,2,2955000,TPEX_afterTrading_otc_type_EW,0.24
+2026-11-11,TPEX,00840B,凱基IG精選15+,29.13,29.13,29.13,29.13,100000,2,2913000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00840B,凱基IG精選15+,29.25,29.37,29.25,29.37,110000,3,3229500,TPEX_afterTrading_otc_type_EW,0.24
+2026-11-13,TPEX,00840B,凱基IG精選15+,28.89,28.89,28.89,28.89,100000,2,2889000,TPEX_afterTrading_otc_type_EW,-0.48

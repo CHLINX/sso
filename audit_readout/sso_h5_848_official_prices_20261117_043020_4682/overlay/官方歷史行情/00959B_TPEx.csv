@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00959B,大華投等美債15Y+,9.16,9.16,9.12,9.14,2604000,213,23803100,TPEX_afterTrading_otc_type_EW,-0.06
+2026-11-09,TPEX,00959B,大華投等美債15Y+,9.14,9.14,9.09,9.13,3039000,117,27695090,TPEX_afterTrading_otc_type_EW,-0.01
+2026-11-10,TPEX,00959B,大華投等美債15Y+,9.15,9.19,9.15,9.16,1135000,83,10411080,TPEX_afterTrading_otc_type_EW,0.03
+2026-11-11,TPEX,00959B,大華投等美債15Y+,9.12,9.12,9.07,9.07,813000,74,7388190,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00959B,大華投等美債15Y+,9.1,9.16,9.1,9.14,979000,123,8945790,TPEX_afterTrading_otc_type_EW,0.07
+2026-11-13,TPEX,00959B,大華投等美債15Y+,9.05,9.05,9.02,9.05,1015000,96,9168000,TPEX_afterTrading_otc_type_EW,-0.09

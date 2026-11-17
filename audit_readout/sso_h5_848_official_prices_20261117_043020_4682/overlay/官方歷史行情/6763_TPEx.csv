@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6763,綠界科技*,34.0,36.35,34.0,36.05,683000,308,24210700,TPEX_afterTrading_otc_type_EW,-1.0
+2026-11-09,TPEX,6763,綠界科技*,36.15,37.35,36.15,36.55,145000,115,5356700,TPEX_afterTrading_otc_type_EW,0.5
+2026-11-10,TPEX,6763,綠界科技*,37.3,37.35,35.8,35.9,175000,154,6347850,TPEX_afterTrading_otc_type_EW,-0.65
+2026-11-11,TPEX,6763,綠界科技*,36.2,36.2,35.35,35.35,247000,151,8754750,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6763,綠界科技*,35.4,36.05,35.15,35.15,211000,150,7512100,TPEX_afterTrading_otc_type_EW,-0.2
+2026-11-13,TPEX,6763,綠界科技*,35.3,37.45,35.3,37.15,234000,165,8514450,TPEX_afterTrading_otc_type_EW,2.0

@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,4160,訊聯基因,34.15,34.15,32.0,33.4,92000,46,2977850,TPEX_afterTrading_otc_type_EW,-0.85
+2026-11-09,TPEX,4160,訊聯基因,33.4,34.7,33.4,34.7,21000,21,717200,TPEX_afterTrading_otc_type_EW,1.3
+2026-11-10,TPEX,4160,訊聯基因,34.7,35.7,34.5,35.7,22000,17,767350,TPEX_afterTrading_otc_type_EW,1.0
+2026-11-11,TPEX,4160,訊聯基因,35.0,35.55,35.0,35.55,3000,3,105550,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,4160,訊聯基因,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,
+2026-11-13,TPEX,4160,訊聯基因,36.9,37.3,34.75,36.5,13000,12,472050,TPEX_afterTrading_otc_type_EW,1.2

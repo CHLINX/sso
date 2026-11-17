@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6535,順藥,63.3,72.2,63.3,70.2,205000,167,13899000,TPEX_afterTrading_otc_type_EW,0.3
+2026-11-09,TPEX,6535,順藥,73.0,75.0,71.0,71.5,132000,111,9669500,TPEX_afterTrading_otc_type_EW,1.3
+2026-11-10,TPEX,6535,順藥,72.0,74.0,69.5,73.5,183000,132,13309200,TPEX_afterTrading_otc_type_EW,2.0
+2026-11-11,TPEX,6535,順藥,74.5,80.8,73.5,80.8,352000,229,27850700,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6535,順藥,80.8,82.8,77.2,77.4,527000,444,41856500,TPEX_afterTrading_otc_type_EW,-3.4
+2026-11-13,TPEX,6535,順藥,78.9,85.1,78.4,85.1,666000,472,56129000,TPEX_afterTrading_otc_type_EW,7.7

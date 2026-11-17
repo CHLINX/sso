@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00755B,群益投資級公用債,32.82,32.9,32.76,32.88,391000,23,12832460,TPEX_afterTrading_otc_type_EW,-0.07
+2026-11-09,TPEX,00755B,群益投資級公用債,32.75,32.77,32.73,32.73,104000,7,3405980,TPEX_afterTrading_otc_type_EW,-0.15
+2026-11-10,TPEX,00755B,群益投資級公用債,32.9,32.93,32.9,32.92,103000,7,3391260,TPEX_afterTrading_otc_type_EW,0.19
+2026-11-11,TPEX,00755B,群益投資級公用債,32.44,32.54,32.44,32.5,121000,9,3932490,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00755B,群益投資級公用債,32.5,32.75,32.5,32.75,141000,9,4607840,TPEX_afterTrading_otc_type_EW,0.25
+2026-11-13,TPEX,00755B,群益投資級公用債,32.2,32.2,32.13,32.13,165000,13,5305410,TPEX_afterTrading_otc_type_EW,-0.62

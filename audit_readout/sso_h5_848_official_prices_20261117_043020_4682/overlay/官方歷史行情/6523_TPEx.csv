@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6523,達爾膚,80.2,80.2,76.0,78.4,39000,33,3052700,TPEX_afterTrading_otc_type_EW,-1.8
+2026-11-09,TPEX,6523,達爾膚,79.3,80.0,78.7,79.8,22000,13,1753200,TPEX_afterTrading_otc_type_EW,1.4
+2026-11-10,TPEX,6523,達爾膚,80.0,80.5,79.8,80.5,42000,19,3356400,TPEX_afterTrading_otc_type_EW,0.7
+2026-11-11,TPEX,6523,達爾膚,81.0,81.9,80.5,81.3,17000,11,1377600,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6523,達爾膚,82.2,87.0,82.2,86.1,103000,84,8823200,TPEX_afterTrading_otc_type_EW,4.8
+2026-11-13,TPEX,6523,達爾膚,86.0,86.7,84.5,86.0,41000,32,3508400,TPEX_afterTrading_otc_type_EW,-0.1

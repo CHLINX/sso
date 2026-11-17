@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,1796,金穎生技,24.0,26.85,24.0,26.65,17000,12,421050,TPEX_afterTrading_otc_type_EW,0.35
+2026-11-09,TPEX,1796,金穎生技,27.75,27.75,26.2,26.9,16000,16,425850,TPEX_afterTrading_otc_type_EW,0.25
+2026-11-10,TPEX,1796,金穎生技,27.5,28.7,26.7,27.55,20000,15,549200,TPEX_afterTrading_otc_type_EW,0.65
+2026-11-11,TPEX,1796,金穎生技,28.5,28.6,28.0,28.0,7000,5,198000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,1796,金穎生技,28.3,29.25,27.6,27.6,68000,45,1931500,TPEX_afterTrading_otc_type_EW,-0.4
+2026-11-13,TPEX,1796,金穎生技,28.5,28.5,28.5,28.5,1000,1,28500,TPEX_afterTrading_otc_type_EW,0.9

@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6612,奈米醫材,68.3,68.6,66.6,68.5,57000,32,3876900,TPEX_afterTrading_otc_type_EW,-0.7
+2026-11-09,TPEX,6612,奈米醫材,69.9,69.9,68.1,69.7,29000,27,2003700,TPEX_afterTrading_otc_type_EW,1.2
+2026-11-10,TPEX,6612,奈米醫材,69.5,69.5,68.1,69.4,8000,8,551100,TPEX_afterTrading_otc_type_EW,-0.3
+2026-11-11,TPEX,6612,奈米醫材,67.2,68.9,67.2,68.5,22000,13,1507000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6612,奈米醫材,67.1,67.1,63.4,63.7,192000,155,12458000,TPEX_afterTrading_otc_type_EW,-4.8
+2026-11-13,TPEX,6612,奈米醫材,63.8,63.8,60.0,60.4,135000,108,8311900,TPEX_afterTrading_otc_type_EW,-3.3

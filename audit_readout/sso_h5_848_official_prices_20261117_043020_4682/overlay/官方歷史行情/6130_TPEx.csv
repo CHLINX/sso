@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6130,上亞科技,23.8,25.05,23.8,24.65,289000,173,7038200,TPEX_afterTrading_otc_type_EW,-0.9
+2026-11-09,TPEX,6130,上亞科技,26.15,26.2,24.7,25.8,129000,90,3312050,TPEX_afterTrading_otc_type_EW,1.15
+2026-11-10,TPEX,6130,上亞科技,26.0,26.5,24.3,24.4,206000,161,5185750,TPEX_afterTrading_otc_type_EW,-1.4
+2026-11-11,TPEX,6130,上亞科技,24.4,25.0,23.65,23.65,100000,88,2408900,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6130,上亞科技,24.5,24.75,23.1,23.1,208000,107,4939850,TPEX_afterTrading_otc_type_EW,-0.55
+2026-11-13,TPEX,6130,上亞科技,23.7,24.25,23.15,23.7,144000,117,3421650,TPEX_afterTrading_otc_type_EW,0.6

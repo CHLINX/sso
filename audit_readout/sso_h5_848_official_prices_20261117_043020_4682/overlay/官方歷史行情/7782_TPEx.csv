@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,7782,光速火箭,21.8,25.0,21.8,24.0,34000,21,812000,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-09,TPEX,7782,光速火箭,24.0,24.0,24.0,24.0,1000,1,24000,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-10,TPEX,7782,光速火箭,24.0,24.7,23.5,24.4,24000,11,578000,TPEX_afterTrading_otc_type_EW,0.4
+2026-11-11,TPEX,7782,光速火箭,23.75,24.2,23.75,24.15,7000,7,168600,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,7782,光速火箭,24.1,24.1,24.1,24.1,1000,1,24100,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-13,TPEX,7782,光速火箭,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,

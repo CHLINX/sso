@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6578,達邦蛋白,16.9,16.9,16.2,16.9,61000,40,1008250,TPEX_afterTrading_otc_type_EW,-0.15
+2026-11-09,TPEX,6578,達邦蛋白,16.95,17.2,16.7,16.9,59000,31,991950,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-10,TPEX,6578,達邦蛋白,16.75,17.0,16.45,16.9,17000,15,283350,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-11,TPEX,6578,達邦蛋白,17.2,17.2,16.85,17.0,21000,10,356200,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6578,達邦蛋白,17.3,17.3,16.6,16.7,38000,27,636750,TPEX_afterTrading_otc_type_EW,-0.3
+2026-11-13,TPEX,6578,達邦蛋白,16.85,16.85,16.6,16.6,34000,23,569100,TPEX_afterTrading_otc_type_EW,-0.1

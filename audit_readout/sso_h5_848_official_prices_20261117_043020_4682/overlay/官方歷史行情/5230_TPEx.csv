@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,5230,雷笛克光學,22.95,25.5,22.95,25.5,1669000,1050,40543400,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-09,TPEX,5230,雷笛克光學,26.4,28.05,26.3,28.05,3333000,2113,91676250,TPEX_afterTrading_otc_type_EW,2.55
+2026-11-10,TPEX,5230,雷笛克光學,29.3,30.85,29.05,30.85,7990000,3596,242993650,TPEX_afterTrading_otc_type_EW,2.8
+2026-11-11,TPEX,5230,雷笛克光學,33.9,33.9,33.8,33.9,2098000,666,71120750,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,5230,雷笛克光學,37.2,37.25,37.0,37.25,2579000,1066,96005800,TPEX_afterTrading_otc_type_EW,3.35
+2026-11-13,TPEX,5230,雷笛克光學,37.25,38.45,34.2,35.2,13580000,7490,490869300,TPEX_afterTrading_otc_type_EW,-2.05

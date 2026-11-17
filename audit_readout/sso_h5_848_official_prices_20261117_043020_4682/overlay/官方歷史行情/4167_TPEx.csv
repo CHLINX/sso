@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,4167,松瑞藥,17.55,18.65,17.55,18.4,2091000,991,37910900,TPEX_afterTrading_otc_type_EW,-0.5
+2026-11-09,TPEX,4167,松瑞藥,18.9,19.35,18.6,18.95,1233000,702,23438000,TPEX_afterTrading_otc_type_EW,0.55
+2026-11-10,TPEX,4167,松瑞藥,19.05,19.35,18.8,19.0,1021000,476,19445000,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-11,TPEX,4167,松瑞藥,19.1,19.35,18.75,19.25,1169000,496,22326800,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,4167,松瑞藥,19.3,19.35,18.9,19.0,936000,456,17855750,TPEX_afterTrading_otc_type_EW,-0.25
+2026-11-13,TPEX,4167,松瑞藥,19.2,19.45,19.05,19.15,980000,357,18833450,TPEX_afterTrading_otc_type_EW,0.15

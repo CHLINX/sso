@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00950B,凱基A級公司債,13.98,14.02,13.9,13.98,10750000,435,150044830,TPEX_afterTrading_otc_type_EW,-0.04
+2026-11-09,TPEX,00950B,凱基A級公司債,13.9,13.94,13.87,13.93,8204000,195,114044280,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-10,TPEX,00950B,凱基A級公司債,13.93,14.0,13.91,13.96,3141000,165,43885650,TPEX_afterTrading_otc_type_EW,0.03
+2026-11-11,TPEX,00950B,凱基A級公司債,13.8,13.86,13.8,13.8,2671000,187,36921250,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00950B,凱基A級公司債,13.8,13.92,13.8,13.89,5778000,155,80223090,TPEX_afterTrading_otc_type_EW,0.09
+2026-11-13,TPEX,00950B,凱基A級公司債,13.71,13.73,13.69,13.71,1070000,192,14666890,TPEX_afterTrading_otc_type_EW,-0.18

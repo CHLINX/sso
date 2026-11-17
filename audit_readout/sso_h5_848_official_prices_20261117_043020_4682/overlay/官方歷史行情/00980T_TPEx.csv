@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00980T,平衡凱基美國TOP,11.84,11.84,11.73,11.73,527000,19,6196210,TPEX_afterTrading_otc_type_EW,-0.37
+2026-11-09,TPEX,00980T,平衡凱基美國TOP,12.3,12.3,11.78,11.79,305000,11,3596660,TPEX_afterTrading_otc_type_EW,0.06
+2026-11-10,TPEX,00980T,平衡凱基美國TOP,11.95,11.98,11.92,11.97,512000,19,6125930,TPEX_afterTrading_otc_type_EW,0.18
+2026-11-11,TPEX,00980T,平衡凱基美國TOP,11.92,11.95,11.92,11.95,66000,6,786820,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00980T,平衡凱基美國TOP,11.95,11.96,11.94,11.94,156000,13,1865060,TPEX_afterTrading_otc_type_EW,-0.01
+2026-11-13,TPEX,00980T,平衡凱基美國TOP,12.07,12.07,11.9,11.94,112000,10,1341390,TPEX_afterTrading_otc_type_EW,0.0

@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00957B,兆豐US優選投等債,13.23,13.25,13.18,13.23,920000,55,12163390,TPEX_afterTrading_otc_type_EW,-0.07
+2026-11-09,TPEX,00957B,兆豐US優選投等債,13.16,13.19,13.13,13.17,493000,27,6496120,TPEX_afterTrading_otc_type_EW,-0.06
+2026-11-10,TPEX,00957B,兆豐US優選投等債,12.88,13.26,12.88,13.24,149000,27,1970950,TPEX_afterTrading_otc_type_EW,0.07
+2026-11-11,TPEX,00957B,兆豐US優選投等債,13.14,13.14,13.09,13.09,208000,21,2726840,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00957B,兆豐US優選投等債,13.13,13.2,13.13,13.2,147000,19,1935490,TPEX_afterTrading_otc_type_EW,0.11
+2026-11-13,TPEX,00957B,兆豐US優選投等債,13.02,13.02,12.99,13.0,304000,44,3954320,TPEX_afterTrading_otc_type_EW,-0.2

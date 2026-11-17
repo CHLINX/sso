@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TWSE,7732,金興精密,30.7,30.7,30.7,30.7,4004,8,122924,TWSE_MI_INDEX,0.2
+2026-11-09,TWSE,7732,金興精密,30.7,30.7,29.7,29.7,7060,11,212685,TWSE_MI_INDEX,1.0
+2026-11-10,TWSE,7732,金興精密,29.25,30.25,29.1,30.25,12000,11,352500,TWSE_MI_INDEX,0.55
+2026-11-11,TWSE,7732,金興精密,,,,,140,4,4308,TWSE_MI_INDEX,0.0
+2026-11-12,TWSE,7732,金興精密,30.0,31.4,30.0,30.45,3059,4,93679,TWSE_MI_INDEX,0.0
+2026-11-13,TWSE,7732,金興精密,31.0,31.0,30.5,31.0,9056,10,278897,TWSE_MI_INDEX,0.55

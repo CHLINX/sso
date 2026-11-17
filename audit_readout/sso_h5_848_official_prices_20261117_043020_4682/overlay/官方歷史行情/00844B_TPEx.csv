@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00844B,台新15年IG金融債,31.51,31.51,31.45,31.45,87000,6,2736520,TPEX_afterTrading_otc_type_EW,-0.1
+2026-11-09,TPEX,00844B,台新15年IG金融債,31.3,31.3,31.3,31.3,80000,2,2504000,TPEX_afterTrading_otc_type_EW,-0.15
+2026-11-10,TPEX,00844B,台新15年IG金融債,30.92,31.45,30.92,31.45,157000,11,4923080,TPEX_afterTrading_otc_type_EW,0.15
+2026-11-11,TPEX,00844B,台新15年IG金融債,31.14,31.14,31.07,31.07,100000,3,3108400,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00844B,台新15年IG金融債,31.27,31.29,31.27,31.29,60000,3,1876800,TPEX_afterTrading_otc_type_EW,0.22
+2026-11-13,TPEX,00844B,台新15年IG金融債,30.8,30.8,30.8,30.8,80000,2,2464000,TPEX_afterTrading_otc_type_EW,-0.49

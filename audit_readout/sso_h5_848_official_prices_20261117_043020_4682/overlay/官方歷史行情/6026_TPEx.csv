@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6026,福邦證,14.3,15.1,14.25,14.95,2275000,695,33172900,TPEX_afterTrading_otc_type_EW,-0.4
+2026-11-09,TPEX,6026,福邦證,15.2,15.55,15.15,15.3,1025000,489,15789800,TPEX_afterTrading_otc_type_EW,0.35
+2026-11-10,TPEX,6026,福邦證,15.55,15.65,15.25,15.35,991000,419,15316050,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-11,TPEX,6026,福邦證,15.35,15.55,15.2,15.5,973000,426,14944100,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6026,福邦證,15.55,15.65,15.35,15.35,955000,387,14801750,TPEX_afterTrading_otc_type_EW,-0.15
+2026-11-13,TPEX,6026,福邦證,15.4,15.7,15.4,15.65,693000,305,10825350,TPEX_afterTrading_otc_type_EW,0.3

@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,5210,寶碩,28.55,30.45,27.9,29.85,348000,244,10269850,TPEX_afterTrading_otc_type_EW,0.35
+2026-11-09,TPEX,5210,寶碩,30.1,31.5,30.1,30.5,186000,100,5762600,TPEX_afterTrading_otc_type_EW,0.65
+2026-11-10,TPEX,5210,寶碩,31.2,31.2,29.7,30.3,153000,94,4642200,TPEX_afterTrading_otc_type_EW,-0.2
+2026-11-11,TPEX,5210,寶碩,30.0,30.6,29.5,30.0,260000,167,7741100,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,5210,寶碩,30.1,30.3,29.5,29.55,175000,120,5215900,TPEX_afterTrading_otc_type_EW,-0.45
+2026-11-13,TPEX,5210,寶碩,29.55,30.2,29.55,29.7,101000,80,3010150,TPEX_afterTrading_otc_type_EW,0.15

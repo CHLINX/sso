@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,3489,森寶,22.1,22.6,21.3,22.55,37000,25,820950,TPEX_afterTrading_otc_type_EW,-0.15
+2026-11-09,TPEX,3489,森寶,22.7,22.7,22.55,22.55,18000,12,407750,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-10,TPEX,3489,森寶,22.6,22.75,22.55,22.55,36000,14,813650,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-11,TPEX,3489,森寶,22.45,22.6,22.4,22.6,43000,26,967200,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,3489,森寶,22.6,23.15,22.6,22.75,108000,45,2479650,TPEX_afterTrading_otc_type_EW,0.15
+2026-11-13,TPEX,3489,森寶,22.8,23.0,22.8,22.9,85000,36,1945600,TPEX_afterTrading_otc_type_EW,0.15

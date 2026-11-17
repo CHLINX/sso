@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6101,寬魚國際,36.55,36.65,34.0,36.55,210000,175,7532700,TPEX_afterTrading_otc_type_EW,-0.1
+2026-11-09,TPEX,6101,寬魚國際,37.1,37.25,36.55,37.15,118000,78,4358100,TPEX_afterTrading_otc_type_EW,0.6
+2026-11-10,TPEX,6101,寬魚國際,37.3,37.35,36.95,37.35,135000,111,5023150,TPEX_afterTrading_otc_type_EW,0.2
+2026-11-11,TPEX,6101,寬魚國際,37.75,38.0,37.5,37.8,112000,85,4223800,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6101,寬魚國際,37.8,38.1,37.6,37.9,99000,77,3746200,TPEX_afterTrading_otc_type_EW,0.1
+2026-11-13,TPEX,6101,寬魚國際,37.9,38.1,37.25,37.85,81000,67,3054650,TPEX_afterTrading_otc_type_EW,-0.05

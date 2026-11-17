@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00768B,復華20年美債,49.97,50.05,49.87,50.0,466000,58,23284790,TPEX_afterTrading_otc_type_EW,-0.2
+2026-11-09,TPEX,00768B,復華20年美債,49.66,49.75,49.59,49.75,931000,64,46224580,TPEX_afterTrading_otc_type_EW,-0.25
+2026-11-10,TPEX,00768B,復華20年美債,49.75,49.92,49.75,49.81,636000,39,31710900,TPEX_afterTrading_otc_type_EW,0.06
+2026-11-11,TPEX,00768B,復華20年美債,49.27,49.3,49.13,49.15,375000,53,18452750,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00768B,復華20年美債,49.36,49.56,49.36,49.55,1799000,47,89004450,TPEX_afterTrading_otc_type_EW,0.4
+2026-11-13,TPEX,00768B,復華20年美債,48.9,48.9,48.54,48.58,590000,145,28698610,TPEX_afterTrading_otc_type_EW,-0.97

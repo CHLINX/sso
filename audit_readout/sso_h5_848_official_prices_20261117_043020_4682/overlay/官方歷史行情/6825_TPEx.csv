@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6825,和暢科技,20.0,21.35,19.9,20.5,143000,89,2923150,TPEX_afterTrading_otc_type_EW,-1.35
+2026-11-09,TPEX,6825,和暢科技,21.9,22.55,21.5,22.55,156000,61,3468050,TPEX_afterTrading_otc_type_EW,2.05
+2026-11-10,TPEX,6825,和暢科技,22.6,23.25,22.0,22.0,206000,149,4630150,TPEX_afterTrading_otc_type_EW,-0.55
+2026-11-11,TPEX,6825,和暢科技,21.0,21.6,21.0,21.35,88000,59,1870700,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6825,和暢科技,21.5,21.7,21.25,21.3,68000,41,1460150,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-13,TPEX,6825,和暢科技,21.2,21.7,20.7,20.7,56000,45,1181750,TPEX_afterTrading_otc_type_EW,-0.6

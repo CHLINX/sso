@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,3511,矽瑪,16.7,16.7,15.1,15.9,244000,143,3802950,TPEX_afterTrading_otc_type_EW,-0.85
+2026-11-09,TPEX,3511,矽瑪,15.95,17.0,15.95,17.0,71000,58,1191450,TPEX_afterTrading_otc_type_EW,1.1
+2026-11-10,TPEX,3511,矽瑪,17.05,17.35,16.6,16.65,61000,44,1036400,TPEX_afterTrading_otc_type_EW,-0.35
+2026-11-11,TPEX,3511,矽瑪,16.65,16.85,16.5,16.6,52000,31,864550,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,3511,矽瑪,16.75,17.6,16.75,17.0,106000,76,1808000,TPEX_afterTrading_otc_type_EW,0.4
+2026-11-13,TPEX,3511,矽瑪,16.9,17.4,16.8,17.2,57000,36,974800,TPEX_afterTrading_otc_type_EW,0.2

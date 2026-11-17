@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6221,晉泰,35.0,40.9,35.0,37.55,8703000,5755,335760100,TPEX_afterTrading_otc_type_EW,-1.3
+2026-11-09,TPEX,6221,晉泰,38.0,41.0,37.2,40.0,5795000,3497,229008150,TPEX_afterTrading_otc_type_EW,2.45
+2026-11-10,TPEX,6221,晉泰,40.0,43.6,39.7,41.35,9747000,6335,405785950,TPEX_afterTrading_otc_type_EW,1.35
+2026-11-11,TPEX,6221,晉泰,40.0,45.45,38.5,43.9,16241000,9063,702649000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6221,晉泰,44.25,44.8,41.0,42.9,10899000,6725,466962100,TPEX_afterTrading_otc_type_EW,-1.0
+2026-11-13,TPEX,6221,晉泰,41.5,45.3,41.5,43.35,14943000,9225,656706600,TPEX_afterTrading_otc_type_EW,0.45

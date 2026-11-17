@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,5301,寶得利,6.98,7.0,6.98,7.0,7000,6,48980,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-09,TPEX,5301,寶得利,7.0,7.2,7.0,7.2,2000,2,14200,TPEX_afterTrading_otc_type_EW,0.2
+2026-11-10,TPEX,5301,寶得利,6.82,6.82,6.82,6.82,3000,3,20460,TPEX_afterTrading_otc_type_EW,-0.38
+2026-11-11,TPEX,5301,寶得利,6.8,7.2,6.8,7.0,4000,4,27800,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,5301,寶得利,6.94,7.2,6.94,7.0,6000,6,42330,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-13,TPEX,5301,寶得利,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,

@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00694B,富邦美債1-3,43.06,43.21,43.05,43.12,877000,95,37803890,TPEX_afterTrading_otc_type_EW,0.06
+2026-11-09,TPEX,00694B,富邦美債1-3,43.04,43.04,42.86,42.98,780000,55,33484270,TPEX_afterTrading_otc_type_EW,-0.14
+2026-11-10,TPEX,00694B,富邦美債1-3,42.98,43.03,42.83,43.0,842000,36,36163700,TPEX_afterTrading_otc_type_EW,0.02
+2026-11-11,TPEX,00694B,富邦美債1-3,42.93,42.93,42.78,42.78,360000,31,15427550,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00694B,富邦美債1-3,42.9,43.0,42.9,43.0,675000,26,28981640,TPEX_afterTrading_otc_type_EW,0.22
+2026-11-13,TPEX,00694B,富邦美債1-3,42.67,42.9,42.67,42.79,118000,16,5049860,TPEX_afterTrading_otc_type_EW,-0.21

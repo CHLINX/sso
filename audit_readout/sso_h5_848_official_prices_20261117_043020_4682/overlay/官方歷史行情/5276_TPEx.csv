@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,5276,達輝-KY,16.5,16.5,16.4,16.4,6000,3,98500,TPEX_afterTrading_otc_type_EW,0.45
+2026-11-09,TPEX,5276,達輝-KY,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,
+2026-11-10,TPEX,5276,達輝-KY,16.35,16.35,16.35,16.35,1000,1,16350,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-11,TPEX,5276,達輝-KY,16.65,16.65,16.65,16.65,1000,1,16650,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,5276,達輝-KY,16.65,16.9,16.65,16.9,2000,2,33550,TPEX_afterTrading_otc_type_EW,0.25
+2026-11-13,TPEX,5276,達輝-KY,18.55,18.55,18.55,18.55,78000,46,1446900,TPEX_afterTrading_otc_type_EW,1.65

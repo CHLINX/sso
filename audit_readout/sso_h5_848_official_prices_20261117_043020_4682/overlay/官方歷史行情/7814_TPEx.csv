@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,7814,海昌生技,27.0,28.0,26.4,26.6,31000,23,843750,TPEX_afterTrading_otc_type_EW,-1.4
+2026-11-09,TPEX,7814,海昌生技,26.6,27.8,26.6,27.8,35000,14,958300,TPEX_afterTrading_otc_type_EW,1.2
+2026-11-10,TPEX,7814,海昌生技,26.6,27.35,26.6,27.3,15000,11,402400,TPEX_afterTrading_otc_type_EW,-0.5
+2026-11-11,TPEX,7814,海昌生技,26.4,27.3,26.4,27.3,27000,20,722650,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,7814,海昌生技,27.1,27.1,26.6,26.6,4000,4,107850,TPEX_afterTrading_otc_type_EW,-0.7
+2026-11-13,TPEX,7814,海昌生技,26.6,26.8,26.45,26.45,25000,17,664550,TPEX_afterTrading_otc_type_EW,-0.15

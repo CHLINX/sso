@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,8272,全景軟體,83.5,92.4,83.5,88.3,280000,218,24372100,TPEX_afterTrading_otc_type_EW,-4.4
+2026-11-09,TPEX,8272,全景軟體,87.9,90.5,87.0,87.0,217000,179,19283200,TPEX_afterTrading_otc_type_EW,-1.3
+2026-11-10,TPEX,8272,全景軟體,86.0,92.0,83.6,88.5,255000,223,22314900,TPEX_afterTrading_otc_type_EW,1.5
+2026-11-11,TPEX,8272,全景軟體,88.5,97.3,86.5,97.3,557000,422,52702900,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,8272,全景軟體,93.6,106.5,90.1,99.5,941000,697,92661400,TPEX_afterTrading_otc_type_EW,2.2
+2026-11-13,TPEX,8272,全景軟體,103.5,109.0,99.8,109.0,1037000,675,109944600,TPEX_afterTrading_otc_type_EW,9.5

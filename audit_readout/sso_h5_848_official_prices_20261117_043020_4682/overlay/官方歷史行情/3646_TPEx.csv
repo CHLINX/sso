@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,3646,艾恩特,24.3,25.0,24.0,24.9,19000,15,466650,TPEX_afterTrading_otc_type_EW,-0.1
+2026-11-09,TPEX,3646,艾恩特,25.2,25.2,25.1,25.1,3000,3,75400,TPEX_afterTrading_otc_type_EW,0.2
+2026-11-10,TPEX,3646,艾恩特,24.55,25.0,24.55,25.0,4000,4,99500,TPEX_afterTrading_otc_type_EW,-0.1
+2026-11-11,TPEX,3646,艾恩特,24.6,24.6,24.05,24.1,56000,40,1359300,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,3646,艾恩特,24.55,24.55,24.05,24.25,17000,17,412350,TPEX_afterTrading_otc_type_EW,0.15
+2026-11-13,TPEX,3646,艾恩特,24.8,24.8,24.0,24.55,14000,12,339200,TPEX_afterTrading_otc_type_EW,0.3

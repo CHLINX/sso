@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,009815,大華美國MAG7+,10.93,11.05,10.92,10.96,4562000,982,50063000,TPEX_afterTrading_otc_type_EW,-0.51
+2026-11-09,TPEX,009815,大華美國MAG7+,11.07,11.11,10.96,11.08,3250000,691,35983550,TPEX_afterTrading_otc_type_EW,0.12
+2026-11-10,TPEX,009815,大華美國MAG7+,11.27,11.35,11.27,11.34,4865000,479,55089400,TPEX_afterTrading_otc_type_EW,0.26
+2026-11-11,TPEX,009815,大華美國MAG7+,11.45,11.45,11.33,11.39,1222000,224,13893680,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,009815,大華美國MAG7+,11.38,11.38,11.31,11.32,1358000,252,15412400,TPEX_afterTrading_otc_type_EW,-0.07
+2026-11-13,TPEX,009815,大華美國MAG7+,11.38,11.48,11.37,11.37,1843000,321,21049290,TPEX_afterTrading_otc_type_EW,0.05

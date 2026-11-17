@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TWSE,2882B,國泰金乙特,58.8,59.0,58.7,58.9,28000,16,1647100,TWSE_MI_INDEX,0.1
+2026-11-09,TWSE,2882B,國泰金乙特,59.0,59.0,58.7,59.0,42244,24,2491401,TWSE_MI_INDEX,0.1
+2026-11-10,TWSE,2882B,國泰金乙特,58.8,59.1,58.7,59.1,15596,23,917878,TWSE_MI_INDEX,0.1
+2026-11-11,TWSE,2882B,國泰金乙特,,,,,700,3,41130,TWSE_MI_INDEX,0.0
+2026-11-12,TWSE,2882B,國泰金乙特,59.0,59.0,58.7,58.8,8234,16,484010,TWSE_MI_INDEX,0.0
+2026-11-13,TWSE,2882B,國泰金乙特,58.8,59.0,58.8,59.0,16292,10,958532,TWSE_MI_INDEX,0.2

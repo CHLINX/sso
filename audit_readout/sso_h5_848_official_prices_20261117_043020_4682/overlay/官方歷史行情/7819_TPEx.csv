@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,7819,精誠金融,35.4,38.3,35.4,37.1,153000,121,5590550,TPEX_afterTrading_otc_type_EW,-2.2
+2026-11-09,TPEX,7819,精誠金融,37.3,37.35,35.05,35.05,106000,73,3842750,TPEX_afterTrading_otc_type_EW,-2.05
+2026-11-10,TPEX,7819,精誠金融,35.05,35.05,31.8,32.35,136000,110,4437500,TPEX_afterTrading_otc_type_EW,-2.7
+2026-11-11,TPEX,7819,精誠金融,32.85,35.55,31.8,35.55,124000,100,4207950,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,7819,精誠金融,39.1,39.1,39.05,39.1,184000,114,7194350,TPEX_afterTrading_otc_type_EW,3.55
+2026-11-13,TPEX,7819,精誠金融,43.0,43.0,39.8,40.0,490000,338,20157450,TPEX_afterTrading_otc_type_EW,0.9

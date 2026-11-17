@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,4580,捷流閥業,78.0,79.9,76.9,78.4,113000,88,8797900,TPEX_afterTrading_otc_type_EW,-2.1
+2026-11-09,TPEX,4580,捷流閥業,79.6,81.1,78.9,80.4,48000,44,3836000,TPEX_afterTrading_otc_type_EW,2.0
+2026-11-10,TPEX,4580,捷流閥業,81.0,81.0,79.6,80.5,32000,28,2568500,TPEX_afterTrading_otc_type_EW,0.1
+2026-11-11,TPEX,4580,捷流閥業,80.0,80.5,79.6,80.2,35000,23,2801400,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,4580,捷流閥業,80.0,81.0,79.7,80.4,29000,24,2329700,TPEX_afterTrading_otc_type_EW,0.2
+2026-11-13,TPEX,4580,捷流閥業,80.4,80.9,79.8,80.9,69000,42,5526600,TPEX_afterTrading_otc_type_EW,0.5

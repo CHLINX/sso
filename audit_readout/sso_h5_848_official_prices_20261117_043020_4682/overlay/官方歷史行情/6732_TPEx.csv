@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6732,昇佳電子,113.5,121.5,113.0,121.5,303000,216,35256000,TPEX_afterTrading_otc_type_EW,-2.5
+2026-11-09,TPEX,6732,昇佳電子,121.0,126.5,121.0,123.0,145000,121,17856500,TPEX_afterTrading_otc_type_EW,1.5
+2026-11-10,TPEX,6732,昇佳電子,124.5,125.5,121.0,121.0,69000,58,8470000,TPEX_afterTrading_otc_type_EW,-2.0
+2026-11-11,TPEX,6732,昇佳電子,122.5,122.5,118.5,119.5,58000,51,6968000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6732,昇佳電子,122.0,124.0,118.0,118.0,80000,68,9688000,TPEX_afterTrading_otc_type_EW,-1.5
+2026-11-13,TPEX,6732,昇佳電子,118.0,121.0,118.0,119.5,61000,57,7311500,TPEX_afterTrading_otc_type_EW,1.5

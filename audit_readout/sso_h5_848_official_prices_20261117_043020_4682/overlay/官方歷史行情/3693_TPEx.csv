@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,3693,營邦,489.0,522.0,489.0,513.0,1332000,1025,667022500,TPEX_afterTrading_otc_type_EW,-30.0
+2026-11-09,TPEX,3693,營邦,564.0,564.0,564.0,564.0,182000,136,102648000,TPEX_afterTrading_otc_type_EW,51.0
+2026-11-10,TPEX,3693,營邦,620.0,620.0,620.0,620.0,357000,224,221340000,TPEX_afterTrading_otc_type_EW,56.0
+2026-11-11,TPEX,3693,營邦,620.0,682.0,620.0,682.0,2956000,2380,1947580000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,3693,營邦,691.0,739.0,686.0,687.0,3647000,3109,2602960000,TPEX_afterTrading_otc_type_EW,5.0
+2026-11-13,TPEX,3693,營邦,724.0,748.0,705.0,718.0,3764000,3252,2726048000,TPEX_afterTrading_otc_type_EW,31.0

@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00987B,野村10+澳洲公債,16.1,16.17,15.94,16.08,669000,74,10801620,TPEX_afterTrading_otc_type_EW,-0.22
+2026-11-09,TPEX,00987B,野村10+澳洲公債,16.08,16.08,15.96,16.0,2059000,397,32902460,TPEX_afterTrading_otc_type_EW,-0.08
+2026-11-10,TPEX,00987B,野村10+澳洲公債,16.0,16.16,16.0,16.16,1260000,277,20332050,TPEX_afterTrading_otc_type_EW,0.16
+2026-11-11,TPEX,00987B,野村10+澳洲公債,16.01,16.05,15.98,16.0,380000,68,6078820,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00987B,野村10+澳洲公債,15.92,15.99,15.92,15.95,658000,67,10506480,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-13,TPEX,00987B,野村10+澳洲公債,15.78,15.8,15.73,15.75,1328000,169,20939950,TPEX_afterTrading_otc_type_EW,-0.2

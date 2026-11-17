@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6872,浩宇生醫,15.9,17.5,15.9,17.05,73000,45,1202550,TPEX_afterTrading_otc_type_EW,-0.6
+2026-11-09,TPEX,6872,浩宇生醫,18.15,18.15,17.55,17.6,37000,21,662850,TPEX_afterTrading_otc_type_EW,0.55
+2026-11-10,TPEX,6872,浩宇生醫,17.55,17.95,17.05,17.75,67000,35,1167700,TPEX_afterTrading_otc_type_EW,0.15
+2026-11-11,TPEX,6872,浩宇生醫,17.75,19.45,17.6,18.65,72000,60,1350350,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6872,浩宇生醫,19.25,19.25,17.9,18.0,119000,56,2185300,TPEX_afterTrading_otc_type_EW,-0.65
+2026-11-13,TPEX,6872,浩宇生醫,18.0,19.8,18.0,19.3,122000,77,2332650,TPEX_afterTrading_otc_type_EW,1.3

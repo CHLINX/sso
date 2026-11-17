@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,7712,博盛半導體,108.0,115.0,108.0,113.5,325000,274,35864500,TPEX_afterTrading_otc_type_EW,-6.5
+2026-11-09,TPEX,7712,博盛半導體,118.0,124.5,116.0,123.0,147000,126,18032000,TPEX_afterTrading_otc_type_EW,9.5
+2026-11-10,TPEX,7712,博盛半導體,135.0,135.0,131.5,134.0,243000,187,32535500,TPEX_afterTrading_otc_type_EW,11.0
+2026-11-11,TPEX,7712,博盛半導體,135.5,135.5,131.0,135.0,188000,156,24951000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,7712,博盛半導體,137.5,139.0,130.0,130.0,277000,237,37346500,TPEX_afterTrading_otc_type_EW,-5.0
+2026-11-13,TPEX,7712,博盛半導體,133.5,135.5,131.0,131.0,221000,172,29399500,TPEX_afterTrading_otc_type_EW,1.0

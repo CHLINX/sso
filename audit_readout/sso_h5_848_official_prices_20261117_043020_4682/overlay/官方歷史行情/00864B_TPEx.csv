@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00864B,中信美國公債0-1,47.8,47.94,47.61,47.88,3336000,535,159594360,TPEX_afterTrading_otc_type_EW,-0.06
+2026-11-09,TPEX,00864B,中信美國公債0-1,47.82,47.86,47.68,47.8,3131000,328,149512780,TPEX_afterTrading_otc_type_EW,-0.08
+2026-11-10,TPEX,00864B,中信美國公債0-1,47.72,47.95,47.71,47.92,1122000,144,53702360,TPEX_afterTrading_otc_type_EW,0.12
+2026-11-11,TPEX,00864B,中信美國公債0-1,47.92,47.97,47.8,47.82,1019000,159,48794390,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00864B,中信美國公債0-1,47.82,47.99,47.82,47.99,1022000,185,48976400,TPEX_afterTrading_otc_type_EW,0.17
+2026-11-13,TPEX,00864B,中信美國公債0-1,47.95,48.0,47.86,47.88,1295000,242,62041280,TPEX_afterTrading_otc_type_EW,-0.11

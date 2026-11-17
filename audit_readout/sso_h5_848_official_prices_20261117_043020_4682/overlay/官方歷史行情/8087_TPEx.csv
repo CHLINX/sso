@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,8087,麗升能源,17.7,19.4,17.7,18.85,26000,12,492900,TPEX_afterTrading_otc_type_EW,-0.7
+2026-11-09,TPEX,8087,麗升能源,20.4,20.4,18.95,19.0,16000,12,308850,TPEX_afterTrading_otc_type_EW,0.15
+2026-11-10,TPEX,8087,麗升能源,19.9,19.9,18.9,18.9,6000,5,116650,TPEX_afterTrading_otc_type_EW,-0.1
+2026-11-11,TPEX,8087,麗升能源,18.9,19.9,17.55,19.9,46000,32,857400,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,8087,麗升能源,19.5,21.0,19.2,20.95,210000,56,4170000,TPEX_afterTrading_otc_type_EW,1.05
+2026-11-13,TPEX,8087,麗升能源,21.0,21.2,19.95,20.0,82000,37,1664100,TPEX_afterTrading_otc_type_EW,-0.95

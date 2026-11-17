@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,3713,新晶投控,13.7,13.9,13.2,13.75,71000,48,965700,TPEX_afterTrading_otc_type_EW,-0.3
+2026-11-09,TPEX,3713,新晶投控,14.15,14.35,13.75,13.9,38000,27,532450,TPEX_afterTrading_otc_type_EW,0.15
+2026-11-10,TPEX,3713,新晶投控,13.55,14.0,12.75,14.0,74000,44,1000400,TPEX_afterTrading_otc_type_EW,0.1
+2026-11-11,TPEX,3713,新晶投控,13.95,14.9,13.75,14.9,175000,89,2521050,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,3713,新晶投控,15.35,16.35,15.2,16.35,633000,314,10199600,TPEX_afterTrading_otc_type_EW,1.45
+2026-11-13,TPEX,3713,新晶投控,16.75,17.65,16.35,16.6,487000,242,8232050,TPEX_afterTrading_otc_type_EW,0.25

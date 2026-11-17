@@ -1,0 +1,931 @@
+{
+  "version": "SSO_H5_848_Official_Price_Backfill_v1.0.2",
+  "run_id": "20261117_043020_4682",
+  "status": "PARTIAL_BLOCKED",
+  "signal_date": "2026-11-06",
+  "entry_date_t_plus_1": "2026-11-09",
+  "exit_date_t_plus_5": "2026-11-13",
+  "fetch_dates": [
+    "2026-11-06",
+    "2026-11-09",
+    "2026-11-10",
+    "2026-11-11",
+    "2026-11-12",
+    "2026-11-13"
+  ],
+  "markets": [
+    "TWSE",
+    "TPEX"
+  ],
+  "candidate_csv": "/content/drive/MyDrive/看股最速適/推薦結果/非前瞻參考/SSO_main_v5_20261116_114722_cef3a1/SSO_v2.66_H5_2026-11-06_凍結假設符合候選.csv",
+  "candidate_expected_sha256": "eea433b9f5242079d2db15256890e136a4a98364c73b62de508ea4ca95e11d1a",
+  "base_script_git_blob_sha": "033cd9694d80e3b233b6020e2aaf371f757f709f",
+  "api_attempts": [
+    {
+      "trade_date": "2026-11-06",
+      "market": "TWSE",
+      "query_type": "ALLBUT0999",
+      "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+      "params": {
+        "date": "20261106",
+        "type": "ALLBUT0999",
+        "response": "json"
+      },
+      "status": "PASS",
+      "source_mode": "REPLAYED_FROM_PREVIOUS_OFFICIAL_RAW_RESPONSE",
+      "cache_source_file": "/content/drive/MyDrive/看股最速適/H5_848官方行情補抓_20261117_024522_8dd5/raw/TWSE/20261106.json.gz",
+      "raw_file": "raw/TWSE/20261106.json.gz",
+      "raw_gzip_sha256": "8ccae104ac2fa5248d35de42114148d3c814095e4b1fc0e1f4eb7ed55fcc9b60",
+      "response_sha256": "640803a29e0ec937e96cbcc8b054ba36063f73acb852aa35336bb7ac62c59262",
+      "http_status": null,
+      "table_title": "115年11月06日 每日收盤行情(全部(不含權證、牛熊證、可展延牛熊證))",
+      "parse_stats": {
+        "table_rows": 1389,
+        "blank_code_rows": 0,
+        "invalid_code_rows": 0,
+        "malformed_rows": 0
+      },
+      "validation": {
+        "rows": 1389,
+        "unique_codes": 1389,
+        "duplicate_rows": 0,
+        "invalid_code_rows": 0,
+        "wrong_date_rows": 0,
+        "wrong_market_rows": 0,
+        "missing_volume_rows": 0,
+        "negative_volume_rows": 0,
+        "zero_volume_rows": 8,
+        "zero_volume_ratio": 0.00576,
+        "missing_ohlc_rows": 11,
+        "missing_ohlc_ratio": 0.007919,
+        "complete_ohlc_rows": 1378,
+        "invalid_ohlc_rows": 0,
+        "invalid_ohlc_ratio": 0.0,
+        "negative_trade_value_rows": 0,
+        "negative_transactions_rows": 0,
+        "missing_price_change_rows": 0,
+        "tpex_ew_source_fail_rows": 0,
+        "expected_rows": 1389,
+        "count_ratio": 1.0,
+        "validation_errors": [],
+        "parse_stats": {
+          "table_rows": 1389,
+          "blank_code_rows": 0,
+          "invalid_code_rows": 0,
+          "malformed_rows": 0
+        }
+      },
+      "validation_baseline": 1389,
+      "error": "",
+      "validation_baseline_source": "v1.5.1 歷史逐日統計中位數"
+    },
+    {
+      "trade_date": "2026-11-06",
+      "market": "TPEX",
+      "query_type": "EW_LEGACY_OFFICIAL",
+      "url": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php",
+      "params": {
+        "l": "zh-tw",
+        "d": "115/11/06",
+        "se": "EW",
+        "o": "json"
+      },
+      "status": "PASS",
+      "source_mode": "REPLAYED_FROM_PREVIOUS_OFFICIAL_RAW_RESPONSE",
+      "cache_source_file": "/content/drive/MyDrive/看股最速適/H5_848官方行情補抓_20261117_024522_8dd5/raw/TPEX/20261106_legacy.json.gz",
+      "raw_file": "raw/TPEX/20261106_legacy.json.gz",
+      "raw_gzip_sha256": "b64d457e0206344a52912e27e24cdf3a5582721356140b21d7b7f1590dac78b9",
+      "response_sha256": "d0fe8b6b45851d843415879a160515d1e28c5e1cc17082ea97676cb44ce91974",
+      "http_status": null,
+      "table_title": "上櫃股票每日收盤行情(不含定價)",
+      "parse_stats": {
+        "table_rows": 1017,
+        "blank_code_rows": 0,
+        "invalid_code_rows": 0,
+        "malformed_rows": 0
+      },
+      "validation": {
+        "rows": 1017,
+        "unique_codes": 1017,
+        "duplicate_rows": 0,
+        "invalid_code_rows": 0,
+        "wrong_date_rows": 0,
+        "wrong_market_rows": 0,
+        "missing_volume_rows": 0,
+        "negative_volume_rows": 0,
+        "zero_volume_rows": 20,
+        "zero_volume_ratio": 0.019666,
+        "missing_ohlc_rows": 20,
+        "missing_ohlc_ratio": 0.019666,
+        "complete_ohlc_rows": 997,
+        "invalid_ohlc_rows": 0,
+        "invalid_ohlc_ratio": 0.0,
+        "negative_trade_value_rows": 0,
+        "negative_transactions_rows": 0,
+        "missing_price_change_rows": 20,
+        "tpex_ew_source_fail_rows": 0,
+        "expected_rows": 1018,
+        "count_ratio": 0.999018,
+        "validation_errors": [],
+        "parse_stats": {
+          "table_rows": 1017,
+          "blank_code_rows": 0,
+          "invalid_code_rows": 0,
+          "malformed_rows": 0
+        }
+      },
+      "validation_baseline": 1018,
+      "error": "",
+      "validation_baseline_source": "v1.5.1 歷史逐日統計中位數"
+    },
+    {
+      "trade_date": "2026-11-09",
+      "market": "TWSE",
+      "query_type": "ALLBUT0999",
+      "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+      "params": {
+        "date": "20261109",
+        "type": "ALLBUT0999",
+        "response": "json"
+      },
+      "status": "PASS",
+      "source_mode": "REPLAYED_FROM_PREVIOUS_OFFICIAL_RAW_RESPONSE",
+      "cache_source_file": "/content/drive/MyDrive/看股最速適/H5_848官方行情補抓_20261117_024522_8dd5/raw/TWSE/20261109.json.gz",
+      "raw_file": "raw/TWSE/20261109.json.gz",
+      "raw_gzip_sha256": "a286f2a40c588d6810f3fd5804da9ed5ede5f4caa258cd9749d35713272066cb",
+      "response_sha256": "32c8f48d418241eb1afc47fdbdc8f0a0d9202c29e33a93bafa4388f9518356ca",
+      "http_status": null,
+      "table_title": "115年11月09日 每日收盤行情(全部(不含權證、牛熊證、可展延牛熊證))",
+      "parse_stats": {
+        "table_rows": 1389,
+        "blank_code_rows": 0,
+        "invalid_code_rows": 0,
+        "malformed_rows": 0
+      },
+      "validation": {
+        "rows": 1389,
+        "unique_codes": 1389,
+        "duplicate_rows": 0,
+        "invalid_code_rows": 0,
+        "wrong_date_rows": 0,
+        "wrong_market_rows": 0,
+        "missing_volume_rows": 0,
+        "negative_volume_rows": 0,
+        "zero_volume_rows": 8,
+        "zero_volume_ratio": 0.00576,
+        "missing_ohlc_rows": 8,
+        "missing_ohlc_ratio": 0.00576,
+        "complete_ohlc_rows": 1381,
+        "invalid_ohlc_rows": 0,
+        "invalid_ohlc_ratio": 0.0,
+        "negative_trade_value_rows": 0,
+        "negative_transactions_rows": 0,
+        "missing_price_change_rows": 0,
+        "tpex_ew_source_fail_rows": 0,
+        "expected_rows": 1389,
+        "count_ratio": 1.0,
+        "validation_errors": [],
+        "parse_stats": {
+          "table_rows": 1389,
+          "blank_code_rows": 0,
+          "invalid_code_rows": 0,
+          "malformed_rows": 0
+        }
+      },
+      "validation_baseline": 1389,
+      "error": "",
+      "validation_baseline_source": "v1.5.1 歷史逐日統計中位數"
+    },
+    {
+      "trade_date": "2026-11-09",
+      "market": "TPEX",
+      "query_type": "EW_LEGACY_OFFICIAL",
+      "url": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php",
+      "params": {
+        "l": "zh-tw",
+        "d": "115/11/09",
+        "se": "EW",
+        "o": "json"
+      },
+      "status": "PASS",
+      "source_mode": "REPLAYED_FROM_PREVIOUS_OFFICIAL_RAW_RESPONSE",
+      "cache_source_file": "/content/drive/MyDrive/看股最速適/H5_848官方行情補抓_20261117_024522_8dd5/raw/TPEX/20261109_legacy.json.gz",
+      "raw_file": "raw/TPEX/20261109_legacy.json.gz",
+      "raw_gzip_sha256": "4bd03b17116408f891f5b9489bdc637d9bc175f41ab66349244af6f32800145c",
+      "response_sha256": "f218460e7d3579326fc0fee54446806419321ea195792cd56a42a96175817e0d",
+      "http_status": null,
+      "table_title": "上櫃股票每日收盤行情(不含定價)",
+      "parse_stats": {
+        "table_rows": 1020,
+        "blank_code_rows": 0,
+        "invalid_code_rows": 0,
+        "malformed_rows": 0
+      },
+      "validation": {
+        "rows": 1020,
+        "unique_codes": 1020,
+        "duplicate_rows": 0,
+        "invalid_code_rows": 0,
+        "wrong_date_rows": 0,
+        "wrong_market_rows": 0,
+        "missing_volume_rows": 0,
+        "negative_volume_rows": 0,
+        "zero_volume_rows": 17,
+        "zero_volume_ratio": 0.016667,
+        "missing_ohlc_rows": 17,
+        "missing_ohlc_ratio": 0.016667,
+        "complete_ohlc_rows": 1003,
+        "invalid_ohlc_rows": 0,
+        "invalid_ohlc_ratio": 0.0,
+        "negative_trade_value_rows": 0,
+        "negative_transactions_rows": 0,
+        "missing_price_change_rows": 17,
+        "tpex_ew_source_fail_rows": 0,
+        "expected_rows": 1018,
+        "count_ratio": 1.001965,
+        "validation_errors": [],
+        "parse_stats": {
+          "table_rows": 1020,
+          "blank_code_rows": 0,
+          "invalid_code_rows": 0,
+          "malformed_rows": 0
+        }
+      },
+      "validation_baseline": 1018,
+      "error": "",
+      "validation_baseline_source": "v1.5.1 歷史逐日統計中位數"
+    },
+    {
+      "trade_date": "2026-11-10",
+      "market": "TWSE",
+      "query_type": "ALLBUT0999",
+      "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+      "params": {
+        "date": "20261110",
+        "type": "ALLBUT0999",
+        "response": "json"
+      },
+      "status": "PASS",
+      "source_mode": "REPLAYED_FROM_PREVIOUS_OFFICIAL_RAW_RESPONSE",
+      "cache_source_file": "/content/drive/MyDrive/看股最速適/H5_848官方行情補抓_20261117_024522_8dd5/raw/TWSE/20261110.json.gz",
+      "raw_file": "raw/TWSE/20261110.json.gz",
+      "raw_gzip_sha256": "a2fd3e8c22e2656b06bc371fae6e2ee73a4a0fd97dc7e6d5a7dab0b090763238",
+      "response_sha256": "e5cdb5fd66f44853a2dd674891f6c96feafb38e0b164bc73eeb1a885c0aea560",
+      "http_status": null,
+      "table_title": "115年11月10日 每日收盤行情(全部(不含權證、牛熊證、可展延牛熊證))",
+      "parse_stats": {
+        "table_rows": 1389,
+        "blank_code_rows": 0,
+        "invalid_code_rows": 0,
+        "malformed_rows": 0
+      },
+      "validation": {
+        "rows": 1389,
+        "unique_codes": 1389,
+        "duplicate_rows": 0,
+        "invalid_code_rows": 0,
+        "wrong_date_rows": 0,
+        "wrong_market_rows": 0,
+        "missing_volume_rows": 0,
+        "negative_volume_rows": 0,
+        "zero_volume_rows": 12,
+        "zero_volume_ratio": 0.008639,
+        "missing_ohlc_rows": 14,
+        "missing_ohlc_ratio": 0.010079,
+        "complete_ohlc_rows": 1375,
+        "invalid_ohlc_rows": 0,
+        "invalid_ohlc_ratio": 0.0,
+        "negative_trade_value_rows": 0,
+        "negative_transactions_rows": 0,
+        "missing_price_change_rows": 0,
+        "tpex_ew_source_fail_rows": 0,
+        "expected_rows": 1389,
+        "count_ratio": 1.0,
+        "validation_errors": [],
+        "parse_stats": {
+          "table_rows": 1389,
+          "blank_code_rows": 0,
+          "invalid_code_rows": 0,
+          "malformed_rows": 0
+        }
+      },
+      "validation_baseline": 1389,
+      "error": "",
+      "validation_baseline_source": "v1.5.1 歷史逐日統計中位數"
+    },
+    {
+      "trade_date": "2026-11-10",
+      "market": "TPEX",
+      "query_type": "EW_LEGACY_OFFICIAL",
+      "url": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php",
+      "params": {
+        "l": "zh-tw",
+        "d": "115/11/10",
+        "se": "EW",
+        "o": "json"
+      },
+      "status": "PASS",
+      "source_mode": "REPLAYED_FROM_PREVIOUS_OFFICIAL_RAW_RESPONSE",
+      "cache_source_file": "/content/drive/MyDrive/看股最速適/H5_848官方行情補抓_20261117_024522_8dd5/raw/TPEX/20261110_legacy.json.gz",
+      "raw_file": "raw/TPEX/20261110_legacy.json.gz",
+      "raw_gzip_sha256": "17d9434cdf3337ebaf9a9c0459ad835babbb1074de7c016c8971bf65ca1a847b",
+      "response_sha256": "e2898fbe52ce5e0e1965d469564a32afa6ff771722f4ee3777465b6835c5589b",
+      "http_status": null,
+      "table_title": "上櫃股票每日收盤行情(不含定價)",
+      "parse_stats": {
+        "table_rows": 1020,
+        "blank_code_rows": 0,
+        "invalid_code_rows": 0,
+        "malformed_rows": 0
+      },
+      "validation": {
+        "rows": 1020,
+        "unique_codes": 1020,
+        "duplicate_rows": 0,
+        "invalid_code_rows": 0,
+        "wrong_date_rows": 0,
+        "wrong_market_rows": 0,
+        "missing_volume_rows": 0,
+        "negative_volume_rows": 0,
+        "zero_volume_rows": 28,
+        "zero_volume_ratio": 0.027451,
+        "missing_ohlc_rows": 28,
+        "missing_ohlc_ratio": 0.027451,
+        "complete_ohlc_rows": 992,
+        "invalid_ohlc_rows": 0,
+        "invalid_ohlc_ratio": 0.0,
+        "negative_trade_value_rows": 0,
+        "negative_transactions_rows": 0,
+        "missing_price_change_rows": 28,
+        "tpex_ew_source_fail_rows": 0,
+        "expected_rows": 1018,
+        "count_ratio": 1.001965,
+        "validation_errors": [],
+        "parse_stats": {
+          "table_rows": 1020,
+          "blank_code_rows": 0,
+          "invalid_code_rows": 0,
+          "malformed_rows": 0
+        }
+      },
+      "validation_baseline": 1018,
+      "error": "",
+      "validation_baseline_source": "v1.5.1 歷史逐日統計中位數"
+    },
+    {
+      "trade_date": "2026-11-11",
+      "market": "TWSE",
+      "query_type": "ALLBUT0999",
+      "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+      "params": {
+        "date": "20261111",
+        "type": "ALLBUT0999",
+        "response": "json"
+      },
+      "status": "PASS",
+      "source_mode": "REPLAYED_FROM_PREVIOUS_OFFICIAL_RAW_RESPONSE",
+      "cache_source_file": "/content/drive/MyDrive/看股最速適/H5_848官方行情補抓_20261117_024522_8dd5/raw/TWSE/20261111.json.gz",
+      "raw_file": "raw/TWSE/20261111.json.gz",
+      "raw_gzip_sha256": "a67de6bb81d7e73aac3c17b8f54a8030f952924867dd86f643364262ad88e0fc",
+      "response_sha256": "e4ff525e7611335616ce3d3a28b3a2efadf822f531271e26b2cb98a6e696df63",
+      "http_status": null,
+      "table_title": "115年11月11日 每日收盤行情(全部(不含權證、牛熊證、可展延牛熊證))",
+      "parse_stats": {
+        "table_rows": 1390,
+        "blank_code_rows": 0,
+        "invalid_code_rows": 0,
+        "malformed_rows": 0
+      },
+      "validation": {
+        "rows": 1390,
+        "unique_codes": 1390,
+        "duplicate_rows": 0,
+        "invalid_code_rows": 0,
+        "wrong_date_rows": 0,
+        "wrong_market_rows": 0,
+        "missing_volume_rows": 0,
+        "negative_volume_rows": 0,
+        "zero_volume_rows": 7,
+        "zero_volume_ratio": 0.005036,
+        "missing_ohlc_rows": 14,
+        "missing_ohlc_ratio": 0.010072,
+        "complete_ohlc_rows": 1376,
+        "invalid_ohlc_rows": 0,
+        "invalid_ohlc_ratio": 0.0,
+        "negative_trade_value_rows": 0,
+        "negative_transactions_rows": 0,
+        "missing_price_change_rows": 0,
+        "tpex_ew_source_fail_rows": 0,
+        "expected_rows": 1389,
+        "count_ratio": 1.00072,
+        "validation_errors": [],
+        "parse_stats": {
+          "table_rows": 1390,
+          "blank_code_rows": 0,
+          "invalid_code_rows": 0,
+          "malformed_rows": 0
+        }
+      },
+      "validation_baseline": 1389,
+      "error": "",
+      "validation_baseline_source": "v1.5.1 歷史逐日統計中位數"
+    },
+    {
+      "trade_date": "2026-11-11",
+      "market": "TPEX",
+      "query_type": "EW_LEGACY_OFFICIAL",
+      "url": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php",
+      "params": {
+        "l": "zh-tw",
+        "d": "115/11/11",
+        "se": "EW",
+        "o": "json"
+      },
+      "status": "PASS",
+      "source_mode": "REPLAYED_FROM_PREVIOUS_OFFICIAL_RAW_RESPONSE",
+      "cache_source_file": "/content/drive/MyDrive/看股最速適/H5_848官方行情補抓_20261117_024522_8dd5/raw/TPEX/20261111_legacy.json.gz",
+      "raw_file": "raw/TPEX/20261111_legacy.json.gz",
+      "raw_gzip_sha256": "dd88bee9da788ce50951f74f86f2cca0d11aa583d11395e89a9210a787fd4464",
+      "response_sha256": "f7b61e1ec8993fbd3173d68936a2236f3bccff672c4e70d2f3bcc961a5621866",
+      "http_status": null,
+      "table_title": "上櫃股票每日收盤行情(不含定價)",
+      "parse_stats": {
+        "table_rows": 1020,
+        "blank_code_rows": 0,
+        "invalid_code_rows": 0,
+        "malformed_rows": 0
+      },
+      "validation": {
+        "rows": 1020,
+        "unique_codes": 1020,
+        "duplicate_rows": 0,
+        "invalid_code_rows": 0,
+        "wrong_date_rows": 0,
+        "wrong_market_rows": 0,
+        "missing_volume_rows": 0,
+        "negative_volume_rows": 0,
+        "zero_volume_rows": 27,
+        "zero_volume_ratio": 0.026471,
+        "missing_ohlc_rows": 27,
+        "missing_ohlc_ratio": 0.026471,
+        "complete_ohlc_rows": 993,
+        "invalid_ohlc_rows": 0,
+        "invalid_ohlc_ratio": 0.0,
+        "negative_trade_value_rows": 0,
+        "negative_transactions_rows": 0,
+        "missing_price_change_rows": 28,
+        "tpex_ew_source_fail_rows": 0,
+        "expected_rows": 1018,
+        "count_ratio": 1.001965,
+        "validation_errors": [],
+        "parse_stats": {
+          "table_rows": 1020,
+          "blank_code_rows": 0,
+          "invalid_code_rows": 0,
+          "malformed_rows": 0
+        }
+      },
+      "validation_baseline": 1018,
+      "error": "",
+      "validation_baseline_source": "v1.5.1 歷史逐日統計中位數"
+    },
+    {
+      "trade_date": "2026-11-12",
+      "market": "TWSE",
+      "query_type": "ALLBUT0999",
+      "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+      "params": {
+        "date": "20261112",
+        "type": "ALLBUT0999",
+        "response": "json"
+      },
+      "status": "PASS",
+      "source_mode": "REPLAYED_FROM_PREVIOUS_OFFICIAL_RAW_RESPONSE",
+      "cache_source_file": "/content/drive/MyDrive/看股最速適/H5_848官方行情補抓_20261117_024522_8dd5/raw/TWSE/20261112.json.gz",
+      "raw_file": "raw/TWSE/20261112.json.gz",
+      "raw_gzip_sha256": "04467d95710a832c5e174b49a9e21b9d75a0e355d582338c2ba76b1f88735186",
+      "response_sha256": "87fb635ba32f86e95c0a264cb362bc2e32b88257a0d91e0f1a04a1c3478b6d05",
+      "http_status": null,
+      "table_title": "115年11月12日 每日收盤行情(全部(不含權證、牛熊證、可展延牛熊證))",
+      "parse_stats": {
+        "table_rows": 1389,
+        "blank_code_rows": 0,
+        "invalid_code_rows": 0,
+        "malformed_rows": 0
+      },
+      "validation": {
+        "rows": 1389,
+        "unique_codes": 1389,
+        "duplicate_rows": 0,
+        "invalid_code_rows": 0,
+        "wrong_date_rows": 0,
+        "wrong_market_rows": 0,
+        "missing_volume_rows": 0,
+        "negative_volume_rows": 0,
+        "zero_volume_rows": 8,
+        "zero_volume_ratio": 0.00576,
+        "missing_ohlc_rows": 11,
+        "missing_ohlc_ratio": 0.007919,
+        "complete_ohlc_rows": 1378,
+        "invalid_ohlc_rows": 0,
+        "invalid_ohlc_ratio": 0.0,
+        "negative_trade_value_rows": 0,
+        "negative_transactions_rows": 0,
+        "missing_price_change_rows": 0,
+        "tpex_ew_source_fail_rows": 0,
+        "expected_rows": 1389,
+        "count_ratio": 1.0,
+        "validation_errors": [],
+        "parse_stats": {
+          "table_rows": 1389,
+          "blank_code_rows": 0,
+          "invalid_code_rows": 0,
+          "malformed_rows": 0
+        }
+      },
+      "validation_baseline": 1389,
+      "error": "",
+      "validation_baseline_source": "v1.5.1 歷史逐日統計中位數"
+    },
+    {
+      "trade_date": "2026-11-12",
+      "market": "TPEX",
+      "query_type": "EW_LEGACY_OFFICIAL",
+      "url": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php",
+      "params": {
+        "l": "zh-tw",
+        "d": "115/11/12",
+        "se": "EW",
+        "o": "json"
+      },
+      "status": "PASS",
+      "source_mode": "REPLAYED_FROM_PREVIOUS_OFFICIAL_RAW_RESPONSE",
+      "cache_source_file": "/content/drive/MyDrive/看股最速適/H5_848官方行情補抓_20261117_024522_8dd5/raw/TPEX/20261112_legacy.json.gz",
+      "raw_file": "raw/TPEX/20261112_legacy.json.gz",
+      "raw_gzip_sha256": "0b6795187f6fc7f56084ea3af2e1e62d3a4833b452ff030020f0804842d10b8b",
+      "response_sha256": "3974c86e68100df942ccea28f5fda7752a60fee6d890070799f1c43e93da70f8",
+      "http_status": null,
+      "table_title": "上櫃股票每日收盤行情(不含定價)",
+      "parse_stats": {
+        "table_rows": 1020,
+        "blank_code_rows": 0,
+        "invalid_code_rows": 0,
+        "malformed_rows": 0
+      },
+      "validation": {
+        "rows": 1020,
+        "unique_codes": 1020,
+        "duplicate_rows": 0,
+        "invalid_code_rows": 0,
+        "wrong_date_rows": 0,
+        "wrong_market_rows": 0,
+        "missing_volume_rows": 0,
+        "negative_volume_rows": 0,
+        "zero_volume_rows": 28,
+        "zero_volume_ratio": 0.027451,
+        "missing_ohlc_rows": 28,
+        "missing_ohlc_ratio": 0.027451,
+        "complete_ohlc_rows": 992,
+        "invalid_ohlc_rows": 0,
+        "invalid_ohlc_ratio": 0.0,
+        "negative_trade_value_rows": 0,
+        "negative_transactions_rows": 0,
+        "missing_price_change_rows": 29,
+        "tpex_ew_source_fail_rows": 0,
+        "expected_rows": 1018,
+        "count_ratio": 1.001965,
+        "validation_errors": [],
+        "parse_stats": {
+          "table_rows": 1020,
+          "blank_code_rows": 0,
+          "invalid_code_rows": 0,
+          "malformed_rows": 0
+        }
+      },
+      "validation_baseline": 1018,
+      "error": "",
+      "validation_baseline_source": "v1.5.1 歷史逐日統計中位數"
+    },
+    {
+      "trade_date": "2026-11-13",
+      "market": "TWSE",
+      "query_type": "ALLBUT0999",
+      "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+      "params": {
+        "date": "20261113",
+        "type": "ALLBUT0999",
+        "response": "json"
+      },
+      "status": "PASS",
+      "source_mode": "REPLAYED_FROM_PREVIOUS_OFFICIAL_RAW_RESPONSE",
+      "cache_source_file": "/content/drive/MyDrive/看股最速適/H5_848官方行情補抓_20261117_024522_8dd5/raw/TWSE/20261113.json.gz",
+      "raw_file": "raw/TWSE/20261113.json.gz",
+      "raw_gzip_sha256": "79a65f84aa71132496b47f3f4b4be754f89c1c036fd0f6a9834c89edfcac450e",
+      "response_sha256": "b51f87609d6e47eb82c818ab7bf1ef5a9e706504e10146cd49c24954969a9429",
+      "http_status": null,
+      "table_title": "115年11月13日 每日收盤行情(全部(不含權證、牛熊證、可展延牛熊證))",
+      "parse_stats": {
+        "table_rows": 1389,
+        "blank_code_rows": 0,
+        "invalid_code_rows": 0,
+        "malformed_rows": 0
+      },
+      "validation": {
+        "rows": 1389,
+        "unique_codes": 1389,
+        "duplicate_rows": 0,
+        "invalid_code_rows": 0,
+        "wrong_date_rows": 0,
+        "wrong_market_rows": 0,
+        "missing_volume_rows": 0,
+        "negative_volume_rows": 0,
+        "zero_volume_rows": 8,
+        "zero_volume_ratio": 0.00576,
+        "missing_ohlc_rows": 12,
+        "missing_ohlc_ratio": 0.008639,
+        "complete_ohlc_rows": 1377,
+        "invalid_ohlc_rows": 0,
+        "invalid_ohlc_ratio": 0.0,
+        "negative_trade_value_rows": 0,
+        "negative_transactions_rows": 0,
+        "missing_price_change_rows": 0,
+        "tpex_ew_source_fail_rows": 0,
+        "expected_rows": 1389,
+        "count_ratio": 1.0,
+        "validation_errors": [],
+        "parse_stats": {
+          "table_rows": 1389,
+          "blank_code_rows": 0,
+          "invalid_code_rows": 0,
+          "malformed_rows": 0
+        }
+      },
+      "validation_baseline": 1389,
+      "error": "",
+      "validation_baseline_source": "v1.5.1 歷史逐日統計中位數"
+    },
+    {
+      "trade_date": "2026-11-13",
+      "market": "TPEX",
+      "query_type": "EW_LEGACY_OFFICIAL",
+      "url": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php",
+      "params": {
+        "l": "zh-tw",
+        "d": "115/11/13",
+        "se": "EW",
+        "o": "json"
+      },
+      "status": "PASS",
+      "source_mode": "REPLAYED_FROM_PREVIOUS_OFFICIAL_RAW_RESPONSE",
+      "cache_source_file": "/content/drive/MyDrive/看股最速適/H5_848官方行情補抓_20261117_024522_8dd5/raw/TPEX/20261113_legacy.json.gz",
+      "raw_file": "raw/TPEX/20261113_legacy.json.gz",
+      "raw_gzip_sha256": "1c2c696162dab99806151ce714d62735da1b163ae3d9342d80b5503da04956a3",
+      "response_sha256": "4d33a047f427f7a4ac2418aa0b46fdefc524497fe882a672d0491f2495fa3bf2",
+      "http_status": null,
+      "table_title": "上櫃股票每日收盤行情(不含定價)",
+      "parse_stats": {
+        "table_rows": 1020,
+        "blank_code_rows": 0,
+        "invalid_code_rows": 0,
+        "malformed_rows": 0
+      },
+      "validation": {
+        "rows": 1020,
+        "unique_codes": 1020,
+        "duplicate_rows": 0,
+        "invalid_code_rows": 0,
+        "wrong_date_rows": 0,
+        "wrong_market_rows": 0,
+        "missing_volume_rows": 0,
+        "negative_volume_rows": 0,
+        "zero_volume_rows": 23,
+        "zero_volume_ratio": 0.022549,
+        "missing_ohlc_rows": 23,
+        "missing_ohlc_ratio": 0.022549,
+        "complete_ohlc_rows": 997,
+        "invalid_ohlc_rows": 0,
+        "invalid_ohlc_ratio": 0.0,
+        "negative_trade_value_rows": 0,
+        "negative_transactions_rows": 0,
+        "missing_price_change_rows": 23,
+        "tpex_ew_source_fail_rows": 0,
+        "expected_rows": 1018,
+        "count_ratio": 1.001965,
+        "validation_errors": [],
+        "parse_stats": {
+          "table_rows": 1020,
+          "blank_code_rows": 0,
+          "invalid_code_rows": 0,
+          "malformed_rows": 0
+        }
+      },
+      "validation_baseline": 1018,
+      "error": "",
+      "validation_baseline_source": "v1.5.1 歷史逐日統計中位數"
+    }
+  ],
+  "correction_validation": {
+    "TWSE": {
+      "status": "PASS",
+      "rows": 1390,
+      "natural_key_equal": true,
+      "ohlcv_trade_fields_equal": true,
+      "price_change_differences": 0,
+      "selected_source": "v1.5.9 sealed correction layer"
+    },
+    "TPEX": {
+      "status": "PASS",
+      "rows": 1020,
+      "natural_key_equal": true,
+      "ohlcv_trade_fields_equal": true,
+      "price_change_differences": 0,
+      "selected_source": "v1.5.9 sealed correction layer"
+    }
+  },
+  "counts": {
+    "expected_market_days": 12,
+    "passed_market_days": 12,
+    "all_market_rows": 14452,
+    "by_market": {
+      "TWSE": 8335,
+      "TPEX": 6117
+    }
+  },
+  "downstream_ready": false,
+  "return_validity_note": "價格配對初算；尚未完成 v2.31 signal_entry_mismatch／公司行動正式核驗。",
+  "raw_cache_source_dir": "/content/drive/MyDrive/看股最速適/H5_848官方行情補抓_20261117_024522_8dd5",
+  "raw_cache_policy": "重用來源資料夾唯讀；完整快取不足時才重新向官方 API 抓取。",
+  "base_script_url": "https://raw.githubusercontent.com/CHLINX/sso/audit/sso-marketdata-v1510-seal-20261112_180751_3bd3/audit_readout/sso_marketdata_v1510_20261112_180751_3bd3/SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.10.py",
+  "base_script_git_blob_sha_verified": true,
+  "candidate_sha256": "eea433b9f5242079d2db15256890e136a4a98364c73b62de508ea4ca95e11d1a",
+  "candidate_count": 848,
+  "row_count_baseline": {
+    "TWSE": 1389,
+    "TPEX": 1018
+  },
+  "row_count_baseline_source": {
+    "TWSE": "v1.5.1 歷史逐日統計中位數",
+    "TPEX": "v1.5.1 歷史逐日統計中位數"
+  },
+  "v159_correction_source": {
+    "source_directory": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.9_TWSE_price_change欄位補正_20261112_152447_f573",
+    "source_zip_sha256": "dae83e95a57dd76820c020050e56f33d54b24cbd8bcb7502a754f0625ce8be38",
+    "source_manifest_sha256": "53909b629ecfb730696b466e970d61f2e9784c9d94126d7da471b251bca8f45b",
+    "twse_rows": 1390,
+    "twse_file_sha256": "b390cd3b3e3fd339395818cee683eac91414540364baff9a851143094fec428b",
+    "tpex_rows": 1020,
+    "tpex_file_sha256": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742"
+  },
+  "api_failures": [],
+  "daily_summary": [
+    {
+      "trade_date": "2026-11-06",
+      "market": "TWSE",
+      "rows": 1389,
+      "status": "PASS",
+      "unique_codes": 1389
+    },
+    {
+      "trade_date": "2026-11-06",
+      "market": "TPEX",
+      "rows": 1017,
+      "status": "PASS",
+      "unique_codes": 1017
+    },
+    {
+      "trade_date": "2026-11-09",
+      "market": "TWSE",
+      "rows": 1389,
+      "status": "PASS",
+      "unique_codes": 1389
+    },
+    {
+      "trade_date": "2026-11-09",
+      "market": "TPEX",
+      "rows": 1020,
+      "status": "PASS",
+      "unique_codes": 1020
+    },
+    {
+      "trade_date": "2026-11-10",
+      "market": "TWSE",
+      "rows": 1389,
+      "status": "PASS",
+      "unique_codes": 1389
+    },
+    {
+      "trade_date": "2026-11-10",
+      "market": "TPEX",
+      "rows": 1020,
+      "status": "PASS",
+      "unique_codes": 1020
+    },
+    {
+      "trade_date": "2026-11-11",
+      "market": "TWSE",
+      "rows": 1390,
+      "status": "PASS",
+      "unique_codes": 1390
+    },
+    {
+      "trade_date": "2026-11-11",
+      "market": "TPEX",
+      "rows": 1020,
+      "status": "PASS",
+      "unique_codes": 1020
+    },
+    {
+      "trade_date": "2026-11-12",
+      "market": "TWSE",
+      "rows": 1389,
+      "status": "PASS",
+      "unique_codes": 1389
+    },
+    {
+      "trade_date": "2026-11-12",
+      "market": "TPEX",
+      "rows": 1020,
+      "status": "PASS",
+      "unique_codes": 1020
+    },
+    {
+      "trade_date": "2026-11-13",
+      "market": "TWSE",
+      "rows": 1389,
+      "status": "PASS",
+      "unique_codes": 1389
+    },
+    {
+      "trade_date": "2026-11-13",
+      "market": "TPEX",
+      "rows": 1020,
+      "status": "PASS",
+      "unique_codes": 1020
+    }
+  ],
+  "standardized_csv_roundtrip": {
+    "status": "PASS",
+    "rows": 14452,
+    "canonical_sha256": "81ba1bf735025001f27afc31339312013b641b08e5bb1d830450e5266e9976d3",
+    "file_sha256": "b0a042da79b63c024d7b9a2a50205091c10bc6db338646c07dd5ff7f01858837"
+  },
+  "candidate_market_inference_unresolved": [],
+  "candidate_price_pairs": {
+    "file": "848檔H5實際入出場價格配對.csv",
+    "rows": 848,
+    "price_pair_ready": 847,
+    "not_ready": 1,
+    "file_sha256": "4b9d8a75b7df618f5c75a7c250038a513aff977fdec88b418052fa76d7225c36"
+  },
+  "self_tests": [
+    {
+      "test": "H5日期序列固定",
+      "status": "PASS"
+    },
+    {
+      "test": "net_return成本公式有限",
+      "status": "PASS"
+    },
+    {
+      "test": "官方全市場自然鍵唯一",
+      "status": "PASS"
+    },
+    {
+      "test": "候選凍結數量維持848",
+      "status": "PASS"
+    },
+    {
+      "test": "多日期／雙市場自然鍵 round-trip",
+      "status": "PASS"
+    },
+    {
+      "test": "歷史欄名 alias writer round-trip",
+      "status": "PASS"
+    }
+  ],
+  "integration_policy": {
+    "old_drive_files_modified": false,
+    "old_drive_files_deleted": false,
+    "old_increment_files_overwritten": false,
+    "full_six_day_snapshot_isolated": true,
+    "raw_cache_reused_read_only": true,
+    "multi_date_validation_uses_natural_key": true,
+    "standardized_csv_writer_uses_v1510_legacy_alias_mapping": true,
+    "existing_marketdata_version_dirs_polluted": false,
+    "2026_11_11_correction_layer_checked_and_applied": true,
+    "official_calendar_checked": true,
+    "final_model_entry_trade_valid_claimed": false,
+    "reason_final_trade_valid_not_claimed": "尚未重現 v2.31 的 signal_entry_mismatch／公司行動 adapter；本檔只提供官方原始價與 H5 入出場配對價。"
+  },
+  "data_sources": {
+    "TWSE": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?type=ALLBUT0999",
+    "TPEX_modern": "https://www.tpex.org.tw/www/zh-tw/afterTrading/otc?type=EW",
+    "TPEX_legacy": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?se=EW",
+    "TWSE_holiday_calendar": "https://www.twse.com.tw/rwd/zh/holidaySchedule/holidaySchedule"
+  },
+  "archive": {
+    "zip": "H5_848官方行情補抓修復_v1.0.2_20261117_043020_4682.zip",
+    "zip_sha256_sidecar": "ZIP_SHA256.txt",
+    "zip_hash_is_external_to_archive": true
+  }
+}

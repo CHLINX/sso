@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6725,矽科宏晟,136.0,144.5,136.0,141.5,159000,117,21943500,TPEX_afterTrading_otc_type_EW,-9.5
+2026-11-09,TPEX,6725,矽科宏晟,145.5,151.0,145.5,149.0,118000,91,17489500,TPEX_afterTrading_otc_type_EW,7.5
+2026-11-10,TPEX,6725,矽科宏晟,150.0,156.5,150.0,156.0,94000,71,14537000,TPEX_afterTrading_otc_type_EW,7.0
+2026-11-11,TPEX,6725,矽科宏晟,171.5,171.5,167.0,171.5,193000,138,33053500,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6725,矽科宏晟,177.5,183.0,173.5,174.0,418000,373,74398000,TPEX_afterTrading_otc_type_EW,2.5
+2026-11-13,TPEX,6725,矽科宏晟,175.0,185.5,175.0,175.5,224000,197,40163000,TPEX_afterTrading_otc_type_EW,1.5

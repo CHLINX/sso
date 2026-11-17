@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,7717,萊德光電-KY,315.0,341.5,315.0,323.5,310000,275,99801000,TPEX_afterTrading_otc_type_EW,-26.0
+2026-11-09,TPEX,7717,萊德光電-KY,339.5,355.5,335.5,355.5,167000,142,58355000,TPEX_afterTrading_otc_type_EW,32.0
+2026-11-10,TPEX,7717,萊德光電-KY,391.0,391.0,381.0,391.0,339000,233,132145000,TPEX_afterTrading_otc_type_EW,35.5
+2026-11-11,TPEX,7717,萊德光電-KY,395.0,430.0,395.0,430.0,513000,452,211946500,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,7717,萊德光電-KY,434.5,473.0,434.5,445.0,1731000,1383,794327500,TPEX_afterTrading_otc_type_EW,15.0
+2026-11-13,TPEX,7717,萊德光電-KY,461.5,489.5,461.5,489.5,859000,630,417786500,TPEX_afterTrading_otc_type_EW,44.5

@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6829,千附精密,152.5,167.0,152.5,164.0,504000,380,79917000,TPEX_afterTrading_otc_type_EW,-5.0
+2026-11-09,TPEX,6829,千附精密,166.0,173.0,164.5,171.0,261000,235,44204500,TPEX_afterTrading_otc_type_EW,7.0
+2026-11-10,TPEX,6829,千附精密,177.5,186.5,176.0,179.5,348000,270,62910500,TPEX_afterTrading_otc_type_EW,8.5
+2026-11-11,TPEX,6829,千附精密,179.0,180.0,173.5,177.0,245000,218,42907000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6829,千附精密,181.0,188.5,176.0,176.5,505000,384,92217000,TPEX_afterTrading_otc_type_EW,-0.5
+2026-11-13,TPEX,6829,千附精密,182.0,186.0,179.5,182.0,229000,189,41954000,TPEX_afterTrading_otc_type_EW,5.5

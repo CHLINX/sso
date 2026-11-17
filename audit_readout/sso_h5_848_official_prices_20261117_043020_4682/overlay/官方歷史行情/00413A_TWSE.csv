@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-11,TWSE,00413A,主動玉山關鍵科技,10.52,10.84,10.5,10.84,48181973,4359,511386449,TWSE_MI_INDEX,0.37
+2026-11-12,TWSE,00413A,主動玉山關鍵科技,10.9,11.03,10.38,10.41,22824898,2858,247610211,TWSE_MI_INDEX,0.43
+2026-11-13,TWSE,00413A,主動玉山關鍵科技,10.79,11.05,10.64,10.68,17766133,1370,193993841,TWSE_MI_INDEX,0.27

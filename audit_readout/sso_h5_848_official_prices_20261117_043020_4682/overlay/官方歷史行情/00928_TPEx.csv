@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00928,中信上櫃ESG 30,23.12,23.95,23.12,23.47,1056000,405,24725370,TPEX_afterTrading_otc_type_EW,-1.66
+2026-11-09,TPEX,00928,中信上櫃ESG 30,23.79,25.16,23.7,25.09,785000,162,19607090,TPEX_afterTrading_otc_type_EW,1.62
+2026-11-10,TPEX,00928,中信上櫃ESG 30,26.0,26.39,25.29,26.07,1331000,356,34463630,TPEX_afterTrading_otc_type_EW,0.98
+2026-11-11,TPEX,00928,中信上櫃ESG 30,26.06,27.0,25.94,27.0,716000,243,18836420,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00928,中信上櫃ESG 30,27.1,27.76,26.0,26.18,2541000,530,68290370,TPEX_afterTrading_otc_type_EW,-0.82
+2026-11-13,TPEX,00928,中信上櫃ESG 30,26.31,27.37,26.31,26.86,759000,552,20437650,TPEX_afterTrading_otc_type_EW,0.68

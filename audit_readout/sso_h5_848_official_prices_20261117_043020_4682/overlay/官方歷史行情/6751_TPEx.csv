@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6751,智聯服務,63.2,72.4,63.2,72.4,785000,439,54615100,TPEX_afterTrading_otc_type_EW,6.5
+2026-11-09,TPEX,6751,智聯服務,79.6,79.6,79.6,79.6,145000,50,11542000,TPEX_afterTrading_otc_type_EW,7.2
+2026-11-10,TPEX,6751,智聯服務,87.5,87.5,87.5,87.5,190000,76,16625000,TPEX_afterTrading_otc_type_EW,7.9
+2026-11-11,TPEX,6751,智聯服務,96.2,96.2,96.2,96.2,185000,96,17797000,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6751,智聯服務,105.5,105.5,105.5,105.5,352000,149,37136000,TPEX_afterTrading_otc_type_EW,9.3
+2026-11-13,TPEX,6751,智聯服務,108.0,109.0,96.4,103.0,4015000,3078,419400000,TPEX_afterTrading_otc_type_EW,-2.5

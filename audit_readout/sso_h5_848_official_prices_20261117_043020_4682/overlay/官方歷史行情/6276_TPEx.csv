@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6276,安鈦克,13.15,14.3,13.05,13.25,57000,37,751500,TPEX_afterTrading_otc_type_EW,-1.2
+2026-11-09,TPEX,6276,安鈦克,13.25,14.5,13.25,14.5,46000,38,653200,TPEX_afterTrading_otc_type_EW,1.25
+2026-11-10,TPEX,6276,安鈦克,14.0,14.9,14.0,14.1,19000,15,276550,TPEX_afterTrading_otc_type_EW,-0.4
+2026-11-11,TPEX,6276,安鈦克,13.2,14.2,13.2,13.45,23000,21,314600,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6276,安鈦克,13.4,14.1,13.25,13.65,28000,25,378400,TPEX_afterTrading_otc_type_EW,0.2
+2026-11-13,TPEX,6276,安鈦克,13.65,13.65,13.25,13.6,18000,16,241550,TPEX_afterTrading_otc_type_EW,-0.05

@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,7825,和亞智慧,46.3,50.0,46.15,49.9,85000,69,4088050,TPEX_afterTrading_otc_type_EW,-1.2
+2026-11-09,TPEX,7825,和亞智慧,49.9,51.3,48.4,48.4,115000,93,5700350,TPEX_afterTrading_otc_type_EW,-1.5
+2026-11-10,TPEX,7825,和亞智慧,47.2,47.6,44.7,47.2,150000,133,6968350,TPEX_afterTrading_otc_type_EW,-1.2
+2026-11-11,TPEX,7825,和亞智慧,47.8,50.1,47.75,49.45,82000,69,4017950,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,7825,和亞智慧,49.05,49.45,48.0,49.3,53000,47,2579950,TPEX_afterTrading_otc_type_EW,-0.15
+2026-11-13,TPEX,7825,和亞智慧,49.2,49.7,48.05,48.95,51000,46,2495450,TPEX_afterTrading_otc_type_EW,-0.35

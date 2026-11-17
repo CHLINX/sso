@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,6821,聯寶,34.1,35.2,34.1,34.15,322000,219,11042400,TPEX_afterTrading_otc_type_EW,-3.7
+2026-11-09,TPEX,6821,聯寶,34.2,37.35,34.15,34.25,114000,83,4071000,TPEX_afterTrading_otc_type_EW,0.1
+2026-11-10,TPEX,6821,聯寶,35.5,36.05,34.8,35.6,62000,58,2192750,TPEX_afterTrading_otc_type_EW,1.35
+2026-11-11,TPEX,6821,聯寶,35.75,36.6,35.5,36.5,85000,77,3088500,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,6821,聯寶,36.45,37.5,36.3,36.45,98000,81,3599100,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-13,TPEX,6821,聯寶,40.0,40.0,37.1,37.8,58000,51,2195850,TPEX_afterTrading_otc_type_EW,1.35

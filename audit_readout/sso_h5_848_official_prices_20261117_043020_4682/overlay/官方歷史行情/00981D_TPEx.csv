@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,00981D,主動中信非投等債,10.22,10.3,10.21,10.27,11686000,667,119799260,TPEX_afterTrading_otc_type_EW,-0.03
+2026-11-09,TPEX,00981D,主動中信非投等債,10.26,10.27,10.24,10.26,2598000,201,26626030,TPEX_afterTrading_otc_type_EW,-0.01
+2026-11-10,TPEX,00981D,主動中信非投等債,10.27,10.3,10.24,10.29,1528000,173,15714360,TPEX_afterTrading_otc_type_EW,0.03
+2026-11-11,TPEX,00981D,主動中信非投等債,10.27,10.28,10.24,10.26,1504000,167,15423440,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,00981D,主動中信非投等債,10.25,10.29,10.25,10.27,2275000,122,23365380,TPEX_afterTrading_otc_type_EW,0.01
+2026-11-13,TPEX,00981D,主動中信非投等債,10.28,10.28,10.22,10.25,2739000,302,28061820,TPEX_afterTrading_otc_type_EW,-0.02

@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,2756,聯發國際,59.6,61.1,59.5,61.1,55000,37,3314100,TPEX_afterTrading_otc_type_EW,-0.6
+2026-11-09,TPEX,2756,聯發國際,61.1,63.7,60.5,63.0,89000,42,5474500,TPEX_afterTrading_otc_type_EW,1.9
+2026-11-10,TPEX,2756,聯發國際,62.0,64.3,62.0,62.7,40000,30,2507000,TPEX_afterTrading_otc_type_EW,-0.3
+2026-11-11,TPEX,2756,聯發國際,61.7,62.4,61.0,62.2,50000,31,3084500,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,2756,聯發國際,61.3,62.3,61.1,62.0,32000,16,1970700,TPEX_afterTrading_otc_type_EW,-0.2
+2026-11-13,TPEX,2756,聯發國際,62.4,65.0,61.6,65.0,57000,38,3640700,TPEX_afterTrading_otc_type_EW,3.0

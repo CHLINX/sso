@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,1294,漢田生技,45.35,45.35,43.75,44.3,50000,40,2210350,TPEX_afterTrading_otc_type_EW,-2.1
+2026-11-09,TPEX,1294,漢田生技,44.3,45.3,43.5,45.1,42000,36,1866650,TPEX_afterTrading_otc_type_EW,0.8
+2026-11-10,TPEX,1294,漢田生技,45.1,45.1,44.1,44.55,10000,10,445200,TPEX_afterTrading_otc_type_EW,-0.55
+2026-11-11,TPEX,1294,漢田生技,45.0,45.0,44.4,44.8,6000,6,268350,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,1294,漢田生技,44.6,44.6,44.05,44.05,12000,11,530750,TPEX_afterTrading_otc_type_EW,-0.75
+2026-11-13,TPEX,1294,漢田生技,44.05,44.2,43.95,44.1,13000,9,572650,TPEX_afterTrading_otc_type_EW,0.05

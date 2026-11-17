@@ -1,0 +1,7 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-06,TPEX,7757,金色三麥,83.1,87.6,83.1,87.0,31000,26,2681700,TPEX_afterTrading_otc_type_EW,-2.4
+2026-11-09,TPEX,7757,金色三麥,88.9,89.8,88.5,89.8,56000,37,4981900,TPEX_afterTrading_otc_type_EW,2.8
+2026-11-10,TPEX,7757,金色三麥,90.8,91.0,90.1,90.1,40000,35,3627600,TPEX_afterTrading_otc_type_EW,0.3
+2026-11-11,TPEX,7757,金色三麥,90.1,90.5,90.0,90.2,45000,37,4056200,TPEX_afterTrading_otc_type_EW,
+2026-11-12,TPEX,7757,金色三麥,91.0,91.0,90.3,90.5,68000,45,6164800,TPEX_afterTrading_otc_type_EW,0.3
+2026-11-13,TPEX,7757,金色三麥,90.6,90.7,90.0,90.5,70000,47,6332900,TPEX_afterTrading_otc_type_EW,0.0
