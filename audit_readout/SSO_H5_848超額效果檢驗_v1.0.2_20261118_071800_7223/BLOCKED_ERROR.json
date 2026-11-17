@@ -1,0 +1,8 @@
+{
+  "type": "RuntimeError",
+  "error": "官方快照解壓檔與 ZIP 成員不一致：run.log",
+  "logs": [
+    "[2026-11-18 07:18:01 CST] [SELF TEST PASS] 8 tests"
+  ],
+  "sources_modified": false
+}
