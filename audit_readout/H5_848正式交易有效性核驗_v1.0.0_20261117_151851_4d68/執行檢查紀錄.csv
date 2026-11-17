@@ -1,0 +1,26 @@
+﻿序號,紀錄
+1,[2026-11-17 15:18:52 CST] SSO H5 adapter 啟動；輸出目錄=/content/drive/MyDrive/看股最速適/H5_848正式交易有效性核驗_v1.0.0_20261117_151851_4d68
+2,[2026-11-17 15:18:52 CST] [SELF TEST PASS] 6 tests
+3,[2026-11-17 15:19:00 CST] [SNAPSHOT PASS] candidate=848; pair SHA=4b9d8a75b7df618f5c75a7c250038a513aff977fdec88b418052fa76d7225c36; ZIP SHA=be8ecdef963c1746d70c1102ab26f2a250f989064ceec368c6e223f33569137d
+4,[2026-11-17 15:19:04 CST] [V2.30] /content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SSO_研究型相對價格指標建置_v2.30_20261116_121048
+5,[2026-11-17 15:19:04 CST] [V2.31] /content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SSO_研究指標獨立驗證與前瞻分析_v2.31_20261116_121536
+6,[2026-11-17 15:19:04 CST] [V2.31 DATA] /content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SSO_研究指標獨立驗證與前瞻分析_v2.31_20261116_121536/相對價格因子與前瞻報酬研究資料_v2.31.csv.gz
+7,"[2026-11-17 15:19:04 CST] [V2.31 GLOBAL AUDIT] PASS {'checks': {'區段倒退列數': 0, '日期順序錯誤列數': 0, '重複市場股票日期列數': 0, '隔離點與區段增量不一致列數': 0, '隔離點清單未命中數': 0, '額外隔離標記數': 0}, 'missing_report_keys': [], 'input_rows': 4464015, 'output_rows': 4464015, 'unlocatable_events': 0}"
+8,"[2026-11-17 15:19:16 CST] [V2.31 SCAN] scanned=500,000; matched=91"
+9,"[2026-11-17 15:19:26 CST] [V2.31 SCAN] scanned=1,000,000; matched=166"
+10,"[2026-11-17 15:19:37 CST] [V2.31 SCAN] scanned=1,500,000; matched=251"
+11,"[2026-11-17 15:19:47 CST] [V2.31 SCAN] scanned=2,000,000; matched=366"
+12,"[2026-11-17 15:19:57 CST] [V2.31 SCAN] scanned=2,500,000; matched=412"
+13,"[2026-11-17 15:20:07 CST] [V2.31 SCAN] scanned=3,000,000; matched=521"
+14,"[2026-11-17 15:20:15 CST] [V2.31 SCAN] scanned=3,500,000; matched=597"
+15,"[2026-11-17 15:20:25 CST] [V2.31 SCAN] scanned=4,000,000; matched=709"
+16,"[2026-11-17 15:20:33 CST] [V2.31 SIGNAL ROWS] scanned=4,464,015; candidate keys matched=848"
+17,[2026-11-17 15:20:35 CST] [EVENTS] v2.30 rows=945; v2.31 unlocatable=0
+18,[2026-11-17 15:21:58 CST] [ADAPTER] 100/848 processed
+19,[2026-11-17 15:23:09 CST] [ADAPTER] 200/848 processed
+20,[2026-11-17 15:24:22 CST] [ADAPTER] 300/848 processed
+21,[2026-11-17 15:25:35 CST] [ADAPTER] 400/848 processed
+22,[2026-11-17 15:26:45 CST] [ADAPTER] 500/848 processed
+23,[2026-11-17 15:27:56 CST] [ADAPTER] 600/848 processed
+24,[2026-11-17 15:29:09 CST] [ADAPTER] 700/848 processed
+25,[2026-11-17 15:30:21 CST] [ADAPTER] 800/848 processed

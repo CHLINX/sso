@@ -1,0 +1,61 @@
+{
+  "project": "SSO H5 848 formal validity audit",
+  "source_output_dir": "/content/drive/MyDrive/看股最速適/H5_848正式交易有效性核驗_v1.0.0_20261117_151851_4d68",
+  "source_zip_sha256": "47d3393f9bfbe52a7857515de32e48c84cfb15a33543545760fdacc0558b57e0",
+  "candidate_count": 848,
+  "strict_valid_count": 846,
+  "source_status": "PASS_WITH_BLOCKED_ROWS",
+  "branch": "audit/sso-h5-848-formal-validity-20261117_194745_d94ad4",
+  "remote_path": "audit_readout/H5_848正式交易有效性核驗_v1.0.0_20261117_151851_4d68",
+  "main_sha_before": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "files": [
+    {
+      "path": "audit_readout/H5_848正式交易有效性核驗_v1.0.0_20261117_151851_4d68/GitHub上傳結果.json",
+      "size": 110,
+      "sha256": "708bd20c9de4879d009d3f43a64884db03cf658e3b87c1a261ed56a7413d8c71"
+    },
+    {
+      "path": "audit_readout/H5_848正式交易有效性核驗_v1.0.0_20261117_151851_4d68/H5_848公司行動與隔離點對照.csv",
+      "size": 25,
+      "sha256": "9f00b677dcf2112dd01fb0110cb6af6e719c6c54ee108fff2e14b3c21bd71701"
+    },
+    {
+      "path": "audit_readout/H5_848正式交易有效性核驗_v1.0.0_20261117_151851_4d68/H5_848正式交易有效性核驗_v1.0.0_20261117_151851_4d68.zip",
+      "size": 85318,
+      "sha256": "47d3393f9bfbe52a7857515de32e48c84cfb15a33543545760fdacc0558b57e0"
+    },
+    {
+      "path": "audit_readout/H5_848正式交易有效性核驗_v1.0.0_20261117_151851_4d68/H5_848正式交易有效性核驗摘要.json",
+      "size": 5775,
+      "sha256": "136afbf2f140768b02320ee77a19f6a3fca9e7047e11c34e1101b01be36dee5b"
+    },
+    {
+      "path": "audit_readout/H5_848正式交易有效性核驗_v1.0.0_20261117_151851_4d68/H5_848正式交易有效性逐筆核驗.csv",
+      "size": 378844,
+      "sha256": "68a9e2ab95da07c3607c42ea34b2945aff8be5c3a3d59cd53ea27f3b3975d2a6"
+    },
+    {
+      "path": "audit_readout/H5_848正式交易有效性核驗_v1.0.0_20261117_151851_4d68/ZIP_SHA256.txt",
+      "size": 132,
+      "sha256": "ed30c5294dca9ba14ad319ce106c5b44e56c4d6e6375b5af787d8fcebdff31a0"
+    },
+    {
+      "path": "audit_readout/H5_848正式交易有效性核驗_v1.0.0_20261117_151851_4d68/artifact_sha256_manifest.json",
+      "size": 825,
+      "sha256": "7d6e82a0baac0460a04e654cf8443d0bb799871ce5b5ce0cc52a52425a664866"
+    },
+    {
+      "path": "audit_readout/H5_848正式交易有效性核驗_v1.0.0_20261117_151851_4d68/執行檢查紀錄.csv",
+      "size": 2643,
+      "sha256": "1597d03b1dfe1ddc86b980e8e5e313c771aa6c034e88db3802a73c62f99a20f2"
+    }
+  ],
+  "created_at_taipei": "2026-11-17T19:48:35.399060+08:00",
+  "policy": {
+    "main_modified": false,
+    "drive_source_files_modified": false,
+    "h5_audit_reexecuted": false,
+    "only_audit_branch": true,
+    "only_audit_readout_path": true
+  }
+}

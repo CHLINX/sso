@@ -1,0 +1,149 @@
+{
+  "version": "SSO_H5_848_Formal_Adapter_v1.0.0",
+  "run_time_taipei": "2026-11-17T15:30:56.977486+08:00",
+  "signal_date": "2026-11-06",
+  "entry_date_t_plus_1": "2026-11-09",
+  "exit_date_t_plus_5": "2026-11-13",
+  "h5_market_dates_required": [
+    "2026-11-06",
+    "2026-11-09",
+    "2026-11-10",
+    "2026-11-11",
+    "2026-11-12",
+    "2026-11-13"
+  ],
+  "candidate_count": 848,
+  "frozen_candidate_sha256": "eea433b9f5242079d2db15256890e136a4a98364c73b62de508ea4ca95e11d1a",
+  "official_price_snapshot": {
+    "source_dir": "/content/drive/MyDrive/看股最速適/H5_848官方行情補抓修復_v1.0.2_20261117_043020_4682",
+    "source_report_status": "PARTIAL_BLOCKED",
+    "source_report_downstream_ready": false,
+    "pair_rows": 848,
+    "pair_ready_before_adapter": 847,
+    "pair_not_ready_before_adapter": 1,
+    "pair_csv_sha256": "4b9d8a75b7df618f5c75a7c250038a513aff977fdec88b418052fa76d7225c36",
+    "snapshot_zip_sha256": "be8ecdef963c1746d70c1102ab26f2a250f989064ceec368c6e223f33569137d"
+  },
+  "event_sources": {
+    "v230_dir": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SSO_研究型相對價格指標建置_v2.30_20261116_121048",
+    "v231_dir": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SSO_研究指標獨立驗證與前瞻分析_v2.31_20261116_121536",
+    "v231_global_quality": {
+      "checks": {
+        "區段倒退列數": 0,
+        "日期順序錯誤列數": 0,
+        "重複市場股票日期列數": 0,
+        "隔離點與區段增量不一致列數": 0,
+        "隔離點清單未命中數": 0,
+        "額外隔離標記數": 0
+      },
+      "missing_report_keys": [],
+      "input_rows": 4464015,
+      "output_rows": 4464015,
+      "unlocatable_events": 0
+    }
+  },
+  "counts": {
+    "entry_exit_valid_v251": 847,
+    "signal_entry_mismatch_v251_true": 0,
+    "entry_trade_valid_v251": 847,
+    "all_segment_same_v251": 848,
+    "v231_h5_forward_valid": 846,
+    "strict_validated_return_count": 846,
+    "formal_status_counts": {
+      "PASS_V251_ENTRY_AND_V231_H5_FORWARD_VALID": 846,
+      "BLOCKED_OHLC_OR_H5_INTERVAL_INCOMPLETE": 2
+    }
+  },
+  "strict_validated_net_return_general": {
+    "n": 846,
+    "positive_n": 668,
+    "positive_rate": 0.789598108747045,
+    "mean": 0.06882028737662244,
+    "median": 0.05639235229734729,
+    "min": -0.2760112479173873,
+    "max": 0.4305395908598457
+  },
+  "strict_validated_net_return_stress": {
+    "n": 846,
+    "positive_n": 657,
+    "positive_rate": 0.776595744680851,
+    "mean": 0.06668477804018683,
+    "median": 0.05428167404964357,
+    "min": -0.277457781780757,
+    "max": 0.4276813641883441
+  },
+  "v251_net_return_diagnostic_only": {
+    "n": 847,
+    "positive_n": 668,
+    "positive_rate": 0.7886658795749705,
+    "mean": 0.06837989616473236,
+    "median": 0.056371358391421156,
+    "min": -0.30419106909426374,
+    "max": 0.4305395908598457
+  },
+  "cost_model": {
+    "fee": 0.001425,
+    "tax": 0.003,
+    "slippage_general": 0.001,
+    "slippage_stress": 0.002,
+    "formula": "(1+gross)*(1-slip)*(1-fee-tax)/((1+slip)*(1+fee))-1"
+  },
+  "non_claims": [
+    "不重新訓練、不重排、不變更凍結 848 檔候選。",
+    "v2.51 entry_trade_valid 與 v2.31 H5 forward outcome 是不同門檻，分開報告。",
+    "training_label_valid 需要 feature_ready；H5 配對表未提供完整 feature_ready，故不宣稱重現此旗標。",
+    "只統計逐檔假設交易，不代表 848 檔等權投資組合、資金配置或未來報酬。",
+    "任何無法定位事件、OHLC 缺值或來源驗證錯誤均不補值、不猜測。"
+  ],
+  "status": "PASS_WITH_BLOCKED_ROWS",
+  "self_tests": [
+    {
+      "test": "H5 五個未來交易日固定",
+      "status": "PASS"
+    },
+    {
+      "test": "訊號／進場／出場日期固定",
+      "status": "PASS"
+    },
+    {
+      "test": "官方 OHLC 合理範圍檢核",
+      "status": "PASS"
+    },
+    {
+      "test": "v2.51 成本公式有限",
+      "status": "PASS"
+    },
+    {
+      "test": "v2.51 訊號到進場區段判定",
+      "status": "PASS"
+    },
+    {
+      "test": "交易日日期解析",
+      "status": "PASS"
+    }
+  ],
+  "rule_reproduction": {
+    "v251_entry_exit_valid": "entry_ohlc_valid & exit_ohlc_valid & entry_open>0 & exit_close>0",
+    "v251_signal_entry_mismatch": "signal_segment and entry_segment both known and unequal",
+    "v251_entry_trade_valid": "entry_exit_valid & ~signal_entry_mismatch",
+    "v251_all_segment_same": "signal_segment == entry_segment == exit_segment, all three known",
+    "v231_h5_forward": "signal OHLC valid; all t+1...t+5 OHLC valid; no change in price-research segment",
+    "segment_rebuild": "v2.31 signal-day segment plus each v2.30 dated event barrier after signal through the relevant quote date; each barrier applies at first quote on/after event date"
+  },
+  "input_integrity": {
+    "candidate_sha256": "eea433b9f5242079d2db15256890e136a4a98364c73b62de508ea4ca95e11d1a",
+    "snapshot_zip_sha256": "be8ecdef963c1746d70c1102ab26f2a250f989064ceec368c6e223f33569137d",
+    "price_pair_csv_sha256": "4b9d8a75b7df618f5c75a7c250038a513aff977fdec88b418052fa76d7225c36",
+    "v230_event_file_sha256": "b395b848143c057394235853d3e1f8d45f8539ac67b399fc3a9794d8f7a9bd51",
+    "v231_data_sha256": "113a4f7cd5c94d7bbd3cb78427963dde2a6c249d66a25a66fab2c408958de71c",
+    "v231_unlocatable_file_sha256": "622d0fda19010d9b4ca3ba4cc3f7ec9c6fd43b392fc07b25ab218beec72be74c"
+  },
+  "execution_policy": {
+    "drive_sources_read_only": true,
+    "original_candidate_csv_modified": false,
+    "official_market_data_source_or_overlay_modified": false,
+    "existing_v230_v231_folders_modified": false,
+    "retrained_or_reranked": false,
+    "source_price_pair_rows": 848
+  }
+}

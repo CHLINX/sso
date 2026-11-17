@@ -1,0 +1,4 @@
+{
+  "status": "SKIPPED_TOKEN_MISSING",
+  "reason": "找不到 GITHUB_TOKEN / GITHUB_SSO_TOKEN / GH_TOKEN。"
+}

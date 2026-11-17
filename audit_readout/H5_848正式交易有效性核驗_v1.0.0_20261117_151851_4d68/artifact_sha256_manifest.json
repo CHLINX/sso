@@ -1,0 +1,28 @@
+{
+  "version": "SSO_H5_848_Formal_Adapter_v1.0.0",
+  "file_count": 4,
+  "self_excluded": true,
+  "zip_excluded": true,
+  "files": [
+    {
+      "path": "H5_848公司行動與隔離點對照.csv",
+      "bytes": 25,
+      "sha256": "9f00b677dcf2112dd01fb0110cb6af6e719c6c54ee108fff2e14b3c21bd71701"
+    },
+    {
+      "path": "H5_848正式交易有效性核驗摘要.json",
+      "bytes": 5775,
+      "sha256": "136afbf2f140768b02320ee77a19f6a3fca9e7047e11c34e1101b01be36dee5b"
+    },
+    {
+      "path": "H5_848正式交易有效性逐筆核驗.csv",
+      "bytes": 378844,
+      "sha256": "68a9e2ab95da07c3607c42ea34b2945aff8be5c3a3d59cd53ea27f3b3975d2a6"
+    },
+    {
+      "path": "執行檢查紀錄.csv",
+      "bytes": 2643,
+      "sha256": "1597d03b1dfe1ddc86b980e8e5e313c771aa6c034e88db3802a73c62f99a20f2"
+    }
+  ]
+}
