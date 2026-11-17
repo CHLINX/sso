@@ -1,0 +1,10 @@
+﻿序號,紀錄
+1,[2026-11-17 21:58:38 Asia/Taipei] ========================================================================================
+2,[2026-11-17 21:58:38 Asia/Taipei] SSO H5｜凍結848檔超額效果與全市場對照 v1.0.1
+3,[2026-11-17 21:58:38 Asia/Taipei] [OUTPUT] /content/drive/MyDrive/看股最速適/H5_848超額效果檢驗_v1.0.1_20261117_215838_ee0381
+4,[2026-11-17 21:58:38 Asia/Taipei] [FROZEN PASS] rows=848; SHA256=eea433b9f5242079d2db15256890e136a4a98364c73b62de508ea4ca95e11d1a
+5,[2026-11-17 21:58:38 Asia/Taipei] [ZIP SEARCH] roots=3; candidate_zips=1
+6,[2026-11-17 21:58:38 Asia/Taipei] [ZIP CANDIDATE] /content/drive/MyDrive/看股最速適/推薦結果/非前瞻參考/SSO_main_v5_20261116_114722_cef3a1/來源模型ZIP/SSO_v2.50_非前瞻參考_H5_2026-11-06_20261116_114722_8e745d_結果.zip
+7,[2026-11-17 21:58:44 Asia/Taipei] [ZIP SOURCE PASS] /content/drive/MyDrive/看股最速適/推薦結果/非前瞻參考/SSO_main_v5_20261116_114722_cef3a1/來源模型ZIP/SSO_v2.50_非前瞻參考_H5_2026-11-06_20261116_114722_8e745d_結果.zip; ZIP_SHA256=00529faff2101cef634498e01371f51a17d9fb4211debd7019def5a8c44aceed
+8,"[2026-11-17 21:58:44 Asia/Taipei] [V2.50 SOURCE PASS] ZIP=/content/drive/MyDrive/看股最速適/推薦結果/非前瞻參考/SSO_main_v5_20261116_114722_cef3a1/來源模型ZIP/SSO_v2.50_非前瞻參考_H5_2026-11-06_20261116_114722_8e745d_結果.zip; H5_universe=1,720; frozen=848"
+9,"[2026-11-17 22:00:57 Asia/Taipei] [V2.31 PASS] signal_rows=2,406; H5_valid=0"

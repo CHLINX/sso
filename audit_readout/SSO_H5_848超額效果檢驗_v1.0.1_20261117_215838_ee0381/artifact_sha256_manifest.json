@@ -1,0 +1,62 @@
+{
+  "project": "SSO H5 848 excess-effect comparison",
+  "version": "v1.0.1",
+  "run_id": "20261117_215838_ee0381",
+  "signal_date": "2026-11-06",
+  "entry_date": "2026-11-09",
+  "exit_date": "2026-11-13",
+  "status": "PASS_WITH_PRICE_ALIGNMENT_WARNING",
+  "main_protected_sha": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "files": [
+    {
+      "path": "848官方核驗與v2.31逐筆對照.csv",
+      "size_bytes": 105141,
+      "sha256": "81d3297368e86f191d439e6ddb38eb42592830d0992f7de81486d9b4e9ca3fb8"
+    },
+    {
+      "path": "v2.31全市場H5逐檔基準.csv",
+      "size_bytes": 3,
+      "sha256": "f1945cd6c19e56b3c1c78943ef5ec18116907a4ca1efc40a57d48ab1db7adfc5"
+    },
+    {
+      "path": "v2.50模型母體逐檔H5比較.csv",
+      "size_bytes": 129877,
+      "sha256": "398ed301c0d981d140699c0a73d8b6affb72a89b33ee130b86f02fbdce388d2e"
+    },
+    {
+      "path": "來源交叉核對.json",
+      "size_bytes": 15694,
+      "sha256": "59b7026f4f7b5c50b0515ac126430b8e84f57137db4355682533a16c9b9c01c8"
+    },
+    {
+      "path": "原模型達標候選最多10檔.csv",
+      "size_bytes": 3,
+      "sha256": "f1945cd6c19e56b3c1c78943ef5ec18116907a4ca1efc40a57d48ab1db7adfc5"
+    },
+    {
+      "path": "執行紀錄.csv",
+      "size_bytes": 1529,
+      "sha256": "cb287f8de08eff5fd4c1b9c9476ab3efa95790014a7d646df683b9484d43d2b1"
+    },
+    {
+      "path": "檢驗報告.md",
+      "size_bytes": 901,
+      "sha256": "53843e12c8afa5fdec8fa92ed87a71a221ab8f754e15309f603691d6d1efcb99"
+    },
+    {
+      "path": "組間差異檢定.csv",
+      "size_bytes": 528,
+      "sha256": "2d5712f072767c8cae535a57d812fcd766ab5bd6b596b15a137470e231c63c38"
+    },
+    {
+      "path": "群組統計.csv",
+      "size_bytes": 268,
+      "sha256": "4263a0928ff4f3ff30667b799e133206878260ae9f5c411257e0a481019acfcd"
+    },
+    {
+      "path": "超額效果檢驗摘要.json",
+      "size_bytes": 19527,
+      "sha256": "82f7ee5302716c9f42a5c0807997cc0ce086a3bdda641d108fbcc768b3861894"
+    }
+  ]
+}
