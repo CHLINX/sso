@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00739,元大MSCI A股,24.83,24.83,24.5,24.62,68340,238,1688943,TWSE_MI_INDEX,0.21
+2026-11-17,TWSE,00739,元大MSCI A股,24.13,24.58,24.13,24.58,35359,109,862698,TWSE_MI_INDEX,0.04
+2026-11-18,TWSE,00739,元大MSCI A股,24.39,24.5,24.26,24.5,34979,107,853750,TWSE_MI_INDEX,0.08

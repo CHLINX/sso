@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6269,台郡,78.8,80.2,73.2,73.5,26160800,19647,2003913218,TWSE_MI_INDEX,7.0
+2026-11-17,TWSE,6269,台郡,71.0,73.0,67.3,67.7,21860354,16372,1522482847,TWSE_MI_INDEX,5.8
+2026-11-18,TWSE,6269,台郡,71.4,72.5,63.3,68.1,21635537,16366,1472828747,TWSE_MI_INDEX,0.4

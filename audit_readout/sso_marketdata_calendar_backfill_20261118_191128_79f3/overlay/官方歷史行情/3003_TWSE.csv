@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,3003,健和興,49.3,49.3,46.7,46.7,249575,258,11975406,TWSE_MI_INDEX,2.45
+2026-11-17,TWSE,3003,健和興,46.7,47.9,45.1,46.55,343626,279,16066999,TWSE_MI_INDEX,0.15
+2026-11-18,TWSE,3003,健和興,47.8,48.05,46.25,47.2,301347,230,14222454,TWSE_MI_INDEX,0.65

@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,7803,雲象科技-創,14.0,14.0,11.8,12.5,245035,96,3141970,TWSE_MI_INDEX,0.25
+2026-11-17,TWSE,7803,雲象科技-創,12.75,12.8,11.8,12.8,88020,50,1075990,TWSE_MI_INDEX,0.3
+2026-11-18,TWSE,7803,雲象科技-創,12.8,12.95,12.6,12.65,25134,24,322525,TWSE_MI_INDEX,0.15

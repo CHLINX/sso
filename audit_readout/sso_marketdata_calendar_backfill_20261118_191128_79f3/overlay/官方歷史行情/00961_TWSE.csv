@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00961,FT臺灣永續高息,12.79,12.88,12.55,12.6,8187288,2909,104190937,TWSE_MI_INDEX,0.23
+2026-11-17,TWSE,00961,FT臺灣永續高息,12.34,12.58,12.22,12.39,6879689,1545,85502071,TWSE_MI_INDEX,0.0
+2026-11-18,TWSE,00961,FT臺灣永續高息,12.47,12.51,12.21,12.29,3949340,1438,48570001,TWSE_MI_INDEX,0.1

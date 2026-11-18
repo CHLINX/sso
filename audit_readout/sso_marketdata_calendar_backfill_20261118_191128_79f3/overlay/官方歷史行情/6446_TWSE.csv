@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6446,藥華藥,1380.0,1385.0,1295.0,1295.0,3729664,9164,4930323485,TWSE_MI_INDEX,85.0
+2026-11-17,TWSE,6446,藥華藥,1280.0,1325.0,1255.0,1280.0,3852848,7086,4955434170,TWSE_MI_INDEX,15.0
+2026-11-18,TWSE,6446,藥華藥,1285.0,1310.0,1245.0,1245.0,2788165,5848,3545377560,TWSE_MI_INDEX,35.0

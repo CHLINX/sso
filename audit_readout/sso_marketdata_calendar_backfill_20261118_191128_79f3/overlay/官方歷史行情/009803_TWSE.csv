@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,009803,玉山市值動能50,18.93,19.04,17.91,17.91,6715595,3899,123384233,TWSE_MI_INDEX,1.32
+2026-11-17,TWSE,009803,玉山市值動能50,17.53,18.2,17.4,17.63,5145504,2544,91259492,TWSE_MI_INDEX,0.28
+2026-11-18,TWSE,009803,玉山市值動能50,17.92,17.97,17.32,17.76,4015701,1848,71067958,TWSE_MI_INDEX,0.13

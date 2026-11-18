@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2243,宏旭-KY,45.0,45.0,41.8,41.8,163682,389,7010489,TWSE_MI_INDEX,3.6
+2026-11-17,TWSE,2243,宏旭-KY,41.1,41.55,37.95,37.95,301184,368,11779772,TWSE_MI_INDEX,3.85
+2026-11-18,TWSE,2243,宏旭-KY,38.0,39.7,37.4,38.9,234956,298,9021177,TWSE_MI_INDEX,0.95

@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2472,立隆電,169.0,169.0,153.0,153.0,1434985,1868,225525582,TWSE_MI_INDEX,16.5
+2026-11-17,TWSE,2472,立隆電,147.0,152.5,142.0,146.0,1887737,1960,277030143,TWSE_MI_INDEX,7.0
+2026-11-18,TWSE,2472,立隆電,151.0,151.0,135.5,144.5,2142275,2378,305565269,TWSE_MI_INDEX,1.5

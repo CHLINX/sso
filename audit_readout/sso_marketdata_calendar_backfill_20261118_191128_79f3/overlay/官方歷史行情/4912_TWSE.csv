@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,4912,聯德控股-KY,86.5,88.5,82.0,82.1,757208,614,63957814,TWSE_MI_INDEX,5.9
+2026-11-17,TWSE,4912,聯德控股-KY,80.1,83.8,78.0,82.0,530563,418,42977094,TWSE_MI_INDEX,0.1
+2026-11-18,TWSE,4912,聯德控股-KY,83.0,83.6,78.8,81.8,489163,364,39901535,TWSE_MI_INDEX,0.2

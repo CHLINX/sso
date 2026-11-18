@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,3708,上緯投控,90.1,90.5,85.4,85.6,517447,594,45014759,TWSE_MI_INDEX,5.4
+2026-11-17,TWSE,3708,上緯投控,85.6,85.6,82.5,84.0,503508,470,42159219,TWSE_MI_INDEX,1.6
+2026-11-18,TWSE,3708,上緯投控,84.1,87.1,81.6,85.4,447874,494,37799852,TWSE_MI_INDEX,1.4

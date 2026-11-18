@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,8478,東哥遊艇,119.0,119.5,114.0,114.0,139636,263,16235801,TWSE_MI_INDEX,6.0
+2026-11-17,TWSE,8478,東哥遊艇,113.0,116.0,111.5,111.5,231497,238,26169721,TWSE_MI_INDEX,2.5
+2026-11-18,TWSE,8478,東哥遊艇,113.5,115.0,110.0,113.5,102039,169,11493377,TWSE_MI_INDEX,2.0

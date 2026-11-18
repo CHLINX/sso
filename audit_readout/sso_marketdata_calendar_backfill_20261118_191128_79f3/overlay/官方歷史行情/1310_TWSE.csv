@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1310,台苯,8.12,8.2,7.8,7.85,1650156,856,13129336,TWSE_MI_INDEX,0.27
+2026-11-17,TWSE,1310,台苯,7.95,8.0,7.74,7.81,2227383,1128,17493279,TWSE_MI_INDEX,0.04
+2026-11-18,TWSE,1310,台苯,7.95,7.95,7.45,7.59,1824484,945,13909938,TWSE_MI_INDEX,0.22

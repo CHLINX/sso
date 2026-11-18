@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,009813,貝萊德標普卓越50,11.46,11.46,11.35,11.36,1283551,461,14619334,TWSE_MI_INDEX,0.11
+2026-11-17,TWSE,009813,貝萊德標普卓越50,11.21,11.21,11.16,11.19,1868657,312,20901980,TWSE_MI_INDEX,0.17
+2026-11-18,TWSE,009813,貝萊德標普卓越50,11.21,11.21,11.09,11.1,682816,349,7590114,TWSE_MI_INDEX,0.09

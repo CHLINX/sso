@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,5876,上海商銀,54.0,54.1,52.9,53.1,5418850,3161,290289530,TWSE_MI_INDEX,0.3
+2026-11-17,TWSE,5876,上海商銀,53.1,54.0,52.4,53.3,9632019,4089,513973369,TWSE_MI_INDEX,0.2
+2026-11-18,TWSE,5876,上海商銀,53.3,53.6,52.5,52.9,12115046,4431,642431324,TWSE_MI_INDEX,0.4

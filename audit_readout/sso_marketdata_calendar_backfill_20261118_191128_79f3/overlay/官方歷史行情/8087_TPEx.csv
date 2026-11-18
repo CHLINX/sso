@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,8087,麗升能源,19.7,20.35,19.0,20.35,22000,20,425150,TPEX_afterTrading_otc_type_EW,0.35
+2026-11-17,TPEX,8087,麗升能源,20.1,21.0,18.7,18.9,40000,29,771100,TPEX_afterTrading_otc_type_EW,-1.45
+2026-11-18,TPEX,8087,麗升能源,18.6,19.0,17.5,17.5,43000,31,770200,TPEX_afterTrading_otc_type_EW,-1.4

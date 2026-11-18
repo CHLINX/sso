@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,01004T,土銀富邦R2,9.95,9.96,9.93,9.93,133000,81,1322260,TWSE_MI_INDEX,0.02
+2026-11-17,TWSE,01004T,土銀富邦R2,9.92,9.93,9.91,9.91,105020,75,1041405,TWSE_MI_INDEX,0.02
+2026-11-18,TWSE,01004T,土銀富邦R2,9.91,9.92,9.91,9.91,83000,67,822690,TWSE_MI_INDEX,0.0

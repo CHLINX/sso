@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,8227,巨有科技,260.0,263.0,223.5,226.0,6090000,5069,1455489000,TPEX_afterTrading_otc_type_EW,-16.5
+2026-11-17,TPEX,8227,巨有科技,220.0,243.0,215.0,229.0,8160000,6723,1864533500,TPEX_afterTrading_otc_type_EW,3.0
+2026-11-18,TPEX,8227,巨有科技,239.0,240.0,211.5,231.0,7826000,6456,1784409500,TPEX_afterTrading_otc_type_EW,2.0

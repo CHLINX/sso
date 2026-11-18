@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2250,IKKA-KY,46.05,46.05,43.1,43.2,72623,114,3219014,TWSE_MI_INDEX,3.35
+2026-11-17,TWSE,2250,IKKA-KY,43.0,45.0,43.0,43.6,58454,86,2547996,TWSE_MI_INDEX,0.4
+2026-11-18,TWSE,2250,IKKA-KY,44.1,44.1,42.3,43.3,50063,64,2164869,TWSE_MI_INDEX,0.3

@@ -1,0 +1,3 @@
+﻿trade_date,market,calendar_evidence,reason,api_status,rows,http_status,error,raw_file,response_sha256
+2026-11-18,TWSE,TWSE official holiday schedule + weekday trading rule,MISSING_EXPECTED_SESSION,PASS,1391,200,,raw/TWSE/20261118.json.gz,c492acefb93de06c65e5a0864636f66d938b1dcff6fcf3acb6a3ef6f3c639f26
+2026-11-18,TPEX,TWSE official holiday schedule + weekday trading rule,MISSING_EXPECTED_SESSION,PASS,1021,200,,raw/TPEX/20261118_legacy.json.gz,5a2225f2a132c39517625a8cb644970012d0b6935842e0a03bf6ca04f928419b

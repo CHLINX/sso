@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,4569,六方科-KY,143.0,143.0,132.5,136.5,37453,109,5066791,TWSE_MI_INDEX,7.0
+2026-11-17,TWSE,4569,六方科-KY,133.5,135.5,130.0,135.5,45507,63,6062676,TWSE_MI_INDEX,1.0
+2026-11-18,TWSE,4569,六方科-KY,134.0,139.5,131.0,139.5,30904,86,4170675,TWSE_MI_INDEX,4.0

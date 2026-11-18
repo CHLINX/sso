@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6596,寬宏藝術,94.4,96.0,92.3,92.7,202000,168,19061400,TPEX_afterTrading_otc_type_EW,-1.7
+2026-11-17,TPEX,6596,寬宏藝術,94.5,94.5,91.5,92.9,147000,119,13581900,TPEX_afterTrading_otc_type_EW,0.2
+2026-11-18,TPEX,6596,寬宏藝術,93.9,93.9,91.1,92.8,112000,95,10318300,TPEX_afterTrading_otc_type_EW,-0.1

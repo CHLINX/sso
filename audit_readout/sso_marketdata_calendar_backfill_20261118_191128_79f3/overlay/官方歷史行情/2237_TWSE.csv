@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2237,華德動能-創,20.2,20.25,19.65,19.65,68000,47,1364800,TWSE_MI_INDEX,0.55
+2026-11-17,TWSE,2237,華德動能-創,19.45,20.6,19.2,20.1,128291,125,2600083,TWSE_MI_INDEX,0.45
+2026-11-18,TWSE,2237,華德動能-創,20.6,20.6,19.25,20.0,94121,62,1893996,TWSE_MI_INDEX,0.1

@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00932,兆豐永續高息等權,16.4,16.46,15.96,15.96,148630,335,2419063,TWSE_MI_INDEX,0.38
+2026-11-17,TWSE,00932,兆豐永續高息等權,15.59,15.8,15.48,15.52,413385,332,6460278,TWSE_MI_INDEX,0.0
+2026-11-18,TWSE,00932,兆豐永續高息等權,15.54,15.54,15.35,15.47,315189,208,4872559,TWSE_MI_INDEX,0.05

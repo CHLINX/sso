@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00713,元大台灣高息低波,63.85,64.25,62.9,62.95,7025517,5445,447053580,TWSE_MI_INDEX,0.75
+2026-11-17,TWSE,00713,元大台灣高息低波,62.4,63.25,61.65,62.8,5519930,4159,345691590,TWSE_MI_INDEX,0.15
+2026-11-18,TWSE,00713,元大台灣高息低波,62.8,62.85,61.55,61.75,4782521,6060,295978792,TWSE_MI_INDEX,1.05

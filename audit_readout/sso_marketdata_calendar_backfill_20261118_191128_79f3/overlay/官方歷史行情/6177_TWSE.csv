@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6177,達麗,44.45,45.15,43.95,43.95,795993,611,35577622,TWSE_MI_INDEX,0.25
+2026-11-17,TWSE,6177,達麗,44.55,44.65,43.2,43.85,735467,657,32388231,TWSE_MI_INDEX,0.1
+2026-11-18,TWSE,6177,達麗,43.9,44.0,43.25,43.45,441692,418,19216657,TWSE_MI_INDEX,0.4

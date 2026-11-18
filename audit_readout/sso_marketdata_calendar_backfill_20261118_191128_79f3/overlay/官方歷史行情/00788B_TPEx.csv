@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00788B,元大10年IG電能債,29.25,29.25,29.24,29.24,13000,4,380140,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-17,TPEX,00788B,元大10年IG電能債,29.24,29.27,29.24,29.27,25000,7,731460,TPEX_afterTrading_otc_type_EW,0.03
+2026-11-18,TPEX,00788B,元大10年IG電能債,29.22,29.34,29.22,29.33,61000,8,1785430,TPEX_afterTrading_otc_type_EW,0.06

@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6589,台康生技,55.9,56.0,53.0,53.2,1168283,971,63039968,TWSE_MI_INDEX,2.4
+2026-11-17,TWSE,6589,台康生技,52.4,54.4,52.0,53.0,1008098,859,53663575,TWSE_MI_INDEX,0.2
+2026-11-18,TWSE,6589,台康生技,53.0,53.5,50.6,51.5,780679,647,40230533,TWSE_MI_INDEX,1.5

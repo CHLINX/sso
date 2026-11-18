@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,8415,大國鋼,37.7,38.55,37.4,37.6,1467000,685,55794650,TPEX_afterTrading_otc_type_EW,0.2
+2026-11-17,TPEX,8415,大國鋼,37.95,41.35,36.7,41.35,9067000,2651,366362050,TPEX_afterTrading_otc_type_EW,3.75
+2026-11-18,TPEX,8415,大國鋼,41.3,42.2,39.55,41.6,9181000,5332,377645450,TPEX_afterTrading_otc_type_EW,0.25

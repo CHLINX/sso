@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00782B,國泰A級公用債,29.4,29.4,29.37,29.39,224000,12,6581620,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-17,TPEX,00782B,國泰A級公用債,29.34,29.38,29.34,29.35,165000,12,4844510,TPEX_afterTrading_otc_type_EW,-0.04
+2026-11-18,TPEX,00782B,國泰A級公用債,29.32,29.45,29.32,29.45,288000,32,8469710,TPEX_afterTrading_otc_type_EW,0.1

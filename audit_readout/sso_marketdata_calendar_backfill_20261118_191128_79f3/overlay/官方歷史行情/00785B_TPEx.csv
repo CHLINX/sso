@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00785B,富邦金融投等債,34.1,34.1,34.08,34.08,52000,4,1772200,TPEX_afterTrading_otc_type_EW,-0.2
+2026-11-17,TPEX,00785B,富邦金融投等債,34.0,34.04,34.0,34.04,52000,4,1770000,TPEX_afterTrading_otc_type_EW,-0.04
+2026-11-18,TPEX,00785B,富邦金融投等債,34.14,34.14,34.1,34.1,51000,3,1739140,TPEX_afterTrading_otc_type_EW,0.06

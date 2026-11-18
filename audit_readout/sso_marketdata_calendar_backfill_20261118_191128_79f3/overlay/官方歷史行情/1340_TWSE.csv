@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1340,勝悅-KY,4.71,4.72,4.56,4.59,61898,111,286018,TWSE_MI_INDEX,0.12
+2026-11-17,TWSE,1340,勝悅-KY,4.58,4.99,4.58,4.75,239649,284,1151032,TWSE_MI_INDEX,0.16
+2026-11-18,TWSE,1340,勝悅-KY,4.71,4.86,4.66,4.78,89538,102,426499,TWSE_MI_INDEX,0.03

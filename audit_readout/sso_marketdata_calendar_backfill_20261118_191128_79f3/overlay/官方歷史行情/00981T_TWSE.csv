@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00981T,平衡凱基雙核收息,11.55,11.55,11.3,11.3,7102318,1141,81013786,TWSE_MI_INDEX,0.25
+2026-11-17,TWSE,00981T,平衡凱基雙核收息,11.17,11.27,11.12,11.16,3321677,814,37098707,TWSE_MI_INDEX,0.0
+2026-11-18,TWSE,00981T,平衡凱基雙核收息,11.16,11.18,11.09,11.14,3075006,513,34219151,TWSE_MI_INDEX,0.02

@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,7818,溢泰實業,51.3,52.8,51.0,52.6,43210,42,2258533,TWSE_MI_INDEX,0.4
+2026-11-17,TWSE,7818,溢泰實業,52.0,53.8,52.0,52.9,47060,47,2504804,TWSE_MI_INDEX,0.3
+2026-11-18,TWSE,7818,溢泰實業,52.3,53.3,52.3,53.1,37185,34,1967003,TWSE_MI_INDEX,0.2

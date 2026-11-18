@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00930,永豐ESG低碳高息,22.26,22.26,21.43,21.47,962079,846,20986473,TWSE_MI_INDEX,0.79
+2026-11-17,TWSE,00930,永豐ESG低碳高息,21.37,21.63,21.0,21.24,1315338,639,28108046,TWSE_MI_INDEX,0.23
+2026-11-18,TWSE,00930,永豐ESG低碳高息,21.38,21.45,20.94,21.32,1055827,535,22472548,TWSE_MI_INDEX,0.08

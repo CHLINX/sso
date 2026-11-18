@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6834,天二科技,100.5,101.0,91.4,91.4,2350508,2092,221802525,TWSE_MI_INDEX,10.1
+2026-11-17,TWSE,6834,天二科技,87.6,90.2,84.8,85.8,1945569,1880,169016591,TWSE_MI_INDEX,5.6
+2026-11-18,TWSE,6834,天二科技,87.9,88.9,80.2,83.7,2302865,2008,194268085,TWSE_MI_INDEX,2.1

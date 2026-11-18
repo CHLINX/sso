@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00905,FT臺灣Smart,23.53,23.59,22.33,22.33,1869611,2834,42770977,TWSE_MI_INDEX,1.58
+2026-11-17,TWSE,00905,FT臺灣Smart,21.67,22.48,21.6,21.78,1591408,1309,35019155,TWSE_MI_INDEX,0.55
+2026-11-18,TWSE,00905,FT臺灣Smart,22.13,22.14,21.33,21.86,950076,910,20653324,TWSE_MI_INDEX,0.08

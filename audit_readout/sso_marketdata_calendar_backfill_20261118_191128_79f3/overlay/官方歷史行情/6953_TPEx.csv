@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6953,家碩,200.5,209.0,195.0,195.0,66000,65,13266000,TPEX_afterTrading_otc_type_EW,-11.0
+2026-11-17,TPEX,6953,家碩,196.5,198.0,187.5,187.5,55000,51,10683500,TPEX_afterTrading_otc_type_EW,-7.5
+2026-11-18,TPEX,6953,家碩,192.5,196.0,186.0,192.5,46000,45,8718000,TPEX_afterTrading_otc_type_EW,5.0

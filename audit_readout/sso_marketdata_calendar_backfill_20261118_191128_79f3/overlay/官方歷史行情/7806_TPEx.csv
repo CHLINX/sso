@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,7806,精華生醫,46.75,46.85,44.0,44.0,22000,16,992200,TPEX_afterTrading_otc_type_EW,-4.0
+2026-11-17,TPEX,7806,精華生醫,39.6,41.0,39.6,39.9,245000,99,9715450,TPEX_afterTrading_otc_type_EW,-4.1
+2026-11-18,TPEX,7806,精華生醫,39.9,39.95,37.3,39.0,26000,24,1002200,TPEX_afterTrading_otc_type_EW,-0.9

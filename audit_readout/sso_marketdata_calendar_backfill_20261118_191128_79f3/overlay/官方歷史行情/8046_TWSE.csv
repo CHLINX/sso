@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,8046,南電,965.0,966.0,880.0,880.0,6119943,20514,5517239689,TWSE_MI_INDEX,97.0
+2026-11-17,TWSE,8046,南電,792.0,823.0,792.0,792.0,7883957,20429,6316025081,TWSE_MI_INDEX,88.0
+2026-11-18,TWSE,8046,南電,837.0,846.0,716.0,775.0,23575742,27294,18353440662,TWSE_MI_INDEX,17.0

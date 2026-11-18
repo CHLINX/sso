@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6614,資拓宏宇,40.5,40.5,40.5,40.5,593153,306,24022683,TWSE_MI_INDEX,3.65
+2026-11-17,TWSE,6614,資拓宏宇,42.1,44.0,37.5,40.0,3970972,2993,162484379,TWSE_MI_INDEX,0.5
+2026-11-18,TWSE,6614,資拓宏宇,40.65,40.75,37.1,38.7,973661,816,37699537,TWSE_MI_INDEX,1.3

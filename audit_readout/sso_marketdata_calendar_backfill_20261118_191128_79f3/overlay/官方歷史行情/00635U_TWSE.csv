@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00635U,期元大S&P黃金,39.79,39.87,39.66,39.74,3271673,3303,130022533,TWSE_MI_INDEX,0.51
+2026-11-17,TWSE,00635U,期元大S&P黃金,39.61,39.8,39.48,39.8,2017517,1670,79920728,TWSE_MI_INDEX,0.06
+2026-11-18,TWSE,00635U,期元大S&P黃金,39.21,39.3,38.8,38.88,3246244,3780,126587712,TWSE_MI_INDEX,0.92

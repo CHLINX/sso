@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00750B,凱基科技債10+,31.26,31.26,31.26,31.26,100000,2,3126000,TPEX_afterTrading_otc_type_EW,0.03
+2026-11-17,TPEX,00750B,凱基科技債10+,31.22,31.22,31.22,31.22,100000,2,3122000,TPEX_afterTrading_otc_type_EW,-0.04
+2026-11-18,TPEX,00750B,凱基科技債10+,31.07,31.18,31.07,31.17,119000,6,3707610,TPEX_afterTrading_otc_type_EW,-0.05

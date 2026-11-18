@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6982,大井泵浦,37.1,37.1,33.4,33.75,78000,51,2668200,TPEX_afterTrading_otc_type_EW,-3.35
+2026-11-17,TPEX,6982,大井泵浦,33.75,34.0,33.5,33.5,50000,40,1691100,TPEX_afterTrading_otc_type_EW,-0.25
+2026-11-18,TPEX,6982,大井泵浦,34.5,34.5,32.5,33.5,31000,28,1032500,TPEX_afterTrading_otc_type_EW,0.0

@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6209,今國光,78.6,79.7,72.0,72.2,8007493,6205,594272004,TWSE_MI_INDEX,7.8
+2026-11-17,TWSE,6209,今國光,68.2,71.1,67.5,67.9,6852034,5481,471312099,TWSE_MI_INDEX,4.3
+2026-11-18,TWSE,6209,今國光,70.7,71.0,63.2,67.3,7809621,6056,523220682,TWSE_MI_INDEX,0.6

@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,8016,矽創,255.5,255.5,236.5,238.5,540278,955,131738457,TWSE_MI_INDEX,17.0
+2026-11-17,TWSE,8016,矽創,239.0,246.0,231.5,239.0,530427,699,126661651,TWSE_MI_INDEX,0.5
+2026-11-18,TWSE,8016,矽創,242.0,262.5,234.0,249.0,1870771,2910,471585223,TWSE_MI_INDEX,10.0

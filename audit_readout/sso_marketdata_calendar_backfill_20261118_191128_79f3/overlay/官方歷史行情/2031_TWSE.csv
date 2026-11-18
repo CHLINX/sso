@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2031,新光鋼,43.65,44.05,42.3,42.3,1018227,745,43847193,TWSE_MI_INDEX,1.45
+2026-11-17,TWSE,2031,新光鋼,42.05,43.5,41.3,42.3,1191446,903,50867428,TWSE_MI_INDEX,0.0
+2026-11-18,TWSE,2031,新光鋼,42.55,42.6,41.55,42.05,771423,644,32387752,TWSE_MI_INDEX,0.25

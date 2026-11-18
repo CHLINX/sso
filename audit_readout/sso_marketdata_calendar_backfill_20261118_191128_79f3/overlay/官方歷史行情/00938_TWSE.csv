@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00938,凱基優選30,26.98,27.13,25.97,26.02,1288438,1670,34139098,TWSE_MI_INDEX,0.96
+2026-11-17,TWSE,00938,凱基優選30,25.88,25.88,25.0,25.2,2685860,1868,68664728,TWSE_MI_INDEX,0.0
+2026-11-18,TWSE,00938,凱基優選30,25.68,25.68,24.66,24.75,3090457,2426,77018167,TWSE_MI_INDEX,0.45

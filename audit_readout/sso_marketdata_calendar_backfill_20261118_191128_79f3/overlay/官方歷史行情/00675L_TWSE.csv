@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00675L,富邦臺灣加權正2,267.55,268.9,239.9,239.9,4435708,4420,1127741589,TWSE_MI_INDEX,34.5
+2026-11-17,TWSE,00675L,富邦臺灣加權正2,230.7,248.0,225.05,229.55,4142313,2963,972431508,TWSE_MI_INDEX,10.35
+2026-11-18,TWSE,00675L,富邦臺灣加權正2,235.0,236.2,220.6,229.15,2501517,1927,572650723,TWSE_MI_INDEX,0.4

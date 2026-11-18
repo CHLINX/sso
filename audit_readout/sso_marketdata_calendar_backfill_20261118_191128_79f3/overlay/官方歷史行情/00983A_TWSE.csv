@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00983A,主動中信ARK創新,11.56,11.56,11.39,11.4,520380,462,5950148,TWSE_MI_INDEX,0.3
+2026-11-17,TWSE,00983A,主動中信ARK創新,11.09,11.13,11.08,11.09,685593,309,7606726,TWSE_MI_INDEX,0.31
+2026-11-18,TWSE,00983A,主動中信ARK創新,11.34,11.34,11.0,11.06,1568298,260,17302633,TWSE_MI_INDEX,0.03

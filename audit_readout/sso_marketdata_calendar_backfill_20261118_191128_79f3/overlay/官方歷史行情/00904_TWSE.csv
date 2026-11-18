@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00904,台新臺灣半導體30,34.89,34.89,32.83,32.88,2914221,1702,98746077,TWSE_MI_INDEX,2.52
+2026-11-17,TWSE,00904,台新臺灣半導體30,31.99,33.2,31.71,32.0,1857807,1026,60184457,TWSE_MI_INDEX,0.88
+2026-11-18,TWSE,00904,台新臺灣半導體30,32.85,32.99,31.2,32.43,1225823,781,39318834,TWSE_MI_INDEX,0.43

@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,7842,天能綠電,95.0,95.0,92.0,94.9,14000,13,1309300,TPEX_afterTrading_otc_type_EW,-0.1
+2026-11-17,TPEX,7842,天能綠電,96.3,96.3,89.2,93.4,16000,14,1461400,TPEX_afterTrading_otc_type_EW,-1.5
+2026-11-18,TPEX,7842,天能綠電,90.7,92.0,88.6,92.0,12000,10,1080600,TPEX_afterTrading_otc_type_EW,-1.4

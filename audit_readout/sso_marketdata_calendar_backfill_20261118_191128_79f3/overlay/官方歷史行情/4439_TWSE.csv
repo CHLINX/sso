@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,4439,冠星-KY,94.5,94.5,93.5,93.5,7032,18,662140,TWSE_MI_INDEX,2.0
+2026-11-17,TWSE,4439,冠星-KY,92.6,94.0,92.6,93.1,12728,19,1190622,TWSE_MI_INDEX,0.4
+2026-11-18,TWSE,4439,冠星-KY,93.0,94.3,92.5,94.3,12962,30,1209197,TWSE_MI_INDEX,1.2

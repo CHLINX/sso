@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,7689,大鵬科CLMX,104.0,104.0,97.1,97.1,110906,133,11060532,TWSE_MI_INDEX,2.7
+2026-11-17,TWSE,7689,大鵬科CLMX,97.1,103.5,97.0,101.0,160020,191,16053172,TWSE_MI_INDEX,3.9
+2026-11-18,TWSE,7689,大鵬科CLMX,101.0,102.0,97.2,102.0,111291,122,11060403,TWSE_MI_INDEX,1.0

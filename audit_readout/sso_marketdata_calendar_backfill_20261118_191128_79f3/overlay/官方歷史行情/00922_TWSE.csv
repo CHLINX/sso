@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00922,國泰台灣領袖50,36.91,37.02,35.0,35.0,21181290,22095,762659675,TWSE_MI_INDEX,2.44
+2026-11-17,TWSE,00922,國泰台灣領袖50,34.26,35.41,33.93,34.29,24302541,11187,839479151,TWSE_MI_INDEX,0.71
+2026-11-18,TWSE,00922,國泰台灣領袖50,34.78,34.78,33.51,34.29,18008530,6957,614806283,TWSE_MI_INDEX,0.0

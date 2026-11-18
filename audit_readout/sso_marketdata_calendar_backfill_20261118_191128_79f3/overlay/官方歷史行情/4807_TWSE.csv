@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,4807,日成-KY,35.3,35.3,33.8,35.3,1026641,473,36065380,TWSE_MI_INDEX,3.2
+2026-11-17,TWSE,4807,日成-KY,36.0,36.35,34.15,34.9,890579,614,31444717,TWSE_MI_INDEX,0.4
+2026-11-18,TWSE,4807,日成-KY,34.9,35.95,33.5,34.5,250686,227,8640781,TWSE_MI_INDEX,0.4

@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00966B,統一ESG投等債15+,13.46,13.47,13.43,13.43,1583000,41,21290780,TPEX_afterTrading_otc_type_EW,-0.03
+2026-11-17,TPEX,00966B,統一ESG投等債15+,13.43,13.43,13.4,13.43,177000,13,2375950,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-18,TPEX,00966B,統一ESG投等債15+,13.3,13.46,13.3,13.43,1100000,27,14778240,TPEX_afterTrading_otc_type_EW,0.0

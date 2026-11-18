@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,4927,泰鼎-KY,57.7,57.9,51.7,51.7,16061612,9027,862409456,TWSE_MI_INDEX,5.7
+2026-11-17,TWSE,4927,泰鼎-KY,48.4,50.8,46.55,46.55,15727745,7879,752856290,TWSE_MI_INDEX,5.15
+2026-11-18,TWSE,4927,泰鼎-KY,47.35,47.85,41.9,45.6,19521620,9854,873533499,TWSE_MI_INDEX,0.95

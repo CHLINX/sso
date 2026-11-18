@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,8442,威宏-KY,43.5,44.0,41.7,41.7,81236,72,3470400,TWSE_MI_INDEX,0.8
+2026-11-17,TWSE,8442,威宏-KY,42.0,42.6,41.0,41.0,127479,108,5332947,TWSE_MI_INDEX,0.7
+2026-11-18,TWSE,8442,威宏-KY,41.0,42.2,39.0,41.55,63328,67,2575748,TWSE_MI_INDEX,0.55

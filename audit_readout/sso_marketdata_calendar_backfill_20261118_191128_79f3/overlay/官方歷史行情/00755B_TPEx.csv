@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00755B,群益投資級公用債,32.08,32.21,32.08,32.21,159000,10,5110860,TPEX_afterTrading_otc_type_EW,0.08
+2026-11-17,TPEX,00755B,群益投資級公用債,31.72,31.73,31.69,31.69,106000,6,3361680,TPEX_afterTrading_otc_type_EW,
+2026-11-18,TPEX,00755B,群益投資級公用債,31.68,31.79,31.68,31.78,152000,7,4829430,TPEX_afterTrading_otc_type_EW,0.09

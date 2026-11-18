@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,9930,中聯資源,59.1,59.3,58.6,58.6,94852,128,5596381,TWSE_MI_INDEX,0.2
+2026-11-17,TWSE,9930,中聯資源,58.5,58.8,57.6,58.0,130735,148,7632352,TWSE_MI_INDEX,0.6
+2026-11-18,TWSE,9930,中聯資源,57.9,58.5,57.9,58.5,42455,57,2471843,TWSE_MI_INDEX,0.5

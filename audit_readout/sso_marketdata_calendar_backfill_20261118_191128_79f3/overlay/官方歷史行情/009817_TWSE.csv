@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,009817,國泰日本不動產,8.69,8.83,8.69,8.83,1634292,319,14384532,TWSE_MI_INDEX,0.15
+2026-11-17,TWSE,009817,國泰日本不動產,8.8,8.85,8.77,8.82,1043046,218,9200577,TWSE_MI_INDEX,0.01
+2026-11-18,TWSE,009817,國泰日本不動產,8.77,8.84,8.76,8.83,726235,147,6380716,TWSE_MI_INDEX,0.01

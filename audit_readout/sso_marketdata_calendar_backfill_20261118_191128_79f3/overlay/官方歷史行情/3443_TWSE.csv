@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,3443,創意,8415.0,8500.0,7750.0,7750.0,1430421,17391,11436475795,TWSE_MI_INDEX,860.0
+2026-11-17,TWSE,3443,創意,6975.0,7175.0,6975.0,6975.0,3612185,21652,25336922610,TWSE_MI_INDEX,775.0
+2026-11-18,TWSE,3443,創意,6905.0,6960.0,6280.0,6665.0,6014354,29069,39237389985,TWSE_MI_INDEX,310.0

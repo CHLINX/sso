@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,009829,大華韓國KOSPI50,8.46,8.46,8.13,8.13,23228583,2826,191867696,TWSE_MI_INDEX,0.4
+2026-11-17,TWSE,009829,大華韓國KOSPI50,8.04,8.13,7.95,8.0,20069830,2403,161248949,TWSE_MI_INDEX,0.13
+2026-11-18,TWSE,009829,大華韓國KOSPI50,8.22,8.22,7.96,8.13,17414691,1482,140638957,TWSE_MI_INDEX,0.13

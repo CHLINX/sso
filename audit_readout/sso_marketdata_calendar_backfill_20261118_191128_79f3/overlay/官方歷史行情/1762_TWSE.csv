@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1762,中化生,30.6,30.9,29.7,29.85,191513,196,5750647,TWSE_MI_INDEX,1.15
+2026-11-17,TWSE,1762,中化生,30.0,30.7,29.8,30.1,154009,123,4664235,TWSE_MI_INDEX,0.25
+2026-11-18,TWSE,1762,中化生,30.1,30.25,29.8,30.15,45563,63,1368882,TWSE_MI_INDEX,0.05

@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,4577,達航科技,131.5,134.5,124.5,124.5,2111000,1390,271887500,TPEX_afterTrading_otc_type_EW,-13.5
+2026-11-17,TPEX,4577,達航科技,112.5,116.0,112.5,112.5,1311000,849,148227500,TPEX_afterTrading_otc_type_EW,-12.0
+2026-11-18,TPEX,4577,達航科技,109.5,110.5,101.5,103.0,2853000,2087,298916500,TPEX_afterTrading_otc_type_EW,-9.5

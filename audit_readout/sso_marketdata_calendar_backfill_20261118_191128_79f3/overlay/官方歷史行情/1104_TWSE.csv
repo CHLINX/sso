@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1104,環泥,26.2,26.2,25.75,25.75,456985,390,11849315,TWSE_MI_INDEX,0.3
+2026-11-17,TWSE,1104,環泥,25.75,25.85,25.45,25.55,614556,573,15780364,TWSE_MI_INDEX,0.2
+2026-11-18,TWSE,1104,環泥,25.6,25.7,25.5,25.5,248782,265,6367500,TWSE_MI_INDEX,0.05

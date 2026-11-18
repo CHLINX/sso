@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,0055,元大MSCI金融,51.9,52.35,50.3,50.3,2116183,3635,108964265,TWSE_MI_INDEX,1.6
+2026-11-17,TWSE,0055,元大MSCI金融,50.35,50.8,48.86,50.25,2630263,4579,132148388,TWSE_MI_INDEX,0.05
+2026-11-18,TWSE,0055,元大MSCI金融,50.5,50.6,48.11,48.28,3642682,7634,178271335,TWSE_MI_INDEX,1.97

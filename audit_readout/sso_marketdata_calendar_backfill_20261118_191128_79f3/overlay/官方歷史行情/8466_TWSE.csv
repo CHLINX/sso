@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,8466,美吉吉-KY,13.7,13.8,13.15,13.2,22000,16,294250,TWSE_MI_INDEX,0.25
+2026-11-17,TWSE,8466,美吉吉-KY,13.05,13.45,13.0,13.3,57516,43,759746,TWSE_MI_INDEX,0.1
+2026-11-18,TWSE,8466,美吉吉-KY,13.3,13.4,13.2,13.35,18100,18,240820,TWSE_MI_INDEX,0.05

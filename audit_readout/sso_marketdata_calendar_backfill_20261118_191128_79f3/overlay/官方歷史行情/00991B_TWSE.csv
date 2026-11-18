@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00991B,貝萊德A級公司債,14.99,15.01,14.96,14.97,1120439,66,16788006,TWSE_MI_INDEX,0.03
+2026-11-17,TWSE,00991B,貝萊德A級公司債,14.98,14.98,14.95,14.95,1722641,71,25765149,TWSE_MI_INDEX,0.02
+2026-11-18,TWSE,00991B,貝萊德A級公司債,14.85,14.94,14.84,14.93,992315,69,14768251,TWSE_MI_INDEX,0.0

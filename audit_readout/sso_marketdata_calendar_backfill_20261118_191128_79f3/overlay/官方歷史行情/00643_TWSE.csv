@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00643,群益深証中小,15.63,15.63,15.35,15.42,3643302,223,56314017,TWSE_MI_INDEX,0.26
+2026-11-17,TWSE,00643,群益深証中小,15.19,15.4,15.14,15.35,2697698,132,41406769,TWSE_MI_INDEX,0.07
+2026-11-18,TWSE,00643,群益深証中小,15.16,15.34,15.1,15.25,2730456,580,41374825,TWSE_MI_INDEX,0.1

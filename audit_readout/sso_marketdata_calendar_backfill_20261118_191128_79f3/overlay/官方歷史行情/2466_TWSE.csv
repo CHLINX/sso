@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2466,冠西電,393.0,413.5,380.5,402.5,7367676,7902,2917393320,TWSE_MI_INDEX,9.5
+2026-11-17,TWSE,2466,冠西電,415.0,437.5,406.0,435.5,640110,1363,270470281,TWSE_MI_INDEX,33.0
+2026-11-18,TWSE,2466,冠西電,448.5,452.0,397.5,436.5,457911,1035,196990598,TWSE_MI_INDEX,1.0

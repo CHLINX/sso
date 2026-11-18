@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00763U,期街口道瓊銅,31.99,31.99,31.51,31.65,878759,526,27881108,TWSE_MI_INDEX,0.97
+2026-11-17,TWSE,00763U,期街口道瓊銅,31.5,31.64,31.33,31.51,388291,245,12207615,TWSE_MI_INDEX,0.14
+2026-11-18,TWSE,00763U,期街口道瓊銅,31.44,31.6,30.88,30.92,448701,281,13975613,TWSE_MI_INDEX,0.59

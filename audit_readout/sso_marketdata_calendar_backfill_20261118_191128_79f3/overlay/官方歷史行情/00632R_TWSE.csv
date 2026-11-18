@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00632R,元大台灣50反1,10.45,10.99,10.42,10.99,341294906,29874,3648399093,TWSE_MI_INDEX,0.68
+2026-11-17,TWSE,00632R,元大台灣50反1,11.18,11.3,10.76,11.19,458842789,29505,5077841868,TWSE_MI_INDEX,0.2
+2026-11-18,TWSE,00632R,元大台灣50反1,10.97,11.41,10.97,11.19,365373713,24260,4087826595,TWSE_MI_INDEX,0.0

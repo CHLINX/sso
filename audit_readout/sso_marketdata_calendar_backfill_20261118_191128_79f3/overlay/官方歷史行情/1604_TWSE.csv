@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1604,聲寶,22.85,22.95,22.55,22.6,166046,201,3769316,TWSE_MI_INDEX,0.2
+2026-11-17,TWSE,1604,聲寶,22.5,22.65,22.3,22.35,311797,322,7008347,TWSE_MI_INDEX,0.25
+2026-11-18,TWSE,1604,聲寶,22.45,22.45,22.25,22.4,238924,265,5337078,TWSE_MI_INDEX,0.05

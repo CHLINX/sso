@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6592B,和潤企業乙特,,,,,100,2,9450,TWSE_MI_INDEX,0.0
+2026-11-17,TWSE,6592B,和潤企業乙特,94.5,94.6,94.5,94.5,6000,5,567100,TWSE_MI_INDEX,0.0
+2026-11-18,TWSE,6592B,和潤企業乙特,94.2,94.5,94.2,94.5,35259,16,3322018,TWSE_MI_INDEX,0.0

@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,4930,燦星網,14.55,14.6,14.35,14.5,27472,80,396466,TWSE_MI_INDEX,0.05
+2026-11-17,TWSE,4930,燦星網,14.5,14.55,14.35,14.35,14454,39,209383,TWSE_MI_INDEX,0.15
+2026-11-18,TWSE,4930,燦星網,14.35,14.4,14.3,14.4,11935,31,170920,TWSE_MI_INDEX,0.05

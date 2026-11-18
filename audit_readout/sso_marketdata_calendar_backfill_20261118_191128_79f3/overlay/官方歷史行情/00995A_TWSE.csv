@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00995A,主動中信台灣卓越,13.85,13.85,12.8,12.8,6006562,1675,79139241,TWSE_MI_INDEX,1.21
+2026-11-17,TWSE,00995A,主動中信台灣卓越,12.5,12.6,12.02,12.17,6553671,1700,80384011,TWSE_MI_INDEX,0.63
+2026-11-18,TWSE,00995A,主動中信台灣卓越,12.34,12.6,11.67,12.31,9714372,1181,118298854,TWSE_MI_INDEX,0.14

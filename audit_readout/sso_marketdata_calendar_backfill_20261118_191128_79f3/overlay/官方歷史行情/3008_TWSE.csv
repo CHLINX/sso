@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,3008,大立光,5090.0,5140.0,4780.0,4780.0,1806487,25699,8828430525,TWSE_MI_INDEX,530.0
+2026-11-17,TWSE,3008,大立光,4355.0,4705.0,4355.0,4515.0,2608129,16581,11805476175,TWSE_MI_INDEX,265.0
+2026-11-18,TWSE,3008,大立光,4820.0,4820.0,4205.0,4410.0,2419864,15050,10731118390,TWSE_MI_INDEX,105.0

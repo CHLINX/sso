@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00647L,元大S&P500正2,135.7,135.75,134.5,134.55,58134,99,7853798,TWSE_MI_INDEX,2.45
+2026-11-17,TWSE,00647L,元大S&P500正2,130.45,131.2,130.4,130.4,229099,157,29957638,TWSE_MI_INDEX,4.15
+2026-11-18,TWSE,00647L,元大S&P500正2,129.45,129.55,128.45,128.8,76989,101,9918316,TWSE_MI_INDEX,1.6

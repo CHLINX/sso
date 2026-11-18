@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6861,睿生光電,194.5,194.5,174.5,174.5,625048,853,112379124,TWSE_MI_INDEX,19.0
+2026-11-17,TWSE,6861,睿生光電,166.0,169.5,160.0,160.5,540961,738,88631810,TWSE_MI_INDEX,14.0
+2026-11-18,TWSE,6861,睿生光電,166.5,167.0,150.0,158.5,453983,545,71507104,TWSE_MI_INDEX,2.0

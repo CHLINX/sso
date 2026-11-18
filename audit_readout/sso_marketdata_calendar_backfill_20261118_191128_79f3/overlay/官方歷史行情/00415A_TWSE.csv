@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00415A,主動群益核心50,7.9,7.9,7.4,7.41,44891878,9165,339793796,TWSE_MI_INDEX,0.71
+2026-11-17,TWSE,00415A,主動群益核心50,7.23,7.29,6.93,7.0,55714122,8729,391721027,TWSE_MI_INDEX,0.41
+2026-11-18,TWSE,00415A,主動群益核心50,7.14,7.24,6.68,7.07,48434903,5808,338122705,TWSE_MI_INDEX,0.07

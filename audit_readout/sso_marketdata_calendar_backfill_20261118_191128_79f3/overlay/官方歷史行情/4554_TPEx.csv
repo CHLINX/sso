@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,4554,橙的,25.5,25.5,24.45,24.45,20000,20,495250,TPEX_afterTrading_otc_type_EW,-0.5
+2026-11-17,TPEX,4554,橙的,24.2,24.4,24.2,24.25,11000,10,267050,TPEX_afterTrading_otc_type_EW,-0.2
+2026-11-18,TPEX,4554,橙的,24.7,25.15,24.55,24.8,10000,9,249250,TPEX_afterTrading_otc_type_EW,0.55

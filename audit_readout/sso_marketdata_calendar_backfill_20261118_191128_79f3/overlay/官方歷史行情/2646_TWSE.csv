@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2646,星宇航空,19.95,20.1,19.75,19.75,5326370,2306,106205394,TWSE_MI_INDEX,0.15
+2026-11-17,TWSE,2646,星宇航空,19.8,19.85,19.35,19.5,3888881,2395,76274257,TWSE_MI_INDEX,0.25
+2026-11-18,TWSE,2646,星宇航空,19.55,19.65,19.25,19.45,2956276,1940,57419188,TWSE_MI_INDEX,0.05

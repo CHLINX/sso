@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00688L,國泰20年美債正2,6.03,6.04,6.01,6.04,6023365,226,36265782,TWSE_MI_INDEX,0.01
+2026-11-17,TWSE,00688L,國泰20年美債正2,6.02,6.02,5.99,6.0,2300775,190,13807184,TWSE_MI_INDEX,0.04
+2026-11-18,TWSE,00688L,國泰20年美債正2,6.02,6.09,6.02,6.07,3048067,230,18487265,TWSE_MI_INDEX,0.07

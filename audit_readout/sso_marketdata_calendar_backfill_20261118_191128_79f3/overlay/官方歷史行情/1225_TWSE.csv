@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1225,福懋油,25.4,25.8,24.85,25.45,138197,190,3497911,TWSE_MI_INDEX,0.05
+2026-11-17,TWSE,1225,福懋油,25.5,26.05,25.2,25.9,158062,185,4068282,TWSE_MI_INDEX,0.45
+2026-11-18,TWSE,1225,福懋油,25.9,26.3,25.25,25.5,115685,139,2985576,TWSE_MI_INDEX,0.4

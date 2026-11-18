@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00918,大華優利高填息30,33.02,33.24,32.06,32.06,28377845,20464,927554530,TWSE_MI_INDEX,0.98
+2026-11-17,TWSE,00918,大華優利高填息30,31.5,32.43,31.23,31.89,24573104,14756,785844684,TWSE_MI_INDEX,0.17
+2026-11-18,TWSE,00918,大華優利高填息30,32.2,32.3,31.21,31.51,27196727,21116,857773376,TWSE_MI_INDEX,0.38

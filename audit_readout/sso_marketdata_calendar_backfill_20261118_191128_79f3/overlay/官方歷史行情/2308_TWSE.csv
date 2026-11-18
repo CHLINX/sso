@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2308,台達電,1170.0,1200.0,1120.0,1120.0,21568039,91614,24696190300,TWSE_MI_INDEX,120.0
+2026-11-17,TWSE,2308,台達電,1030.0,1105.0,1025.0,1055.0,24440343,64321,25825542640,TWSE_MI_INDEX,65.0
+2026-11-18,TWSE,2308,台達電,1100.0,1100.0,1000.0,1060.0,20741769,42749,21762110780,TWSE_MI_INDEX,5.0

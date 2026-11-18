@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,4413,飛寶企業,16.15,16.65,15.9,16.0,41000,22,660850,TPEX_afterTrading_otc_type_EW,-1.6
+2026-11-17,TPEX,4413,飛寶企業,17.3,17.4,14.65,15.35,154000,93,2386900,TPEX_afterTrading_otc_type_EW,-0.65
+2026-11-18,TPEX,4413,飛寶企業,15.9,16.85,15.9,16.85,35000,29,586900,TPEX_afterTrading_otc_type_EW,1.5

@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,009806,台新標普500,13.95,13.95,13.47,13.52,24000,8,325220,TPEX_afterTrading_otc_type_EW,
+2026-11-17,TPEX,009806,台新標普500,13.34,13.34,13.29,13.29,9000,8,119690,TPEX_afterTrading_otc_type_EW,-0.23
+2026-11-18,TPEX,009806,台新標普500,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,

@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00982B,FT投資級債20+,9.51,9.51,9.51,9.51,1000,1,9510,TPEX_afterTrading_otc_type_EW,0.03
+2026-11-17,TPEX,00982B,FT投資級債20+,9.45,9.45,9.45,9.45,2000,2,18900,TPEX_afterTrading_otc_type_EW,
+2026-11-18,TPEX,00982B,FT投資級債20+,9.4,9.44,9.4,9.44,51000,2,479440,TPEX_afterTrading_otc_type_EW,-0.01

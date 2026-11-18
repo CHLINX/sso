@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,4148,全宇生技-KY,32.3,35.5,32.3,33.95,264429,312,9044277,TWSE_MI_INDEX,1.65
+2026-11-17,TWSE,4148,全宇生技-KY,33.9,34.65,33.7,34.15,120727,129,4128164,TWSE_MI_INDEX,0.2
+2026-11-18,TWSE,4148,全宇生技-KY,34.4,34.9,33.75,34.15,123417,111,4206384,TWSE_MI_INDEX,0.0

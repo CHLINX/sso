@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00673R,期元大S&P原油反1,10.81,10.88,10.77,10.78,17346115,1289,187540591,TWSE_MI_INDEX,0.0
+2026-11-17,TWSE,00673R,期元大S&P原油反1,11.16,11.25,11.14,11.22,46899023,3329,524853181,TWSE_MI_INDEX,0.44
+2026-11-18,TWSE,00673R,期元大S&P原油反1,11.12,11.25,11.11,11.2,17537558,1242,196118617,TWSE_MI_INDEX,0.02

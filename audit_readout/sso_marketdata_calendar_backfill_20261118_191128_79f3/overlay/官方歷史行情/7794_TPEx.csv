@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,7794,宏碁智新,27.2,27.9,26.5,26.55,65000,35,1774600,TPEX_afterTrading_otc_type_EW,-0.85
+2026-11-17,TPEX,7794,宏碁智新,26.55,26.55,26.55,26.55,8000,5,212400,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-18,TPEX,7794,宏碁智新,26.55,26.55,26.45,26.55,7000,6,185500,TPEX_afterTrading_otc_type_EW,0.0

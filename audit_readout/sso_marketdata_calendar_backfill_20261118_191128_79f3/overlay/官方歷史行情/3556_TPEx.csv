@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,3556,禾瑞亞,59.8,59.8,56.5,56.5,136000,125,7875200,TPEX_afterTrading_otc_type_EW,-3.3
+2026-11-17,TPEX,3556,禾瑞亞,55.8,59.1,54.8,58.0,178000,157,10222100,TPEX_afterTrading_otc_type_EW,1.5
+2026-11-18,TPEX,3556,禾瑞亞,58.0,58.0,55.6,56.5,153000,136,8680700,TPEX_afterTrading_otc_type_EW,-1.5

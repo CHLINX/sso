@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,4966,譜瑞-KY,406.0,430.0,395.0,395.0,846000,776,345210000,TPEX_afterTrading_otc_type_EW,-7.5
+2026-11-17,TPEX,4966,譜瑞-KY,384.0,405.5,375.0,391.5,752000,660,295955000,TPEX_afterTrading_otc_type_EW,-3.5
+2026-11-18,TPEX,4966,譜瑞-KY,398.5,406.5,384.0,402.5,686000,620,273649000,TPEX_afterTrading_otc_type_EW,11.0

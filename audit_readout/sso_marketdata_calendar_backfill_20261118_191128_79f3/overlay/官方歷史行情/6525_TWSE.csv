@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6525,捷敏-KY,105.0,105.0,97.1,97.1,563669,658,56100314,TWSE_MI_INDEX,8.4
+2026-11-17,TWSE,6525,捷敏-KY,97.1,99.1,93.4,95.4,653476,650,62753860,TWSE_MI_INDEX,1.7
+2026-11-18,TWSE,6525,捷敏-KY,97.7,99.4,92.1,98.1,627190,633,60103662,TWSE_MI_INDEX,2.7

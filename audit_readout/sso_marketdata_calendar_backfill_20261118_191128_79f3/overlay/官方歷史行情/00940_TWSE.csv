@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00940,元大台灣價值高息,12.33,12.37,11.89,11.94,14226111,3634,172238579,TWSE_MI_INDEX,0.38
+2026-11-17,TWSE,00940,元大台灣價值高息,11.66,11.98,11.58,11.8,17387383,3019,205159097,TWSE_MI_INDEX,0.14
+2026-11-18,TWSE,00940,元大台灣價值高息,11.85,11.91,11.56,11.73,17349504,5039,203561850,TWSE_MI_INDEX,0.07

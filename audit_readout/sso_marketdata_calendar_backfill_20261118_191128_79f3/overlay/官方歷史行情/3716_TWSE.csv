@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,3716,中化控股,32.2,32.45,31.7,31.7,312233,619,9990352,TWSE_MI_INDEX,0.45
+2026-11-17,TWSE,3716,中化控股,31.7,31.85,31.35,31.35,189130,277,5969951,TWSE_MI_INDEX,0.35
+2026-11-18,TWSE,3716,中化控股,31.5,31.5,30.85,31.0,220602,228,6861318,TWSE_MI_INDEX,0.35

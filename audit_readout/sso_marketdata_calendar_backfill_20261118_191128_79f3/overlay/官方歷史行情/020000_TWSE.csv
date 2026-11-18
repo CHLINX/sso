@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,020000,富邦特選蘋果N,24.87,24.87,24.87,24.87,1000,1,24870,TWSE_MI_INDEX,1.66
+2026-11-17,TWSE,020000,富邦特選蘋果N,24.26,24.26,23.51,23.53,19000,8,453020,TWSE_MI_INDEX,1.34
+2026-11-18,TWSE,020000,富邦特選蘋果N,23.88,24.1,23.88,24.0,26000,6,624730,TWSE_MI_INDEX,0.47

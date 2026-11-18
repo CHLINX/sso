@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,8473,山林水,34.75,35.1,32.95,33.0,834031,588,28153961,TWSE_MI_INDEX,1.75
+2026-11-17,TWSE,8473,山林水,32.2,33.35,32.15,32.75,398074,323,13038654,TWSE_MI_INDEX,0.25
+2026-11-18,TWSE,8473,山林水,33.25,34.45,32.9,33.1,815933,585,27291418,TWSE_MI_INDEX,0.35

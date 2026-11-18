@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,4557,永新-KY,54.1,54.1,53.5,53.9,29225,68,1573395,TWSE_MI_INDEX,0.4
+2026-11-17,TWSE,4557,永新-KY,53.2,53.9,53.2,53.7,40047,91,2144691,TWSE_MI_INDEX,0.2
+2026-11-18,TWSE,4557,永新-KY,53.5,53.5,52.2,52.5,39322,66,2080053,TWSE_MI_INDEX,1.2

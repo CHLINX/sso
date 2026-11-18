@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00636,國泰中國A50,25.17,25.17,24.95,25.01,268978,247,6732599,TWSE_MI_INDEX,0.18
+2026-11-17,TWSE,00636,國泰中國A50,24.95,24.98,24.81,24.96,765054,220,19054074,TWSE_MI_INDEX,0.05
+2026-11-18,TWSE,00636,國泰中國A50,25.12,25.12,24.79,24.87,1215239,1002,30245575,TWSE_MI_INDEX,0.09

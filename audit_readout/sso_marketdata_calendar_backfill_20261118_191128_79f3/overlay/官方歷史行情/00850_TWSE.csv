@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00850,元大臺灣ESG永續,86.6,87.0,81.55,81.55,1167386,3673,97142484,TWSE_MI_INDEX,5.45
+2026-11-17,TWSE,00850,元大臺灣ESG永續,79.05,82.0,78.85,79.9,1135917,2302,90927009,TWSE_MI_INDEX,1.65
+2026-11-18,TWSE,00850,元大臺灣ESG永續,82.55,82.6,77.95,80.0,1055576,1858,83845774,TWSE_MI_INDEX,0.1

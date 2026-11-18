@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6983,華洋精機,239.5,241.5,229.0,241.5,50000,43,11857500,TPEX_afterTrading_otc_type_EW,1.5
+2026-11-17,TPEX,6983,華洋精機,225.0,240.0,225.0,240.0,22000,22,5158000,TPEX_afterTrading_otc_type_EW,-1.5
+2026-11-18,TPEX,6983,華洋精機,240.0,240.5,225.0,240.0,41000,35,9613000,TPEX_afterTrading_otc_type_EW,0.0

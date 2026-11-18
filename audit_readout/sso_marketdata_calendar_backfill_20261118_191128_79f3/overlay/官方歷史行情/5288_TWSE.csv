@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,5288,豐祥-KY,169.0,169.0,164.0,165.0,64627,103,10759677,TWSE_MI_INDEX,4.0
+2026-11-17,TWSE,5288,豐祥-KY,164.5,165.5,160.0,161.0,126668,167,20548565,TWSE_MI_INDEX,4.0
+2026-11-18,TWSE,5288,豐祥-KY,163.0,164.0,158.0,160.5,64571,85,10341955,TWSE_MI_INDEX,0.5

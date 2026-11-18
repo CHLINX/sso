@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2929,淘帝-KY,5.73,5.76,5.55,5.73,129615,138,733800,TWSE_MI_INDEX,0.0
+2026-11-17,TWSE,2929,淘帝-KY,5.69,5.8,5.57,5.75,348422,310,1989629,TWSE_MI_INDEX,0.02
+2026-11-18,TWSE,2929,淘帝-KY,5.75,5.8,5.62,5.75,190257,161,1084924,TWSE_MI_INDEX,0.0

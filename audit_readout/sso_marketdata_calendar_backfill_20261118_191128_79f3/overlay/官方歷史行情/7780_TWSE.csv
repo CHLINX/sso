@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,7780,大研生醫*,15.1,15.2,14.65,14.7,729408,524,10877283,TWSE_MI_INDEX,0.4
+2026-11-17,TWSE,7780,大研生醫*,14.65,14.8,14.4,14.7,734257,471,10765563,TWSE_MI_INDEX,0.0
+2026-11-18,TWSE,7780,大研生醫*,14.7,14.8,14.3,14.5,458207,383,6641325,TWSE_MI_INDEX,0.2

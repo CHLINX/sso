@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2104,國際中橡,10.3,10.4,10.05,10.1,2352826,725,24031078,TWSE_MI_INDEX,0.2
+2026-11-17,TWSE,2104,國際中橡,10.1,10.2,9.86,10.05,2254762,898,22673343,TWSE_MI_INDEX,0.05
+2026-11-18,TWSE,2104,國際中橡,10.1,10.2,9.81,9.95,3762830,1126,37390243,TWSE_MI_INDEX,0.1

@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,9911,櫻花,77.5,78.9,76.9,76.9,301994,416,23519129,TWSE_MI_INDEX,0.5
+2026-11-17,TWSE,9911,櫻花,76.9,77.5,76.3,76.3,469780,519,36094737,TWSE_MI_INDEX,0.6
+2026-11-18,TWSE,9911,櫻花,76.5,77.0,76.0,76.6,318790,354,24419933,TWSE_MI_INDEX,0.3

@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00710B,復華彭博非投等債,19.02,19.11,19.02,19.08,251583,61,4798675,TWSE_MI_INDEX,0.01
+2026-11-17,TWSE,00710B,復華彭博非投等債,19.07,19.08,18.98,19.04,353486,46,6723644,TWSE_MI_INDEX,0.04
+2026-11-18,TWSE,00710B,復華彭博非投等債,18.86,19.03,18.86,18.97,253322,62,4809676,TWSE_MI_INDEX,0.07

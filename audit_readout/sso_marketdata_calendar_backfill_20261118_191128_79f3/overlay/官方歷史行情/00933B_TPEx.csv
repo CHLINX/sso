@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00933B,國泰10Y+金融債,15.66,15.68,15.64,15.64,11458000,1099,179384850,TPEX_afterTrading_otc_type_EW,-0.02
+2026-11-17,TPEX,00933B,國泰10Y+金融債,15.6,15.6,15.53,15.55,7704000,691,119867300,TPEX_afterTrading_otc_type_EW,
+2026-11-18,TPEX,00933B,國泰10Y+金融債,15.55,15.61,15.51,15.6,8183000,737,127490170,TPEX_afterTrading_otc_type_EW,0.05

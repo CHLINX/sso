@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,009802,富邦旗艦50,17.7,17.8,16.9,16.9,2409701,1314,41676534,TWSE_MI_INDEX,1.03
+2026-11-17,TWSE,009802,富邦旗艦50,16.51,17.05,16.28,16.65,4930061,1008,82546979,TWSE_MI_INDEX,0.25
+2026-11-18,TWSE,009802,富邦旗艦50,17.0,17.0,16.31,16.68,3835093,839,63616916,TWSE_MI_INDEX,0.03

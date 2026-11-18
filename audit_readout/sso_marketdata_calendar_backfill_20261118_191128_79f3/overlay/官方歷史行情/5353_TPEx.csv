@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,5353,台林,26.55,26.55,26.1,26.25,44000,37,1153000,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-17,TPEX,5353,台林,26.4,26.4,25.7,26.0,78000,47,2016450,TPEX_afterTrading_otc_type_EW,-0.25
+2026-11-18,TPEX,5353,台林,26.5,26.5,25.6,26.0,28000,16,724950,TPEX_afterTrading_otc_type_EW,0.0

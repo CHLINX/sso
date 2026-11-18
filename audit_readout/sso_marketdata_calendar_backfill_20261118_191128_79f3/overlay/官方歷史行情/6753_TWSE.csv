@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6753,龍德造船,110.0,112.5,108.0,110.0,917338,716,101112557,TWSE_MI_INDEX,0.5
+2026-11-17,TWSE,6753,龍德造船,109.0,114.5,107.0,109.0,917655,670,102341837,TWSE_MI_INDEX,1.0
+2026-11-18,TWSE,6753,龍德造船,110.0,112.5,105.0,111.5,609137,546,66748352,TWSE_MI_INDEX,2.5

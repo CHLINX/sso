@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2228,劍麟,64.9,64.9,63.3,63.6,131690,142,8406905,TWSE_MI_INDEX,1.3
+2026-11-17,TWSE,2228,劍麟,62.5,63.8,62.1,62.2,147156,146,9239488,TWSE_MI_INDEX,1.4
+2026-11-18,TWSE,2228,劍麟,62.8,65.4,62.0,64.4,216779,232,13754797,TWSE_MI_INDEX,2.2

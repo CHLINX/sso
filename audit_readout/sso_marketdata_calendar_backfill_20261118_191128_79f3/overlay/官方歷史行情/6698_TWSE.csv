@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6698,旭暉應材,30.75,30.75,28.85,28.95,199506,290,5884470,TWSE_MI_INDEX,1.8
+2026-11-17,TWSE,6698,旭暉應材,28.45,28.95,28.0,28.25,130823,171,3736246,TWSE_MI_INDEX,0.7
+2026-11-18,TWSE,6698,旭暉應材,28.7,29.15,27.8,28.45,123943,177,3520054,TWSE_MI_INDEX,0.2

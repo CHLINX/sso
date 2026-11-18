@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1513,中興電,147.5,148.5,141.0,141.0,1598097,2371,230835018,TWSE_MI_INDEX,5.5
+2026-11-17,TWSE,1513,中興電,140.5,143.0,137.0,141.5,2231060,2501,314066378,TWSE_MI_INDEX,0.5
+2026-11-18,TWSE,1513,中興電,143.0,144.5,138.5,143.5,2336793,2451,332656594,TWSE_MI_INDEX,2.0

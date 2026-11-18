@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6914,阜爾運通,109.0,109.0,107.0,107.5,31435,102,3389312,TWSE_MI_INDEX,1.5
+2026-11-17,TWSE,6914,阜爾運通,106.5,109.5,106.0,108.0,56011,119,6056932,TWSE_MI_INDEX,0.5
+2026-11-18,TWSE,6914,阜爾運通,108.0,109.0,107.5,108.5,33786,56,3664336,TWSE_MI_INDEX,0.5

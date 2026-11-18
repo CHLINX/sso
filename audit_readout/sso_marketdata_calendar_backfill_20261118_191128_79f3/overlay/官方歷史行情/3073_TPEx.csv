@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,3073,天方能源,20.8,20.8,19.0,19.8,82000,49,1605800,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-17,TPEX,3073,天方能源,20.65,20.65,19.75,20.25,25000,23,500050,TPEX_afterTrading_otc_type_EW,0.45
+2026-11-18,TPEX,3073,天方能源,20.35,20.35,19.35,19.8,26000,19,510800,TPEX_afterTrading_otc_type_EW,-0.45

@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2923,鼎固-KY,26.95,28.75,26.45,28.75,290462,315,8170288,TWSE_MI_INDEX,2.6
+2026-11-17,TWSE,2923,鼎固-KY,29.5,31.6,29.0,31.6,561900,609,17384229,TWSE_MI_INDEX,2.85
+2026-11-18,TWSE,2923,鼎固-KY,30.0,34.35,29.0,31.8,403004,380,12869231,TWSE_MI_INDEX,0.2

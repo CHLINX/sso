@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1806,冠軍,7.27,7.38,7.22,7.22,175631,182,1281310,TWSE_MI_INDEX,0.1
+2026-11-17,TWSE,1806,冠軍,7.29,7.29,7.14,7.14,186634,209,1345457,TWSE_MI_INDEX,0.08
+2026-11-18,TWSE,1806,冠軍,7.25,7.25,7.05,7.05,172723,151,1226598,TWSE_MI_INDEX,0.09

@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6902,GOGOLOOK,137.5,139.0,125.0,126.5,623017,647,81516994,TWSE_MI_INDEX,8.0
+2026-11-17,TWSE,6902,GOGOLOOK,126.5,126.5,115.0,116.5,481237,578,57247537,TWSE_MI_INDEX,10.0
+2026-11-18,TWSE,6902,GOGOLOOK,118.0,118.0,106.0,107.0,685650,645,75130179,TWSE_MI_INDEX,9.5

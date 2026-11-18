@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00830,國泰費城半導體,74.0,74.0,71.9,72.0,13280630,16719,965513407,TWSE_MI_INDEX,4.1
+2026-11-17,TWSE,00830,國泰費城半導體,70.2,71.8,69.7,71.0,11022892,9548,780795208,TWSE_MI_INDEX,1.0
+2026-11-18,TWSE,00830,國泰費城半導體,72.55,72.55,70.75,71.7,7151455,5703,511452158,TWSE_MI_INDEX,0.7

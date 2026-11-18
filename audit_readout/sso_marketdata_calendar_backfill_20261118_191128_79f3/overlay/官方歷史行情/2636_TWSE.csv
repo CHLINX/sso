@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2636,台驊控股,71.4,71.7,69.3,69.3,615161,582,43411653,TWSE_MI_INDEX,1.7
+2026-11-17,TWSE,2636,台驊控股,69.3,73.5,68.8,71.8,1740471,1606,125557437,TWSE_MI_INDEX,2.5
+2026-11-18,TWSE,2636,台驊控股,71.3,72.5,71.3,72.1,759095,718,54539235,TWSE_MI_INDEX,0.3

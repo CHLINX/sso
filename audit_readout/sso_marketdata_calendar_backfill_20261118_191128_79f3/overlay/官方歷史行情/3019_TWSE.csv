@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,3019,亞光,137.5,137.5,127.5,127.5,4752596,4948,622559951,TWSE_MI_INDEX,10.5
+2026-11-17,TWSE,3019,亞光,125.0,129.5,121.0,125.0,3820328,3303,477690719,TWSE_MI_INDEX,2.5
+2026-11-18,TWSE,3019,亞光,127.0,129.5,118.0,126.5,5324460,4098,661586099,TWSE_MI_INDEX,1.5

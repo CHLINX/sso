@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00664R,國泰臺灣加權反1,1.68,1.77,1.68,1.77,50849511,2044,87670123,TWSE_MI_INDEX,0.11
+2026-11-17,TWSE,00664R,國泰臺灣加權反1,1.81,1.83,1.73,1.81,86627062,2291,154571223,TWSE_MI_INDEX,0.04
+2026-11-18,TWSE,00664R,國泰臺灣加權反1,1.76,1.84,1.76,1.8,70799943,2091,127398189,TWSE_MI_INDEX,0.01

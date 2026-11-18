@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,3006,晶豪科,229.5,230.0,214.5,216.0,9055872,8463,1997248605,TWSE_MI_INDEX,17.5
+2026-11-17,TWSE,3006,晶豪科,208.0,220.5,201.0,213.0,10799255,9807,2284456277,TWSE_MI_INDEX,3.0
+2026-11-18,TWSE,3006,晶豪科,220.0,226.0,204.0,212.0,11536780,11497,2477567719,TWSE_MI_INDEX,1.0

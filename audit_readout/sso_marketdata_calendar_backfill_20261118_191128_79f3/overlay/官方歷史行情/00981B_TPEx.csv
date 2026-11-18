@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00981B,第一金優選非投債,9.1,9.1,9.07,9.07,13714000,766,124616270,TPEX_afterTrading_otc_type_EW,-0.02
+2026-11-17,TPEX,00981B,第一金優選非投債,9.07,9.07,9.04,9.05,8012000,796,72505920,TPEX_afterTrading_otc_type_EW,-0.02
+2026-11-18,TPEX,00981B,第一金優選非投債,9.05,9.05,9.02,9.03,8210000,647,74170850,TPEX_afterTrading_otc_type_EW,-0.02

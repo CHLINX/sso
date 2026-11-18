@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,0056,元大高股息,52.55,52.75,50.4,50.6,80471205,106652,4137416853,TWSE_MI_INDEX,2.4
+2026-11-17,TWSE,0056,元大高股息,50.15,50.95,48.85,49.92,74262670,81950,3704986705,TWSE_MI_INDEX,0.68
+2026-11-18,TWSE,0056,元大高股息,50.6,50.9,48.4,49.48,93001322,92839,4587079509,TWSE_MI_INDEX,0.44

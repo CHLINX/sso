@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,006204,永豐臺灣加權,215.15,215.15,210.0,210.0,6455,105,1370863,TWSE_MI_INDEX,11.65
+2026-11-17,TWSE,006204,永豐臺灣加權,203.85,207.75,203.0,203.0,46663,124,9565756,TWSE_MI_INDEX,7.0
+2026-11-18,TWSE,006204,永豐臺灣加權,205.9,205.9,205.9,205.9,2631,108,535267,TWSE_MI_INDEX,2.9

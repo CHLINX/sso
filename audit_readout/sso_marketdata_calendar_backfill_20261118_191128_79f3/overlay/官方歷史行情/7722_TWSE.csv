@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,7722,LINEPAY,236.0,241.5,229.0,231.5,151310,445,35854415,TWSE_MI_INDEX,2.0
+2026-11-17,TWSE,7722,LINEPAY,232.0,254.5,229.0,248.0,455920,2574,113345829,TWSE_MI_INDEX,16.5
+2026-11-18,TWSE,7722,LINEPAY,243.0,264.0,243.0,250.0,338425,776,86332932,TWSE_MI_INDEX,2.0

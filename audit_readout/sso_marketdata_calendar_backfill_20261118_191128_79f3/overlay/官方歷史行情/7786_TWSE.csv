@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,7786,東方風能,105.0,105.5,102.0,102.0,100554,137,10461248,TWSE_MI_INDEX,2.0
+2026-11-17,TWSE,7786,東方風能,104.0,104.5,102.0,102.0,131722,136,13625294,TWSE_MI_INDEX,0.0
+2026-11-18,TWSE,7786,東方風能,102.5,106.0,101.5,106.0,154121,140,15936319,TWSE_MI_INDEX,4.0

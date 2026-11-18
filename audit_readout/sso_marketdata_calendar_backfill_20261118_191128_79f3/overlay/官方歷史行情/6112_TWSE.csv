@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6112,邁達特,58.7,61.4,57.3,57.3,36589354,24650,2176679868,TWSE_MI_INDEX,1.1
+2026-11-17,TWSE,6112,邁達特,57.3,58.9,52.1,53.0,14295437,9656,772921757,TWSE_MI_INDEX,4.3
+2026-11-18,TWSE,6112,邁達特,52.4,53.9,47.7,47.75,10637903,7660,528050613,TWSE_MI_INDEX,5.25

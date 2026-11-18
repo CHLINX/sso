@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00726B,國泰新興投等債,31.89,32.07,31.89,32.06,114000,11,3655180,TPEX_afterTrading_otc_type_EW,-0.02
+2026-11-17,TPEX,00726B,國泰新興投等債,31.89,32.07,31.89,31.89,158000,14,5056000,TPEX_afterTrading_otc_type_EW,-0.17
+2026-11-18,TPEX,00726B,國泰新興投等債,31.87,32.04,31.87,31.97,129000,11,4129070,TPEX_afterTrading_otc_type_EW,0.08

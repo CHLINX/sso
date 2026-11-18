@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1531,高林股,10.95,10.95,10.65,10.65,137756,136,1484864,TWSE_MI_INDEX,0.3
+2026-11-17,TWSE,1531,高林股,10.7,11.0,10.65,10.7,231471,222,2506432,TWSE_MI_INDEX,0.05
+2026-11-18,TWSE,1531,高林股,10.7,10.8,10.7,10.7,67039,78,720196,TWSE_MI_INDEX,0.0

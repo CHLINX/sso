@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00982D,主動富邦動態入息,9.54,9.55,9.53,9.54,80623,170,769612,TWSE_MI_INDEX,0.04
+2026-11-17,TWSE,00982D,主動富邦動態入息,9.49,9.5,9.48,9.48,1701271,107,16145025,TWSE_MI_INDEX,0.0
+2026-11-18,TWSE,00982D,主動富邦動態入息,9.52,9.54,9.5,9.52,200618,97,1909626,TWSE_MI_INDEX,0.04

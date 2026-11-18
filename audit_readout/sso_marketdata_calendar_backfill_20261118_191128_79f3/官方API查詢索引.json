@@ -1,0 +1,111 @@
+[
+  {
+    "trade_date": "2026-11-18",
+    "market": "TWSE",
+    "query_type": "ALLBUT0999",
+    "url": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+    "params": {
+      "date": "20261118",
+      "type": "ALLBUT0999",
+      "response": "json"
+    },
+    "http_status": 200,
+    "response_sha256": "c492acefb93de06c65e5a0864636f66d938b1dcff6fcf3acb6a3ef6f3c639f26",
+    "raw_gzip_sha256": "86502528495ba08ec1243c4b55e819f9b54979cd5fe267eb1614ba0d51e360f6",
+    "raw_file": "raw/TWSE/20261118.json.gz",
+    "table_title": "115年11月18日 每日收盤行情(全部(不含權證、牛熊證、可展延牛熊證))",
+    "status": "PASS",
+    "validation": {
+      "rows": 1391,
+      "unique_codes": 1391,
+      "duplicate_rows": 0,
+      "invalid_code_rows": 0,
+      "wrong_date_rows": 0,
+      "wrong_market_rows": 0,
+      "missing_volume_rows": 0,
+      "negative_volume_rows": 0,
+      "zero_volume_rows": 10,
+      "zero_volume_ratio": 0.007189,
+      "missing_ohlc_rows": 11,
+      "missing_ohlc_ratio": 0.007908,
+      "complete_ohlc_rows": 1380,
+      "invalid_ohlc_rows": 0,
+      "invalid_ohlc_ratio": 0.0,
+      "negative_trade_value_rows": 0,
+      "negative_transactions_rows": 0,
+      "missing_price_change_rows": 0,
+      "tpex_ew_source_fail_rows": 0,
+      "expected_rows": 1389,
+      "count_ratio": 1.00144,
+      "validation_errors": [],
+      "parse_stats": {
+        "table_rows": 1391,
+        "blank_code_rows": 0,
+        "invalid_code_rows": 0,
+        "malformed_rows": 0
+      }
+    },
+    "error": "",
+    "parse_stats": {
+      "table_rows": 1391,
+      "blank_code_rows": 0,
+      "invalid_code_rows": 0,
+      "malformed_rows": 0
+    }
+  },
+  {
+    "trade_date": "2026-11-18",
+    "market": "TPEX",
+    "query_type": "EW_LEGACY_OFFICIAL",
+    "url": "https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php",
+    "params": {
+      "l": "zh-tw",
+      "d": "115/11/18",
+      "se": "EW",
+      "o": "json"
+    },
+    "http_status": 200,
+    "response_sha256": "5a2225f2a132c39517625a8cb644970012d0b6935842e0a03bf6ca04f928419b",
+    "raw_gzip_sha256": "1796318d27b5bec7c6e78470327e265b3de132b1bf37a38b5123ef9db0ef61ed",
+    "raw_file": "raw/TPEX/20261118_legacy.json.gz",
+    "table_title": "上櫃股票每日收盤行情(不含定價)",
+    "status": "PASS",
+    "validation": {
+      "rows": 1021,
+      "unique_codes": 1021,
+      "duplicate_rows": 0,
+      "invalid_code_rows": 0,
+      "wrong_date_rows": 0,
+      "wrong_market_rows": 0,
+      "missing_volume_rows": 0,
+      "negative_volume_rows": 0,
+      "zero_volume_rows": 33,
+      "zero_volume_ratio": 0.032321,
+      "missing_ohlc_rows": 33,
+      "missing_ohlc_ratio": 0.032321,
+      "complete_ohlc_rows": 988,
+      "invalid_ohlc_rows": 0,
+      "invalid_ohlc_ratio": 0.0,
+      "negative_trade_value_rows": 0,
+      "negative_transactions_rows": 0,
+      "missing_price_change_rows": 39,
+      "tpex_ew_source_fail_rows": 0,
+      "expected_rows": 1021,
+      "count_ratio": 1.0,
+      "validation_errors": [],
+      "parse_stats": {
+        "table_rows": 1021,
+        "blank_code_rows": 0,
+        "invalid_code_rows": 0,
+        "malformed_rows": 0
+      }
+    },
+    "error": "",
+    "parse_stats": {
+      "table_rows": 1021,
+      "blank_code_rows": 0,
+      "invalid_code_rows": 0,
+      "malformed_rows": 0
+    }
+  }
+]

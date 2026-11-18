@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,5364,力麗店,7.62,8.07,7.51,8.01,239000,111,1838910,TPEX_afterTrading_otc_type_EW,0.31
+2026-11-17,TPEX,5364,力麗店,8.06,8.06,7.77,8.03,143000,79,1130780,TPEX_afterTrading_otc_type_EW,0.02
+2026-11-18,TPEX,5364,力麗店,7.84,7.97,7.72,7.84,145000,88,1132210,TPEX_afterTrading_otc_type_EW,-0.19

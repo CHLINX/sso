@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,2938,床的世界,16.75,16.75,16.6,16.6,5000,4,83150,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-17,TPEX,2938,床的世界,16.55,16.55,16.5,16.5,10000,7,165100,TPEX_afterTrading_otc_type_EW,-0.1
+2026-11-18,TPEX,2938,床的世界,16.3,16.3,16.2,16.2,4000,4,65000,TPEX_afterTrading_otc_type_EW,-0.3

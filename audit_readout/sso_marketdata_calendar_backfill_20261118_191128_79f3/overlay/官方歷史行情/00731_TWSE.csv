@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00731,復華富時高息低波,99.8,99.8,96.55,96.7,131188,1639,13007138,TWSE_MI_INDEX,3.05
+2026-11-17,TWSE,00731,復華富時高息低波,94.35,97.35,94.0,96.3,474067,2556,45735702,TWSE_MI_INDEX,0.4
+2026-11-18,TWSE,00731,復華富時高息低波,94.9,94.9,92.9,93.35,827937,2738,77071998,TWSE_MI_INDEX,0.0

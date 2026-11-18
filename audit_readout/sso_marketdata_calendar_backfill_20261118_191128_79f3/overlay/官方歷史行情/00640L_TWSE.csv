@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00640L,富邦日本正2,99.7,99.7,98.1,98.5,70785,76,7002659,TWSE_MI_INDEX,1.7
+2026-11-17,TWSE,00640L,富邦日本正2,96.3,96.3,94.6,95.1,151421,100,14486825,TWSE_MI_INDEX,3.4
+2026-11-18,TWSE,00640L,富邦日本正2,94.8,94.8,92.85,94.25,34316,71,3216684,TWSE_MI_INDEX,0.85

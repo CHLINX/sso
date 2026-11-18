@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6690,安碁資訊,218.0,233.0,214.5,233.0,4020000,2992,910814500,TPEX_afterTrading_otc_type_EW,21.0
+2026-11-17,TPEX,6690,安碁資訊,229.0,229.0,210.0,210.0,1479000,985,320751000,TPEX_afterTrading_otc_type_EW,-23.0
+2026-11-18,TPEX,6690,安碁資訊,202.0,205.0,189.0,190.5,1965000,1520,381815000,TPEX_afterTrading_otc_type_EW,-19.5

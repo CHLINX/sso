@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,5258,虹堡,39.9,39.9,37.7,37.7,168290,230,6454798,TWSE_MI_INDEX,1.2
+2026-11-17,TWSE,5258,虹堡,37.3,38.7,37.2,37.8,251224,240,9518985,TWSE_MI_INDEX,0.1
+2026-11-18,TWSE,5258,虹堡,37.9,38.25,36.35,37.8,283309,253,10587039,TWSE_MI_INDEX,0.0

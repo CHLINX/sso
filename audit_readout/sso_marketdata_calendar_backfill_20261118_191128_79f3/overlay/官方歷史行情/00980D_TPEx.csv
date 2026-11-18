@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00980D,主動聯博投等入息,19.76,19.77,19.72,19.75,1869000,78,36898950,TPEX_afterTrading_otc_type_EW,-0.03
+2026-11-17,TPEX,00980D,主動聯博投等入息,19.68,19.68,19.61,19.61,323000,60,6339780,TPEX_afterTrading_otc_type_EW,
+2026-11-18,TPEX,00980D,主動聯博投等入息,19.61,19.62,19.54,19.6,202000,43,3955520,TPEX_afterTrading_otc_type_EW,-0.01

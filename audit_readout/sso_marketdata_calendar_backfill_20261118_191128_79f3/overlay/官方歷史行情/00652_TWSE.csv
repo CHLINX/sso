@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00652,富邦印度,35.85,36.17,35.84,36.04,651619,377,23430731,TWSE_MI_INDEX,0.09
+2026-11-17,TWSE,00652,富邦印度,36.04,36.59,36.04,36.59,1038097,577,37664601,TWSE_MI_INDEX,0.55
+2026-11-18,TWSE,00652,富邦印度,36.6,36.6,36.27,36.36,253498,312,9216548,TWSE_MI_INDEX,0.23

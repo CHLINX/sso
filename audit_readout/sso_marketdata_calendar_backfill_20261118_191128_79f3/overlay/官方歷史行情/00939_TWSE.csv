@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00939,統一台灣高息動能,24.49,24.6,23.66,23.66,6356908,3270,153534102,TWSE_MI_INDEX,0.83
+2026-11-17,TWSE,00939,統一台灣高息動能,23.24,23.93,23.0,23.63,6855191,3503,162535944,TWSE_MI_INDEX,0.03
+2026-11-18,TWSE,00939,統一台灣高息動能,23.76,23.77,22.98,23.09,5262502,4246,122279816,TWSE_MI_INDEX,0.54

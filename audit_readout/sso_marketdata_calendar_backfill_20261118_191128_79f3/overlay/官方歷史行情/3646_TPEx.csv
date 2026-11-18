@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,3646,艾恩特,23.95,24.6,23.95,24.6,15000,15,364750,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-17,TPEX,3646,艾恩特,24.05,24.7,23.7,24.2,25000,24,601900,TPEX_afterTrading_otc_type_EW,-0.4
+2026-11-18,TPEX,3646,艾恩特,24.45,24.45,23.7,24.2,16000,16,383950,TPEX_afterTrading_otc_type_EW,0.0

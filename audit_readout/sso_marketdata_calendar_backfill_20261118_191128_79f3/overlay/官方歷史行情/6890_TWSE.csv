@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6890,來億-KY,162.5,177.5,162.0,165.0,980949,1226,165844194,TWSE_MI_INDEX,3.5
+2026-11-17,TWSE,6890,來億-KY,161.5,163.5,155.5,157.0,396215,463,63032659,TWSE_MI_INDEX,8.0
+2026-11-18,TWSE,6890,來億-KY,161.0,161.0,151.5,153.5,187737,228,28981964,TWSE_MI_INDEX,3.5

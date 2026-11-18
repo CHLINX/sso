@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00986A,主動台新龍頭成長,12.81,13.11,12.81,13.05,155265,129,2027968,TWSE_MI_INDEX,0.35
+2026-11-17,TWSE,00986A,主動台新龍頭成長,12.83,12.83,12.66,12.8,42829,82,544985,TWSE_MI_INDEX,0.25
+2026-11-18,TWSE,00986A,主動台新龍頭成長,12.7,12.8,12.7,12.71,30105,94,383413,TWSE_MI_INDEX,0.09
