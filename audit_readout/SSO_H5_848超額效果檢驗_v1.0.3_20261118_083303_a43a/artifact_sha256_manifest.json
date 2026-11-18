@@ -1,0 +1,23 @@
+{
+  "version": "SSO_H5_848_Excess_Effect_v1.0.3_BLOCKED",
+  "file_count": 3,
+  "files": [
+    {
+      "path": "BLOCKED_ERROR.json",
+      "bytes": 209,
+      "sha256": "3fe74b3192cc3b33d07488bc96b1ed68cc852112bdca7253cbb13f50f6026fac"
+    },
+    {
+      "path": "執行紀錄.csv",
+      "bytes": 161,
+      "sha256": "689376bbcec198b3a20bf5530df3d12c1f35ebf2afc9164994ec5dccc931ae83"
+    },
+    {
+      "path": "超額效果檢驗摘要.json",
+      "bytes": 466,
+      "sha256": "343bf18eb438f5da9e2eb0859b4da234c96d56d818634ab7af4a579732f5a713"
+    }
+  ],
+  "self_excluded": true,
+  "zip_excluded": true
+}

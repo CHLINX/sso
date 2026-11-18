@@ -1,0 +1,8 @@
+{
+  "type": "FileExistsError",
+  "error": "[Errno 17] File exists: '/tmp/sso_h5_snapshot_v103_zxvbdims'",
+  "logs": [
+    "[2026-11-18 08:33:03 CST] [SELF TEST PASS] 8 tests"
+  ],
+  "sources_modified": false
+}
