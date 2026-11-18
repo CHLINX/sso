@@ -1,0 +1,53 @@
+{
+  "version": "SSO_H5_848_Excess_Effect_v1.0.7",
+  "file_count": 9,
+  "files": [
+    {
+      "path": "v2.50模型1720母體H5逐檔實際報酬.csv",
+      "bytes": 492844,
+      "sha256": "5f1cf23bcdb27513e1c149ae12fe966e6740aa9fa070f5e32f000465bd13d80c"
+    },
+    {
+      "path": "來源交叉核對.json",
+      "bytes": 3314,
+      "sha256": "c810029ed9674fe960b0cb5326f5d94a34139cb5506838c2f4abbaa8578496e4"
+    },
+    {
+      "path": "凍結848官方846逐筆對齊.csv",
+      "bytes": 99341,
+      "sha256": "f536e1e345f1abd1aae7f8f1fe6aab4632e61b337e5fc2cce0f473093c2e0202"
+    },
+    {
+      "path": "執行紀錄.csv",
+      "bytes": 3816,
+      "sha256": "6b65079a8dc52338715db9315d9b9c5d03af0d8c25f84b3e4db5c6f0bcdff19d"
+    },
+    {
+      "path": "官方全市場H5逐檔基準.csv",
+      "bytes": 624484,
+      "sha256": "91e52e147fedb04d26228315d4d7e3133506cc636d344f2166e11dca32264616"
+    },
+    {
+      "path": "檢驗報告.md",
+      "bytes": 1731,
+      "sha256": "024734d67057cefbfa69a3b4d2abe33a3e2500fd5a3c8542625942c9c97e9dd9"
+    },
+    {
+      "path": "群組統計.csv",
+      "bytes": 1098,
+      "sha256": "3c024260c215b3fac57f38df57fcbef27d3219552816d88c63021c95b9972842"
+    },
+    {
+      "path": "超額效果主要比較.csv",
+      "bytes": 1362,
+      "sha256": "80230822cc78737bd918cfc145ef179f3faa2b20b63275fef7ef1c4dea8494c9"
+    },
+    {
+      "path": "超額效果檢驗摘要.json",
+      "bytes": 11740,
+      "sha256": "34f33c3b3dbfeb7964bc109d7e1ced6be9728eacc083df1f72727399a1c67477"
+    }
+  ],
+  "self_excluded": true,
+  "zip_excluded": true
+}

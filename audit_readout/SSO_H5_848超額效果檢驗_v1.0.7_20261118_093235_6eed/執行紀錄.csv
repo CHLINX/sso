@@ -1,0 +1,41 @@
+﻿序號,紀錄
+1,[2026-11-18 09:32:35 CST] [SELF TEST PASS] 8 tests
+2,[2026-11-18 09:32:36 CST] [SNAPSHOT PARTIAL STATE PASS] upstream downstream_ready=False is expected: 847/848 price pairs complete; the remaining one is retained for the formal 846-row trade-validity alignment and is not silently counted as ready.
+3,"[2026-11-18 09:32:36 CST] [SNAPSHOT ZIP PASS] manifest_files=2,432; overlays=2,411; run.log_in_manifest=True; source=verified ZIP extraction (no comparison against mutable Drive run.log)"
+4,"[2026-11-18 09:32:58 CST] [V2.50 SOURCE PASS] member=最新全市場候選持續評估_v2.50.csv; universe=1,720; frozen overlap=848"
+5,[2026-11-18 09:33:13 CST] [V2.30 PASS] SSO_研究型相對價格指標建置_v2.30_20261116_121048; event SHA verified
+6,[2026-11-18 09:33:13 CST] [V2.31 PASS] SSO_研究指標獨立驗證與前瞻分析_v2.31_20261116_121536; data SHA verified
+7,"[2026-11-18 09:33:13 CST] [V2.31 GLOBAL AUDIT PASS] {'checks': {'區段倒退列數': 0, '日期順序錯誤列數': 0, '重複市場股票日期列數': 0, '隔離點與區段增量不一致列數': 0, '隔離點清單未命中數': 0, '額外隔離標記數': 0}, 'missing_report_keys': [], 'input_rows': 4464015, 'output_rows': 4464015, 'unlocatable_events': 0}"
+8,"[2026-11-18 09:33:13 CST] [OVERLAY VERIFY] 250/2,411; PASS=250; FAIL=0"
+9,"[2026-11-18 09:33:13 CST] [OVERLAY VERIFY] 500/2,411; PASS=500; FAIL=0"
+10,"[2026-11-18 09:33:13 CST] [OVERLAY VERIFY] 750/2,411; PASS=750; FAIL=0"
+11,"[2026-11-18 09:33:14 CST] [OVERLAY VERIFY] 1,000/2,411; PASS=1,000; FAIL=0"
+12,"[2026-11-18 09:33:14 CST] [OVERLAY VERIFY] 1,250/2,411; PASS=1,250; FAIL=0"
+13,"[2026-11-18 09:33:14 CST] [OVERLAY VERIFY] 1,500/2,411; PASS=1,500; FAIL=0"
+14,"[2026-11-18 09:33:14 CST] [OVERLAY VERIFY] 1,750/2,411; PASS=1,750; FAIL=0"
+15,"[2026-11-18 09:33:14 CST] [OVERLAY VERIFY] 2,000/2,411; PASS=2,000; FAIL=0"
+16,"[2026-11-18 09:33:14 CST] [OVERLAY VERIFY] 2,250/2,411; PASS=2,250; FAIL=0"
+17,"[2026-11-18 09:33:14 CST] [OVERLAY VERIFY] 2,411/2,411; PASS=2,411; FAIL=0"
+18,"[2026-11-18 09:33:15 CST] [STANDARD/OVERLAY PASS] rows=14,452; max OHLC diff=0"
+19,"[2026-11-18 09:33:24 CST] [V2.31 SIGNAL SCAN] rows=500,000; matched_keys=328"
+20,"[2026-11-18 09:33:35 CST] [V2.31 SIGNAL SCAN] rows=1,000,000; matched_keys=526"
+21,"[2026-11-18 09:33:45 CST] [V2.31 SIGNAL SCAN] rows=1,500,000; matched_keys=719"
+22,"[2026-11-18 09:33:54 CST] [V2.31 SIGNAL SCAN] rows=2,000,000; matched_keys=1,282"
+23,"[2026-11-18 09:34:04 CST] [V2.31 SIGNAL SCAN] rows=2,500,000; matched_keys=1,479"
+24,"[2026-11-18 09:34:14 CST] [V2.31 SIGNAL SCAN] rows=3,000,000; matched_keys=1,678"
+25,"[2026-11-18 09:34:23 CST] [V2.31 SIGNAL SCAN] rows=3,500,000; matched_keys=1,893"
+26,"[2026-11-18 09:34:34 CST] [V2.31 SIGNAL SCAN] rows=4,000,000; matched_keys=2,111"
+27,"[2026-11-18 09:34:42 CST] [V2.31 SIGNAL SCAN PASS] scanned=4,464,015; matched=2,406/2,411"
+28,[2026-11-18 09:34:42 CST] [EVENTS] v2.30=945; v2.31 unlocatable=0
+29,"[2026-11-18 09:34:42 CST] [MODEL H5] 400/1,720"
+30,"[2026-11-18 09:34:43 CST] [MODEL H5] 800/1,720"
+31,"[2026-11-18 09:34:43 CST] [MODEL H5] 1,200/1,720"
+32,"[2026-11-18 09:34:43 CST] [MODEL H5] 1,600/1,720"
+33,"[2026-11-18 09:34:43 CST] [MODEL H5] 1,720/1,720"
+34,"[2026-11-18 09:34:44 CST] [ALL MARKET H5] 500/2,411"
+35,"[2026-11-18 09:34:44 CST] [ALL MARKET H5] 1,000/2,411"
+36,"[2026-11-18 09:34:44 CST] [ALL MARKET H5] 1,500/2,411"
+37,"[2026-11-18 09:34:45 CST] [ALL MARKET H5] 2,000/2,411"
+38,"[2026-11-18 09:34:45 CST] [ALL MARKET H5] 2,411/2,411"
+39,"[2026-11-18 09:34:47 CST] [FORMAL 846 ALIGNMENT] PASS; official=846; v1.0.2=846; diff={'gross': 0.0, 'net_general': 0.0, 'net_stress': 0.0}"
+40,[2026-11-18 09:34:49 CST] [COMPARISON PASS] 4.py official 846 aligned; statistics computed
