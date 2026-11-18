@@ -1,0 +1,8 @@
+{
+  "type": "RuntimeError",
+  "error": "官方六日快照報告 downstream_ready 不是 True。",
+  "logs": [
+    "[2026-11-18 08:44:56 CST] [SELF TEST PASS] 8 tests"
+  ],
+  "sources_modified": false
+}

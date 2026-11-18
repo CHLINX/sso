@@ -1,0 +1,12 @@
+{
+  "version": "SSO_H5_848_Excess_Effect_v1.0.4",
+  "run_id": "20261118_084456_a06e",
+  "signal_date": "2026-11-06",
+  "entry_date": "2026-11-09",
+  "exit_date": "2026-11-13",
+  "status": "BLOCKED_NO_VALID_COMPARISON",
+  "outputs": "/content/drive/MyDrive/看股最速適/H5_848超額效果檢驗_v1.0.4_20261118_084456_a06e",
+  "error_type": "RuntimeError",
+  "error": "官方六日快照報告 downstream_ready 不是 True。",
+  "sources_modified": false
+}
