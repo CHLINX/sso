@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2884,玉山金,48.95,49.3,48.0,48.3,48186233,18254,2343413425,TWSE_MI_INDEX,0.0
+2026-11-17,TWSE,2884,玉山金,48.25,48.6,46.55,46.65,45479194,17498,2155995775,TWSE_MI_INDEX,1.65

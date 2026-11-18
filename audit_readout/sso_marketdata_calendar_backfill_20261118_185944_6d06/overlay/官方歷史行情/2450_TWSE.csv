@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2450,神腦,28.1,28.1,27.7,27.85,93502,141,2610993,TWSE_MI_INDEX,0.15
+2026-11-17,TWSE,2450,神腦,27.9,28.1,27.6,27.6,114276,129,3183878,TWSE_MI_INDEX,0.25

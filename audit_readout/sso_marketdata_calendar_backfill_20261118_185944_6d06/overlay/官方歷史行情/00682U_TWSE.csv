@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00682U,期元大美元指數,,,,,71,1,1519,TWSE_MI_INDEX,0.0
+2026-11-17,TWSE,00682U,期元大美元指數,21.48,21.48,21.32,21.32,20001,3,428021,TWSE_MI_INDEX,0.0

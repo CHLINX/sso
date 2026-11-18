@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6805,富世達,1970.0,1990.0,1795.0,1805.0,1647798,2930,3050747320,TWSE_MI_INDEX,170.0
+2026-11-17,TWSE,6805,富世達,1655.0,1760.0,1635.0,1660.0,1550575,3045,2607208900,TWSE_MI_INDEX,145.0

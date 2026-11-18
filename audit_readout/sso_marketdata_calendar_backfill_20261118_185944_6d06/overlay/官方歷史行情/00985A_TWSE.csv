@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00985A,主動野村台灣50,18.24,18.27,17.4,17.4,21640171,11333,383834233,TWSE_MI_INDEX,1.15
+2026-11-17,TWSE,00985A,主動野村台灣50,16.88,17.38,16.63,16.83,19673836,10350,333251343,TWSE_MI_INDEX,0.57

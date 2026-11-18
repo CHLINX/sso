@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2645,長榮航太,168.0,168.0,160.5,160.5,659750,978,108098624,TWSE_MI_INDEX,6.5
+2026-11-17,TWSE,2645,長榮航太,160.0,165.0,156.0,161.0,958217,1120,154729451,TWSE_MI_INDEX,0.5

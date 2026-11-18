@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00923,群益台ESG低碳50,36.4,36.48,34.43,34.43,5491545,5339,193539892,TWSE_MI_INDEX,2.39
+2026-11-17,TWSE,00923,群益台ESG低碳50,33.68,34.94,33.4,33.71,7525701,3884,254909228,TWSE_MI_INDEX,0.72

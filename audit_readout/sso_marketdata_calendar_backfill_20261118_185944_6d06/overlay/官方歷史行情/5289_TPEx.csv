@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,5289,宜鼎,957.0,957.0,866.0,866.0,1910000,1648,1706557000,TPEX_afterTrading_otc_type_EW,-94.0
+2026-11-17,TPEX,5289,宜鼎,780.0,864.0,780.0,838.0,3176000,2550,2625017000,TPEX_afterTrading_otc_type_EW,-28.0

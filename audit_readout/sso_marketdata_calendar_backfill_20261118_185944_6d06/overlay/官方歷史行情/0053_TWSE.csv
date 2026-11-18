@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,0053,元大科技市值,220.0,220.0,207.7,207.7,669352,2025,142056441,TWSE_MI_INDEX,15.05
+2026-11-17,TWSE,0053,元大科技市值,201.0,209.4,200.0,204.15,903654,1543,183804664,TWSE_MI_INDEX,3.55

@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6899,創為精密,47.7,47.7,45.25,45.25,23000,17,1047950,TPEX_afterTrading_otc_type_EW,-3.25
+2026-11-17,TPEX,6899,創為精密,45.2,46.0,43.65,44.65,24000,13,1068450,TPEX_afterTrading_otc_type_EW,-0.6

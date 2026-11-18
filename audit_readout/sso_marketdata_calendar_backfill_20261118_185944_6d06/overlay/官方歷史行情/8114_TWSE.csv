@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,8114,振樺電,154.5,155.0,149.0,150.0,245288,358,37029581,TWSE_MI_INDEX,5.0
+2026-11-17,TWSE,8114,振樺電,148.0,153.0,144.0,149.0,231408,264,34503574,TWSE_MI_INDEX,1.0

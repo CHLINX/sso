@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,8426,紅木-KY,23.0,23.0,23.0,23.0,165000,71,3795000,TPEX_afterTrading_otc_type_EW,2.05
+2026-11-17,TPEX,8426,紅木-KY,23.9,23.95,23.5,23.6,1306000,436,30942500,TPEX_afterTrading_otc_type_EW,0.6

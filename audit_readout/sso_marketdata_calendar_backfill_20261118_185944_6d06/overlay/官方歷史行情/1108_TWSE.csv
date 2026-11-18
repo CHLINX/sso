@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1108,幸福,10.7,10.7,10.25,10.25,541598,267,5628063,TWSE_MI_INDEX,0.4
+2026-11-17,TWSE,1108,幸福,10.25,10.35,10.1,10.25,284590,193,2912106,TWSE_MI_INDEX,0.0

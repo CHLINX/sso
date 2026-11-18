@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2368,金像電,1000.0,1005.0,927.0,927.0,6592163,22604,6284422323,TWSE_MI_INDEX,103.0
+2026-11-17,TWSE,2368,金像電,835.0,893.0,835.0,835.0,10894808,25001,9319373516,TWSE_MI_INDEX,92.0

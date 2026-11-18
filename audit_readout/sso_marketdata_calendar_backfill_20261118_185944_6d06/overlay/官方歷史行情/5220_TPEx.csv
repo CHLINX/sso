@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,5220,萬達光電,19.8,19.8,19.1,19.4,24000,15,464050,TPEX_afterTrading_otc_type_EW,-0.4
+2026-11-17,TPEX,5220,萬達光電,19.75,19.75,18.0,18.0,90000,51,1678250,TPEX_afterTrading_otc_type_EW,-1.4

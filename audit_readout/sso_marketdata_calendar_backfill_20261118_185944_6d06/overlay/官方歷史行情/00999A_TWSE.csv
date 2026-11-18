@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00999A,主動野村臺灣高息,9.34,9.34,8.89,8.92,12251467,4134,110934952,TWSE_MI_INDEX,0.6
+2026-11-17,TWSE,00999A,主動野村臺灣高息,8.63,8.85,8.51,8.58,14182438,3419,122423407,TWSE_MI_INDEX,0.34

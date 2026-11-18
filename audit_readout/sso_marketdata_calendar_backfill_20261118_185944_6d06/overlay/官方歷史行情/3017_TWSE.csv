@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,3017,奇鋐,3005.0,3005.0,2740.0,2740.0,3259310,18596,9177964330,TWSE_MI_INDEX,300.0
+2026-11-17,TWSE,3017,奇鋐,2510.0,2680.0,2470.0,2470.0,4855719,20156,12275604150,TWSE_MI_INDEX,270.0

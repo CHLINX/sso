@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2072,世紀能源,99.7,99.7,90.9,91.2,1178176,1192,110424921,TWSE_MI_INDEX,7.2
+2026-11-17,TWSE,2072,世紀能源,91.2,91.2,88.0,89.0,2020188,1716,180172855,TWSE_MI_INDEX,2.2

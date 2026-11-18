@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6907,雅特力-KY,123.5,124.0,113.5,113.5,465000,402,54617000,TPEX_afterTrading_otc_type_EW,-12.5
+2026-11-17,TPEX,6907,雅特力-KY,106.5,113.5,106.0,108.0,388000,347,42252000,TPEX_afterTrading_otc_type_EW,-5.5

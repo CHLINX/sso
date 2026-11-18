@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,7867,特力屋,44.3,44.3,42.95,43.95,164187,124,7144443,TWSE_MI_INDEX,0.45
+2026-11-17,TWSE,7867,特力屋,44.1,44.1,43.15,43.9,127474,100,5572938,TWSE_MI_INDEX,0.05

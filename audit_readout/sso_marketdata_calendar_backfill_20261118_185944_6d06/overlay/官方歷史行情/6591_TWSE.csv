@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6591,動力-KY,34.6,34.6,33.6,33.6,251136,251,8533974,TWSE_MI_INDEX,1.8
+2026-11-17,TWSE,6591,動力-KY,33.1,33.5,31.5,31.95,256487,292,8289830,TWSE_MI_INDEX,1.65

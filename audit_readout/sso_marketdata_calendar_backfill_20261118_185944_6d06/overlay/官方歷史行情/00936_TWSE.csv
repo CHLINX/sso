@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00936,台新永續高息中小,19.4,19.4,18.53,18.6,644451,534,12229869,TWSE_MI_INDEX,0.0
+2026-11-17,TWSE,00936,台新永續高息中小,18.19,18.67,18.0,18.39,1627186,366,29977672,TWSE_MI_INDEX,0.21

@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00665L,富邦恒生國企正2,8.53,8.61,8.43,8.55,6506252,624,55557753,TWSE_MI_INDEX,0.05
+2026-11-17,TWSE,00665L,富邦恒生國企正2,8.54,8.54,8.27,8.45,6977561,663,58530188,TWSE_MI_INDEX,0.1

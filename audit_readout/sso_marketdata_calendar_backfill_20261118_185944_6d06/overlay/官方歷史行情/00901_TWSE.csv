@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00901,永豐智能車供應鏈,40.12,40.12,37.98,37.98,4448883,3426,172958452,TWSE_MI_INDEX,2.97
+2026-11-17,TWSE,00901,永豐智能車供應鏈,36.74,38.59,36.54,36.77,4971048,3957,184649179,TWSE_MI_INDEX,1.21

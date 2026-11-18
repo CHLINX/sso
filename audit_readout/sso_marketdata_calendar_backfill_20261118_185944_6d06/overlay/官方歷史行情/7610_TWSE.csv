@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,7610,聯友金屬-創,1060.0,1060.0,981.0,981.0,1352516,5022,1361369321,TWSE_MI_INDEX,109.0
+2026-11-17,TWSE,7610,聯友金屬-創,896.0,968.0,896.0,919.0,945532,3569,878421305,TWSE_MI_INDEX,62.0

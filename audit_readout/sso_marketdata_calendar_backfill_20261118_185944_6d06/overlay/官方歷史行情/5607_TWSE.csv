@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,5607,遠雄港,49.9,49.9,48.4,48.4,404303,361,19855595,TWSE_MI_INDEX,1.05
+2026-11-17,TWSE,5607,遠雄港,48.1,49.45,47.45,48.2,541794,477,26362425,TWSE_MI_INDEX,0.2

@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,3312,弘憶股,40.8,40.8,37.7,37.85,771309,694,29872651,TWSE_MI_INDEX,2.95
+2026-11-17,TWSE,3312,弘憶股,37.85,38.05,36.3,36.9,818499,736,30393876,TWSE_MI_INDEX,0.95

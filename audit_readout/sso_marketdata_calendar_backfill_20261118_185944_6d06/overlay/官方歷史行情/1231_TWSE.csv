@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1231,聯華食,73.0,74.2,72.4,72.5,324488,593,23815170,TWSE_MI_INDEX,0.4
+2026-11-17,TWSE,1231,聯華食,72.5,72.7,70.7,70.8,343938,559,24663956,TWSE_MI_INDEX,1.7

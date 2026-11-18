@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,5234,達興材料,269.0,275.0,255.5,255.5,335979,580,88823217,TWSE_MI_INDEX,11.5
+2026-11-17,TWSE,5234,達興材料,255.5,260.5,239.0,241.5,456470,842,113141473,TWSE_MI_INDEX,14.0

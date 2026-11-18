@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,3518,柏騰,32.0,32.0,28.9,29.0,961576,730,28721382,TWSE_MI_INDEX,3.05
+2026-11-17,TWSE,3518,柏騰,28.65,29.4,27.75,28.7,1134863,661,32492165,TWSE_MI_INDEX,0.3

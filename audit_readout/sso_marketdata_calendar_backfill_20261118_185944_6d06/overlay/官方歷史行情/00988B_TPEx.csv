@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00988B,玉山嚴選非投債,19.11,19.11,19.05,19.05,1043000,191,19884470,TPEX_afterTrading_otc_type_EW,
+2026-11-17,TPEX,00988B,玉山嚴選非投債,19.1,19.1,18.94,18.94,1366000,224,25965260,TPEX_afterTrading_otc_type_EW,-0.11

@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,7734,印能科技,1770.0,1770.0,1620.0,1620.0,84000,72,139105000,TPEX_afterTrading_otc_type_EW,-180.0
+2026-11-17,TPEX,7734,印能科技,1560.0,1575.0,1470.0,1520.0,282000,275,427505000,TPEX_afterTrading_otc_type_EW,-100.0

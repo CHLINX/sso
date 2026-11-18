@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00408A,主動第一金優股息,8.42,8.42,8.0,8.0,2605467,784,21207922,TWSE_MI_INDEX,0.59
+2026-11-17,TWSE,00408A,主動第一金優股息,7.7,7.9,7.6,7.67,2465396,607,19113810,TWSE_MI_INDEX,0.33

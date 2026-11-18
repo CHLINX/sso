@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,009823,群益S&P500,10.6,10.61,10.54,10.54,2074000,647,21923790,TPEX_afterTrading_otc_type_EW,-0.09
+2026-11-17,TPEX,009823,群益S&P500,10.42,10.44,10.39,10.42,2455000,517,25589280,TPEX_afterTrading_otc_type_EW,-0.12

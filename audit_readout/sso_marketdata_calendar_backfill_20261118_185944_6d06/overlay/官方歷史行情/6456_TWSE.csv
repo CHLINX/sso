@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6456,GIS-KY,102.0,102.0,91.4,91.4,23714025,16436,2269947120,TWSE_MI_INDEX,10.1
+2026-11-17,TWSE,6456,GIS-KY,86.9,90.4,82.6,84.5,26561105,19149,2271050284,TWSE_MI_INDEX,6.9

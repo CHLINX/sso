@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1609,大亞,31.0,31.0,29.5,29.5,2712738,1994,81644289,TWSE_MI_INDEX,1.6
+2026-11-17,TWSE,1609,大亞,29.1,30.0,28.35,29.0,2569379,1993,75130902,TWSE_MI_INDEX,0.5

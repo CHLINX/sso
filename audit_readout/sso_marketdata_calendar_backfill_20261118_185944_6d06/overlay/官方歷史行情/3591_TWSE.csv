@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,3591,艾笛森,25.85,25.85,23.8,23.8,597993,729,14611020,TWSE_MI_INDEX,1.7
+2026-11-17,TWSE,3591,艾笛森,23.2,24.1,23.0,23.35,504971,617,11815653,TWSE_MI_INDEX,0.45

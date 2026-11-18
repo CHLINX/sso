@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,9918,欣天然,42.2,42.4,41.9,41.9,25238,41,1067112,TWSE_MI_INDEX,0.5
+2026-11-17,TWSE,9918,欣天然,41.9,43.0,41.7,41.9,43780,66,1852965,TWSE_MI_INDEX,0.0

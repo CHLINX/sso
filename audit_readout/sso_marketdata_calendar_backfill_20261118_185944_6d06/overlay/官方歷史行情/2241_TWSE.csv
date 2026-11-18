@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2241,艾姆勒,36.1,36.1,33.0,33.2,1145029,940,38788754,TWSE_MI_INDEX,3.3
+2026-11-17,TWSE,2241,艾姆勒,32.8,32.9,31.3,31.7,1722431,1097,54904942,TWSE_MI_INDEX,1.5

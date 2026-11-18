@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6674,鋐寶科技,18.35,18.4,18.35,18.4,69000,40,1266900,TWSE_MI_INDEX,0.05
+2026-11-17,TWSE,6674,鋐寶科技,18.35,18.4,18.35,18.35,22195,27,407676,TWSE_MI_INDEX,0.05

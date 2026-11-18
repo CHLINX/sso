@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,3465,進泰電子,27.0,27.0,27.0,27.0,1000,1,27000,TPEX_afterTrading_otc_type_EW,-0.6
+2026-11-17,TPEX,3465,進泰電子,26.1,27.0,26.1,27.0,5000,5,133550,TPEX_afterTrading_otc_type_EW,0.0

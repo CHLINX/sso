@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,7828,創新服務,1340.0,1355.0,1265.0,1270.0,130000,125,169605000,TPEX_afterTrading_otc_type_EW,-105.0
+2026-11-17,TPEX,7828,創新服務,1205.0,1245.0,1180.0,1195.0,194000,175,235070000,TPEX_afterTrading_otc_type_EW,-75.0

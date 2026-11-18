@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6527,明達醫,72.0,72.0,70.5,72.0,6000,6,427600,TPEX_afterTrading_otc_type_EW,-0.8
+2026-11-17,TPEX,6527,明達醫,70.7,71.9,70.7,71.5,5000,5,356000,TPEX_afterTrading_otc_type_EW,-0.5

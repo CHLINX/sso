@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00863B,中信全球電信債,30.34,30.37,30.34,30.37,209000,5,6347060,TPEX_afterTrading_otc_type_EW,0.03
+2026-11-17,TPEX,00863B,中信全球電信債,30.26,30.33,30.26,30.33,219000,6,6641840,TPEX_afterTrading_otc_type_EW,-0.04

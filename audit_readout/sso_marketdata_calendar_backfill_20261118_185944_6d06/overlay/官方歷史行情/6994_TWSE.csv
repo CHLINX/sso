@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6994,富威電力,20.05,20.05,18.8,18.8,972123,695,18626006,TWSE_MI_INDEX,2.05
+2026-11-17,TWSE,6994,富威電力,18.8,18.8,17.65,17.8,662572,510,11924984,TWSE_MI_INDEX,1.0

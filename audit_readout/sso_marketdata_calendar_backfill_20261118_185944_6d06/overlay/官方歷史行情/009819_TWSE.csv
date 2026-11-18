@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,009819,中信數據及電力,9.37,9.37,9.21,9.21,3021799,905,28000873,TWSE_MI_INDEX,0.31
+2026-11-17,TWSE,009819,中信數據及電力,9.13,9.18,9.05,9.14,4569882,657,41745395,TWSE_MI_INDEX,0.07
