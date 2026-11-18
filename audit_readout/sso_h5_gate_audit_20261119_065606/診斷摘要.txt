@@ -1,0 +1,23 @@
+SSO H5｜v2.50 既有結果逐關卡診斷
+來源 ZIP：/content/drive/MyDrive/看股最速適/推薦結果/非前瞻參考/SSO_main_v5_15_20261118_192959_1730c0/來源模型ZIP/SSO_v2.50_非前瞻參考_H5_2026-11-18_20261118_193832_200a91_結果.zip
+來源 SHA256：263330e961a51fabba7bb399a7bfae4ea38646c48a5c3e7851f9056bd6141111
+ZIP CRC：PASS
+模型重跑：否
+Drive 原始資料修改：否
+
+資料表摘要：
+- 最新全市場候選持續評估_v2.50.csv: rows=6,876, columns=35, H5_rows=None, latest=2026-11-18, latest_rows=6876
+  H5辨識說明：無明確 horizon 欄位；不擅自把整張表視為 H5
+- 樣本外機率區間門檻診斷_v2.50.csv: rows=30,800, columns=20, H5_rows=None, latest=2026-11-18, latest_rows=40
+  H5辨識說明：無明確 horizon 欄位；不擅自把整張表視為 H5
+- 獲利機率校準檢驗總結_v2.50.csv: rows=40, columns=11, H5_rows=None, latest=1970-01-01, latest_rows=10
+  H5辨識說明：無明確 horizon 欄位；不擅自把整張表視為 H5
+- 獲利機率校準逐訊號日_v2.50.csv: rows=30,760, columns=11, H5_rows=None, latest=2026-11-17, latest_rows=10
+  H5辨識說明：無明確 horizon 欄位；不擅自把整張表視為 H5
+- 預測排序能力總結_v2.50.csv: rows=8, columns=14, H5_rows=None, latest=1970-01-01, latest_rows=2
+  H5辨識說明：無明確 horizon 欄位；不擅自把整張表視為 H5
+- 預測排序能力逐訊號日診斷_v2.50.csv: rows=6,152, columns=19, H5_rows=None, latest=2026-11-17, latest_rows=2
+  H5辨識說明：無明確 horizon 欄位；不擅自把整張表視為 H5
+
+判讀限制：本報告只列出既有 CSV 的實際欄位、分布及最新焦點資料；
+不會把未知欄位猜成模型關卡，也不會把 0.5/50 的尺度統計誤稱為模型門檻。

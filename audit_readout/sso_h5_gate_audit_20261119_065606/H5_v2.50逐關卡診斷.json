@@ -1,0 +1,993 @@
+{
+  "tool": "SSO_H5_Gate_Audit",
+  "version": "v1",
+  "created_taipei": "2026-11-19T06:59:38.647216+08:00",
+  "source_zip": "/content/drive/MyDrive/看股最速適/推薦結果/非前瞻參考/SSO_main_v5_15_20261118_192959_1730c0/來源模型ZIP/SSO_v2.50_非前瞻參考_H5_2026-11-18_20261118_193832_200a91_結果.zip",
+  "source_zip_bytes": 24101670,
+  "source_zip_sha256": "263330e961a51fabba7bb399a7bfae4ea38646c48a5c3e7851f9056bd6141111",
+  "source_zip_crc": "PASS",
+  "model_rerun": false,
+  "drive_source_modified": false,
+  "main_branch_modified": false,
+  "required_files": [
+    {
+      "file": "最新全市場候選持續評估_v2.50.csv",
+      "found": true,
+      "bytes": 3876254,
+      "rows": 6876,
+      "columns": 35,
+      "sha256": "f2daca1d0e1f7900403bc4b8504cf6b5c125310c3ee65a76007c1555fc247ec1"
+    },
+    {
+      "file": "樣本外機率區間門檻診斷_v2.50.csv",
+      "found": true,
+      "bytes": 10055308,
+      "rows": 30800,
+      "columns": 20,
+      "sha256": "19cb5585eb07b5fa362b6a12f2c48876ebe7b0e58cb75ed388f84cf620c81073"
+    },
+    {
+      "file": "獲利機率校準檢驗總結_v2.50.csv",
+      "found": true,
+      "bytes": 6086,
+      "rows": 40,
+      "columns": 11,
+      "sha256": "376cf36b9c4c26ef5f74507fb97d712368c6f61c6b374c69047bf51bf864a56c"
+    },
+    {
+      "file": "獲利機率校準逐訊號日_v2.50.csv",
+      "found": true,
+      "bytes": 2360474,
+      "rows": 30760,
+      "columns": 11,
+      "sha256": "74e25f5d8609a7948c386b26f31b5385827c28a8a041399831c045a0f6dd06ff"
+    },
+    {
+      "file": "預測排序能力總結_v2.50.csv",
+      "found": true,
+      "bytes": 2572,
+      "rows": 8,
+      "columns": 14,
+      "sha256": "e64ed4f89289ed8b2ab86fbe917f217486cec29277214392c4e9c43b53bf3aaf"
+    },
+    {
+      "file": "預測排序能力逐訊號日診斷_v2.50.csv",
+      "found": true,
+      "bytes": 2046804,
+      "rows": 6152,
+      "columns": 19,
+      "sha256": "cb152e83e08e157926b576c7696fcd8485d95e852315e088472c8fa66413bf76"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset": "最新全市場候選持續評估_v2.50.csv",
+      "rows": 6876,
+      "columns": 35,
+      "date_column": "訊號日期",
+      "horizon_column": null,
+      "code_column": "股票代號",
+      "column_names": [
+        "持有期間H",
+        "訊號日期",
+        "訊號全市場日序",
+        "獲利可能性排名",
+        "市場",
+        "股票代號",
+        "公司名稱",
+        "訊號日收盤價",
+        "來源20根波動因子",
+        "預測淨報酬",
+        "估計淨獲利機率_回歸常態對照",
+        "估計淨獲利機率_分類未校準",
+        "估計淨獲利機率_校準",
+        "上漲潛力",
+        "符合獲利候選條件",
+        "優先獲利候選",
+        "候選狀態",
+        "歷史同機率區間",
+        "歷史同機率區間樣本數",
+        "歷史同機率區間訊號日數",
+        "歷史同區間實際淨獲利率_成交加權",
+        "歷史同區間實際淨獲利率_逐日平均",
+        "歷史同區間平均實際淨報酬_成交加權",
+        "歷史同區間平均實際淨報酬_逐日平均",
+        "歷史同機率區間通過門檻",
+        "歷史同機率區間未通過原因",
+        "機率校準截距",
+        "機率校準斜率",
+        "校準期實際淨獲利率",
+        "分類模型已收斂",
+        "機率校準已收斂",
+        "校準方向受支持",
+        "模型訓練樣本數",
+        "模型校準樣本數",
+        "模型預測誤差標準差"
+      ],
+      "h5_rows": null,
+      "h5_filter_note": "無明確 horizon 欄位；不擅自把整張表視為 H5",
+      "latest_date": "2026-11-18",
+      "latest_date_rows": 6876,
+      "diagnostic_columns": [
+        {
+          "column": "預測淨報酬",
+          "dtype": "float64",
+          "non_null": 6876,
+          "distinct": 6876,
+          "min": -0.0144973976323136,
+          "median": 0.00442270035837,
+          "max": 0.0491265626451121,
+          "positive_count": 4584,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "估計淨獲利機率_回歸常態對照",
+          "dtype": "float64",
+          "non_null": 6876,
+          "distinct": 6876,
+          "min": 0.2780666493226617,
+          "median": 0.5332008388813403,
+          "max": 0.7170395223539523,
+          "positive_count": 6876,
+          "ge_0_5_count": 4584,
+          "ge_50_count": 0
+        },
+        {
+          "column": "估計淨獲利機率_分類未校準",
+          "dtype": "float64",
+          "non_null": 6876,
+          "distinct": 6876,
+          "min": 0.1598376471539414,
+          "median": 0.5078660891845448,
+          "max": 0.750431591885761,
+          "positive_count": 6876,
+          "ge_0_5_count": 3608,
+          "ge_50_count": 0
+        },
+        {
+          "column": "估計淨獲利機率_校準",
+          "dtype": "float64",
+          "non_null": 6876,
+          "distinct": 6876,
+          "min": 0.1400226451958675,
+          "median": 0.372670742967415,
+          "max": 0.5617416898361409,
+          "positive_count": 6876,
+          "ge_0_5_count": 133,
+          "ge_50_count": 0
+        },
+        {
+          "column": "符合獲利候選條件",
+          "dtype": "bool",
+          "non_null": 6876,
+          "distinct": 1,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0,
+          "binary_counts": {
+            "False": 6876
+          }
+        },
+        {
+          "column": "優先獲利候選",
+          "dtype": "bool",
+          "non_null": 6876,
+          "distinct": 1,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0,
+          "binary_counts": {
+            "False": 6876
+          }
+        },
+        {
+          "column": "候選狀態",
+          "dtype": "object",
+          "non_null": 6876,
+          "distinct": 3,
+          "top_values": {
+            "持續評估：模型估計淨獲利機率未達50%": 4540,
+            "持續評估：預測淨報酬非正": 2292,
+            "持續評估：歷史同機率區間的實際勝率／淨報酬未通過樣本外檢核": 44
+          }
+        },
+        {
+          "column": "歷史同機率區間",
+          "dtype": "object",
+          "non_null": 6876,
+          "distinct": 7,
+          "top_values": {
+            "35-40%": 2494,
+            "40-45%": 1444,
+            "30-35%": 1403,
+            "<30%": 855,
+            "45-50%": 547,
+            "50-55%": 127,
+            "55-60%": 6
+          }
+        },
+        {
+          "column": "歷史同機率區間樣本數",
+          "dtype": "int64",
+          "non_null": 6876,
+          "distinct": 20,
+          "min": 1529.0,
+          "median": 37975.0,
+          "max": 1053486.0,
+          "positive_count": 6876,
+          "ge_0_5_count": 6876,
+          "ge_50_count": 6876
+        },
+        {
+          "column": "歷史同機率區間訊號日數",
+          "dtype": "int64",
+          "non_null": 6876,
+          "distinct": 20,
+          "min": 28.0,
+          "median": 143.0,
+          "max": 753.0,
+          "positive_count": 6876,
+          "ge_0_5_count": 6876,
+          "ge_50_count": 6870
+        },
+        {
+          "column": "歷史同區間平均實際淨報酬_成交加權",
+          "dtype": "float64",
+          "non_null": 6876,
+          "distinct": 20,
+          "min": -0.0169109405155475,
+          "median": -0.009294900456783,
+          "max": 0.0017853026630479,
+          "positive_count": 133,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "歷史同區間平均實際淨報酬_逐日平均",
+          "dtype": "float64",
+          "non_null": 6876,
+          "distinct": 20,
+          "min": -0.0148188924025062,
+          "median": -0.0089149847213431,
+          "max": 0.0049922970103882,
+          "positive_count": 50,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "歷史同機率區間通過門檻",
+          "dtype": "bool",
+          "non_null": 6876,
+          "distinct": 1,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0,
+          "binary_counts": {
+            "False": 6876
+          }
+        },
+        {
+          "column": "歷史同機率區間未通過原因",
+          "dtype": "object",
+          "non_null": 6876,
+          "distinct": 3,
+          "top_values": {
+            "成交加權實際勝率未達52%；逐訊號日平均勝率未達52%；成交加權平均淨報酬非正；逐訊號日平均淨報酬非正": 6743,
+            "成交加權實際勝率未達52%；逐訊號日平均勝率未達52%；逐訊號日平均淨報酬非正": 83,
+            "成交加權實際勝率未達52%；逐訊號日平均勝率未達52%": 50
+          }
+        },
+        {
+          "column": "機率校準截距",
+          "dtype": "float64",
+          "non_null": 6876,
+          "distinct": 4,
+          "min": -0.6663767198309746,
+          "median": -0.4945586851821949,
+          "max": 0.1444591664609427,
+          "positive_count": 1719,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "機率校準斜率",
+          "dtype": "float64",
+          "non_null": 6876,
+          "distinct": 4,
+          "min": 0.3473198097891348,
+          "median": 0.6855593780163,
+          "max": 1.1808592839701837,
+          "positive_count": 6876,
+          "ge_0_5_count": 5157,
+          "ge_50_count": 0
+        },
+        {
+          "column": "校準期實際淨獲利率",
+          "dtype": "float64",
+          "non_null": 6876,
+          "distinct": 4,
+          "min": 0.2428482587064676,
+          "median": 0.2936827523003521,
+          "max": 0.3096258594517367,
+          "positive_count": 6876,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "分類模型已收斂",
+          "dtype": "bool",
+          "non_null": 6876,
+          "distinct": 1,
+          "min": 1.0,
+          "median": 1.0,
+          "max": 1.0,
+          "positive_count": 6876,
+          "ge_0_5_count": 6876,
+          "ge_50_count": 0,
+          "binary_counts": {
+            "True": 6876
+          }
+        },
+        {
+          "column": "機率校準已收斂",
+          "dtype": "bool",
+          "non_null": 6876,
+          "distinct": 1,
+          "min": 1.0,
+          "median": 1.0,
+          "max": 1.0,
+          "positive_count": 6876,
+          "ge_0_5_count": 6876,
+          "ge_50_count": 0,
+          "binary_counts": {
+            "True": 6876
+          }
+        },
+        {
+          "column": "校準方向受支持",
+          "dtype": "bool",
+          "non_null": 6876,
+          "distinct": 1,
+          "min": 1.0,
+          "median": 1.0,
+          "max": 1.0,
+          "positive_count": 6876,
+          "ge_0_5_count": 6876,
+          "ge_50_count": 0,
+          "binary_counts": {
+            "True": 6876
+          }
+        },
+        {
+          "column": "模型校準樣本數",
+          "dtype": "int64",
+          "non_null": 6876,
+          "distinct": 4,
+          "min": 22398.0,
+          "median": 22460.0,
+          "max": 22512.0,
+          "positive_count": 6876,
+          "ge_0_5_count": 6876,
+          "ge_50_count": 6876
+        },
+        {
+          "column": "模型預測誤差標準差",
+          "dtype": "float64",
+          "non_null": 6876,
+          "distinct": 4,
+          "min": 0.0258623782916905,
+          "median": 0.05586791577017315,
+          "max": 0.0899239362317837,
+          "positive_count": 6876,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        }
+      ]
+    },
+    {
+      "dataset": "樣本外機率區間門檻診斷_v2.50.csv",
+      "rows": 30800,
+      "columns": 20,
+      "date_column": "篩選基準訊號日期",
+      "horizon_column": null,
+      "code_column": null,
+      "column_names": [
+        "持有期間H",
+        "篩選基準訊號日期",
+        "篩選基準全市場日序",
+        "機率區間",
+        "歷史同機率區間樣本數",
+        "歷史同機率區間訊號日數",
+        "歷史同機率區間淨獲利筆數",
+        "歷史同區間估計機率平均值",
+        "歷史同區間實際淨獲利率_成交加權",
+        "歷史同區間實際淨獲利率_逐日平均",
+        "歷史同區間平均實際淨報酬_成交加權",
+        "歷史同區間平均實際淨報酬_逐日平均",
+        "歷史同機率區間通過門檻",
+        "未通過原因",
+        "歷史資料回看市場日數",
+        "最低樣本數",
+        "最低訊號日數",
+        "最低實際淨獲利率",
+        "平均淨報酬要求",
+        "用途"
+      ],
+      "h5_rows": null,
+      "h5_filter_note": "無明確 horizon 欄位；不擅自把整張表視為 H5",
+      "latest_date": "2026-11-18",
+      "latest_date_rows": 40,
+      "diagnostic_columns": [
+        {
+          "column": "機率區間",
+          "dtype": "object",
+          "non_null": 40,
+          "distinct": 10,
+          "top_values": {
+            "<30%": 4,
+            "30-35%": 4,
+            "35-40%": 4,
+            "40-45%": 4,
+            "45-50%": 4,
+            "50-55%": 4,
+            "55-60%": 4,
+            "60-65%": 4,
+            "65-70%": 4,
+            ">=70%": 4
+          }
+        },
+        {
+          "column": "歷史同機率區間樣本數",
+          "dtype": "int64",
+          "non_null": 40,
+          "distinct": 40,
+          "min": 227.0,
+          "median": 6341.5,
+          "max": 1053486.0,
+          "positive_count": 40,
+          "ge_0_5_count": 40,
+          "ge_50_count": 40
+        },
+        {
+          "column": "歷史同機率區間訊號日數",
+          "dtype": "int64",
+          "non_null": 40,
+          "distinct": 37,
+          "min": 4.0,
+          "median": 59.0,
+          "max": 753.0,
+          "positive_count": 40,
+          "ge_0_5_count": 40,
+          "ge_50_count": 22
+        },
+        {
+          "column": "歷史同機率區間淨獲利筆數",
+          "dtype": "int64",
+          "non_null": 40,
+          "distinct": 40,
+          "min": 207.0,
+          "median": 2990.5,
+          "max": 227204.0,
+          "positive_count": 40,
+          "ge_0_5_count": 40,
+          "ge_50_count": 40
+        },
+        {
+          "column": "歷史同區間估計機率平均值",
+          "dtype": "float64",
+          "non_null": 40,
+          "distinct": 40,
+          "min": 0.2126448388768853,
+          "median": 0.49635478910823017,
+          "max": 0.8204350440923732,
+          "positive_count": 40,
+          "ge_0_5_count": 20,
+          "ge_50_count": 0
+        },
+        {
+          "column": "歷史同區間平均實際淨報酬_成交加權",
+          "dtype": "float64",
+          "non_null": 40,
+          "distinct": 40,
+          "min": -0.0169109405155475,
+          "median": -0.0052747893581786,
+          "max": 0.1148322938604586,
+          "positive_count": 16,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "歷史同區間平均實際淨報酬_逐日平均",
+          "dtype": "float64",
+          "non_null": 40,
+          "distinct": 40,
+          "min": -0.0155981874285988,
+          "median": -0.006937034802628649,
+          "max": 0.0710090152139633,
+          "positive_count": 12,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "歷史同機率區間通過門檻",
+          "dtype": "bool",
+          "non_null": 40,
+          "distinct": 1,
+          "min": 0.0,
+          "median": 0.0,
+          "max": 0.0,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0,
+          "binary_counts": {
+            "False": 40
+          }
+        },
+        {
+          "column": "未通過原因",
+          "dtype": "object",
+          "non_null": 40,
+          "distinct": 9,
+          "top_values": {
+            "成交加權實際勝率未達52%；逐訊號日平均勝率未達52%；成交加權平均淨報酬非正；逐訊號日平均淨報酬非正": 21,
+            "訊號日不足20日": 7,
+            "逐訊號日平均勝率未達52%；逐訊號日平均淨報酬非正": 4,
+            "成交加權實際勝率未達52%；逐訊號日平均勝率未達52%": 2,
+            "訊號日不足20日；成交加權實際勝率未達52%；逐訊號日平均勝率未達52%；成交加權平均淨報酬非正；逐訊號日平均淨報酬非正": 2,
+            "訊號日不足20日；成交加權實際勝率未達52%；逐訊號日平均勝率未達52%；成交加權平均淨報酬非正": 1,
+            "成交加權實際勝率未達52%；逐訊號日平均勝率未達52%；逐訊號日平均淨報酬非正": 1,
+            "樣本不足500筆；訊號日不足20日": 1,
+            "逐訊號日平均勝率未達52%": 1
+          }
+        },
+        {
+          "column": "平均淨報酬要求",
+          "dtype": "object",
+          "non_null": 40,
+          "distinct": 1,
+          "top_values": {
+            "> 0%": 40
+          }
+        }
+      ]
+    },
+    {
+      "dataset": "獲利機率校準檢驗總結_v2.50.csv",
+      "rows": 40,
+      "columns": 11,
+      "date_column": "有效訊號日數",
+      "horizon_column": null,
+      "code_column": null,
+      "column_names": [
+        "持有期間H",
+        "估計淨獲利機率區間",
+        "有效訊號日數",
+        "有效樣本數",
+        "淨獲利筆數",
+        "平均估計淨獲利機率",
+        "實際淨獲利率",
+        "實際減預測機率差",
+        "平均預測淨報酬",
+        "平均實際淨報酬",
+        "淨獲利率_核算"
+      ],
+      "h5_rows": null,
+      "h5_filter_note": "無明確 horizon 欄位；不擅自把整張表視為 H5",
+      "latest_date": "1970-01-01",
+      "latest_date_rows": 10,
+      "diagnostic_columns": [
+        {
+          "column": "估計淨獲利機率區間",
+          "dtype": "object",
+          "non_null": 10,
+          "distinct": 10,
+          "top_values": {
+            "<30%": 1,
+            "30-35%": 1,
+            "35-40%": 1,
+            "40-45%": 1,
+            "45-50%": 1,
+            "50-55%": 1,
+            "55-60%": 1,
+            "60-65%": 1,
+            "65-70%": 1,
+            ">=70%": 1
+          }
+        },
+        {
+          "column": "平均估計淨獲利機率",
+          "dtype": "float64",
+          "non_null": 10,
+          "distinct": 10,
+          "min": 0.2094290373086675,
+          "median": 0.49621836786225537,
+          "max": 0.7328353286625424,
+          "positive_count": 10,
+          "ge_0_5_count": 5,
+          "ge_50_count": 0
+        },
+        {
+          "column": "實際減預測機率差",
+          "dtype": "float64",
+          "non_null": 10,
+          "distinct": 10,
+          "min": -0.4770935533676945,
+          "median": -0.040262209465196,
+          "max": 0.0010468336641545,
+          "positive_count": 1,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "平均預測淨報酬",
+          "dtype": "float64",
+          "non_null": 10,
+          "distinct": 10,
+          "min": -0.010371066079952,
+          "median": -0.00337429719526425,
+          "max": 0.0057936940146332,
+          "positive_count": 4,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "平均實際淨報酬",
+          "dtype": "float64",
+          "non_null": 10,
+          "distinct": 10,
+          "min": -0.0157209570938643,
+          "median": -0.0086357361016809,
+          "max": -0.003112785377506,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        }
+      ]
+    },
+    {
+      "dataset": "獲利機率校準逐訊號日_v2.50.csv",
+      "rows": 30760,
+      "columns": 11,
+      "date_column": "訊號日期",
+      "horizon_column": null,
+      "code_column": null,
+      "column_names": [
+        "持有期間H",
+        "訊號日期",
+        "訊號全市場日序",
+        "估計淨獲利機率區間",
+        "有效樣本數",
+        "平均估計淨獲利機率",
+        "實際淨獲利率",
+        "實際減預測機率差",
+        "平均預測淨報酬",
+        "平均實際淨報酬",
+        "淨獲利筆數"
+      ],
+      "h5_rows": null,
+      "h5_filter_note": "無明確 horizon 欄位；不擅自把整張表視為 H5",
+      "latest_date": "2026-11-17",
+      "latest_date_rows": 10,
+      "diagnostic_columns": [
+        {
+          "column": "估計淨獲利機率區間",
+          "dtype": "object",
+          "non_null": 10,
+          "distinct": 10,
+          "top_values": {
+            "<30%": 1,
+            "30-35%": 1,
+            "35-40%": 1,
+            "40-45%": 1,
+            "45-50%": 1,
+            "50-55%": 1,
+            "55-60%": 1,
+            "60-65%": 1,
+            "65-70%": 1,
+            ">=70%": 1
+          }
+        },
+        {
+          "column": "平均估計淨獲利機率",
+          "dtype": "float64",
+          "non_null": 7,
+          "distinct": 7,
+          "min": 0.2331689917312132,
+          "median": 0.4246834496233263,
+          "max": 0.5647949047739771,
+          "positive_count": 7,
+          "ge_0_5_count": 2,
+          "ge_50_count": 0
+        },
+        {
+          "column": "實際減預測機率差",
+          "dtype": "float64",
+          "non_null": 7,
+          "distinct": 7,
+          "min": -0.4397949047739771,
+          "median": -0.2353630612738117,
+          "max": -0.0795377068150121,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "平均預測淨報酬",
+          "dtype": "float64",
+          "non_null": 7,
+          "distinct": 7,
+          "min": -0.0086177010678793,
+          "median": -0.0076481836282429,
+          "max": -0.0073700901737522,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "平均實際淨報酬",
+          "dtype": "float64",
+          "non_null": 7,
+          "distinct": 7,
+          "min": -0.0479046046169507,
+          "median": -0.0250249352916867,
+          "max": -0.0123089204684118,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        }
+      ]
+    },
+    {
+      "dataset": "預測排序能力總結_v2.50.csv",
+      "rows": 8,
+      "columns": 14,
+      "date_column": "有效診斷訊號日數",
+      "horizon_column": null,
+      "code_column": null,
+      "column_names": [
+        "持有期間H",
+        "區段口徑",
+        "有效診斷訊號日數",
+        "逐日Spearman平均",
+        "逐日Spearman中位數",
+        "Spearman為正的訊號日比例",
+        "逐日最高減最低分位_一般成本",
+        "逐日最高減最低分位_壓力成本",
+        "逐日前10檔平均一般成本淨報酬",
+        "逐日全市場平均一般成本淨報酬",
+        "逐日前10檔相對全市場_一般成本",
+        "逐日前10檔平均壓力成本淨報酬",
+        "逐日全市場平均壓力成本淨報酬",
+        "逐日前10檔相對全市場_壓力成本"
+      ],
+      "h5_rows": null,
+      "h5_filter_note": "無明確 horizon 欄位；不擅自把整張表視為 H5",
+      "latest_date": "1970-01-01",
+      "latest_date_rows": 2,
+      "diagnostic_columns": [
+        {
+          "column": "逐日前10檔平均一般成本淨報酬",
+          "dtype": "float64",
+          "non_null": 2,
+          "distinct": 1,
+          "min": -0.0068977980082882,
+          "median": -0.0068977980082882,
+          "max": -0.0068977980082882,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "逐日全市場平均一般成本淨報酬",
+          "dtype": "float64",
+          "non_null": 2,
+          "distinct": 1,
+          "min": -0.0094307435360074,
+          "median": -0.0094307435360074,
+          "max": -0.0094307435360074,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "逐日前10檔平均壓力成本淨報酬",
+          "dtype": "float64",
+          "non_null": 2,
+          "distinct": 1,
+          "min": -0.0088820221565718,
+          "median": -0.0088820221565718,
+          "max": -0.0088820221565718,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "逐日全市場平均壓力成本淨報酬",
+          "dtype": "float64",
+          "non_null": 2,
+          "distinct": 1,
+          "min": -0.0114099068439542,
+          "median": -0.0114099068439542,
+          "max": -0.0114099068439542,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        }
+      ]
+    },
+    {
+      "dataset": "預測排序能力逐訊號日診斷_v2.50.csv",
+      "rows": 6152,
+      "columns": 19,
+      "date_column": "訊號日期",
+      "horizon_column": null,
+      "code_column": null,
+      "column_names": [
+        "持有期間H",
+        "訊號日期",
+        "訊號全市場日序",
+        "區段口徑",
+        "有效成交數",
+        "Spearman排序相關係數",
+        "預測分數與實際淨報酬同向",
+        "全市場平均預測淨報酬",
+        "全市場平均實際毛報酬",
+        "全市場平均一般成本淨報酬",
+        "全市場平均壓力成本淨報酬",
+        "最高預測分位一般成本淨報酬",
+        "最低預測分位一般成本淨報酬",
+        "最高減最低分位_一般成本",
+        "最高減最低分位_壓力成本",
+        "預測前10檔平均一般成本淨報酬",
+        "預測前10檔平均壓力成本淨報酬",
+        "前10檔減全市場_一般成本",
+        "前10檔減全市場_壓力成本"
+      ],
+      "h5_rows": null,
+      "h5_filter_note": "無明確 horizon 欄位；不擅自把整張表視為 H5",
+      "latest_date": "2026-11-17",
+      "latest_date_rows": 2,
+      "diagnostic_columns": [
+        {
+          "column": "預測分數與實際淨報酬同向",
+          "dtype": "bool",
+          "non_null": 2,
+          "distinct": 1,
+          "min": 1.0,
+          "median": 1.0,
+          "max": 1.0,
+          "positive_count": 2,
+          "ge_0_5_count": 2,
+          "ge_50_count": 0,
+          "binary_counts": {
+            "True": 2
+          }
+        },
+        {
+          "column": "全市場平均預測淨報酬",
+          "dtype": "float64",
+          "non_null": 2,
+          "distinct": 1,
+          "min": -0.0076040195831327,
+          "median": -0.0076040195831327,
+          "max": -0.0076040195831327,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "全市場平均實際毛報酬",
+          "dtype": "float64",
+          "non_null": 2,
+          "distinct": 1,
+          "min": -0.0113836256255925,
+          "median": -0.0113836256255925,
+          "max": -0.0113836256255925,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "全市場平均一般成本淨報酬",
+          "dtype": "float64",
+          "non_null": 2,
+          "distinct": 1,
+          "min": -0.0191225204673919,
+          "median": -0.0191225204673919,
+          "max": -0.0191225204673919,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "全市場平均壓力成本淨報酬",
+          "dtype": "float64",
+          "non_null": 2,
+          "distinct": 1,
+          "min": -0.0210823195469758,
+          "median": -0.0210823195469758,
+          "max": -0.0210823195469758,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "最高預測分位一般成本淨報酬",
+          "dtype": "float64",
+          "non_null": 2,
+          "distinct": 1,
+          "min": -0.023765790369377,
+          "median": -0.023765790369377,
+          "max": -0.023765790369377,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "最低預測分位一般成本淨報酬",
+          "dtype": "float64",
+          "non_null": 2,
+          "distinct": 1,
+          "min": -0.0289501130997254,
+          "median": -0.0289501130997254,
+          "max": -0.0289501130997254,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "預測前10檔平均一般成本淨報酬",
+          "dtype": "float64",
+          "non_null": 2,
+          "distinct": 1,
+          "min": -0.0410640486280733,
+          "median": -0.0410640486280733,
+          "max": -0.0410640486280733,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        },
+        {
+          "column": "預測前10檔平均壓力成本淨報酬",
+          "dtype": "float64",
+          "non_null": 2,
+          "distinct": 1,
+          "min": -0.0429800084029619,
+          "median": -0.0429800084029619,
+          "max": -0.0429800084029619,
+          "positive_count": 0,
+          "ge_0_5_count": 0,
+          "ge_50_count": 0
+        }
+      ]
+    }
+  ],
+  "gate_column_counts": [
+    {
+      "column": "歷史同機率區間通過門檻",
+      "latest_focus_rows": 6876,
+      "value_counts": "{\"False\": 6876}"
+    },
+    {
+      "column": "歷史同機率區間未通過原因",
+      "latest_focus_rows": 6876,
+      "value_counts": "{\"成交加權實際勝率未達52%；逐訊號日平均勝率未達52%；成交加權平均淨報酬非正；逐訊號日平均淨報酬非正\": 6743, \"成交加權實際勝率未達52%；逐訊號日平均勝率未達52%；逐訊號日平均淨報酬非正\": 83, \"成交加權實際勝率未達52%；逐訊號日平均勝率未達52%\": 50}"
+    }
+  ],
+  "interpretation_guardrails": [
+    "欄位名稱與欄位值分布是原始資料觀測；除非模型報告明確定義，不把欄位名稱猜成確定的執行順序。",
+    "數值欄位的 >=0.5 與 >=50 僅為兩種尺度的分布統計，不代表模型採用該門檻。",
+    "若表格沒有明確 horizon 欄位，報告不會把整張表擅自認定為 H5。",
+    "最新日期以表內可解析日期欄位為準；不以檔名日期代替。"
+  ]
+}
