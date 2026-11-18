@@ -1,0 +1,21 @@
+﻿{
+  "version": "SSO_main_v5.16",
+  "run_id": "20261118_192959_1730c0_RECOVER_20261118_222835_af6d",
+  "recommendation": {
+    "status": "NO_QUALIFIED_CANDIDATES",
+    "signal_date": "2026-11-18",
+    "horizon": 5,
+    "candidate_count": 0,
+    "max_candidates": 10,
+    "padded_to_ten": false,
+    "source_csv": "/content/drive/MyDrive/看股最速適/推薦結果/非前瞻參考/SSO_main_v5_15_20261118_192959_1730c0/SSO_v2.66_H5_2026-11-18_v2.50_達標候選最多10檔.csv",
+    "copied_csv": "/content/SSO_main_v5_15_20261118_192959_1730c0/H5_10檔達標候選/SSO_main_v5.15_H5_2026-11-18_達標候選最多10檔.csv",
+    "ranking_rule": "保留v2.50原模型合格候選排名；未放寬門檻、未補足10檔。",
+    "forward_ledger_updated": false,
+    "oos_claim": "H5模型最新訊號快照；非已成熟的實際前瞻績效證明。"
+  },
+  "model": "v2.50 unchanged; H5 only in this recommendation snapshot",
+  "market_data_source": "v1.5.16 official calendar and same-day backfill verified adapter",
+  "drive_source_mutations": false,
+  "github_main_modified": false
+}

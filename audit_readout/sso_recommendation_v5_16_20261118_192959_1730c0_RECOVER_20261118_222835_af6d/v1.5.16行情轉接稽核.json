@@ -1,0 +1,906 @@
+﻿{
+  "version": "SSO_main_v5.15_v1.5.16_adapter",
+  "v1_5_16_run_directory": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.16_同日閘門與官方日曆核驗_20261118_191128_79f3",
+  "v1_5_16_report": {
+    "version": "SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.16",
+    "run_id": "20261118_191128_79f3",
+    "run_time_taipei": "2026-11-18T19:11:28.074556+08:00",
+    "status": "SUCCESS",
+    "source_base_version": "v1.5.10",
+    "source_base_origin": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.10_官方行情即時驗證與增量續接_20261112_180751_3bd3/SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.10.py",
+    "check_window": {
+      "start": "2026-10-20",
+      "end": "2026-11-18",
+      "calendar_days": 30,
+      "end_rule": "台北時間17:00前截止昨天；17:00起納入當日",
+      "same_day_gate_hour_taipei": 17,
+      "same_day_included": true,
+      "execution_date_taipei": "2026-11-18"
+    },
+    "official_calendar_years": [
+      2026
+    ],
+    "expected_session_dates": 20,
+    "lookback_calendar_days": 30,
+    "verified_special_closed_sessions": [
+      {
+        "trade_date": "2026-10-23",
+        "markets": [
+          "TWSE",
+          "TPEX"
+        ],
+        "name": "薔琵颱風臨時休市",
+        "reason": "2026-10-22 公告：2026-10-23 集中交易市場及櫃檯買賣市場全日休市；後續 2026-10-26 為例行補假。",
+        "source_urls": [
+          "https://www.cna.com.tw/news/afe/202610220388.aspx",
+          "https://www.knews.com.tw/news/B650912BDC1E5A2A91FE108A84816BB8"
+        ]
+      }
+    ],
+    "expected_market_days": 40,
+    "missing_market_days_found": 2,
+    "backfill_rows": 2412,
+    "recovered_unsealed_v1514_rows": 4825,
+    "recovered_unsealed_v1514_sources": [
+      "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.14_未知營業日補充與官方日曆核驗_20261118_101836_6bce/全市場標準化增量_20261116_20261117.csv"
+    ],
+    "overlay_rows_total_including_recovery": 7237,
+    "backfill_by_market": {
+      "TWSE": 1391,
+      "TPEX": 1021
+    },
+    "backfill_trade_dates": [
+      "2026-11-18"
+    ],
+    "unresolved_market_days": [],
+    "partial_day_suspects": [],
+    "function_tests": [
+      {
+        "test": "日期與市場正規化",
+        "status": "PASS",
+        "error": ""
+      },
+      {
+        "test": "近30日窗口邊界與2026休市日",
+        "status": "PASS",
+        "error": ""
+      },
+      {
+        "test": "資料庫掃描僅納入窗口內日期",
+        "status": "PASS",
+        "error": ""
+      },
+      {
+        "test": "跨日／跨市場自然鍵與重複鍵防護",
+        "status": "PASS",
+        "error": ""
+      },
+      {
+        "test": "官方開休市日曆分類",
+        "status": "PASS",
+        "error": ""
+      },
+      {
+        "test": "payload解析／OHLC驗證／CSV round-trip",
+        "status": "PASS",
+        "error": ""
+      },
+      {
+        "test": "官方下載函數介面（TWSE + TPEx 假資料）",
+        "status": "PASS",
+        "error": ""
+      },
+      {
+        "test": "same_day_17_00_taipei_gate",
+        "status": "PASS",
+        "error": ""
+      }
+    ],
+    "increment_file": "全市場標準化增量_20261118_20261118.csv",
+    "downstream_ready": true,
+    "integration": {
+      "standardized_increment_saved_under_v1_5_16": true,
+      "future_v1_5_x_version_dirs_glob_can_discover_file": true,
+      "per_stock_overlay_written": true,
+      "old_v4_17_database_modified": false,
+      "old_v1_5_x_files_modified": false,
+      "any_existing_file_deleted": false,
+      "partial_day_overwrite_performed": false,
+      "unknown_no_data_days_misclassified_as_holidays": false
+    },
+    "note": "17:00前不納入當日；17:00起納入當日。當日官方預期開市但 API 空表、HTTP/解析失敗或行情疑似不完整時，保持 PARTIAL_BLOCKED，不假裝完成；重新執行會重新掃描及補查。",
+    "zip": {
+      "file": "v1.5.16_同日閘門與官方日曆核驗_20261118_191128_79f3.zip",
+      "sha256": "c4bd802e2cef5ce1143b8e714da1ba607f38a0c311997762ed0a2e91846900ce",
+      "bytes": 1443899
+    }
+  },
+  "calendar_meta": {
+    "start": "2026-10-20",
+    "end": "2026-11-18",
+    "calendar_rows": 42,
+    "expected_market_days": 40,
+    "expected_sessions": 20,
+    "same_day_included": true,
+    "same_day_gate_hour_taipei": 17,
+    "backfill_evidence": {
+      "task_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.16_同日閘門與官方日曆核驗_20261118_191128_79f3/未知營業日補充查詢結果.csv",
+      "increment_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.16_同日閘門與官方日曆核驗_20261118_191128_79f3/全市場標準化增量_20261118_20261118.csv",
+      "task_market_day_count": 2,
+      "task_rows_total": 2412,
+      "increment_market_day_count": 2,
+      "increment_rows_total": 2412,
+      "market_rows": {
+        "TWSE": 1391,
+        "TPEX": 1021
+      },
+      "status": "PASS"
+    },
+    "v159_pinned_row_count_overrides": [
+      {
+        "date": "2026-11-11",
+        "market": "TPEX",
+        "database_rows_before": 13752,
+        "pinned_correction_rows": 1020,
+        "overridden": true,
+        "basis": "V1_5_9_ZIP_MANIFEST_FILE_SHA_AND_CANONICAL_SHA"
+      },
+      {
+        "date": "2026-11-11",
+        "market": "TWSE",
+        "database_rows_before": 1390,
+        "pinned_correction_rows": 1390,
+        "overridden": false,
+        "basis": "V1_5_9_ZIP_MANIFEST_FILE_SHA_AND_CANONICAL_SHA"
+      }
+    ]
+  },
+  "historical_cutoff_exclusive": "2026-10-28",
+  "delta_rows": 36130,
+  "market_day_groups": 30,
+  "last_date_by_market": {
+    "TPEX": "2026-11-18",
+    "TWSE": "2026-11-18"
+  },
+  "source_scan": [
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "status": "SCANNED",
+      "rows": 21665,
+      "candidate_market_days": 18,
+      "bytes": 4397184
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.2_官方雙市場行情增量續接_20261111_20261111_20261111_235226_6fa3/normalized/全市場標準化增量_20261111_20261111.csv",
+      "status": "SCANNED",
+      "rows": 15142,
+      "candidate_market_days": 2,
+      "bytes": 958519
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.3_官方行情即時驗證與增量續接_20261112_000746_0f8a/修正_TPEX_20261111.csv",
+      "status": "SCANNED",
+      "rows": 1020,
+      "candidate_market_days": 1,
+      "bytes": 103751
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.10_官方行情即時驗證與增量續接_20261112_170514_b9a7/修正_TPEX_20261111.csv",
+      "status": "SCANNED",
+      "rows": 1020,
+      "candidate_market_days": 1,
+      "bytes": 103751
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.10_官方行情即時驗證與增量續接_20261112_180751_3bd3/修正_TPEX_20261111.csv",
+      "status": "SCANNED",
+      "rows": 1020,
+      "candidate_market_days": 1,
+      "bytes": 103751
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.5_官方行情即時驗證與增量續接_20261112_002745_2459/修正_TPEX_20261111.csv",
+      "status": "SCANNED",
+      "rows": 1020,
+      "candidate_market_days": 1,
+      "bytes": 103751
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.6_官方行情即時驗證與增量續接_20261112_010903_5239/修正_TPEX_20261111.csv",
+      "status": "SCANNED",
+      "rows": 1020,
+      "candidate_market_days": 1,
+      "bytes": 103751
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.6_官方行情即時驗證與增量續接_20261112_012514_76b3/修正_TPEX_20261111.csv",
+      "status": "SCANNED",
+      "rows": 1020,
+      "candidate_market_days": 1,
+      "bytes": 103751
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.7_官方行情即時驗證與增量續接_20261112_090001_3b99/修正_TPEX_20261111.csv",
+      "status": "SCANNED",
+      "rows": 1020,
+      "candidate_market_days": 1,
+      "bytes": 103751
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_143616_7dc9/修正_TPEX_20261111.csv",
+      "status": "SCANNED",
+      "rows": 1020,
+      "candidate_market_days": 1,
+      "bytes": 103751
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_144440_6842/修正_TPEX_20261111.csv",
+      "status": "SCANNED",
+      "rows": 1020,
+      "candidate_market_days": 1,
+      "bytes": 103751
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.9_TWSE_price_change欄位補正_20261112_152447_f573/修正_TPEX_20261111.csv",
+      "status": "SCANNED",
+      "rows": 1020,
+      "candidate_market_days": 1,
+      "bytes": 103751
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.3_官方行情即時驗證與增量續接_20261112_000746_0f8a/全市場標準化增量_無新增_20261112_000746_0f8a.csv",
+      "status": "SCANNED",
+      "rows": 0,
+      "candidate_market_days": 0,
+      "bytes": 134
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.4_官方行情即時驗證與增量續接_20261112_001733_4d45/全市場標準化增量_無新增_20261112_001733_4d45.csv",
+      "status": "SCANNED",
+      "rows": 0,
+      "candidate_market_days": 0,
+      "bytes": 134
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.5_官方行情即時驗證與增量續接_20261112_002745_2459/全市場標準化增量_無新增_20261112_002745_2459.csv",
+      "status": "SCANNED",
+      "rows": 0,
+      "candidate_market_days": 0,
+      "bytes": 134
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.6_官方行情即時驗證與增量續接_20261112_010903_5239/全市場標準化增量_無新增_20261112_010903_5239.csv",
+      "status": "SCANNED",
+      "rows": 0,
+      "candidate_market_days": 0,
+      "bytes": 134
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.6_官方行情即時驗證與增量續接_20261112_012514_76b3/全市場標準化增量_無新增_20261112_012514_76b3.csv",
+      "status": "SCANNED",
+      "rows": 0,
+      "candidate_market_days": 0,
+      "bytes": 134
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.7_官方行情即時驗證與增量續接_20261112_090001_3b99/全市場標準化增量_無新增_20261112_090001_3b99.csv",
+      "status": "SCANNED",
+      "rows": 0,
+      "candidate_market_days": 0,
+      "bytes": 134
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_143616_7dc9/修正_TWSE_20261111.csv",
+      "status": "SCANNED",
+      "rows": 1390,
+      "candidate_market_days": 1,
+      "bytes": 124122
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.8_官方行情即時驗證與增量續接_20261112_144440_6842/修正_TWSE_20261111.csv",
+      "status": "SCANNED",
+      "rows": 1390,
+      "candidate_market_days": 1,
+      "bytes": 124122
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.10_官方行情即時驗證與增量續接_20261112_170514_b9a7/修正_TWSE_20261111.csv",
+      "status": "SCANNED",
+      "rows": 1390,
+      "candidate_market_days": 1,
+      "bytes": 130341
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.10_官方行情即時驗證與增量續接_20261112_180751_3bd3/修正_TWSE_20261111.csv",
+      "status": "SCANNED",
+      "rows": 1390,
+      "candidate_market_days": 1,
+      "bytes": 130341
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.9_TWSE_price_change欄位補正_20261112_152447_f573/修正_TWSE_20261111.csv",
+      "status": "SCANNED",
+      "rows": 1390,
+      "candidate_market_days": 1,
+      "bytes": 130341
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.10_官方行情即時驗證與增量續接_20261112_170514_b9a7/全市場標準化增量_20261112_20261112.csv",
+      "status": "SCANNED",
+      "rows": 2409,
+      "candidate_market_days": 2,
+      "bytes": 239385
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.10_官方行情即時驗證與增量續接_20261112_180751_3bd3/全市場標準化增量_無新增_20261112_180751_3bd3.csv",
+      "status": "SCANNED",
+      "rows": 0,
+      "candidate_market_days": 0,
+      "bytes": 147
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.12_未知營業日補充與官方日曆核驗_20261114_005152_5bb8/全市場標準化增量_20261113_20261113.csv",
+      "status": "SCANNED",
+      "rows": 2409,
+      "candidate_market_days": 2,
+      "bytes": 239112
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.13_未知營業日補充與官方日曆核驗_20261114_213319_8ea9/全市場標準化增量_無新增_20261114_213319_8ea9.csv",
+      "status": "SCANNED",
+      "rows": 0,
+      "candidate_market_days": 0,
+      "bytes": 147
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.13_未知營業日補充與官方日曆核驗_20261116_213943_eda8/全市場標準化增量_無新增_20261116_213943_eda8.csv",
+      "status": "SCANNED",
+      "rows": 0,
+      "candidate_market_days": 0,
+      "bytes": 147
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.14_未知營業日補充與官方日曆核驗_20261118_101836_6bce/全市場標準化增量_20261116_20261117.csv",
+      "status": "SCANNED",
+      "rows": 4825,
+      "candidate_market_days": 4,
+      "bytes": 479646
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.15_未知營業日補充與官方日曆核驗_20261118_103252_0578/全市場標準化增量_無新增_20261118_103252_0578.csv",
+      "status": "SCANNED",
+      "rows": 0,
+      "candidate_market_days": 0,
+      "bytes": 147
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.15_未知營業日補充與官方日曆核驗_20261118_185944_6d06/全市場標準化增量_無新增_20261118_185944_6d06.csv",
+      "status": "SCANNED",
+      "rows": 0,
+      "candidate_market_days": 0,
+      "bytes": 147
+    },
+    {
+      "path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.16_同日閘門與官方日曆核驗_20261118_191128_79f3/全市場標準化增量_20261118_20261118.csv",
+      "status": "SCANNED",
+      "rows": 2412,
+      "candidate_market_days": 2,
+      "bytes": 239089
+    }
+  ],
+  "selected_sources": [
+    {
+      "date": "2026-10-29",
+      "market": "TPEX",
+      "rows": 1017,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1017,
+      "calendar_expected_rows": 1017,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-10-29",
+      "market": "TWSE",
+      "rows": 1388,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1388,
+      "calendar_expected_rows": 1388,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-10-30",
+      "market": "TPEX",
+      "rows": 1018,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1018,
+      "calendar_expected_rows": 1018,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-10-30",
+      "market": "TWSE",
+      "rows": 1389,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1389,
+      "calendar_expected_rows": 1389,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-02",
+      "market": "TPEX",
+      "rows": 1018,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1018,
+      "calendar_expected_rows": 1018,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-02",
+      "market": "TWSE",
+      "rows": 1389,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1389,
+      "calendar_expected_rows": 1389,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-03",
+      "market": "TPEX",
+      "rows": 1018,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1018,
+      "calendar_expected_rows": 1018,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-03",
+      "market": "TWSE",
+      "rows": 1390,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1390,
+      "calendar_expected_rows": 1390,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-04",
+      "market": "TPEX",
+      "rows": 1018,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1018,
+      "calendar_expected_rows": 1018,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-04",
+      "market": "TWSE",
+      "rows": 1390,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1390,
+      "calendar_expected_rows": 1390,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-05",
+      "market": "TPEX",
+      "rows": 1017,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1017,
+      "calendar_expected_rows": 1017,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-05",
+      "market": "TWSE",
+      "rows": 1389,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1389,
+      "calendar_expected_rows": 1389,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-06",
+      "market": "TPEX",
+      "rows": 1017,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1017,
+      "calendar_expected_rows": 1017,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-06",
+      "market": "TWSE",
+      "rows": 1389,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1389,
+      "calendar_expected_rows": 1389,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-09",
+      "market": "TPEX",
+      "rows": 1020,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1020,
+      "calendar_expected_rows": 1020,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-09",
+      "market": "TWSE",
+      "rows": 1389,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1389,
+      "calendar_expected_rows": 1389,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-10",
+      "market": "TPEX",
+      "rows": 1020,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1020,
+      "calendar_expected_rows": 1020,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-10",
+      "market": "TWSE",
+      "rows": 1389,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.1_官方全市場行情增量銜接至20261110_20261111_013339_f42c9/全市場標準化增量_20261029_20261110.csv",
+      "source_sha256": "7594961ab30c5f6c07d782947310319ffa266ab3c5dfb79eef3af50fa997cc11",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1389,
+      "calendar_expected_rows": 1389,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-11",
+      "market": "TPEX",
+      "rows": 1020,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.9_TWSE_price_change欄位補正_20261112_152447_f573/修正_TPEX_20261111.csv",
+      "source_sha256": "002f3e4e7af282945333db92c1cebc2a76bad5fb24a7058fda12e2690ed80742",
+      "correction": true,
+      "verified_20261111_correction": true,
+      "trusted_basis": "EXACT_V1_5_9_CORRECTION_FILE_SHA256",
+      "source_archive": "",
+      "alternative_full_sources": 10,
+      "calendar_database_rows_before": 13752,
+      "calendar_expected_rows": 1020,
+      "calendar_expected_rows_basis": "PINNED_V1_5_9_SEALED_FULL_DAY_CORRECTION",
+      "calendar_count_override": true,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-11",
+      "market": "TWSE",
+      "rows": 1390,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.9_TWSE_price_change欄位補正_20261112_152447_f573/修正_TWSE_20261111.csv",
+      "source_sha256": "b390cd3b3e3fd339395818cee683eac91414540364baff9a851143094fec428b",
+      "correction": true,
+      "verified_20261111_correction": true,
+      "trusted_basis": "EXACT_V1_5_9_CORRECTION_FILE_SHA256",
+      "source_archive": "",
+      "alternative_full_sources": 6,
+      "calendar_database_rows_before": 1390,
+      "calendar_expected_rows": 1390,
+      "calendar_expected_rows_basis": "PINNED_V1_5_9_SEALED_FULL_DAY_CORRECTION",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-12",
+      "market": "TPEX",
+      "rows": 1020,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.10_官方行情即時驗證與增量續接_20261112_170514_b9a7/全市場標準化增量_20261112_20261112.csv",
+      "source_sha256": "db3c038fa5d895404a0a4def8e64737452c90a4caff2300a551eceb6ef31b9cf",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1020,
+      "calendar_expected_rows": 1020,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-12",
+      "market": "TWSE",
+      "rows": 1389,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.10_官方行情即時驗證與增量續接_20261112_170514_b9a7/全市場標準化增量_20261112_20261112.csv",
+      "source_sha256": "db3c038fa5d895404a0a4def8e64737452c90a4caff2300a551eceb6ef31b9cf",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1389,
+      "calendar_expected_rows": 1389,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-13",
+      "market": "TPEX",
+      "rows": 1020,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.12_未知營業日補充與官方日曆核驗_20261114_005152_5bb8/全市場標準化增量_20261113_20261113.csv",
+      "source_sha256": "54c1d42337cf0b9e6bc5c65dc7d8c2fa83413ca67e0f1ee56ab51c279d21bee7",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1020,
+      "calendar_expected_rows": 1020,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-13",
+      "market": "TWSE",
+      "rows": 1389,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.12_未知營業日補充與官方日曆核驗_20261114_005152_5bb8/全市場標準化增量_20261113_20261113.csv",
+      "source_sha256": "54c1d42337cf0b9e6bc5c65dc7d8c2fa83413ca67e0f1ee56ab51c279d21bee7",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1389,
+      "calendar_expected_rows": 1389,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-16",
+      "market": "TPEX",
+      "rows": 1022,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.14_未知營業日補充與官方日曆核驗_20261118_101836_6bce/全市場標準化增量_20261116_20261117.csv",
+      "source_sha256": "39af9dc041a9bcd9fe0af6b884e77ac41a4aa7424b8ec8e0054ae11e1e5bfb04",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1022,
+      "calendar_expected_rows": 1022,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-16",
+      "market": "TWSE",
+      "rows": 1390,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.14_未知營業日補充與官方日曆核驗_20261118_101836_6bce/全市場標準化增量_20261116_20261117.csv",
+      "source_sha256": "39af9dc041a9bcd9fe0af6b884e77ac41a4aa7424b8ec8e0054ae11e1e5bfb04",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1390,
+      "calendar_expected_rows": 1390,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-17",
+      "market": "TPEX",
+      "rows": 1022,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.14_未知營業日補充與官方日曆核驗_20261118_101836_6bce/全市場標準化增量_20261116_20261117.csv",
+      "source_sha256": "39af9dc041a9bcd9fe0af6b884e77ac41a4aa7424b8ec8e0054ae11e1e5bfb04",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1022,
+      "calendar_expected_rows": 1022,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-17",
+      "market": "TWSE",
+      "rows": 1391,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.14_未知營業日補充與官方日曆核驗_20261118_101836_6bce/全市場標準化增量_20261116_20261117.csv",
+      "source_sha256": "39af9dc041a9bcd9fe0af6b884e77ac41a4aa7424b8ec8e0054ae11e1e5bfb04",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1391,
+      "calendar_expected_rows": 1391,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-18",
+      "market": "TPEX",
+      "rows": 1021,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.16_同日閘門與官方日曆核驗_20261118_191128_79f3/全市場標準化增量_20261118_20261118.csv",
+      "source_sha256": "0a99461f1ec5819507739ef4a195e4d2080e7e661f989c1a674865bb05e58922",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1021,
+      "calendar_expected_rows": 1021,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    },
+    {
+      "date": "2026-11-18",
+      "market": "TWSE",
+      "rows": 1391,
+      "source_file": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.16_同日閘門與官方日曆核驗_20261118_191128_79f3/全市場標準化增量_20261118_20261118.csv",
+      "source_sha256": "0a99461f1ec5819507739ef4a195e4d2080e7e661f989c1a674865bb05e58922",
+      "correction": false,
+      "verified_20261111_correction": false,
+      "trusted_basis": "",
+      "source_archive": "",
+      "alternative_full_sources": 1,
+      "calendar_database_rows_before": 1391,
+      "calendar_expected_rows": 1391,
+      "calendar_expected_rows_basis": "V1_5_16_DATABASE_ROWS_BEFORE",
+      "calendar_count_override": false,
+      "status": "PASS"
+    }
+  ],
+  "v159_h5_backup": null,
+  "drive_sources_modified": false,
+  "model_only_input": true
+}

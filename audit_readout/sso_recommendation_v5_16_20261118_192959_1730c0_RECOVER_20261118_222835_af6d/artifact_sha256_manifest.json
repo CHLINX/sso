@@ -1,0 +1,45 @@
+﻿{
+  "run_id": "20261118_192959_1730c0_RECOVER_20261118_222835_af6d",
+  "files": [
+    {
+      "path": "H5推薦快照摘要.json",
+      "bytes": 3232,
+      "sha256": "4b5d040eba77c96c8722cbb482d7f751821d086e629876f729c7c8431baf3337"
+    },
+    {
+      "path": "SSO_main_v5.15_H5_2026-11-18_達標候選最多10檔.csv",
+      "bytes": 1859,
+      "sha256": "4c1fae55ae0b9c1c722f090467901c3396c1f8e43b222a01a596b2d24e6f0711"
+    },
+    {
+      "path": "SSO_main_v5_16.py",
+      "bytes": 411826,
+      "sha256": "4314ffb464b5a904c943a42dc5b8ddda63d8ecae7c3580046feebe50b5c74bb0"
+    },
+    {
+      "path": "SSO_main_v5_16_稽核摘要.json",
+      "bytes": 1092,
+      "sha256": "c18d20e5321593c3853cd18cd99d43e8a64cf16596eefc43729e3918bb1d82b3"
+    },
+    {
+      "path": "SSO_main_v5_缺值鍵值核對與橋接報告.json",
+      "bytes": 140120,
+      "sha256": "c95311ae717ae68b36ea5775eec1b52f5b709d5bdfeb35b735075bd96d37662e"
+    },
+    {
+      "path": "SSO_main_v5_資料來源橋接與准入報告.json",
+      "bytes": 151870,
+      "sha256": "e0a94af02a5616311276098a25e0d4e03f9429aa377a16130b5d12240131338f"
+    },
+    {
+      "path": "v1.5.16行情轉接稽核.json",
+      "bytes": 39791,
+      "sha256": "6391f466bc7fe8ea030228b245a5d5e2f27d14360c3b0e7dd0d2610d1de28408"
+    },
+    {
+      "path": "v2.50模型規格稽核.json",
+      "bytes": 666,
+      "sha256": "70c6ec513f323969aed6861d020acbf20e84a7771e208647999ec8ce75929019"
+    }
+  ]
+}

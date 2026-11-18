@@ -1,0 +1,29 @@
+﻿{
+  "source_file": "SSO_v2_50_日成交量特徵與500市場日檢查點版.py",
+  "sha256": "71ebceb51e26de26155d5e7c6e61316bd06c1361667e39e05fe1d89e7f7a6bf5",
+  "git_blob_sha1": "777f181bb20ffc8a1b8d78561f6ae51bf427b57b",
+  "horizons": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "max_picks": 10,
+  "lookback_market_days": 756,
+  "calibration_days": 60,
+  "refit_interval": 20,
+  "fee": 0.001425,
+  "base_cost": {
+    "slippage": 0.001,
+    "fee": 0.001425,
+    "tax": 0.003
+  },
+  "stress_cost": {
+    "slippage": 0.002,
+    "fee": 0.001425,
+    "tax": 0.003
+  },
+  "oos_gate_min_win_rate": 0.52,
+  "model_spec_unchanged": true,
+  "v4.77_v4.87_lineage_gate": "PASS"
+}
