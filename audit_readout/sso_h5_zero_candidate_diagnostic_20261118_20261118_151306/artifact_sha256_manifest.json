@@ -1,0 +1,46 @@
+﻿{
+  "signal_date": "2026-11-18",
+  "run_id": "20261118_193832_200a91",
+  "files": [
+    {
+      "file": "08_SSO_v2.50_前瞻刷新模型.log",
+      "bytes": 8438,
+      "sha256": "59dcf57a3a2c7846d7d836fce9e9bfe3182b07f0f1b0fa7317885e487913af38"
+    },
+    {
+      "file": "H5零達標原因診斷.json",
+      "bytes": 3738,
+      "sha256": "b0852af0184068d141c05bfae1574ed4740bef00b9f4d08c2501ae42e9731a00"
+    },
+    {
+      "file": "H5零達標原因診斷摘要.txt",
+      "bytes": 1019,
+      "sha256": "c77dcc4e139e658acd9e545f8d302e07e928e1dddda5898d7c8a90c9f0cf9805"
+    },
+    {
+      "file": "SSO_v2.66_H5_2026-11-18_v2.50_達標候選最多10檔.csv",
+      "bytes": 1859,
+      "sha256": "4c1fae55ae0b9c1c722f090467901c3396c1f8e43b222a01a596b2d24e6f0711"
+    },
+    {
+      "file": "SSO_v2.73_歷史重跑報告_20261118_214050_f393dc.json",
+      "bytes": 5979,
+      "sha256": "db8088a13e8f0a902bd889a7ef413a042f9c4b60886f5e8f2da9185cf70eb558"
+    },
+    {
+      "file": "v2.50模型日誌末段.txt",
+      "bytes": 8441,
+      "sha256": "cef341e99d5f781f11cc91a22c6d2351dd378104a60a4e8832cfa3f19c0429ef"
+    },
+    {
+      "file": "v2.50模型日誌關鍵行.csv",
+      "bytes": 7994,
+      "sha256": "a04fa79069f59a8466791b761649a62438891c1d1e9cb04724b73cf85b0c0d75"
+    },
+    {
+      "file": "v2.73報告重要指標索引.csv",
+      "bytes": 509,
+      "sha256": "48a5c7e66944923055e6dea3b78d76b189ca2600a578c1699f6a38fbf8e52ffc"
+    }
+  ]
+}

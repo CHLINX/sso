@@ -1,0 +1,122 @@
+{
+  "版本": "SSO_v2.73",
+  "執行時間_台北": "2026-11-18T21:40:50+08:00",
+  "規格ID": "SSO_v2.73_HISTORICAL_REBUILD_20261115",
+  "狀態": "RECOMMENDATION_ONLY_NOT_FORWARD",
+  "說明": "已產製訊號日 2026-11-18 的歷史研究推薦快照並另存於「非前瞻參考」資料夾；本版歷史重跑不寫入 v2.62 前瞻帳本。沒有下單。",
+  "封存日": "2026-10-29",
+  "最低前瞻行情日": "2026-10-30",
+  "耗時秒": 7337.69,
+  "模式": "HISTORICAL_ONLY",
+  "v2.70官方核對Commit": "abed852ce1c89aeeb32ae0d3cedb811f7afb9fa7",
+  "工作資料夾": "/content/SSO_v2.73_十年研究鏈重跑_20261118_193832_200a91",
+  "執行記錄資料夾": "/content/SSO_v2.73_十年研究鏈重跑_20261118_193832_200a91/logs",
+  "既有公司行動來源預檢": {
+    "v2.24": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SSO_公司行動因子建置資格與分布稽核_v2.24_20261118_120615"
+  },
+  "官方行情底稿搜尋": {
+    "selected_overlay": "/content/SSO_main_v5_15_20261118_192959_1730c0/SFAS_官方市場行情資料底稿_v2.8_SSO_main_v5",
+    "keys_and_summary_located_independently": true
+  },
+  "官方無價格分類": {
+    "版本": "SSO v2.73",
+    "來源版本": "SSO v2.67",
+    "官方原始列核對版本": "SSO v2.70",
+    "v2.70_audit_commit": "abed852ce1c89aeeb32ae0d3cedb811f7afb9fa7",
+    "分類數": 4673,
+    "日期範圍": [
+      "2016-01-04",
+      "2026-10-28"
+    ],
+    "市場分布": {
+      "TWSE": 4673,
+      "TPEX": 0
+    },
+    "分類": "官方原始列有成交股數但開盤／最高／最低／收盤均無有效報價",
+    "是否重新查詢官方API": false,
+    "是否重新掃描官方JSON": false,
+    "是否補造價格": false,
+    "是否納入價格模型": false,
+    "是否修改來源行情總表": false,
+    "來源未解決鍵值數": 4673,
+    "原始行情總表列數": 4447168,
+    "未解決原因分布": {
+      "官方重查仍有無效OHLCV:OHLCV缺值/非數值:開盤,最高,最低,收盤": 4673
+    },
+    "輸出CSV": "/content/SSO_v2.73_十年研究鏈重跑_20261118_193832_200a91/official_no_price_classification/官方無價格觀測紀錄_v2.73.csv",
+    "Google_Drive分類資料夾": "/content/drive/MyDrive/看股最速適/推薦結果/SSO_v2.73_官方無價格分類/20261118_193832_200a91"
+  },
+  "官方行情檢查": {
+    "valid": true,
+    "master": "/content/SSO_main_v5_15_20261118_192959_1730c0/SFAS_官方市場行情資料底稿_v2.8_SSO_main_v5/官方行情總表.csv",
+    "master_size_bytes": 3472659877,
+    "total_rows": 4483298,
+    "min_date": "2016-01-04",
+    "max_date": "2026-11-18",
+    "market_total_rows": {
+      "TWSE": 2479380,
+      "TPEX": 2003918
+    },
+    "unknown_market_rows": 0,
+    "unknown_market_values": {},
+    "rows_on_latest_date_by_market": {
+      "TWSE": 1391,
+      "TPEX": 1021
+    },
+    "latest_date_query_status": {
+      "TWSE": "OK",
+      "TPEX": "OK"
+    },
+    "date_parse_fail_rows": 0,
+    "blank_date_rows": 0,
+    "date_range_ok": true,
+    "historical_market_totals_ok": true,
+    "historical_row_volume_ok": true,
+    "latest_date_both_markets_at_least_500_rows": true,
+    "both_markets_at_least_500_rows": true,
+    "both_market_queries_valid": true,
+    "historical_only_mode": true,
+    "reason": ""
+  },
+  "必要公司行動來源": {
+    "v2.24": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SSO_公司行動因子建置資格與分布稽核_v2.24_20261118_120615",
+    "v2.17": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SSO_官方公司行動資料盤點_v2.17_20261116_092026"
+  },
+  "既有v2.31日期掃描": {
+    "資料夾": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SSO_研究指標獨立驗證與前瞻分析_v2.31_20261116_121536",
+    "最新日期": "2026-11-06",
+    "資料列數": 4464015
+  },
+  "既有產製鏈核對": {},
+  "正式v2.31來源": {
+    "路徑": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SSO_研究指標獨立驗證與前瞻分析_v2.31_20261118_200642/相對價格因子與前瞻報酬研究資料_v2.31.csv.gz",
+    "最新日期": "2026-11-18",
+    "資料列數": 4483298,
+    "大小_bytes": 563405902,
+    "SHA256": "7fe23b3fab70a9bfb04589138b2fe0fa2372d723bd94a9be37e756dce4a84ef3"
+  },
+  "v2.50檢查點相容性": [],
+  "v2.50結果ZIP": {
+    "路徑": "/content/SSO_v2.50_前瞻刷新_20261118_122543_f89d60_結果.zip",
+    "大小_bytes": 24101670,
+    "SHA256": "263330e961a51fabba7bb399a7bfae4ea38646c48a5c3e7851f9056bd6141111",
+    "最新H5訊號日": "2026-11-18",
+    "H5資料列數": 1719,
+    "最新訊號日列數": 1719
+  },
+  "推薦清單匯出": {
+    "推薦快照資料夾": "/content/drive/MyDrive/看股最速適/推薦結果/非前瞻參考/SSO_main_v5_15_20261118_192959_1730c0",
+    "訊號日期": "2026-11-18",
+    "v2.50原模型達標候選數": 0,
+    "v2.50原模型達標候選CSV": "/content/drive/MyDrive/看股最速適/推薦結果/非前瞻參考/SSO_main_v5_15_20261118_192959_1730c0/SSO_v2.66_H5_2026-11-18_v2.50_達標候選最多10檔.csv",
+    "凍結假設符合候選數": 0,
+    "凍結假設符合候選CSV": "/content/drive/MyDrive/看股最速適/推薦結果/非前瞻參考/SSO_main_v5_15_20261118_192959_1730c0/SSO_v2.66_H5_2026-11-18_凍結假設符合候選.csv"
+  },
+  "recommendation_date": "2026-11-18",
+  "recommendation_mode": "HISTORICAL_ONLY",
+  "recommendation_zip_drive": "/content/drive/MyDrive/看股最速適/推薦結果/非前瞻參考/SSO_main_v5_15_20261118_192959_1730c0/來源模型ZIP/SSO_v2.50_非前瞻參考_H5_2026-11-18_20261118_193832_200a91_結果.zip",
+  "frozen_spec_modified": false,
+  "forward_ledger_updated": false,
+  "orders_placed": false,
+  "Google_Drive報告": "/content/drive/MyDrive/看股最速適/推薦結果/SSO_main_v5_分析報告/SSO_v2.73_歷史重跑報告_20261118_214050_f393dc.json"
+}

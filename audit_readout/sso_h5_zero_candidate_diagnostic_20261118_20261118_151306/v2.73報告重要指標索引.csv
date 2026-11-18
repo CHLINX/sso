@@ -1,0 +1,12 @@
+﻿json_path,value
+$.官方行情檢查.total_rows,4483298
+$.官方行情檢查.min_date,2016-01-04
+$.官方行情檢查.max_date,2026-11-18
+$.官方行情檢查.unknown_market_rows,0
+$.官方行情檢查.date_parse_fail_rows,0
+$.官方行情檢查.blank_date_rows,0
+$.官方行情檢查.date_range_ok,True
+$.官方行情檢查.latest_date_both_markets_at_least_500_rows,True
+$.官方行情檢查.both_markets_at_least_500_rows,True
+$.recommendation_date,2026-11-18
+$.forward_ledger_updated,False

@@ -1,0 +1,101 @@
+/content/SSO_v2.73_十年研究鏈重跑_20261118_193832_200a91/execution_copies/SSO_v2_50_日成交量特徵與500市場日檢查點版.py:512: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  out['entry_exit_valid'] = out['entry_ohlc_valid'].fillna(False) & out['exit_ohlc_valid'].fillna(False) & out['entry_open'].gt(0) & out['exit_close'].gt(0)
+/content/SSO_v2.73_十年研究鏈重跑_20261118_193832_200a91/execution_copies/SSO_v2_50_日成交量特徵與500市場日檢查點版.py:512: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  out['entry_exit_valid'] = out['entry_ohlc_valid'].fillna(False) & out['exit_ohlc_valid'].fillna(False) & out['entry_open'].gt(0) & out['exit_close'].gt(0)
+/content/SSO_v2.73_十年研究鏈重跑_20261118_193832_200a91/execution_copies/SSO_v2_50_日成交量特徵與500市場日檢查點版.py:512: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  out['entry_exit_valid'] = out['entry_ohlc_valid'].fillna(False) & out['exit_ohlc_valid'].fillna(False) & out['entry_open'].gt(0) & out['exit_close'].gt(0)
+/content/SSO_v2.73_十年研究鏈重跑_20261118_193832_200a91/execution_copies/SSO_v2_50_日成交量特徵與500市場日檢查點版.py:512: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  out['entry_exit_valid'] = out['entry_ohlc_valid'].fillna(False) & out['exit_ohlc_valid'].fillna(False) & out['entry_open'].gt(0) & out['exit_close'].gt(0)
+============================================================================
+SSO v2.50｜日線成交量特徵、直接獲利分類與10檔候選樣本外回測
+每期最多 10 檔獲利潛力候選｜H=[1, 3, 5, 10]｜歷史淨獲利機率校準｜只讀原始資料
+合格候選：直接分類器校準機率>=50%、預測淨報酬>0、分類器與校準收斂且斜率>0；不足10檔不湊數。
+本版保留既有特徵，新增日線相對量能與價量確認特徵；仍不放寬獲利門檻。
+成交量特徵使用原始研究資料欄位；不大量呼叫 API、不下載分鐘線，亦不修改原始研究資料。
+Google Drive 檢查點：每500個已處理市場日存檔；模型係數仍每20市場日更新。
+另保留每期前 [10, 20, 50, 100] 檔敏感度診斷作舊方法對照。
+提醒：這是待驗證的研究模型，不會輸出保證獲利或正式買進建議。
+Google Drive 已掛載。
+研究資料： /content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SSO_研究指標獨立驗證與前瞻分析_v2.31_20261118_200642/相對價格因子與前瞻報酬研究資料_v2.31.csv.gz
+續算檢查點位置： /content/SSO_v2.73_模型檢查點
+公司名稱資料：TWSE 公開資料取得 1,099 筆。
+公司名稱資料：TPEX 公開資料取得 898 筆。
+公司名稱對照來源： TWSE 1099筆；TPEX 898筆
+來源欄位對應：
+  date: 日期
+  market: 市場
+  symbol: 股票代號
+  open: 影子開盤價
+  high: 影子最高價
+  low: 影子最低價
+  close: 影子收盤價
+  volume: 原始成交量_不作指標
+  factor: 20根有效K棒報酬波動率
+  segment: 價格研究區段
+讀取欄位：10 個。
+來源摘要： {"原始有效鍵列數": 4483298, "OHLC有效列數": 4435517, "來源因子有效列數": 4370250, "成交量欄位": "原始成交量_不作指標", "成交量非缺值列數": 4483298, "成交量正值列數": 4435574, "成交量缺值列數": 0, "成交量有效比例": 1.0, "成交金額欄位": "未納入；本版不以收盤價×成交量冒充官方成交金額", "股票數": 2441, "市場日期數": 2641, "資料起日": "2016-01-04", "資料迄日": "2026-11-18", "價格研究區段欄位存在": true, "來源欄位對應": {"date": "日期", "market": "市場", "symbol": "股票代號", "open": "影子開盤價", "high": "影子最高價", "low": "影子最低價", "close": "影子收盤價", "volume": "原始成交量_不作指標", "factor": "20根有效K棒報酬波動率", "segment": "價格研究區段"}}
+開始計算價格特徵（近5/20/60日報酬、均線位置、20日區間、波動）…
+開始計算日線成交量特徵（當日相對20日均量、5／20日均量趨勢、價量確認）…
+開始計算每日橫斷面排名…
+
+====================================================================
+SSO v2.50｜H1：建立標籤與 walk-forward 上漲潛力模型
+H1: 可用同區段歷史標籤=3,882,189；有效OHLC但跨區段=436
+H1: walk-forward 回測起始資料日序=756，籃子數=1884
+H1: 已保存續算檢查點 1,256/2,640。
+H1: 已保存續算檢查點 1,756/2,640。
+H1: 已保存續算檢查點 2,256/2,640。
+H1: 已保存續算檢查點 2,640/2,640。
+
+====================================================================
+SSO v2.50｜H3：建立標籤與 walk-forward 上漲潛力模型
+H3: 可用同區段歷史標籤=3,872,900；有效OHLC但跨區段=1,298
+H3: walk-forward 回測起始資料日序=756，籃子數=628
+H3: 已保存續算檢查點 1,256/2,638。
+H3: 已保存續算檢查點 1,756/2,638。
+H3: 已保存續算檢查點 2,256/2,638。
+H3: 已保存續算檢查點 2,638/2,638。
+
+====================================================================
+SSO v2.50｜H5：建立標籤與 walk-forward 上漲潛力模型
+H5: 可用同區段歷史標籤=3,867,558；有效OHLC但跨區段=2,179
+H5: walk-forward 回測起始資料日序=756，籃子數=376
+H5: 已保存續算檢查點 1,256/2,636。
+H5: 已保存續算檢查點 1,756/2,636。
+H5: 已保存續算檢查點 2,256/2,636。
+H5: 已保存續算檢查點 2,636/2,636。
+
+====================================================================
+SSO v2.50｜H10：建立標籤與 walk-forward 上漲潛力模型
+H10: 可用同區段歷史標籤=3,854,283；有效OHLC但跨區段=5,429
+H10: walk-forward 回測起始資料日序=756，籃子數=188
+H10: 已保存續算檢查點 1,256/2,631。
+H10: 已保存續算檢查點 1,756/2,631。
+H10: 已保存續算檢查點 2,256/2,631。
+H10: 已保存續算檢查點 2,631/2,631。
+
+完成。輸出資料夾： /content/SSO_v2.50_前瞻刷新_20261118_122543_f89d60
+  10檔分級前瞻績效比較_v2.50.csv | 13,734 bytes
+  10檔組合淨值路徑_v2.50.csv | 3,768,753 bytes
+  10檔組合逐籃子逐股成交明細_v2.50.csv | 110,049,136 bytes
+  SSO_v2.50_核心分析修正說明.txt | 2,106 bytes
+  SSO_v2.50_樣本外校準門檻與公司名稱報告.txt | 127,767 bytes
+  上漲潛力分級實際績效檢驗_v2.50.csv | 17,066 bytes
+  來源品質與執行設定_v2.50.json | 4,235 bytes
+  分類機率能力總結_v2.50.csv | 1,234 bytes
+  分類機率能力逐訊號日_v2.50.csv | 878,459 bytes
+  最新10檔獲利可能性排行_v2.50.csv | 25,139 bytes
+  最新全市場候選持續評估_v2.50.csv | 3,876,254 bytes
+  最新達標獲利候選最多10檔_v2.50.csv | 1,858 bytes
+  樣本外機率區間門檻診斷_v2.50.csv | 10,055,308 bytes
+  歷史樣本外每日10檔候選_v2.50.csv | 19,820,607 bytes
+  獲利機率校準檢驗總結_v2.50.csv | 6,086 bytes
+  獲利機率校準逐訊號日_v2.50.csv | 2,360,474 bytes
+  選股範圍敏感度淨值路徑_v2.50.csv | 4,490,196 bytes
+  選股範圍敏感度總結_v2.50.csv | 17,233 bytes
+  選股範圍敏感度逐訊號日_v2.50.csv | 9,849,456 bytes
+  預測分位組樣本外實際績效_v2.50.csv | 21,783 bytes
+  預測排序能力總結_v2.50.csv | 2,572 bytes
+  預測排序能力逐訊號日診斷_v2.50.csv | 2,046,804 bytes
+結果 ZIP： /content/SSO_v2.50_前瞻刷新_20261118_122543_f89d60_結果.zip (24,101,670 bytes)
+若需備份到 Drive，請先確認空間後再手動複製；本程式不自動複製大檔至 Drive。

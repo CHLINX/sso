@@ -1,0 +1,24 @@
+﻿SSO｜2026-11-18 H5 零達標原因診斷
+========================================================================
+來源 run：20261118_193832_200a91
+訊號日：2026-11-18
+結果：H5 達標 0/10；未補足、未放寬門檻；此次只匯整既有日誌，不重跑模型。
+
+模型日誌分類命中行數（注意：是日誌行數，不是個股數）：
+- universe_and_scope: 0
+- feature_and_data_readiness: 20
+- training_and_sample_size: 8
+- predicted_net_return: 1
+- profit_probability: 3
+- calibration: 5
+- historical_probability_bin: 0
+- candidate_gate_and_rejection: 9
+- volume_and_liquidity: 10
+- model_completion_and_outputs: 13
+
+逐層個股淘汰數：請以 v2.50 原始日誌中明確列出的計數為準；本腳本不將關鍵字命中行數轉換為個股數。
+重要報告指標索引：v2.73報告重要指標索引.csv（11 項）
+日誌關鍵行：v2.50模型日誌關鍵行.csv
+日誌末段：v2.50模型日誌末段.txt
+
+原始來源 SHA256 已記錄於 H5零達標原因診斷.json。
