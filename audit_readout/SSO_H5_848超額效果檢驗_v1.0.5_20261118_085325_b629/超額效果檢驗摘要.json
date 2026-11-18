@@ -1,0 +1,12 @@
+{
+  "version": "SSO_H5_848_Excess_Effect_v1.0.5",
+  "run_id": "20261118_085325_b629",
+  "signal_date": "2026-11-06",
+  "entry_date": "2026-11-09",
+  "exit_date": "2026-11-13",
+  "status": "BLOCKED_NO_VALID_COMPARISON",
+  "outputs": "/content/drive/MyDrive/看股最速適/H5_848超額效果檢驗_v1.0.5_20261118_085325_b629",
+  "error_type": "RuntimeError",
+  "error": "v2.50 ZIP內找不到可驗證的1,720檔H5模型母體CSV（市場/代號自然鍵＋凍結848子集）。",
+  "sources_modified": false
+}

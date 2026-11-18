@@ -1,0 +1,5 @@
+﻿序號,紀錄
+1,[2026-11-18 08:53:25 CST] [SELF TEST PASS] 8 tests
+2,[2026-11-18 08:53:27 CST] [SNAPSHOT PARTIAL STATE PASS] upstream downstream_ready=False is expected: 847/848 price pairs complete; the remaining one is retained for the formal 846-row trade-validity alignment and is not silently counted as ready.
+3,"[2026-11-18 08:53:28 CST] [SNAPSHOT ZIP PASS] manifest_files=2,432; overlays=2,411; run.log_in_manifest=True; source=verified ZIP extraction (no comparison against mutable Drive run.log)"
+4,"BLOCKED RuntimeError: v2.50 ZIP內找不到可驗證的1,720檔H5模型母體CSV（市場/代號自然鍵＋凍結848子集）。"
