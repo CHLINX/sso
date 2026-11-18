@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00690,兆豐藍籌30,70.75,70.75,66.1,66.2,1015020,1944,68680675,TWSE_MI_INDEX,4.8
+2026-11-17,TWSE,00690,兆豐藍籌30,62.35,64.05,61.5,62.2,708782,1488,44285567,TWSE_MI_INDEX,0.0

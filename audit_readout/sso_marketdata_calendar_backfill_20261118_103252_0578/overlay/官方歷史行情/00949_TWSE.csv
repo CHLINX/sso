@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00949,復華日本龍頭,22.59,22.61,22.46,22.51,5863486,2573,132174415,TWSE_MI_INDEX,0.03
+2026-11-17,TWSE,00949,復華日本龍頭,22.32,22.45,22.3,22.35,10166991,3419,227368511,TWSE_MI_INDEX,0.16

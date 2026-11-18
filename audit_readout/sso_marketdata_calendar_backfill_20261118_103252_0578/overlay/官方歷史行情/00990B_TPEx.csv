@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00990B,國泰收益非投等債,9.99,10.01,9.98,9.99,1317000,157,13167630,TPEX_afterTrading_otc_type_EW,-0.03
+2026-11-17,TPEX,00990B,國泰收益非投等債,9.96,9.99,9.95,9.97,1694000,256,16889760,TPEX_afterTrading_otc_type_EW,-0.02

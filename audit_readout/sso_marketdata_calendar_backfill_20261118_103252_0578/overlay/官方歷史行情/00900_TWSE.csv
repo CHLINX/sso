@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00900,富邦特選高股息30,18.7,18.76,18.08,18.1,4329045,2282,79396065,TWSE_MI_INDEX,0.6
+2026-11-17,TWSE,00900,富邦特選高股息30,17.71,18.14,17.55,17.94,3003542,1081,53937325,TWSE_MI_INDEX,0.0

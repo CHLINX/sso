@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6873,泓德能源,47.4,49.0,44.7,44.7,1051051,918,48703081,TWSE_MI_INDEX,3.6
+2026-11-17,TWSE,6873,泓德能源,44.0,48.7,44.0,47.95,1280366,1156,60714269,TWSE_MI_INDEX,3.25

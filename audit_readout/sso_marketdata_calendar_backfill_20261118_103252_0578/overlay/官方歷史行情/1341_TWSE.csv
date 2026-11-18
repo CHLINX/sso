@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1341,富林-KY,57.0,57.3,57.0,57.1,7042,12,402302,TWSE_MI_INDEX,0.1
+2026-11-17,TWSE,1341,富林-KY,58.5,58.5,57.0,57.0,25007,27,1436799,TWSE_MI_INDEX,0.1

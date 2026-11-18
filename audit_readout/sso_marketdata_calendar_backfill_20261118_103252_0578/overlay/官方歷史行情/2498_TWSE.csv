@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2498,宏達電,36.2,36.25,35.0,35.0,3701985,2426,132161502,TWSE_MI_INDEX,1.1
+2026-11-17,TWSE,2498,宏達電,34.7,35.85,33.65,35.4,5330737,3106,186660247,TWSE_MI_INDEX,0.4

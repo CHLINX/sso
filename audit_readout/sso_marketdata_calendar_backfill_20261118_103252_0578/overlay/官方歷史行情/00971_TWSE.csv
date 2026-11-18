@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00971,野村美國研發龍頭,18.2,18.2,17.65,17.67,148188,231,2629280,TWSE_MI_INDEX,0.2
+2026-11-17,TWSE,00971,野村美國研發龍頭,17.41,17.46,17.41,17.42,59102,165,1029951,TWSE_MI_INDEX,0.25

@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00692,富邦公司治理,88.15,88.15,83.65,83.65,2326522,3658,198788203,TWSE_MI_INDEX,5.35
+2026-11-17,TWSE,00692,富邦公司治理,81.6,83.3,79.5,80.4,1899990,3165,153730490,TWSE_MI_INDEX,0.0

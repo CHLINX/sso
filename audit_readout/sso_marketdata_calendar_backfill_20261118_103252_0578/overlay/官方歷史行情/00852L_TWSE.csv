@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00852L,國泰美國道瓊正2,33.95,34.08,33.9,33.93,63113,26,2143948,TWSE_MI_INDEX,0.12
+2026-11-17,TWSE,00852L,國泰美國道瓊正2,33.0,33.04,32.85,32.95,390552,50,12885088,TWSE_MI_INDEX,0.98

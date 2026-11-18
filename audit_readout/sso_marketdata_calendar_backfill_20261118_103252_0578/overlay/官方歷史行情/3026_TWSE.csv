@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,3026,禾伸堂,504.0,505.0,461.0,461.0,5513377,11361,2600009675,TWSE_MI_INDEX,51.0
+2026-11-17,TWSE,3026,禾伸堂,415.0,434.0,415.0,415.0,11309878,11377,4731344297,TWSE_MI_INDEX,46.0

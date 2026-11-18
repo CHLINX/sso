@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00777B,凱基AAA至A公司債,31.36,31.36,31.36,31.36,100000,2,3136000,TPEX_afterTrading_otc_type_EW,0.04
+2026-11-17,TPEX,00777B,凱基AAA至A公司債,31.22,31.22,31.12,31.18,103000,5,3211530,TPEX_afterTrading_otc_type_EW,

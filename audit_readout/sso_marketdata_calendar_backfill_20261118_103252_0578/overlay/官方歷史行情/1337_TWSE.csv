@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1337,再生-KY,3.92,3.92,3.81,3.81,242241,241,933666,TWSE_MI_INDEX,0.15
+2026-11-17,TWSE,1337,再生-KY,3.84,3.88,3.75,3.84,314959,439,1198733,TWSE_MI_INDEX,0.03

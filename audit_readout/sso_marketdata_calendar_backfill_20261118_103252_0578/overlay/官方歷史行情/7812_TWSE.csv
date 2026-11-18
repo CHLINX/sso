@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,7812,稜研科技*-創,48.6,49.05,46.95,47.6,154894,127,7415231,TWSE_MI_INDEX,2.5
+2026-11-17,TWSE,7812,稜研科技*-創,47.0,49.0,47.0,47.1,63932,79,3066520,TWSE_MI_INDEX,0.5

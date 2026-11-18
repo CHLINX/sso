@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00400A,主動國泰動能高息,12.48,12.51,11.73,11.73,98028977,21522,1175741162,TWSE_MI_INDEX,1.13
+2026-11-17,TWSE,00400A,主動國泰動能高息,11.37,11.72,11.18,11.22,63785513,13521,723098265,TWSE_MI_INDEX,0.51

@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,3704,合勤控,36.2,37.2,34.65,35.0,6571020,4127,236772511,TWSE_MI_INDEX,1.2
+2026-11-17,TWSE,3704,合勤控,36.25,38.5,36.1,38.5,8965294,3828,340156242,TWSE_MI_INDEX,3.5

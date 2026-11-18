@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00948B,中信優息投資級債,9.16,9.17,9.14,9.14,3772000,256,34500030,TPEX_afterTrading_otc_type_EW,-0.02
+2026-11-17,TPEX,00948B,中信優息投資級債,9.11,9.11,9.07,9.09,3140000,226,28520930,TPEX_afterTrading_otc_type_EW,

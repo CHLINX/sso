@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2849,安泰銀,14.55,15.5,14.55,15.2,344666,231,5229187,TWSE_MI_INDEX,0.4
+2026-11-17,TWSE,2849,安泰銀,15.2,16.1,15.2,15.75,808552,677,12795655,TWSE_MI_INDEX,0.55

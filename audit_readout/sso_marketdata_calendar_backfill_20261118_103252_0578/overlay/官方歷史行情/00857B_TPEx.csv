@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00857B,永豐20年美公債,22.51,22.57,22.51,22.55,795000,128,17923490,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-17,TPEX,00857B,永豐20年美公債,22.51,22.56,22.5,22.54,822000,112,18521430,TPEX_afterTrading_otc_type_EW,-0.01

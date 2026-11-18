@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2881B,富邦金乙特,60.4,60.5,60.1,60.4,35511,30,2139675,TWSE_MI_INDEX,0.1
+2026-11-17,TWSE,2881B,富邦金乙特,60.2,60.4,60.2,60.4,15200,17,915704,TWSE_MI_INDEX,0.0

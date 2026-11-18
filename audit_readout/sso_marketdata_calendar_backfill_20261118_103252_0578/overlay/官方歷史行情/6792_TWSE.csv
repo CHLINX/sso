@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6792,詠業,51.9,51.9,49.4,50.3,148411,121,7445857,TWSE_MI_INDEX,1.9
+2026-11-17,TWSE,6792,詠業,50.9,50.9,49.6,49.7,72461,44,3637758,TWSE_MI_INDEX,0.6

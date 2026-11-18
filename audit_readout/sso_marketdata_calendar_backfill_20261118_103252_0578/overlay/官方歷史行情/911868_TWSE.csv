@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,911868,同方友友-DR,1.02,1.03,1.01,1.02,353555,45,359166,TWSE_MI_INDEX,0.01
+2026-11-17,TWSE,911868,同方友友-DR,1.01,1.01,0.98,1.01,299404,63,298125,TWSE_MI_INDEX,0.01

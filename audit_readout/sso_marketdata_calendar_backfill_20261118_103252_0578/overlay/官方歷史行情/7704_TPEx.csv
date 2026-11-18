@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,7704,明遠精密,81.0,83.3,72.4,72.4,1373000,1029,106164300,TPEX_afterTrading_otc_type_EW,-8.0
+2026-11-17,TPEX,7704,明遠精密,69.7,70.8,66.5,66.7,664000,516,45438200,TPEX_afterTrading_otc_type_EW,-5.7

@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00929,復華台灣科技優息,25.35,25.39,24.21,24.25,102086174,47930,2528389764,TWSE_MI_INDEX,1.28
+2026-11-17,TWSE,00929,復華台灣科技優息,23.9,24.4,23.4,23.89,91223111,31847,2177722346,TWSE_MI_INDEX,0.36

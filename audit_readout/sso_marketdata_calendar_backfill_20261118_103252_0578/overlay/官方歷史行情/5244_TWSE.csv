@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,5244,弘凱,33.5,33.95,32.0,32.05,134080,110,4424309,TWSE_MI_INDEX,1.45
+2026-11-17,TWSE,5244,弘凱,32.3,33.0,31.5,31.8,125318,120,4024145,TWSE_MI_INDEX,0.25

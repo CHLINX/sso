@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,4566,時碩工業,74.0,74.0,67.5,67.5,3356652,2914,231696352,TWSE_MI_INDEX,7.4
+2026-11-17,TWSE,4566,時碩工業,64.0,64.6,61.0,61.8,2824406,2516,177143732,TWSE_MI_INDEX,5.7

@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00670L,富邦NASDAQ正2,174.55,174.55,170.65,170.8,1347034,1458,232646480,TWSE_MI_INDEX,7.0
+2026-11-17,TWSE,00670L,富邦NASDAQ正2,164.85,167.2,164.4,165.95,938253,1245,155599782,TWSE_MI_INDEX,4.85

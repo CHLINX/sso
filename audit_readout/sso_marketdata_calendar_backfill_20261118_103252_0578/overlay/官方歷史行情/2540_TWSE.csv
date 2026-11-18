@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2540,愛山林,45.95,48.1,45.95,47.0,978724,852,46489545,TWSE_MI_INDEX,1.1
+2026-11-17,TWSE,2540,愛山林,47.2,48.2,46.2,47.5,871431,816,41434526,TWSE_MI_INDEX,0.5

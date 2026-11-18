@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00953B,群益優選非投等債,9.68,9.7,9.67,9.67,22063142,4917,213651839,TWSE_MI_INDEX,0.02
+2026-11-17,TWSE,00953B,群益優選非投等債,9.66,9.68,9.64,9.66,24638300,5251,238001166,TWSE_MI_INDEX,0.01

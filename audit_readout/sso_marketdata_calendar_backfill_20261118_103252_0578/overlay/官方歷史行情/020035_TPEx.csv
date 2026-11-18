@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,020035,元大上櫃ESG高息N,10.47,10.47,10.14,10.14,3000,3,30800,TPEX_afterTrading_otc_type_EW,-0.65
+2026-11-17,TPEX,020035,元大上櫃ESG高息N,9.49,9.49,9.49,9.49,1000,1,9490,TPEX_afterTrading_otc_type_EW,-0.65

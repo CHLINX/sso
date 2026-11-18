@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6230,尼得科超眾,87.9,87.9,83.0,85.7,51603,79,4371986,TWSE_MI_INDEX,2.3
+2026-11-17,TWSE,6230,尼得科超眾,80.4,84.5,80.4,81.8,60114,82,4976909,TWSE_MI_INDEX,3.9

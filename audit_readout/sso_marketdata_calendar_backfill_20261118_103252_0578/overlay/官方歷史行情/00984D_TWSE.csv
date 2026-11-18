@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00984D,主動聯博全球非投,9.78,9.78,9.73,9.74,11363199,984,110782321,TWSE_MI_INDEX,0.02
+2026-11-17,TWSE,00984D,主動聯博全球非投,9.74,9.74,9.7,9.71,9698117,1142,94182591,TWSE_MI_INDEX,0.03

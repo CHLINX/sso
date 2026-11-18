@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1783,和康生,35.65,35.65,34.9,35.0,42187,59,1485430,TWSE_MI_INDEX,1.0
+2026-11-17,TWSE,1783,和康生,34.95,35.5,34.6,35.25,55901,82,1957388,TWSE_MI_INDEX,0.25

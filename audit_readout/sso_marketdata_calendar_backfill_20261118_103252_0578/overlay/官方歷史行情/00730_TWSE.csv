@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00730,富邦臺灣優質高息,27.02,27.28,26.09,26.1,178790,530,4760760,TWSE_MI_INDEX,0.92
+2026-11-17,TWSE,00730,富邦臺灣優質高息,26.0,26.12,25.35,25.62,153612,325,3975315,TWSE_MI_INDEX,0.0

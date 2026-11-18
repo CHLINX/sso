@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,4971,IET-KY,393.0,398.0,364.5,364.5,637000,570,240329000,TPEX_afterTrading_otc_type_EW,-40.0
+2026-11-17,TPEX,4971,IET-KY,332.5,353.5,329.0,332.0,1067000,935,360125000,TPEX_afterTrading_otc_type_EW,-32.5

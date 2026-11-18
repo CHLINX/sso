@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00689R,國泰20年美債反1,23.84,23.84,23.84,23.84,100000,2,2384000,TWSE_MI_INDEX,0.1
+2026-11-17,TWSE,00689R,國泰20年美債反1,23.89,23.89,23.84,23.84,102000,4,2433730,TWSE_MI_INDEX,0.0

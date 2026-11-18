@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,009805,台新美國電力基建,14.3,14.39,14.16,14.16,3860310,1450,54927977,TWSE_MI_INDEX,0.27
+2026-11-17,TWSE,009805,台新美國電力基建,14.04,14.1,13.98,14.05,4857811,1431,68296205,TWSE_MI_INDEX,0.11

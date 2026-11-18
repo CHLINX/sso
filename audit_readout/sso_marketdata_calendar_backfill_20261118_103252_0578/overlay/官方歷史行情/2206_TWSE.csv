@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2206,三陽工業,62.1,62.8,61.2,61.8,468106,416,29027523,TWSE_MI_INDEX,0.0
+2026-11-17,TWSE,2206,三陽工業,61.3,62.0,60.6,61.8,756572,668,46623936,TWSE_MI_INDEX,0.0

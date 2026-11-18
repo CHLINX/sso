@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,5538,東明-KY,34.0,34.5,33.9,34.45,44140,40,1509065,TWSE_MI_INDEX,0.45
+2026-11-17,TWSE,5538,東明-KY,34.3,34.8,34.3,34.4,65800,64,2275530,TWSE_MI_INDEX,0.05

@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,8162,微矽電子-創,52.5,52.5,49.4,49.4,173016,151,8758170,TWSE_MI_INDEX,3.9
+2026-11-17,TWSE,8162,微矽電子-創,48.8,50.8,48.0,48.25,231929,182,11450927,TWSE_MI_INDEX,1.15

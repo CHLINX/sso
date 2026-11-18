@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00909,國泰數位支付服務,35.08,35.27,34.52,34.68,3667583,2026,127967655,TWSE_MI_INDEX,1.62
+2026-11-17,TWSE,00909,國泰數位支付服務,33.83,34.23,33.55,33.95,1483814,948,50419640,TWSE_MI_INDEX,0.73

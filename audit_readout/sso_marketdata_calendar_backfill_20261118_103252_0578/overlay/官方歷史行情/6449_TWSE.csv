@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6449,鈺邦,155.0,155.0,139.5,139.5,1291620,1657,183453499,TWSE_MI_INDEX,15.5
+2026-11-17,TWSE,6449,鈺邦,135.0,138.5,129.5,132.0,1243634,1377,165027228,TWSE_MI_INDEX,7.5

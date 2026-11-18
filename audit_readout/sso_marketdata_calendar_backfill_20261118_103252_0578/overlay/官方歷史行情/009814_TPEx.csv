@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,009814,富邦標普500,11.59,11.59,11.5,11.52,1191000,227,13726090,TPEX_afterTrading_otc_type_EW,-0.07
+2026-11-17,TPEX,009814,富邦標普500,11.37,11.37,11.33,11.35,433000,141,4914410,TPEX_afterTrading_otc_type_EW,-0.17

@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,020033,統一恒生科期N,3.01,3.02,3.01,3.02,379000,5,1141700,TPEX_afterTrading_otc_type_EW,-0.01
+2026-11-17,TPEX,020033,統一恒生科期N,2.97,2.98,2.97,2.97,25000,4,74390,TPEX_afterTrading_otc_type_EW,-0.05

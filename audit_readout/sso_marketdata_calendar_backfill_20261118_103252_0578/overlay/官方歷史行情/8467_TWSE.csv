@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,8467,波力-KY,88.0,88.0,87.9,87.9,2241,7,197086,TWSE_MI_INDEX,0.6
+2026-11-17,TWSE,8467,波力-KY,89.9,89.9,86.8,86.8,23397,31,2065788,TWSE_MI_INDEX,1.1

@@ -1,0 +1,3 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6957,裕慶-KY,430.5,430.5,403.0,403.0,439424,573,181055385,TWSE_MI_INDEX,28.0
+2026-11-17,TWSE,6957,裕慶-KY,407.0,407.0,389.0,389.0,407354,503,161317531,TWSE_MI_INDEX,14.0
