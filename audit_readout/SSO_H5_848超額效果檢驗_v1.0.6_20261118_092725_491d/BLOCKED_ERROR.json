@@ -1,0 +1,10 @@
+{
+  "type": "RuntimeError",
+  "error": "固定 SHA 模型母體 CSV 列數不符：6880，預期 1720",
+  "logs": [
+    "[2026-11-18 09:27:25 CST] [SELF TEST PASS] 8 tests",
+    "[2026-11-18 09:27:27 CST] [SNAPSHOT PARTIAL STATE PASS] upstream downstream_ready=False is expected: 847/848 price pairs complete; the remaining one is retained for the formal 846-row trade-validity alignment and is not silently counted as ready.",
+    "[2026-11-18 09:27:27 CST] [SNAPSHOT ZIP PASS] manifest_files=2,432; overlays=2,411; run.log_in_manifest=True; source=verified ZIP extraction (no comparison against mutable Drive run.log)"
+  ],
+  "sources_modified": false
+}
