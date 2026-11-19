@@ -1,0 +1,186 @@
+{
+  "tool": "SSO_H5_Gate_Audit",
+  "version": "v2",
+  "created_taipei": "2026-11-19T09:08:29.854771+08:00",
+  "source_zip": "/content/drive/MyDrive/看股最速適/推薦結果/非前瞻參考/SSO_main_v5_15_20261118_192959_1730c0/來源模型ZIP/SSO_v2.50_非前瞻參考_H5_2026-11-18_20261118_193832_200a91_結果.zip",
+  "source_zip_sha256": "263330e961a51fabba7bb399a7bfae4ea38646c48a5c3e7851f9056bd6141111",
+  "source_zip_crc": "PASS",
+  "model_rerun": false,
+  "drive_source_modified": false,
+  "main_branch_modified": false,
+  "source_members": [
+    {
+      "key": "candidate",
+      "file": "最新全市場候選持續評估_v2.50.csv",
+      "member": "最新全市場候選持續評估_v2.50.csv",
+      "rows": 6876,
+      "columns": 35,
+      "sha256": "f2daca1d0e1f7900403bc4b8504cf6b5c125310c3ee65a76007c1555fc247ec1"
+    },
+    {
+      "key": "bucket",
+      "file": "樣本外機率區間門檻診斷_v2.50.csv",
+      "member": "樣本外機率區間門檻診斷_v2.50.csv",
+      "rows": 30800,
+      "columns": 20,
+      "sha256": "19cb5585eb07b5fa362b6a12f2c48876ebe7b0e58cb75ed388f84cf620c81073"
+    },
+    {
+      "key": "cal_summary",
+      "file": "獲利機率校準檢驗總結_v2.50.csv",
+      "member": "獲利機率校準檢驗總結_v2.50.csv",
+      "rows": 40,
+      "columns": 11,
+      "sha256": "376cf36b9c4c26ef5f74507fb97d712368c6f61c6b374c69047bf51bf864a56c"
+    },
+    {
+      "key": "cal_daily",
+      "file": "獲利機率校準逐訊號日_v2.50.csv",
+      "member": "獲利機率校準逐訊號日_v2.50.csv",
+      "rows": 30760,
+      "columns": 11,
+      "sha256": "74e25f5d8609a7948c386b26f31b5385827c28a8a041399831c045a0f6dd06ff"
+    },
+    {
+      "key": "rank_summary",
+      "file": "預測排序能力總結_v2.50.csv",
+      "member": "預測排序能力總結_v2.50.csv",
+      "rows": 8,
+      "columns": 14,
+      "sha256": "e64ed4f89289ed8b2ab86fbe917f217486cec29277214392c4e9c43b53bf3aaf"
+    },
+    {
+      "key": "rank_daily",
+      "file": "預測排序能力逐訊號日診斷_v2.50.csv",
+      "member": "預測排序能力逐訊號日診斷_v2.50.csv",
+      "rows": 6152,
+      "columns": 19,
+      "sha256": "cb152e83e08e157926b576c7696fcd8485d95e852315e088472c8fa66413bf76"
+    }
+  ],
+  "candidate_table": {
+    "rows_all_horizons": 6876,
+    "holding_period_column": "持有期間H",
+    "rows_h5_all_dates": 1719,
+    "signal_date_column": "訊號日期",
+    "latest_h5_signal_date": "2026-11-18",
+    "latest_h5_rows": 1719,
+    "expected_reference_rows": 1719,
+    "expected_rows_check": "PASS",
+    "gate_counts": [
+      {
+        "gate": "預測淨報酬 > 0",
+        "pass_count": 1712,
+        "fail_count": 7,
+        "pass_rate": 0.9959278650378127
+      },
+      {
+        "gate": "校準獲利機率 >= 50%",
+        "pass_count": 0,
+        "fail_count": 1719,
+        "pass_rate": 0.0
+      },
+      {
+        "gate": "分類模型已收斂",
+        "pass_count": 1719,
+        "fail_count": 0,
+        "pass_rate": 1.0
+      },
+      {
+        "gate": "機率校準已收斂",
+        "pass_count": 1719,
+        "fail_count": 0,
+        "pass_rate": 1.0
+      },
+      {
+        "gate": "校準斜率 > 0",
+        "pass_count": 1719,
+        "fail_count": 0,
+        "pass_rate": 1.0
+      },
+      {
+        "gate": "校準方向受支持",
+        "pass_count": 1719,
+        "fail_count": 0,
+        "pass_rate": 1.0
+      },
+      {
+        "gate": "歷史同機率區間通過門檻",
+        "pass_count": 0,
+        "fail_count": 1719,
+        "pass_rate": 0.0
+      },
+      {
+        "gate": "原始欄位_符合獲利候選條件",
+        "pass_count": 0,
+        "fail_count": 1719,
+        "pass_rate": 0.0
+      },
+      {
+        "gate": "原始欄位_優先獲利候選",
+        "pass_count": 0,
+        "fail_count": 1719,
+        "pass_rate": 0.0
+      }
+    ],
+    "all_rule_intersection_count": 0,
+    "candidate_status_counts": {
+      "持續評估：模型估計淨獲利機率未達50%": 1712,
+      "持續評估：預測淨報酬非正": 7
+    },
+    "historical_bin_failure_reason_counts": {
+      "成交加權實際勝率未達52%；逐訊號日平均勝率未達52%；成交加權平均淨報酬非正；逐訊號日平均淨報酬非正": 1719
+    },
+    "missing_required_rule_columns": []
+  },
+  "other_h5_datasets": {
+    "bucket": {
+      "rows_all": 30800,
+      "rows_h5": 3770,
+      "holding_period_column": "持有期間H",
+      "date_column": "篩選基準訊號日期",
+      "latest_h5_date": "2026-11-18",
+      "latest_h5_date_rows": 10
+    },
+    "cal_summary": {
+      "rows_all": 40,
+      "rows_h5": 10,
+      "holding_period_column": "持有期間H",
+      "date_column": null,
+      "latest_h5_date": null,
+      "latest_h5_date_rows": null
+    },
+    "cal_daily": {
+      "rows_all": 30760,
+      "rows_h5": 3760,
+      "holding_period_column": "持有期間H",
+      "date_column": "訊號日期",
+      "latest_h5_date": "2026-11-05",
+      "latest_h5_date_rows": 10
+    },
+    "rank_summary": {
+      "rows_all": 8,
+      "rows_h5": 2,
+      "holding_period_column": "持有期間H",
+      "date_column": null,
+      "latest_h5_date": null,
+      "latest_h5_date_rows": null
+    },
+    "rank_daily": {
+      "rows_all": 6152,
+      "rows_h5": 752,
+      "holding_period_column": "持有期間H",
+      "date_column": "訊號日期",
+      "latest_h5_date": "2026-11-05",
+      "latest_h5_date_rows": 2
+    }
+  },
+  "bucket_latest_date": "2026-11-18",
+  "interpretation_notes": [
+    "先依「持有期間H」篩 H5，再從 H5 子集找最新真正日期欄。",
+    "不把「有效訊號日數」或「全市場日序」誤當日期。",
+    "各關卡獨立通過筆數不代表依序淘汰數；所有條件交集另行計算。",
+    "候選狀態及未通過原因是原始輸出欄位，不能單獨視為完整因果順序。",
+    "不改變 v2.50 的模型或候選門檻。"
+  ]
+}
