@@ -1,0 +1,123 @@
+{
+  "exists": true,
+  "path": "/content/drive/MyDrive/看股最速適/推薦結果/非前瞻參考/SSO_main_v5_15_20261118_192959_1730c0/來源模型ZIP/SSO_v2.50_非前瞻參考_H5_2026-11-18_20261118_193832_200a91_結果.zip",
+  "bytes": 24101670,
+  "sha256": "263330e961a51fabba7bb399a7bfae4ea38646c48a5c3e7851f9056bd6141111",
+  "members": 22,
+  "python_notebook_members": 0,
+  "metadata_members": 3,
+  "crc": "PASS",
+  "member_list": [
+    {
+      "member_path": "10檔分級前瞻績效比較_v2.50.csv",
+      "bytes": 13734,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "10檔組合淨值路徑_v2.50.csv",
+      "bytes": 3768753,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "10檔組合逐籃子逐股成交明細_v2.50.csv",
+      "bytes": 110049136,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "SSO_v2.50_核心分析修正說明.txt",
+      "bytes": 2106,
+      "suffix": ".txt"
+    },
+    {
+      "member_path": "SSO_v2.50_樣本外校準門檻與公司名稱報告.txt",
+      "bytes": 127767,
+      "suffix": ".txt"
+    },
+    {
+      "member_path": "上漲潛力分級實際績效檢驗_v2.50.csv",
+      "bytes": 17066,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "來源品質與執行設定_v2.50.json",
+      "bytes": 4235,
+      "suffix": ".json"
+    },
+    {
+      "member_path": "分類機率能力總結_v2.50.csv",
+      "bytes": 1234,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "分類機率能力逐訊號日_v2.50.csv",
+      "bytes": 878459,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "最新10檔獲利可能性排行_v2.50.csv",
+      "bytes": 25139,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "最新全市場候選持續評估_v2.50.csv",
+      "bytes": 3876254,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "最新達標獲利候選最多10檔_v2.50.csv",
+      "bytes": 1858,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "樣本外機率區間門檻診斷_v2.50.csv",
+      "bytes": 10055308,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "歷史樣本外每日10檔候選_v2.50.csv",
+      "bytes": 19820607,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "獲利機率校準檢驗總結_v2.50.csv",
+      "bytes": 6086,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "獲利機率校準逐訊號日_v2.50.csv",
+      "bytes": 2360474,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "選股範圍敏感度淨值路徑_v2.50.csv",
+      "bytes": 4490196,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "選股範圍敏感度總結_v2.50.csv",
+      "bytes": 17233,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "選股範圍敏感度逐訊號日_v2.50.csv",
+      "bytes": 9849456,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "預測分位組樣本外實際績效_v2.50.csv",
+      "bytes": 21783,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "預測排序能力總結_v2.50.csv",
+      "bytes": 2572,
+      "suffix": ".csv"
+    },
+    {
+      "member_path": "預測排序能力逐訊號日診斷_v2.50.csv",
+      "bytes": 2046804,
+      "suffix": ".csv"
+    }
+  ],
+  "interpretation": "結果 ZIP 不含 Python／Notebook，不能單獨證明模型原始程式。"
+}

@@ -1,0 +1,45 @@
+{
+  "output_directory": "/content/SSO_H5_Source_Code_Trace_Audit_v14_20261120_115103",
+  "files": [
+    {
+      "name": "00_v14診斷摘要.json",
+      "bytes": 24276,
+      "sha256": "da16b8e1950a63e379f6ebaadafd45308378805e9d0481971a96dbfa5684b6f1"
+    },
+    {
+      "name": "01_v2.50執行目錄完整檔案清單.csv",
+      "bytes": 61,
+      "sha256": "987d2ac2031054ce99d78d030a61502350b5c5800fac8007b517942e23e0a15b"
+    },
+    {
+      "name": "02_v2.50結果ZIP成員檢查.json",
+      "bytes": 3306,
+      "sha256": "bf55642c77c7d812fbf8f3c2184caab778dc533a538187d232ed63fd5fc665c1"
+    },
+    {
+      "name": "03_全部來源候選排序.csv",
+      "bytes": 29370,
+      "sha256": "f3f5c3ce2fb1c4df086e45684cb6d762a775dda7ccae849b24dd0e5f2b7c9a48"
+    },
+    {
+      "name": "04_所有來源關鍵程式碼與文字命中.csv",
+      "bytes": 598579,
+      "sha256": "cdf45dfecb9b538f0fc56005261a3bbc9e5699871bcbbaf741080df9070a4edf"
+    },
+    {
+      "name": "05_重要ZIP全部成員清單.csv",
+      "bytes": 10300487,
+      "sha256": "e05f1982b90e2f64189a907b0efc8a0ac7173a38126c27499d3c78f8924d1879"
+    },
+    {
+      "name": "06_ZIP內CSV欄位標題.csv",
+      "bytes": 15767399,
+      "sha256": "a6a148b85a0256d16652f554819b2a76d61bea1622054ef04a5e6458793772c8"
+    },
+    {
+      "name": "07_來源程式及執行封裝上下文.txt",
+      "bytes": 310956,
+      "sha256": "5ea27f8608ab0cb372b0e13cb6175c33be3b9b1f19504eb2aa47401ae402d027"
+    }
+  ]
+}
