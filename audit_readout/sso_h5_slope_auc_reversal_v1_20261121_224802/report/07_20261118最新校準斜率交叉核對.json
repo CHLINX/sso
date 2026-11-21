@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-18",
+  "horizon": 5,
+  "rows": 1719,
+  "unique_slope_count": 1,
+  "slope_values": [
+    0.55783701888
+  ],
+  "unique_intercept_count": 1,
+  "intercept_values": [
+    -0.568614507392
+  ],
+  "known_previous_slope": 0.5578370188798897,
+  "slope_matches_previous_audit": true
+}
