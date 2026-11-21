@@ -1,0 +1,8 @@
+RUN_ID=20261121_193340
+MAIN_SHA_EXPECTED=aaabc2433fb5df2bb68af06461178305d6bd30d1
+v2.50 H5 date=2026-10-22
+v2.50 H5 rows=1708
+v2.51 H5 date=2026-10-22
+v2.51 H5 rows=1708
+v2.50 gate={'date': '2026-10-22', 'rows': 10, 'passed': 0}
+v2.51 gate={'date': '2026-10-22', 'rows': 10, 'passed': 0}
