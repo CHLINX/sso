@@ -1,0 +1,15 @@
+{
+  "signal_date": "2026-11-18",
+  "horizon": 5,
+  "rows": 1719,
+  "unique_intercepts": 1,
+  "unique_slopes": 1,
+  "intercept": -0.5686145073922118,
+  "slope": 0.5578370188798897,
+  "calibration_sample_count_median": 22448.0,
+  "calibration_period_actual_win_rate_median": 0.3032341411261582,
+  "raw_probability_max": 0.7012618944099066,
+  "calibrated_probability_max": 0.4768654560170378,
+  "raw_probability_required_for_calibrated_50pct": 0.7348401495507848,
+  "raw_probability_shortfall": 0.0335782551408782
+}
