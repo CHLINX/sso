@@ -1,0 +1,869 @@
+﻿relative_path,section,line,hit_terms,text
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__HEAD.ipynb,CELL_0,60,platt,"    r""LogisticRegression|HistGradientBoosting|RandomForest|GradientBoost|XGBClassifier|"""
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__HEAD.ipynb,CELL_0,61,platt,"    r""LGBM|CatBoost|CalibratedClassifier|Platt|predict_proba|\.fit\s*\(|\.predict\s*\(|"""
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,12,maturity,- 每個前瞻 horizon 依每檔證券的實際 label_end_date purge 訓練列，確保訓練標籤在測試起日之前已結束。
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,68,756,WARMUP_DATES = 756
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,93,maturity,"def sha256_file(path: Path, label: str, block: int = 8 * 1024 * 1024) -> str:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,106,maturity,"                log(f""SHA256 {label} {bar(done / max(1, size) * 100)} | {done/1024**2:,.1f}/{size/1024**2:,.1f} MB | {elapsed(time.monotonic()-started)}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,178,maturity,    # Ensure OHLC / feature / labels numeric even if source contains special tokens.
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,188,maturity,"                            ""feature_formula_pass"": 0, ""label_formula_pass"": 0}"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,215,maturity,"            info[""label_formula_pass""] = int((d[""公式判讀""].astype(str) == ""PASS"").sum())"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,366,maturity,"    for label, h in FORWARD_HORIZONS.items():"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,367,maturity,        miss = sat & ~np.isfinite(df[label].to_numpy(dtype=np.float64))
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,374,maturity,"            reports.append({""欄位"": label, ""星期六缺值"": nmiss, ""未來觀測不足"": int(insufficient.sum()),"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,378,maturity,"            reports.append({""欄位"": label, ""星期六缺值"": 0, ""未來觀測不足"": 0,"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,384,maturity,"def write_gzip_csv_progress(df: pd.DataFrame, path: Path, label: str, chunk: int = 100_000) -> None:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,390,maturity,"            log(f""{label} {bar(end/max(1,len(df))*100)} | 已寫 {end:,}/{len(df):,} 列 | {elapsed(time.monotonic()-started)}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,428,maturity,"    log(""建立各證券各 horizon 的 label_end_date，準備日期分組 Purged Walk-Forward……"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,453,maturity,"                    ""purging"": ""train date < test_start AND label_end_date < test_start"","
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,454,maturity,"                    ""embargo"": ""Walk-forward is past-only; no post-test rows enter training; explicit label-end purging applied.""}"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,456,maturity,"    for hi, (label_col, h) in enumerate(FORWARD_HORIZONS.items(), 1):"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,457,maturity,"        yret = df[label_col].to_numpy(dtype=np.float32, copy=False)"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,505,minimum_samples,"                min_samples_leaf=100, l2_regularization=1.0,"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,518,maturity,"            ll = float(log_loss(y_test, probs, labels=[0, 1]))"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,637,maturity,"    log(f""v4.69既有公式證據：特徵 {evidence['feature_formula_pass']}/5；前瞻 {evidence['label_formula_pass']}/4"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,657,maturity,    # Recheck all four labels against sequence formula and create precise per-row label end dates.
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,658,maturity,"    log(""重核前瞻標籤公式及每筆 label_end_date，供 purging 使用……"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,660,maturity,    label_check_rows = []
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,673,maturity,"        label_end = keys[""日期""].shift(-h).to_numpy(dtype=""datetime64[D]"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,674,maturity,        end_date_cols[h] = label_end
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,675,maturity,"        label_check_rows.append({""前瞻根數"": h, ""可比較列數"": int(mask.sum()), ""符合比例"": match,"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,678,maturity,    label_check_df = pd.DataFrame(label_check_rows)
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,679,maturity,"    label_check_df.to_csv(out / ""05_前瞻標籤公式及label_end_date核對.csv"", index=False, encoding=""utf-8-sig"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,680,maturity,"    label_formula_pass = int((label_check_df[""公式重核""] == ""PASS"").sum())"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,684,maturity,"    formula_label_pass = min(evidence[""label_formula_pass""], label_formula_pass)"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,687,maturity,    base_formula_ok = formula_feature_pass == 5 and formula_label_pass == 4
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,696,maturity,"        {""品質項目"": ""四項前瞻標籤公式"", ""結果"": f""{formula_label_pass}/4"", ""判讀"": ""PASS"" if formula_label_pass==4 else ""REVIEW""},"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,716,maturity,"        model_table[f""label_end_{h}""] = end_date_cols[h]"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,773,maturity,"        f""既有驗證公式：特徵 {formula_feature_pass}/5；前瞻標籤 {label_formula_pass}/4"","
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,778,maturity,"        ""Purging：訓練列日期必須早於測試起日，且該列自身的 label_end_date 也必須早於測試起日。所有證券依全市場日期分組，避免同日跨 fold。"","
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,794,maturity,"        ""label_formula_pass"": label_formula_pass, ""dataset_gate"": dataset_gate,"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVzNmeHErdStNRGx6ZDlabFprZzFsc1dhQ1pRPQ.ipynb,CELL_0,809,maturity,"        ""05_前瞻標籤公式及label_end_date核對.csv"", ""06_模型特徵範圍與覆蓋率.csv"","
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,52,maturity,"def progress(label: str, current: int, total: int, started: float, detail: str = """") -> None:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,60,maturity,"    log(f""{label} [{bar}] {ratio*100:5.1f}% | {current:,}/{total:,} | {rate:,.0f} 單位/秒 | {fmt_seconds(elapsed)}{suffix}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,104,maturity,"def read_csv_member(z: zipfile.ZipFile, member: str, label: str) -> pd.DataFrame:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,109,maturity,"    log(f""讀取 {label}：{info.file_size/1024**2:,.2f} MB（ZIP 內原始檔，不解壓落地）；chunk={CHUNK_ROWS:,}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,117,maturity,"                f""{label}讀取進度"","
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,124,maturity,"    log(f""{label}完成：{len(df):,} 列、{len(df.columns)} 欄；耗時 {fmt_seconds(time.monotonic()-started)}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,135,maturity,"def need_columns(df: pd.DataFrame, cols: List[str], label: str) -> None:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,138,maturity,"        raise ValueError(f""{label} 缺少必要欄位：{missing}；實際欄位={list(df.columns)}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,184,maturity,"        for scenario, label in [(OLD_SCENARIO, ""原始""), (NEW_SCENARIO, ""修正"")]:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,186,maturity,"            record[f""{label}測試列總數""] = int(as_num(g[""配對測試列數""]).sum())"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,187,maturity,"            record[f""{label}每日數總計""] = int(as_num(g[""每日數""]).sum())"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,189,maturity,"                record[f""{label}{metric}""] = weighted_mean(g[metric], g[""配對測試列數""])"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,191,maturity,"                record[f""{label}{metric}""] = weighted_mean(g[metric], g[""每日數""])"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,240,maturity,"def build_label_audit(audit: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,352,maturity,"def make_summary_text(zip_path: Path, fold_summary: pd.DataFrame, label_summary: pd.DataFrame,"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,374,maturity,"    for _, r in label_summary.iterrows():"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,428,maturity,"            ""labels"": find_member(z, ""04_共同測試樣本及標籤變動核對.csv""),"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,437,maturity,"        labels = read_csv_member(z, names[""labels""], ""04 標籤變動核對"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,445,maturity,"    label_detail, label_summary = build_label_audit(labels)"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,458,maturity,"    log(f""交叉核算完成：Horizon={len(fold_summary)}；配對Fold={len(fold_pairs)}；標籤稽核列={len(label_detail)}；逐日配對={len(daily_pairs):,}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,465,maturity,"    label_detail.to_csv(out_dir / ""03_逐Fold標籤變動.csv"", index=False, encoding=""utf-8-sig"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,466,maturity,"    label_summary.to_csv(out_dir / ""04_Horizon標籤變動總覽.csv"", index=False, encoding=""utf-8-sig"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,472,maturity,"    report = make_summary_text(zip_path, fold_summary, label_summary, daily_summary,"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb,CELL_0,485,maturity,"        ""label_audit_rows"": len(label_detail),"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,9,maturity,3. 量化四種前瞻報酬標籤值及 label_end_date 的變化。
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,71,maturity,"def progress(label: str, done: int, total: int, started: float, extra: str = """") -> None:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,78,maturity,"    log(f""{label} [{'#'*n}{'-'*(24-n)}] {pct:5.1f}% | {done:,}/{total:,} | {speed:,.0f} 單位/秒 | {fmt(elapsed)} | {extra}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,81,maturity,"def sha256_file(path: Path, label: str, block: int = 8 * 1024 * 1024) -> str:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,94,maturity,"                progress(f""SHA256 {label}"", done, size, started, f""{done/1024**2:.1f}/{size/1024**2:.1f} MB"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,149,maturity,"def load_csv_gz(path: Path, columns: List[str], label: str, corrected: bool) -> pd.DataFrame:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,153,maturity,"        raise ValueError(f""{label} 缺必要欄位：{missing}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,160,maturity,"    log(f""載入 {label}：{len(columns)} 欄；{path.stat().st_size/1024**2:,.1f} MB；chunk={CHUNK:,}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,171,maturity,"            raise ValueError(f""{label} 第 {i} 個 chunk 有無效日期：{int(chunk['日期'].isna().sum()):,} 列"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,172,maturity,"        for c in [f""label_end_{h}"" for h in HORIZONS.values() if c_in(columns, f""label_end_{h}"")]:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,180,maturity,"            log(f""{label}讀取進度 [{'#'*n}{'-'*(24-n)}] {pct:5.1f}% | chunk {i} | 已讀 {total:,} 列 | {total/elapsed:,.0f} 列/秒 | {fmt(elapsed)}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,189,maturity,"    log(f""{label}載入完成：{len(df):,} 列；耗時 {fmt(time.monotonic()-started)}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,197,maturity,def add_old_label_end(df: pd.DataFrame) -> None:
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,198,maturity,"    log(""由 v2.31 原始序列重建四種舊版 label_end_date……"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,202,maturity,"        df[f""label_end_{h}""] = g[""日期""].shift(-h)"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,203,maturity,"        log(f""原始 label_end_{h} 完成"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,204,maturity,"    log(f""原始 label_end_date 重建完成；耗時 {fmt(time.monotonic()-started)}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,287,maturity,"def initialize_label_stats() -> Dict[int, Dict[str, Any]]:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,320,maturity,"    ap = argparse.ArgumentParser(description=""v4.73 特徵漂移、label_end_date 與 Purging 歸因診斷"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,346,maturity,"    if v470_manifest.get(""feature_formula_pass"") != 5 or v470_manifest.get(""label_formula_pass"") != 4:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,372,maturity,"                *[f""label_end_{h}"" for h in HORIZONS.values()], ""樣本來源""]"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,402,maturity,    add_old_label_end(old)
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,416,maturity,"    old_end_i = {h: finite_end_days(old[f""label_end_{h}""]) for h in HORIZONS.values()}"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,417,maturity,"    new_end_i = {h: finite_end_days(new[f""label_end_{h}""]) for h in HORIZONS.values()}"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,472,maturity,    lstats = initialize_label_stats()
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,474,maturity,    bucket_labels = [
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,487,maturity,"               [f""label_end_{h}"" for h in HORIZONS.values()] + [""補行日距離分組代碼""]].merge("
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,489,maturity,"               [f""label_end_{h}"" for h in HORIZONS.values()]],"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,555,maturity,        # Forward target and label-end-date drift.
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,573,maturity,"            oe_date = pd.to_datetime(m[f""label_end_{h}_原始""], errors=""coerce"").to_numpy(dtype=""datetime64[D]"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,574,maturity,"            ne_date = pd.to_datetime(m[f""label_end_{h}_修正""], errors=""coerce"").to_numpy(dtype=""datetime64[D]"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,589,maturity,"            day_rec[f""H{h}_label_end日期改變列數""] = int(changed_end.sum())"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,596,maturity,"            old_end_col = f""label_end_{h}_原始"""
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,597,maturity,"            new_end_col = f""label_end_{h}_修正"""
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,641,maturity,"        for b, label in enumerate(bucket_labels):"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,644,maturity,"                ""特徵"": feat, ""距離分組"": label, ""共同樣本列數"": st[""rows""], ""兩版皆非空列數"": st[""both_finite""],"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,652,maturity,"    label_rows: List[Dict[str, Any]] = []"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,657,maturity,        label_rows.append({
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,665,maturity,"            ""label_end兩版皆有效列數"": st[""end_both""], ""label_end日期改變列數"": st[""end_changed""],"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,666,maturity,"            ""label_end日期改變率_pct"": st[""end_changed""] / max(1, st[""end_both""]) * 100,"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,667,maturity,"            ""label_end修正較早列數"": st[""end_earlier""], ""label_end修正較晚列數"": st[""end_later""],"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,668,maturity,"            ""label_end平均絕對位移_日"": st[""end_abs_shift_sum""] / max(1, st[""end_changed""]),"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,669,maturity,"            ""label_end絕對位移P50_日"": safe_q(abs_end, .50), ""label_end絕對位移P90_日"": safe_q(abs_end, .90),"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,670,maturity,"            ""label_end最大絕對位移_日"": st[""end_abs_shift_max""]"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,672,maturity,    label_df = pd.DataFrame(label_rows)
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,760,maturity,"        ""03_前瞻標籤值與label_end日期變動.csv"": label_df,"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,795,maturity,"    lines += ["""", ""二、前瞻標籤值與 label_end_date""]"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,796,maturity,"    for _, r in label_df.iterrows():"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,800,maturity,"            f""label_end 改變 {int(r['label_end日期改變列數']):,}/"""
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,801,maturity,"            f""{int(r['label_end兩版皆有效列數']):,} ({r['label_end日期改變率_pct']:.4f}%)；"""
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,802,maturity,"            f""平均絕對位移={r['label_end平均絕對位移_日']:.3f}日；P90={r['label_end絕對位移P90_日']:.1f}日"""
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,823,maturity,"        ""3. label_end_date 變動可能改變 Purging 訓練資格，即使前瞻報酬標籤值本身未改變。"","
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KRC9LcjVlWUpDTS9waGNKN1JDNFZZVkoyMlowPQ.ipynb,CELL_0,842,maturity,"        ""distance_buckets"": bucket_labels,"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,79,maturity,"def progress(label: str, done: int, total: int, started: float, extra: str = """") -> None:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,84,maturity,"    log(f""{label} {bar(pct)} | {done:,}/{total:,} | {done/sec:,.0f} 單位/秒 | {fmt(sec)} | {extra}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,87,maturity,"def sha256_file(path: Path, label: str, block: int = 8 * 1024 * 1024) -> str:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,100,maturity,"                progress(f""SHA256 {label}"", done, size, started,"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,151,maturity,"def load_csv_gz(path: Path, columns: List[str], label: str, expected: int, corrected: bool) -> pd.DataFrame:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,156,maturity,"        raise ValueError(f""{label} 缺必要欄位：{missing}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,162,maturity,"    log(f""載入 {label}：{len(columns)} 欄；{path.stat().st_size/1024**2:,.1f} MB；chunk={CHUNK:,}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,171,maturity,"            raise ValueError(f""{label} chunk {i} 有無效日期：{int(chunk['日期'].isna().sum()):,} 列"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,174,maturity,"                c = f""label_end_{h}"""
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,181,maturity,"            log(f""{label}讀取進度 {bar(pct)} | chunk {i} | 已讀 {total:,} 列 | {total/elapsed:,.0f} 列/秒 | {fmt(elapsed)}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,183,maturity,"        raise ValueError(f""{label}列數 {total:,} != 預期 {expected:,}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,192,maturity,"    log(f""{label}載入完成：{len(df):,} 列；耗時 {fmt(time.monotonic()-started)}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,290,maturity,"        ""LogLoss"": float(log_loss(y, prob, labels=[0, 1])),"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,351,maturity,"    if manifest.get(""feature_formula_pass"") != 5 or manifest.get(""label_formula_pass"") != 4:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,371,maturity,"                *[f""label_end_{h}"" for h in HORIZONS.values()], ""樣本來源""]"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,395,maturity,    # Original label endpoints are reconstructed exactly as v4.74 for the paired-test mask.
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,396,maturity,"    log(""重建原始 v2.31 四種 label_end_date……"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,400,maturity,"        old[f""label_end_{h}""] = grp[""日期""].shift(-h)"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,401,maturity,"        log(f""原始 label_end_{h} 完成"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,402,maturity,"    log(f""原始 label_end 重建完成：{fmt(time.monotonic()-t0)}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,419,maturity,"    for label, h in HORIZONS.items():"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,420,maturity,"        old_y[h] = old[label].to_numpy(dtype=np.float32, copy=True)"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,421,maturity,"        new_y[h] = new[label].to_numpy(dtype=np.float32, copy=True)"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,422,maturity,"        old_end[h] = old[f""label_end_{h}""].to_numpy(dtype=""datetime64[ns]"").astype(""datetime64[D]"").astype(""int32"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,423,maturity,"        new_end[h] = new[f""label_end_{h}""].to_numpy(dtype=""datetime64[ns]"").astype(""datetime64[D]"").astype(""int32"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,511,minimum_samples,"                min_samples_leaf=100, l2_regularization=1.0,"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,577,daily_win,"            full_daily_win = float(full_daily[""Top10%正報酬率_pct""].mean())"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb,CELL_0,595,daily_win,"                ""完整修正OOSTop10日均正報酬率_pct"": full_daily_win,"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVnJYVm1pVVpQbWdDUmdRL1dreDQ4c1lHTkFnPQ.ipynb,CELL_0,432,756;platt,"        ""- 回看756個市場日；最近60個市場日完成樣本做Platt logistic校準；每20個市場日更新模型。"","
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMTdzVERQOFBzbDR5bFJYSjRVZWlxaEExVWc4PQ.ipynb,CELL_0,387,maturity,"        for label, scale in variants:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMTdzVERQOFBzbDR5bFJYSjRVZWlxaEExVWc4PQ.ipynb,CELL_0,564,maturity,"    for key, label in [(""v231"", ""v2.31原始研究資料（價格計算主表）""), (""v4701"", ""v4.70.1補行日修正研究資料（五項特徵核對表）""), (""v477_zip"", ""v4.77追溯報告ZIP""), (""v464_zip"", ""v4.64星期六補行情增補ZIP"")]:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMTdzVERQOFBzbDR5bFJYSjRVZWlxaEExVWc4PQ.ipynb,CELL_0,566,maturity,"        rows.append({""來源"": label, ""找到"": ""是"" if p else ""否"", ""路徑"": str(p) if p else """","
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTHE1MFYzNjV5YWtTMlVJK1hETUZtYzdNWDJZPQ.ipynb,CELL_0,387,maturity,"        for label, scale in variants:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTHE1MFYzNjV5YWtTMlVJK1hETUZtYzdNWDJZPQ.ipynb,CELL_0,564,maturity,"    for key, label in [(""v231"", ""v2.31原始研究資料（價格計算主表）""), (""v4701"", ""v4.70.1補行日修正研究資料（五項特徵核對表）""), (""v477_zip"", ""v4.77追溯報告ZIP""), (""v464_zip"", ""v4.64星期六補行情增補ZIP"")]:"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTHE1MFYzNjV5YWtTMlVJK1hETUZtYzdNWDJZPQ.ipynb,CELL_0,566,maturity,"        rows.append({""來源"": label, ""找到"": ""是"" if p else ""否"", ""路徑"": str(p) if p else """","
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KQlpyeG1MVGIxU2xHVkVGdWxNb1lOSzBJTmQ4PQ.ipynb,CELL_0,114,net_return,"    (""v2.56"", ""SSO_v2.56_實際淨報酬與分層核算結果_20261029_055725.zip"", 17713, ""cb2dc45c21ac70962023dbad70a8c7c0cf32ab940e989478fb4ec8e45e2c1bb0""),"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KQlpyeG1MVGIxU2xHVkVGdWxNb1lOSzBJTmQ4PQ.ipynb,CELL_0,669,maturity,"        for label, count in status_counts.items():"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KQlpyeG1MVGIxU2xHVkVGdWxNb1lOSzBJTmQ4PQ.ipynb,CELL_0,670,maturity,"            f.write(f""- {label}：{count} 項。\n"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,237,maturity,    samples_by_label = Counter()
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,247,maturity,"            label = norm_key(row.get(""特徵欄位""))"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,248,maturity,"            if label not in (""收盤相對MA20"", ""收盤相對MA60""):"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,250,maturity,"            st = ma_stats.setdefault(label, {"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,285,maturity,            if samples_by_label[label] < 20:
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,288,maturity,                samples_by_label[label] += 1
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,349,window,"    idx = norm_key(row.get(""訊號全市場日序""))"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,412,maturity,"        label = ""v2.50"" if ""SSO_v2.50_"" in path.name else (""v2.51_individual"" if ""個股獨立評估"" in path.name else ""v2.51_no_volume"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,424,maturity,"                table_data[(label, kind)] = rows"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,425,maturity,"                schema_rows.append({""archive"": path.name, ""version_label"": label, ""table_kind"": kind,"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,638,maturity,"        for label in (""v2.51_no_volume"", ""v2.51_individual""):"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,639,maturity,"            v251 = table_data.get((label, kind))"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,642,maturity,"            summary, sample = compare_tables(v250, v251, kind, label)"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,645,maturity,"            log(f""跨版本同鍵比較：{kind}/{label}；共同鍵={summary['common_keys']:,}；相同值={summary['equal_values']:,}；不同值={summary['different_values']:,}"")"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,660,maturity,"        for label, stats in ma_stats.items():"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,661,maturity,            if label in raw_alias:
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,662,maturity,"                raw_counts.append({""field"": label, ""rows"": stats[""rows""],"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,691,maturity,"    for label, st in sorted(ma_stats.items()):"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,693,maturity,"            ""feature_label"": label, ""rows"": st[""rows""], ""original_value_n"": st[""old_n""],"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,713,maturity,"         [""feature_label"", ""rows"", ""original_value_n"", ""recomputed_value_n"", ""difference_value_n"", ""interpretation""], ma_summary_rows),"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb,CELL_0,725,maturity,"         [""archive"", ""version_label"", ""table_kind"", ""member"", ""rows"", ""columns"", ""header""], table_schema_rows),"
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KdEZsWXp0RjlOWS80WEwrTlFybHFhZmkxTElBPQ.ipynb,CELL_0,58,platt,"    r""LogisticRegression|HistGradientBoosting|RandomForest|GradientBoost|XGBClassifier|"""
+看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KdEZsWXp0RjlOWS80WEwrTlFybHFhZmkxTElBPQ.ipynb,CELL_0,59,platt,"    r""LGBM|CatBoost|CalibratedClassifier|Platt|predict_proba|\.fit\s*\(|\.predict\s*\(|"""
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,85,maturity,FORWARD_LABELS = [
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,91,maturity,"LABEL_ENDS = [""label_end_1"", ""label_end_5"", ""label_end_20"", ""label_end_60""]"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,115,net_return,"RETURN_REQUIRED = [""納入報酬"", ""實際淨報酬"", ""進場有效"", ""出場有效"", ""交易狀態""]"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,303,maturity,"def sha256_file(path: Path, label: str, block: int = 8 * 1024 * 1024) -> str:"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,319,maturity,"                log(f""SHA256 {label} {bar(pct)} | {done/1024**2:,.1f}/{size/1024**2:,.1f} MB | {elapsed(time.monotonic()-started)}"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,371,maturity,"    label: str,"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,376,maturity,"    part_dir = work_dir / f""parts_{label}_{mode}"""
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,393,maturity,"    log(f""{label}分塊排序開始：mode={mode}; chunk={chunk_size:,}; 預估列數={expected_rows:,}"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,401,maturity,"            raise ValueError(f""{label}第{ci}區塊有 {int(ds.isna().sum())} 筆日期無法解析"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,406,maturity,"            raise ValueError(f""{label}第{ci}區塊有自然鍵缺值"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,418,maturity,"            log(f""{label}分塊排序 {bar(pct)} | chunk {ci:,} | 已讀 {total:,}/{expected_rows:,}（估計） | {total/max(0.001,time.monotonic()-started):,.0f}列/秒 | {elapsed(time.monotonic()-started)}"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,420,maturity,"        log(f""警告：{label}實際列數 {total:,} 與預期 {expected_rows:,} 不同；後續仍會以實際列數為準並驗證。"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,423,maturity,"    log(f""{label}開始合併 {len(parts)} 個已排序分塊……"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,468,maturity,"                log(f""{label}合併 {bar(pct)} | 已寫 {rows_written:,}/{total:,} | 重複自然鍵 {duplicate_keys:,} | {elapsed(time.monotonic()-merge_started)}"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,469,maturity,"    log(f""{label}合併完成：{rows_written:,}列；自然鍵重複={duplicate_keys:,}；順序單調={monotonic_ok}；耗時 {elapsed(time.monotonic()-merge_started)}"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,477,maturity,"                    feature_idx: Dict[str, int], label_idx: Dict[str, int], metrics: dict,"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,498,maturity,"    label_arrays: Dict[str, np.ndarray] = {}"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,508,maturity,        label_arrays[target] = pred
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,529,maturity,    # Validate forward label formula (v4.60 found label multiplier=0.01 after percentage-form calculation;
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,531,maturity,"    for target, arr in label_arrays.items():"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,532,maturity,        lidx = label_idx[target]
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,533,maturity,"        met = metrics[""label""][target]"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,544,maturity,"                metrics[""label_uncomputable_nonblank""][target] += 1"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,556,maturity,        calc_cols.append(label_arrays[target])
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,579,maturity,    label_idx = {}
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,589,maturity,        label_idx[c] = header.index(col)
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,592,maturity,"        ""label"": {f: {""n"": 0, ""match"": 0, ""sum_abs"": 0.0, ""max_abs"": 0.0} for f in FORWARD_HORIZONS},"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,594,maturity,"        ""label_uncomputable_nonblank"": {f: 0 for f in FORWARD_HORIZONS},"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,597,maturity,"    calc_cols = [f""__v469_calc_feature_{i+1}"" for i in range(len(VERIFIED_FEATURES))] + [f""__v469_calc_label_{i+1}"" for i in range(len(FORWARD_HORIZONS))]"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,621,maturity,"                out_rows = calculate_group(buffer, header, key_idx, price_idx, feature_idx, label_idx, metrics, saturday_counts)"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,638,maturity,"            out_rows = calculate_group(buffer, header, key_idx, price_idx, feature_idx, label_idx, metrics, saturday_counts)"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,667,maturity,    label_results = []
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,668,maturity,    label_pass = {}
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,669,maturity,"    for target, met in metrics[""label""].items():"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,673,maturity,        label_pass[target] = passed
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,674,maturity,        label_results.append({
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,679,maturity,"            ""公式計算無值但原欄非空列數"": metrics[""label_uncomputable_nonblank""][target],"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,682,maturity,"            ""label_results"": label_results, ""chosen_scales"": chosen_scales, ""label_pass"": label_pass,"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,684,maturity,"            ""key_idx"": key_idx, ""price_idx"": price_idx, ""feature_idx"": feature_idx, ""label_idx"": label_idx}"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,689,maturity,"                            label_pass: Dict[str, bool], feature_idx: Dict[str, int], label_idx: Dict[str, int]) -> Dict[str, int]:"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,728,maturity,"                if label_pass.get(target, False):"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,731,maturity,                        if base[label_idx[target]] != new:
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,732,maturity,"                            update_counts[f""label::{target}""] += 1"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,733,maturity,                        base[label_idx[target]] = new
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,850,maturity,"    label_results = calc_info[""label_results""]"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,852,maturity,"    label_pass_n = sum(r[""公式判讀""] == ""PASS"" for r in label_results)"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,853,maturity,"    log(f""公式交叉驗證：已驗證特徵 {feature_pass_n}/5；前瞻標籤 {label_pass_n}/4"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,856,maturity,"                                         calc_info[""chosen_scales""], calc_info[""label_pass""],"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,857,maturity,"                                         calc_info[""feature_idx""], calc_info[""label_idx""])"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,871,maturity,    formula_ok = feature_pass_n == 5 and label_pass_n == 4
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,883,maturity,"    gate = ""PASS_SORTED_VALIDATED_FEATURES_AND_LABELS_NOT_MODEL_READY"" if all(all_gates) else ""REVIEW_REQUIRED"""
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,894,maturity,"        {""項目"": ""已驗證公式"", ""結果"": f""特徵{feature_pass_n}/5；前瞻{label_pass_n}/4"", ""預期"": ""5/5；4/4"", ""判讀"": ""PASS"" if formula_ok else ""REVIEW""},"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,899,maturity,"    write_df(out / ""02_前瞻標籤公式重現核對.csv"", label_results)"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,921,maturity,"        f""已驗證特徵公式：{feature_pass_n}/5；前瞻標籤公式：{label_pass_n}/4"","
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,938,maturity,"        ""forward_formula_pass"": label_pass_n, ""forward_formula_total"": 4,"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,960,maturity,"    log(f""{VERSION}完成：閘門={gate}；列數={final_info['rows']:,}；星期六={final_info['saturday_rows']:,}；特徵={feature_pass_n}/5；前瞻={label_pass_n}/4"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,964,maturity,"    if gate != ""PASS_SORTED_VALIDATED_FEATURES_AND_LABELS_NOT_MODEL_READY"":"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,990,maturity,- 每個前瞻 horizon 依每檔證券的實際 label_end_date purge 訓練列，確保訓練標籤在測試起日之前已結束。
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1046,756,WARMUP_DATES = 756
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1071,maturity,"def sha256_file(path: Path, label: str, block: int = 8 * 1024 * 1024) -> str:"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1084,maturity,"                log(f""SHA256 {label} {bar(done / max(1, size) * 100)} | {done/1024**2:,.1f}/{size/1024**2:,.1f} MB | {elapsed(time.monotonic()-started)}"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1156,maturity,    # Ensure OHLC / feature / labels numeric even if source contains special tokens.
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1166,maturity,"                            ""feature_formula_pass"": 0, ""label_formula_pass"": 0}"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1193,maturity,"            info[""label_formula_pass""] = int((d[""公式判讀""].astype(str) == ""PASS"").sum())"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1344,maturity,"    for label, h in FORWARD_HORIZONS.items():"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1345,maturity,        miss = sat & ~np.isfinite(df[label].to_numpy(dtype=np.float64))
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1352,maturity,"            reports.append({""欄位"": label, ""星期六缺值"": nmiss, ""未來觀測不足"": int(insufficient.sum()),"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1356,maturity,"            reports.append({""欄位"": label, ""星期六缺值"": 0, ""未來觀測不足"": 0,"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1362,maturity,"def write_gzip_csv_progress(df: pd.DataFrame, path: Path, label: str, chunk: int = 100_000) -> None:"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1368,maturity,"            log(f""{label} {bar(end/max(1,len(df))*100)} | 已寫 {end:,}/{len(df):,} 列 | {elapsed(time.monotonic()-started)}"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1406,maturity,"    log(""建立各證券各 horizon 的 label_end_date，準備日期分組 Purged Walk-Forward……"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1431,maturity,"                    ""purging"": ""train date < test_start AND label_end_date < test_start"","
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1432,maturity,"                    ""embargo"": ""Walk-forward is past-only; no post-test rows enter training; explicit label-end purging applied.""}"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1434,maturity,"    for hi, (label_col, h) in enumerate(FORWARD_HORIZONS.items(), 1):"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1435,maturity,"        yret = df[label_col].to_numpy(dtype=np.float32, copy=False)"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1483,minimum_samples,"                min_samples_leaf=100, l2_regularization=1.0,"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1496,maturity,"            ll = float(log_loss(y_test, probs, labels=[0, 1]))"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1615,maturity,"    log(f""v4.69既有公式證據：特徵 {evidence['feature_formula_pass']}/5；前瞻 {evidence['label_formula_pass']}/4"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1635,maturity,    # Recheck all four labels against sequence formula and create precise per-row label end dates.
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1636,maturity,"    log(""重核前瞻標籤公式及每筆 label_end_date，供 purging 使用……"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1638,maturity,    label_check_rows = []
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1651,maturity,"        label_end = keys[""日期""].shift(-h).to_numpy(dtype=""datetime64[D]"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1652,maturity,        end_date_cols[h] = label_end
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1653,maturity,"        label_check_rows.append({""前瞻根數"": h, ""可比較列數"": int(mask.sum()), ""符合比例"": match,"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1656,maturity,    label_check_df = pd.DataFrame(label_check_rows)
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1657,maturity,"    label_check_df.to_csv(out / ""05_前瞻標籤公式及label_end_date核對.csv"", index=False, encoding=""utf-8-sig"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1658,maturity,"    label_formula_pass = int((label_check_df[""公式重核""] == ""PASS"").sum())"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1662,maturity,"    formula_label_pass = min(evidence[""label_formula_pass""], label_formula_pass)"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1665,maturity,    base_formula_ok = formula_feature_pass == 5 and formula_label_pass == 4
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1674,maturity,"        {""品質項目"": ""四項前瞻標籤公式"", ""結果"": f""{formula_label_pass}/4"", ""判讀"": ""PASS"" if formula_label_pass==4 else ""REVIEW""},"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1694,maturity,"        model_table[f""label_end_{h}""] = end_date_cols[h]"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1751,maturity,"        f""既有驗證公式：特徵 {formula_feature_pass}/5；前瞻標籤 {label_formula_pass}/4"","
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1756,maturity,"        ""Purging：訓練列日期必須早於測試起日，且該列自身的 label_end_date 也必須早於測試起日。所有證券依全市場日期分組，避免同日跨 fold。"","
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1772,maturity,"        ""label_formula_pass"": label_formula_pass, ""dataset_gate"": dataset_gate,"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1787,maturity,"        ""05_前瞻標籤公式及label_end_date核對.csv"", ""06_模型特徵範圍與覆蓋率.csv"","
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1869,maturity,"def stream_subprocess(command: Sequence[str], label: str) -> None:"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1870,maturity,"    log(f""開始執行 {label}。"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1881,maturity,"        raise RuntimeError(f""{label} 子程序失敗，return code={code}"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1882,maturity,"    log(f""{label} 子程序結束。"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,1950,maturity,"    if gate == ""PASS_SORTED_VALIDATED_FEATURES_AND_LABELS_NOT_MODEL_READY"":"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,2014,maturity,"            if int(manifest.get(""feature_formula_pass"", -1)) != 5 or int(manifest.get(""label_formula_pass"", -1)) != 4:"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,2041,756,"        ""--v469-dir"", str(v469_dir), ""--folds"", ""5"", ""--warmup-dates"", ""756"","
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,2052,maturity,"    if manifest.get(""feature_formula_pass"") != 5 or manifest.get(""label_formula_pass"") != 4:"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,2555,maturity,"    required70 = BASE_KEYS + model_features + FORWARD_LABELS + LABEL_ENDS + [""樣本來源"", ""日期類型""]"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,2566,maturity,"    model_fields = [f""v470_{c}"" for c in model_features + FORWARD_LABELS + LABEL_ENDS + [""樣本來源"", ""日期類型""]]"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,2617,maturity,"                for col in model_features + FORWARD_LABELS + LABEL_ENDS + [""樣本來源"", ""日期類型""]:"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,2685,maturity,"    h_to_label = {""1"": (FORWARD_LABELS[0], LABEL_ENDS[0]), ""5"": (FORWARD_LABELS[1], LABEL_ENDS[1]),"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,2686,maturity,"                  ""20"": (FORWARD_LABELS[2], LABEL_ENDS[2]), ""60"": (FORWARD_LABELS[3], LABEL_ENDS[3])}"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,2731,maturity,                    label_spec = h_to_label.get(h)
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,2732,maturity,                    if label_spec is None:
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,2738,maturity,"                        label_col, end_col = label_spec"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,2739,maturity,"                        row[""v470_本筆持有期間H對應前瞻報酬欄位""] = label_col"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,2740,maturity,"                        row[""v470_本筆持有期間H對應前瞻報酬""] = record.get(f""v470_{label_col}"", """") if record else """""
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,2799,maturity,    for c in FORWARD_LABELS + LABEL_ENDS:
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,2836,net_return,"            ""v2.51 的納入報酬、實際淨報酬、進出場有效與交易狀態原樣保留，本程式不重算或更改舊績效。"","
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,2878,maturity,"    for label, horizon in zip(FORWARD_LABELS, [""1"", ""5"", ""20"", ""60""]):"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,PY_FILE,2880,maturity,            return label
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,184,maturity,"def sha256_file(path: Path, label: str, block: int = 8 * 1024 * 1024) -> str:"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,200,maturity,"                log(f""SHA256 {label} {bar(pct)} | {done/1024**2:,.1f}/{size/1024**2:,.1f} MB | {elapsed(time.monotonic()-started)}"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,252,maturity,"    label: str,"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,257,maturity,"    part_dir = work_dir / f""parts_{label}_{mode}"""
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,274,maturity,"    log(f""{label}分塊排序開始：mode={mode}; chunk={chunk_size:,}; 預估列數={expected_rows:,}"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,282,maturity,"            raise ValueError(f""{label}第{ci}區塊有 {int(ds.isna().sum())} 筆日期無法解析"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,287,maturity,"            raise ValueError(f""{label}第{ci}區塊有自然鍵缺值"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,299,maturity,"            log(f""{label}分塊排序 {bar(pct)} | chunk {ci:,} | 已讀 {total:,}/{expected_rows:,}（估計） | {total/max(0.001,time.monotonic()-started):,.0f}列/秒 | {elapsed(time.monotonic()-started)}"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,301,maturity,"        log(f""警告：{label}實際列數 {total:,} 與預期 {expected_rows:,} 不同；後續仍會以實際列數為準並驗證。"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,304,maturity,"    log(f""{label}開始合併 {len(parts)} 個已排序分塊……"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,349,maturity,"                log(f""{label}合併 {bar(pct)} | 已寫 {rows_written:,}/{total:,} | 重複自然鍵 {duplicate_keys:,} | {elapsed(time.monotonic()-merge_started)}"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,350,maturity,"    log(f""{label}合併完成：{rows_written:,}列；自然鍵重複={duplicate_keys:,}；順序單調={monotonic_ok}；耗時 {elapsed(time.monotonic()-merge_started)}"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,358,maturity,"                    feature_idx: Dict[str, int], label_idx: Dict[str, int], metrics: dict,"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,379,maturity,"    label_arrays: Dict[str, np.ndarray] = {}"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,389,maturity,        label_arrays[target] = pred
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,410,maturity,    # Validate forward label formula (v4.60 found label multiplier=0.01 after percentage-form calculation;
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,412,maturity,"    for target, arr in label_arrays.items():"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,413,maturity,        lidx = label_idx[target]
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,414,maturity,"        met = metrics[""label""][target]"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,425,maturity,"                metrics[""label_uncomputable_nonblank""][target] += 1"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,437,maturity,        calc_cols.append(label_arrays[target])
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,460,maturity,    label_idx = {}
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,470,maturity,        label_idx[c] = header.index(col)
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,473,maturity,"        ""label"": {f: {""n"": 0, ""match"": 0, ""sum_abs"": 0.0, ""max_abs"": 0.0} for f in FORWARD_HORIZONS},"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,475,maturity,"        ""label_uncomputable_nonblank"": {f: 0 for f in FORWARD_HORIZONS},"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,478,maturity,"    calc_cols = [f""__v469_calc_feature_{i+1}"" for i in range(len(VERIFIED_FEATURES))] + [f""__v469_calc_label_{i+1}"" for i in range(len(FORWARD_HORIZONS))]"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,502,maturity,"                out_rows = calculate_group(buffer, header, key_idx, price_idx, feature_idx, label_idx, metrics, saturday_counts)"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,519,maturity,"            out_rows = calculate_group(buffer, header, key_idx, price_idx, feature_idx, label_idx, metrics, saturday_counts)"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,548,maturity,    label_results = []
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,549,maturity,    label_pass = {}
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,550,maturity,"    for target, met in metrics[""label""].items():"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,554,maturity,        label_pass[target] = passed
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,555,maturity,        label_results.append({
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,560,maturity,"            ""公式計算無值但原欄非空列數"": metrics[""label_uncomputable_nonblank""][target],"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,563,maturity,"            ""label_results"": label_results, ""chosen_scales"": chosen_scales, ""label_pass"": label_pass,"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,565,maturity,"            ""key_idx"": key_idx, ""price_idx"": price_idx, ""feature_idx"": feature_idx, ""label_idx"": label_idx}"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,570,maturity,"                            label_pass: Dict[str, bool], feature_idx: Dict[str, int], label_idx: Dict[str, int]) -> Dict[str, int]:"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,609,maturity,"                if label_pass.get(target, False):"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,612,maturity,                        if base[label_idx[target]] != new:
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,613,maturity,"                            update_counts[f""label::{target}""] += 1"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,614,maturity,                        base[label_idx[target]] = new
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,731,maturity,"    label_results = calc_info[""label_results""]"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,733,maturity,"    label_pass_n = sum(r[""公式判讀""] == ""PASS"" for r in label_results)"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,734,maturity,"    log(f""公式交叉驗證：已驗證特徵 {feature_pass_n}/5；前瞻標籤 {label_pass_n}/4"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,737,maturity,"                                         calc_info[""chosen_scales""], calc_info[""label_pass""],"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,738,maturity,"                                         calc_info[""feature_idx""], calc_info[""label_idx""])"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,752,maturity,    formula_ok = feature_pass_n == 5 and label_pass_n == 4
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,764,maturity,"    gate = ""PASS_SORTED_VALIDATED_FEATURES_AND_LABELS_NOT_MODEL_READY"" if all(all_gates) else ""REVIEW_REQUIRED"""
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,775,maturity,"        {""項目"": ""已驗證公式"", ""結果"": f""特徵{feature_pass_n}/5；前瞻{label_pass_n}/4"", ""預期"": ""5/5；4/4"", ""判讀"": ""PASS"" if formula_ok else ""REVIEW""},"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,780,maturity,"    write_df(out / ""02_前瞻標籤公式重現核對.csv"", label_results)"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,802,maturity,"        f""已驗證特徵公式：{feature_pass_n}/5；前瞻標籤公式：{label_pass_n}/4"","
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,819,maturity,"        ""forward_formula_pass"": label_pass_n, ""forward_formula_total"": 4,"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,841,maturity,"    log(f""{VERSION}完成：閘門={gate}；列數={final_info['rows']:,}；星期六={final_info['saturday_rows']:,}；特徵={feature_pass_n}/5；前瞻={label_pass_n}/4"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,PY_FILE,845,maturity,"    if gate != ""PASS_SORTED_VALIDATED_FEATURES_AND_LABELS_NOT_MODEL_READY"":"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,12,maturity,- 每個前瞻 horizon 依每檔證券的實際 label_end_date purge 訓練列，確保訓練標籤在測試起日之前已結束。
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,68,756,WARMUP_DATES = 756
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,93,maturity,"def sha256_file(path: Path, label: str, block: int = 8 * 1024 * 1024) -> str:"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,106,maturity,"                log(f""SHA256 {label} {bar(done / max(1, size) * 100)} | {done/1024**2:,.1f}/{size/1024**2:,.1f} MB | {elapsed(time.monotonic()-started)}"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,178,maturity,    # Ensure OHLC / feature / labels numeric even if source contains special tokens.
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,188,maturity,"                            ""feature_formula_pass"": 0, ""label_formula_pass"": 0}"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,215,maturity,"            info[""label_formula_pass""] = int((d[""公式判讀""].astype(str) == ""PASS"").sum())"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,366,maturity,"    for label, h in FORWARD_HORIZONS.items():"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,367,maturity,        miss = sat & ~np.isfinite(df[label].to_numpy(dtype=np.float64))
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,374,maturity,"            reports.append({""欄位"": label, ""星期六缺值"": nmiss, ""未來觀測不足"": int(insufficient.sum()),"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,378,maturity,"            reports.append({""欄位"": label, ""星期六缺值"": 0, ""未來觀測不足"": 0,"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,384,maturity,"def write_gzip_csv_progress(df: pd.DataFrame, path: Path, label: str, chunk: int = 100_000) -> None:"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,390,maturity,"            log(f""{label} {bar(end/max(1,len(df))*100)} | 已寫 {end:,}/{len(df):,} 列 | {elapsed(time.monotonic()-started)}"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,428,maturity,"    log(""建立各證券各 horizon 的 label_end_date，準備日期分組 Purged Walk-Forward……"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,453,maturity,"                    ""purging"": ""train date < test_start AND label_end_date < test_start"","
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,454,maturity,"                    ""embargo"": ""Walk-forward is past-only; no post-test rows enter training; explicit label-end purging applied.""}"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,456,maturity,"    for hi, (label_col, h) in enumerate(FORWARD_HORIZONS.items(), 1):"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,457,maturity,"        yret = df[label_col].to_numpy(dtype=np.float32, copy=False)"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,505,minimum_samples,"                min_samples_leaf=100, l2_regularization=1.0,"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,518,maturity,"            ll = float(log_loss(y_test, probs, labels=[0, 1]))"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,637,maturity,"    log(f""v4.69既有公式證據：特徵 {evidence['feature_formula_pass']}/5；前瞻 {evidence['label_formula_pass']}/4"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,657,maturity,    # Recheck all four labels against sequence formula and create precise per-row label end dates.
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,658,maturity,"    log(""重核前瞻標籤公式及每筆 label_end_date，供 purging 使用……"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,660,maturity,    label_check_rows = []
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,673,maturity,"        label_end = keys[""日期""].shift(-h).to_numpy(dtype=""datetime64[D]"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,674,maturity,        end_date_cols[h] = label_end
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,675,maturity,"        label_check_rows.append({""前瞻根數"": h, ""可比較列數"": int(mask.sum()), ""符合比例"": match,"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,678,maturity,    label_check_df = pd.DataFrame(label_check_rows)
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,679,maturity,"    label_check_df.to_csv(out / ""05_前瞻標籤公式及label_end_date核對.csv"", index=False, encoding=""utf-8-sig"")"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,680,maturity,"    label_formula_pass = int((label_check_df[""公式重核""] == ""PASS"").sum())"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,684,maturity,"    formula_label_pass = min(evidence[""label_formula_pass""], label_formula_pass)"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,687,maturity,    base_formula_ok = formula_feature_pass == 5 and formula_label_pass == 4
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,696,maturity,"        {""品質項目"": ""四項前瞻標籤公式"", ""結果"": f""{formula_label_pass}/4"", ""判讀"": ""PASS"" if formula_label_pass==4 else ""REVIEW""},"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,716,maturity,"        model_table[f""label_end_{h}""] = end_date_cols[h]"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,773,maturity,"        f""既有驗證公式：特徵 {formula_feature_pass}/5；前瞻標籤 {label_formula_pass}/4"","
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,778,maturity,"        ""Purging：訓練列日期必須早於測試起日，且該列自身的 label_end_date 也必須早於測試起日。所有證券依全市場日期分組，避免同日跨 fold。"","
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,794,maturity,"        ""label_formula_pass"": label_formula_pass, ""dataset_gate"": dataset_gate,"
+看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,PY_FILE,809,maturity,"        ""05_前瞻標籤公式及label_end_date核對.csv"", ""06_模型特徵範圍與覆蓋率.csv"","
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_084621/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,243,maturity,"    for field, label in ((""change_note"", ""漲跌註記""), (""suspension_note"", ""暫停交易註記""),"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_084621/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,247,maturity,"            parts.append(f""{label}：{value}"")"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_084621/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,375,maturity,"def scan_zip(zf: zipfile.ZipFile, label: str) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_084621/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,386,maturity,"                rows, meta = read_csv_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_084621/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,390,maturity,"                rows, meta = read_json_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_084621/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,394,maturity,"                rows, meta = read_csv_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_084621/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,397,maturity,"                rows, meta = read_json_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_084621/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,402,maturity,"                    rows, nested_meta = scan_zip(nested, f""{label}!{name}"")"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_084621/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,403,maturity,"                meta = {""member"": f""{label}!{name}"", ""format"": ""NESTED_ZIP"", ""rows"": len(rows), ""reason"": ""SCANNED"", ""nested_files"": len(nested_meta)}"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_084621/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,408,maturity,"                inventory.append({""archive"": label, **meta, ""bytes"": member.file_size})"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_084621/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,410,maturity,"            inventory.append({""archive"": label, ""member"": name, ""format"": ext, ""rows"": 0,"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_084621/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,413,maturity,"            log(f""封存檔掃描進度：{label} {index}/{len(members)}"")"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_084621/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,504,maturity,def note_status_label(status: str) -> str:
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_124633/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,243,maturity,"    for field, label in ((""change_note"", ""漲跌註記""), (""suspension_note"", ""暫停交易註記""),"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_124633/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,247,maturity,"            parts.append(f""{label}：{value}"")"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_124633/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,375,maturity,"def scan_zip(zf: zipfile.ZipFile, label: str) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_124633/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,386,maturity,"                rows, meta = read_csv_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_124633/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,390,maturity,"                rows, meta = read_json_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_124633/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,394,maturity,"                rows, meta = read_csv_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_124633/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,397,maturity,"                rows, meta = read_json_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_124633/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,402,maturity,"                    rows, nested_meta = scan_zip(nested, f""{label}!{name}"")"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_124633/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,403,maturity,"                meta = {""member"": f""{label}!{name}"", ""format"": ""NESTED_ZIP"", ""rows"": len(rows), ""reason"": ""SCANNED"", ""nested_files"": len(nested_meta)}"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_124633/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,408,maturity,"                inventory.append({""archive"": label, **meta, ""bytes"": member.file_size})"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_124633/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,410,maturity,"            inventory.append({""archive"": label, ""member"": name, ""format"": ext, ""rows"": 0,"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_124633/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,413,maturity,"            log(f""封存檔掃描進度：{label} {index}/{len(members)}"")"
+看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_124633/SSO_v4.87.5.20_note_normalize_and_script_archive.py,PY_FILE,504,maturity,def note_status_label(status: str) -> str:
+看股最速適_v4.87.5.22_九日雙市場單一來源校正與備註稽核_20261107_130527/SSO_v4.87.5.22_source_group_selection_and_note_audit.py,PY_FILE,245,maturity,"    for field, label in ((""change_note"", ""漲跌註記""), (""suspension_note"", ""暫停交易註記""),"
+看股最速適_v4.87.5.22_九日雙市場單一來源校正與備註稽核_20261107_130527/SSO_v4.87.5.22_source_group_selection_and_note_audit.py,PY_FILE,249,maturity,"            parts.append(f""{label}：{value}"")"
+看股最速適_v4.87.5.22_九日雙市場單一來源校正與備註稽核_20261107_130527/SSO_v4.87.5.22_source_group_selection_and_note_audit.py,PY_FILE,377,maturity,"def scan_zip(zf: zipfile.ZipFile, label: str) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:"
+看股最速適_v4.87.5.22_九日雙市場單一來源校正與備註稽核_20261107_130527/SSO_v4.87.5.22_source_group_selection_and_note_audit.py,PY_FILE,388,maturity,"                rows, meta = read_csv_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.22_九日雙市場單一來源校正與備註稽核_20261107_130527/SSO_v4.87.5.22_source_group_selection_and_note_audit.py,PY_FILE,392,maturity,"                rows, meta = read_json_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.22_九日雙市場單一來源校正與備註稽核_20261107_130527/SSO_v4.87.5.22_source_group_selection_and_note_audit.py,PY_FILE,396,maturity,"                rows, meta = read_csv_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.22_九日雙市場單一來源校正與備註稽核_20261107_130527/SSO_v4.87.5.22_source_group_selection_and_note_audit.py,PY_FILE,399,maturity,"                rows, meta = read_json_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.22_九日雙市場單一來源校正與備註稽核_20261107_130527/SSO_v4.87.5.22_source_group_selection_and_note_audit.py,PY_FILE,404,maturity,"                    rows, nested_meta = scan_zip(nested, f""{label}!{name}"")"
+看股最速適_v4.87.5.22_九日雙市場單一來源校正與備註稽核_20261107_130527/SSO_v4.87.5.22_source_group_selection_and_note_audit.py,PY_FILE,405,maturity,"                meta = {""member"": f""{label}!{name}"", ""format"": ""NESTED_ZIP"", ""rows"": len(rows), ""reason"": ""SCANNED"", ""nested_files"": len(nested_meta)}"
+看股最速適_v4.87.5.22_九日雙市場單一來源校正與備註稽核_20261107_130527/SSO_v4.87.5.22_source_group_selection_and_note_audit.py,PY_FILE,410,maturity,"                inventory.append({""archive"": label, **meta, ""bytes"": member.file_size})"
+看股最速適_v4.87.5.22_九日雙市場單一來源校正與備註稽核_20261107_130527/SSO_v4.87.5.22_source_group_selection_and_note_audit.py,PY_FILE,412,maturity,"            inventory.append({""archive"": label, ""member"": name, ""format"": ext, ""rows"": 0,"
+看股最速適_v4.87.5.22_九日雙市場單一來源校正與備註稽核_20261107_130527/SSO_v4.87.5.22_source_group_selection_and_note_audit.py,PY_FILE,415,maturity,"            log(f""封存檔掃描進度：{label} {index}/{len(members)}"")"
+看股最速適_v4.87.5.22_九日雙市場單一來源校正與備註稽核_20261107_130527/SSO_v4.87.5.22_source_group_selection_and_note_audit.py,PY_FILE,506,maturity,def note_status_label(status: str) -> str:
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_133751/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,272,maturity,"    for field, label in ((""suspension_note"", ""暫停交易註記""),"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_133751/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,277,maturity,"            narrative_parts.append(f""{label}：{value}"")"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_133751/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,403,maturity,"def scan_zip(zf: zipfile.ZipFile, label: str) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_133751/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,414,maturity,"                rows, meta = read_csv_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_133751/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,418,maturity,"                rows, meta = read_json_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_133751/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,422,maturity,"                rows, meta = read_csv_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_133751/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,425,maturity,"                rows, meta = read_json_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_133751/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,430,maturity,"                    rows, nested_meta = scan_zip(nested, f""{label}!{name}"")"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_133751/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,431,maturity,"                meta = {""member"": f""{label}!{name}"", ""format"": ""NESTED_ZIP"", ""rows"": len(rows), ""reason"": ""SCANNED"", ""nested_files"": len(nested_meta)}"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_133751/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,436,maturity,"                inventory.append({""archive"": label, **meta, ""bytes"": member.file_size})"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_133751/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,438,maturity,"            inventory.append({""archive"": label, ""member"": name, ""format"": ext, ""rows"": 0,"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_133751/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,441,maturity,"            log(f""封存檔掃描進度：{label} {index}/{len(members)}"")"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_133751/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,532,maturity,def note_status_label(status: str) -> str:
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/程式碼/SSO_v139_普通股範圍配對與行情分類.py,PY_FILE,347,maturity,"                    label = ""ETF"" if ""etf"" in p else (""ETN"" if ""etn"" in p else ""TDR"")"
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.3.9_普通股範圍配對與行情分類_20261110_20261110_224720/程式碼/SSO_v139_普通股範圍配對與行情分類.py,PY_FILE,348,maturity,"                    catalogs.append({""market"": ""TPEX"", ""type"": label, ""url"": endpoint, ""status"": ""PASS"", ""codes"": codes})"
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.4.2_雙市場官方歷史行情缺口補齊_20261023_20261110_20261111_001022/程式碼/SSO_v142_官方雙市場歷史行情缺口補齊.py,PY_FILE,849,maturity,        date_label = d.isoformat()
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.4.2_雙市場官方歷史行情缺口補齊_20261023_20261110_20261111_001022/程式碼/SSO_v142_官方雙市場歷史行情缺口補齊.py,PY_FILE,851,maturity,"            f""[DATE] {date_label} """
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.4.2_雙市場官方歷史行情缺口補齊_20261023_20261110_20261111_001022/程式碼/SSO_v142_官方雙市場歷史行情缺口補齊.py,PY_FILE,870,maturity,"            lookup[(date_label, market)] = result"
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.2_官方雙市場行情增量續接_20261111_20261111_20261111_235226_6fa3/SSO_Market_Data_Continuation_v1.5.2.py,PY_FILE,82,maturity,def norm_label(x):
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.2_官方雙市場行情增量續接_20261111_20261111_20261111_235226_6fa3/SSO_Market_Data_Continuation_v1.5.2.py,PY_FILE,172,maturity,        norm_label(c): c
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.2_官方雙市場行情增量續接_20261111_20261111_20261111_235226_6fa3/SSO_Market_Data_Continuation_v1.5.2.py,PY_FILE,178,maturity,        k = norm_label(a)
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.2_官方雙市場行情增量續接_20261111_20261111_20261111_235226_6fa3/SSO_Market_Data_Continuation_v1.5.2.py,PY_FILE,348,maturity,        target = norm_label(col)
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.2_官方雙市場行情增量續接_20261111_20261111_20261111_235226_6fa3/SSO_Market_Data_Continuation_v1.5.2.py,PY_FILE,355,maturity,                norm_label(a)
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.2_官方雙市場行情增量續接_20261111_20261111_20261111_235226_6fa3/SSO_Market_Data_Continuation_v1.5.2.py,PY_FILE,565,maturity,                    usecols=lambda c: norm_label(c) in {
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.2_官方雙市場行情增量續接_20261111_20261111_20261111_235226_6fa3/SSO_Market_Data_Continuation_v1.5.2.py,PY_FILE,615,maturity,                        usecols=lambda c: norm_label(c) in {
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.2_官方雙市場行情增量續接_20261111_20261111_20261111_235226_6fa3/SSO_Market_Data_Continuation_v1.5.2.py,PY_FILE,667,maturity,                                usecols=lambda c: norm_label(c) in {
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.3_官方行情即時驗證與增量續接_20261112_000746_0f8a/SSO_Market_Data_Continuation_v1.5.3.py,PY_FILE,374,maturity,"def validate_schema(columns, label, standard=True):"
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.3_官方行情即時驗證與增量續接_20261112_000746_0f8a/SSO_Market_Data_Continuation_v1.5.3.py,PY_FILE,406,maturity,"            f""{label} 欄位格式不相容，"""
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.4_官方行情即時驗證與增量續接_20261112_001733_4d45/SSO_Market_Data_Continuation_v1.5.4.py,PY_FILE,125,maturity,"def validate_schema(columns, label, standard=True):"
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.4_官方行情即時驗證與增量續接_20261112_001733_4d45/SSO_Market_Data_Continuation_v1.5.4.py,PY_FILE,134,maturity,        raise RuntimeError(f'{label} 欄位格式不相容，缺少欄位={missing}；現有欄位={columns}')
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.5_官方行情即時驗證與增量續接_20261112_002745_2459/SSO_Market_Data_Continuation_v1.5.5.py,PY_FILE,289,maturity,"def validate_schema(columns, label, standard=True):"
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.5_官方行情即時驗證與增量續接_20261112_002745_2459/SSO_Market_Data_Continuation_v1.5.5.py,PY_FILE,305,maturity,"            f""{label} 欄位不完整；缺少={missing}；"""
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.6_官方行情即時驗證與增量續接_20261112_010903_5239/SSO_Market_Data_Continuation_v1.5.6.py,PY_FILE,289,maturity,"def validate_schema(columns, label, standard=True):"
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.6_官方行情即時驗證與增量續接_20261112_010903_5239/SSO_Market_Data_Continuation_v1.5.6.py,PY_FILE,305,maturity,"            f""{label} 欄位不完整；缺少={missing}；"""
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.6_官方行情即時驗證與增量續接_20261112_012514_76b3/SSO_Market_Data_Continuation_v1.5.6.py,PY_FILE,289,maturity,"def validate_schema(columns, label, standard=True):"
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.6_官方行情即時驗證與增量續接_20261112_012514_76b3/SSO_Market_Data_Continuation_v1.5.6.py,PY_FILE,305,maturity,"            f""{label} 欄位不完整；缺少={missing}；"""
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.7_官方行情即時驗證與增量續接_20261112_090001_3b99/SSO_Market_Data_Continuation_v1.5.7.py,PY_FILE,293,maturity,"def validate_schema(columns, label, standard=True):"
+SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.7_官方行情即時驗證與增量續接_20261112_090001_3b99/SSO_Market_Data_Continuation_v1.5.7.py,PY_FILE,309,maturity,"            f""{label} 欄位不完整；缺少={missing}；"""
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_154612/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,272,maturity,"    for field, label in ((""suspension_note"", ""暫停交易註記""),"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_154612/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,277,maturity,"            narrative_parts.append(f""{label}：{value}"")"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_154612/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,403,maturity,"def scan_zip(zf: zipfile.ZipFile, label: str) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_154612/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,414,maturity,"                rows, meta = read_csv_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_154612/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,418,maturity,"                rows, meta = read_json_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_154612/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,422,maturity,"                rows, meta = read_csv_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_154612/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,425,maturity,"                rows, meta = read_json_records(data, name, market_hint, f""{label}!{name}"")"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_154612/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,430,maturity,"                    rows, nested_meta = scan_zip(nested, f""{label}!{name}"")"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_154612/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,431,maturity,"                meta = {""member"": f""{label}!{name}"", ""format"": ""NESTED_ZIP"", ""rows"": len(rows), ""reason"": ""SCANNED"", ""nested_files"": len(nested_meta)}"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_154612/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,436,maturity,"                inventory.append({""archive"": label, **meta, ""bytes"": member.file_size})"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_154612/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,438,maturity,"            inventory.append({""archive"": label, ""member"": name, ""format"": ext, ""rows"": 0,"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_154612/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,441,maturity,"            log(f""封存檔掃描進度：{label} {index}/{len(members)}"")"
+看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_154612/SSO_v4.87.5.23_note_semantics_and_source_audit.py,PY_FILE,532,maturity,def note_status_label(status: str) -> str:
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_113156/SSO_v1.2.3_HAC重算與Holm多重檢定稽核.py,PY_FILE,8,net_return,3. 與 v1.2.2 的 03_訓練候選時間外驗證.csv 逐檔核對訊號數、平均淨報酬及 HAC 下界。
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_113156/SSO_v1.2.3_HAC重算與Holm多重檢定稽核.py,PY_FILE,280,net_return,"        ""測試期_基準成本平均淨報酬"", ""測試期_壓力成本平均淨報酬"","
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_113156/SSO_v1.2.3_HAC重算與Holm多重檢定稽核.py,PY_FILE,356,net_return,"            ""重算基準成本平均淨報酬"": base[""mean""],"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_113156/SSO_v1.2.3_HAC重算與Holm多重檢定稽核.py,PY_FILE,359,net_return,"            ""重算壓力成本平均淨報酬"": stress[""mean""],"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_113156/SSO_v1.2.3_HAC重算與Holm多重檢定稽核.py,PY_FILE,370,net_return,"        (""測試期_基準成本平均淨報酬"", ""重算基準成本平均淨報酬"", ""基準平均差""),"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_113156/SSO_v1.2.3_HAC重算與Holm多重檢定稽核.py,PY_FILE,371,net_return,"        (""測試期_壓力成本平均淨報酬"", ""重算壓力成本平均淨報酬"", ""壓力平均差""),"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_113156/SSO_v1.2.3_HAC重算與Holm多重檢定稽核.py,PY_FILE,395,net_return,"            float(row[""重算基準成本平均淨報酬""]),"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_113156/SSO_v1.2.3_HAC重算與Holm多重檢定稽核.py,PY_FILE,397,net_return,"        ) if matched and pd.notna(row[""重算基準成本平均淨報酬""]) else 1.0"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_113156/SSO_v1.2.3_HAC重算與Holm多重檢定稽核.py,PY_FILE,399,net_return,"            float(row[""重算壓力成本平均淨報酬""]),"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_113156/SSO_v1.2.3_HAC重算與Holm多重檢定稽核.py,PY_FILE,401,net_return,"        ) if matched and pd.notna(row[""重算壓力成本平均淨報酬""]) else 1.0"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_113156/SSO_v1.2.3_HAC重算與Holm多重檢定稽核.py,PY_FILE,429,net_return,"            ""測試期壓力成本平均淨報酬"": row[""測試期_壓力成本平均淨報酬""],"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_113156/SSO_v1.2.3_HAC重算與Holm多重檢定稽核.py,PY_FILE,647,maturity,"                label, size = local.name, local.stat().st_size"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_113156/SSO_v1.2.3_HAC重算與Holm多重檢定稽核.py,PY_FILE,656,maturity,"                label, size = ""README_GitHub上傳索引.md"", len(inline or b"""")"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_113156/SSO_v1.2.3_HAC重算與Holm多重檢定稽核.py,PY_FILE,658,maturity,"            log(f""[ADD {i}/{len(upload_items)}] {label} | {fmt_bytes(size)}"")"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_114117/SSO_v1.2.3_HAC重算與Holm多重檢定稽核 (1).py,PY_FILE,8,net_return,3. 與 v1.2.2 的 03_訓練候選時間外驗證.csv 逐檔核對訊號數、平均淨報酬及 HAC 下界。
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_114117/SSO_v1.2.3_HAC重算與Holm多重檢定稽核 (1).py,PY_FILE,280,net_return,"        ""測試期_基準成本平均淨報酬"", ""測試期_壓力成本平均淨報酬"","
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_114117/SSO_v1.2.3_HAC重算與Holm多重檢定稽核 (1).py,PY_FILE,356,net_return,"            ""重算基準成本平均淨報酬"": base[""mean""],"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_114117/SSO_v1.2.3_HAC重算與Holm多重檢定稽核 (1).py,PY_FILE,359,net_return,"            ""重算壓力成本平均淨報酬"": stress[""mean""],"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_114117/SSO_v1.2.3_HAC重算與Holm多重檢定稽核 (1).py,PY_FILE,370,net_return,"        (""測試期_基準成本平均淨報酬"", ""重算基準成本平均淨報酬"", ""基準平均差""),"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_114117/SSO_v1.2.3_HAC重算與Holm多重檢定稽核 (1).py,PY_FILE,371,net_return,"        (""測試期_壓力成本平均淨報酬"", ""重算壓力成本平均淨報酬"", ""壓力平均差""),"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_114117/SSO_v1.2.3_HAC重算與Holm多重檢定稽核 (1).py,PY_FILE,395,net_return,"            float(row[""重算基準成本平均淨報酬""]),"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_114117/SSO_v1.2.3_HAC重算與Holm多重檢定稽核 (1).py,PY_FILE,397,net_return,"        ) if matched and pd.notna(row[""重算基準成本平均淨報酬""]) else 1.0"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_114117/SSO_v1.2.3_HAC重算與Holm多重檢定稽核 (1).py,PY_FILE,399,net_return,"            float(row[""重算壓力成本平均淨報酬""]),"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_114117/SSO_v1.2.3_HAC重算與Holm多重檢定稽核 (1).py,PY_FILE,401,net_return,"        ) if matched and pd.notna(row[""重算壓力成本平均淨報酬""]) else 1.0"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_114117/SSO_v1.2.3_HAC重算與Holm多重檢定稽核 (1).py,PY_FILE,429,net_return,"            ""測試期壓力成本平均淨報酬"": row[""測試期_壓力成本平均淨報酬""],"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_114117/SSO_v1.2.3_HAC重算與Holm多重檢定稽核 (1).py,PY_FILE,647,maturity,"                label, size = local.name, local.stat().st_size"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_114117/SSO_v1.2.3_HAC重算與Holm多重檢定稽核 (1).py,PY_FILE,656,maturity,"                label, size = ""README_GitHub上傳索引.md"", len(inline or b"""")"
+看股最速適_v1_2_3_HAC重算與多重檢定稽核_20261110_114117/SSO_v1.2.3_HAC重算與Holm多重檢定稽核 (1).py,PY_FILE,658,maturity,"            log(f""[ADD {i}/{len(upload_items)}] {label} | {fmt_bytes(size)}"")"
+看股最速適_v1_2_4_獨立前瞻資料銜接預檢_20261110_121514/SSO_v1.2.4_獨立前瞻資料銜接預檢.py,PY_FILE,77,window,OVERLAP_LOOKBACK_START = pd.Timestamp('2026-06-01')
+看股最速適_v1_2_4_獨立前瞻資料銜接預檢_20261110_121514/SSO_v1.2.4_獨立前瞻資料銜接預檢.py,PY_FILE,220,maturity,"                end: Optional[pd.Timestamp], label: str, chunksize: int = 250_000) -> pd.DataFrame:"
+看股最速適_v1_2_4_獨立前瞻資料銜接預檢_20261110_121514/SSO_v1.2.4_獨立前瞻資料銜接預檢.py,PY_FILE,235,maturity,"                log(f'[{label}] 已掃描 {total:,} 列')"
+看股最速適_v1_2_4_獨立前瞻資料銜接預檢_20261110_121514/SSO_v1.2.4_獨立前瞻資料銜接預檢.py,PY_FILE,264,maturity,"            log(f'[{label}] 已掃描 {total:,} 列；命中近期香港資料 {sum(len(x) for x in pieces):,} 列')"
+看股最速適_v1_2_4_獨立前瞻資料銜接預檢_20261110_121514/SSO_v1.2.4_獨立前瞻資料銜接預檢.py,PY_FILE,357,window,"    v469 = read_recent(V469_PATH, vmap, OVERLAP_LOOKBACK_START, V469_END_EXPECTED, 'v4.69')"
+看股最速適_v1_2_4_獨立前瞻資料銜接預檢_20261110_121514/SSO_v1.2.4_獨立前瞻資料銜接預檢.py,PY_FILE,369,window,"    a_recent = read_recent(A_PATH, a_map, OVERLAP_LOOKBACK_START, None, 'v4.17')"
+看股最速適_v1_2_4_獨立前瞻資料銜接預檢_20261110_121514/SSO_v1.2.4_獨立前瞻資料銜接預檢.py,PY_FILE,388,maturity,"    for label, frame in [('v4.69', hist20), ('v4.17', official_overlap)]:"
+看股最速適_v1_2_4_獨立前瞻資料銜接預檢_20261110_121514/SSO_v1.2.4_獨立前瞻資料銜接預檢.py,PY_FILE,391,maturity,"            raise RuntimeError(f'{label} 最近 20 日自然鍵重複 {dups:,} 列。')"
+看股最速適_v1_2_5_跨市場身分與公司行動區段銜接稽核_20261110_123609/SSO_v1.2.5_跨市場身分與公司行動區段銜接稽核.py,PY_FILE,77,window,OVERLAP_LOOKBACK_START = pd.Timestamp('2026-06-01')
+看股最速適_v1_2_5_跨市場身分與公司行動區段銜接稽核_20261110_123609/SSO_v1.2.5_跨市場身分與公司行動區段銜接稽核.py,PY_FILE,220,maturity,"                end: Optional[pd.Timestamp], label: str, chunksize: int = 250_000) -> pd.DataFrame:"
+看股最速適_v1_2_5_跨市場身分與公司行動區段銜接稽核_20261110_123609/SSO_v1.2.5_跨市場身分與公司行動區段銜接稽核.py,PY_FILE,235,maturity,"                log(f'[{label}] 已掃描 {total:,} 列')"
+看股最速適_v1_2_5_跨市場身分與公司行動區段銜接稽核_20261110_123609/SSO_v1.2.5_跨市場身分與公司行動區段銜接稽核.py,PY_FILE,264,maturity,"            log(f'[{label}] 已掃描 {total:,} 列；命中近期香港資料 {sum(len(x) for x in pieces):,} 列')"
+看股最速適_v1_2_5_跨市場身分與公司行動區段銜接稽核_20261110_123609/SSO_v1.2.5_跨市場身分與公司行動區段銜接稽核.py,PY_FILE,416,window,"    v469_all = read_recent(V469_PATH, vmap, OVERLAP_LOOKBACK_START, V469_END_EXPECTED, 'v4.69')"
+看股最速適_v1_2_5_跨市場身分與公司行動區段銜接稽核_20261110_123609/SSO_v1.2.5_跨市場身分與公司行動區段銜接稽核.py,PY_FILE,427,window,"    a_recent_all = read_recent(A_PATH, a_map, OVERLAP_LOOKBACK_START, None, 'v4.17')"
+看股最速適_v1_2_6_全市場Q5橫斷面準備度稽核_20261110_125920/SSO_v1.2.6_全市場Q5橫斷面準備度稽核.py,PY_FILE,212,maturity,"                end: Optional[pd.Timestamp], label: str, chunksize: int = 250_000) -> pd.DataFrame:"
+看股最速適_v1_2_6_全市場Q5橫斷面準備度稽核_20261110_125920/SSO_v1.2.6_全市場Q5橫斷面準備度稽核.py,PY_FILE,228,maturity,"                log(f'[{label}] 已掃描 {total:,} 列')"
+看股最速適_v1_2_6_全市場Q5橫斷面準備度稽核_20261110_125920/SSO_v1.2.6_全市場Q5橫斷面準備度稽核.py,PY_FILE,249,maturity,"            log(f'[{label}] 已掃描 {total:,} 列；命中日期範圍 {matched:,} 列')"
+看股最速適_v1_2_6_全市場Q5橫斷面準備度稽核_20261110_125920/SSO_v1.2.6_全市場Q5橫斷面準備度稽核.py,PY_FILE,349,maturity,"                         '歷史橋接狀態': 'REVIEW_MISSING_PRICE_SEGMENT_LABEL', '歷史代號日期歧義': code in ambiguous})"
+看股最速適_v1_2_7_Q5訊號凍結與H10觀察排程_20261110_133121/SSO_v1.2.7_全市場Q5訊號凍結與H10觀察排程.py,PY_FILE,12,maturity,6. 不計算尚未成熟樣本的報酬、不推薦股票、不挑選或硬湊 10 檔。
+看股最速適_v1_2_7_Q5訊號凍結與H10觀察排程_20261110_133121/SSO_v1.2.7_全市場Q5訊號凍結與H10觀察排程.py,PY_FILE,2157,maturity,"    print(""[PASS] 本版未計算任何未成熟樣本報酬。"", flush=True)"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,3,net_return;maturity,SSO v1.2.8｜官方普通股 Q5 與 H=10 成熟樣本實際淨報酬驗證
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,27,maturity,- 不將未成熟樣本當成績效。
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,62,net_return;maturity,"VERSION = ""SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證"""
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,247,net_return;maturity,"        ""SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py"""
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,1001,net_return,"def net_return_v122(gross, slip, fee, tax):"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,1020,maturity,"    signal_label,"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,1208,net_return,            net_base = net_return_v122(
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,1215,net_return,            net_stress = net_return_v122(
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,1222,maturity,"            overall_status = ""MATURED_RETURN_COMPUTED"""
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,1225,maturity,"            ""訊號口徑"": signal_label,"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,1285,maturity,def summarize_matured_h10(schedule):
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,1289,maturity,    matured = schedule.loc[
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,1290,maturity,"        schedule[""觀察狀態""].eq(""MATURED_RETURN_COMPUTED"")"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,1293,maturity,    if matured.empty:
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,1301,net_return,"            ""基準成本平均淨報酬"","
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,1304,net_return,"            ""壓力成本平均淨報酬"","
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,1310,maturity,    result = matured.groupby(
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,1316,net_return,"        基準成本平均淨報酬=(""基準成本淨報酬"", ""mean""),"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,1319,net_return,"        壓力成本平均淨報酬=(""壓力成本淨報酬"", ""mean""),"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,1548,maturity,"        ""# SSO v1.2.8｜官方普通股 Q5 與 H=10 成熟樣本驗證"","
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2019,maturity,    matured = combined_h10.loc[
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2020,maturity,"        combined_h10[""觀察狀態""].eq(""MATURED_RETURN_COMPUTED"")"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2023,maturity,    matured_summary = summarize_matured_h10(
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2100,maturity,    legacy_matured = legacy_h10.loc[
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2101,maturity,"        legacy_h10[""觀察狀態""].eq(""MATURED_RETURN_COMPUTED"")"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2104,maturity,    official_matured = official_h10.loc[
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2105,maturity,"        official_h10[""觀察狀態""].eq(""MATURED_RETURN_COMPUTED"")"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2108,maturity,    matured_signal_dates = sorted(
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2109,maturity,"        matured[""訊號日期""].dropna().astype(str).unique().tolist()"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2175,maturity,            len(legacy_matured)
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2179,maturity,            len(official_matured)
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2183,maturity,            len(matured)
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2186,maturity,"        ""成熟訊號日期"": matured_signal_dates,"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2189,maturity,"            matured[""基準成本淨報酬""].gt(0).sum()"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2190,maturity,"        ) if len(matured) else 0,"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2193,maturity,"            matured[""壓力成本淨報酬""].gt(0).sum()"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2194,maturity,"        ) if len(matured) else 0,"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2220,maturity,"            ""本版不依成熟樣本數不足的個股建立推薦或排序。"","
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2233,maturity,    # 檢查首批成熟樣本的日期範圍。
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2234,maturity,    if len(matured):
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2237,maturity,"            for date in matured[""訊號日期""].unique()"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2240,maturity,"                ""[INFO] 已成熟樣本不只包含 10/27，"""
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2252,maturity,"        / f""看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_{run_id}"""
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2326,maturity,"        matured,"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2327,net_return,"        out_dir / ""12_H10已成熟逐筆實際淨報酬.csv"","
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2331,maturity,"        matured_summary,"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2370,maturity,"        ""四、H=10 成熟樣本"","
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2371,maturity,"        f""v1.2.7 原凍結 Q5 已成熟報酬：{len(legacy_matured):,}"","
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2372,maturity,"        f""v1.2.8 官方普通股 Q5 已成熟報酬：{len(official_matured):,}"","
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2373,maturity,"        f""合計已成熟且完成淨報酬：{len(matured):,}"","
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2379,maturity,"        ""已成熟樣本數不足以建立新的個股推薦或排名。"","
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2397,maturity,"        ""# SSO v1.2.8｜官方普通股 Q5 與 H=10 成熟樣本驗證"","
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2405,maturity,"        f""- H10 已成熟且完成淨報酬：`{len(matured)}`"","
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2464,maturity,"        ""# SSO v1.2.8｜官方普通股 Q5 與 H=10 成熟樣本驗證"","
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2472,maturity,"        f""- H10 已成熟且完成淨報酬：`{len(matured)}`"","
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2551,maturity,"    print(""H=10 成熟樣本："", flush=True)"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2552,maturity,"    print(f""v1.2.7 凍結訊號成熟：{len(legacy_matured):,}"", flush=True)"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2553,maturity,"    print(f""v1.2.8 官方普通股訊號成熟：{len(official_matured):,}"", flush=True)"
+看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py,PY_FILE,2554,maturity,"    print(f""合計完成淨報酬：{len(matured):,}"", flush=True)"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,11,maturity,- H=10 必須與 v1.2.8 的 747 筆成熟樣本逐筆一致，否則停止。
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,68,net_return;maturity,"    ""SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py"""
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,78,maturity,"    / ""看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_"""
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,93,maturity,EXPECTED_H10_MATURED = 747
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,217,net_return,"def net_return_v122(gross, slip, fee, tax):"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,355,net_return,# 04. 多週期共用價格索引及實際淨報酬
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,369,maturity,"          (detail_dataframe, signal_label),"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,415,maturity,"    for detail, signal_label in signal_sets:"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,427,maturity,"                f""{signal_label} 日期－代號訊號鍵重複。"""
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,470,maturity,"                    ""label"": signal_label,"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,586,maturity,"        label = task[""label""]"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,697,net_return,            net_base = net_return_v122(
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,704,net_return,            net_stress = net_return_v122(
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,711,maturity,"            overall_status = ""MATURED_RETURN_COMPUTED"""
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,714,maturity,"            ""訊號口徑"": label,"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,804,maturity,        matured = group.loc[
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,805,maturity,"            group[""觀察狀態""].eq(""MATURED_RETURN_COMPUTED"")"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,809,maturity,"            matured[""基準成本淨報酬""],"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,814,maturity,"            matured[""壓力成本淨報酬""],"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,819,maturity,"            matured[""毛報酬""],"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,839,maturity,"            ""已成熟且完成報酬筆數"": int(len(matured)),"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,841,maturity,"                matured[""訊號日期""].nunique()"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,842,maturity,"            ) if len(matured) else 0,"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,875,net_return,"            ""基準成本平均淨報酬"": mean_or_nan(base),"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,886,net_return,"            ""壓力成本平均淨報酬"": mean_or_nan(stress),"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,921,maturity,        matured = group.loc[
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,922,maturity,"            group[""觀察狀態""].eq(""MATURED_RETURN_COMPUTED"")"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,934,maturity,"            ""完成淨報酬數"": int(len(matured)),"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,954,net_return,"            ""基準成本平均淨報酬"": mean_or_nan("
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,955,maturity,"                matured[""基準成本淨報酬""]"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,961,maturity,"                        matured[""基準成本淨報酬""],"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,965,maturity,                if len(matured) else np.nan
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,968,net_return,"            ""壓力成本平均淨報酬"": mean_or_nan("
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,969,maturity,"                matured[""壓力成本淨報酬""]"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,975,maturity,"                        matured[""壓力成本淨報酬""],"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,979,maturity,                if len(matured) else np.nan
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,990,maturity,def summarize_stock_horizon(matured):
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,991,maturity,    if matured.empty:
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,996,maturity,"    for (scope, horizon, code, name), group in matured.groupby("
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1055,net_return,"            ""基準成本平均淨報酬"": base_mean,"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1064,net_return,"            ""壓力成本平均淨報酬"": stress_mean,"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1122,net_return,"        ""基準成本平均淨報酬"","
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1126,net_return,"        ""壓力成本平均淨報酬"","
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1172,net_return,"                pd.notna(item[""基準成本平均淨報酬""])"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1173,net_return,"                and item[""基準成本平均淨報酬""] > 0"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1184,net_return,"                pd.notna(item[""壓力成本平均淨報酬""])"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1185,net_return,"                and item[""壓力成本平均淨報酬""] > 0"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1240,net_return,"            ""12_H10已成熟逐筆實際淨報酬.csv"","
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1252,maturity,"        & new_schedule[""觀察狀態""].eq(""MATURED_RETURN_COMPUTED"")"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1255,maturity,    if len(old) != EXPECTED_H10_MATURED:
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1260,maturity,    if len(new) != EXPECTED_H10_MATURED:
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1263,maturity,"            f""\n預期：{EXPECTED_H10_MATURED}"""
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1301,maturity,    if len(merged) != EXPECTED_H10_MATURED:
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1350,maturity,"            ""預期"": EXPECTED_H10_MATURED,"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2003,maturity,    matured = schedule.loc[
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2004,maturity,"        schedule[""觀察狀態""].eq(""MATURED_RETURN_COMPUTED"")"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2032,maturity,        matured
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2097,maturity,        selected = matured.loc[
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2098,maturity,"            matured[""H""].eq(horizon)"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2163,maturity,"        matured[""基準成本淨報酬""],"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2168,maturity,"        matured[""壓力成本淨報酬""],"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2207,maturity,"        ""完成淨報酬筆數"": int(len(matured)),"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2210,maturity,"            matured[""基準成本淨報酬""].gt(0).sum()"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2213,maturity,"            float(matured[""基準成本淨報酬""].gt(0).mean())"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2214,maturity,            if len(matured) else None
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2218,maturity,"            matured[""壓力成本淨報酬""].gt(0).sum()"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2221,maturity,"            float(matured[""壓力成本淨報酬""].gt(0).mean())"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2222,maturity,            if len(matured) else None
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2232,maturity,"            ""matured_rows"": EXPECTED_H10_MATURED,"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2271,maturity,"            ""未把未成熟樣本算入已實現報酬"","
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2361,maturity,"        matured,"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2428,maturity,"        f""已成熟且完成淨報酬：{len(matured):,}"","
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2429,maturity,"        f""基準成本正報酬：{int(matured['基準成本淨報酬'].gt(0).sum()):,}"","
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2430,maturity,"        f""壓力成本正報酬：{int(matured['壓力成本淨報酬'].gt(0).sum()):,}"","
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2441,net_return,"            f""基準平均 {row['基準成本平均淨報酬']:.4%} | """
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2443,net_return,"            if pd.notna(row[""基準成本平均淨報酬""])"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2497,maturity,"        f""- 完成淨報酬：`{len(matured):,}`"","
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2665,maturity,"    print(f""成熟且完成淨報酬：{len(matured):,}"")"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2705,maturity,"        ""matured"": matured,"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,11,maturity,- H=10 必須與 v1.2.8 的 747 筆成熟樣本逐筆一致，否則停止。
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,68,net_return;maturity,"    ""SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py"""
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,78,maturity,"    / ""看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_"""
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,93,maturity,EXPECTED_H10_MATURED = 747
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,217,net_return,"def net_return_v122(gross, slip, fee, tax):"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,355,net_return,# 04. 多週期共用價格索引及實際淨報酬
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,369,maturity,"          (detail_dataframe, signal_label),"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,415,maturity,"    for detail, signal_label in signal_sets:"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,427,maturity,"                f""{signal_label} 日期－代號訊號鍵重複。"""
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,470,maturity,"                    ""label"": signal_label,"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,586,maturity,"        label = task[""label""]"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,697,net_return,            net_base = net_return_v122(
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,704,net_return,            net_stress = net_return_v122(
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,711,maturity,"            overall_status = ""MATURED_RETURN_COMPUTED"""
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,714,maturity,"            ""訊號口徑"": label,"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,804,maturity,        matured = group.loc[
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,805,maturity,"            group[""觀察狀態""].eq(""MATURED_RETURN_COMPUTED"")"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,809,maturity,"            matured[""基準成本淨報酬""],"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,814,maturity,"            matured[""壓力成本淨報酬""],"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,819,maturity,"            matured[""毛報酬""],"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,839,maturity,"            ""已成熟且完成報酬筆數"": int(len(matured)),"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,841,maturity,"                matured[""訊號日期""].nunique()"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,842,maturity,"            ) if len(matured) else 0,"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,875,net_return,"            ""基準成本平均淨報酬"": mean_or_nan(base),"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,886,net_return,"            ""壓力成本平均淨報酬"": mean_or_nan(stress),"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,921,maturity,        matured = group.loc[
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,922,maturity,"            group[""觀察狀態""].eq(""MATURED_RETURN_COMPUTED"")"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,934,maturity,"            ""完成淨報酬數"": int(len(matured)),"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,954,net_return,"            ""基準成本平均淨報酬"": mean_or_nan("
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,955,maturity,"                matured[""基準成本淨報酬""]"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,961,maturity,"                        matured[""基準成本淨報酬""],"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,965,maturity,                if len(matured) else np.nan
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,968,net_return,"            ""壓力成本平均淨報酬"": mean_or_nan("
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,969,maturity,"                matured[""壓力成本淨報酬""]"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,975,maturity,"                        matured[""壓力成本淨報酬""],"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,979,maturity,                if len(matured) else np.nan
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,990,maturity,def summarize_stock_horizon(matured):
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,991,maturity,    if matured.empty:
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,996,maturity,"    for (scope, horizon, code, name), group in matured.groupby("
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1055,net_return,"            ""基準成本平均淨報酬"": base_mean,"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1064,net_return,"            ""壓力成本平均淨報酬"": stress_mean,"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1122,net_return,"        ""基準成本平均淨報酬"","
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1126,net_return,"        ""壓力成本平均淨報酬"","
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1172,net_return,"                pd.notna(item[""基準成本平均淨報酬""])"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1173,net_return,"                and item[""基準成本平均淨報酬""] > 0"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1184,net_return,"                pd.notna(item[""壓力成本平均淨報酬""])"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1185,net_return,"                and item[""壓力成本平均淨報酬""] > 0"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1240,net_return,"            ""12_H10已成熟逐筆實際淨報酬.csv"","
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1252,maturity,"        & new_schedule[""觀察狀態""].eq(""MATURED_RETURN_COMPUTED"")"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1255,maturity,    if len(old) != EXPECTED_H10_MATURED:
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1260,maturity,    if len(new) != EXPECTED_H10_MATURED:
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1263,maturity,"            f""\n預期：{EXPECTED_H10_MATURED}"""
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1301,maturity,    if len(merged) != EXPECTED_H10_MATURED:
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,1350,maturity,"            ""預期"": EXPECTED_H10_MATURED,"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2003,maturity,    matured = schedule.loc[
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2004,maturity,"        schedule[""觀察狀態""].eq(""MATURED_RETURN_COMPUTED"")"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2032,maturity,        matured
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2097,maturity,        selected = matured.loc[
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2098,maturity,"            matured[""H""].eq(horizon)"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2163,maturity,"        matured[""基準成本淨報酬""],"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2168,maturity,"        matured[""壓力成本淨報酬""],"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2207,maturity,"        ""完成淨報酬筆數"": int(len(matured)),"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2210,maturity,"            matured[""基準成本淨報酬""].gt(0).sum()"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2213,maturity,"            float(matured[""基準成本淨報酬""].gt(0).mean())"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2214,maturity,            if len(matured) else None
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2218,maturity,"            matured[""壓力成本淨報酬""].gt(0).sum()"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2221,maturity,"            float(matured[""壓力成本淨報酬""].gt(0).mean())"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2222,maturity,            if len(matured) else None
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2232,maturity,"            ""matured_rows"": EXPECTED_H10_MATURED,"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2271,maturity,"            ""未把未成熟樣本算入已實現報酬"","
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2361,maturity,"        matured,"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2428,maturity,"        f""已成熟且完成淨報酬：{len(matured):,}"","
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2429,maturity,"        f""基準成本正報酬：{int(matured['基準成本淨報酬'].gt(0).sum()):,}"","
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2430,maturity,"        f""壓力成本正報酬：{int(matured['壓力成本淨報酬'].gt(0).sum()):,}"","
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2441,net_return,"            f""基準平均 {row['基準成本平均淨報酬']:.4%} | """
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2443,net_return,"            if pd.notna(row[""基準成本平均淨報酬""])"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2497,maturity,"        f""- 完成淨報酬：`{len(matured):,}`"","
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2665,maturity,"    print(f""成熟且完成淨報酬：{len(matured):,}"")"
+看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py,PY_FILE,2705,maturity,"        ""matured"": matured,"
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,113,maturity,V129_SUMMARY_LABELS = {
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,199,maturity,"def require_columns(frame, columns, label):"
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,204,maturity,"            f""{label} 缺少必要欄位：{missing}"""
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,417,maturity,    if not V129_SUMMARY_LABELS.issubset(modes):
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,432,maturity,        for mode in V129_SUMMARY_LABELS:
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,447,net_return,"                    f""H{h}_基準成本平均淨報酬"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,449,net_return,"                    f""H{h}_壓力成本平均淨報酬"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,504,maturity,        for mode in sorted(V129_SUMMARY_LABELS):
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,519,net_return,"                    ""基準成本平均淨報酬"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,521,net_return,"                    ""壓力成本平均淨報酬"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1037,maturity,"    for label, mask in masks.items():"
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1048,maturity,"                f""{label} 日期－股票代號重複。"""
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1052,maturity,"            (group_detail, label)"
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1060,maturity,"                ""分位組"": label,"
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1121,net_return,"        ""基準成本平均淨報酬"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1124,net_return,"        ""壓力成本平均淨報酬"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1165,net_return,"            ""基準成本平均淨報酬"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1168,net_return,"            ""壓力成本平均淨報酬"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1741,maturity,    matured = schedule.loc[
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1742,maturity,"        schedule[""觀察狀態""].eq(""MATURED_RETURN_COMPUTED"")"
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1745,maturity,    if matured.empty:
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1824,maturity,"        ""Q1Q5成熟報酬筆數"": int(len(matured)),"
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1936,maturity,"        f""已成熟且完成淨報酬：{len(matured):,} 筆"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1946,net_return,"            f""基準平均={row['基準成本平均淨報酬']:.4%} | """
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1948,net_return,"            f""壓力平均={row['壓力成本平均淨報酬']:.4%} | """
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1960,net_return,"            f""Q5-Q1 基準平均差={row['Q5減Q1_基準成本平均淨報酬']:.4%} | """
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1961,net_return,"            f""Q5-Q1 壓力平均差={row['Q5減Q1_壓力成本平均淨報酬']:.4%} | """
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_181520/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,2016,maturity,"        f""- 成熟淨報酬：`{len(matured):,}`"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,113,maturity,V129_SUMMARY_LABELS = {
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,199,maturity,"def require_columns(frame, columns, label):"
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,204,maturity,"            f""{label} 缺少必要欄位：{missing}"""
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,417,maturity,    if not V129_SUMMARY_LABELS.issubset(modes):
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,432,maturity,        for mode in V129_SUMMARY_LABELS:
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,447,net_return,"                    f""H{h}_基準成本平均淨報酬"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,449,net_return,"                    f""H{h}_壓力成本平均淨報酬"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,504,maturity,        for mode in sorted(V129_SUMMARY_LABELS):
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,519,net_return,"                    ""基準成本平均淨報酬"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,521,net_return,"                    ""壓力成本平均淨報酬"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1037,maturity,"    for label, mask in masks.items():"
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1048,maturity,"                f""{label} 日期－股票代號重複。"""
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1052,maturity,"            (group_detail, label)"
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1060,maturity,"                ""分位組"": label,"
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1121,net_return,"        ""基準成本平均淨報酬"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1124,net_return,"        ""壓力成本平均淨報酬"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1165,net_return,"            ""基準成本平均淨報酬"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1168,net_return,"            ""壓力成本平均淨報酬"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1741,maturity,    matured = schedule.loc[
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1742,maturity,"        schedule[""觀察狀態""].eq(""MATURED_RETURN_COMPUTED"")"
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1745,maturity,    if matured.empty:
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1824,maturity,"        ""Q1Q5成熟報酬筆數"": int(len(matured)),"
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1936,maturity,"        f""已成熟且完成淨報酬：{len(matured):,} 筆"","
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1946,net_return,"            f""基準平均={row['基準成本平均淨報酬']:.4%} | """
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1948,net_return,"            f""壓力平均={row['壓力成本平均淨報酬']:.4%} | """
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1960,net_return,"            f""Q5-Q1 基準平均差={row['Q5減Q1_基準成本平均淨報酬']:.4%} | """
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,1961,net_return,"            f""Q5-Q1 壓力平均差={row['Q5減Q1_壓力成本平均淨報酬']:.4%} | """
+看股最速適_v1_3_0_Q1Q5同期對照與歷史來源盤點_20261111_202132/SSO_v1.3.0_同期Q1Q5分組對照暨長期資料來源盤點.py,PY_FILE,2016,maturity,"        f""- 成熟淨報酬：`{len(matured):,}`"","
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,145,maturity,"    ""matured"","
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,194,maturity,"matured = L[""matured""]"
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,221,maturity,"print(""[INFO] 已成熟淨報酬："", f""{len(matured):,}"")"
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,292,maturity,# 03. 讀取 v1.2.8 原始 H10 成熟樣本，拆分 747 筆
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,300,maturity,    LEGACY_LABEL = (
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,304,maturity,    OFFICIAL_LABEL = (
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,341,net_return,"                ""12_H10已成熟逐筆實際淨報酬.csv"","
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,380,maturity,"        old[""訊號口徑""].eq(LEGACY_LABEL)"
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,384,maturity,"        old[""訊號口徑""].eq(OFFICIAL_LABEL)"
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,413,maturity,"            ""MATURED_RETURN_COMPUTED"""
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,418,maturity,"    new[""訊號口徑""] = OFFICIAL_LABEL"
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,679,maturity,"    LEGACY_LABEL = ""v1.2.7原凍結Q5_官方普通股過濾"""
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,680,maturity,"    OFFICIAL_LABEL = ""v1.2.8官方普通股重新排名Q5"""
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,692,net_return,"            ""12_H10已成熟逐筆實際淨報酬.csv"","
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,707,maturity,"        old[""訊號口徑""].eq(LEGACY_LABEL)"
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,711,maturity,"        old[""訊號口徑""].eq(OFFICIAL_LABEL)"
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,723,maturity,"        & new_schedule[""觀察狀態""].eq(""MATURED_RETURN_COMPUTED"")"
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,726,maturity,"    new[""訊號口徑""] = OFFICIAL_LABEL"
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,905,maturity,    v129.summarize_stock_horizon(matured)
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,1092,maturity,"    ""成熟淨報酬列數"": int(len(matured)),"
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,1187,maturity,matured.to_csv(
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,1188,net_return,"    out_dir / ""05_Q1至Q5已成熟實際淨報酬.csv.gz"","
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,1297,net_return,"    ""四、四週期實際淨報酬"","
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,1299,maturity,"    f""已成熟且完成淨報酬：{len(matured):,}筆"","
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,1309,net_return,"        f""基準平均={row.get('基準成本平均淨報酬', np.nan)} | """
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,1310,net_return,"        f""壓力平均={row.get('壓力成本平均淨報酬', np.nan)}"""
+看股最速適_v1_3_0_Q1Q5同期分組與歷史來源盤點_20261111_204711/SSO_v1.3.0_同期Q1-Q5分組對照暨長期資料來源盤點.py,PY_FILE,1371,maturity,"    f""- 已成熟淨報酬：`{len(matured):,}`"","
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,986,maturity,    source_label
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,1019,maturity,"            f""{source_label} 缺少官方行情必要欄位：{missing}"""
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,1065,maturity,"    new[""official_note""] = source_label"
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,1070,maturity,"            f""{source_label} 有無法解析的日期。"""
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,1076,maturity,"            f""{source_label} 有無法解析的市場。"""
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,1082,maturity,"            f""{source_label} 有無法解析的證券代號。"""
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,1088,maturity,"            f""{source_label} 有空白證券代號。"""
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,1880,maturity,    matured = schedule.loc[
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,1882,maturity,"            ""MATURED_RETURN_COMPUTED"""
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,1900,maturity,            matured
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,1922,maturity,    first_matured = matured.loc[
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,1923,maturity,"        matured[""訊號口徑""].eq("
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,1928,maturity,    daily_matured = matured.loc[
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,1929,maturity,"        matured[""訊號口徑""].eq("
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,1936,maturity,"        ""matured"": matured,"
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,1943,maturity,"        ""first_matured"": first_matured,"
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,1944,maturity,"        ""daily_matured"": daily_matured"
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,2677,maturity,"    matured = oos_result[""matured""]"
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,2703,maturity,    first_matured = (
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,2704,maturity,"        oos_result[""first_matured""]"
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,2707,maturity,    daily_matured = (
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,2708,maturity,"        oos_result[""daily_matured""]"
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,2865,maturity,"            ""已成熟淨報酬筆數"": len(matured),"
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,2867,maturity,"            ""第一批已成熟筆數"": len(first_matured),"
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,2869,maturity,"            ""每日重新進場已成熟筆數"": len(daily_matured),"
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,2992,maturity,    matured.to_csv(
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,2993,net_return,"        out_dir / ""08_凍結12檔已成熟實際淨報酬.csv.gz"","
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,3027,maturity,    first_matured.to_csv(
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,3042,maturity,    daily_matured.to_csv(
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,3088,maturity,"        f""第一批已成熟：{len(first_matured)}"","
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,3093,maturity,"        f""已成熟淨報酬：{len(daily_matured)}"","
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,3107,net_return,"                f""基準平均={row['基準成本平均淨報酬']} | """
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,3109,net_return,"                f""壓力平均={row['壓力成本平均淨報酬']} | """
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,3320,maturity,"        f""第一批已成熟：{len(first_matured)}"""
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,3332,maturity,"        f""已成熟淨報酬：{len(matured)}"""
+看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py,PY_FILE,3393,maturity,"        ""matured"": matured,"
+H5_848官方行情補抓修復_v1.0.2_20261117_043020_4682/1.py,PY_FILE,462,net_return,"def net_return(gross: float, slippage: float) -> float:"
+H5_848官方行情補抓修復_v1.0.2_20261117_043020_4682/1.py,PY_FILE,643,net_return,"            net_general = net_return(gross, SLIPPAGE_GENERAL)"
+H5_848官方行情補抓修復_v1.0.2_20261117_043020_4682/1.py,PY_FILE,644,net_return,"            net_stress = net_return(gross, SLIPPAGE_STRESS)"
+H5_848官方行情補抓修復_v1.0.2_20261117_043020_4682/1.py,PY_FILE,678,net_return,"            ""net_return_general_price_pair"": net_general,"
+H5_848官方行情補抓修復_v1.0.2_20261117_043020_4682/1.py,PY_FILE,679,net_return,"            ""net_return_stress_price_pair"": net_stress,"
+H5_848官方行情補抓修復_v1.0.2_20261117_043020_4682/1.py,PY_FILE,1012,net_return,"    test(""net_return成本公式有限"", lambda: (_ for _ in ()).throw(AssertionError())"
+H5_848官方行情補抓修復_v1.0.2_20261117_043020_4682/1.py,PY_FILE,1013,net_return,"         if not math.isfinite(net_return(0.05, SLIPPAGE_GENERAL)) else None)"

@@ -1,0 +1,778 @@
+{
+  "version": "SSO_H5_Original_Formal_Gate_Trace_v1.0",
+  "run_id": "20261122_082334",
+  "created_at_taipei": "2026-11-22T08:27:31.626061+08:00",
+  "source_zip": "/content/drive/MyDrive/看股最速適/推薦結果/非前瞻參考/SSO_main_v5_15_20261118_192959_1730c0/來源模型ZIP/SSO_v2.50_非前瞻參考_H5_2026-11-18_20261118_193832_200a91_結果.zip",
+  "source_zip_sha256": "263330e961a51fabba7bb399a7bfae4ea38646c48a5c3e7851f9056bd6141111",
+  "source_zip_sha256_expected": "263330e961a51fabba7bb399a7bfae4ea38646c48a5c3e7851f9056bd6141111",
+  "source_hash_pass": true,
+  "zip_crc_pass": true,
+  "zip_member_count": 22,
+  "zip_python_notebook_member_count": 0,
+  "required_members_missing": [],
+  "v250_diagnostic": {
+    "row_count_all": 30800,
+    "row_count_h5": 3770,
+    "horizon_column": "持有期間H",
+    "filter_status": "H5_FILTERED"
+  },
+  "v250_calibration_daily": {
+    "row_count_all": 30760,
+    "row_count_h5": 3760,
+    "horizon_column": "持有期間H",
+    "filter_status": "H5_FILTERED"
+  },
+  "v250_latest_candidates": {
+    "row_count_all": 6876,
+    "row_count_h5": 1719,
+    "horizon_column": "持有期間H",
+    "filter_status": "H5_FILTERED"
+  },
+  "report_text_hit_count": 167,
+  "settings_matching_field_count": 39,
+  "maturity_related_columns": [
+    {
+      "table": "樣本外機率區間門檻診斷_H5",
+      "column": "持有期間H"
+    },
+    {
+      "table": "樣本外機率區間門檻診斷_H5",
+      "column": "歷史同機率區間淨獲利筆數"
+    },
+    {
+      "table": "樣本外機率區間門檻診斷_H5",
+      "column": "歷史同區間實際淨獲利率_成交加權"
+    },
+    {
+      "table": "樣本外機率區間門檻診斷_H5",
+      "column": "歷史同區間實際淨獲利率_逐日平均"
+    },
+    {
+      "table": "樣本外機率區間門檻診斷_H5",
+      "column": "歷史同區間平均實際淨報酬_成交加權"
+    },
+    {
+      "table": "樣本外機率區間門檻診斷_H5",
+      "column": "歷史同區間平均實際淨報酬_逐日平均"
+    },
+    {
+      "table": "樣本外機率區間門檻診斷_H5",
+      "column": "最低實際淨獲利率"
+    },
+    {
+      "table": "獲利機率校準逐訊號日_H5",
+      "column": "持有期間H"
+    },
+    {
+      "table": "獲利機率校準逐訊號日_H5",
+      "column": "估計淨獲利機率區間"
+    },
+    {
+      "table": "獲利機率校準逐訊號日_H5",
+      "column": "有效樣本數"
+    },
+    {
+      "table": "獲利機率校準逐訊號日_H5",
+      "column": "平均估計淨獲利機率"
+    },
+    {
+      "table": "獲利機率校準逐訊號日_H5",
+      "column": "實際淨獲利率"
+    },
+    {
+      "table": "獲利機率校準逐訊號日_H5",
+      "column": "平均實際淨報酬"
+    },
+    {
+      "table": "獲利機率校準逐訊號日_H5",
+      "column": "淨獲利筆數"
+    },
+    {
+      "table": "最新全市場候選持續評估_H5",
+      "column": "持有期間H"
+    },
+    {
+      "table": "最新全市場候選持續評估_H5",
+      "column": "估計淨獲利機率_回歸常態對照"
+    },
+    {
+      "table": "最新全市場候選持續評估_H5",
+      "column": "估計淨獲利機率_分類未校準"
+    },
+    {
+      "table": "最新全市場候選持續評估_H5",
+      "column": "估計淨獲利機率_校準"
+    },
+    {
+      "table": "最新全市場候選持續評估_H5",
+      "column": "歷史同區間實際淨獲利率_成交加權"
+    },
+    {
+      "table": "最新全市場候選持續評估_H5",
+      "column": "歷史同區間實際淨獲利率_逐日平均"
+    },
+    {
+      "table": "最新全市場候選持續評估_H5",
+      "column": "歷史同區間平均實際淨報酬_成交加權"
+    },
+    {
+      "table": "最新全市場候選持續評估_H5",
+      "column": "歷史同區間平均實際淨報酬_逐日平均"
+    },
+    {
+      "table": "最新全市場候選持續評估_H5",
+      "column": "校準期實際淨獲利率"
+    }
+  ],
+  "v14_prior_trace": {
+    "retrieved": true,
+    "url": "https://raw.githubusercontent.com/CHLINX/sso/audit/sso-h5-source-trace-v14-20261120_115107/SSO_H5_Source_Code_Trace_Audit_v14/00_v14%E8%A8%BA%E6%96%B7%E6%91%98%E8%A6%81.json",
+    "audit": "SSO H5 Source Code Trace Audit v14",
+    "created_at": "2026-11-20T11:51:03.929310+00:00",
+    "run_directories_found": 0,
+    "root_source_files_scanned": 57,
+    "root_python_files": 44,
+    "root_notebooks": 13,
+    "archives_scanned": 230,
+    "archive_code_members": 47,
+    "expected_v250_result_zip": {
+      "exists": true,
+      "path": "/content/drive/MyDrive/看股最速適/推薦結果/非前瞻參考/SSO_main_v5_15_20261118_192959_1730c0/來源模型ZIP/SSO_v2.50_非前瞻參考_H5_2026-11-18_20261118_193832_200a91_結果.zip",
+      "bytes": 24101670,
+      "sha256": "263330e961a51fabba7bb399a7bfae4ea38646c48a5c3e7851f9056bd6141111",
+      "members": 22,
+      "python_notebook_members": 0,
+      "metadata_members": 3,
+      "crc": "PASS",
+      "member_list": [
+        {
+          "member_path": "10檔分級前瞻績效比較_v2.50.csv",
+          "bytes": 13734,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "10檔組合淨值路徑_v2.50.csv",
+          "bytes": 3768753,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "10檔組合逐籃子逐股成交明細_v2.50.csv",
+          "bytes": 110049136,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "SSO_v2.50_核心分析修正說明.txt",
+          "bytes": 2106,
+          "suffix": ".txt"
+        },
+        {
+          "member_path": "SSO_v2.50_樣本外校準門檻與公司名稱報告.txt",
+          "bytes": 127767,
+          "suffix": ".txt"
+        },
+        {
+          "member_path": "上漲潛力分級實際績效檢驗_v2.50.csv",
+          "bytes": 17066,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "來源品質與執行設定_v2.50.json",
+          "bytes": 4235,
+          "suffix": ".json"
+        },
+        {
+          "member_path": "分類機率能力總結_v2.50.csv",
+          "bytes": 1234,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "分類機率能力逐訊號日_v2.50.csv",
+          "bytes": 878459,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "最新10檔獲利可能性排行_v2.50.csv",
+          "bytes": 25139,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "最新全市場候選持續評估_v2.50.csv",
+          "bytes": 3876254,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "最新達標獲利候選最多10檔_v2.50.csv",
+          "bytes": 1858,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "樣本外機率區間門檻診斷_v2.50.csv",
+          "bytes": 10055308,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "歷史樣本外每日10檔候選_v2.50.csv",
+          "bytes": 19820607,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "獲利機率校準檢驗總結_v2.50.csv",
+          "bytes": 6086,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "獲利機率校準逐訊號日_v2.50.csv",
+          "bytes": 2360474,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "選股範圍敏感度淨值路徑_v2.50.csv",
+          "bytes": 4490196,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "選股範圍敏感度總結_v2.50.csv",
+          "bytes": 17233,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "選股範圍敏感度逐訊號日_v2.50.csv",
+          "bytes": 9849456,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "預測分位組樣本外實際績效_v2.50.csv",
+          "bytes": 21783,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "預測排序能力總結_v2.50.csv",
+          "bytes": 2572,
+          "suffix": ".csv"
+        },
+        {
+          "member_path": "預測排序能力逐訊號日診斷_v2.50.csv",
+          "bytes": 2046804,
+          "suffix": ".csv"
+        }
+      ],
+      "interpretation": "結果 ZIP 不含 Python／Notebook，不能單獨證明模型原始程式。"
+    },
+    "source_candidates_top20": [
+      {
+        "rank": 1,
+        "score": 1035,
+        "source_type": "ROOT_PY",
+        "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py",
+        "relative_path": "看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 6,
+        "dynamic_exec": 1,
+        "dynamic_import": 1,
+        "subprocess": 2,
+        "source_zip": 15,
+        "manifest": 202,
+        "inferred_role": "AUC_METRIC | EXECUTION_ENTRY_OR_DISPATCHER | SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 182742,
+        "sha256": "73dd73bc2e8ef59e714d829ad7b6e3cc5f3fc282644f21d50b692e0481630e10"
+      },
+      {
+        "rank": 2,
+        "score": 684,
+        "source_type": "ROOT_IPYNB",
+        "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KQlpyeG1MVGIxU2xHVkVGdWxNb1lOSzBJTmQ4PQ.ipynb",
+        "relative_path": "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KQlpyeG1MVGIxU2xHVkVGdWxNb1lOSzBJTmQ4PQ.ipynb",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 0,
+        "dynamic_exec": 0,
+        "dynamic_import": 0,
+        "subprocess": 0,
+        "source_zip": 24,
+        "manifest": 42,
+        "inferred_role": "SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 66812,
+        "sha256": "a810efdb639c8e56b57dc095fc95fcd22037a4ebe6acbb98152f8f60ce04ce7e"
+      },
+      {
+        "rank": 3,
+        "score": 595,
+        "source_type": "ROOT_IPYNB",
+        "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb",
+        "relative_path": "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1Ka3VVclNCcVVlV1JRckRvWGkrVWo2eDRNSDZNPQ.ipynb",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 13,
+        "dynamic_exec": 0,
+        "dynamic_import": 0,
+        "subprocess": 0,
+        "source_zip": 10,
+        "manifest": 10,
+        "inferred_role": "AUC_METRIC | SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 40877,
+        "sha256": "dfe6a9c38016c8db3ac20ae4fd15c88a186cdc84421adcc366824f87f1d478c1"
+      },
+      {
+        "rank": 4,
+        "score": 500,
+        "source_type": "ROOT_IPYNB",
+        "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVnJYVm1pVVpQbWdDUmdRL1dreDQ4c1lHTkFnPQ.ipynb",
+        "relative_path": "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KVnJYVm1pVVpQbWdDUmdRL1dreDQ4c1lHTkFnPQ.ipynb",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 1,
+        "logistic": 1,
+        "sigmoid_logit": 0,
+        "auc": 0,
+        "dynamic_exec": 0,
+        "dynamic_import": 0,
+        "subprocess": 0,
+        "source_zip": 12,
+        "manifest": 5,
+        "inferred_role": "CALIBRATION_MODEL | SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 34668,
+        "sha256": "f01326bbe60eb7c20875e643a54fcc258fae69aa207c45744391678a368176c0"
+      },
+      {
+        "rank": 5,
+        "score": 462,
+        "source_type": "ROOT_PY",
+        "source_path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.10_官方行情即時驗證與增量續接_20261112_180751_3bd3/SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.10.py",
+        "relative_path": "SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.10_官方行情即時驗證與增量續接_20261112_180751_3bd3/SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.10.py",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 0,
+        "dynamic_exec": 0,
+        "dynamic_import": 0,
+        "subprocess": 0,
+        "source_zip": 8,
+        "manifest": 131,
+        "inferred_role": "SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 109073,
+        "sha256": "7357c2da5220050c8989b07c6e7e338f6d2f7bfdc2a35ae80ef4da451c90ff66"
+      },
+      {
+        "rank": 6,
+        "score": 426,
+        "source_type": "ROOT_PY",
+        "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py",
+        "relative_path": "看股最速適_v1_2_8_官方普通股Q5與H10成熟樣本驗證_20261111_113853/SSO_v1.2.8_官方普通股Q5與H10成熟樣本實際淨報酬驗證.py",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 0,
+        "dynamic_exec": 0,
+        "dynamic_import": 1,
+        "subprocess": 3,
+        "source_zip": 11,
+        "manifest": 31,
+        "inferred_role": "EXECUTION_ENTRY_OR_DISPATCHER | SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 74394,
+        "sha256": "3118aa8d3d255e13d722241e6daeeecdf5a8141a3bf4d87efc8bf059f6296fea"
+      },
+      {
+        "rank": 7,
+        "score": 425,
+        "source_type": "ROOT_IPYNB",
+        "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb",
+        "relative_path": "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ.ipynb",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 0,
+        "dynamic_exec": 0,
+        "dynamic_import": 1,
+        "subprocess": 0,
+        "source_zip": 14,
+        "manifest": 20,
+        "inferred_role": "EXECUTION_ENTRY_OR_DISPATCHER | SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 56384,
+        "sha256": "cb8363dbc5f12db8980a757a0c85d80646ba59b275665717b27cd82aa409c7be"
+      },
+      {
+        "rank": 8,
+        "score": 424,
+        "source_type": "ROOT_PY",
+        "source_path": "/content/drive/MyDrive/看股最速適/H5_848官方行情補抓修復_v1.0.2_20261117_043020_4682/1.py",
+        "relative_path": "H5_848官方行情補抓修復_v1.0.2_20261117_043020_4682/1.py",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 0,
+        "dynamic_exec": 1,
+        "dynamic_import": 0,
+        "subprocess": 6,
+        "source_zip": 7,
+        "manifest": 53,
+        "inferred_role": "EXECUTION_ENTRY_OR_DISPATCHER | SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 58146,
+        "sha256": "2737f0919464c545092da66529b58553232342e70caa492885c2e4a770ae2337"
+      },
+      {
+        "rank": 9,
+        "score": 400,
+        "source_type": "ROOT_PY",
+        "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py",
+        "relative_path": "看股最速適_v1_3_1_凍結12檔前瞻樣本外追蹤_20261112_220451_2ea5/SSO_v1.3.1_凍結12檔前瞻樣本外追蹤.py",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 0,
+        "dynamic_exec": 0,
+        "dynamic_import": 1,
+        "subprocess": 0,
+        "source_zip": 7,
+        "manifest": 95,
+        "inferred_role": "EXECUTION_ENTRY_OR_DISPATCHER | SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 81049,
+        "sha256": "5b8c112969dd04420ef1bcf062ba0ee2b20c209328423923f6b37b174e2f650f"
+      },
+      {
+        "rank": 10,
+        "score": 374,
+        "source_type": "ROOT_PY",
+        "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py",
+        "relative_path": "看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_162816/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 0,
+        "dynamic_exec": 0,
+        "dynamic_import": 1,
+        "subprocess": 3,
+        "source_zip": 9,
+        "manifest": 30,
+        "inferred_role": "EXECUTION_ENTRY_OR_DISPATCHER | SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 75518,
+        "sha256": "efb3f90629c00c1f5f290cc1637e334ce68d1fe0c7ef1415cbf01494dfe934ac"
+      },
+      {
+        "rank": 11,
+        "score": 374,
+        "source_type": "ROOT_PY",
+        "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py",
+        "relative_path": "看股最速適_v1_2_9_多週期成熟淨報酬驗證_20261111_175428/SSO_v1.2.9_官方普通股Q5多週期成熟淨報酬驗證.py",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 0,
+        "dynamic_exec": 0,
+        "dynamic_import": 1,
+        "subprocess": 3,
+        "source_zip": 9,
+        "manifest": 30,
+        "inferred_role": "EXECUTION_ENTRY_OR_DISPATCHER | SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 75518,
+        "sha256": "efb3f90629c00c1f5f290cc1637e334ce68d1fe0c7ef1415cbf01494dfe934ac"
+      },
+      {
+        "rank": 12,
+        "score": 365,
+        "source_type": "ROOT_IPYNB",
+        "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb",
+        "relative_path": "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KTllKNEpOYlRkRHgrNnhHK2xqQTE3Ky9ycmhNPQ.ipynb",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 11,
+        "dynamic_exec": 0,
+        "dynamic_import": 0,
+        "subprocess": 0,
+        "source_zip": 2,
+        "manifest": 20,
+        "inferred_role": "AUC_METRIC | SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 49345,
+        "sha256": "8ba1c99b4e117912ab0853b06acad0b1ff3d8bff196ac81b4a33c42c14088dd6"
+      },
+      {
+        "rank": 13,
+        "score": 348,
+        "source_type": "ROOT_PY",
+        "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_084621/SSO_v4.87.5.20_note_normalize_and_script_archive.py",
+        "relative_path": "看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_084621/SSO_v4.87.5.20_note_normalize_and_script_archive.py",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 0,
+        "dynamic_exec": 0,
+        "dynamic_import": 0,
+        "subprocess": 0,
+        "source_zip": 12,
+        "manifest": 24,
+        "inferred_role": "SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 46507,
+        "sha256": "778a84f5a52de4260e61866de03aa8a0f4ceb7c763f0a70bb14b4732cc9333b2"
+      },
+      {
+        "rank": 14,
+        "score": 348,
+        "source_type": "ROOT_PY",
+        "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_124633/SSO_v4.87.5.20_note_normalize_and_script_archive.py",
+        "relative_path": "看股最速適_v4.87.5.20_九日雙市場備註欄位統一與程式封存_20261107_124633/SSO_v4.87.5.20_note_normalize_and_script_archive.py",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 0,
+        "dynamic_exec": 0,
+        "dynamic_import": 0,
+        "subprocess": 0,
+        "source_zip": 12,
+        "manifest": 24,
+        "inferred_role": "SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 46507,
+        "sha256": "778a84f5a52de4260e61866de03aa8a0f4ceb7c763f0a70bb14b4732cc9333b2"
+      },
+      {
+        "rank": 15,
+        "score": 348,
+        "source_type": "ROOT_PY",
+        "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.22_九日雙市場單一來源校正與備註稽核_20261107_130527/SSO_v4.87.5.22_source_group_selection_and_note_audit.py",
+        "relative_path": "看股最速適_v4.87.5.22_九日雙市場單一來源校正與備註稽核_20261107_130527/SSO_v4.87.5.22_source_group_selection_and_note_audit.py",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 0,
+        "dynamic_exec": 0,
+        "dynamic_import": 0,
+        "subprocess": 0,
+        "source_zip": 12,
+        "manifest": 24,
+        "inferred_role": "SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 55912,
+        "sha256": "252a1e27e5d405dd8eea9aa270eb4dc34ee5adfaa51eae43063e372f3b05bfed"
+      },
+      {
+        "rank": 16,
+        "score": 348,
+        "source_type": "ROOT_PY",
+        "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_133751/SSO_v4.87.5.23_note_semantics_and_source_audit.py",
+        "relative_path": "看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_133751/SSO_v4.87.5.23_note_semantics_and_source_audit.py",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 0,
+        "dynamic_exec": 0,
+        "dynamic_import": 0,
+        "subprocess": 0,
+        "source_zip": 12,
+        "manifest": 24,
+        "inferred_role": "SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 60402,
+        "sha256": "c615c93ed0f5c25f76a75afacd4b8896f3b42a48d0d0c25d790ebe4167cb88d0"
+      },
+      {
+        "rank": 17,
+        "score": 348,
+        "source_type": "ROOT_PY",
+        "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_154612/SSO_v4.87.5.23_note_semantics_and_source_audit.py",
+        "relative_path": "看股最速適_v4.87.5.23_九日雙市場單一來源校正與備註稽核_20261107_154612/SSO_v4.87.5.23_note_semantics_and_source_audit.py",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 0,
+        "dynamic_exec": 0,
+        "dynamic_import": 0,
+        "subprocess": 0,
+        "source_zip": 12,
+        "manifest": 24,
+        "inferred_role": "SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 60402,
+        "sha256": "c615c93ed0f5c25f76a75afacd4b8896f3b42a48d0d0c25d790ebe4167cb88d0"
+      },
+      {
+        "rank": 18,
+        "score": 340,
+        "source_type": "ROOT_PY",
+        "source_path": "/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.7_官方行情即時驗證與增量續接_20261112_090001_3b99/SSO_Market_Data_Continuation_v1.5.7.py",
+        "relative_path": "SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.7_官方行情即時驗證與增量續接_20261112_090001_3b99/SSO_Market_Data_Continuation_v1.5.7.py",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 0,
+        "dynamic_exec": 0,
+        "dynamic_import": 0,
+        "subprocess": 0,
+        "source_zip": 4,
+        "manifest": 120,
+        "inferred_role": "SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 96118,
+        "sha256": "f4298180b7759c49b019a08827fcb358abb4f30854170201331ac5f68f65a0b9"
+      },
+      {
+        "rank": 19,
+        "score": 319,
+        "source_type": "ROOT_PY",
+        "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_v1_3_1_歷史來源精確驗證_20261111_214112/SSO_v1.3.1_歷史OHLC與逐日證券分類來源精確驗證.py",
+        "relative_path": "看股最速適_v1_3_1_歷史來源精確驗證_20261111_214112/SSO_v1.3.1_歷史OHLC與逐日證券分類來源精確驗證.py",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 0,
+        "logistic": 0,
+        "sigmoid_logit": 0,
+        "auc": 0,
+        "dynamic_exec": 0,
+        "dynamic_import": 0,
+        "subprocess": 3,
+        "source_zip": 7,
+        "manifest": 45,
+        "inferred_role": "EXECUTION_ENTRY_OR_DISPATCHER | SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 82658,
+        "sha256": "c37dc299110f27838c0f2ed98cd4be7b9ad4df2f4efe1af23764b0ce14ed413e"
+      },
+      {
+        "rank": 20,
+        "score": 285,
+        "source_type": "ROOT_IPYNB",
+        "source_path": "/content/drive/MyDrive/看股最速適/看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KdEZsWXp0RjlOWS80WEwrTlFybHFhZmkxTElBPQ.ipynb",
+        "relative_path": "看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/復原候選版本_不公開上傳/___1Hhl7m9r__0BxMjNkhpez1KdEZsWXp0RjlOWS80WEwrTlFybHFhZmkxTElBPQ.ipynb",
+        "exact_output_filename": 0,
+        "output_stem": 0,
+        "slope_header": 0,
+        "platt": 1,
+        "logistic": 1,
+        "sigmoid_logit": 0,
+        "auc": 0,
+        "dynamic_exec": 0,
+        "dynamic_import": 0,
+        "subprocess": 0,
+        "source_zip": 3,
+        "manifest": 10,
+        "inferred_role": "CALIBRATION_MODEL | SOURCE_ARCHIVE_HANDLER | MANIFEST_OR_METADATA",
+        "bytes": 60169,
+        "sha256": "dc2c8484ebb6312483156e652f0cc764f10b7fb84c16a693ca029eec6aa1aeea"
+      }
+    ],
+    "limitations": [
+      "This audit searches source text and execution-dispatch hints; keyword hits do not prove a runtime call path.",
+      "A candidate is not proven to have produced the 2026-11-18 result until code, manifest, and output hashes are connected.",
+      "No discovered Python or Notebook source is executed.",
+      "The v2.50 model is not retrained and no model threshold is changed."
+    ],
+    "safety": {
+      "scope": "/content/drive/MyDrive/看股最速適",
+      "巡田最速適_scanned": false,
+      "source_files_modified": false,
+      "source_files_executed": false,
+      "model_retrained": false,
+      "model_threshold_changed": false,
+      "github_main_modified": false
+    },
+    "prior_v250_zip_sha_matches": true
+  },
+  "current_drive_source_scan": {
+    "scanned_source_count": 57,
+    "linked_source_candidate_count": 0,
+    "match_line_count": 868,
+    "errors": 0,
+    "linked_candidate_paths": []
+  },
+  "source_trace_status": "ORIGINAL_FORMAL_FUNCTION_NOT_PROVEN",
+  "formal_gate_source_verified": false,
+  "nineteen_py_gate_recalculation": {
+    "found": true,
+    "status": "PASS",
+    "source_file": "/content/SSO_H5_Supported_Calibration_v1_20261122_081605/report/04_H5最近756市場日正式門檻重算.csv",
+    "rows": 20,
+    "stored_pass_rows": 0,
+    "recalculated_pass_rows": 0,
+    "all_pass_flag_mismatch_rows": 0,
+    "mapped_columns": {
+      "有效樣本數": "有效樣本數",
+      "訊號日數": "訊號日數",
+      "加權勝率": "成交加權實際勝率",
+      "逐日勝率": "逐訊號日平均勝率",
+      "加權淨報酬": "平均實際淨報酬_成交加權",
+      "逐日淨報酬": "平均實際淨報酬_逐日平均",
+      "原始全部通過": "全部條件通過"
+    },
+    "thresholds_used": {
+      "minimum_samples": 500,
+      "minimum_signal_days": 20,
+      "minimum_weighted_win_rate": 0.52,
+      "minimum_daily_average_win_rate": 0.52,
+      "minimum_weighted_actual_net_return": 0.0,
+      "minimum_daily_average_actual_net_return": 0.0
+    }
+  },
+  "gate_spec_used_for_19py_recheck": {
+    "minimum_samples": 500,
+    "minimum_signal_days": 20,
+    "minimum_weighted_win_rate": 0.52,
+    "minimum_daily_average_win_rate": 0.52,
+    "minimum_weighted_actual_net_return": 0.0,
+    "minimum_daily_average_actual_net_return": 0.0
+  },
+  "interpretation": [
+    "本次只讀取原始來源檔案及程式碼文字，不執行來源 Python 或 Notebook。",
+    "19.py 的六項門檻布林值已獨立重新計算；這只能證明輸出表內的門檻布林運算一致。",
+    "只有在原始程式碼能連結 v2.50 輸出檔案，並找到窗口、成熟標籤及正式門檻的實際函數，才可宣稱原始函數已追溯。",
+    "若找不到該來源，正式原始門檻函數仍標示未證實，不以報告文字或輸出表替代原始程式碼。",
+    "不重新訓練、不改變任何正式門檻、不輸出股票推薦。"
+  ],
+  "safety": {
+    "drive_source_files_modified": false,
+    "drive_source_files_executed": false,
+    "巡田最速適_scanned": false,
+    "model_retrained": false,
+    "thresholds_changed": false,
+    "github_main_modified": false
+  }
+}
