@@ -1,0 +1,1251 @@
+﻿source_row_index,version_field,version_value,model_hits,calibration_hits,gate_hits,lineage_hits,score,row_json,code_excerpt
+2799,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,v2[._]50;v2\.50,372,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1606"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1604:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1605:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1606:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1607:         cols = [c for c in cols if c in predictions.columns]\n1608:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.50.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+4
+
+[line_in_cell]
+1606"
+2800,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,,v2[._]50;v2\.50,369,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1607"", ""matched_line"": ""cols = [c for c in cols if c in predictions.columns]"", ""context"": ""1605:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1606:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1607:         cols = [c for c in cols if c in predictions.columns]\n1608:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.50.csv', index=False, encoding='utf-8-sig')\n1609:     if latest_frames:""}","[cell_index]
+4
+
+[line_in_cell]
+1607"
+2812,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,v2[._]50;v2\.50,368,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1636"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1634:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1635:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1636:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1637:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(\n1638:             outdir / '最新全市場候選持續評估_v2.50.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+4
+
+[line_in_cell]
+1636"
+2805,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,歷史同機率區間,v2[._]50;v2\.50,360,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1620"", ""matched_line"": ""'機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1618:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1619:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1620:                 '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1621:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1622:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.50.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+4
+
+[line_in_cell]
+1620"
+2806,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,歷史同機率區間,v2[._]50;v2\.50,360,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1621"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1619:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1620:                 '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1621:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1622:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.50.csv', index=False, encoding='utf-8-sig')\n1623:     if latest_universe_frames:""}","[cell_index]
+4
+
+[line_in_cell]
+1621"
+3909,,,樣本外,calibrat;校準;機率校準,,v2[._]50;v2\.50,328,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""10"", ""line_in_cell"": ""610"", ""matched_line"": ""\""quantiles\"": (\""預測分位組樣本外實際績效_v2.51停用量能.csv\"", True),"", ""context"": ""608:         \""pair_model\"": (\""v2.50_vs_v2.51停用量能_分類摘要比較.csv\"", False),\n609:         \""pair_latest_qualified\"": (\""v2.50_vs_v2.51_最新達標候選數.csv\"", True),\n610:         \""quantiles\"": (\""預測分位組樣本外實際績效_v2.51停用量能.csv\"", True),\n611:         \""upside_grade\"": (\""上漲潛力分級個股績效檢驗_v2.51停用量能.csv\"", False),\n612:         \""calibration\"": (\""獲利機率校準檢驗總結_v2.51停用量能.csv\"", False),""}","[cell_index]
+10
+
+[line_in_cell]
+610"
+3278,,,樣本外;模型訓練,校準;機率校準,500,v2[._]50;v2\.50,327,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1840"", ""matched_line"": ""print('本版只停用4個成交量模型特徵；其餘模型、樣本外門檻與交易成本沿用 v2.50，進行配對消融。')"", ""context"": ""1838:     print(f'每期最多 {MAX_PICKS} 檔獲利潛力候選｜H={HORIZONS}｜歷史淨獲利機率校準｜只讀原始資料')\n1839:     print('合格候選：直接分類器校準機率>=50%、預測淨報酬>0、分類器與校準收斂且斜率>0；不足10檔不湊數。')\n1840:     print('本版只停用4個成交量模型特徵；其餘模型、樣本外門檻與交易成本沿用 v2.50，進行配對消融。')\n1841:     print('成交量欄位僅留在來源讀取／診斷，不進入模型訓練、校準或選股排序。')\n1842:     print('Google Drive 檢查點：每500個已處理市場日存檔；模型係數仍每20市場日更新。')""}","[cell_index]
+5
+
+[line_in_cell]
+1840"
+2815,,,,calibrat;校準;機率校準,,v2[._]50;v2\.50,324,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1656"", ""matched_line"": ""prob_day.to_csv(outdir / '獲利機率校準逐訊號日_v2.50.csv', index=False, encoding='utf-8-sig')"", ""context"": ""1654:     if probability_calibration_frames:\n1655:         prob_day = pd.concat(probability_calibration_frames, ignore_index=True)\n1656:         prob_day.to_csv(outdir / '獲利機率校準逐訊號日_v2.50.csv', index=False, encoding='utf-8-sig')\n1657:         keys = ['持有期間H', '估計淨獲利機率區間']\n1658:         # 使用逐訊號日統計的 sample-weighted aggregate; 空區間不計入分母。""}","[cell_index]
+4
+
+[line_in_cell]
+1656"
+2816,,,,calibrat;校準;機率校準,,v2[._]50;v2\.50,324,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1657"", ""matched_line"": ""keys = ['持有期間H', '估計淨獲利機率區間']"", ""context"": ""1655:         prob_day = pd.concat(probability_calibration_frames, ignore_index=True)\n1656:         prob_day.to_csv(outdir / '獲利機率校準逐訊號日_v2.50.csv', index=False, encoding='utf-8-sig')\n1657:         keys = ['持有期間H', '估計淨獲利機率區間']\n1658:         # 使用逐訊號日統計的 sample-weighted aggregate; 空區間不計入分母。\n1659:         prob_day['_n_pred'] = prob_day['平均估計淨獲利機率'] * prob_day['有效樣本數']""}","[cell_index]
+4
+
+[line_in_cell]
+1657"
+3277,,,樣本外;模型訓練,校準;機率校準,,v2[._]50;v2\.50,324,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1839"", ""matched_line"": ""print('合格候選：直接分類器校準機率>=50%、預測淨報酬>0、分類器與校準收斂且斜率>0；不足10檔不湊數。')"", ""context"": ""1837:     print('SSO v2.51｜量能特徵消融對照（停用量能）')\n1838:     print(f'每期最多 {MAX_PICKS} 檔獲利潛力候選｜H={HORIZONS}｜歷史淨獲利機率校準｜只讀原始資料')\n1839:     print('合格候選：直接分類器校準機率>=50%、預測淨報酬>0、分類器與校準收斂且斜率>0；不足10檔不湊數。')\n1840:     print('本版只停用4個成交量模型特徵；其餘模型、樣本外門檻與交易成本沿用 v2.50，進行配對消融。')\n1841:     print('成交量欄位僅留在來源讀取／診斷，不進入模型訓練、校準或選股排序。')""}","[cell_index]
+5
+
+[line_in_cell]
+1839"
+2878,,,樣本外,校準;機率校準,歷史同機率區間,v2[._]50;v2\.50,323,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1808"", ""matched_line"": ""report.append(latest_candidate_df[['持有期間H', '排名', 'symbol', '公司名稱', '估計淨獲利機率_校準', '預測淨報酬', '歷史同機率區間', '歷史同區間實際淨獲利率_成交加權', '歷史同區間平均實際淨報酬_成交加權', '符合獲利候選條件', '候選狀態']].to_string(index=False, max_rows=50))"", ""context"": ""1806:         report.append('最新日期各持有期間前10候選摘要：')\n1807:         latest_candidate_df = add_company_names(latest_candidate_df, 'symbol')\n1808:         report.append(latest_candidate_df[['持有期間H', '排名', 'symbol', '公司名稱', '估計淨獲利機率_校準', '預測淨報酬', '歷史同機率區間', '歷史同區間實際淨獲利率_成交加權', '歷史同區間平均實際淨報酬_成交加權', '符合獲利候選條件', '候選狀態']].to_string(index=False, max_rows=50))\n1809:     report.append('策略放行：否。機率校準與候選篩選仍須經過完整樣本外驗證，並核實公司行動、下市股、流動性、最低手續費及實際可成交限制。')\n1810:     (outdir / 'SSO_v2.50_樣本外校準門檻與公司名稱報告.txt').write_text('\\n'.join(report), encoding='utf-8-sig')""}","[cell_index]
+4
+
+[line_in_cell]
+1808"
+2879,,,樣本外,校準;機率校準,歷史同機率區間,v2[._]50;v2\.50,323,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1809"", ""matched_line"": ""report.append('策略放行：否。機率校準與候選篩選仍須經過完整樣本外驗證，並核實公司行動、下市股、流動性、最低手續費及實際可成交限制。')"", ""context"": ""1807:         latest_candidate_df = add_company_names(latest_candidate_df, 'symbol')\n1808:         report.append(latest_candidate_df[['持有期間H', '排名', 'symbol', '公司名稱', '估計淨獲利機率_校準', '預測淨報酬', '歷史同機率區間', '歷史同區間實際淨獲利率_成交加權', '歷史同區間平均實際淨報酬_成交加權', '符合獲利候選條件', '候選狀態']].to_string(index=False, max_rows=50))\n1809:     report.append('策略放行：否。機率校準與候選篩選仍須經過完整樣本外驗證，並核實公司行動、下市股、流動性、最低手續費及實際可成交限制。')\n1810:     (outdir / 'SSO_v2.50_樣本外校準門檻與公司名稱報告.txt').write_text('\\n'.join(report), encoding='utf-8-sig')\n1811:     method_note = '''SSO v2.50｜核心分析修正說明""}","[cell_index]
+4
+
+[line_in_cell]
+1809"
+2880,,,樣本外,校準;機率校準,歷史同機率區間,v2[._]50;v2\.50,323,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1810"", ""matched_line"": ""(outdir / 'SSO_v2.50_樣本外校準門檻與公司名稱報告.txt').write_text('\\n'.join(report), encoding='utf-8-sig')"", ""context"": ""1808:         report.append(latest_candidate_df[['持有期間H', '排名', 'symbol', '公司名稱', '估計淨獲利機率_校準', '預測淨報酬', '歷史同機率區間', '歷史同區間實際淨獲利率_成交加權', '歷史同區間平均實際淨報酬_成交加權', '符合獲利候選條件', '候選狀態']].to_string(index=False, max_rows=50))\n1809:     report.append('策略放行：否。機率校準與候選篩選仍須經過完整樣本外驗證，並核實公司行動、下市股、流動性、最低手續費及實際可成交限制。')\n1810:     (outdir / 'SSO_v2.50_樣本外校準門檻與公司名稱報告.txt').write_text('\\n'.join(report), encoding='utf-8-sig')\n1811:     method_note = '''SSO v2.50｜核心分析修正說明\n1812: ""}","[cell_index]
+4
+
+[line_in_cell]
+1810"
+3272,,,walk.?forward,校準,756;500;20\s*(?:日|days?),v2[._]50;v2\.50,321,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1821"", ""matched_line"": ""- walk-forward 訓練／校準切分、756市場日回看、60日校準窗、每20日更新模型。"", ""context"": ""1819: - 原始研究資料與資料欄位；價格研究區段及標籤定義。\n1820: - 相對排名、個股絕對動能與全市場狀態特徵。\n1821: - walk-forward 訓練／校準切分、756市場日回看、60日校準窗、每20日更新模型。\n1822: - 分類器正則化、成本公式、候選門檻、最大10檔、同區段診斷與選股範圍敏感度。\n1823: - 每500個已處理市場日保存檢查點；檢查點使用獨立資料夾與版本識別，不會讀取 v2.50 檢查點。""}","[cell_index]
+5
+
+[line_in_cell]
+1821"
+3273,,,walk.?forward,校準,756;500;20\s*(?:日|days?),v2[._]50;v2\.50,321,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1822"", ""matched_line"": ""- 分類器正則化、成本公式、候選門檻、最大10檔、同區段診斷與選股範圍敏感度。"", ""context"": ""1820: - 相對排名、個股絕對動能與全市場狀態特徵。\n1821: - walk-forward 訓練／校準切分、756市場日回看、60日校準窗、每20日更新模型。\n1822: - 分類器正則化、成本公式、候選門檻、最大10檔、同區段診斷與選股範圍敏感度。\n1823: - 每500個已處理市場日保存檢查點；檢查點使用獨立資料夾與版本識別，不會讀取 v2.50 檢查點。\n1824: ""}","[cell_index]
+5
+
+[line_in_cell]
+1822"
+3749,,,walk.?forward,校準,756;500;20\s*(?:日|days?),v2[._]50;v2\.50,321,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1948"", ""matched_line"": ""- walk-forward 訓練／校準切分、756市場日回看、60日校準窗、每20日更新模型。"", ""context"": ""1946: - 原始研究資料與資料欄位；價格研究區段及標籤定義。\n1947: - 相對排名、個股絕對動能與全市場狀態特徵。\n1948: - walk-forward 訓練／校準切分、756市場日回看、60日校準窗、每20日更新模型。\n1949: - 分類器正則化、成本公式、候選門檻、最大10檔、同區段診斷與選股範圍敏感度。\n1950: - 每500個已處理市場日保存檢查點；檢查點使用獨立資料夾與版本識別，不會讀取 v2.50 檢查點。""}","[cell_index]
+8
+
+[line_in_cell]
+1948"
+3750,,,walk.?forward,校準,756;500;20\s*(?:日|days?),v2[._]50;v2\.50,321,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1949"", ""matched_line"": ""- 分類器正則化、成本公式、候選門檻、最大10檔、同區段診斷與選股範圍敏感度。"", ""context"": ""1947: - 相對排名、個股絕對動能與全市場狀態特徵。\n1948: - walk-forward 訓練／校準切分、756市場日回看、60日校準窗、每20日更新模型。\n1949: - 分類器正則化、成本公式、候選門檻、最大10檔、同區段診斷與選股範圍敏感度。\n1950: - 每500個已處理市場日保存檢查點；檢查點使用獨立資料夾與版本識別，不會讀取 v2.50 檢查點。\n1951: ""}","[cell_index]
+8
+
+[line_in_cell]
+1949"
+2801,,,樣本外;訓練樣本;模型訓練,校準,,v2[._]50;v2\.50,320,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1608"", ""matched_line"": ""predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.50.csv', index=False, encoding='utf-8-sig')"", ""context"": ""1606:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1607:         cols = [c for c in cols if c in predictions.columns]\n1608:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.50.csv', index=False, encoding='utf-8-sig')\n1609:     if latest_frames:\n1610:         latest_df = pd.concat(latest_frames, ignore_index=True)""}","[cell_index]
+4
+
+[line_in_cell]
+1608"
+2887,,,樣本外,校準;機率校準,,v2[._]50;v2\.50,320,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1842"", ""matched_line"": ""print('SSO v2.50｜日線成交量特徵、直接獲利分類與10檔候選樣本外回測')"", ""context"": ""1840: def main():\n1841:     print('=' * 76)\n1842:     print('SSO v2.50｜日線成交量特徵、直接獲利分類與10檔候選樣本外回測')\n1843:     print(f'每期最多 {MAX_PICKS} 檔獲利潛力候選｜H={HORIZONS}｜歷史淨獲利機率校準｜只讀原始資料')\n1844:     print('合格候選：直接分類器校準機率>=50%、預測淨報酬>0、分類器與校準收斂且斜率>0；不足10檔不湊數。')""}","[cell_index]
+4
+
+[line_in_cell]
+1842"
+2888,,,樣本外,校準;機率校準,,v2[._]50;v2\.50,320,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1843"", ""matched_line"": ""print(f'每期最多 {MAX_PICKS} 檔獲利潛力候選｜H={HORIZONS}｜歷史淨獲利機率校準｜只讀原始資料')"", ""context"": ""1841:     print('=' * 76)\n1842:     print('SSO v2.50｜日線成交量特徵、直接獲利分類與10檔候選樣本外回測')\n1843:     print(f'每期最多 {MAX_PICKS} 檔獲利潛力候選｜H={HORIZONS}｜歷史淨獲利機率校準｜只讀原始資料')\n1844:     print('合格候選：直接分類器校準機率>=50%、預測淨報酬>0、分類器與校準收斂且斜率>0；不足10檔不湊數。')\n1845:     print('本版保留既有特徵，新增日線相對量能與價量確認特徵；仍不放寬獲利門檻。')""}","[cell_index]
+4
+
+[line_in_cell]
+1843"
+2889,,,樣本外,校準;機率校準,,v2[._]50;v2\.50,320,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1844"", ""matched_line"": ""print('合格候選：直接分類器校準機率>=50%、預測淨報酬>0、分類器與校準收斂且斜率>0；不足10檔不湊數。')"", ""context"": ""1842:     print('SSO v2.50｜日線成交量特徵、直接獲利分類與10檔候選樣本外回測')\n1843:     print(f'每期最多 {MAX_PICKS} 檔獲利潛力候選｜H={HORIZONS}｜歷史淨獲利機率校準｜只讀原始資料')\n1844:     print('合格候選：直接分類器校準機率>=50%、預測淨報酬>0、分類器與校準收斂且斜率>0；不足10檔不湊數。')\n1845:     print('本版保留既有特徵，新增日線相對量能與價量確認特徵；仍不放寬獲利門檻。')\n1846:     print('成交量特徵使用原始研究資料欄位；不大量呼叫 API、不下載分鐘線，亦不修改原始研究資料。')""}","[cell_index]
+4
+
+[line_in_cell]
+1844"
+3276,,,樣本外,校準;機率校準,,v2[._]50;v2\.50,320,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1838"", ""matched_line"": ""print(f'每期最多 {MAX_PICKS} 檔獲利潛力候選｜H={HORIZONS}｜歷史淨獲利機率校準｜只讀原始資料')"", ""context"": ""1836:     print('=' * 76)\n1837:     print('SSO v2.51｜量能特徵消融對照（停用量能）')\n1838:     print(f'每期最多 {MAX_PICKS} 檔獲利潛力候選｜H={HORIZONS}｜歷史淨獲利機率校準｜只讀原始資料')\n1839:     print('合格候選：直接分類器校準機率>=50%、預測淨報酬>0、分類器與校準收斂且斜率>0；不足10檔不湊數。')\n1840:     print('本版只停用4個成交量模型特徵；其餘模型、樣本外門檻與交易成本沿用 v2.50，進行配對消融。')""}","[cell_index]
+5
+
+[line_in_cell]
+1838"
+3755,,,模型訓練,校準;機率校準,,v2[._]50;v2\.50,320,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1966"", ""matched_line"": ""print('合格候選：直接分類器校準機率>=50%、預測淨報酬>0、分類器與校準收斂且斜率>0；不足10檔不湊數。')"", ""context"": ""1964:     print('SSO v2.51｜量能消融與個股獨立評估（停用量能）')\n1965:     print(f'每期最多 {MAX_PICKS} 檔個股候選｜H={HORIZONS}｜逐檔獨立評估｜歷史淨獲利機率校準｜只讀原始資料')\n1966:     print('合格候選：直接分類器校準機率>=50%、預測淨報酬>0、分類器與校準收斂且斜率>0；不足10檔不湊數。')\n1967:     print('本版只停用4個成交量模型特徵；候選個股逐檔評估，不假設同時買進10檔；完成模型後自動比較 v2.50。')\n1968:     print('成交量欄位僅留在來源讀取／診斷，不進入模型訓練、校準或選股排序。')""}","[cell_index]
+8
+
+[line_in_cell]
+1966"
+3279,,,樣本外;模型訓練,校準,500,v2[._]50;v2\.50,319,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1841"", ""matched_line"": ""print('成交量欄位僅留在來源讀取／診斷，不進入模型訓練、校準或選股排序。')"", ""context"": ""1839:     print('合格候選：直接分類器校準機率>=50%、預測淨報酬>0、分類器與校準收斂且斜率>0；不足10檔不湊數。')\n1840:     print('本版只停用4個成交量模型特徵；其餘模型、樣本外門檻與交易成本沿用 v2.50，進行配對消融。')\n1841:     print('成交量欄位僅留在來源讀取／診斷，不進入模型訓練、校準或選股排序。')\n1842:     print('Google Drive 檢查點：每500個已處理市場日存檔；模型係數仍每20市場日更新。')\n1843:     print(f'另保留每期前 {BREADTH_SIZES} 檔敏感度診斷作舊方法對照。')""}","[cell_index]
+5
+
+[line_in_cell]
+1841"
+2829,,,,校準;機率校準,,v2[._]50;v2\.50,316,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1677"", ""matched_line"": ""prob_summary['淨獲利率_核算'] = prob_summary['淨獲利筆數'] / denom"", ""context"": ""1675:         prob_summary['平均預測淨報酬'] = prob_summary['預測報酬加權合計'] / denom\n1676:         prob_summary['平均實際淨報酬'] = prob_summary['實際淨報酬加權合計'] / denom\n1677:         prob_summary['淨獲利率_核算'] = prob_summary['淨獲利筆數'] / denom\n1678:         prob_summary.drop(columns=['預估機率加權合計', '實際獲利率加權合計', '預測報酬加權合計', '實際淨報酬加權合計'], inplace=True)\n1679:         prob_summary.to_csv(outdir / '獲利機率校準檢驗總結_v2.50.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+4
+
+[line_in_cell]
+1677"
+2830,,,,校準;機率校準,,v2[._]50;v2\.50,316,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1678"", ""matched_line"": ""prob_summary.drop(columns=['預估機率加權合計', '實際獲利率加權合計', '預測報酬加權合計', '實際淨報酬加權合計'], inplace=True)"", ""context"": ""1676:         prob_summary['平均實際淨報酬'] = prob_summary['實際淨報酬加權合計'] / denom\n1677:         prob_summary['淨獲利率_核算'] = prob_summary['淨獲利筆數'] / denom\n1678:         prob_summary.drop(columns=['預估機率加權合計', '實際獲利率加權合計', '預測報酬加權合計', '實際淨報酬加權合計'], inplace=True)\n1679:         prob_summary.to_csv(outdir / '獲利機率校準檢驗總結_v2.50.csv', index=False, encoding='utf-8-sig')\n1680: ""}","[cell_index]
+4
+
+[line_in_cell]
+1678"
+2831,,,,校準;機率校準,,v2[._]50;v2\.50,316,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1679"", ""matched_line"": ""prob_summary.to_csv(outdir / '獲利機率校準檢驗總結_v2.50.csv', index=False, encoding='utf-8-sig')"", ""context"": ""1677:         prob_summary['淨獲利率_核算'] = prob_summary['淨獲利筆數'] / denom\n1678:         prob_summary.drop(columns=['預估機率加權合計', '實際獲利率加權合計', '預測報酬加權合計', '實際淨報酬加權合計'], inplace=True)\n1679:         prob_summary.to_csv(outdir / '獲利機率校準檢驗總結_v2.50.csv', index=False, encoding='utf-8-sig')\n1680: \n1681:     if oos_gate_diagnostic_frames:""}","[cell_index]
+4
+
+[line_in_cell]
+1679"
+3260,,,walk.?forward;樣本外,校準,,v2[._]50;v2\.50,316,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1784"", ""matched_line"": ""report.append('本版為 v2.50 的配對消融對照：模型完全不使用4個成交量特徵；其他特徵、標籤、walk-forward 日期、模型更新間隔、校準窗、交易成本與門檻均維持相同。請與 v2.50 的相同欄位逐項比較。')"", ""context"": ""1782:         report.append(grade_summary.to_string(index=False, max_rows=200))\n1783:     report.append('')\n1784:     report.append('本版為 v2.50 的配對消融對照：模型完全不使用4個成交量特徵；其他特徵、標籤、walk-forward 日期、模型更新間隔、校準窗、交易成本與門檻均維持相同。請與 v2.50 的相同欄位逐項比較。')\n1785:     report.append('歷史回測分別比較強制交易前10檔、僅交易合格獲利候選、以及僅交易優先候選。每檔使用固定1/10資金槽；未達門檻、缺價或區段不符的槽位留現金，不事後補選。')\n1786:     report.append('分位與範圍診斷只用於樣本外事後驗證；預測訊號本身不讀取未來結果。跨價格研究區段另列口徑，不能取代公司行動核實。')""}","[cell_index]
+5
+
+[line_in_cell]
+1784"
+3261,,,walk.?forward;樣本外,校準,,v2[._]50;v2\.50,316,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1786"", ""matched_line"": ""report.append('分位與範圍診斷只用於樣本外事後驗證；預測訊號本身不讀取未來結果。跨價格研究區段另列口徑，不能取代公司行動核實。')"", ""context"": ""1784:     report.append('本版為 v2.50 的配對消融對照：模型完全不使用4個成交量特徵；其他特徵、標籤、walk-forward 日期、模型更新間隔、校準窗、交易成本與門檻均維持相同。請與 v2.50 的相同欄位逐項比較。')\n1785:     report.append('歷史回測分別比較強制交易前10檔、僅交易合格獲利候選、以及僅交易優先候選。每檔使用固定1/10資金槽；未達門檻、缺價或區段不符的槽位留現金，不事後補選。')\n1786:     report.append('分位與範圍診斷只用於樣本外事後驗證；預測訊號本身不讀取未來結果。跨價格研究區段另列口徑，不能取代公司行動核實。')\n1787:     if not rank_summary.empty:\n1788:         report.append('預測排序能力總結：')""}","[cell_index]
+5
+
+[line_in_cell]
+1786"
+3736,,,walk.?forward;樣本外,校準,,v2[._]50;v2\.50,316,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1911"", ""matched_line"": ""report.append('本版為 v2.50 的配對消融對照：模型完全不使用4個成交量特徵；其他特徵、標籤、walk-forward 日期、模型更新間隔、校準窗、交易成本與門檻均維持相同。主要結果逐檔評估，不假設同時買進10檔；模型完成後自動讀取 v2.50 公開結果並產生個股層級配對比較。')"", ""context"": ""1909:         report.append(individual_reports['probability'].to_string(index=False, max_rows=100))\n1910:     report.append('')\n1911:     report.append('本版為 v2.50 的配對消融對照：模型完全不使用4個成交量特徵；其他特徵、標籤、walk-forward 日期、模型更新間隔、校準窗、交易成本與門檻均維持相同。主要結果逐檔評估，不假設同時買進10檔；模型完成後自動讀取 v2.50 公開結果並產生個股層級配對比較。')\n1912:     report.append('主要績效以個股逐筆結果判斷：每日每個持有期最多10檔候選，逐檔計算假設單筆交易的淨報酬與勝率；不設定固定資金比例，不假設同時買進10檔。另列「只交易符合獲利條件」與「只交易高潛力」作門檻診斷。')\n1913:     report.append('分位與範圍診斷只用於樣本外事後驗證；預測訊號本身不讀取未來結果。跨價格研究區段另列口徑，不能取代公司行動核實。')""}","[cell_index]
+8
+
+[line_in_cell]
+1911"
+3737,,,walk.?forward;樣本外,校準,,v2[._]50;v2\.50,316,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1912"", ""matched_line"": ""report.append('主要績效以個股逐筆結果判斷：每日每個持有期最多10檔候選，逐檔計算假設單筆交易的淨報酬與勝率；不設定固定資金比例，不假設同時買進10檔。另列「只交易符合獲利條件」與「只交易高潛力」作門檻診斷。')"", ""context"": ""1910:     report.append('')\n1911:     report.append('本版為 v2.50 的配對消融對照：模型完全不使用4個成交量特徵；其他特徵、標籤、walk-forward 日期、模型更新間隔、校準窗、交易成本與門檻均維持相同。主要結果逐檔評估，不假設同時買進10檔；模型完成後自動讀取 v2.50 公開結果並產生個股層級配對比較。')\n1912:     report.append('主要績效以個股逐筆結果判斷：每日每個持有期最多10檔候選，逐檔計算假設單筆交易的淨報酬與勝率；不設定固定資金比例，不假設同時買進10檔。另列「只交易符合獲利條件」與「只交易高潛力」作門檻診斷。')\n1913:     report.append('分位與範圍診斷只用於樣本外事後驗證；預測訊號本身不讀取未來結果。跨價格研究區段另列口徑，不能取代公司行動核實。')\n1914:     if not rank_summary.empty:""}","[cell_index]
+8
+
+[line_in_cell]
+1912"
+3738,,,walk.?forward;樣本外,校準,,v2[._]50;v2\.50,316,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1913"", ""matched_line"": ""report.append('分位與範圍診斷只用於樣本外事後驗證；預測訊號本身不讀取未來結果。跨價格研究區段另列口徑，不能取代公司行動核實。')"", ""context"": ""1911:     report.append('本版為 v2.50 的配對消融對照：模型完全不使用4個成交量特徵；其他特徵、標籤、walk-forward 日期、模型更新間隔、校準窗、交易成本與門檻均維持相同。主要結果逐檔評估，不假設同時買進10檔；模型完成後自動讀取 v2.50 公開結果並產生個股層級配對比較。')\n1912:     report.append('主要績效以個股逐筆結果判斷：每日每個持有期最多10檔候選，逐檔計算假設單筆交易的淨報酬與勝率；不設定固定資金比例，不假設同時買進10檔。另列「只交易符合獲利條件」與「只交易高潛力」作門檻診斷。')\n1913:     report.append('分位與範圍診斷只用於樣本外事後驗證；預測訊號本身不讀取未來結果。跨價格研究區段另列口徑，不能取代公司行動核實。')\n1914:     if not rank_summary.empty:\n1915:         report.append('預測排序能力總結：')""}","[cell_index]
+8
+
+[line_in_cell]
+1913"
+3754,,,,校準;機率校準,,v2[._]50;v2\.50,316,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1965"", ""matched_line"": ""print(f'每期最多 {MAX_PICKS} 檔個股候選｜H={HORIZONS}｜逐檔獨立評估｜歷史淨獲利機率校準｜只讀原始資料')"", ""context"": ""1963:     print('=' * 76)\n1964:     print('SSO v2.51｜量能消融與個股獨立評估（停用量能）')\n1965:     print(f'每期最多 {MAX_PICKS} 檔個股候選｜H={HORIZONS}｜逐檔獨立評估｜歷史淨獲利機率校準｜只讀原始資料')\n1966:     print('合格候選：直接分類器校準機率>=50%、預測淨報酬>0、分類器與校準收斂且斜率>0；不足10檔不湊數。')\n1967:     print('本版只停用4個成交量模型特徵；候選個股逐檔評估，不假設同時買進10檔；完成模型後自動比較 v2.50。')""}","[cell_index]
+8
+
+[line_in_cell]
+1965"
+3756,,,模型訓練,校準,500,v2[._]50;v2\.50,315,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1968"", ""matched_line"": ""print('成交量欄位僅留在來源讀取／診斷，不進入模型訓練、校準或選股排序。')"", ""context"": ""1966:     print('合格候選：直接分類器校準機率>=50%、預測淨報酬>0、分類器與校準收斂且斜率>0；不足10檔不湊數。')\n1967:     print('本版只停用4個成交量模型特徵；候選個股逐檔評估，不假設同時買進10檔；完成模型後自動比較 v2.50。')\n1968:     print('成交量欄位僅留在來源讀取／診斷，不進入模型訓練、校準或選股排序。')\n1969:     print('Google Drive 檢查點：每500個已處理市場日存檔；模型係數仍每20市場日更新。')\n1970:     print(f'另保留每期前 {BREADTH_SIZES} 檔敏感度診斷作舊方法對照。')""}","[cell_index]
+8
+
+[line_in_cell]
+1968"
+6670,,,樣本外,校準,500,v2[._]50;v2\.50,315,"{""revision_id"": ""0BxMjNkhpez1KQlpyeG1MVGIxU2xHVkVGdWxNb1lOSzBJTmQ4PQ"", ""revision_time"": ""2026-11-03T01:00:04.635Z"", ""cell_index"": ""0"", ""line_in_cell"": ""107"", ""matched_line"": ""(\""v2.48.1\"", \""SSO_v2.48.1_樣本外校準門檻與公司名稱結果.zip\"", 21010200, \""c45cec0752e5337130a72ca483accd2bd74b62bf76b24e1205e507aa54a58e2e\""),"", ""context"": ""105:     (\""v2.46\"", \""SSO_v2.46_欄位補充_不重跑模型結果.zip\"", 21125807, \""853cb4a1dad2e53d5fb328bc373607dc7a4ac577d6801404aed601d251a634c1\""),\n106:     (\""v2.47\"", \""SSO_v2.47_產業及市場別補正_不重跑模型結果.zip\"", 21322689, \""d3364bf2e0ada7e931260196fece30d20f71ff74c1245e790939ee7432e2169e\""),\n107:     (\""v2.48.1\"", \""SSO_v2.48.1_樣本外校準門檻與公司名稱結果.zip\"", 21010200, \""c45cec0752e5337130a72ca483accd2bd74b62bf76b24e1205e507aa54a58e2e\""),\n108:     (\""v2.50\"", \""SSO_v2.50_日成交量特徵與500日檢查點結果.zip\"", 21654521, \""d7908f72d102abffdf1cf1433000f164b36ea95dfec25545f33800ed90a87c8b6\""),\n109:     (\""v2.51_individual\"", \""SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip\"", 23606997, \""3b78213b0618678bd883b153e1b8d8d72b074daa4d9d3a2ecd225e80d1f8fdb7\""),""}","[cell_index]
+0
+
+[line_in_cell]
+107"
+2861,,,樣本外,校準,,v2[._]50;v2\.50,312,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1760"", ""matched_line"": ""report.append('SSO v2.50｜日線成交量特徵、直接獲利分類與10檔候選樣本外回測')"", ""context"": ""1758: \n1759:     report = []\n1760:     report.append('SSO v2.50｜日線成交量特徵、直接獲利分類與10檔候選樣本外回測')\n1761:     report.append(f'產生時間：{datetime.now().isoformat(timespec=\""seconds\"")}')\n1762:     report.append('主要目的：每個持有期間最多列出10檔獲利潛力候選，以直接分類模型估計淨獲利機率，再用最近已完成歷史樣本校準；其他候選另存全市場持續評估名單。')""}","[cell_index]
+4
+
+[line_in_cell]
+1760"
+2862,,,樣本外,校準,,v2[._]50;v2\.50,312,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1762"", ""matched_line"": ""report.append('主要目的：每個持有期間最多列出10檔獲利潛力候選，以直接分類模型估計淨獲利機率，再用最近已完成歷史樣本校準；其他候選另存全市場持續評估名單。')"", ""context"": ""1760:     report.append('SSO v2.50｜日線成交量特徵、直接獲利分類與10檔候選樣本外回測')\n1761:     report.append(f'產生時間：{datetime.now().isoformat(timespec=\""seconds\"")}')\n1762:     report.append('主要目的：每個持有期間最多列出10檔獲利潛力候選，以直接分類模型估計淨獲利機率，再用最近已完成歷史樣本校準；其他候選另存全市場持續評估名單。')\n1763:     report.append('注意：獲利機率為歷史校準估計，不是保證上漲。只有校準方向受支持、預估淨獲利機率>=50%、預測淨報酬>0者列為合格候選；不為湊足10檔而降低標準。')\n1764:     report.append('訊號只使用當日及過去資料；模型僅用目標持有期已結束的歷史資料訓練。')""}","[cell_index]
+4
+
+[line_in_cell]
+1762"
+3155,,,,校準,500,v2[._]50;v2\.50,311,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1502"", ""matched_line"": ""diagnostics['v2.51量能消融設定'] = '本版相較 v2.50 唯一模型輸入差異：不將4個日線成交量特徵加入 RANK_FEATURES。其餘價格／市場狀態特徵、標籤、樣本切分、分類器、校準、成本與回測參數均維持相同。'"", ""context"": ""1500:     diagnostics['特徵有效列數'] = int(feature['feature_ready'].sum())\n1501:     diagnostics['特徵欄位'] = RANK_FEATURES\n1502:     diagnostics['v2.51量能消融設定'] = '本版相較 v2.50 唯一模型輸入差異：不將4個日線成交量特徵加入 RANK_FEATURES。其餘價格／市場狀態特徵、標籤、樣本切分、分類器、校準、成本與回測參數均維持相同。'\n1503:     diagnostics['量能特徵是否入模'] = False\n1504:     diagnostics['消融控制原則'] = '只停用成交量模型特徵；來源成交量欄位仍可讀取，但不參與訓練、校準或候選排序。'""}","[cell_index]
+5
+
+[line_in_cell]
+1502"
+4344,,,,校準,756,v2[._]50;v2\.50,311,"{""revision_id"": ""0BxMjNkhpez1KTURSRFZzUTVQSUMveFM3SUtXY21KZ0liTDZzPQ"", ""revision_time"": ""2026-10-30T02:13:56.086Z"", ""cell_index"": ""1"", ""line_in_cell"": ""755"", ""matched_line"": ""show_cols = ['合格候選排名', '股票代號', '公司名稱', '預測淨報酬', '估計淨獲利機率_校準', '上漲潛力', '候選狀態']"", ""context"": ""753:             log(f'── v2.50 原模型達標候選（H5／訊號日 {signal_date}／最多10檔，不足不湊數）：{len(rows_top)} 檔 ──')\n754:             if rows_top:\n755:                 show_cols = ['合格候選排名', '股票代號', '公司名稱', '預測淨報酬', '估計淨獲利機率_校準', '上漲潛力', '候選狀態']\n756:                 show_cols = [c for c in show_cols if c in fields_top]\n757:                 log(' | '.join(show_cols))""}","[cell_index]
+1
+
+[line_in_cell]
+755"
+4487,,,,校準,756,v2[._]50;v2\.50,311,"{""revision_id"": ""0BxMjNkhpez1KZ3Y5U0E3SlZmaUttWmtoZEFtaTZRVHVOa1ZFPQ"", ""revision_time"": ""2026-10-31T00:59:42.446Z"", ""cell_index"": ""1"", ""line_in_cell"": ""755"", ""matched_line"": ""show_cols = ['合格候選排名', '股票代號', '公司名稱', '預測淨報酬', '估計淨獲利機率_校準', '上漲潛力', '候選狀態']"", ""context"": ""753:             log(f'── v2.50 原模型達標候選（H5／訊號日 {signal_date}／最多10檔，不足不湊數）：{len(rows_top)} 檔 ──')\n754:             if rows_top:\n755:                 show_cols = ['合格候選排名', '股票代號', '公司名稱', '預測淨報酬', '估計淨獲利機率_校準', '上漲潛力', '候選狀態']\n756:                 show_cols = [c for c in show_cols if c in fields_top]\n757:                 log(' | '.join(show_cols))""}","[cell_index]
+1
+
+[line_in_cell]
+755"
+5053,,,,校準,756,v2[._]50;v2\.50,311,"{""revision_id"": ""0BxMjNkhpez1KTEJXbFBGS0E1bEpwWlI4bnVZbWZOMXp0UmdNPQ"", ""revision_time"": ""2026-10-31T19:08:53.942Z"", ""cell_index"": ""0"", ""line_in_cell"": ""755"", ""matched_line"": ""show_cols = ['合格候選排名', '股票代號', '公司名稱', '預測淨報酬', '估計淨獲利機率_校準', '上漲潛力', '候選狀態']"", ""context"": ""753:             log(f'── v2.50 原模型達標候選（H5／訊號日 {signal_date}／最多10檔，不足不湊數）：{len(rows_top)} 檔 ──')\n754:             if rows_top:\n755:                 show_cols = ['合格候選排名', '股票代號', '公司名稱', '預測淨報酬', '估計淨獲利機率_校準', '上漲潛力', '候選狀態']\n756:                 show_cols = [c for c in show_cols if c in fields_top]\n757:                 log(' | '.join(show_cols))""}","[cell_index]
+0
+
+[line_in_cell]
+755"
+6672,,,,校準,20\s*(?:日|days?),v2[._]50;v2\.50,311,"{""revision_id"": ""0BxMjNkhpez1KQlpyeG1MVGIxU2xHVkVGdWxNb1lOSzBJTmQ4PQ"", ""revision_time"": ""2026-11-03T01:00:04.635Z"", ""cell_index"": ""0"", ""line_in_cell"": ""128"", ""matched_line"": ""{\""version\"": \""v2.51\"", \""evidence\"": \""停用量能特徵，不將4個成交量特徵加入 RANK_FEATURES；其餘價格／市場狀態特徵、標籤、切分、分類器、校準、成本及回測參數沿用 v2.50。\"", \""scope\"": \""停用4個量能特徵，保留價格／市場特徵\""},"", ""context"": ""126:     {\""version\"": \""v2.48.1\"", \""evidence\"": \""報告明載保留原8個相對排名；新增5個個股絕對動能／均線縮放、3個全市場報酬中位數、5個市場廣度比例、3個排名×市場廣度互動項；市場狀態按訊號日橫斷面計算。\"", \""scope\"": \""24項價格與市場特徵\""},\n127:     {\""version\"": \""v2.50\"", \""evidence\"": \""承接 v2.48.1 特徵，另新增4個日線成交量特徵；當日量相對20日均量、5／20日均量趨勢、相對量能排名、近5日報酬×相對量能確認。\"", \""scope\"": \""24項特徵之外另有4項量能特徵\""},\n128:     {\""version\"": \""v2.51\"", \""evidence\"": \""停用量能特徵，不將4個成交量特徵加入 RANK_FEATURES；其餘價格／市場狀態特徵、標籤、切分、分類器、校準、成本及回測參數沿用 v2.50。\"", \""scope\"": \""停用4個量能特徵，保留價格／市場特徵\""},\n129:     {\""version\"": \""v2.53\"", \""evidence\"": \""排序稽核報告明示分位順序仍由標籤文字推定，原始定義未明時應以模型產出程式為準；彙總 CSV 不足以證明排名鍵與逐筆口徑。\"", \""scope\"": \""排名／分位口徑限制\""},\n130:     {\""version\"": \""v2.54\"", \""evidence\"": \""排名1代表最佳時，排名與校準獲利機率呈高度負相關；預測淨報酬未呈清楚單調方向。支持排名可能依校準機率，但報告明示仍須以原始排名程式確認。\"", \""scope\"": \""輸出排名分數方向線索\""},""}","[cell_index]
+0
+
+[line_in_cell]
+128"
+2718,,,,calibrat,,v2[._]50;v2\.50,308,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1261"", ""matched_line"": ""'all_picks': all_picks, 'basket_predictions': basket_predictions,"", ""context"": ""1259:         'version': 'SSO_v2.50', 'source_fingerprint': SOURCE_FINGERPRINT, 'h': int(h),\n1260:         'next_d': int(next_d), 'model': model, 'last_fit': int(last_fit),\n1261:         'all_picks': all_picks, 'basket_predictions': basket_predictions,\n1262:         'rank_bin_frames': rank_bin_frames, 'rank_day_frames': rank_day_frames,\n1263:         'breadth_frames': breadth_frames, 'prob_calibration_frames': prob_calibration_frames,""}","[cell_index]
+4
+
+[line_in_cell]
+1261"
+2813,,,,校準,,v2[._]50;v2\.50,308,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1640"", ""matched_line"": ""eligible = eligible.sort_values(['持有期間H', '估計淨獲利機率_校準', '預測淨報酬'], ascending=[True, False, False], kind='mergesort')"", ""context"": ""1638:             outdir / '最新全市場候選持續評估_v2.50.csv', index=False, encoding='utf-8-sig')\n1639:         eligible = latest_universe_df.loc[latest_universe_df['符合獲利候選條件'].fillna(False)].copy()\n1640:         eligible = eligible.sort_values(['持有期間H', '估計淨獲利機率_校準', '預測淨報酬'], ascending=[True, False, False], kind='mergesort')\n1641:         eligible = eligible.groupby('持有期間H', sort=False, group_keys=False).head(MAX_PICKS).copy()\n1642:         eligible['合格候選排名'] = eligible.groupby('持有期間H', sort=False).cumcount() + 1""}","[cell_index]
+4
+
+[line_in_cell]
+1640"
+2814,,,,校準,,v2[._]50;v2\.50,308,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1641"", ""matched_line"": ""eligible = eligible.groupby('持有期間H', sort=False, group_keys=False).head(MAX_PICKS).copy()"", ""context"": ""1639:         eligible = latest_universe_df.loc[latest_universe_df['符合獲利候選條件'].fillna(False)].copy()\n1640:         eligible = eligible.sort_values(['持有期間H', '估計淨獲利機率_校準', '預測淨報酬'], ascending=[True, False, False], kind='mergesort')\n1641:         eligible = eligible.groupby('持有期間H', sort=False, group_keys=False).head(MAX_PICKS).copy()\n1642:         eligible['合格候選排名'] = eligible.groupby('持有期間H', sort=False).cumcount() + 1\n1643:         eligible.to_csv(outdir / '最新達標獲利候選最多10檔_v2.50.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+4
+
+[line_in_cell]
+1641"
+2845,,,,校準,,v2[._]50;v2\.50,308,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1700"", ""matched_line"": ""平均實際淨報酬=('平均實際淨報酬', 'mean'),"", ""context"": ""1698:             平均預測獲利機率=('平均分類校準後機率', 'mean'),\n1699:             平均實際淨獲利率=('實際淨獲利率', 'mean'),\n1700:             平均實際淨報酬=('平均實際淨報酬', 'mean'),\n1701:         ).reset_index()\n1702:         classifier_summary.to_csv(outdir / '分類機率能力總結_v2.50.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+4
+
+[line_in_cell]
+1700"
+3156,,,,校準,,v2[._]50;v2\.50,308,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1504"", ""matched_line"": ""diagnostics['消融控制原則'] = '只停用成交量模型特徵；來源成交量欄位仍可讀取，但不參與訓練、校準或候選排序。'"", ""context"": ""1502:     diagnostics['v2.51量能消融設定'] = '本版相較 v2.50 唯一模型輸入差異：不將4個日線成交量特徵加入 RANK_FEATURES。其餘價格／市場狀態特徵、標籤、樣本切分、分類器、校準、成本與回測參數均維持相同。'\n1503:     diagnostics['量能特徵是否入模'] = False\n1504:     diagnostics['消融控制原則'] = '只停用成交量模型特徵；來源成交量欄位仍可讀取，但不參與訓練、校準或候選排序。'\n1505:     diagnostics['盤中資料限制'] = 'FinMind TaiwanStockKBar 目前的免費方案測試未授權；本版不下載或假造分鐘線。'\n1506:     diagnostics['價格研究區段處理'] = '若來源有區段資料，移動報酬／均線／區間與波動視窗會在每檔股票的連續區段切換處重啟。'""}","[cell_index]
+5
+
+[line_in_cell]
+1504"
+3629,,,,校準,,v2[._]50;v2\.50,308,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1617"", ""matched_line"": ""diagnostics['v2.51量能消融設定'] = '本版相較 v2.50 唯一模型輸入差異：不將4個日線成交量特徵加入 RANK_FEATURES。其餘價格／市場狀態特徵、標籤、樣本切分、分類器、校準、成本與回測參數均維持相同。'"", ""context"": ""1615:     diagnostics['特徵有效列數'] = int(feature['feature_ready'].sum())\n1616:     diagnostics['特徵欄位'] = RANK_FEATURES\n1617:     diagnostics['v2.51量能消融設定'] = '本版相較 v2.50 唯一模型輸入差異：不將4個日線成交量特徵加入 RANK_FEATURES。其餘價格／市場狀態特徵、標籤、樣本切分、分類器、校準、成本與回測參數均維持相同。'\n1618:     diagnostics['量能特徵是否入模'] = False\n1619:     diagnostics['消融控制原則'] = '只停用成交量模型特徵；來源成交量欄位仍可讀取，但不參與訓練、校準或候選排序。'""}","[cell_index]
+8
+
+[line_in_cell]
+1617"
+3630,,,,校準,,v2[._]50;v2\.50,308,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1619"", ""matched_line"": ""diagnostics['消融控制原則'] = '只停用成交量模型特徵；來源成交量欄位仍可讀取，但不參與訓練、校準或候選排序。'"", ""context"": ""1617:     diagnostics['v2.51量能消融設定'] = '本版相較 v2.50 唯一模型輸入差異：不將4個日線成交量特徵加入 RANK_FEATURES。其餘價格／市場狀態特徵、標籤、樣本切分、分類器、校準、成本與回測參數均維持相同。'\n1618:     diagnostics['量能特徵是否入模'] = False\n1619:     diagnostics['消融控制原則'] = '只停用成交量模型特徵；來源成交量欄位仍可讀取，但不參與訓練、校準或候選排序。'\n1620:     diagnostics['盤中資料限制'] = 'FinMind TaiwanStockKBar 目前的免費方案測試未授權；本版不下載或假造分鐘線。'\n1621:     diagnostics['價格研究區段處理'] = '若來源有區段資料，移動報酬／均線／區間與波動視窗會在每檔股票的連續區段切換處重啟。'""}","[cell_index]
+8
+
+[line_in_cell]
+1619"
+4327,,,,校準,,v2[._]50;v2\.50,308,"{""revision_id"": ""0BxMjNkhpez1KTURSRFZzUTVQSUMveFM3SUtXY21KZ0liTDZzPQ"", ""revision_time"": ""2026-10-30T02:13:56.086Z"", ""cell_index"": ""0"", ""line_in_cell"": ""734"", ""matched_line"": ""show_cols = ['合格候選排名', '股票代號', '公司名稱', '預測淨報酬', '估計淨獲利機率_校準', '上漲潛力', '候選狀態']"", ""context"": ""732:             log(f'── v2.50 原模型達標候選（H5／訊號日 {signal_date}／最多10檔，不足不湊數）：{len(rows_top)} 檔 ──')\n733:             if rows_top:\n734:                 show_cols = ['合格候選排名', '股票代號', '公司名稱', '預測淨報酬', '估計淨獲利機率_校準', '上漲潛力', '候選狀態']\n735:                 show_cols = [c for c in show_cols if c in fields_top]\n736:                 log(' | '.join(show_cols))""}","[cell_index]
+0
+
+[line_in_cell]
+734"
+4470,,,,校準,,v2[._]50;v2\.50,308,"{""revision_id"": ""0BxMjNkhpez1KZ3Y5U0E3SlZmaUttWmtoZEFtaTZRVHVOa1ZFPQ"", ""revision_time"": ""2026-10-31T00:59:42.446Z"", ""cell_index"": ""0"", ""line_in_cell"": ""734"", ""matched_line"": ""show_cols = ['合格候選排名', '股票代號', '公司名稱', '預測淨報酬', '估計淨獲利機率_校準', '上漲潛力', '候選狀態']"", ""context"": ""732:             log(f'── v2.50 原模型達標候選（H5／訊號日 {signal_date}／最多10檔，不足不湊數）：{len(rows_top)} 檔 ──')\n733:             if rows_top:\n734:                 show_cols = ['合格候選排名', '股票代號', '公司名稱', '預測淨報酬', '估計淨獲利機率_校準', '上漲潛力', '候選狀態']\n735:                 show_cols = [c for c in show_cols if c in fields_top]\n736:                 log(' | '.join(show_cols))""}","[cell_index]
+0
+
+[line_in_cell]
+734"
+6673,,,,校準,,v2[._]50;v2\.50,308,"{""revision_id"": ""0BxMjNkhpez1KQlpyeG1MVGIxU2xHVkVGdWxNb1lOSzBJTmQ4PQ"", ""revision_time"": ""2026-11-03T01:00:04.635Z"", ""cell_index"": ""0"", ""line_in_cell"": ""130"", ""matched_line"": ""{\""version\"": \""v2.54\"", \""evidence\"": \""排名1代表最佳時，排名與校準獲利機率呈高度負相關；預測淨報酬未呈清楚單調方向。支持排名可能依校準機率，但報告明示仍須以原始排名程式確認。\"", \""scope\"": \""輸出排名分數方向線索\""},"", ""context"": ""128:     {\""version\"": \""v2.51\"", \""evidence\"": \""停用量能特徵，不將4個成交量特徵加入 RANK_FEATURES；其餘價格／市場狀態特徵、標籤、切分、分類器、校準、成本及回測參數沿用 v2.50。\"", \""scope\"": \""停用4個量能特徵，保留價格／市場特徵\""},\n129:     {\""version\"": \""v2.53\"", \""evidence\"": \""排序稽核報告明示分位順序仍由標籤文字推定，原始定義未明時應以模型產出程式為準；彙總 CSV 不足以證明排名鍵與逐筆口徑。\"", \""scope\"": \""排名／分位口徑限制\""},\n130:     {\""version\"": \""v2.54\"", \""evidence\"": \""排名1代表最佳時，排名與校準獲利機率呈高度負相關；預測淨報酬未呈清楚單調方向。支持排名可能依校準機率，但報告明示仍須以原始排名程式確認。\"", \""scope\"": \""輸出排名分數方向線索\""},\n131: ]\n132: ""}","[cell_index]
+0
+
+[line_in_cell]
+130"
+6684,,,,校準,,v2[._]50;v2\.50,308,"{""revision_id"": ""0BxMjNkhpez1KQlpyeG1MVGIxU2xHVkVGdWxNb1lOSzBJTmQ4PQ"", ""revision_time"": ""2026-11-03T01:00:04.635Z"", ""cell_index"": ""0"", ""line_in_cell"": ""682"", ""matched_line"": ""f.write(\""- v2.53 提醒分位方向不可只憑標籤文字；v2.54 的摘要顯示排名與校準獲利機率的關係比預測淨報酬更一致，但仍不是原始排名程式證明。\\n\"")"", ""context"": ""680:         f.write(\""- 可以確認市場狀態特徵按訊號日橫斷面計算；但各欄位排名母體、精確分母與 tie 規則未被原始程式證實。\\n\"")\n681:         f.write(\""- v2.50 另增4個量能特徵；v2.51 將4個量能特徵排除，價格／市場特徵沿用。\\n\"")\n682:         f.write(\""- v2.53 提醒分位方向不可只憑標籤文字；v2.54 的摘要顯示排名與校準獲利機率的關係比預測淨報酬更一致，但仍不是原始排名程式證明。\\n\"")\n683:         f.write(\""- 不能把欄名或說明文字當成精確公式；不可據此重訓或回測。\\n\"")\n684:         f.write(\""\\n五、安全與限制\\n\"")""}","[cell_index]
+0
+
+[line_in_cell]
+682"
+4323,,,walk.?forward;樣本外,,,v2[._]50;v2\.50,308,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""25"", ""line_in_cell"": ""478"", ""matched_line"": ""\""- 正式確認需凍結規則後，以尚未看過的未來資料或重新設計的 walk-forward 預測驗證；不得看到後期數字後反覆調門檻。\"","", ""context"": ""476:         \""- 若較佳表現只出現在早期／中期、後期轉弱，表示歷史規則可能有時期依賴；反之亦不能直接視為正式樣本外成功。\"",\n477:         \""- 早期／中期／後期的分界只由訊號日期決定，同一日期不跨切片；但 v2.58 已使用整體歷史探索規則，故切片結果仍受研究者事後選規則影響。\"",\n478:         \""- 正式確認需凍結規則後，以尚未看過的未來資料或重新設計的 walk-forward 預測驗證；不得看到後期數字後反覆調門檻。\"",\n479:         \""- 本版不更改 v2.50 基準、不修改模型，不直接啟用反事實策略。\"",\n480:         \""\"", \""七、輸出檔案\"",""}","[cell_index]
+25
+
+[line_in_cell]
+478"
+2505,,,,,500;20\s*(?:日|days?),v2[._]50;v2\.50,306,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""48"", ""matched_line"": ""CHECKPOINT_INTERVAL_DAYS = 500  # 每處理500個市場日存一次；模型仍每20日更新，不影響訓練頻率"", ""context"": ""46: OUT_DIR = Path('/content/SSO_v2.50_日成交量特徵與500日檢查點')\n47: CHECKPOINT_DIR = PROJECT / 'SSO_v2.50_執行檢查點'\n48: CHECKPOINT_INTERVAL_DAYS = 500  # 每處理500個市場日存一次；模型仍每20日更新，不影響訓練頻率\n49: SOURCE_FINGERPRINT = 'unset'\n50: ""}","[cell_index]
+4
+
+[line_in_cell]
+48"
+2499,,,樣本外,,,v2[._]50;v2\.50,304,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""3"", ""matched_line"": ""SSO v2.50｜日線成交量特徵與樣本外獲利模型（研究版）"", ""context"": ""1: # -*- coding: utf-8 -*-\n2: \""\""\""\n3: SSO v2.50｜日線成交量特徵與樣本外獲利模型（研究版）\n4: \n5: 目的""}","[cell_index]
+4
+
+[line_in_cell]
+3"
+2778,,,walk.?forward,,,v2[._]50;v2\.50,304,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1532"", ""matched_line"": ""for h in HORIZONS:"", ""context"": ""1530:     raw_prices = df[['market', 'symbol', 'date_idx', 'open', 'high', 'low', 'close', 'ohlc_valid', 'segment']].copy()\n1531:     del df\n1532:     for h in HORIZONS:\n1533:         print('\\n' + '=' * 68)\n1534:         print(f'SSO v2.50｜H{h}：建立標籤與 walk-forward 上漲潛力模型')""}","[cell_index]
+4
+
+[line_in_cell]
+1532"
+2779,,,walk.?forward,,,v2[._]50;v2\.50,304,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1534"", ""matched_line"": ""print(f'SSO v2.50｜H{h}：建立標籤與 walk-forward 上漲潛力模型')"", ""context"": ""1532:     for h in HORIZONS:\n1533:         print('\\n' + '=' * 68)\n1534:         print(f'SSO v2.50｜H{h}：建立標籤與 walk-forward 上漲潛力模型')\n1535:         labeled = make_targets(feature, raw_prices, h)\n1536:         valid_label = int(labeled['training_label_valid'].sum())""}","[cell_index]
+4
+
+[line_in_cell]
+1534"
+2780,,,walk.?forward,,,v2[._]50;v2\.50,304,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1535"", ""matched_line"": ""labeled = make_targets(feature, raw_prices, h)"", ""context"": ""1533:         print('\\n' + '=' * 68)\n1534:         print(f'SSO v2.50｜H{h}：建立標籤與 walk-forward 上漲潛力模型')\n1535:         labeled = make_targets(feature, raw_prices, h)\n1536:         valid_label = int(labeled['training_label_valid'].sum())\n1537:         cross_seg = int((labeled['entry_exit_valid'] & ~labeled['all_segment_same']).sum())""}","[cell_index]
+4
+
+[line_in_cell]
+1535"
+2781,,,walk.?forward,,,v2[._]50;v2\.50,304,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1536"", ""matched_line"": ""valid_label = int(labeled['training_label_valid'].sum())"", ""context"": ""1534:         print(f'SSO v2.50｜H{h}：建立標籤與 walk-forward 上漲潛力模型')\n1535:         labeled = make_targets(feature, raw_prices, h)\n1536:         valid_label = int(labeled['training_label_valid'].sum())\n1537:         cross_seg = int((labeled['entry_exit_valid'] & ~labeled['all_segment_same']).sum())\n1538:         print(f'H{h}: 可用同區段歷史標籤={valid_label:,}；有效OHLC但跨區段={cross_seg:,}')""}","[cell_index]
+4
+
+[line_in_cell]
+1536"
+2832,,,樣本外,,,v2[._]50;v2\.50,304,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1683"", ""matched_line"": ""gate_all.to_csv(outdir / '樣本外機率區間門檻診斷_v2.50.csv', index=False, encoding='utf-8-sig')"", ""context"": ""1681:     if oos_gate_diagnostic_frames:\n1682:         gate_all = pd.concat(oos_gate_diagnostic_frames, ignore_index=True)\n1683:         gate_all.to_csv(outdir / '樣本外機率區間門檻診斷_v2.50.csv', index=False, encoding='utf-8-sig')\n1684: \n1685:     if classifier_diagnostic_frames:""}","[cell_index]
+4
+
+[line_in_cell]
+1683"
+2833,,,樣本外,,,v2[._]50;v2\.50,304,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1685"", ""matched_line"": ""if classifier_diagnostic_frames:"", ""context"": ""1683:         gate_all.to_csv(outdir / '樣本外機率區間門檻診斷_v2.50.csv', index=False, encoding='utf-8-sig')\n1684: \n1685:     if classifier_diagnostic_frames:\n1686:         classifier_all = pd.concat(classifier_diagnostic_frames, ignore_index=True)\n1687:         classifier_all.to_csv(outdir / '分類機率能力逐訊號日_v2.50.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+4
+
+[line_in_cell]
+1685"
+2853,,,樣本外,,,v2[._]50;v2\.50,304,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1725"", ""matched_line"": ""rank_bin_summary['平均壓力成本淨報酬'] = rank_bin_summary['壓力成本淨報酬合計'] / n"", ""context"": ""1723:         rank_bin_summary['平均一般成本淨報酬'] = rank_bin_summary['一般成本淨報酬合計'] / n\n1724:         rank_bin_summary['一般成本淨獲利勝率'] = rank_bin_summary['一般成本獲利筆數'] / n\n1725:         rank_bin_summary['平均壓力成本淨報酬'] = rank_bin_summary['壓力成本淨報酬合計'] / n\n1726:         rank_bin_summary['壓力成本淨獲利勝率'] = rank_bin_summary['壓力成本獲利筆數'] / n\n1727:         rank_bin_summary.to_csv(outdir / '預測分位組樣本外實際績效_v2.50.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+4
+
+[line_in_cell]
+1725"
+2854,,,樣本外,,,v2[._]50;v2\.50,304,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1726"", ""matched_line"": ""rank_bin_summary['壓力成本淨獲利勝率'] = rank_bin_summary['壓力成本獲利筆數'] / n"", ""context"": ""1724:         rank_bin_summary['一般成本淨獲利勝率'] = rank_bin_summary['一般成本獲利筆數'] / n\n1725:         rank_bin_summary['平均壓力成本淨報酬'] = rank_bin_summary['壓力成本淨報酬合計'] / n\n1726:         rank_bin_summary['壓力成本淨獲利勝率'] = rank_bin_summary['壓力成本獲利筆數'] / n\n1727:         rank_bin_summary.to_csv(outdir / '預測分位組樣本外實際績效_v2.50.csv', index=False, encoding='utf-8-sig')\n1728:     if rank_day_frames:""}","[cell_index]
+4
+
+[line_in_cell]
+1726"
+2855,,,樣本外,,,v2[._]50;v2\.50,304,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1727"", ""matched_line"": ""rank_bin_summary.to_csv(outdir / '預測分位組樣本外實際績效_v2.50.csv', index=False, encoding='utf-8-sig')"", ""context"": ""1725:         rank_bin_summary['平均壓力成本淨報酬'] = rank_bin_summary['壓力成本淨報酬合計'] / n\n1726:         rank_bin_summary['壓力成本淨獲利勝率'] = rank_bin_summary['壓力成本獲利筆數'] / n\n1727:         rank_bin_summary.to_csv(outdir / '預測分位組樣本外實際績效_v2.50.csv', index=False, encoding='utf-8-sig')\n1728:     if rank_day_frames:\n1729:         rank_day_all = pd.concat(rank_day_frames, ignore_index=True)""}","[cell_index]
+4
+
+[line_in_cell]
+1727"
+2881,,,樣本外,,,v2[._]50;v2\.50,304,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1813"", ""matched_line"": ""修正動機（根據 v2.47／其底層 v2.45 的樣本外結果）："", ""context"": ""1811:     method_note = '''SSO v2.50｜核心分析修正說明\n1812: \n1813: 修正動機（根據 v2.47／其底層 v2.45 的樣本外結果）：\n1814: 1. 原模型只有8個相對排名特徵；即使所有股票都處於普遍上漲或普遍下跌環境，排名仍可能相似，模型難以辨識市場整體狀態。\n1815: 2. 既有樣本外指標顯示排序能力有限：H1分類AUC約0.594、H3約0.554、H5約0.537、H10約0.512；H10接近隨機辨識。""}","[cell_index]
+4
+
+[line_in_cell]
+1813"
+2886,,,樣本外,,,v2[._]50;v2\.50,304,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1832"", ""matched_line"": ""- 對照分類AUC、Brier、LogLoss、逐日Spearman、前10檔相對全市場報酬、平均實際淨報酬及樣本外門檻通過情形。"", ""context"": ""1830: \n1831: 驗證原則：\n1832: - 對照分類AUC、Brier、LogLoss、逐日Spearman、前10檔相對全市場報酬、平均實際淨報酬及樣本外門檻通過情形。\n1833: - v2.50是待驗證的特徵修正版，不代表必然優於v2.45；若指標沒有改善，不能視為成功，也不應只看當期候選名單。\n1834: - 股票代碼／名稱與產業資訊不作預測特徵，避免把現在的分類資訊回填至歷史期間造成時間洩漏。""}","[cell_index]
+4
+
+[line_in_cell]
+1832"
+3770,,,樣本外,,,v2[._]50;v2\.50,304,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""2190"", ""matched_line"": ""raise KeyError(f'{tag} ZIP 找不到個股逐筆樣本外資料；無法進行個股層級比較。')"", ""context"": ""2188:     )]\n2189:     if not candidates:\n2190:         raise KeyError(f'{tag} ZIP 找不到個股逐筆樣本外資料；無法進行個股層級比較。')\n2191:     # Prefer the dedicated top-10 individual-only report when available; the v2.50 baseline falls back to legacy rows.\n2192:     priority = ('前10檔候選個股獨立樣本外明細', '個股獨立樣本外明細',""}","[cell_index]
+8
+
+[line_in_cell]
+2190"
+3771,,,樣本外,,,v2[._]50;v2\.50,304,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""2192"", ""matched_line"": ""priority = ('前10檔候選個股獨立樣本外明細', '個股獨立樣本外明細',"", ""context"": ""2190:         raise KeyError(f'{tag} ZIP 找不到個股逐筆樣本外資料；無法進行個股層級比較。')\n2191:     # Prefer the dedicated top-10 individual-only report when available; the v2.50 baseline falls back to legacy rows.\n2192:     priority = ('前10檔候選個股獨立樣本外明細', '個股獨立樣本外明細',\n2193:                 '個股評估逐筆資料_多成本情境', '10檔組合逐籃子逐股成交明細')\n2194:     candidates.sort(key=lambda item: next((i for i, token in enumerate(priority) if token in Path(item[0]).name), 999))""}","[cell_index]
+8
+
+[line_in_cell]
+2192"
+3816,,,樣本外,,,v2[._]50;v2\.50,304,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""2423"", ""matched_line"": ""'SSO v2.50 vs v2.51停用量能｜個股獨立樣本外比較',"", ""context"": ""2421: \n2422:     lines = [\n2423:         'SSO v2.50 vs v2.51停用量能｜個股獨立樣本外比較',\n2424:         f'執行時間：{pd.Timestamp.now().isoformat(timespec=\""seconds\"")}',\n2425:         f'基準ZIP bytes：{len(base_blob):,}', f'停用量能ZIP bytes：{len(new_blob):,}', '',""}","[cell_index]
+8
+
+[line_in_cell]
+2423"
+2045,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""1"", ""line_in_cell"": ""14"", ""matched_line"": ""- 核心假設固定為「上漲潛力=高 且 預測淨報酬>0」，只作反事實診斷。"", ""context"": ""12: 本版目的：\n13: - 只讀 v2.51 既有逐筆資料；不抓行情、不重訓模型、不調整門檻、不修改 v2.50 基準。\n14: - 核心假設固定為「上漲潛力=高 且 預測淨報酬>0」，只作反事實診斷。\n15: - 將同一訊號日選中的股票合併成一個等權日組合，以訊號日而非個股列作主要統計單位。\n16: - 對照同一訊號日、相同 H／成本／區段口徑的「前10名」等權基準。""}","[cell_index]
+1
+
+[line_in_cell]
+14"
+2093,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""1"", ""line_in_cell"": ""433"", ""matched_line"": ""\""研究假設固定為：上漲潛力=高 且 預測淨報酬>0；不在本版重新搜尋或調整門檻。\"","", ""context"": ""431:         f\""產生時間：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\"",\n432:         \""分析範圍：只讀 v2.51 既有逐筆候選與實際報酬；不抓行情、不重訓模型、不更改 v2.50 基準。\"",\n433:         \""研究假設固定為：上漲潛力=高 且 預測淨報酬>0；不在本版重新搜尋或調整門檻。\"",\n434:         \""訊號日組合報酬：同一訊號日選中股票以等權平均合併；同日「前10名」有效報酬也以等權平均作比較。\"",\n435:         \""未選股日以0報酬納入策略日平均；選中股票但所有實際報酬無效的日期記為NA並另外計數。\"",""}","[cell_index]
+1
+
+[line_in_cell]
+433"
+2775,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1521"", ""matched_line"": ""diagnostics['範圍比較原則'] = '訊號日先依預測淨報酬固定選取前N檔；不因未來缺價或區段條件事後補選。組合淨值按每檔1/N等權配置，無效成交槽留現金。'"", ""context"": ""1519:                                     '成本情境': COST_SCENARIOS}\n1520:     diagnostics['選股範圍敏感度檔數'] = BREADTH_SIZES\n1521:     diagnostics['範圍比較原則'] = '訊號日先依預測淨報酬固定選取前N檔；不因未來缺價或區段條件事後補選。組合淨值按每檔1/N等權配置，無效成交槽留現金。'\n1522:     diagnostics['程式版本'] = 'SSO v2.50'\n1523:     (outdir / '來源品質與執行設定_v2.50.json').write_text(json.dumps(diagnostics, ensure_ascii=False, indent=2, default=str), encoding='utf-8-sig')""}","[cell_index]
+4
+
+[line_in_cell]
+1521"
+2793,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1596"", ""matched_line"": ""predictions = pd.concat(pred_rows, ignore_index=True)"", ""context"": ""1594:             grade_summary.to_csv(outdir / '上漲潛力分級實際績效檢驗_v2.50.csv', index=False, encoding='utf-8-sig')\n1595:     if pred_rows:\n1596:         predictions = pd.concat(pred_rows, ignore_index=True)\n1597:         predictions = add_company_names(predictions, 'symbol')\n1598:         cols = ['持有期間H', '訊號日期', '訊號全市場日序', '排名', '市場', 'symbol', '公司名稱', 'close', 'factor',""}","[cell_index]
+4
+
+[line_in_cell]
+1596"
+2834,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1686"", ""matched_line"": ""classifier_all = pd.concat(classifier_diagnostic_frames, ignore_index=True)"", ""context"": ""1684: \n1685:     if classifier_diagnostic_frames:\n1686:         classifier_all = pd.concat(classifier_diagnostic_frames, ignore_index=True)\n1687:         classifier_all.to_csv(outdir / '分類機率能力逐訊號日_v2.50.csv', index=False, encoding='utf-8-sig')\n1688:         classifier_summary = classifier_all.groupby('持有期間H', dropna=False).agg(""}","[cell_index]
+4
+
+[line_in_cell]
+1686"
+2835,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1687"", ""matched_line"": ""classifier_all.to_csv(outdir / '分類機率能力逐訊號日_v2.50.csv', index=False, encoding='utf-8-sig')"", ""context"": ""1685:     if classifier_diagnostic_frames:\n1686:         classifier_all = pd.concat(classifier_diagnostic_frames, ignore_index=True)\n1687:         classifier_all.to_csv(outdir / '分類機率能力逐訊號日_v2.50.csv', index=False, encoding='utf-8-sig')\n1688:         classifier_summary = classifier_all.groupby('持有期間H', dropna=False).agg(\n1689:             有效訊號日數=('訊號日期', 'nunique'),""}","[cell_index]
+4
+
+[line_in_cell]
+1687"
+2836,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1688"", ""matched_line"": ""classifier_summary = classifier_all.groupby('持有期間H', dropna=False).agg("", ""context"": ""1686:         classifier_all = pd.concat(classifier_diagnostic_frames, ignore_index=True)\n1687:         classifier_all.to_csv(outdir / '分類機率能力逐訊號日_v2.50.csv', index=False, encoding='utf-8-sig')\n1688:         classifier_summary = classifier_all.groupby('持有期間H', dropna=False).agg(\n1689:             有效訊號日數=('訊號日期', 'nunique'),\n1690:             平均每訊號日有效樣本數=('有效樣本數', 'mean'),""}","[cell_index]
+4
+
+[line_in_cell]
+1688"
+2846,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1702"", ""matched_line"": ""classifier_summary.to_csv(outdir / '分類機率能力總結_v2.50.csv', index=False, encoding='utf-8-sig')"", ""context"": ""1700:             平均實際淨報酬=('平均實際淨報酬', 'mean'),\n1701:         ).reset_index()\n1702:         classifier_summary.to_csv(outdir / '分類機率能力總結_v2.50.csv', index=False, encoding='utf-8-sig')\n1703: \n1704:     rank_bin_summary = pd.DataFrame()""}","[cell_index]
+4
+
+[line_in_cell]
+1702"
+3280,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""6"", ""line_in_cell"": ""7"", ""matched_line"": ""只讀兩份結果 ZIP，不修改原始研究資料，不重新訓練模型。"", ""context"": ""5: 比較基準：GitHub 公開的 SSO v2.50 結果 ZIP。\n6: 比較對象：/content/SSO_v2.51_量能消融_停用量能特徵結果.zip\n7: 只讀兩份結果 ZIP，不修改原始研究資料，不重新訓練模型。\n8: \""\""\""\n9: from __future__ import annotations""}","[cell_index]
+6
+
+[line_in_cell]
+7"
+3290,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""6"", ""line_in_cell"": ""182"", ""matched_line"": ""paired = pd.concat([classifier_daily, rank_daily], ignore_index=True, sort=False)"", ""context"": ""180:          '前10檔減全市場_一般成本', '前10檔減全市場_壓力成本'],\n181:         scopes=['僅訊號及進出場同區段'])\n182:     paired = pd.concat([classifier_daily, rank_daily], ignore_index=True, sort=False)\n183:     write_csv(paired, 'v2.50_vs_v2.51停用量能_逐訊號日配對Bootstrap.csv')\n184: ""}","[cell_index]
+6
+
+[line_in_cell]
+182"
+3291,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""6"", ""line_in_cell"": ""195"", ""matched_line"": ""['有效成交數', '平均預測淨報酬', '平均實際淨報酬', '實際淨報酬勝率', '期末淨值', '總報酬',"", ""context"": ""193:     for f in (bp, npf): f['持有期間H'] = f['持有期間H'].astype(str)\n194:     strategy = summary_compare(bp, npf, '持有期間H',\n195:         ['有效成交數', '平均預測淨報酬', '平均實際淨報酬', '實際淨報酬勝率', '期末淨值', '總報酬',\n196:          '年化複合報酬率_粗估', '最大回撤_籃子結束時點'], '前10檔組合回測')\n197:     write_csv(strategy, 'v2.50_vs_v2.51停用量能_前10檔績效比較.csv')""}","[cell_index]
+6
+
+[line_in_cell]
+195"
+3292,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""6"", ""line_in_cell"": ""199"", ""matched_line"": ""# 4. Legacy regression-score selection sensitivity, matched by H and breadth."", ""context"": ""197:     write_csv(strategy, 'v2.50_vs_v2.51停用量能_前10檔績效比較.csv')\n198: \n199:     # 4. Legacy regression-score selection sensitivity, matched by H and breadth.\n200:     bsen = frame_by_token(base, '選股範圍敏感度總結')\n201:     nsen = frame_by_token(new, '選股範圍敏感度總結')""}","[cell_index]
+6
+
+[line_in_cell]
+199"
+3294,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""6"", ""line_in_cell"": ""210"", ""matched_line"": ""'總報酬_一般成本', '最大回撤_一般成本', '平均實際淨報酬_壓力成本', '平均前N檔相對全市場_壓力成本'],"", ""context"": ""208:     sensitivity = summary_compare(bsen, nsen, '鍵',\n209:         ['有效成交數', '平均實際淨報酬_一般成本', '一般成本淨獲利勝率', '平均前N檔相對全市場_一般成本',\n210:          '總報酬_一般成本', '最大回撤_一般成本', '平均實際淨報酬_壓力成本', '平均前N檔相對全市場_壓力成本'],\n211:         '依預測淨報酬排序的選股範圍診斷')\n212:     write_csv(sensitivity, 'v2.50_vs_v2.51停用量能_選股範圍敏感度比較.csv')""}","[cell_index]
+6
+
+[line_in_cell]
+210"
+3295,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""6"", ""line_in_cell"": ""211"", ""matched_line"": ""'依預測淨報酬排序的選股範圍診斷')"", ""context"": ""209:         ['有效成交數', '平均實際淨報酬_一般成本', '一般成本淨獲利勝率', '平均前N檔相對全市場_一般成本',\n210:          '總報酬_一般成本', '最大回撤_一般成本', '平均實際淨報酬_壓力成本', '平均前N檔相對全市場_壓力成本'],\n211:         '依預測淨報酬排序的選股範圍診斷')\n212:     write_csv(sensitivity, 'v2.50_vs_v2.51停用量能_選股範圍敏感度比較.csv')\n213: ""}","[cell_index]
+6
+
+[line_in_cell]
+211"
+3296,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""6"", ""line_in_cell"": ""237"", ""matched_line"": ""'- AUC、Brier改善量、Spearman、淨報酬、相對全市場報酬：較高通常較好。',"", ""context"": ""235:         '',\n236:         '判讀規則：停用量能減 v2.50 的差值為正或負，需按指標定義解讀：',\n237:         '- AUC、Brier改善量、Spearman、淨報酬、相對全市場報酬：較高通常較好。',\n238:         '- Brier分數、LogLoss、最大回撤的絕對風險需注意方向；Brier／LogLoss越低越好，回撤越接近0越小。',\n239:         '- 配對區塊 bootstrap 以相同訊號日期之逐日差異為基礎；區間未考慮所有可能的模型選擇偏誤，不能取代最終前瞻模擬。',""}","[cell_index]
+6
+
+[line_in_cell]
+237"
+3811,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""2321"", ""matched_line"": ""# 2. Same-signal-day classifier/ranking comparison."", ""context"": ""2319:     write_csv(cls, 'v2.50_vs_v2.51停用量能_分類摘要比較.csv')\n2320: \n2321:     # 2. Same-signal-day classifier/ranking comparison.\n2322:     bcd = frame_by_token(base, '分類機率能力逐訊號日')\n2323:     ncd = frame_by_token(new, '分類機率能力逐訊號日')""}","[cell_index]
+8
+
+[line_in_cell]
+2321"
+3814,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""2331"", ""matched_line"": ""paired_model = pd.concat([classifier_daily, rank_daily], ignore_index=True, sort=False)"", ""context"": ""2329:         ['Spearman排序相關係數', '最高減最低分位_一般成本', '最高減最低分位_壓力成本'],\n2330:         scopes=['僅訊號及進出場同區段'])\n2331:     paired_model = pd.concat([classifier_daily, rank_daily], ignore_index=True, sort=False)\n2332:     write_csv(paired_model, 'v2.50_vs_v2.51停用量能_模型逐訊號日配對Bootstrap.csv')\n2333: ""}","[cell_index]
+8
+
+[line_in_cell]
+2331"
+3835,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""10"", ""line_in_cell"": ""185"", ""matched_line"": ""for metric in [\""平均實際淨報酬\"", \""個股淨獲利勝率\"", \""中位數實際淨報酬\""]:"", ""context"": ""183:     if len(v250) and len(v251):\n184:         out = v250.merge(v251, on=keys, how=\""outer\"")\n185:         for metric in [\""平均實際淨報酬\"", \""個股淨獲利勝率\"", \""中位數實際淨報酬\""]:\n186:             a, b = f\""v2.50_{metric}\"", f\""v2.51_{metric}\""\n187:             if a in out and b in out:""}","[cell_index]
+10
+
+[line_in_cell]
+185"
+3841,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""10"", ""line_in_cell"": ""226"", ""matched_line"": ""r = p[p[\""指標\""].astype(str).eq(\""個股平均實際淨報酬\"")][[x for x in [\""持有期間H\"", \""平均差_停用量能減v2.50\"", \""區塊Bootstrap95下界\"", \""區塊Bootstrap95上界\"", \""Bootstrap區間不含零\""] if x in p.columns]]"", ""context"": ""224:         p[\""持有期間H\""] = numeric(p[\""持有期間H\""])\n225:         if \""指標\"" in p.columns:\n226:             r = p[p[\""指標\""].astype(str).eq(\""個股平均實際淨報酬\"")][[x for x in [\""持有期間H\"", \""平均差_停用量能減v2.50\"", \""區塊Bootstrap95下界\"", \""區塊Bootstrap95上界\"", \""Bootstrap區間不含零\""] if x in p.columns]]\n227:             r = r.rename(columns={\n228:                 \""平均差_停用量能減v2.50\"": \""停用量能相對v2.50_平均淨報酬差\"",""}","[cell_index]
+10
+
+[line_in_cell]
+226"
+3842,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""10"", ""line_in_cell"": ""228"", ""matched_line"": ""\""平均差_停用量能減v2.50\"": \""停用量能相對v2.50_平均淨報酬差\"","", ""context"": ""226:             r = p[p[\""指標\""].astype(str).eq(\""個股平均實際淨報酬\"")][[x for x in [\""持有期間H\"", \""平均差_停用量能減v2.50\"", \""區塊Bootstrap95下界\"", \""區塊Bootstrap95上界\"", \""Bootstrap區間不含零\""] if x in p.columns]]\n227:             r = r.rename(columns={\n228:                 \""平均差_停用量能減v2.50\"": \""停用量能相對v2.50_平均淨報酬差\"",\n229:                 \""區塊Bootstrap95下界\"": \""平均淨報酬差_Bootstrap95下界\"",\n230:                 \""區塊Bootstrap95上界\"": \""平均淨報酬差_Bootstrap95上界\"",""}","[cell_index]
+10
+
+[line_in_cell]
+228"
+3843,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""10"", ""line_in_cell"": ""229"", ""matched_line"": ""\""區塊Bootstrap95下界\"": \""平均淨報酬差_Bootstrap95下界\"","", ""context"": ""227:             r = r.rename(columns={\n228:                 \""平均差_停用量能減v2.50\"": \""停用量能相對v2.50_平均淨報酬差\"",\n229:                 \""區塊Bootstrap95下界\"": \""平均淨報酬差_Bootstrap95下界\"",\n230:                 \""區塊Bootstrap95上界\"": \""平均淨報酬差_Bootstrap95上界\"",\n231:                 \""Bootstrap區間不含零\"": \""平均淨報酬差_95區間不含零\"",""}","[cell_index]
+10
+
+[line_in_cell]
+229"
+3844,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""10"", ""line_in_cell"": ""230"", ""matched_line"": ""\""區塊Bootstrap95上界\"": \""平均淨報酬差_Bootstrap95上界\"","", ""context"": ""228:                 \""平均差_停用量能減v2.50\"": \""停用量能相對v2.50_平均淨報酬差\"",\n229:                 \""區塊Bootstrap95下界\"": \""平均淨報酬差_Bootstrap95下界\"",\n230:                 \""區塊Bootstrap95上界\"": \""平均淨報酬差_Bootstrap95上界\"",\n231:                 \""Bootstrap區間不含零\"": \""平均淨報酬差_95區間不含零\"",\n232:             })""}","[cell_index]
+10
+
+[line_in_cell]
+230"
+3881,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""10"", ""line_in_cell"": ""438"", ""matched_line"": ""lines += [\""一、決策結論\"", \""- 不建議直接讓 v2.51 取代 v2.50；量能消融的整體平均個股淨報酬差異，配對區塊 Bootstrap 95% 區間仍包含 0。\"","", ""context"": ""436:               \""處理方式：僅讀取既有結果；未重訓模型、未重新抓行情、未修改 GitHub 主分支。\"", \""\""]\n437: \n438:     lines += [\""一、決策結論\"", \""- 不建議直接讓 v2.51 取代 v2.50；量能消融的整體平均個股淨報酬差異，配對區塊 Bootstrap 95% 區間仍包含 0。\"",\n439:               \""- 目前最新結果沒有通過門檻的候選股；前 10 名只代表排序觀察，不等於買進名單。\"",\n440:               \""- 先用 v2.52 找出「排名是否有用、哪些持有期間值得驗證、預測機率是否可信」，不加新特徵、不放寬獲利門檻。\"",""}","[cell_index]
+10
+
+[line_in_cell]
+438"
+3887,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""10"", ""line_in_cell"": ""453"", ""matched_line"": ""# 顯示配對區塊 Bootstrap 對「平均個股淨報酬差」的既有檢驗，不重算信賴區間。"", ""context"": ""451:         eligible = row.get(\""最新達標候選檔數\"", None)\n452:         lines.append(f\""H{int(float(h)) if pd.notna(pd.to_numeric(h, errors='coerce')) else h} | {to_pct(mean_ret)} | {to_pct(med_ret)} | {to_pct(hit)} | {fmt_number(auc, 3)} | {eligible if pd.notna(eligible) else 'N/A'}\"")\n453:     # 顯示配對區塊 Bootstrap 對「平均個股淨報酬差」的既有檢驗，不重算信賴區間。\n454:     if \""停用量能相對v2.50_平均淨報酬差\"" in horizon.columns:\n455:         lines.append(\""v2.51 停用量能減 v2.50 的平均個股淨報酬差（既有配對區塊 Bootstrap）：\"")""}","[cell_index]
+10
+
+[line_in_cell]
+453"
+3888,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""10"", ""line_in_cell"": ""454"", ""matched_line"": ""if \""停用量能相對v2.50_平均淨報酬差\"" in horizon.columns:"", ""context"": ""452:         lines.append(f\""H{int(float(h)) if pd.notna(pd.to_numeric(h, errors='coerce')) else h} | {to_pct(mean_ret)} | {to_pct(med_ret)} | {to_pct(hit)} | {fmt_number(auc, 3)} | {eligible if pd.notna(eligible) else 'N/A'}\"")\n453:     # 顯示配對區塊 Bootstrap 對「平均個股淨報酬差」的既有檢驗，不重算信賴區間。\n454:     if \""停用量能相對v2.50_平均淨報酬差\"" in horizon.columns:\n455:         lines.append(\""v2.51 停用量能減 v2.50 的平均個股淨報酬差（既有配對區塊 Bootstrap）：\"")\n456:         for _, row in horizon.iterrows():""}","[cell_index]
+10
+
+[line_in_cell]
+454"
+3889,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""10"", ""line_in_cell"": ""455"", ""matched_line"": ""lines.append(\""v2.51 停用量能減 v2.50 的平均個股淨報酬差（既有配對區塊 Bootstrap）：\"")"", ""context"": ""453:     # 顯示配對區塊 Bootstrap 對「平均個股淨報酬差」的既有檢驗，不重算信賴區間。\n454:     if \""停用量能相對v2.50_平均淨報酬差\"" in horizon.columns:\n455:         lines.append(\""v2.51 停用量能減 v2.50 的平均個股淨報酬差（既有配對區塊 Bootstrap）：\"")\n456:         for _, row in horizon.iterrows():\n457:             h = row.get(\""持有期間H\"", \""?\"")""}","[cell_index]
+10
+
+[line_in_cell]
+455"
+3890,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""10"", ""line_in_cell"": ""458"", ""matched_line"": ""diff = row.get(\""停用量能相對v2.50_平均淨報酬差\"")"", ""context"": ""456:         for _, row in horizon.iterrows():\n457:             h = row.get(\""持有期間H\"", \""?\"")\n458:             diff = row.get(\""停用量能相對v2.50_平均淨報酬差\"")\n459:             lower = row.get(\""平均淨報酬差_Bootstrap95下界\"")\n460:             upper = row.get(\""平均淨報酬差_Bootstrap95上界\"")""}","[cell_index]
+10
+
+[line_in_cell]
+458"
+3891,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""10"", ""line_in_cell"": ""459"", ""matched_line"": ""lower = row.get(\""平均淨報酬差_Bootstrap95下界\"")"", ""context"": ""457:             h = row.get(\""持有期間H\"", \""?\"")\n458:             diff = row.get(\""停用量能相對v2.50_平均淨報酬差\"")\n459:             lower = row.get(\""平均淨報酬差_Bootstrap95下界\"")\n460:             upper = row.get(\""平均淨報酬差_Bootstrap95上界\"")\n461:             excludes_zero = str(row.get(\""平均淨報酬差_95區間不含零\"", \""False\"")).strip().lower() in [\""true\"", \""1\"", \""是\""]""}","[cell_index]
+10
+
+[line_in_cell]
+459"
+3892,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""10"", ""line_in_cell"": ""460"", ""matched_line"": ""upper = row.get(\""平均淨報酬差_Bootstrap95上界\"")"", ""context"": ""458:             diff = row.get(\""停用量能相對v2.50_平均淨報酬差\"")\n459:             lower = row.get(\""平均淨報酬差_Bootstrap95下界\"")\n460:             upper = row.get(\""平均淨報酬差_Bootstrap95上界\"")\n461:             excludes_zero = str(row.get(\""平均淨報酬差_95區間不含零\"", \""False\"")).strip().lower() in [\""true\"", \""1\"", \""是\""]\n462:             lines.append(f\""  H{h}：差值 {to_pct(diff, 3)}；95%區間 [{to_pct(lower, 3)}, {to_pct(upper, 3)}]；區間{'不含' if excludes_zero else '包含'}0。\"")""}","[cell_index]
+10
+
+[line_in_cell]
+460"
+3894,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""10"", ""line_in_cell"": ""475"", ""matched_line"": ""if \""v2.51_平均實際淨報酬\"" in row.index:"", ""context"": ""473:             for _, row in subset.iterrows():\n474:                 rank = row.get(\""候選排名\"", \""?\"")\n475:                 if \""v2.51_平均實際淨報酬\"" in row.index:\n476:                     lines.append(f\""  排名{int(float(rank)) if pd.notna(pd.to_numeric(rank, errors='coerce')) else rank}：v2.50 {to_pct(row.get('v2.50_平均實際淨報酬'))}、v2.51 {to_pct(row.get('v2.51_平均實際淨報酬'))}；v2.51勝率 {to_pct(row.get('v2.51_個股淨獲利勝率'))}\"")\n477:                 else:""}","[cell_index]
+10
+
+[line_in_cell]
+475"
+3895,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""10"", ""line_in_cell"": ""476"", ""matched_line"": ""lines.append(f\""  排名{int(float(rank)) if pd.notna(pd.to_numeric(rank, errors='coerce')) else rank}：v2.50 {to_pct(row.get('v2.50_平均實際淨報酬'))}、v2.51 {to_pct(row.get('v2.51_平均實際淨報酬'))}；v2.51勝率 {to_pct(row.get('v2.51_個股淨獲利勝率'))}\"")"", ""context"": ""474:                 rank = row.get(\""候選排名\"", \""?\"")\n475:                 if \""v2.51_平均實際淨報酬\"" in row.index:\n476:                     lines.append(f\""  排名{int(float(rank)) if pd.notna(pd.to_numeric(rank, errors='coerce')) else rank}：v2.50 {to_pct(row.get('v2.50_平均實際淨報酬'))}、v2.51 {to_pct(row.get('v2.51_平均實際淨報酬'))}；v2.51勝率 {to_pct(row.get('v2.51_個股淨獲利勝率'))}\"")\n477:                 else:\n478:                     lines.append(f\""  排名{rank}：平均淨報酬 {to_pct(row.get('平均實際淨報酬'))}；勝率 {to_pct(row.get('個股淨獲利勝率'))}\"")""}","[cell_index]
+10
+
+[line_in_cell]
+476"
+3896,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""10"", ""line_in_cell"": ""478"", ""matched_line"": ""lines.append(f\""  排名{rank}：平均淨報酬 {to_pct(row.get('平均實際淨報酬'))}；勝率 {to_pct(row.get('個股淨獲利勝率'))}\"")"", ""context"": ""476:                     lines.append(f\""  排名{int(float(rank)) if pd.notna(pd.to_numeric(rank, errors='coerce')) else rank}：v2.50 {to_pct(row.get('v2.50_平均實際淨報酬'))}、v2.51 {to_pct(row.get('v2.51_平均實際淨報酬'))}；v2.51勝率 {to_pct(row.get('v2.51_個股淨獲利勝率'))}\"")\n477:                 else:\n478:                     lines.append(f\""  排名{rank}：平均淨報酬 {to_pct(row.get('平均實際淨報酬'))}；勝率 {to_pct(row.get('個股淨獲利勝率'))}\"")\n479:     lines.append(\""\"")\n480: ""}","[cell_index]
+10
+
+[line_in_cell]
+478"
+3907,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""10"", ""line_in_cell"": ""566"", ""matched_line"": ""\""2. 比較排名 1、前 3 名及前 10 名的個股淨報酬、中位數、勝率及樣本量，確認是否存在穩定排序優勢。\"","", ""context"": ""564: \n565:     lines += [\""八、下一步建議\"", \""1. 以 H5、H10 作為優先診斷對象，不直接宣告它們是可交易策略。\"",\n566:               \""2. 比較排名 1、前 3 名及前 10 名的個股淨報酬、中位數、勝率及樣本量，確認是否存在穩定排序優勢。\"",\n567:               \""3. 只把在不同訊號日期、不同成本設定下仍有穩定結果的區間列為待驗證方向；高機率區間若樣本少，不得直接採用。\"",\n568:               \""4. 保留 v2.50 基線；v2.51 維持消融實驗版本，暫不合併取代。\"",""}","[cell_index]
+10
+
+[line_in_cell]
+566"
+4021,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""14"", ""line_in_cell"": ""376"", ""matched_line"": ""\""3. 要核對逐筆勝率及淨報酬，另需依原始逐筆 CSV 欄位定義建立逐筆重算；本版不會將彙總表當作逐筆驗證。\"","", ""context"": ""374:         \""1. 先依本報告確認正式排名分數與預測分位方向；若欄位關係不明，應回查產生 CSV 的模型程式，而非逕自改模型。\"",\n375:         \""2. 若排名分數方向一致，再以不同訊號日期、不同成本情境檢查排名前段是否有穩定的個股績效優勢。\"",\n376:         \""3. 要核對逐筆勝率及淨報酬，另需依原始逐筆 CSV 欄位定義建立逐筆重算；本版不會將彙總表當作逐筆驗證。\"",\n377:         \""4. 保留 v2.50 基線；v2.51 仍為消融實驗版本。未達標候選數維持為 0 時，不放寬門檻湊名單。\"",\n378:         \""\"",""}","[cell_index]
+14
+
+[line_in_cell]
+376"
+4112,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""20"", ""line_in_cell"": ""505"", ""matched_line"": ""'- 實際淨報酬非空比例低於全部資料列，不必然是錯誤；須依本次情境分層表確認是否集中於適用的交易模式與納入條件。',"", ""context"": ""503:                '- 來源資料未辨識到獨立「預測分位組」欄位，故本版不推測或重建分位組；以原始排名欄位分層。',\n504:                '- 排名相關係數是在不同情境內先聚合到排名組再計算，不代表投資組合報酬，也不是逐筆顯著性檢定。',\n505:                '- 實際淨報酬非空比例低於全部資料列，不必然是錯誤；須依本次情境分層表確認是否集中於適用的交易模式與納入條件。',\n506:                '- 本版只做資料與統計口徑稽核，不作為買賣建議；保留 v2.50 基準，不放寬 v2.51 門檻。', '',\n507:                '六、輸出檔案',""}","[cell_index]
+20
+
+[line_in_cell]
+505"
+6685,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ"", ""revision_time"": ""2026-11-03T01:37:24.148Z"", ""cell_index"": ""0"", ""line_in_cell"": ""68"", ""matched_line"": ""TARGET_CSV_TOKENS = ("", ""context"": ""66: FEATURE_EXACT_FILE_TOKEN = \""最新達標獲利候選最多10檔\""\n67: ARCHIVE_KEYWORDS = (\""v4_66_\"", \""SSO_v2.50_\"", \""SSO_v2.51_\"")\n68: TARGET_CSV_TOKENS = (\n69:     \""03_既有樣本特徵重算差異層.csv.gz\"",\n70:     \""02_新增星期六樣本影子OHLC與已驗證特徵及標籤.csv\"",""}","[cell_index]
+0
+
+[line_in_cell]
+68"
+6693,,,,,,v2[._]50;v2\.50,300,"{""revision_id"": ""0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ"", ""revision_time"": ""2026-11-03T01:37:24.148Z"", ""cell_index"": ""0"", ""line_in_cell"": ""412"", ""matched_line"": ""label = \""v2.50\"" if \""SSO_v2.50_\"" in path.name else (\""v2.51_individual\"" if \""個股獨立評估\"" in path.name else \""v2.51_no_volume\"")"", ""context"": ""410:         if \""SSO_v2.50_\"" not in path.name and \""SSO_v2.51_\"" not in path.name:\n411:             continue\n412:         label = \""v2.50\"" if \""SSO_v2.50_\"" in path.name else (\""v2.51_individual\"" if \""個股獨立評估\"" in path.name else \""v2.51_no_volume\"")\n413:         with zipfile.ZipFile(path, \""r\"") as zf:\n414:             specs = [""}","[cell_index]
+0
+
+[line_in_cell]
+412"
+1,,,predict_proba;RandomForest;GradientBoosting;HistGradientBoosting;XGBClassifier;CatBoost;LGBM;TimeSeriesSplit;模型訓練,LogisticRegression;Platt;calibrat;校準,,,108,"{""revision_id"": ""0BxMjNkhpez1KVXhQR213UHYvazlJY01rS09seURDdXZIU2w4PQ"", ""revision_time"": ""2026-11-03T05:38:09.393Z"", ""cell_index"": ""0"", ""line_in_cell"": ""60"", ""matched_line"": ""r\""LogisticRegression|HistGradientBoosting|RandomForest|GradientBoost|XGBClassifier|\"""", ""context"": ""58:     r\""feature_names|feature_columns|特徵欄位|均線|波動率|報酬率\"", re.I)\n59: MODEL_TERMS = re.compile(\n60:     r\""LogisticRegression|HistGradientBoosting|RandomForest|GradientBoost|XGBClassifier|\""\n61:     r\""LGBM|CatBoost|CalibratedClassifier|Platt|predict_proba|\\.fit\\s*\\(|\\.predict\\s*\\(|\""\n62:     r\""walk.?forward|TimeSeriesSplit|模型訓練|分類器|校準\"", re.I)""}","[cell_index]
+0
+
+[line_in_cell]
+60"
+2,,,predict_proba;RandomForest;GradientBoosting;HistGradientBoosting;XGBClassifier;CatBoost;LGBM;TimeSeriesSplit;模型訓練,LogisticRegression;Platt;calibrat;校準,,,108,"{""revision_id"": ""0BxMjNkhpez1KVXhQR213UHYvazlJY01rS09seURDdXZIU2w4PQ"", ""revision_time"": ""2026-11-03T05:38:09.393Z"", ""cell_index"": ""0"", ""line_in_cell"": ""61"", ""matched_line"": ""r\""LGBM|CatBoost|CalibratedClassifier|Platt|predict_proba|\\.fit\\s*\\(|\\.predict\\s*\\(|\"""", ""context"": ""59: MODEL_TERMS = re.compile(\n60:     r\""LogisticRegression|HistGradientBoosting|RandomForest|GradientBoost|XGBClassifier|\""\n61:     r\""LGBM|CatBoost|CalibratedClassifier|Platt|predict_proba|\\.fit\\s*\\(|\\.predict\\s*\\(|\""\n62:     r\""walk.?forward|TimeSeriesSplit|模型訓練|分類器|校準\"", re.I)\n63: AUDIT_TERMS = re.compile(r\""v4\\.[0-9]+|audit|稽核|追查|上傳 GitHub|github_upload|source_trace\"", re.I)""}","[cell_index]
+0
+
+[line_in_cell]
+61"
+3,,,predict_proba;RandomForest;GradientBoosting;HistGradientBoosting;XGBClassifier;CatBoost;LGBM;TimeSeriesSplit;模型訓練,LogisticRegression;Platt;calibrat;校準,,,108,"{""revision_id"": ""0BxMjNkhpez1KVXhQR213UHYvazlJY01rS09seURDdXZIU2w4PQ"", ""revision_time"": ""2026-11-03T05:38:09.393Z"", ""cell_index"": ""0"", ""line_in_cell"": ""62"", ""matched_line"": ""r\""walk.?forward|TimeSeriesSplit|模型訓練|分類器|校準\"", re.I)"", ""context"": ""60:     r\""LogisticRegression|HistGradientBoosting|RandomForest|GradientBoost|XGBClassifier|\""\n61:     r\""LGBM|CatBoost|CalibratedClassifier|Platt|predict_proba|\\.fit\\s*\\(|\\.predict\\s*\\(|\""\n62:     r\""walk.?forward|TimeSeriesSplit|模型訓練|分類器|校準\"", re.I)\n63: AUDIT_TERMS = re.compile(r\""v4\\.[0-9]+|audit|稽核|追查|上傳 GitHub|github_upload|source_trace\"", re.I)\n64: SECRET_TERMS = re.compile(r\""(TOKEN|PASSWORD|SECRET|API[_-]?KEY|PRIVATE[_-]?KEY|CREDENTIAL)\"", re.I)""}","[cell_index]
+0
+
+[line_in_cell]
+62"
+6710,,,predict_proba;RandomForest;GradientBoosting;HistGradientBoosting;XGBClassifier;CatBoost;LGBM;TimeSeriesSplit;模型訓練,LogisticRegression;Platt;calibrat;校準,,,108,"{""revision_id"": ""0BxMjNkhpez1KdEZsWXp0RjlOWS80WEwrTlFybHFhZmkxTElBPQ"", ""revision_time"": ""2026-11-03T03:27:01.099Z"", ""cell_index"": ""0"", ""line_in_cell"": ""58"", ""matched_line"": ""r\""LogisticRegression|HistGradientBoosting|RandomForest|GradientBoost|XGBClassifier|\"""", ""context"": ""56:     r\""feature_names|feature_columns|特徵欄位|均線|波動率|報酬率\"", re.I)\n57: MODEL_TERMS = re.compile(\n58:     r\""LogisticRegression|HistGradientBoosting|RandomForest|GradientBoost|XGBClassifier|\""\n59:     r\""LGBM|CatBoost|CalibratedClassifier|Platt|predict_proba|\\.fit\\s*\\(|\\.predict\\s*\\(|\""\n60:     r\""walk.?forward|TimeSeriesSplit|模型訓練|分類器|校準\"", re.I)""}","[cell_index]
+0
+
+[line_in_cell]
+58"
+6711,,,predict_proba;RandomForest;GradientBoosting;HistGradientBoosting;XGBClassifier;CatBoost;LGBM;TimeSeriesSplit;模型訓練,LogisticRegression;Platt;calibrat;校準,,,108,"{""revision_id"": ""0BxMjNkhpez1KdEZsWXp0RjlOWS80WEwrTlFybHFhZmkxTElBPQ"", ""revision_time"": ""2026-11-03T03:27:01.099Z"", ""cell_index"": ""0"", ""line_in_cell"": ""59"", ""matched_line"": ""r\""LGBM|CatBoost|CalibratedClassifier|Platt|predict_proba|\\.fit\\s*\\(|\\.predict\\s*\\(|\"""", ""context"": ""57: MODEL_TERMS = re.compile(\n58:     r\""LogisticRegression|HistGradientBoosting|RandomForest|GradientBoost|XGBClassifier|\""\n59:     r\""LGBM|CatBoost|CalibratedClassifier|Platt|predict_proba|\\.fit\\s*\\(|\\.predict\\s*\\(|\""\n60:     r\""walk.?forward|TimeSeriesSplit|模型訓練|分類器|校準\"", re.I)\n61: AUDIT_TERMS = re.compile(r\""v4\\.[0-9]+|audit|稽核|追查|上傳 GitHub|github_upload|source_trace\"", re.I)""}","[cell_index]
+0
+
+[line_in_cell]
+59"
+6712,,,predict_proba;RandomForest;GradientBoosting;HistGradientBoosting;XGBClassifier;CatBoost;LGBM;TimeSeriesSplit;模型訓練,LogisticRegression;Platt;calibrat;校準,,,108,"{""revision_id"": ""0BxMjNkhpez1KdEZsWXp0RjlOWS80WEwrTlFybHFhZmkxTElBPQ"", ""revision_time"": ""2026-11-03T03:27:01.099Z"", ""cell_index"": ""0"", ""line_in_cell"": ""60"", ""matched_line"": ""r\""walk.?forward|TimeSeriesSplit|模型訓練|分類器|校準\"", re.I)"", ""context"": ""58:     r\""LogisticRegression|HistGradientBoosting|RandomForest|GradientBoost|XGBClassifier|\""\n59:     r\""LGBM|CatBoost|CalibratedClassifier|Platt|predict_proba|\\.fit\\s*\\(|\\.predict\\s*\\(|\""\n60:     r\""walk.?forward|TimeSeriesSplit|模型訓練|分類器|校準\"", re.I)\n61: AUDIT_TERMS = re.compile(r\""v4\\.[0-9]+|audit|稽核|追查|上傳 GitHub|github_upload|source_trace\"", re.I)\n62: SECRET_TERMS = re.compile(r\""(TOKEN|PASSWORD|SECRET|API[_-]?KEY|PRIVATE[_-]?KEY|CREDENTIAL)\"", re.I)""}","[cell_index]
+0
+
+[line_in_cell]
+60"
+1191,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,72,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1411"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1409:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1410:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1411:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1412:         cols = [c for c in cols if c in predictions.columns]\n1413:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.45.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+4
+
+[line_in_cell]
+1411"
+1559,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,72,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1536"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1534:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1535:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1536:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1537:         cols = [c for c in cols if c in predictions.columns]\n1538:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.46.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+5
+
+[line_in_cell]
+1536"
+1954,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,72,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1468"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1466:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1467:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1468:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1469:         cols = [c for c in cols if c in predictions.columns]\n1470:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.48.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+8
+
+[line_in_cell]
+1468"
+2401,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,72,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1552"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1550:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1551:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1552:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1553:         cols = [c for c in cols if c in predictions.columns]\n1554:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.48.1.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+2
+
+[line_in_cell]
+1552"
+3191,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,72,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1607"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1605:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1606:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1607:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1608:         cols = [c for c in cols if c in predictions.columns]\n1609:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.51停用量能.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+5
+
+[line_in_cell]
+1607"
+3666,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,72,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1725"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1723:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1724:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1725:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1726:         cols = [c for c in cols if c in predictions.columns]\n1727:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.51停用量能.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+8
+
+[line_in_cell]
+1725"
+1967,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,500;歷史同機率區間,,71,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1498"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1496:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1497:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1498:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1499:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(\n1500:             outdir / '最新全市場候選持續評估_v2.48.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+8
+
+[line_in_cell]
+1498"
+3678,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,756;歷史同機率區間,,71,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1754"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1752:                          '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1753:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1754:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1755:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1756:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(""}","[cell_index]
+8
+
+[line_in_cell]
+1754"
+3679,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,756;歷史同機率區間,,71,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1755"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1753:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1754:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1755:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1756:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(\n1757:             outdir / '最新全市場候選持續評估_v2.51停用量能.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+8
+
+[line_in_cell]
+1755"
+572,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,,,69,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""2"", ""line_in_cell"": ""997"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""995:                 '上漲潛力', '符合獲利候選條件', '優先獲利候選', '候選狀態', '名單用途',\n996:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '機率校準已收斂', '校準方向受支持',\n997:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n998:         cols = [c for c in cols if c in predictions.columns]\n999:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.43.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+2
+
+[line_in_cell]
+997"
+573,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,,,69,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""2"", ""line_in_cell"": ""998"", ""matched_line"": ""cols = [c for c in cols if c in predictions.columns]"", ""context"": ""996:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '機率校準已收斂', '校準方向受支持',\n997:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n998:         cols = [c for c in cols if c in predictions.columns]\n999:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.43.csv', index=False, encoding='utf-8-sig')\n1000:     if latest_frames:""}","[cell_index]
+2
+
+[line_in_cell]
+998"
+846,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,,,69,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""3"", ""line_in_cell"": ""1169"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1167:                 '上漲潛力', '符合獲利候選條件', '優先獲利候選', '候選狀態', '名單用途',\n1168:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1169:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1170:         cols = [c for c in cols if c in predictions.columns]\n1171:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.44.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+3
+
+[line_in_cell]
+1169"
+847,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,,,69,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""3"", ""line_in_cell"": ""1170"", ""matched_line"": ""cols = [c for c in cols if c in predictions.columns]"", ""context"": ""1168:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1169:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1170:         cols = [c for c in cols if c in predictions.columns]\n1171:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.44.csv', index=False, encoding='utf-8-sig')\n1172:     if latest_frames:""}","[cell_index]
+3
+
+[line_in_cell]
+1170"
+1192,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,,,69,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1412"", ""matched_line"": ""cols = [c for c in cols if c in predictions.columns]"", ""context"": ""1410:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1411:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1412:         cols = [c for c in cols if c in predictions.columns]\n1413:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.45.csv', index=False, encoding='utf-8-sig')\n1414:     if latest_frames:""}","[cell_index]
+4
+
+[line_in_cell]
+1412"
+1560,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,,,69,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1537"", ""matched_line"": ""cols = [c for c in cols if c in predictions.columns]"", ""context"": ""1535:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1536:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1537:         cols = [c for c in cols if c in predictions.columns]\n1538:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.46.csv', index=False, encoding='utf-8-sig')\n1539:     if latest_frames:""}","[cell_index]
+5
+
+[line_in_cell]
+1537"
+1955,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,,,69,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1469"", ""matched_line"": ""cols = [c for c in cols if c in predictions.columns]"", ""context"": ""1467:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1468:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1469:         cols = [c for c in cols if c in predictions.columns]\n1470:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.48.csv', index=False, encoding='utf-8-sig')\n1471:     if latest_frames:""}","[cell_index]
+8
+
+[line_in_cell]
+1469"
+2402,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,,,69,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1553"", ""matched_line"": ""cols = [c for c in cols if c in predictions.columns]"", ""context"": ""1551:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1552:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1553:         cols = [c for c in cols if c in predictions.columns]\n1554:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.48.1.csv', index=False, encoding='utf-8-sig')\n1555:     if latest_frames:""}","[cell_index]
+2
+
+[line_in_cell]
+1553"
+3192,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,,,69,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1608"", ""matched_line"": ""cols = [c for c in cols if c in predictions.columns]"", ""context"": ""1606:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1607:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1608:         cols = [c for c in cols if c in predictions.columns]\n1609:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.51停用量能.csv', index=False, encoding='utf-8-sig')\n1610:     if latest_frames:""}","[cell_index]
+5
+
+[line_in_cell]
+1608"
+3667,,,樣本外;訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,,,69,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1726"", ""matched_line"": ""cols = [c for c in cols if c in predictions.columns]"", ""context"": ""1724:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1725:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1726:         cols = [c for c in cols if c in predictions.columns]\n1727:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.51停用量能.csv', index=False, encoding='utf-8-sig')\n1728:     if latest_frames:""}","[cell_index]
+8
+
+[line_in_cell]
+1726"
+1190,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,68,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1410"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1408:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1409:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1410:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1411:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1412:         cols = [c for c in cols if c in predictions.columns]""}","[cell_index]
+4
+
+[line_in_cell]
+1410"
+1203,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,68,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1440"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1438:                          '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1439:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1440:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1441:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1442:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(""}","[cell_index]
+4
+
+[line_in_cell]
+1440"
+1204,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,68,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1441"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1439:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1440:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1441:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1442:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(\n1443:             outdir / '最新全市場候選持續評估_v2.45.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+4
+
+[line_in_cell]
+1441"
+1558,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,68,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1535"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1533:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1534:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1535:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1536:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1537:         cols = [c for c in cols if c in predictions.columns]""}","[cell_index]
+5
+
+[line_in_cell]
+1535"
+1571,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,68,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1565"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1563:                          '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1564:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1565:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1566:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1567:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(""}","[cell_index]
+5
+
+[line_in_cell]
+1565"
+1572,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,68,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1566"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1564:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1565:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1566:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1567:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(\n1568:             outdir / '最新全市場候選持續評估_v2.46.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+5
+
+[line_in_cell]
+1566"
+1953,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,68,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1467"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1465:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1466:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1467:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1468:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1469:         cols = [c for c in cols if c in predictions.columns]""}","[cell_index]
+8
+
+[line_in_cell]
+1467"
+1966,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,68,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1497"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1495:                          '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1496:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1497:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1498:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1499:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(""}","[cell_index]
+8
+
+[line_in_cell]
+1497"
+2400,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,68,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1551"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1549:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1550:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1551:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1552:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1553:         cols = [c for c in cols if c in predictions.columns]""}","[cell_index]
+2
+
+[line_in_cell]
+1551"
+2413,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,68,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1581"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1579:                          '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1580:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1581:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1582:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1583:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(""}","[cell_index]
+2
+
+[line_in_cell]
+1581"
+2414,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,68,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1582"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1580:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1581:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1582:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1583:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(\n1584:             outdir / '最新全市場候選持續評估_v2.48.1.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+2
+
+[line_in_cell]
+1582"
+2798,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,68,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1605"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1603:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1604:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1605:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1606:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1607:         cols = [c for c in cols if c in predictions.columns]""}","[cell_index]
+4
+
+[line_in_cell]
+1605"
+2811,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,68,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1635"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1633:                          '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1634:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1635:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1636:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1637:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(""}","[cell_index]
+4
+
+[line_in_cell]
+1635"
+3190,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,68,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1606"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1604:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1605:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1606:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1607:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1608:         cols = [c for c in cols if c in predictions.columns]""}","[cell_index]
+5
+
+[line_in_cell]
+1606"
+3203,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,68,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1636"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1634:                          '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1635:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1636:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1637:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1638:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(""}","[cell_index]
+5
+
+[line_in_cell]
+1636"
+3204,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,68,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1637"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1635:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1636:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1637:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1638:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(\n1639:             outdir / '最新全市場候選持續評估_v2.51停用量能.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+5
+
+[line_in_cell]
+1637"
+3665,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,68,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1724"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1722:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1723:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1724:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1725:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1726:         cols = [c for c in cols if c in predictions.columns]""}","[cell_index]
+8
+
+[line_in_cell]
+1724"
+428,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""2"", ""line_in_cell"": ""435"", ""matched_line"": ""result['機率校準斜率'] = model['cal_slope']"", ""context"": ""433:     result['模型預測誤差標準差'] = model['sigma']\n434:     result['機率校準截距'] = model['cal_intercept']\n435:     result['機率校準斜率'] = model['cal_slope']\n436:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n437:     result['機率校準已收斂'] = model['calibration_ok']""}","[cell_index]
+2
+
+[line_in_cell]
+435"
+429,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""2"", ""line_in_cell"": ""436"", ""matched_line"": ""result['校準期實際淨獲利率'] = model['cal_positive_rate']"", ""context"": ""434:     result['機率校準截距'] = model['cal_intercept']\n435:     result['機率校準斜率'] = model['cal_slope']\n436:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n437:     result['機率校準已收斂'] = model['calibration_ok']\n438:     result['校準方向受支持'] = bool(model['calibration_ok'] and model['cal_slope'] > 0.0)""}","[cell_index]
+2
+
+[line_in_cell]
+436"
+571,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""2"", ""line_in_cell"": ""996"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '機率校準已收斂', '校準方向受支持',"", ""context"": ""994:                 '預測淨報酬', '估計淨獲利機率_未校準常態近似', '估計淨獲利機率_校準', '估計淨獲利機率_近似',\n995:                 '上漲潛力', '符合獲利候選條件', '優先獲利候選', '候選狀態', '名單用途',\n996:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '機率校準已收斂', '校準方向受支持',\n997:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n998:         cols = [c for c in cols if c in predictions.columns]""}","[cell_index]
+2
+
+[line_in_cell]
+996"
+580,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1016"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1014:                          '預測淨報酬', '估計淨獲利機率_未校準常態近似', '估計淨獲利機率_校準',\n1015:                          '上漲潛力', '符合獲利候選條件', '優先獲利候選', '候選狀態',\n1016:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '機率校準已收斂', '校準方向受支持',\n1017:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1018:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(""}","[cell_index]
+2
+
+[line_in_cell]
+1016"
+581,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1017"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1015:                          '上漲潛力', '符合獲利候選條件', '優先獲利候選', '候選狀態',\n1016:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '機率校準已收斂', '校準方向受支持',\n1017:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1018:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(\n1019:             outdir / '最新全市場候選持續評估_v2.43.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+2
+
+[line_in_cell]
+1017"
+701,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""3"", ""line_in_cell"": ""606"", ""matched_line"": ""result['機率校準斜率'] = model['cal_slope']"", ""context"": ""604:     result['分類模型已收斂'] = model['class_fit_ok']\n605:     result['機率校準截距'] = model['cal_intercept']\n606:     result['機率校準斜率'] = model['cal_slope']\n607:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n608:     result['機率校準已收斂'] = model['calibration_ok']""}","[cell_index]
+3
+
+[line_in_cell]
+606"
+702,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""3"", ""line_in_cell"": ""607"", ""matched_line"": ""result['校準期實際淨獲利率'] = model['cal_positive_rate']"", ""context"": ""605:     result['機率校準截距'] = model['cal_intercept']\n606:     result['機率校準斜率'] = model['cal_slope']\n607:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n608:     result['機率校準已收斂'] = model['calibration_ok']\n609:     result['校準方向受支持'] = bool(model['class_fit_ok'] and model['calibration_ok'] and model['cal_slope'] > 0.0)""}","[cell_index]
+3
+
+[line_in_cell]
+607"
+845,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""3"", ""line_in_cell"": ""1168"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1166:                 '預測淨報酬', '估計淨獲利機率_回歸常態對照', '估計淨獲利機率_分類未校準', '估計淨獲利機率_校準', '估計淨獲利機率_近似',\n1167:                 '上漲潛力', '符合獲利候選條件', '優先獲利候選', '候選狀態', '名單用途',\n1168:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1169:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1170:         cols = [c for c in cols if c in predictions.columns]""}","[cell_index]
+3
+
+[line_in_cell]
+1168"
+854,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""3"", ""line_in_cell"": ""1190"", ""matched_line"": ""'機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1188:                          '預測淨報酬', '估計淨獲利機率_回歸常態對照', '估計淨獲利機率_分類未校準', '估計淨獲利機率_校準',\n1189:                          '上漲潛力', '符合獲利候選條件', '優先獲利候選', '候選狀態',\n1190:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1191:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1192:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(""}","[cell_index]
+3
+
+[line_in_cell]
+1190"
+855,,,訓練樣本;模型訓練,校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""3"", ""line_in_cell"": ""1191"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1189:                          '上漲潛力', '符合獲利候選條件', '優先獲利候選', '候選狀態',\n1190:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1191:                          '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1192:         latest_universe_df[[c for c in universe_cols if c in latest_universe_df.columns]].to_csv(\n1193:             outdir / '最新全市場候選持續評估_v2.44.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+3
+
+[line_in_cell]
+1191"
+978,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""4"", ""line_in_cell"": ""642"", ""matched_line"": ""result['機率校準斜率'] = model['cal_slope']"", ""context"": ""640:     result['分類模型已收斂'] = model['class_fit_ok']\n641:     result['機率校準截距'] = model['cal_intercept']\n642:     result['機率校準斜率'] = model['cal_slope']\n643:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n644:     result['機率校準已收斂'] = model['calibration_ok']""}","[cell_index]
+4
+
+[line_in_cell]
+642"
+979,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""4"", ""line_in_cell"": ""643"", ""matched_line"": ""result['校準期實際淨獲利率'] = model['cal_positive_rate']"", ""context"": ""641:     result['機率校準截距'] = model['cal_intercept']\n642:     result['機率校準斜率'] = model['cal_slope']\n643:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n644:     result['機率校準已收斂'] = model['calibration_ok']\n645:     result['校準方向受支持'] = bool(model['class_fit_ok'] and model['calibration_ok'] and model['cal_slope'] > 0.0)""}","[cell_index]
+4
+
+[line_in_cell]
+643"
+1345,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""5"", ""line_in_cell"": ""765"", ""matched_line"": ""result['機率校準斜率'] = model['cal_slope']"", ""context"": ""763:     result['分類模型已收斂'] = model['class_fit_ok']\n764:     result['機率校準截距'] = model['cal_intercept']\n765:     result['機率校準斜率'] = model['cal_slope']\n766:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n767:     result['機率校準已收斂'] = model['calibration_ok']""}","[cell_index]
+5
+
+[line_in_cell]
+765"
+1346,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""5"", ""line_in_cell"": ""766"", ""matched_line"": ""result['校準期實際淨獲利率'] = model['cal_positive_rate']"", ""context"": ""764:     result['機率校準截距'] = model['cal_intercept']\n765:     result['機率校準斜率'] = model['cal_slope']\n766:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n767:     result['機率校準已收斂'] = model['calibration_ok']\n768:     result['校準方向受支持'] = bool(model['class_fit_ok'] and model['calibration_ok'] and model['cal_slope'] > 0.0)""}","[cell_index]
+5
+
+[line_in_cell]
+766"
+1741,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""8"", ""line_in_cell"": ""698"", ""matched_line"": ""result['機率校準斜率'] = model['cal_slope']"", ""context"": ""696:     result['分類模型已收斂'] = model['class_fit_ok']\n697:     result['機率校準截距'] = model['cal_intercept']\n698:     result['機率校準斜率'] = model['cal_slope']\n699:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n700:     result['機率校準已收斂'] = model['calibration_ok']""}","[cell_index]
+8
+
+[line_in_cell]
+698"
+1742,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""8"", ""line_in_cell"": ""699"", ""matched_line"": ""result['校準期實際淨獲利率'] = model['cal_positive_rate']"", ""context"": ""697:     result['機率校準截距'] = model['cal_intercept']\n698:     result['機率校準斜率'] = model['cal_slope']\n699:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n700:     result['機率校準已收斂'] = model['calibration_ok']\n701:     result['校準方向受支持'] = bool(model['class_fit_ok'] and model['calibration_ok'] and model['cal_slope'] > 0.0)""}","[cell_index]
+8
+
+[line_in_cell]
+699"
+2176,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""2"", ""line_in_cell"": ""705"", ""matched_line"": ""result['機率校準斜率'] = model['cal_slope']"", ""context"": ""703:     result['分類模型已收斂'] = model['class_fit_ok']\n704:     result['機率校準截距'] = model['cal_intercept']\n705:     result['機率校準斜率'] = model['cal_slope']\n706:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n707:     result['機率校準已收斂'] = model['calibration_ok']""}","[cell_index]
+2
+
+[line_in_cell]
+705"
+2177,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""2"", ""line_in_cell"": ""706"", ""matched_line"": ""result['校準期實際淨獲利率'] = model['cal_positive_rate']"", ""context"": ""704:     result['機率校準截距'] = model['cal_intercept']\n705:     result['機率校準斜率'] = model['cal_slope']\n706:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n707:     result['機率校準已收斂'] = model['calibration_ok']\n708:     result['校準方向受支持'] = bool(model['class_fit_ok'] and model['calibration_ok'] and model['cal_slope'] > 0.0)""}","[cell_index]
+2
+
+[line_in_cell]
+706"
+2570,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""747"", ""matched_line"": ""result['機率校準斜率'] = model['cal_slope']"", ""context"": ""745:     result['分類模型已收斂'] = model['class_fit_ok']\n746:     result['機率校準截距'] = model['cal_intercept']\n747:     result['機率校準斜率'] = model['cal_slope']\n748:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n749:     result['機率校準已收斂'] = model['calibration_ok']""}","[cell_index]
+4
+
+[line_in_cell]
+747"
+2571,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""748"", ""matched_line"": ""result['校準期實際淨獲利率'] = model['cal_positive_rate']"", ""context"": ""746:     result['機率校準截距'] = model['cal_intercept']\n747:     result['機率校準斜率'] = model['cal_slope']\n748:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n749:     result['機率校準已收斂'] = model['calibration_ok']\n750:     result['校準方向受支持'] = bool(model['class_fit_ok'] and model['calibration_ok'] and model['cal_slope'] > 0.0)""}","[cell_index]
+4
+
+[line_in_cell]
+748"
+2960,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""747"", ""matched_line"": ""result['機率校準斜率'] = model['cal_slope']"", ""context"": ""745:     result['分類模型已收斂'] = model['class_fit_ok']\n746:     result['機率校準截距'] = model['cal_intercept']\n747:     result['機率校準斜率'] = model['cal_slope']\n748:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n749:     result['機率校準已收斂'] = model['calibration_ok']""}","[cell_index]
+5
+
+[line_in_cell]
+747"
+2961,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""748"", ""matched_line"": ""result['校準期實際淨獲利率'] = model['cal_positive_rate']"", ""context"": ""746:     result['機率校準截距'] = model['cal_intercept']\n747:     result['機率校準斜率'] = model['cal_slope']\n748:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n749:     result['機率校準已收斂'] = model['calibration_ok']\n750:     result['校準方向受支持'] = bool(model['class_fit_ok'] and model['calibration_ok'] and model['cal_slope'] > 0.0)""}","[cell_index]
+5
+
+[line_in_cell]
+748"
+3378,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""747"", ""matched_line"": ""result['機率校準斜率'] = model['cal_slope']"", ""context"": ""745:     result['分類模型已收斂'] = model['class_fit_ok']\n746:     result['機率校準截距'] = model['cal_intercept']\n747:     result['機率校準斜率'] = model['cal_slope']\n748:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n749:     result['機率校準已收斂'] = model['calibration_ok']""}","[cell_index]
+8
+
+[line_in_cell]
+747"
+3379,,,,calibrat;校準;機率校準;校準截距;校準斜率,,,65,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""748"", ""matched_line"": ""result['校準期實際淨獲利率'] = model['cal_positive_rate']"", ""context"": ""746:     result['機率校準截距'] = model['cal_intercept']\n747:     result['機率校準斜率'] = model['cal_slope']\n748:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n749:     result['機率校準已收斂'] = model['calibration_ok']\n750:     result['校準方向受支持'] = bool(model['class_fit_ok'] and model['calibration_ok'] and model['cal_slope'] > 0.0)""}","[cell_index]
+8
+
+[line_in_cell]
+748"
+382,,,,calibrat;校準;機率校準;校準斜率,756,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""2"", ""line_in_cell"": ""49"", ""matched_line"": ""LOOKBACK_DAYS = 756           # 最多使用近約 3 年可用訊號樣本"", ""context"": ""47: CALIBRATION_SLOPE_L2 = 10.0  # 收縮校準斜率，避免短期樣本把機率推得過度極端\n48: BREADTH_SIZES = [10, 20, 50, 100]  # 保留舊排序口徑診斷作對照\n49: LOOKBACK_DAYS = 756           # 最多使用近約 3 年可用訊號樣本\n50: CALIBRATION_DAYS = 60         # 最近 60 個市場日用於獲利機率校準，不參與報酬回歸係數訓練\n51: REFIT_INTERVAL = 20           # 每 20 個市場交易日更新一次模型""}","[cell_index]
+2
+
+[line_in_cell]
+49"
+1162,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1317"", ""matched_line"": ""'優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',"", ""context"": ""1315:         '機率說明': '以最近60個市場日已完成交易的預測淨報酬與實際淨獲利標籤進行一維 logistic 校準；仍是估計值，非保證或已證明的真實機率。',\n1316:         '合格候選門檻': f'校準方向受支持、估計淨獲利機率 >= {MIN_PROFIT_PROBABILITY:.0%}、預測淨報酬 > 0',\n1317:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1318:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1319:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',""}","[cell_index]
+4
+
+[line_in_cell]
+1317"
+1163,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1318"", ""matched_line"": ""'校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',"", ""context"": ""1316:         '合格候選門檻': f'校準方向受支持、估計淨獲利機率 >= {MIN_PROFIT_PROBABILITY:.0%}、預測淨報酬 > 0',\n1317:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1318:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1319:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',\n1320:         '公司名稱來源': COMPANY_NAME_SOURCE,""}","[cell_index]
+4
+
+[line_in_cell]
+1318"
+1164,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1319"", ""matched_line"": ""'新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',"", ""context"": ""1317:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1318:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1319:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',\n1320:         '公司名稱來源': COMPANY_NAME_SOURCE,\n1321:     }""}","[cell_index]
+4
+
+[line_in_cell]
+1319"
+1189,,,,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1408"", ""matched_line"": ""'歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',"", ""context"": ""1406:                 '歷史同機率區間', '歷史同機率區間樣本數', '歷史同機率區間訊號日數',\n1407:                 '歷史同區間實際淨獲利率_成交加權', '歷史同區間實際淨獲利率_逐日平均',\n1408:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1409:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1410:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+4
+
+[line_in_cell]
+1408"
+1197,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1425"", ""matched_line"": ""'機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1423:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1424:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1425:                 '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1426:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1427:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.45.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+4
+
+[line_in_cell]
+1425"
+1198,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1426"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1424:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1425:                 '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1426:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1427:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.45.csv', index=False, encoding='utf-8-sig')\n1428:     if latest_universe_frames:""}","[cell_index]
+4
+
+[line_in_cell]
+1426"
+1202,,,,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1438"", ""matched_line"": ""'歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',"", ""context"": ""1436:                          '歷史同機率區間', '歷史同機率區間樣本數', '歷史同機率區間訊號日數',\n1437:                          '歷史同區間實際淨獲利率_成交加權', '歷史同區間實際淨獲利率_逐日平均',\n1438:                          '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1439:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1440:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+4
+
+[line_in_cell]
+1438"
+1529,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1440"", ""matched_line"": ""'優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',"", ""context"": ""1438:         '機率說明': '以最近60個市場日已完成交易的預測淨報酬與實際淨獲利標籤進行一維 logistic 校準；仍是估計值，非保證或已證明的真實機率。',\n1439:         '合格候選門檻': f'校準方向受支持、估計淨獲利機率 >= {MIN_PROFIT_PROBABILITY:.0%}、預測淨報酬 > 0',\n1440:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1441:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1442:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',""}","[cell_index]
+5
+
+[line_in_cell]
+1440"
+1530,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1441"", ""matched_line"": ""'校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',"", ""context"": ""1439:         '合格候選門檻': f'校準方向受支持、估計淨獲利機率 >= {MIN_PROFIT_PROBABILITY:.0%}、預測淨報酬 > 0',\n1440:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1441:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1442:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',\n1443:         '公司名稱來源': COMPANY_NAME_SOURCE,""}","[cell_index]
+5
+
+[line_in_cell]
+1441"
+1531,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1442"", ""matched_line"": ""'新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',"", ""context"": ""1440:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1441:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1442:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',\n1443:         '公司名稱來源': COMPANY_NAME_SOURCE,\n1444:         '產業類別來源': COMPANY_INDUSTRY_SOURCE,""}","[cell_index]
+5
+
+[line_in_cell]
+1442"
+1557,,,,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1533"", ""matched_line"": ""'歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',"", ""context"": ""1531:                 '歷史同機率區間', '歷史同機率區間樣本數', '歷史同機率區間訊號日數',\n1532:                 '歷史同區間實際淨獲利率_成交加權', '歷史同區間實際淨獲利率_逐日平均',\n1533:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1534:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1535:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+5
+
+[line_in_cell]
+1533"
+1565,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1550"", ""matched_line"": ""'機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1548:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1549:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1550:                 '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1551:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1552:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.46.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+5
+
+[line_in_cell]
+1550"
+1566,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1551"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1549:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1550:                 '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1551:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1552:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.46.csv', index=False, encoding='utf-8-sig')\n1553:     if latest_universe_frames:""}","[cell_index]
+5
+
+[line_in_cell]
+1551"
+1570,,,,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1563"", ""matched_line"": ""'歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',"", ""context"": ""1561:                          '歷史同機率區間', '歷史同機率區間樣本數', '歷史同機率區間訊號日數',\n1562:                          '歷史同區間實際淨獲利率_成交加權', '歷史同區間實際淨獲利率_逐日平均',\n1563:                          '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1564:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1565:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+5
+
+[line_in_cell]
+1563"
+1925,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1374"", ""matched_line"": ""'優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',"", ""context"": ""1372:         '機率說明': '以最近60個市場日已完成交易的預測淨報酬與實際淨獲利標籤進行一維 logistic 校準；仍是估計值，非保證或已證明的真實機率。',\n1373:         '合格候選門檻': f'校準方向受支持、估計淨獲利機率 >= {MIN_PROFIT_PROBABILITY:.0%}、預測淨報酬 > 0',\n1374:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1375:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1376:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',""}","[cell_index]
+8
+
+[line_in_cell]
+1374"
+1926,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1375"", ""matched_line"": ""'校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',"", ""context"": ""1373:         '合格候選門檻': f'校準方向受支持、估計淨獲利機率 >= {MIN_PROFIT_PROBABILITY:.0%}、預測淨報酬 > 0',\n1374:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1375:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1376:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',\n1377:         '公司名稱來源': COMPANY_NAME_SOURCE,""}","[cell_index]
+8
+
+[line_in_cell]
+1375"
+1927,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1376"", ""matched_line"": ""'新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',"", ""context"": ""1374:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1375:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1376:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',\n1377:         '公司名稱來源': COMPANY_NAME_SOURCE,\n1378:     }""}","[cell_index]
+8
+
+[line_in_cell]
+1376"
+1952,,,,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1465"", ""matched_line"": ""'歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',"", ""context"": ""1463:                 '歷史同機率區間', '歷史同機率區間樣本數', '歷史同機率區間訊號日數',\n1464:                 '歷史同區間實際淨獲利率_成交加權', '歷史同區間實際淨獲利率_逐日平均',\n1465:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1466:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1467:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+8
+
+[line_in_cell]
+1465"
+1960,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1482"", ""matched_line"": ""'機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1480:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1481:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1482:                 '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1483:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1484:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.48.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+8
+
+[line_in_cell]
+1482"
+1961,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1483"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1481:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1482:                 '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1483:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1484:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.48.csv', index=False, encoding='utf-8-sig')\n1485:     if latest_universe_frames:""}","[cell_index]
+8
+
+[line_in_cell]
+1483"
+1965,,,,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1495"", ""matched_line"": ""'歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',"", ""context"": ""1493:                          '歷史同機率區間', '歷史同機率區間樣本數', '歷史同機率區間訊號日數',\n1494:                          '歷史同區間實際淨獲利率_成交加權', '歷史同區間實際淨獲利率_逐日平均',\n1495:                          '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1496:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1497:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+8
+
+[line_in_cell]
+1495"
+2372,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1458"", ""matched_line"": ""'優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',"", ""context"": ""1456:         '機率說明': '以最近60個市場日已完成交易的預測淨報酬與實際淨獲利標籤進行一維 logistic 校準；仍是估計值，非保證或已證明的真實機率。',\n1457:         '合格候選門檻': f'校準方向受支持、估計淨獲利機率 >= {MIN_PROFIT_PROBABILITY:.0%}、預測淨報酬 > 0',\n1458:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1459:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1460:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',""}","[cell_index]
+2
+
+[line_in_cell]
+1458"
+2373,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1459"", ""matched_line"": ""'校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',"", ""context"": ""1457:         '合格候選門檻': f'校準方向受支持、估計淨獲利機率 >= {MIN_PROFIT_PROBABILITY:.0%}、預測淨報酬 > 0',\n1458:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1459:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1460:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',\n1461:         '公司名稱來源': COMPANY_NAME_SOURCE,""}","[cell_index]
+2
+
+[line_in_cell]
+1459"
+2374,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1460"", ""matched_line"": ""'新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',"", ""context"": ""1458:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1459:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1460:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',\n1461:         '公司名稱來源': COMPANY_NAME_SOURCE,\n1462:     }""}","[cell_index]
+2
+
+[line_in_cell]
+1460"
+2399,,,,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1549"", ""matched_line"": ""'歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',"", ""context"": ""1547:                 '歷史同機率區間', '歷史同機率區間樣本數', '歷史同機率區間訊號日數',\n1548:                 '歷史同區間實際淨獲利率_成交加權', '歷史同區間實際淨獲利率_逐日平均',\n1549:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1550:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1551:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+2
+
+[line_in_cell]
+1549"
+2407,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1566"", ""matched_line"": ""'機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1564:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1565:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1566:                 '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1567:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1568:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.48.1.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+2
+
+[line_in_cell]
+1566"
+2408,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1567"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1565:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1566:                 '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1567:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1568:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.48.1.csv', index=False, encoding='utf-8-sig')\n1569:     if latest_universe_frames:""}","[cell_index]
+2
+
+[line_in_cell]
+1567"
+2412,,,,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1579"", ""matched_line"": ""'歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',"", ""context"": ""1577:                          '歷史同機率區間', '歷史同機率區間樣本數', '歷史同機率區間訊號日數',\n1578:                          '歷史同區間實際淨獲利率_成交加權', '歷史同區間實際淨獲利率_逐日平均',\n1579:                          '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1580:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1581:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+2
+
+[line_in_cell]
+1579"
+2770,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1512"", ""matched_line"": ""'優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',"", ""context"": ""1510:         '機率說明': '以最近60個市場日已完成交易的預測淨報酬與實際淨獲利標籤進行一維 logistic 校準；仍是估計值，非保證或已證明的真實機率。',\n1511:         '合格候選門檻': f'校準方向受支持、估計淨獲利機率 >= {MIN_PROFIT_PROBABILITY:.0%}、預測淨報酬 > 0',\n1512:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1513:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1514:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',""}","[cell_index]
+4
+
+[line_in_cell]
+1512"
+2771,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1513"", ""matched_line"": ""'校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',"", ""context"": ""1511:         '合格候選門檻': f'校準方向受支持、估計淨獲利機率 >= {MIN_PROFIT_PROBABILITY:.0%}、預測淨報酬 > 0',\n1512:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1513:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1514:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',\n1515:         '公司名稱來源': COMPANY_NAME_SOURCE,""}","[cell_index]
+4
+
+[line_in_cell]
+1513"
+2772,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1514"", ""matched_line"": ""'新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',"", ""context"": ""1512:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1513:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1514:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',\n1515:         '公司名稱來源': COMPANY_NAME_SOURCE,\n1516:     }""}","[cell_index]
+4
+
+[line_in_cell]
+1514"
+2797,,,,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1603"", ""matched_line"": ""'歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',"", ""context"": ""1601:                 '歷史同機率區間', '歷史同機率區間樣本數', '歷史同機率區間訊號日數',\n1602:                 '歷史同區間實際淨獲利率_成交加權', '歷史同區間實際淨獲利率_逐日平均',\n1603:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1604:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1605:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+4
+
+[line_in_cell]
+1603"
+2810,,,,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""1633"", ""matched_line"": ""'歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',"", ""context"": ""1631:                          '歷史同機率區間', '歷史同機率區間樣本數', '歷史同機率區間訊號日數',\n1632:                          '歷史同區間實際淨獲利率_成交加權', '歷史同區間實際淨獲利率_逐日平均',\n1633:                          '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1634:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1635:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+4
+
+[line_in_cell]
+1633"
+3162,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1513"", ""matched_line"": ""'優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',"", ""context"": ""1511:         '機率說明': '以最近60個市場日已完成交易的預測淨報酬與實際淨獲利標籤進行一維 logistic 校準；仍是估計值，非保證或已證明的真實機率。',\n1512:         '合格候選門檻': f'校準方向受支持、估計淨獲利機率 >= {MIN_PROFIT_PROBABILITY:.0%}、預測淨報酬 > 0',\n1513:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1514:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1515:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',""}","[cell_index]
+5
+
+[line_in_cell]
+1513"
+3163,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1514"", ""matched_line"": ""'校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',"", ""context"": ""1512:         '合格候選門檻': f'校準方向受支持、估計淨獲利機率 >= {MIN_PROFIT_PROBABILITY:.0%}、預測淨報酬 > 0',\n1513:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1514:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1515:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',\n1516:         '公司名稱來源': COMPANY_NAME_SOURCE,""}","[cell_index]
+5
+
+[line_in_cell]
+1514"
+3164,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1515"", ""matched_line"": ""'新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',"", ""context"": ""1513:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1514:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1515:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',\n1516:         '公司名稱來源': COMPANY_NAME_SOURCE,\n1517:     }""}","[cell_index]
+5
+
+[line_in_cell]
+1515"
+3189,,,,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1604"", ""matched_line"": ""'歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',"", ""context"": ""1602:                 '歷史同機率區間', '歷史同機率區間樣本數', '歷史同機率區間訊號日數',\n1603:                 '歷史同區間實際淨獲利率_成交加權', '歷史同區間實際淨獲利率_逐日平均',\n1604:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1605:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1606:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+5
+
+[line_in_cell]
+1604"
+3197,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1621"", ""matched_line"": ""'機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1619:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1620:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1621:                 '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1622:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1623:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.51停用量能.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+5
+
+[line_in_cell]
+1621"
+3198,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1622"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1620:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1621:                 '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1622:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1623:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.51停用量能.csv', index=False, encoding='utf-8-sig')\n1624:     if latest_universe_frames:""}","[cell_index]
+5
+
+[line_in_cell]
+1622"
+3202,,,,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""1634"", ""matched_line"": ""'歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',"", ""context"": ""1632:                          '歷史同機率區間', '歷史同機率區間樣本數', '歷史同機率區間訊號日數',\n1633:                          '歷史同區間實際淨獲利率_成交加權', '歷史同區間實際淨獲利率_逐日平均',\n1634:                          '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1635:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1636:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+5
+
+[line_in_cell]
+1634"
+3636,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1628"", ""matched_line"": ""'優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',"", ""context"": ""1626:         '機率說明': '以最近60個市場日已完成交易的預測淨報酬與實際淨獲利標籤進行一維 logistic 校準；仍是估計值，非保證或已證明的真實機率。',\n1627:         '合格候選門檻': f'校準方向受支持、估計淨獲利機率 >= {MIN_PROFIT_PROBABILITY:.0%}、預測淨報酬 > 0',\n1628:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1629:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1630:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',""}","[cell_index]
+8
+
+[line_in_cell]
+1628"
+3637,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1629"", ""matched_line"": ""'校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',"", ""context"": ""1627:         '合格候選門檻': f'校準方向受支持、估計淨獲利機率 >= {MIN_PROFIT_PROBABILITY:.0%}、預測淨報酬 > 0',\n1628:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1629:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1630:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',\n1631:         '公司名稱來源': COMPANY_NAME_SOURCE,""}","[cell_index]
+8
+
+[line_in_cell]
+1629"
+3638,,,樣本外,Platt;校準,,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1630"", ""matched_line"": ""'新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',"", ""context"": ""1628:         '優先候選門檻': f'合格候選且估計淨獲利機率 >= {PRIORITY_PROFIT_PROBABILITY:.0%}',\n1629:         '校準方式': '分類器直接預測一般成本後淨報酬是否>0；使用校準期開始前已完成樣本訓練，最近60個市場日的已完成樣本作 Platt logistic 校準；回歸模型只估計預期淨報酬。',\n1630:         '新增樣本外區間門檻': f'只用已成熟的歷史樣本外預測；回看{OOS_GATE_LOOKBACK_DAYS}個市場日，至少{OOS_GATE_MIN_SAMPLES}筆且{OOS_GATE_MIN_SIGNAL_DAYS}個訊號日，成交加權與逐日平均勝率均至少{OOS_GATE_MIN_WIN_RATE:.0%}，平均實際淨報酬均須為正。',\n1631:         '公司名稱來源': COMPANY_NAME_SOURCE,\n1632:     }""}","[cell_index]
+8
+
+[line_in_cell]
+1630"
+3664,,,,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1722"", ""matched_line"": ""'歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',"", ""context"": ""1720:                 '歷史同機率區間', '歷史同機率區間樣本數', '歷史同機率區間訊號日數',\n1721:                 '歷史同區間實際淨獲利率_成交加權', '歷史同區間實際淨獲利率_逐日平均',\n1722:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1723:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1724:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+8
+
+[line_in_cell]
+1722"
+3672,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1739"", ""matched_line"": ""'機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1737:                 '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1738:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1739:                 '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1740:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1741:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.51停用量能.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+8
+
+[line_in_cell]
+1739"
+3673,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1740"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1738:                 '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1739:                 '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1740:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1741:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.51停用量能.csv', index=False, encoding='utf-8-sig')\n1742:     if latest_universe_frames:""}","[cell_index]
+8
+
+[line_in_cell]
+1740"
+3677,,,,校準;機率校準;校準截距;校準斜率,歷史同機率區間,,60,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""8"", ""line_in_cell"": ""1752"", ""matched_line"": ""'歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',"", ""context"": ""1750:                          '歷史同機率區間', '歷史同機率區間樣本數', '歷史同機率區間訊號日數',\n1751:                          '歷史同區間實際淨獲利率_成交加權', '歷史同區間實際淨獲利率_逐日平均',\n1752:                          '歷史同區間平均實際淨報酬_成交加權', '歷史同區間平均實際淨報酬_逐日平均',\n1753:                          '歷史同機率區間通過門檻', '歷史同機率區間未通過原因',\n1754:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+8
+
+[line_in_cell]
+1752"
+6236,,,,Platt;校準,756,,59,"{""revision_id"": ""0BxMjNkhpez1KVnJYVm1pVVpQbWdDUmdRL1dreDQ4c1lHTkFnPQ"", ""revision_time"": ""2026-11-02T14:57:57.787Z"", ""cell_index"": ""0"", ""line_in_cell"": ""432"", ""matched_line"": ""\""- 回看756個市場日；最近60個市場日完成樣本做Platt logistic校準；每20個市場日更新模型。\"","", ""context"": ""430:         \""四、模型規格可確認範圍\"",\n431:         \""- 每個持有期每日最多10檔；H=[1,3,5,10]。\"",\n432:         \""- 回看756個市場日；最近60個市場日完成樣本做Platt logistic校準；每20個市場日更新模型。\"",\n433:         \""- 一般成本：slip=0.001、fee=0.001425、tax=0.003；壓力成本slip=0.002，其餘相同。\"",\n434:         \""- 封存規格沒有提供可執行的原始分類器程式及完整模型超參數，因此即使補足特徵公式，仍不能稱為v2.40／v2.45原模型精確重現。\"",""}","[cell_index]
+0
+
+[line_in_cell]
+432"
+6237,,,,Platt;校準,756,,59,"{""revision_id"": ""0BxMjNkhpez1KVnJYVm1pVVpQbWdDUmdRL1dreDQ4c1lHTkFnPQ"", ""revision_time"": ""2026-11-02T14:57:57.787Z"", ""cell_index"": ""0"", ""line_in_cell"": ""434"", ""matched_line"": ""\""- 封存規格沒有提供可執行的原始分類器程式及完整模型超參數，因此即使補足特徵公式，仍不能稱為v2.40／v2.45原模型精確重現。\"","", ""context"": ""432:         \""- 回看756個市場日；最近60個市場日完成樣本做Platt logistic校準；每20個市場日更新模型。\"",\n433:         \""- 一般成本：slip=0.001、fee=0.001425、tax=0.003；壓力成本slip=0.002，其餘相同。\"",\n434:         \""- 封存規格沒有提供可執行的原始分類器程式及完整模型超參數，因此即使補足特徵公式，仍不能稱為v2.40／v2.45原模型精確重現。\"",\n435:         \""- v2.62主要前瞻檢視規則仍固定H5／一般成本／僅同區段；至少12個日曆月且H5至少20個有效活躍訊號日後才正式檢視。\"",\n436:         \""\"",""}","[cell_index]
+0
+
+[line_in_cell]
+434"
+6661,,,,Platt;校準,756,,59,"{""revision_id"": ""0BxMjNkhpez1Kc2k1MnBKTEhuOHZZQnhubTBJL0NMSVdZeDVzPQ"", ""revision_time"": ""2026-11-03T00:22:32.827Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1144"", ""matched_line"": ""- 訓練／回顧視窗：756個市場交易日。"", ""context"": ""1142: - 預測持有期間：H=[1,3,5,10]。\n1143: - 每個持有期間最多10檔候選。\n1144: - 訓練／回顧視窗：756個市場交易日。\n1145: - Platt logistic 校準視窗：60個市場交易日。\n1146: - 模型更新頻率：每20個市場交易日。""}","[cell_index]
+2
+
+[line_in_cell]
+1144"
+6662,,,,Platt;校準,756,,59,"{""revision_id"": ""0BxMjNkhpez1Kc2k1MnBKTEhuOHZZQnhubTBJL0NMSVdZeDVzPQ"", ""revision_time"": ""2026-11-03T00:22:32.827Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1145"", ""matched_line"": ""- Platt logistic 校準視窗：60個市場交易日。"", ""context"": ""1143: - 每個持有期間最多10檔候選。\n1144: - 訓練／回顧視窗：756個市場交易日。\n1145: - Platt logistic 校準視窗：60個市場交易日。\n1146: - 模型更新頻率：每20個市場交易日。\n1147: - 一般成本：滑價0.001、手續費0.001425、證交稅0.003。""}","[cell_index]
+2
+
+[line_in_cell]
+1145"
+6663,,,,Platt;校準,756,,59,"{""revision_id"": ""0BxMjNkhpez1Kc2k1MnBKTEhuOHZZQnhubTBJL0NMSVdZeDVzPQ"", ""revision_time"": ""2026-11-03T00:22:32.827Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1146"", ""matched_line"": ""- 模型更新頻率：每20個市場交易日。"", ""context"": ""1144: - 訓練／回顧視窗：756個市場交易日。\n1145: - Platt logistic 校準視窗：60個市場交易日。\n1146: - 模型更新頻率：每20個市場交易日。\n1147: - 一般成本：滑價0.001、手續費0.001425、證交稅0.003。\n1148: - 壓力成本：滑價0.002；手續費及證交稅同一般成本。""}","[cell_index]
+2
+
+[line_in_cell]
+1146"
+426,,,訓練樣本;模型訓練,校準;機率校準;校準截距,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""2"", ""line_in_cell"": ""432"", ""matched_line"": ""result['模型校準樣本數'] = model['cal_n']"", ""context"": ""430:     result['上漲潛力'] = np.select([prob_cal >= 0.60, prob_cal >= 0.50], ['高', '中'], default='低')\n431:     result['模型訓練樣本數'] = model['train_n']\n432:     result['模型校準樣本數'] = model['cal_n']\n433:     result['模型預測誤差標準差'] = model['sigma']\n434:     result['機率校準截距'] = model['cal_intercept']""}","[cell_index]
+2
+
+[line_in_cell]
+432"
+427,,,,校準;機率校準;校準截距;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""2"", ""line_in_cell"": ""434"", ""matched_line"": ""result['機率校準截距'] = model['cal_intercept']"", ""context"": ""432:     result['模型校準樣本數'] = model['cal_n']\n433:     result['模型預測誤差標準差'] = model['sigma']\n434:     result['機率校準截距'] = model['cal_intercept']\n435:     result['機率校準斜率'] = model['cal_slope']\n436:     result['校準期實際淨獲利率'] = model['cal_positive_rate']""}","[cell_index]
+2
+
+[line_in_cell]
+434"
+430,,,,calibrat;校準;機率校準;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""2"", ""line_in_cell"": ""437"", ""matched_line"": ""result['機率校準已收斂'] = model['calibration_ok']"", ""context"": ""435:     result['機率校準斜率'] = model['cal_slope']\n436:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n437:     result['機率校準已收斂'] = model['calibration_ok']\n438:     result['校準方向受支持'] = bool(model['calibration_ok'] and model['cal_slope'] > 0.0)\n439:     return result""}","[cell_index]
+2
+
+[line_in_cell]
+437"
+570,,,,校準;機率校準;校準截距;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""2"", ""line_in_cell"": ""994"", ""matched_line"": ""'預測淨報酬', '估計淨獲利機率_未校準常態近似', '估計淨獲利機率_校準', '估計淨獲利機率_近似',"", ""context"": ""992:         predictions = pd.concat(pred_rows, ignore_index=True)\n993:         cols = ['持有期間H', '訊號日期', '訊號全市場日序', '排名', '市場', 'symbol', 'close', 'factor',\n994:                 '預測淨報酬', '估計淨獲利機率_未校準常態近似', '估計淨獲利機率_校準', '估計淨獲利機率_近似',\n995:                 '上漲潛力', '符合獲利候選條件', '優先獲利候選', '候選狀態', '名單用途',\n996:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+2
+
+[line_in_cell]
+994"
+576,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1006"", ""matched_line"": ""'機率校準斜率', '校準期實際淨獲利率', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1004:                 '預測淨報酬', '估計淨獲利機率_未校準常態近似', '估計淨獲利機率_校準', '估計淨獲利機率_近似',\n1005:                 '上漲潛力', '符合獲利候選條件', '優先獲利候選', '候選狀態',\n1006:                 '機率校準斜率', '校準期實際淨獲利率', '機率校準已收斂', '校準方向受支持',\n1007:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1008:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.43.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+2
+
+[line_in_cell]
+1006"
+577,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1007"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1005:                 '上漲潛力', '符合獲利候選條件', '優先獲利候選', '候選狀態',\n1006:                 '機率校準斜率', '校準期實際淨獲利率', '機率校準已收斂', '校準方向受支持',\n1007:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1008:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.43.csv', index=False, encoding='utf-8-sig')\n1009:     if latest_universe_frames:""}","[cell_index]
+2
+
+[line_in_cell]
+1007"
+579,,,,校準;機率校準;校準截距;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""2"", ""line_in_cell"": ""1014"", ""matched_line"": ""'預測淨報酬', '估計淨獲利機率_未校準常態近似', '估計淨獲利機率_校準',"", ""context"": ""1012:         # 每個 H 分別以校準後機率排名全市場。保留所有可評估候選供後續追蹤，不把未達門檻者稱為推薦。\n1013:         universe_cols = ['持有期間H', '訊號日期', '訊號全市場日序', '獲利可能性排名', '市場', '股票代號', '訊號日收盤價', '來源20根波動因子',\n1014:                          '預測淨報酬', '估計淨獲利機率_未校準常態近似', '估計淨獲利機率_校準',\n1015:                          '上漲潛力', '符合獲利候選條件', '優先獲利候選', '候選狀態',\n1016:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+2
+
+[line_in_cell]
+1014"
+700,,,,校準;機率校準;校準截距;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""3"", ""line_in_cell"": ""605"", ""matched_line"": ""result['機率校準截距'] = model['cal_intercept']"", ""context"": ""603:     result['模型預測誤差標準差'] = model['sigma']\n604:     result['分類模型已收斂'] = model['class_fit_ok']\n605:     result['機率校準截距'] = model['cal_intercept']\n606:     result['機率校準斜率'] = model['cal_slope']\n607:     result['校準期實際淨獲利率'] = model['cal_positive_rate']""}","[cell_index]
+3
+
+[line_in_cell]
+605"
+703,,,,calibrat;校準;機率校準;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""3"", ""line_in_cell"": ""608"", ""matched_line"": ""result['機率校準已收斂'] = model['calibration_ok']"", ""context"": ""606:     result['機率校準斜率'] = model['cal_slope']\n607:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n608:     result['機率校準已收斂'] = model['calibration_ok']\n609:     result['校準方向受支持'] = bool(model['class_fit_ok'] and model['calibration_ok'] and model['cal_slope'] > 0.0)\n610:     return result""}","[cell_index]
+3
+
+[line_in_cell]
+608"
+844,,,,校準;機率校準;校準截距;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""3"", ""line_in_cell"": ""1166"", ""matched_line"": ""'預測淨報酬', '估計淨獲利機率_回歸常態對照', '估計淨獲利機率_分類未校準', '估計淨獲利機率_校準', '估計淨獲利機率_近似',"", ""context"": ""1164:         predictions = add_company_names(predictions, 'symbol')\n1165:         cols = ['持有期間H', '訊號日期', '訊號全市場日序', '排名', '市場', 'symbol', '公司名稱', 'close', 'factor',\n1166:                 '預測淨報酬', '估計淨獲利機率_回歸常態對照', '估計淨獲利機率_分類未校準', '估計淨獲利機率_校準', '估計淨獲利機率_近似',\n1167:                 '上漲潛力', '符合獲利候選條件', '優先獲利候選', '候選狀態', '名單用途',\n1168:                 '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+3
+
+[line_in_cell]
+1166"
+850,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""3"", ""line_in_cell"": ""1179"", ""matched_line"": ""'機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',"", ""context"": ""1177:                 '預測淨報酬', '估計淨獲利機率_回歸常態對照', '估計淨獲利機率_分類未校準', '估計淨獲利機率_校準', '估計淨獲利機率_近似',\n1178:                 '上漲潛力', '符合獲利候選條件', '優先獲利候選', '候選狀態',\n1179:                 '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1180:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1181:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.44.csv', index=False, encoding='utf-8-sig')""}","[cell_index]
+3
+
+[line_in_cell]
+1179"
+851,,,訓練樣本;模型訓練,校準;機率校準;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""3"", ""line_in_cell"": ""1180"", ""matched_line"": ""'模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']"", ""context"": ""1178:                 '上漲潛力', '符合獲利候選條件', '優先獲利候選', '候選狀態',\n1179:                 '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',\n1180:                 '模型訓練樣本數', '模型校準樣本數', '模型預測誤差標準差']\n1181:         latest_df[[c for c in cols if c in latest_df.columns]].to_csv(outdir / '最新10檔獲利可能性排行_v2.44.csv', index=False, encoding='utf-8-sig')\n1182:     if latest_universe_frames:""}","[cell_index]
+3
+
+[line_in_cell]
+1180"
+853,,,,校準;機率校準;校準截距;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""3"", ""line_in_cell"": ""1188"", ""matched_line"": ""'預測淨報酬', '估計淨獲利機率_回歸常態對照', '估計淨獲利機率_分類未校準', '估計淨獲利機率_校準',"", ""context"": ""1186:         # 每個 H 分別以校準後機率排名全市場。保留所有可評估候選供後續追蹤，不把未達門檻者稱為推薦。\n1187:         universe_cols = ['持有期間H', '訊號日期', '訊號全市場日序', '獲利可能性排名', '市場', '股票代號', '公司名稱', '訊號日收盤價', '來源20根波動因子',\n1188:                          '預測淨報酬', '估計淨獲利機率_回歸常態對照', '估計淨獲利機率_分類未校準', '估計淨獲利機率_校準',\n1189:                          '上漲潛力', '符合獲利候選條件', '優先獲利候選', '候選狀態',\n1190:                          '機率校準截距', '機率校準斜率', '校準期實際淨獲利率', '分類模型已收斂', '機率校準已收斂', '校準方向受支持',""}","[cell_index]
+3
+
+[line_in_cell]
+1188"
+977,,,,校準;機率校準;校準截距;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""4"", ""line_in_cell"": ""641"", ""matched_line"": ""result['機率校準截距'] = model['cal_intercept']"", ""context"": ""639:     result['模型預測誤差標準差'] = model['sigma']\n640:     result['分類模型已收斂'] = model['class_fit_ok']\n641:     result['機率校準截距'] = model['cal_intercept']\n642:     result['機率校準斜率'] = model['cal_slope']\n643:     result['校準期實際淨獲利率'] = model['cal_positive_rate']""}","[cell_index]
+4
+
+[line_in_cell]
+641"
+980,,,,calibrat;校準;機率校準;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""4"", ""line_in_cell"": ""644"", ""matched_line"": ""result['機率校準已收斂'] = model['calibration_ok']"", ""context"": ""642:     result['機率校準斜率'] = model['cal_slope']\n643:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n644:     result['機率校準已收斂'] = model['calibration_ok']\n645:     result['校準方向受支持'] = bool(model['class_fit_ok'] and model['calibration_ok'] and model['cal_slope'] > 0.0)\n646:     return result""}","[cell_index]
+4
+
+[line_in_cell]
+644"
+1344,,,,校準;機率校準;校準截距;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""5"", ""line_in_cell"": ""764"", ""matched_line"": ""result['機率校準截距'] = model['cal_intercept']"", ""context"": ""762:     result['模型預測誤差標準差'] = model['sigma']\n763:     result['分類模型已收斂'] = model['class_fit_ok']\n764:     result['機率校準截距'] = model['cal_intercept']\n765:     result['機率校準斜率'] = model['cal_slope']\n766:     result['校準期實際淨獲利率'] = model['cal_positive_rate']""}","[cell_index]
+5
+
+[line_in_cell]
+764"
+1347,,,,calibrat;校準;機率校準;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""5"", ""line_in_cell"": ""767"", ""matched_line"": ""result['機率校準已收斂'] = model['calibration_ok']"", ""context"": ""765:     result['機率校準斜率'] = model['cal_slope']\n766:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n767:     result['機率校準已收斂'] = model['calibration_ok']\n768:     result['校準方向受支持'] = bool(model['class_fit_ok'] and model['calibration_ok'] and model['cal_slope'] > 0.0)\n769:     return result""}","[cell_index]
+5
+
+[line_in_cell]
+767"
+1740,,,,校準;機率校準;校準截距;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""8"", ""line_in_cell"": ""697"", ""matched_line"": ""result['機率校準截距'] = model['cal_intercept']"", ""context"": ""695:     result['模型預測誤差標準差'] = model['sigma']\n696:     result['分類模型已收斂'] = model['class_fit_ok']\n697:     result['機率校準截距'] = model['cal_intercept']\n698:     result['機率校準斜率'] = model['cal_slope']\n699:     result['校準期實際淨獲利率'] = model['cal_positive_rate']""}","[cell_index]
+8
+
+[line_in_cell]
+697"
+1743,,,,calibrat;校準;機率校準;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ"", ""revision_time"": ""2026-10-28T14:07:45.221Z"", ""cell_index"": ""8"", ""line_in_cell"": ""700"", ""matched_line"": ""result['機率校準已收斂'] = model['calibration_ok']"", ""context"": ""698:     result['機率校準斜率'] = model['cal_slope']\n699:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n700:     result['機率校準已收斂'] = model['calibration_ok']\n701:     result['校準方向受支持'] = bool(model['class_fit_ok'] and model['calibration_ok'] and model['cal_slope'] > 0.0)\n702:     return result""}","[cell_index]
+8
+
+[line_in_cell]
+700"
+2175,,,,校準;機率校準;校準截距;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""2"", ""line_in_cell"": ""704"", ""matched_line"": ""result['機率校準截距'] = model['cal_intercept']"", ""context"": ""702:     result['模型預測誤差標準差'] = model['sigma']\n703:     result['分類模型已收斂'] = model['class_fit_ok']\n704:     result['機率校準截距'] = model['cal_intercept']\n705:     result['機率校準斜率'] = model['cal_slope']\n706:     result['校準期實際淨獲利率'] = model['cal_positive_rate']""}","[cell_index]
+2
+
+[line_in_cell]
+704"
+2178,,,,calibrat;校準;機率校準;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""2"", ""line_in_cell"": ""707"", ""matched_line"": ""result['機率校準已收斂'] = model['calibration_ok']"", ""context"": ""705:     result['機率校準斜率'] = model['cal_slope']\n706:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n707:     result['機率校準已收斂'] = model['calibration_ok']\n708:     result['校準方向受支持'] = bool(model['class_fit_ok'] and model['calibration_ok'] and model['cal_slope'] > 0.0)\n709:     return result""}","[cell_index]
+2
+
+[line_in_cell]
+707"
+2569,,,,校準;機率校準;校準截距;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""746"", ""matched_line"": ""result['機率校準截距'] = model['cal_intercept']"", ""context"": ""744:     result['模型預測誤差標準差'] = model['sigma']\n745:     result['分類模型已收斂'] = model['class_fit_ok']\n746:     result['機率校準截距'] = model['cal_intercept']\n747:     result['機率校準斜率'] = model['cal_slope']\n748:     result['校準期實際淨獲利率'] = model['cal_positive_rate']""}","[cell_index]
+4
+
+[line_in_cell]
+746"
+2572,,,,calibrat;校準;機率校準;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""4"", ""line_in_cell"": ""749"", ""matched_line"": ""result['機率校準已收斂'] = model['calibration_ok']"", ""context"": ""747:     result['機率校準斜率'] = model['cal_slope']\n748:     result['校準期實際淨獲利率'] = model['cal_positive_rate']\n749:     result['機率校準已收斂'] = model['calibration_ok']\n750:     result['校準方向受支持'] = bool(model['class_fit_ok'] and model['calibration_ok'] and model['cal_slope'] > 0.0)\n751:     return result""}","[cell_index]
+4
+
+[line_in_cell]
+749"
+2959,,,,校準;機率校準;校準截距;校準斜率,,,57,"{""revision_id"": ""0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ"", ""revision_time"": ""2026-10-29T08:22:02.380Z"", ""cell_index"": ""5"", ""line_in_cell"": ""746"", ""matched_line"": ""result['機率校準截距'] = model['cal_intercept']"", ""context"": ""744:     result['模型預測誤差標準差'] = model['sigma']\n745:     result['分類模型已收斂'] = model['class_fit_ok']\n746:     result['機率校準截距'] = model['cal_intercept']\n747:     result['機率校準斜率'] = model['cal_slope']\n748:     result['校準期實際淨獲利率'] = model['cal_positive_rate']""}","[cell_index]
+5
+
+[line_in_cell]
+746"

@@ -1,0 +1,311 @@
+{
+  "reference_archive_sha256": "05932d7e7c88f4492797d3aa32b83cd997ed8614b171ef92cb05c18dcbb9f56a",
+  "v250_archive_sha256": "263330e961a51fabba7bb399a7bfae4ea38646c48a5c3e7851f9056bd6141111",
+  "snippet_csv_rows": 6715,
+  "snippet_csv_columns": [
+    "revision_id",
+    "revision_time",
+    "cell_index",
+    "line_in_cell",
+    "matched_line",
+    "context"
+  ],
+  "fulltext_metadata": {
+    "line_count": 45471,
+    "match_line_count": 3863,
+    "exported_match_contexts": 250,
+    "calibration_line_count": 2333,
+    "lineage_line_count": 123,
+    "top_matches": [
+      {
+        "line": 21146,
+        "hit_types": "calibration;model;lineage",
+        "line_text": "1810:     (outdir / 'SSO_v2.50_樣本外校準門檻與公司名稱報告.txt').write_text('\\n'.join(report), encoding='utf-8-sig')"
+      },
+      {
+        "line": 21152,
+        "hit_types": "calibration;model;lineage",
+        "line_text": "1810:     (outdir / 'SSO_v2.50_樣本外校準門檻與公司名稱報告.txt').write_text('\\n'.join(report), encoding='utf-8-sig')"
+      },
+      {
+        "line": 21158,
+        "hit_types": "calibration;model;lineage",
+        "line_text": "1810:     (outdir / 'SSO_v2.50_樣本外校準門檻與公司名稱報告.txt').write_text('\\n'.join(report), encoding='utf-8-sig')"
+      },
+      {
+        "line": 21984,
+        "hit_types": "calibration;model;lineage",
+        "line_text": "1784:     report.append('本版為 v2.50 的配對消融對照：模型完全不使用4個成交量特徵；其他特徵、標籤、walk-forward 日期、模型更新間隔、校準窗、交易成本與門檻均維持相同。請與 v2.50 的相同欄位逐項比較。')"
+      },
+      {
+        "line": 21989,
+        "hit_types": "calibration;model;lineage",
+        "line_text": "1784:     report.append('本版為 v2.50 的配對消融對照：模型完全不使用4個成交量特徵；其他特徵、標籤、walk-forward 日期、模型更新間隔、校準窗、交易成本與門檻均維持相同。請與 v2.50 的相同欄位逐項比較。')"
+      },
+      {
+        "line": 23552,
+        "hit_types": "calibration;model;lineage",
+        "line_text": "1911:     report.append('本版為 v2.50 的配對消融對照：模型完全不使用4個成交量特徵；其他特徵、標籤、walk-forward 日期、模型更新間隔、校準窗、交易成本與門檻均維持相同。主要結果逐檔評估，不假設同時買進10檔；模型完成後自動讀取 v2.50 公開結果並產生個股層級配對比較。')"
+      },
+      {
+        "line": 23558,
+        "hit_types": "calibration;model;lineage",
+        "line_text": "1911:     report.append('本版為 v2.50 的配對消融對照：模型完全不使用4個成交量特徵；其他特徵、標籤、walk-forward 日期、模型更新間隔、校準窗、交易成本與門檻均維持相同。主要結果逐檔評估，不假設同時買進10檔；模型完成後自動讀取 v2.50 公開結果並產生個股層級配對比較。')"
+      },
+      {
+        "line": 23564,
+        "hit_types": "calibration;model;lineage",
+        "line_text": "1911:     report.append('本版為 v2.50 的配對消融對照：模型完全不使用4個成交量特徵；其他特徵、標籤、walk-forward 日期、模型更新間隔、校準窗、交易成本與門檻均維持相同。主要結果逐檔評估，不假設同時買進10檔；模型完成後自動讀取 v2.50 公開結果並產生個股層級配對比較。')"
+      },
+      {
+        "line": 20703,
+        "hit_types": "calibration;lineage",
+        "line_text": "1656:         prob_day.to_csv(outdir / '獲利機率校準逐訊號日_v2.50.csv', index=False, encoding='utf-8-sig')"
+      },
+      {
+        "line": 20709,
+        "hit_types": "calibration;lineage",
+        "line_text": "1656:         prob_day.to_csv(outdir / '獲利機率校準逐訊號日_v2.50.csv', index=False, encoding='utf-8-sig')"
+      },
+      {
+        "line": 20803,
+        "hit_types": "calibration;lineage",
+        "line_text": "1679:         prob_summary.to_csv(outdir / '獲利機率校準檢驗總結_v2.50.csv', index=False, encoding='utf-8-sig')"
+      },
+      {
+        "line": 20809,
+        "hit_types": "calibration;lineage",
+        "line_text": "1679:         prob_summary.to_csv(outdir / '獲利機率校準檢驗總結_v2.50.csv', index=False, encoding='utf-8-sig')"
+      },
+      {
+        "line": 20815,
+        "hit_types": "calibration;lineage",
+        "line_text": "1679:         prob_summary.to_csv(outdir / '獲利機率校準檢驗總結_v2.50.csv', index=False, encoding='utf-8-sig')"
+      },
+      {
+        "line": 21249,
+        "hit_types": "calibration;lineage",
+        "line_text": "1502:     diagnostics['v2.51量能消融設定'] = '本版相較 v2.50 唯一模型輸入差異：不將4個日線成交量特徵加入 RANK_FEATURES。其餘價格／市場狀態特徵、標籤、樣本切分、分類器、校準、成本與回測參數均維持相同。'"
+      },
+      {
+        "line": 21254,
+        "hit_types": "calibration;lineage",
+        "line_text": "1502:     diagnostics['v2.51量能消融設定'] = '本版相較 v2.50 唯一模型輸入差異：不將4個日線成交量特徵加入 RANK_FEATURES。其餘價格／市場狀態特徵、標籤、樣本切分、分類器、校準、成本與回測參數均維持相同。'"
+      },
+      {
+        "line": 22803,
+        "hit_types": "calibration;lineage",
+        "line_text": "1617:     diagnostics['v2.51量能消融設定'] = '本版相較 v2.50 唯一模型輸入差異：不將4個日線成交量特徵加入 RANK_FEATURES。其餘價格／市場狀態特徵、標籤、樣本切分、分類器、校準、成本與回測參數均維持相同。'"
+      },
+      {
+        "line": 22808,
+        "hit_types": "calibration;lineage",
+        "line_text": "1617:     diagnostics['v2.51量能消融設定'] = '本版相較 v2.50 唯一模型輸入差異：不將4個日線成交量特徵加入 RANK_FEATURES。其餘價格／市場狀態特徵、標籤、樣本切分、分類器、校準、成本與回測參數均維持相同。'"
+      },
+      {
+        "line": 44999,
+        "hit_types": "calibration;lineage",
+        "line_text": "128:     {\"version\": \"v2.51\", \"evidence\": \"停用量能特徵，不將4個成交量特徵加入 RANK_FEATURES；其餘價格／市場狀態特徵、標籤、切分、分類器、校準、成本及回測參數沿用 v2.50。\", \"scope\": \"停用4個量能特徵，保留價格／市場特徵\"},"
+      },
+      {
+        "line": 45004,
+        "hit_types": "calibration;lineage",
+        "line_text": "128:     {\"version\": \"v2.51\", \"evidence\": \"停用量能特徵，不將4個成交量特徵加入 RANK_FEATURES；其餘價格／市場狀態特徵、標籤、切分、分類器、校準、成本及回測參數沿用 v2.50。\", \"scope\": \"停用4個量能特徵，保留價格／市場特徵\"},"
+      },
+      {
+        "line": 18631,
+        "hit_types": "model;lineage",
+        "line_text": "3: SSO v2.50｜日線成交量特徵與樣本外獲利模型（研究版）"
+      },
+      {
+        "line": 20446,
+        "hit_types": "model;lineage",
+        "line_text": "1534:         print(f'SSO v2.50｜H{h}：建立標籤與 walk-forward 上漲潛力模型')"
+      },
+      {
+        "line": 20451,
+        "hit_types": "model;lineage",
+        "line_text": "1534:         print(f'SSO v2.50｜H{h}：建立標籤與 walk-forward 上漲潛力模型')"
+      },
+      {
+        "line": 20457,
+        "hit_types": "model;lineage",
+        "line_text": "1534:         print(f'SSO v2.50｜H{h}：建立標籤與 walk-forward 上漲潛力模型')"
+      },
+      {
+        "line": 20463,
+        "hit_types": "model;lineage",
+        "line_text": "1534:         print(f'SSO v2.50｜H{h}：建立標籤與 walk-forward 上漲潛力模型')"
+      },
+      {
+        "line": 20593,
+        "hit_types": "model;lineage",
+        "line_text": "1608:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.50.csv', index=False, encoding='utf-8-sig')"
+      },
+      {
+        "line": 20599,
+        "hit_types": "model;lineage",
+        "line_text": "1608:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.50.csv', index=False, encoding='utf-8-sig')"
+      },
+      {
+        "line": 20605,
+        "hit_types": "model;lineage",
+        "line_text": "1608:         predictions[cols].to_csv(outdir / '歷史樣本外每日10檔候選_v2.50.csv', index=False, encoding='utf-8-sig')"
+      },
+      {
+        "line": 20822,
+        "hit_types": "model;lineage",
+        "line_text": "1683:         gate_all.to_csv(outdir / '樣本外機率區間門檻診斷_v2.50.csv', index=False, encoding='utf-8-sig')"
+      },
+      {
+        "line": 20827,
+        "hit_types": "model;lineage",
+        "line_text": "1683:         gate_all.to_csv(outdir / '樣本外機率區間門檻診斷_v2.50.csv', index=False, encoding='utf-8-sig')"
+      },
+      {
+        "line": 20971,
+        "hit_types": "model;lineage",
+        "line_text": "1727:         rank_bin_summary.to_csv(outdir / '預測分位組樣本外實際績效_v2.50.csv', index=False, encoding='utf-8-sig')"
+      },
+      {
+        "line": 20977,
+        "hit_types": "model;lineage",
+        "line_text": "1727:         rank_bin_summary.to_csv(outdir / '預測分位組樣本外實際績效_v2.50.csv', index=False, encoding='utf-8-sig')"
+      },
+      {
+        "line": 20983,
+        "hit_types": "model;lineage",
+        "line_text": "1727:         rank_bin_summary.to_csv(outdir / '預測分位組樣本外實際績效_v2.50.csv', index=False, encoding='utf-8-sig')"
+      },
+      {
+        "line": 21025,
+        "hit_types": "model;lineage",
+        "line_text": "1760:     report.append('SSO v2.50｜日線成交量特徵、直接獲利分類與10檔候選樣本外回測')"
+      },
+      {
+        "line": 21030,
+        "hit_types": "model;lineage",
+        "line_text": "1760:     report.append('SSO v2.50｜日線成交量特徵、直接獲利分類與10檔候選樣本外回測')"
+      },
+      {
+        "line": 21207,
+        "hit_types": "model;lineage",
+        "line_text": "1842:     print('SSO v2.50｜日線成交量特徵、直接獲利分類與10檔候選樣本外回測')"
+      },
+      {
+        "line": 21213,
+        "hit_types": "model;lineage",
+        "line_text": "1842:     print('SSO v2.50｜日線成交量特徵、直接獲利分類與10檔候選樣本外回測')"
+      },
+      {
+        "line": 21219,
+        "hit_types": "model;lineage",
+        "line_text": "1842:     print('SSO v2.50｜日線成交量特徵、直接獲利分類與10檔候選樣本外回測')"
+      },
+      {
+        "line": 22098,
+        "hit_types": "model;lineage",
+        "line_text": "1840:     print('本版只停用4個成交量模型特徵；其餘模型、樣本外門檻與交易成本沿用 v2.50，進行配對消融。')"
+      },
+      {
+        "line": 22104,
+        "hit_types": "model;lineage",
+        "line_text": "1840:     print('本版只停用4個成交量模型特徵；其餘模型、樣本外門檻與交易成本沿用 v2.50，進行配對消融。')"
+      },
+      {
+        "line": 22110,
+        "hit_types": "model;lineage",
+        "line_text": "1840:     print('本版只停用4個成交量模型特徵；其餘模型、樣本外門檻與交易成本沿用 v2.50，進行配對消融。')"
+      },
+      {
+        "line": 22116,
+        "hit_types": "model;lineage",
+        "line_text": "1840:     print('本版只停用4個成交量模型特徵；其餘模型、樣本外門檻與交易成本沿用 v2.50，進行配對消融。')"
+      },
+      {
+        "line": 24112,
+        "hit_types": "model;lineage",
+        "line_text": "2423:         'SSO v2.50 vs v2.51停用量能｜個股獨立樣本外比較',"
+      },
+      {
+        "line": 18636,
+        "hit_types": "gate;lineage",
+        "line_text": "46: OUT_DIR = Path('/content/SSO_v2.50_日成交量特徵與500日檢查點')"
+      },
+      {
+        "line": 22070,
+        "hit_types": "gate;lineage",
+        "line_text": "1823: - 每500個已處理市場日保存檢查點；檢查點使用獨立資料夾與版本識別，不會讀取 v2.50 檢查點。"
+      },
+      {
+        "line": 22076,
+        "hit_types": "gate;lineage",
+        "line_text": "1823: - 每500個已處理市場日保存檢查點；檢查點使用獨立資料夾與版本識別，不會讀取 v2.50 檢查點。"
+      },
+      {
+        "line": 23645,
+        "hit_types": "gate;lineage",
+        "line_text": "1950: - 每500個已處理市場日保存檢查點；檢查點使用獨立資料夾與版本識別，不會讀取 v2.50 檢查點。"
+      },
+      {
+        "line": 23651,
+        "hit_types": "gate;lineage",
+        "line_text": "1950: - 每500個已處理市場日保存檢查點；檢查點使用獨立資料夾與版本識別，不會讀取 v2.50 檢查點。"
+      },
+      {
+        "line": 44986,
+        "hit_types": "gate;lineage",
+        "line_text": "108:     (\"v2.50\", \"SSO_v2.50_日成交量特徵與500日檢查點結果.zip\", 21654521, \"d7908f72d102abffdf1cf1433000f164b36ea95dfec25545f33800ed90a87c8b6\"),"
+      },
+      {
+        "line": 44998,
+        "hit_types": "gate;lineage",
+        "line_text": "127:     {\"version\": \"v2.50\", \"evidence\": \"承接 v2.48.1 特徵，另新增4個日線成交量特徵；當日量相對20日均量、5／20日均量趨勢、相對量能排名、近5日報酬×相對量能確認。\", \"scope\": \"24項特徵之外另有4項量能特徵\"},"
+      },
+      {
+        "line": 15089,
+        "hit_types": "lineage",
+        "line_text": "113: # v2.50：在原有相對排名之外，補入個股絕對動能、全市場廣度／狀態及少量互動項。"
+      }
+    ]
+  },
+  "v250_signature": {
+    "latest_h5_candidate_date": "2026-11-18",
+    "latest_h5_row_count": 10,
+    "latest_h5_key_field_values": {
+      "機率校準斜率": [
+        "0.5578370188798897"
+      ],
+      "分類模型已收斂": [
+        "True"
+      ],
+      "機率校準已收斂": [
+        "True"
+      ],
+      "校準方向受支持": [
+        "True"
+      ],
+      "模型訓練樣本數": [
+        "247061"
+      ],
+      "模型校準樣本數": [
+        "22448"
+      ]
+    }
+  },
+  "lineage_assessment": {
+    "direct_v250_sha_match_in_historical_snippets": false,
+    "exact_v250_run_id_match": false,
+    "exact_v515_main_run_match": false,
+    "explicit_v250_version_reference_found": true,
+    "snippet_rows_with_model_logic": 896,
+    "snippet_rows_with_calibration_logic": 1539,
+    "snippet_rows_with_gate_logic": 488,
+    "fulltext_has_current_v250_sha": false,
+    "fulltext_has_current_v250_run_id": false,
+    "fulltext_has_platt_or_logistic": true,
+    "v250_zip_code_member_count": 0,
+    "assessment": "V250_VERSION_REFERENCE_FOUND_BUT_SHA_LINK_UNPROVEN",
+    "interpretation_note": "Exact SHA/run/main-version matches are direct lineage clues. Generic words such as model, fit, calibration, Platt, LogisticRegression, 756, 500 or 52% are only similarity evidence."
+  }
+}

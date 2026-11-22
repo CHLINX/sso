@@ -1,0 +1,362 @@
+{
+  "version": "SSO_H5_V250_Notebook_Version_And_Calibration_Lineage_Trace_v1.0",
+  "run_id": "20261122_091741",
+  "status": "RUNNING",
+  "error": null,
+  "reference_zip": {
+    "path": "/content/drive/MyDrive/看股最速適/看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/看股最速適_v4.84.6_私人公式模型比對_20261103_142832.zip",
+    "sha256": "05932d7e7c88f4492797d3aa32b83cd997ed8614b171ef92cb05c18dcbb9f56a",
+    "expected_sha256": "05932d7e7c88f4492797d3aa32b83cd997ed8614b171ef92cb05c18dcbb9f56a",
+    "sha256_pass": true,
+    "crc_pass": true,
+    "member_count": 9
+  },
+  "v250_zip": {
+    "path": "/content/drive/MyDrive/看股最速適/推薦結果/非前瞻參考/SSO_main_v5_15_20261118_192959_1730c0/來源模型ZIP/SSO_v2.50_非前瞻參考_H5_2026-11-18_20261118_193832_200a91_結果.zip",
+    "sha256": "263330e961a51fabba7bb399a7bfae4ea38646c48a5c3e7851f9056bd6141111",
+    "expected_sha256": "263330e961a51fabba7bb399a7bfae4ea38646c48a5c3e7851f9056bd6141111",
+    "sha256_pass": true,
+    "crc_pass": true,
+    "member_count": 22,
+    "code_member_count": 0,
+    "code_members": [],
+    "members": [
+      "10檔分級前瞻績效比較_v2.50.csv",
+      "10檔組合淨值路徑_v2.50.csv",
+      "10檔組合逐籃子逐股成交明細_v2.50.csv",
+      "SSO_v2.50_核心分析修正說明.txt",
+      "SSO_v2.50_樣本外校準門檻與公司名稱報告.txt",
+      "上漲潛力分級實際績效檢驗_v2.50.csv",
+      "來源品質與執行設定_v2.50.json",
+      "分類機率能力總結_v2.50.csv",
+      "分類機率能力逐訊號日_v2.50.csv",
+      "最新10檔獲利可能性排行_v2.50.csv",
+      "最新全市場候選持續評估_v2.50.csv",
+      "最新達標獲利候選最多10檔_v2.50.csv",
+      "樣本外機率區間門檻診斷_v2.50.csv",
+      "歷史樣本外每日10檔候選_v2.50.csv",
+      "獲利機率校準檢驗總結_v2.50.csv",
+      "獲利機率校準逐訊號日_v2.50.csv",
+      "選股範圍敏感度淨值路徑_v2.50.csv",
+      "選股範圍敏感度總結_v2.50.csv",
+      "選股範圍敏感度逐訊號日_v2.50.csv",
+      "預測分位組樣本外實際績效_v2.50.csv",
+      "預測排序能力總結_v2.50.csv",
+      "預測排序能力逐訊號日診斷_v2.50.csv"
+    ]
+  },
+  "snippet_archive": {
+    "row_count": 6715,
+    "column_count": 6,
+    "columns": [
+      "revision_id",
+      "revision_time",
+      "cell_index",
+      "line_in_cell",
+      "matched_line",
+      "context"
+    ],
+    "version_column_guess": null,
+    "code_columns_guess": [
+      "cell_index",
+      "line_in_cell"
+    ],
+    "ranked_hit_count": 2300,
+    "top_rows": [
+      {
+        "source_row_index": 2799,
+        "version_value": "",
+        "score": 372,
+        "model_hits": "樣本外;訓練樣本;模型訓練",
+        "calibration_hits": "校準;機率校準;校準截距;校準斜率",
+        "gate_hits": "歷史同機率區間",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 2800,
+        "version_value": "",
+        "score": 369,
+        "model_hits": "樣本外;訓練樣本;模型訓練",
+        "calibration_hits": "校準;機率校準;校準截距;校準斜率",
+        "gate_hits": "",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 2812,
+        "version_value": "",
+        "score": 368,
+        "model_hits": "訓練樣本;模型訓練",
+        "calibration_hits": "校準;機率校準;校準截距;校準斜率",
+        "gate_hits": "歷史同機率區間",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 2805,
+        "version_value": "",
+        "score": 360,
+        "model_hits": "訓練樣本;模型訓練",
+        "calibration_hits": "校準;機率校準;校準斜率",
+        "gate_hits": "歷史同機率區間",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 2806,
+        "version_value": "",
+        "score": 360,
+        "model_hits": "訓練樣本;模型訓練",
+        "calibration_hits": "校準;機率校準;校準斜率",
+        "gate_hits": "歷史同機率區間",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 3909,
+        "version_value": "",
+        "score": 328,
+        "model_hits": "樣本外",
+        "calibration_hits": "calibrat;校準;機率校準",
+        "gate_hits": "",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 3278,
+        "version_value": "",
+        "score": 327,
+        "model_hits": "樣本外;模型訓練",
+        "calibration_hits": "校準;機率校準",
+        "gate_hits": "500",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 2815,
+        "version_value": "",
+        "score": 324,
+        "model_hits": "",
+        "calibration_hits": "calibrat;校準;機率校準",
+        "gate_hits": "",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 2816,
+        "version_value": "",
+        "score": 324,
+        "model_hits": "",
+        "calibration_hits": "calibrat;校準;機率校準",
+        "gate_hits": "",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 3277,
+        "version_value": "",
+        "score": 324,
+        "model_hits": "樣本外;模型訓練",
+        "calibration_hits": "校準;機率校準",
+        "gate_hits": "",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 2878,
+        "version_value": "",
+        "score": 323,
+        "model_hits": "樣本外",
+        "calibration_hits": "校準;機率校準",
+        "gate_hits": "歷史同機率區間",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 2879,
+        "version_value": "",
+        "score": 323,
+        "model_hits": "樣本外",
+        "calibration_hits": "校準;機率校準",
+        "gate_hits": "歷史同機率區間",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 2880,
+        "version_value": "",
+        "score": 323,
+        "model_hits": "樣本外",
+        "calibration_hits": "校準;機率校準",
+        "gate_hits": "歷史同機率區間",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 3272,
+        "version_value": "",
+        "score": 321,
+        "model_hits": "walk.?forward",
+        "calibration_hits": "校準",
+        "gate_hits": "756;500;20\\s*(?:日|days?)",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 3273,
+        "version_value": "",
+        "score": 321,
+        "model_hits": "walk.?forward",
+        "calibration_hits": "校準",
+        "gate_hits": "756;500;20\\s*(?:日|days?)",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 3749,
+        "version_value": "",
+        "score": 321,
+        "model_hits": "walk.?forward",
+        "calibration_hits": "校準",
+        "gate_hits": "756;500;20\\s*(?:日|days?)",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 3750,
+        "version_value": "",
+        "score": 321,
+        "model_hits": "walk.?forward",
+        "calibration_hits": "校準",
+        "gate_hits": "756;500;20\\s*(?:日|days?)",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 2801,
+        "version_value": "",
+        "score": 320,
+        "model_hits": "樣本外;訓練樣本;模型訓練",
+        "calibration_hits": "校準",
+        "gate_hits": "",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 2887,
+        "version_value": "",
+        "score": 320,
+        "model_hits": "樣本外",
+        "calibration_hits": "校準;機率校準",
+        "gate_hits": "",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 2888,
+        "version_value": "",
+        "score": 320,
+        "model_hits": "樣本外",
+        "calibration_hits": "校準;機率校準",
+        "gate_hits": "",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 2889,
+        "version_value": "",
+        "score": 320,
+        "model_hits": "樣本外",
+        "calibration_hits": "校準;機率校準",
+        "gate_hits": "",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 3276,
+        "version_value": "",
+        "score": 320,
+        "model_hits": "樣本外",
+        "calibration_hits": "校準;機率校準",
+        "gate_hits": "",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 3755,
+        "version_value": "",
+        "score": 320,
+        "model_hits": "模型訓練",
+        "calibration_hits": "校準;機率校準",
+        "gate_hits": "",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 3279,
+        "version_value": "",
+        "score": 319,
+        "model_hits": "樣本外;模型訓練",
+        "calibration_hits": "校準",
+        "gate_hits": "500",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 2829,
+        "version_value": "",
+        "score": 316,
+        "model_hits": "",
+        "calibration_hits": "校準;機率校準",
+        "gate_hits": "",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 2830,
+        "version_value": "",
+        "score": 316,
+        "model_hits": "",
+        "calibration_hits": "校準;機率校準",
+        "gate_hits": "",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 2831,
+        "version_value": "",
+        "score": 316,
+        "model_hits": "",
+        "calibration_hits": "校準;機率校準",
+        "gate_hits": "",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 3260,
+        "version_value": "",
+        "score": 316,
+        "model_hits": "walk.?forward;樣本外",
+        "calibration_hits": "校準",
+        "gate_hits": "",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 3261,
+        "version_value": "",
+        "score": 316,
+        "model_hits": "walk.?forward;樣本外",
+        "calibration_hits": "校準",
+        "gate_hits": "",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      },
+      {
+        "source_row_index": 3736,
+        "version_value": "",
+        "score": 316,
+        "model_hits": "walk.?forward;樣本外",
+        "calibration_hits": "校準",
+        "gate_hits": "",
+        "lineage_hits": "v2[._]50;v2\\.50"
+      }
+    ]
+  },
+  "lineage_assessment": {
+    "direct_v250_sha_match_in_historical_snippets": false,
+    "exact_v250_run_id_match": false,
+    "exact_v515_main_run_match": false,
+    "explicit_v250_version_reference_found": true,
+    "snippet_rows_with_model_logic": 896,
+    "snippet_rows_with_calibration_logic": 1539,
+    "snippet_rows_with_gate_logic": 488,
+    "fulltext_has_current_v250_sha": false,
+    "fulltext_has_current_v250_run_id": false,
+    "fulltext_has_platt_or_logistic": true,
+    "v250_zip_code_member_count": 0,
+    "assessment": "V250_VERSION_REFERENCE_FOUND_BUT_SHA_LINK_UNPROVEN",
+    "interpretation_note": "Exact SHA/run/main-version matches are direct lineage clues. Generic words such as model, fit, calibration, Platt, LogisticRegression, 756, 500 or 52% are only similarity evidence."
+  },
+  "upload": {},
+  "safety": {
+    "archived_code_executed": false,
+    "drive_sources_modified": false,
+    "巡田最速適_scanned": false,
+    "model_retrained": false,
+    "thresholds_changed": false,
+    "recommendations_changed": false
+  }
+}

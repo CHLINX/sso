@@ -1,0 +1,52 @@
+﻿看股最速適 v4.84.6｜私人 Notebook 公式與模型流程比對
+============================================================================
+來源資料夾：/content/drive/MyDrive/看股最速適/看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3
+復原索引 Notebook 列數：23
+唯一 revision_id：23
+成功解析版本：22
+未讀取／解析失敗：1
+24 因子程式片段：981
+模型訓練／校準片段：6,715
+原始輸入／中間變數片段：3,226
+
+各因子出現版本數：
+  ret5_rank: 11 / 22
+  ret20_rank: 11 / 22
+  ret60_rank: 11 / 22
+  dist_ma20_rank: 11 / 22
+  dist_ma60_rank: 11 / 22
+  range_pos20_rank: 11 / 22
+  lowvol20_rank: 11 / 22
+  source_factor_rank: 11 / 22
+  ret5_abs_scaled: 11 / 22
+  ret20_abs_scaled: 11 / 22
+  ret60_abs_scaled: 11 / 22
+  dist_ma20_abs_scaled: 11 / 22
+  dist_ma60_abs_scaled: 11 / 22
+  market_median_ret5: 11 / 22
+  market_median_ret20: 11 / 22
+  market_median_ret60: 11 / 22
+  market_breadth_pos_ret5: 11 / 22
+  market_breadth_pos_ret20: 11 / 22
+  market_breadth_pos_ret60: 11 / 22
+  market_breadth_above_ma20: 11 / 22
+  market_breadth_above_ma60: 11 / 22
+  ret5_rank_x_market_breadth: 11 / 22
+  ret20_rank_x_market_breadth: 11 / 22
+  ret60_rank_x_market_breadth: 11 / 22
+
+證據最完整的前 10 個版本（依 24 因子覆蓋、公式片段、模型片段排序）：
+  1. 2026-10-29T08:22:02.380Z｜features=24/24｜feature_hits=340｜model_hits=2279｜revision=0BxMjNkhpez1KZDNCZ3hVVkV0ckRyRUlGWVhtcUZhSXV5cGdrPQ
+  2. 2026-10-28T14:07:45.221Z｜features=24/24｜feature_hits=210｜model_hits=1851｜revision=0BxMjNkhpez1KamlnOHNKQWMwNi9wMERXTk1VV0dGSG5ybkprPQ
+  3. 2026-11-03T00:22:32.827Z｜features=24/24｜feature_hits=128｜model_hits=178｜revision=0BxMjNkhpez1Kc2k1MnBKTEhuOHZZQnhubTBJL0NMSVdZeDVzPQ
+  4. 2026-11-02T23:49:15.515Z｜features=24/24｜feature_hits=50｜model_hits=223｜revision=0BxMjNkhpez1KSnpKcU12MDBLYUJSOTZzKzlucHR0U3Z0R2hvPQ
+  5. 2026-11-02T15:34:02.852Z｜features=24/24｜feature_hits=50｜model_hits=14｜revision=0BxMjNkhpez1KMTdzVERQOFBzbDR5bFJYSjRVZWlxaEExVWc4PQ
+  6. 2026-11-02T23:00:21.554Z｜features=24/24｜feature_hits=50｜model_hits=14｜revision=0BxMjNkhpez1KTHE1MFYzNjV5YWtTMlVJK1hETUZtYzdNWDJZPQ
+  7. 2026-11-03T01:37:24.148Z｜features=24/24｜feature_hits=43｜model_hits=23｜revision=0BxMjNkhpez1KMjJLa2V4aWtpamZDaEdDaFJDaDVvVUp4QiswPQ
+  8. 2026-11-02T14:57:57.787Z｜features=24/24｜feature_hits=29｜model_hits=9｜revision=0BxMjNkhpez1KVnJYVm1pVVpQbWdDUmdRL1dreDQ4c1lHTkFnPQ
+  9. 2026-11-03T01:00:04.635Z｜features=24/24｜feature_hits=27｜model_hits=17｜revision=0BxMjNkhpez1KQlpyeG1MVGIxU2xHVkVGdWxNb1lOSzBJTmQ4PQ
+  10. 2026-11-03T03:27:01.099Z｜features=24/24｜feature_hits=27｜model_hits=7｜revision=0BxMjNkhpez1KdEZsWXp0RjlOWS80WEwrTlFybHFhZmkxTElBPQ
+
+資料保護：原始 Notebook 與原始報告唯讀；沒有呼叫 Google API；沒有重掃 Drive；
+沒有上傳 GitHub；沒有公開原始程式碼或公式。
+輸出資料夾：/content/drive/MyDrive/看股最速適/看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832
