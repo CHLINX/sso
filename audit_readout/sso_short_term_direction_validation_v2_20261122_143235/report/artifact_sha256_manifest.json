@@ -1,0 +1,46 @@
+{
+  "00_方法來源與限制.json": {
+    "bytes": 3270,
+    "sha256": "a5fd9d0f0938c4f4df900eed3e88bf465a31c4bc6dd943ded99dd729dd8e0818"
+  },
+  "01_開發期因子方向凍結.csv": {
+    "bytes": 6023,
+    "sha256": "8d83aa1f7b1e360266dc8198b7745651ac5477898abcce4f9a689dd6e98cc29e"
+  },
+  "02_凍結方向逐期IC驗證.csv": {
+    "bytes": 14494,
+    "sha256": "ed7ca1b8648ea291cbc97ba30aebad7a18ff4c181ee04875d1b04c195ec5f0ab"
+  },
+  "03_凍結方向TopN績效總覽.csv": {
+    "bytes": 131127,
+    "sha256": "f916dee0603722a78fb1d774e14e1d2c8f5c4810d930e255bca4ed1953d183de"
+  },
+  "04_凍結方向十分位績效.csv": {
+    "bytes": 20951,
+    "sha256": "1ab5932491b142c0a7ba59481f03e574482125400fdc657a155c2eeeeb958cac"
+  },
+  "05_每日TopN績效.csv.gz": {
+    "bytes": 29595692,
+    "sha256": "4e456070f226fd481122507fa19e9bc6a34b56d1c55edff5223f11eedc0b90a1"
+  },
+  "06_每日十分位績效.csv.gz": {
+    "bytes": 21044761,
+    "sha256": "0db5adb661957f4091dc79b35b1cd679d18cb7c2f147bd713d8bd9bbacb206ac"
+  },
+  "07_年度穩定性.csv": {
+    "bytes": 47624,
+    "sha256": "8a3d556e3b20710ed1111e4d4efcdeedfe594389b77a82d84fbda2934636b0a6"
+  },
+  "08_後段獲利候選檢視.csv": {
+    "bytes": 22371,
+    "sha256": "d80b1c157c8745a2413fb18084c6f05a356934db9f56668b5a995e1b4eb851a8"
+  },
+  "09_執行摘要.json": {
+    "bytes": 240,
+    "sha256": "404b118cc290ce14b617e7eb3c20fc48b0a28f8a3a3b88372748f2380ad48011"
+  },
+  "README.md": {
+    "bytes": 893,
+    "sha256": "37186fdb7057299259db957a7d7c1218763a9cda198fd47650d5265f309cdca5"
+  }
+}

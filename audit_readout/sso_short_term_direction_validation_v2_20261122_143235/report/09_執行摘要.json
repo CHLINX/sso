@@ -1,0 +1,9 @@
+{
+  "frozen_directions": 27,
+  "unresolved": 5,
+  "portfolio_summary_rows": 405,
+  "holdout_top10_positive_general": 0,
+  "holdout_top10_positive_stress": 0,
+  "holdout_any_topn_positive_general": 1,
+  "holdout_positive_candidate_rows": 1
+}

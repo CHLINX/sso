@@ -1,0 +1,85 @@
+{
+  "version": "SSO_SHORT_TERM_DIRECTION_VALIDATION_v2.0",
+  "run_time_local": "2026-11-22T14:40:37.044362+00:00",
+  "source": {
+    "source_path": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SSO_研究指標獨立驗證與前瞻分析_v2.31_20261116_121536/相對價格因子與前瞻報酬研究資料_v2.31.csv.gz",
+    "source_sha256": "113a4f7cd5c94d7bbd3cb78427963dde2a6c249d66a25a66fab2c408958de71c",
+    "source_bytes": 561268140,
+    "rows": 4464015,
+    "date_min": "2016-01-04",
+    "date_max": "2026-11-06",
+    "securities": 2438,
+    "market_dates": 5266,
+    "schema": {
+      "date": "日期",
+      "market": "市場",
+      "symbol": "股票代號",
+      "open": "影子開盤價",
+      "high": "影子最高價",
+      "low": "影子最低價",
+      "close": "影子收盤價",
+      "volume": "原始成交量_不作指標",
+      "segment": "價格研究區段"
+    },
+    "official_amount_available": false,
+    "missing_price_segment_rows": 0
+  },
+  "baseline_daily_ic_path": "/content/SSO_Short_Term_Factor_Feasibility_v1_20261122_131502/03_逐日Spearman_IC.csv",
+  "baseline_daily_ic_sha256": "a781d4979c94ceb022a3c6ef72d1b044fd1bc2a6edb1927d33dabd80e2478ffb",
+  "factor_valid_rows": {
+    "F01_INTRADAY_RETURN": 4416544,
+    "F02_OVERNIGHT_REVERSAL": 4379964,
+    "F03_INTRADAY_MOMENTUM_5": 4303467,
+    "F04_OVERNIGHT_REVERSAL_3": 4325436,
+    "F05_GAP_INTRADAY_REVERSAL": 4379964,
+    "F06_VOLUME_SURGE_20": 4303379,
+    "F07_INTRADAY_STRENGTH_PERSISTENCE_5": 4303467,
+    "F08_RANGE_POSITION_20": 4109024
+  },
+  "forward_label_valid_rows": {
+    "1": 4409641,
+    "3": 4366195,
+    "5": 4353670,
+    "10": 4327630
+  },
+  "direction_freeze": {
+    "rule": "for each factor-horizon, development 2016-2021 HAC p-value; BH across 32 tests; freeze sign only when q<0.05",
+    "frozen_count": 27,
+    "unresolved_count": 5,
+    "no_validation_or_holdout_direction_changes": true
+  },
+  "portfolio": {
+    "top_n": [
+      1,
+      3,
+      5,
+      10,
+      20
+    ],
+    "minimum_daily_cross_section": 100,
+    "slippage_one_way": [
+      0.001,
+      0.002,
+      0.003,
+      0.005
+    ],
+    "fee_one_way": 0.001425,
+    "sell_tax": 0.003,
+    "entry": "next market trading day open",
+    "exit": "close on Hth market trading day",
+    "long_only_reverse_signal": "LOW direction means buy lowest raw factor values; no short selling",
+    "cohort_not_account_backtest": true
+  },
+  "limitations": [
+    "2024+ has appeared in prior SSO research; it is not a pristine unseen holdout.",
+    "Historical point-in-time universe, delisted securities and survivorship bias still require audit.",
+    "Minimum commission, bid-ask spread, price-limit queue, partial fills and order-book depth are not modelled.",
+    "No official turnover amount; volume factor remains raw-share-volume anomaly.",
+    "Daily signal cohorts are not a fully compounded capital-account backtest; TopN cohort overlap is not netted.",
+    "Factor direction is frozen per factor-horizon from development period only; unresolved pairs are not promoted or reoriented using later periods."
+  ],
+  "portfolio_summary_rows": 405,
+  "daily_topn_rows": 354125,
+  "daily_decile_rows": 630838,
+  "status": "COMPLETED_RESEARCH_NOT_TRADING_APPROVAL"
+}
