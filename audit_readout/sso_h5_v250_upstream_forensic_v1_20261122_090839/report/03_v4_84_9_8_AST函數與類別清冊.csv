@@ -1,0 +1,590 @@
+﻿member,node_type,name,start_line,end_line,matched_categories,source_excerpt
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,log,73,74,,"def log(msg: str) -> None:
+    print(f""[{datetime.now().strftime('%H:%M:%S')}] {msg}"", flush=True)"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,elapsed,77,81,,"def elapsed(sec: float) -> str:
+    sec = max(0, int(sec))
+    h, r = divmod(sec, 3600)
+    m, s = divmod(r, 60)
+    return f""{h:02d}:{m:02d}:{s:02d}"" if h else f""{m:02d}:{s:02d}"""
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,bar,84,87,,"def bar(pct: float, width: int = 24) -> str:
+    pct = min(100.0, max(0.0, float(pct)))
+    filled = int(width * pct / 100.0)
+    return ""["" + ""#"" * filled + ""-"" * (width - filled) + f""] {pct:5.1f}%"""
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,clean,90,94,,"def clean(v: Any) -> str:
+    s = """" if v is None else str(v).strip()
+    if s.lower() in {""nan"", ""none"", ""nat"", ""null"", ""<na>"", ""--"", ""---"", ""----""}:
+        return """"
+    return s"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,norm,97,98,,"def norm(v: Any) -> str:
+    return re.sub(r""[\s\ufeff_\-（）()\[\]【】%％:：/\\]+"", """", str(v)).lower()"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,parse_date,101,130,,"def parse_date(v: Any) -> Optional[str]:
+    s = clean(v).replace(""\ufeff"", """").split("" "")[0]
+    if not s:
+        return None
+    if re.fullmatch(r""\d+\.0+"", s):
+        s = s.split(""."", 1)[0]
+    if re.fullmatch(r""\d{8}"", s):
+        try:
+            return datetime.strptime(s, ""%Y%m%d"").date().isoformat()
+        except ValueError:"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,norm_market,133,139,,"def norm_market(v: Any) -> str:
+    s = clean(v).upper().replace("" "", """")
+    if s in {""TWSE"", ""上市"", ""證交所"", ""TSE"", ""TW""} or ""上市"" in s or ""TWSE"" in s:
+        return ""TWSE""
+    if s in {""TPEX"", ""上櫃"", ""櫃買"", ""OTC"", ""TP""} or ""上櫃"" in s or ""櫃買"" in s or ""TPEX"" in s:
+        return ""TPEX""
+    return s"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,norm_code,142,146,,"def norm_code(v: Any) -> str:
+    s = clean(v).replace("" "", """")
+    if re.fullmatch(r""\d+\.0+"", s):
+        s = s.split(""."", 1)[0]
+    return s.upper()"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,num,149,157,,"def num(v: Any) -> float:
+    s = clean(v).replace("","", """")
+    if not s:
+        return float(""nan"")
+    try:
+        x = float(s)
+        return x if math.isfinite(x) else float(""nan"")
+    except Exception:
+        return float(""nan"")"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,fmt_num,160,163,,"def fmt_num(v: float) -> str:
+    if not math.isfinite(float(v)):
+        return """"
+    return format(float(v), "".17g"")"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,find_col,166,176,,"def find_col(cols: Sequence[str], aliases: Sequence[str]) -> Optional[str]:
+    cmap = {norm(c): str(c) for c in cols}
+    for a in aliases:
+        if norm(a) in cmap:
+            return cmap[norm(a)]
+    for a in aliases:
+        na = norm(a)
+        hits = [str(c) for c in cols if na and na in norm(c)]
+        if len(hits) == 1:
+            return hits[0]"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,newest_dir,179,181,,"def newest_dir(root: Path, pattern: str) -> Optional[Path]:
+    found = [p for p in root.glob(pattern) if p.is_dir()]
+    return max(found, key=lambda p: p.stat().st_mtime) if found else None"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,sha256_file,184,202,mature_labels;day_gate,"def sha256_file(path: Path, label: str, block: int = 8 * 1024 * 1024) -> str:
+    h = hashlib.sha256()
+    size = path.stat().st_size
+    done = 0
+    last_band = -1
+    started = time.monotonic()
+    with open(path, ""rb"") as f:
+        while True:
+            b = f.read(block)
+            if not b:"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,read_header,205,207,,"def read_header(path: Path) -> List[str]:
+    with gzip.open(path, ""rt"", encoding=""utf-8-sig"", errors=""replace"", newline="""") as f:
+        return next(csv.reader(f))"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,read_csv_small,210,211,,"def read_csv_small(path: Path) -> pd.DataFrame:
+    return pd.read_csv(path, dtype=str, encoding=""utf-8-sig"", keep_default_na=False, low_memory=False)"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,check_acceptance,214,226,,"def check_acceptance(dir_path: Path) -> Tuple[bool, str]:
+    summary = dir_path / ""v4.68.4執行摘要.txt""
+    if summary.exists():
+        txt = summary.read_text(encoding=""utf-8-sig"", errors=""replace"")
+        if ""PASS_FOR_SORTING_AND_FEATURE_REBUILD_NOT_MODEL_READY"" in txt:
+            return True, ""PASS_FOR_SORTING_AND_FEATURE_REBUILD_NOT_MODEL_READY""
+    gate = dir_path / ""01_候選資料驗收品質閘門.csv""
+    if gate.exists():
+        df = read_csv_small(gate)
+        text = "" "".join(df.astype(str).fillna("""").to_numpy().ravel().tolist())"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,sort_key_from_row,229,238,,"def sort_key_from_row(row: Sequence[str], idx: Dict[str, int], mode: str) -> Tuple[str, ...]:
+    d = parse_date(row[idx[""date""]])
+    m = norm_market(row[idx[""market""]])
+    c = norm_code(row[idx[""code""]])
+    s = clean(row[idx[""segment""]])
+    if not d or not m or not c or not s:
+        raise ValueError(f""排序資料自然鍵缺值／日期錯誤：date={d}, market={m}, code={c}, segment={s}"")
+    if mode == ""group"":
+        return (m, c, s, d)
+    return (d, m, c, s)"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,natural_key_from_sort_key,241,242,,"def natural_key_from_sort_key(k: Tuple[str, ...], mode: str) -> Tuple[str, str, str, str]:
+    return (k[3], k[0], k[1], k[2]) if mode == ""group"" else k"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,external_sort_csv_gz,245,354,market_lookback;mature_labels;sample_gate,"def external_sort_csv_gz(
+    source: Path,
+    target: Path,
+    work_dir: Path,
+    mode: str,
+    chunk_size: int,
+    expected_rows: int,
+    label: str,
+) -> Dict[str, Any]:
+    """"""External stable sort. mode=group => market/code/segment/date; date => date/market/code/segment."""""""
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,calculate_group,357,442,market_lookback;mature_labels;day_gate,"def calculate_group(rows: List[List[str]], header: List[str], key_idx: Dict[str, int], price_idx: Dict[str, int],
+                    feature_idx: Dict[str, int], label_idx: Dict[str, int], metrics: dict,
+                    saturday_counts: Counter) -> List[List[str]]:
+    """"""Return original rows plus temporary calculation columns; all calculations are per segment sequence.""""""
+    n = len(rows)
+    opens = np.array([num(r[price_idx[""open""]]) for r in rows], dtype=float)
+    highs = np.array([num(r[price_idx[""high""]]) for r in rows], dtype=float)
+    closes = np.array([num(r[price_idx[""close""]]) for r in rows], dtype=float)
+    dates = [parse_date(r[key_idx[""date""]]) for r in rows]
+    feat_arrays: Dict[str, np.ndarray] = {}"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,scan_and_calculate_grouped,445,565,market_lookback;mature_labels,"def scan_and_calculate_grouped(group_sorted: Path, raw_calc_path: Path, header: List[str], chunk_progress_expected: int) -> Dict[str, Any]:
+    dcol = find_col(header, [""日期"", ""交易日期"", ""交易日"", ""date"", ""trade_date""])
+    mcol = find_col(header, [""市場"", ""market"", ""市場別""])
+    ccol = find_col(header, [""股票代號"", ""證券代號"", ""code"", ""ticker""])
+    scol = find_col(header, [""價格研究區段"", ""segment"", ""區段""])
+    opcol = find_col(header, [""影子開盤價""])
+    hicol = find_col(header, [""影子最高價""])
+    locol = find_col(header, [""影子最低價""])
+    clcol = find_col(header, [""影子收盤價""])
+    required = [dcol, mcol, ccol, scol, opcol, hicol, locol, clcol]"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,apply_calculated_values,568,620,market_lookback;mature_labels;sample_gate,"def apply_calculated_values(raw_calc_path: Path, output_group_path: Path, header: List[str],
+                            calc_cols: List[str], feature_scales: Dict[str, Optional[float]],
+                            label_pass: Dict[str, bool], feature_idx: Dict[str, int], label_idx: Dict[str, int]) -> Dict[str, int]:
+    update_counts = Counter()
+    bad_new_saturday_missing = Counter()
+    calc_header = header + calc_cols
+    if output_group_path.exists():
+        raise FileExistsError(output_group_path)
+    started = time.monotonic()
+    with gzip.open(raw_calc_path, ""rt"", encoding=""utf-8-sig"", newline="""") as src, gzip.open(output_group_path, ""wt"", encoding=""utf-8-sig"", newline="""") as dst:"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,scan_sorted_output,623,657,market_lookback,"def scan_sorted_output(path: Path, header: List[str], expected_rows: int) -> Dict[str, Any]:
+    dcol = find_col(header, [""日期"", ""交易日期"", ""交易日"", ""date"", ""trade_date""])
+    mcol = find_col(header, [""市場"", ""market"", ""市場別""])
+    ccol = find_col(header, [""股票代號"", ""證券代號"", ""code"", ""ticker""])
+    scol = find_col(header, [""價格研究區段"", ""segment"", ""區段""])
+    idx = {""date"": header.index(dcol), ""market"": header.index(mcol), ""code"": header.index(ccol), ""segment"": header.index(scol)}
+    weekday_rows = Counter(); date_counts = Counter(); rows = 0; min_d = None; max_d = None
+    prev_sort = None; prev_nk = None; dup = 0; mono = True
+    start = time.monotonic()
+    with gzip.open(path, ""rt"", encoding=""utf-8-sig"", newline="""") as f:"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,write_df,660,662,,"def write_df(path: Path, rows: Any) -> None:
+    df = rows if isinstance(rows, pd.DataFrame) else pd.DataFrame(list(rows))
+    df.to_csv(path, index=False, encoding=""utf-8-sig"")"
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,FunctionDef,main,665,848,market_lookback;mature_labels;day_gate,"def main() -> None:
+    ap = argparse.ArgumentParser(description=VERSION)
+    ap.add_argument(""--root"", default=ROOT_DEFAULT)
+    ap.add_argument(""--candidate-dir"", default="""")
+    ap.add_argument(""--candidate-file"", default="""")
+    ap.add_argument(""--acceptance-dir"", default="""")
+    ap.add_argument(""--output-dir"", default="""")
+    ap.add_argument(""--chunk-size"", type=int, default=CHUNK_SIZE_DEFAULT)
+    ap.add_argument(""--expected-rows"", type=int, default=EXPECTED_ROWS)
+    ap.add_argument(""--expected-saturday-rows"", type=int, default=EXPECTED_SATURDAY_ROWS)"
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,FunctionDef,log,76,77,,"def log(msg: str) -> None:
+    print(f""[{datetime.now().strftime('%H:%M:%S')}] {msg}"", flush=True)"
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,FunctionDef,elapsed,80,84,,"def elapsed(sec: float) -> str:
+    sec = max(0, int(sec))
+    h, r = divmod(sec, 3600)
+    m, s = divmod(r, 60)
+    return f""{h:02d}:{m:02d}:{s:02d}"" if h else f""{m:02d}:{s:02d}"""
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,FunctionDef,bar,87,90,,"def bar(pct: float, width: int = 24) -> str:
+    pct = max(0.0, min(100.0, float(pct)))
+    n = int(width * pct / 100.0)
+    return ""["" + ""#"" * n + ""-"" * (width - n) + f""] {pct:5.1f}%"""
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,FunctionDef,sha256_file,93,107,mature_labels,"def sha256_file(path: Path, label: str, block: int = 8 * 1024 * 1024) -> str:
+    h = hashlib.sha256()
+    size = path.stat().st_size
+    done = 0
+    started = time.monotonic()
+    with path.open(""rb"") as f:
+        while True:
+            b = f.read(block)
+            if not b:
+                break"
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,FunctionDef,safe_read_csv,110,116,,"def safe_read_csv(path: Path) -> pd.DataFrame:
+    for enc in (""utf-8-sig"", ""utf-8"", ""cp950""):
+        try:
+            return pd.read_csv(path, encoding=enc)
+        except UnicodeDecodeError:
+            continue
+    return pd.read_csv(path, encoding=""utf-8"", errors=""replace"")"
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,FunctionDef,discover_v469,119,131,,"def discover_v469(root: Path, override: Optional[str]) -> Tuple[Path, Path]:
+    if override:
+        d = Path(override)
+        cands = list(d.glob(""01_v231補行日日期排序與已驗證特徵重建候選.csv.gz""))
+        if not cands:
+            raise FileNotFoundError(f""指定 v4.69 資料夾找不到候選 CSV.GZ：{d}"")
+        return d, cands[0]
+    dirs = sorted(root.glob(""看股最速適_v231補行日日期排序與已驗證特徵重建_v4_69_*""), key=lambda p: p.stat().st_mtime)
+    for d in reversed(dirs):
+        c = d / ""01_v231補行日日期排序與已驗證特徵重建候選.csv.gz"""
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,FunctionDef,read_header_gz,134,136,,"def read_header_gz(path: Path) -> List[str]:
+    with gzip.open(path, ""rt"", encoding=""utf-8-sig"", newline="""") as f:
+        return next(csv.reader(f))"
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,FunctionDef,normalized_feature_scales,139,157,,"def normalized_feature_scales(v469_dir: Path) -> Dict[str, float]:
+    p = v469_dir / ""01_已驗證特徵公式重現核對.csv""
+    if not p.exists():
+        return {x: 1.0 for x in VERIFIED_FEATURES}
+    d = safe_read_csv(p)
+    name_col = next((c for c in d.columns if ""特徵欄位"" in c), None)
+    scale_col = next((c for c in d.columns if ""最佳倍率"" in c), None)
+    result = {x: 1.0 for x in VERIFIED_FEATURES}
+    if name_col and scale_col:
+        for _, r in d.iterrows():"
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,FunctionDef,load_selected_candidate,160,182,mature_labels,"def load_selected_candidate(path: Path) -> pd.DataFrame:
+    header = read_header_gz(path)
+    required = [""日期"", *KEYS, *OHLC, *VERIFIED_FEATURES, *UNVERIFIED_FEATURES, *FORWARD_HORIZONS.keys()]
+    missing = [x for x in required if x not in header]
+    if missing:
+        raise ValueError(f""v4.69 候選缺必要欄位：{missing}"")
+    usecols = list(dict.fromkeys(required))
+    dtypes: Dict[str, Any] = {
+        ""市場"": ""category"", ""股票代號"": ""category"", ""價格研究區段"": ""category"",
+    }"
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,FunctionDef,check_v469_evidence,185,216,mature_labels,"def check_v469_evidence(v469_dir: Path, candidate_rows: int) -> Dict[str, Any]:
+    info: Dict[str, Any] = {""rows_report_pass"": False, ""sat_report_pass"": False,
+                            ""date_report_pass"": False, ""duplicate_report_pass"": False,
+                            ""feature_formula_pass"": 0, ""label_formula_pass"": 0}
+    p = v469_dir / ""03_日期排序及列數品質閘門.csv""
+    if p.exists():
+        d = safe_read_csv(p)
+        for _, r in d.iterrows():
+            item = str(r.get(""項目"", """"))
+            result = str(r.get(""結果"", """"))"
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,FunctionDef,candidate_formulas,219,232,,"def candidate_formulas(rshort: np.ndarray, rlong: np.ndarray) -> Dict[str, np.ndarray]:
+    with np.errstate(divide=""ignore"", invalid=""ignore"", over=""ignore""):
+        ratio = (1.0 + rlong) / (1.0 + rshort)  # MA_short / MA_long
+        inv = 1.0 / ratio
+        out = {
+            ""MA短期／MA長期－1"": ratio - 1.0,
+            ""MA短期／MA長期"": ratio,
+            ""(MA短期－MA長期)／MA短期"": 1.0 - inv,
+            ""MA長期／MA短期－1"": inv - 1.0,
+            ""收盤相對MA長期－收盤相對MA短期"": rlong - rshort,"
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,FunctionDef,discover_one_feature,235,301,mature_labels,"def discover_one_feature(df: pd.DataFrame, target: str, short_feature: str, long_feature: str,
+                         scales: Dict[str, float]) -> Tuple[pd.DataFrame, Dict[str, Any], List[Dict[str, Any]]]:
+    sscale = scales.get(short_feature, 1.0)
+    lscale = scales.get(long_feature, 1.0)
+    rshort = df[short_feature].to_numpy(dtype=np.float64) / sscale
+    rlong = df[long_feature].to_numpy(dtype=np.float64) / lscale
+    tgt = df[target].to_numpy(dtype=np.float64)
+    # Formula discovery uses historical rows only; never let the blank Saturday rows influence selection.
+    non_sat = (df[""日期""].dt.weekday.to_numpy() != 5)
+    exprs = candidate_formulas(rshort, rlong)"
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,FunctionDef,classify_saturday_missing,304,381,time_split;market_lookback;mature_labels;day_gate,"def classify_saturday_missing(df: pd.DataFrame, verified_unverified_features: Optional[List[str]] = None) -> Tuple[pd.DataFrame, List[Dict[str, Any]]]:
+    log(""計算新增星期六樣本的歷史／未來可計算性；分類預期缺值與未解釋缺值……"")
+    started = time.monotonic()
+    keys = df.groupby(KEYS, sort=False, observed=True, dropna=False)
+    pos = keys.cumcount().to_numpy(dtype=np.int32)
+    size = keys[""日期""].transform(""size"").to_numpy(dtype=np.int32)
+    sat = df[""日期""].dt.weekday.to_numpy() == 5
+    close = df[""影子收盤價""]
+    high = df[""影子最高價""]
+    open_ = df[""影子開盤價""]"
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,FunctionDef,write_gzip_csv_progress,384,390,mature_labels,"def write_gzip_csv_progress(df: pd.DataFrame, path: Path, label: str, chunk: int = 100_000) -> None:
+    started = time.monotonic()
+    with gzip.open(path, ""wt"", encoding=""utf-8-sig"", newline="""") as f:
+        for start in range(0, len(df), chunk):
+            end = min(len(df), start + chunk)
+            df.iloc[start:end].to_csv(f, index=False, header=(start == 0), lineterminator=""\n"")
+            log(f""{label} {bar(end/max(1,len(df))*100)} | 已寫 {end:,}/{len(df):,} 列 | {elapsed(time.monotonic()-started)}"")"
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,FunctionDef,build_makeup_calendar,393,416,market_lookback;mature_labels;day_gate,"def build_makeup_calendar(out: Path, observed_dates: np.ndarray) -> None:
+    rows = []
+    official = {
+        ""2017-02-18"": ""https://www.tpex.org.tw/storage/en-us/web/bulletin/trading_date/trading_date_106.htm"",
+        ""2017-06-03"": ""https://www.tpex.org.tw/storage/en-us/web/bulletin/trading_date/trading_date_106.htm"",
+        ""2017-09-30"": ""https://www.tpex.org.tw/storage/en-us/web/bulletin/trading_date/trading_date_106.htm"",
+        ""2018-03-31"": ""https://www.tpex.org.tw/storage/en-us/web/bulletin/trading_date/trading_date_107.htm"",
+        ""2018-12-22"": ""https://www.tpex.org.tw/storage/en-us/web/bulletin/trading_date/trading_date_107.htm"",
+    }
+    for d in EXPECTED_SATURDAY_DATES:"
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,FunctionDef,fit_walk_forward,419,593,model_fit;probability_output;time_split;market_lookback;mature_labels;sample_gate;day_gate,"def fit_walk_forward(df: pd.DataFrame, feature_cols: List[str], out: Path,
+                     max_train_rows: int = MAX_TRAIN_ROWS, n_folds: int = N_FOLDS,
+                     warmup_dates: int = WARMUP_DATES) -> Tuple[pd.DataFrame, pd.DataFrame, Dict[str, Any]]:
+    try:
+        from sklearn.ensemble import HistGradientBoostingClassifier
+        from sklearn.metrics import roc_auc_score, average_precision_score, brier_score_loss, log_loss
+    except Exception as e:
+        raise RuntimeError(""正式樣本外模型驗證需要 scikit-learn；Colab 可執行 !pip install -U scikit-learn 後重跑。"") from e
+
+    log(""建立各證券各 horizon 的 label_end_date，準備日期分組 Purged Walk-Forward……"")"
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,FunctionDef,main,596,831,model_fit;time_split;market_lookback;mature_labels;day_gate,"def main() -> int:
+    ap = argparse.ArgumentParser(description=""v4.70 交易日曆、特徵公式辨識、資料品質閘門及 Purged Walk-Forward 驗證"")
+    ap.add_argument(""--root"", default=ROOT_DEFAULT)
+    ap.add_argument(""--v469-dir"", default=None)
+    ap.add_argument(""--max-train-rows"", type=int, default=MAX_TRAIN_ROWS)
+    ap.add_argument(""--folds"", type=int, default=N_FOLDS)
+    ap.add_argument(""--warmup-dates"", type=int, default=WARMUP_DATES)
+    ap.add_argument(""--skip-model"", action=""store_true"", help=""僅執行品質／特徵驗證，不訓練模型"")
+    ap.add_argument(""--keep-intermediate"", action=""store_true"")
+    args, unknown = ap.parse_known_args()"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,log,1819,1822,,"def log(message: str) -> None:
+    elapsed = max(0, int(time.time() - T0))
+    mm, ss = divmod(elapsed, 60)
+    print(f""[{datetime.now().strftime('%H:%M:%S')}] [+{mm:02d}:{ss:02d}] {message}"", flush=True)"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,sha256_file,1825,1833,,"def sha256_file(path: Path, block_size: int = 8 * 1024 * 1024) -> str:
+    h = hashlib.sha256()
+    with path.open(""rb"") as f:
+        while True:
+            block = f.read(block_size)
+            if not block:
+                break
+            h.update(block)
+    return h.hexdigest()"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,verify_embedded_sources,1836,1846,,"def verify_embedded_sources() -> None:
+    actual = {
+        ""v4.69"": hashlib.sha256(V469_SOURCE.encode(""utf-8"")).hexdigest(),
+        ""v4.70.1"": hashlib.sha256(V4701_SOURCE.encode(""utf-8"")).hexdigest(),
+    }
+    expected = {""v4.69"": V469_SOURCE_SHA256, ""v4.70.1"": V4701_SOURCE_SHA256}
+    for name in expected:
+        log(f""原始程式 SHA256 {name}: {actual[name]}"")
+        if actual[name] != expected[name]:
+            raise RuntimeError(f""內嵌原始程式雜湊不符：{name}；停止執行"")"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,mount_drive,1849,1859,,"def mount_drive() -> None:
+    if (Path(""/content/drive/MyDrive"")).exists():
+        log(""偵測到 Google Drive 已掛載。"")
+        return
+    try:
+        from google.colab import drive  # type: ignore
+        drive.mount(""/content/drive"")
+    except Exception as exc:
+        raise RuntimeError(""無法掛載 Google Drive；請在 Google Colab 執行並授權 Drive。"") from exc
+    if not Path(""/content/drive/MyDrive"").exists():"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,newest_dir,1862,1866,,"def newest_dir(root: Path, pattern: str) -> Path:
+    found = [p for p in root.glob(pattern) if p.is_dir()]
+    if not found:
+        raise FileNotFoundError(f""找不到來源資料夾：{pattern}"")
+    return max(found, key=lambda p: p.stat().st_mtime)"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,stream_subprocess,1869,1882,mature_labels,"def stream_subprocess(command: Sequence[str], label: str) -> None:
+    log(f""開始執行 {label}。"")
+    log(""命令列："" + "" "".join(str(x) for x in command[:5]) + ("" ..."" if len(command) > 5 else """"))
+    proc = subprocess.Popen(
+        list(command), stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+        text=True, encoding=""utf-8"", errors=""replace"", bufsize=1
+    )
+    assert proc.stdout is not None
+    for line in proc.stdout:
+        print(line.rstrip(""\n""), flush=True)"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,load_json,1885,1888,,"def load_json(path: Path) -> dict:
+    if not path.is_file():
+        raise FileNotFoundError(path)
+    return json.loads(path.read_text(encoding=""utf-8-sig""))"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,run_v469,1891,1904,,"def run_v469(root: Path, stage: Path, candidate_dir: Path, candidate_file: Path, acceptance_dir: Path) -> Tuple[Path, dict]:
+    source_path = stage / ""SSO_v4_69_date_sort_and_verified_feature_rebuild.py""
+    source_path.write_text(V469_SOURCE, encoding=""utf-8"")
+    output_dir = stage / ""v4.69_output""
+    command = [
+        sys.executable, str(source_path), ""--root"", str(root),
+        ""--candidate-dir"", str(candidate_dir), ""--candidate-file"", str(candidate_file),
+        ""--acceptance-dir"", str(acceptance_dir), ""--output-dir"", str(output_dir),
+        ""--chunk-size"", str(CHUNK_ROWS), ""--expected-rows"", ""4193745"",
+        ""--expected-saturday-rows"", ""7022"","
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,validate_v469_output,1912,1961,mature_labels,"def validate_v469_output(output_dir: Path, manifest: dict) -> Tuple[Path, dict]:
+    """"""Validate hard structural/formula invariants, but leave expected-missing classification to v4.70.1.
+
+    The original v4.69 source is immutable and intentionally retained byte-for-byte.
+    Its preliminary gate also requires zero missing calculations on every Saturday row.
+    That is stricter than the subsequent v4.70.1 specification, which classifies legitimate
+    warm-up, source-price, and forward-horizon missingness and rejects only unexplained gaps.
+    Therefore REVIEW_REQUIRED may continue ONLY when every independent structural and
+    formula invariant passes; v4.70.1 remains the mandatory gate before pairing.
+    """""""
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,find_reusable_v469_output,1964,1989,,"def find_reusable_v469_output(candidate_file: Path) -> Optional[Tuple[Path, dict]]:
+    """"""Reuse a complete /content v4.69 artifact from a previous stopped orchestration run.
+
+    Reuse is allowed only when the exact source path/hash and output manifest/hash all match.
+    This avoids repeating the expensive 4.19M-row sort after the wrapper stops too early.
+    """"""
+    candidates = sorted(
+        [p for p in Path(""/content"").glob(""SSO_v4_84_9_*/*"") if p.is_dir() and p.name == ""v4.69_output""],
+        key=lambda p: p.stat().st_mtime,
+        reverse=True,"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,find_reusable_v470_output,1993,2032,time_split;mature_labels;day_gate,"def find_reusable_v470_output(v469_dir: Path, manifest69: dict) -> Optional[Tuple[Path, dict]]:
+    """"""Reuse an already completed v4.70.1 artifact only when source/model hashes and gates match.""""""
+    expected_source_sha = str(manifest69.get(""output_sha256"", """"))
+    candidates = []
+    for stage_dir in Path(""/content"").glob(""SSO_v4_84_9_*""):
+        if not stage_dir.is_dir() or stage_dir == STAGE_ROOT:
+            continue
+        for manifest_path in stage_dir.glob(""v4.70.1_root/*/13_v4.70_manifest.json""):
+            candidates.append(manifest_path)
+    candidates.sort(key=lambda p: p.stat().st_mtime, reverse=True)"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,run_v470,2034,2065,time_split;market_lookback;mature_labels;sample_gate;day_gate,"def run_v470(stage: Path, v469_dir: Path) -> Tuple[Path, dict]:
+    source_path = stage / ""SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py""
+    source_path.write_text(V4701_SOURCE, encoding=""utf-8"")
+    root = stage / ""v4.70.1_root""
+    root.mkdir(parents=True, exist_ok=True)
+    command = [
+        sys.executable, str(source_path), ""--root"", str(root),
+        ""--v469-dir"", str(v469_dir), ""--folds"", ""5"", ""--warmup-dates"", ""756"",
+        ""--max-train-rows"", ""150000"",
+    ]"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,norm_text,2068,2075,,"def norm_text(value: Any) -> str:
+    if value is None:
+        return """"
+    s = unicodedata.normalize(""NFKC"", str(value)).strip().upper()
+    s = re.sub(r""\s+"", """", s)
+    if s.endswith("".0""):
+        s = s[:-2]
+    return s"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,norm_date,2078,2103,,"def norm_date(value: Any) -> str:
+    s = """" if value is None else str(value).strip().split("" "")[0]
+    if not s:
+        return """"
+    if re.fullmatch(r""\d{8}"", s):
+        return f""{s[:4]}-{s[4:6]}-{s[6:8]}""
+    if re.fullmatch(r""\d{7}"", s):
+        try:
+            y = int(s[:3]) + 1911
+            return date(y, int(s[3:5]), int(s[5:7])).isoformat()"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,signal_key,2106,2107,,"def signal_key(date_value: Any, market_value: Any, ticker_value: Any) -> Tuple[str, str, str]:
+    return (norm_date(date_value), norm_text(market_value), norm_text(ticker_value))"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,find_v251_zip,2110,2143,day_gate,"def find_v251_zip(stage: Path) -> Path:
+    local_candidates = [
+        ROOT / V251_ZIP_NAME,
+        ROOT / ""緊急備份"" / ""睡前備份_20261028_181527"" / ""結果ZIP"" / V251_ZIP_NAME,
+        Path(""/content"") / V251_ZIP_NAME,
+    ]
+    for path in local_candidates:
+        if path.is_file():
+            log(f""使用既有 v2.51 ZIP：{path}"")
+            result = stage / V251_ZIP_NAME"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,inspect_v251,2146,2191,mature_labels;day_gate,"def inspect_v251(zip_path: Path) -> Tuple[str, List[str], set, set, set, dict]:
+    target_keys = set()
+    transaction_seen = set()
+    transaction_duplicates = set()
+    counts = Counter()
+    with zipfile.ZipFile(zip_path, ""r"") as zf:
+        bad = zf.testzip()
+        if bad:
+            raise RuntimeError(f""v2.51 ZIP CRC 失敗：{bad}"")
+        names = zf.namelist()"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,read_csv_gz_chunks,2194,2199,,"def read_csv_gz_chunks(path: Path, usecols: List[str]):
+    return pd.read_csv(
+        path, compression=""gzip"", usecols=usecols, dtype=""string"",
+        keep_default_na=False, encoding=""utf-8-sig"", chunksize=CHUNK_ROWS,
+        low_memory=False,
+    )"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,v251_pick_col,2203,2217,,"def v251_pick_col(cols: Sequence[str], aliases: Sequence[str], contains_any: Optional[Sequence[str]] = None) -> Optional[str]:
+    """"""Same column-selection precedence as SSO v2.51 infer_schema()/pick_col().""""""
+    cols = list(cols)
+    for item in aliases:
+        if item in cols:
+            return item
+    lookup = {str(c).lower(): c for c in cols}
+    for item in aliases:
+        if item.lower() in lookup:
+            return lookup[item.lower()]"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,v251_numeric_text,2220,2230,,"def v251_numeric_text(value: Any) -> str:
+    if value is None or pd.isna(value):
+        return """"
+    try:
+        number = float(value)
+        if not np.isfinite(number):
+            return """"
+    except Exception:
+        return str(value)
+    # Preserve float32's shortest round-trippable decimal representation, as in the v2.51 frame."
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,calculate_v251_rank_features,2233,2324,market_lookback;mature_labels;day_gate,"def calculate_v251_rank_features(df: pd.DataFrame) -> pd.DataFrame:
+    """"""
+    Reproduce the 24 RANK_FEATURES calculations from SSO v2.51 make_features().
+    Deliberately omits the four volume-derived diagnostics because VOLUME_FEATURES are
+    explicitly excluded from v2.51 RANK_FEATURES / the v2.51停用量能 model.
+    Input is already normalized, deduplicated and sorted like v2.51 load_source().
+    """"""
+    keys = [""market"", ""symbol""]
+
+    # Exact v2.51 segment-run handling."
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,rebuild_v251_features_from_v469,2327,2533,market_lookback;mature_labels;day_gate,"def rebuild_v251_features_from_v469(
+    path69: Path, manifest69: dict, target_keys: set,
+) -> Tuple[dict, dict]:
+    """"""
+    Recreate v2.51's 24 non-volume model features on the original v2.31 baseline universe.
+    The v4.69 candidate retains raw OHLC and the source volatility factor; the 7,022
+    added Saturday rows are removed before feature calculation so the baseline calendar
+    and per-security rolling windows match v2.51's original 4,186,723-row / 2,447-date input.
+    """"""
+    with gzip.open(path69, ""rt"", encoding=""utf-8-sig"", newline="""") as f:"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,build_feature_map,2536,2672,mature_labels,"def build_feature_map(
+    v469_dir: Path, manifest69: dict, v470_dir: Path, manifest70: dict,
+    target_keys: set,
+) -> Tuple[dict, set, dict, List[str], List[str], set, set]:
+    path69 = v469_dir / V469_FINAL
+    path70 = Path(manifest70.get(""model_table"", v470_dir / V4701_MODEL))
+    with gzip.open(path69, ""rt"", encoding=""utf-8-sig"", newline="""") as f:
+        header69 = next(csv.reader(f))
+    with gzip.open(path70, ""rt"", encoding=""utf-8-sig"", newline="""") as f:
+        header70 = next(csv.reader(f))"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,pair_v251_rows,2675,2760,mature_labels;day_gate,"def pair_v251_rows(
+    zip_path: Path, member: str, source_header: List[str], feature_map: dict,
+    ambiguous: set, transaction_duplicates: set, feature_fields: List[str],
+    model_features: List[str], output_path: Path,
+    baseline_segment_mismatch: set, baseline_missing: set,
+) -> dict:
+    extra = [*SIGNAL_KEYS, ""v4.84.9.8_訊號配對狀態"", ""v4.84.9.8_交易鍵重複"", *feature_fields,
+             ""v470_本筆持有期間H對應前瞻報酬欄位"", ""v470_本筆持有期間H對應前瞻報酬"",
+             ""v470_本筆持有期間H對應標籤結束日期"", ""v470_本筆持有期間H精確標籤狀態""]
+    output_header = source_header + [c for c in extra if c not in source_header]"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,write_pair_reports,2763,2874,time_split;mature_labels;day_gate;return_gate,"def write_pair_reports(pair_dir: Path, summary: dict, manifest69: dict, manifest70: dict,
+                       pair_counts: dict, feature_stats: dict, model_features: List[str],
+                       v251_zip: Path, v469_dir: Path, v470_dir: Path) -> dict:
+    pair_dir.mkdir(parents=True, exist_ok=True)
+    status_rows = []
+    for key in (
+        ""MATCHED_UNIQUE"", ""AMBIGUOUS_MULTIPLE_PRICE_SEGMENTS"",
+        ""BASELINE_PRICE_SEGMENT_MISMATCH"", ""NO_BASELINE_FEATURE_SOURCE"",
+        ""NO_MATCHING_V469_V470_SIGNAL"", ""INVALID_SIGNAL_KEY"",
+    ):"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,h_to_name,2877,2881,mature_labels;day_gate,"def h_to_name(h: str) -> str:
+    for label, horizon in zip(FORWARD_LABELS, [""1"", ""5"", ""20"", ""60""]):
+        if horizon == str(h):
+            return label
+    return ""無精確對應標籤"""
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,build_master_zip,2884,2908,,"def build_master_zip(stage: Path, pair_dir: Path, v469_dir: Path, v470_dir: Path,
+                     source_paths: List[Path], zip_out: Path) -> None:
+    members: List[Tuple[Path, str]] = []
+    for p in sorted(pair_dir.iterdir()):
+        if p.is_file():
+            members.append((p, f""逐筆配對/{p.name}""))
+    for p in source_paths:
+        members.append((p, f""原始程式/{p.name}""))
+    v469_zip = next(iter(v469_dir.glob(""*.zip"")), None)
+    if v469_zip:"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,get_github_token,3028,3039,,"def get_github_token() -> Optional[str]:
+    token = os.environ.get(""GITHUB_TOKEN"", """").strip()
+    if token:
+        return token
+    try:
+        from google.colab import userdata  # type: ignore
+        token = str(userdata.get(""GITHUB_TOKEN"") or """").strip()
+        if token:
+            return token
+    except Exception:"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,github_put_file,3042,3067,sample_gate;day_gate,"def github_put_file(session: requests.Session, token: str, path: str, content: bytes, message: str) -> dict:
+    api_url = f""https://api.github.com/repos/{REPO}/contents/{quote(path, safe='/')}""
+    headers = {
+        ""Accept"": ""application/vnd.github+json"",
+        ""Authorization"": f""Bearer {token}"",
+        ""X-GitHub-Api-Version"": ""2022-11-28"",
+        ""User-Agent"": ""SSO-v4.84.9.8-audit-uploader"",
+    }
+    existing_sha = None
+    check = session.get(api_url, headers=headers, params={""ref"": ACTIONS_RUNNER_BRANCH}, timeout=30)"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,upload_master_zip_to_github,3070,3121,,"def upload_master_zip_to_github(zip_path: Path, stamp: str) -> dict:
+    token = get_github_token()
+    if not token:
+        log(""未設定 Colab Secret GITHUB_TOKEN；GitHub 上傳略過，Drive 結果仍會完整保存。"")
+        return {""status"": ""SKIPPED_NO_GITHUB_TOKEN"", ""branch"": ACTIONS_RUNNER_BRANCH}
+    session = requests.Session()
+    folder = f""audit_uploads/v4.84.9.8_{stamp}""
+    readout_path = f""audit_readout/v4.84.9.8_{stamp}""
+    workflow_result = github_put_file(
+        session, token, ACTIONS_WORKFLOW, WORKFLOW_YAML.encode(""utf-8""),"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,resolve_wrapper_source,3125,3199,,"def resolve_wrapper_source() -> Tuple[str, Optional[Path], str]:
+    """"""取得目前主程式完整原始碼，兼容 .py、Colab 儲存格與 IPython 暫存執行。""""""
+    expected_marker = 'VERSION = ""v4.84.9.8""'
+    required_markers = (expected_marker, ""V469_SOURCE = r"", ""def main() -> None:"")
+
+    def valid_source(source: str) -> bool:
+        return all(marker in source for marker in required_markers)
+
+    # 1. 以 python file.py 或 !python file.py 執行時，使用真正的 __file__。
+    raw_file = globals().get(""__file__"")"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,main,3202,3361,time_split;mature_labels;day_gate,"def main() -> None:
+    print(""="" * 92)
+    print(f""看股最速適 {VERSION}｜正式來源重建與 v2.51 逐筆配對"")
+    print(""以純文字內嵌已核對原始程式；不使用 LZMA/Base85 包裝程式碼。"")
+    print(""Drive 原始來源唯讀；所有排序／重建中間檔只放 /content。"")
+    print(""GitHub 僅上傳至隔離稽核分支，不修改 main。"")
+    print(""="" * 92)
+
+    verify_embedded_sources()
+    mount_drive()"
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,FunctionDef,valid_source,3130,3131,,"    def valid_source(source: str) -> bool:
+        return all(marker in source for marker in required_markers)"

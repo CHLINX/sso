@@ -1,0 +1,8 @@
+SSO H5 v2.50 Upstream Model Source Forensic v1.0
+RUN_ID=20261122_090839
+Candidate ZIP SHA256=54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428
+v2.50 result ZIP SHA256=263330e961a51fabba7bb399a7bfae4ea38646c48a5c3e7851f9056bd6141111
+Forensic bundle SHA256=c092045c86105720b21379f4ba7c0dfc7d04b0aaa497661480a0ac90c09a41a7
+Finding=CANDIDATE_HAS_MODEL_LOGIC_BUT_V250_LINEAGE_UNPROVEN
+Static inspection only; archived Python/Notebook code was not executed.
+Source archives were read-only; no Drive files were modified.

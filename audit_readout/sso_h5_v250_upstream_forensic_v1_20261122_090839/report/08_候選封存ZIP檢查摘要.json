@@ -1,0 +1,35 @@
+{
+  "candidate": {
+    "label": "TOP_MODEL_LOGIC_CANDIDATE",
+    "path": "/content/drive/MyDrive/看股最速適/看股最速適_v4.84.9.8_正式來源重建與逐筆配對_20261104_013113/看股最速適_v4.84.9.8_整合重建與v2.51逐筆配對_20261104_013113.zip",
+    "exists": true,
+    "bytes": 92845777,
+    "sha256": "54361979f59ecbd13c92582a0d71f829946496add48172d6c9d15ea78e805428",
+    "member_count": 14,
+    "code_member_count": 3,
+    "metadata_member_count": 8,
+    "crc_pass": true,
+    "code_read_errors": []
+  },
+  "secondary": {
+    "label": "VERSION_REFERENCE_CANDIDATE",
+    "path": "/content/drive/MyDrive/看股最速適/看股最速適_GoogleDriveNotebook版本歷史追查_v4.84_20261103_053753_v4.84.3/v4.84.6_私人Notebook公式模型比對_20261103_142832/看股最速適_v4.84.6_私人公式模型比對_20261103_142832.zip",
+    "exists": true,
+    "bytes": 2494980,
+    "sha256": "05932d7e7c88f4492797d3aa32b83cd997ed8614b171ef92cb05c18dcbb9f56a",
+    "member_count": 9,
+    "code_member_count": 0,
+    "metadata_member_count": 9,
+    "crc_pass": true
+  },
+  "v250": {
+    "exists": true,
+    "path": "/content/drive/MyDrive/看股最速適/推薦結果/非前瞻參考/SSO_main_v5_15_20261118_192959_1730c0/來源模型ZIP/SSO_v2.50_非前瞻參考_H5_2026-11-18_20261118_193832_200a91_結果.zip",
+    "bytes": 24101670,
+    "sha256": "263330e961a51fabba7bb399a7bfae4ea38646c48a5c3e7851f9056bd6141111",
+    "expected_sha256": "263330e961a51fabba7bb399a7bfae4ea38646c48a5c3e7851f9056bd6141111",
+    "sha256_pass": true,
+    "member_count": 22,
+    "code_member_count": 0
+  }
+}

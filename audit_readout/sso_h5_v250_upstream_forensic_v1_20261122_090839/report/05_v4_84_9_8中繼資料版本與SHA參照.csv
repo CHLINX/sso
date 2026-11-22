@@ -1,0 +1,31 @@
+﻿member,bytes,sha256,v2.50,v2.51,v5.15,SSO_v2.50,SSO_v2.51,263330e961a51fabba7bb399a7bfae4ea38646c48a5c3e7851f9056bd6141111,SSO_main_v5_15_20261118_192959_1730c0,20261118_193832_200a91,H5,Platt,LogisticRegression,756,500,0.52,evidence_excerpt
+逐筆配對/00_執行摘要.json,7600,807ea079fbbc99ac30b712ae2d202c9a86ba292fd4773c445aa7a3c8179c7b09,0,6,0,0,0,0,0,0,0,0,0,1,0,0,"v2.51 @L49:     ""v251_feature_logic"": ""SSO v2.51 make_features() 24 RANK_FEATURES；新增星期六列排除，以重建原始 v2.31 基準"",
+v2.51 @L131:     ""feature_v251_feature_logic"": ""SSO v2.51 make_features() 24 RANK_FEATURES；新增星期六列排除，以重建原始 v2.31 基準"",
+v2.51 @L173:     ""v251_feature_logic"": ""SSO v2.51 make_features() 24 RANK_FEATURES；新增星期六列排除，以重建原始 v2.31 基準"",
+v2.51 @L186:     ""v2.51 逐筆資料不含價格研究區段欄位；若同一訊號日／市場／股票在 v4.69 有多個價格研究區段，標記歧義並不任意挑選。"",
+v2.51 @L188:     ""v2.51 的 24 項非量能模型特徵依原 make_features() 公式重建；先排除 v4.69 新增的 7,022 筆星期六資料，復原原 v2.31 基準母體（4,186,723 列、2,447 日期）。"",
+756 @L77:       ""3"": 67560,"
+逐筆配對/01_執行摘要.txt,2081,02e4646a30c937181fe6115ad9ea08c4fe6d88167298ea7e24e5ebdffa8096e9,0,8,0,0,0,0,0,0,0,0,0,0,0,0,"v2.51 @L1: 看股最速適 v4.84.9.8｜正式來源重建與 v2.51 逐筆配對
+v2.51 @L8: v2.51 24項特徵重建：22,563/22,563 組目標訊號
+v2.51 @L10: v2.51逐筆基準區段不一致：0 組；基準來源缺漏：0 組
+v2.51 @L11: v2.51 逐筆資料列數：331,200
+v2.51 @L16: v2.51 交易鍵重複鍵數：0"
+逐筆配對/02_v4.84.9.8_manifest.json,12638,b392651bdde7c4276553ece24f184626f7a2caadbd34d157a0e7dbcc4fe2ef27,0,4,0,0,0,0,0,0,0,0,0,2,0,0,"v2.51 @L12:   ""v251_feature_logic_note"": ""24 RANK_FEATURES calculation reproduced from SSO v2.51 make_features(); volume feature set intentionally excluded as in RANK_FEATURES."",
+v2.51 @L168:   ""v251_member"": ""個股評估逐筆資料_多成本情境_v2.51停用量能.csv"",
+v2.51 @L170:   ""pair_output"": ""01_v4.69_v4.70.1_v2.51逐筆配對.csv.gz"",
+v2.51 @L239:     ""feature_v251_feature_logic"": ""SSO v2.51 make_features() 24 RANK_FEATURES；新增星期六列排除，以重建原始 v2.31 基準"",
+756 @L144:         ""warmup_dates"": 756,
+756 @L185:       ""3"": 67560,"
+逐筆配對/03_逐筆配對狀態統計.csv,202,9b0c344453544bf7cda6fbf6e67384d7bc7cc7e932b27c929ac1cd367e807af0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+逐筆配對/04_持有期間與前瞻標籤可用性.csv,626,81b6d8f438441ff791ea8732955af62598121e9fbc49759c0f621807290e3fc4,0,1,0,0,0,0,0,0,0,0,0,1,0,0,"v2.51 @L1: 持有期間H,v2.51逐筆資料列數,v4.70.1是否有相同H前瞻標籤,v4.70.1對應標籤,v4.70.1精確H標籤狀態分布
+756 @L4: 3,67560,False,無精確對應標籤,請見逐筆配對資料欄位 v470_本筆持有期間H精確標籤狀態"
+逐筆配對/05_配對欄位盤點.csv,4888,dc51210ec69495c556d0ca87da34a017df2290d19b725c225f980ae414b09598,0,25,0,0,0,0,0,0,0,0,0,0,0,0,"v2.51 @L2: v2.51原始基準資料依 make_features() 重建,ret5_rank,""依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入""
+v2.51 @L3: v2.51原始基準資料依 make_features() 重建,ret20_rank,""依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入""
+v2.51 @L4: v2.51原始基準資料依 make_features() 重建,ret60_rank,""依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入""
+v2.51 @L5: v2.51原始基準資料依 make_features() 重建,dist_ma20_rank,""依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入""
+v2.51 @L6: v2.51原始基準資料依 make_features() 重建,dist_ma60_rank,""依原 v2.31 母體（排除 v4.69 新增 7,022 筆星期六）重算後納入"""
+逐筆配對/06_來源SHA256.csv,1202,8ca78841ee14da14797c9ec8d10295e21b1687de1a6f890831801d52e5971e89,0,3,0,0,1,0,0,0,0,0,0,0,0,0,"v2.51 @L4: v2.51 ZIP,/content/SSO_v4_84_9_8_20261104_013113/SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip,3b78213b0618678bd883b153e1b8d8d72b074daa4d9d3a2ecd225e80d1f8fdb7
+v2.51 @L7: v2.51 原始程式參考快照,SSO_v2_51_個股獨立評估與量能消融整合版.py,2a717acced64bd5bbc428affe20bfdc0e8f9a4b47b3d329a1cbf0ed3de244f09
+v2.51 @L8: v2.51 24項特徵重建母體,v4.69候選排除新增星期六列後之原始基準列,7debd5cde9d47a42091f7e8a0dec3b5c50808e28c6f1f6c59a55ddaaeb182dd8
+SSO_v2.51 @L4: v2.51 ZIP,/content/SSO_v4_84_9_8_20261104_013113/SSO_v2.51_個股獨立評估_量能消融與配對比較結果.zip,3b78213b0618678bd883b153e1b8d8d72b074daa4d9d3a2ecd225e80d1f8fdb7"
+逐筆配對/07_v251_24項特徵重建與來源核對.json,1383,8659ac3b740b32b7ac7679701fa68c4f648f910bfd3b6b94a33874f26c4627fc,0,1,0,0,0,0,0,0,0,0,0,0,0,0,"v2.51 @L32:   ""v251_feature_logic"": ""SSO v2.51 make_features() 24 RANK_FEATURES；新增星期六列排除，以重建原始 v2.31 基準"","

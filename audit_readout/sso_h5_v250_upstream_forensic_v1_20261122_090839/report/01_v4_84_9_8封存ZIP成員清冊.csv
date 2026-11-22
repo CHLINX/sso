@@ -1,0 +1,15 @@
+﻿member,suffix,file_size,compressed_size,crc32,is_code,is_metadata
+逐筆配對/00_執行摘要.json,.json,7600,2383,c7f6a956,False,True
+逐筆配對/01_v4.69_v4.70.1_v2.51逐筆配對.csv.gz,.gz,92417854,92445864,5e4484f3,False,False
+逐筆配對/01_執行摘要.txt,.txt,2081,1257,20e886a7,False,True
+逐筆配對/02_v4.84.9.8_manifest.json,.json,12638,4568,9517cf95,False,True
+逐筆配對/03_逐筆配對狀態統計.csv,.csv,202,164,aa6867d4,False,True
+逐筆配對/04_持有期間與前瞻標籤可用性.csv,.csv,626,261,dd4378f4,False,True
+逐筆配對/05_配對欄位盤點.csv,.csv,4888,646,e89ff4dc,False,True
+逐筆配對/06_來源SHA256.csv,.csv,1202,770,05ca3990,False,True
+逐筆配對/07_v251_24項特徵重建與來源核對.json,.json,1383,699,3fd8c831,False,True
+原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py,.py,45118,15265,b7a673af,True,False
+原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py,.py,51469,17654,66ce584f,True,False
+原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py,.py,182742,61205,c7a4d7e2,True,False
+v4.69稽核報告/v4.69_output.zip,.zip,5879,5091,e1f91156,False,False
+v4.70.1稽核報告/看股最速適_資料品質修復特徵公式辨識與PurgedWalkForward驗證_v4.70.1_20261104_003140.zip,.zip,290086,287344,824c7572,False,False

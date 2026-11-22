@@ -1,0 +1,236 @@
+===== 原始程式/SSO_v4_69_date_sort_and_verified_feature_rebuild.py =====
+(no model/calibration/gate keyword excerpts found)
+
+===== 原始程式/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py =====
+000010: - v4.69 的「新增樣本公式缺值必須為 0」改為分類：歷史不足、未來不足、來源價格缺口、未解釋缺值。
+000011: - 以全市場唯一交易日期切分面板資料；同一天所有證券放在同一 fold。
+000012: - 每個前瞻 horizon 依每檔證券的實際 label_end_date purge 訓練列，確保訓練標籤在測試起日之前已結束。
+000013: - 模型使用固定 HistGradientBoostingClassifier，不做超參數搜尋；避免拿測試集反覆選模。
+000014: - 模型輸出是可重現的研究型預測驗證，不等同原 SSO 10 檔選股策略的實際含成本投資回測。
+000015: 
+000016: Colab：
+000017: !python /content/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py
+000065:     "前瞻報酬_20根_下一根開盤至第N根收盤": 20,
+000066:     "前瞻報酬_60根_下一根開盤至第N根收盤": 60,
+000067: }
+000068: WARMUP_DATES = 756
+000069: N_FOLDS = 5
+000070: MAX_TRAIN_ROWS = 150_000
+000071: MODEL_SEED = 20261102
+000072: FORMULA_TOLERANCE = 0.001
+000420:                      max_train_rows: int = MAX_TRAIN_ROWS, n_folds: int = N_FOLDS,
+000421:                      warmup_dates: int = WARMUP_DATES) -> Tuple[pd.DataFrame, pd.DataFrame, Dict[str, Any]]:
+000422:     try:
+000423:         from sklearn.ensemble import HistGradientBoostingClassifier
+000424:         from sklearn.metrics import roc_auc_score, average_precision_score, brier_score_loss, log_loss
+000425:     except Exception as e:
+000426:         raise RuntimeError("正式樣本外模型驗證需要 scikit-learn；Colab 可執行 !pip install -U scikit-learn 後重跑。") from e
+000427: 
+000449:     daily_rows: List[Dict[str, Any]] = []
+000450:     model_status = {"unique_dates": int(len(unique_dates)), "warmup_dates": warmup_dates,
+000451:                     "folds_requested": n_folds, "feature_columns": feature_cols,
+000452:                     "model": "HistGradientBoostingClassifier fixed parameters; no tuning",
+000453:                     "purging": "train date < test_start AND label_end_date < test_start",
+000454:                     "embargo": "Walk-forward is past-only; no post-test rows enter training; explicit label-end purging applied."}
+000455: 
+000456:     for hi, (label_col, h) in enumerate(FORWARD_HORIZONS.items(), 1):
+000500:                                   "訓練列數": len(train_idx), "Purged列數": purge_count, "測試列數": len(test_idx),
+000501:                                   "判讀": "SINGLE_CLASS_TRAIN_OR_TEST"})
+000502:                 continue
+000503:             model = HistGradientBoostingClassifier(
+000504:                 learning_rate=0.05, max_iter=70, max_leaf_nodes=15,
+000505:                 min_samples_leaf=100, l2_regularization=1.0,
+000506:                 early_stopping=True, validation_fraction=0.10,
+000507:                 n_iter_no_change=10, random_state=MODEL_SEED + h * 100 + fi,
+000508:             )
+000509:             fit_start = time.monotonic()
+000510:             model.fit(x[train_idx], y_train)
+000511:             probs = model.predict_proba(x[test_idx])[:, 1]
+000512:             baseline_p = float(y_train.mean())
+000513:             ret_pct = yret[test_idx].astype(np.float64) * 100.0
+000514:             auc = float(roc_auc_score(y_test, probs))
+000515:             ap = float(average_precision_score(y_test, probs))
+000521:             baseline_auc = 0.5
+000522:             baseline_brier_test = float(np.mean((base_rate - y_test) ** 2))
+000523: 
+000524:             temp = pd.DataFrame({"日期": dates[test_idx], "機率": probs, "報酬_pct": ret_pct})
+000525:             top_decile_returns = []
+000526:             top10_returns = []
+000527:             top_decile_win = []
+000528:             top10_win = []
+000529:             for d, g in temp.groupby("日期", sort=False):
+000530:                 gv = g["機率"].to_numpy(dtype=np.float64)
+000531:                 rv = g["報酬_pct"].to_numpy(dtype=np.float64)
+000532:                 order = np.argsort(gv)[::-1]
+000533:                 k = max(1, int(math.ceil(len(gv) * 0.10)))
+000534:                 topd = rv[order[:k]]
+000774:         f"Purged Walk-Forward：warmup={args.warmup_dates} 個實際觀測日期；folds={args.folds}；完成fold={completed_folds}",
+000775:         f"資料品質閘門：{'PASS' if dataset_gate else 'REVIEW_REQUIRED'}",
+000776:         f"最終判讀：{final_status}",
+000777:         "模型說明：HistGradientBoostingClassifier 為本版固定規格的研究基準模型；預測目標為各 horizon 前瞻報酬是否大於 0。",
+000778:         "Purging：訓練列日期必須早於測試起日，且該列自身的 label_end_date 也必須早於測試起日。所有證券依全市場日期分組，避免同日跨 fold。",
+000779:         "模型限制：Top10/Top10% 是逐日橫斷面排序診斷，不等於持有期／換股／停損規則完整的投資組合回測；未扣手續費、證交稅、滑價及流動性成本。",
+000780:         "模型限制：本版驗證的是 v2.31 資料上可重現的研究基準模型，不宣稱重現原 SSO v2.40 的完整打分／10 檔選股規則；若要驗證該策略，必須把原模型程式與交易規則納入相同 OOS 框架。",
+000781:         "兩項特徵：只有既有歷史值公式辨識符合高一致性門檻時才補入新增列；未通過者保持排除，不猜測公式。",
+
+===== 原始程式/看股最速適_v4.84.9.8_Colab儲存格封存.py =====
+000111: V469_EXPECTED_SATURDAY_DATES = {
+000112:     "2017-02-18", "2017-06-03", "2017-09-30", "2018-03-31", "2018-12-22"
+000113: }
+000114: TRANSACTION_KEYS = ["持有期間H", "成本情境", "交易模式", "區段口徑", *SIGNAL_KEYS]
+000115: RETURN_REQUIRED = ["納入報酬", "實際淨報酬", "進場有效", "出場有效", "交易狀態"]
+000116: 
+000117: V469_SOURCE_SHA256 = "db661fc6004cd2fcfc171c346ee8255d734fd44a893256c0066bfdb6278f1ebe"
+000118: V4701_SOURCE_SHA256 = "9472ceb22a3d45e83cf09cd4df022696f226dc1ec95fcac426cb4ea54a34ffca"
+000988: - v4.69 的「新增樣本公式缺值必須為 0」改為分類：歷史不足、未來不足、來源價格缺口、未解釋缺值。
+000989: - 以全市場唯一交易日期切分面板資料；同一天所有證券放在同一 fold。
+000990: - 每個前瞻 horizon 依每檔證券的實際 label_end_date purge 訓練列，確保訓練標籤在測試起日之前已結束。
+000991: - 模型使用固定 HistGradientBoostingClassifier，不做超參數搜尋；避免拿測試集反覆選模。
+000992: - 模型輸出是可重現的研究型預測驗證，不等同原 SSO 10 檔選股策略的實際含成本投資回測。
+000993: 
+000994: Colab：
+000995: !python /content/SSO_v4_70_1_calendar_feature_discovery_and_purged_walkforward_validation.py
+001043:     "前瞻報酬_20根_下一根開盤至第N根收盤": 20,
+001044:     "前瞻報酬_60根_下一根開盤至第N根收盤": 60,
+001045: }
+001046: WARMUP_DATES = 756
+001047: N_FOLDS = 5
+001048: MAX_TRAIN_ROWS = 150_000
+001049: MODEL_SEED = 20261102
+001050: FORMULA_TOLERANCE = 0.001
+001398:                      max_train_rows: int = MAX_TRAIN_ROWS, n_folds: int = N_FOLDS,
+001399:                      warmup_dates: int = WARMUP_DATES) -> Tuple[pd.DataFrame, pd.DataFrame, Dict[str, Any]]:
+001400:     try:
+001401:         from sklearn.ensemble import HistGradientBoostingClassifier
+001402:         from sklearn.metrics import roc_auc_score, average_precision_score, brier_score_loss, log_loss
+001403:     except Exception as e:
+001404:         raise RuntimeError("正式樣本外模型驗證需要 scikit-learn；Colab 可執行 !pip install -U scikit-learn 後重跑。") from e
+001405: 
+001427:     daily_rows: List[Dict[str, Any]] = []
+001428:     model_status = {"unique_dates": int(len(unique_dates)), "warmup_dates": warmup_dates,
+001429:                     "folds_requested": n_folds, "feature_columns": feature_cols,
+001430:                     "model": "HistGradientBoostingClassifier fixed parameters; no tuning",
+001431:                     "purging": "train date < test_start AND label_end_date < test_start",
+001432:                     "embargo": "Walk-forward is past-only; no post-test rows enter training; explicit label-end purging applied."}
+001433: 
+001434:     for hi, (label_col, h) in enumerate(FORWARD_HORIZONS.items(), 1):
+001478:                                   "訓練列數": len(train_idx), "Purged列數": purge_count, "測試列數": len(test_idx),
+001479:                                   "判讀": "SINGLE_CLASS_TRAIN_OR_TEST"})
+001480:                 continue
+001481:             model = HistGradientBoostingClassifier(
+001482:                 learning_rate=0.05, max_iter=70, max_leaf_nodes=15,
+001483:                 min_samples_leaf=100, l2_regularization=1.0,
+001484:                 early_stopping=True, validation_fraction=0.10,
+001485:                 n_iter_no_change=10, random_state=MODEL_SEED + h * 100 + fi,
+001486:             )
+001487:             fit_start = time.monotonic()
+001488:             model.fit(x[train_idx], y_train)
+001489:             probs = model.predict_proba(x[test_idx])[:, 1]
+001490:             baseline_p = float(y_train.mean())
+001491:             ret_pct = yret[test_idx].astype(np.float64) * 100.0
+001492:             auc = float(roc_auc_score(y_test, probs))
+001493:             ap = float(average_precision_score(y_test, probs))
+001499:             baseline_auc = 0.5
+001500:             baseline_brier_test = float(np.mean((base_rate - y_test) ** 2))
+001501: 
+001502:             temp = pd.DataFrame({"日期": dates[test_idx], "機率": probs, "報酬_pct": ret_pct})
+001503:             top_decile_returns = []
+001504:             top10_returns = []
+001505:             top_decile_win = []
+001506:             top10_win = []
+001507:             for d, g in temp.groupby("日期", sort=False):
+001508:                 gv = g["機率"].to_numpy(dtype=np.float64)
+001509:                 rv = g["報酬_pct"].to_numpy(dtype=np.float64)
+001510:                 order = np.argsort(gv)[::-1]
+001511:                 k = max(1, int(math.ceil(len(gv) * 0.10)))
+001512:                 topd = rv[order[:k]]
+001752:         f"Purged Walk-Forward：warmup={args.warmup_dates} 個實際觀測日期；folds={args.folds}；完成fold={completed_folds}",
+001753:         f"資料品質閘門：{'PASS' if dataset_gate else 'REVIEW_REQUIRED'}",
+001754:         f"最終判讀：{final_status}",
+001755:         "模型說明：HistGradientBoostingClassifier 為本版固定規格的研究基準模型；預測目標為各 horizon 前瞻報酬是否大於 0。",
+001756:         "Purging：訓練列日期必須早於測試起日，且該列自身的 label_end_date 也必須早於測試起日。所有證券依全市場日期分組，避免同日跨 fold。",
+001757:         "模型限制：Top10/Top10% 是逐日橫斷面排序診斷，不等於持有期／換股／停損規則完整的投資組合回測；未扣手續費、證交稅、滑價及流動性成本。",
+001758:         "模型限制：本版驗證的是 v2.31 資料上可重現的研究基準模型，不宣稱重現原 SSO v2.40 的完整打分／10 檔選股規則；若要驗證該策略，必須把原模型程式與交易規則納入相同 OOS 框架。",
+001759:         "兩項特徵：只有既有歷史值公式辨識符合高一致性門檻時才補入新增列；未通過者保持排除，不猜測公式。",
+002038:     root.mkdir(parents=True, exist_ok=True)
+002039:     command = [
+002040:         sys.executable, str(source_path), "--root", str(root),
+002041:         "--v469-dir", str(v469_dir), "--folds", "5", "--warmup-dates", "756",
+002042:         "--max-train-rows", "150000",
+002043:     ]
+002044:     stream_subprocess(command, "v4.70.1 特徵公式辨識與 Purged Walk-Forward 驗證")
+002045:     dirs = sorted(root.glob("看股最速適_資料品質修復特徵公式辨識與PurgedWalkForward驗證_v4.70.1_*"), key=lambda p: p.stat().st_mtime)
+002162:             header = list(reader.fieldnames or [])
+002163:             if len(header) != len(set(header)):
+002164:                 raise RuntimeError("v2.51 逐筆 CSV 有重複欄名，停止自動配對。")
+002165:             required = ["持有期間H", "成本情境", "交易模式", "區段口徑", "訊號日期", "市場", "股票代號", *RETURN_REQUIRED]
+002166:             missing = [c for c in required if c not in header]
+002167:             if missing:
+002168:                 raise RuntimeError(f"v2.51 逐筆 CSV 缺少必要欄位：{missing}")
+002169:             for row in reader:
+002174:                     continue
+002175:                 target_keys.add(skey)
+002176:                 txkey = (
+002177:                     norm_text(row.get("持有期間H")), norm_text(row.get("成本情境")),
+002178:                     norm_text(row.get("交易模式")), norm_text(row.get("區段口徑")), *skey,
+002179:                 )
+002180:                 if txkey in transaction_seen:
+002181:                     transaction_duplicates.add(txkey)
+002679:     baseline_segment_mismatch: set, baseline_missing: set,
+002680: ) -> dict:
+002681:     extra = [*SIGNAL_KEYS, "v4.84.9.8_訊號配對狀態", "v4.84.9.8_交易鍵重複", *feature_fields,
+002682:              "v470_本筆持有期間H對應前瞻報酬欄位", "v470_本筆持有期間H對應前瞻報酬",
+002683:              "v470_本筆持有期間H對應標籤結束日期", "v470_本筆持有期間H精確標籤狀態"]
+002684:     output_header = source_header + [c for c in extra if c not in source_header]
+002685:     h_to_label = {"1": (FORWARD_LABELS[0], LABEL_ENDS[0]), "5": (FORWARD_LABELS[1], LABEL_ENDS[1]),
+002686:                   "20": (FORWARD_LABELS[2], LABEL_ENDS[2]), "60": (FORWARD_LABELS[3], LABEL_ENDS[3])}
+002687:     counts = Counter()
+002702:                     row["_market_key"] = skey[1]
+002703:                     row["_ticker_key"] = skey[2]
+002704:                     txkey = (
+002705:                         norm_text(row.get("持有期間H")), norm_text(row.get("成本情境")),
+002706:                         norm_text(row.get("交易模式")), norm_text(row.get("區段口徑")), *skey,
+002707:                     )
+002708:                     is_dup = txkey in transaction_duplicates
+002709:                     row["v4.84.9.8_交易鍵重複"] = "是" if is_dup else "否"
+002710:                     counts["transaction_duplicate_rows"] += int(is_dup)
+002711:                     h = norm_text(row.get("持有期間H"))
+002712:                     by_h[h] += 1
+002713:                     by_mode[(h, norm_text(row.get("交易模式")))] += 1
+002714:                     record = feature_map.get(skey) if all(skey) else None
+002715:                     if not all(skey):
+002730:                         row[field] = record.get(field, "") if record else ""
+002731:                     label_spec = h_to_label.get(h)
+002732:                     if label_spec is None:
+002733:                         row["v470_本筆持有期間H對應前瞻報酬欄位"] = ""
+002734:                         row["v470_本筆持有期間H對應前瞻報酬"] = ""
+002735:                         row["v470_本筆持有期間H對應標籤結束日期"] = ""
+002736:                         row["v470_本筆持有期間H精確標籤狀態"] = "NO_EXACT_HORIZON_IN_V4.70.1"
+002737:                     else:
+002738:                         label_col, end_col = label_spec
+002739:                         row["v470_本筆持有期間H對應前瞻報酬欄位"] = label_col
+002740:                         row["v470_本筆持有期間H對應前瞻報酬"] = record.get(f"v470_{label_col}", "") if record else ""
+002741:                         row["v470_本筆持有期間H對應標籤結束日期"] = record.get(f"v470_{end_col}", "") if record else ""
+002742:                         if record is None:
+002743:                             row["v470_本筆持有期間H精確標籤狀態"] = "NOT_AVAILABLE_BECAUSE_SIGNAL_UNMATCHED"
+002744:                         elif row["v470_本筆持有期間H對應前瞻報酬"] == "":
+002745:                             row["v470_本筆持有期間H精確標籤狀態"] = "EXACT_HORIZON_COLUMN_BUT_VALUE_EMPTY"
+002746:                         else:
+002747:                             row["v470_本筆持有期間H精確標籤狀態"] = "EXACT_HORIZON_VALUE_PRESENT"
+002748:                     hstatus = row["v470_本筆持有期間H精確標籤狀態"]
+002749:                     counts[f"H_STATUS::{hstatus}"] += 1
+002750:                     # 原始 v2.51 實際報酬及有效旗標原樣保留；此處只附加來源特徵與前瞻欄位。
+002751:                     writer.writerow(row)
+002752:                     if counts["rows"] % 200_000 == 0:
+002775:     h_rows = []
+002776:     for h, n in sorted(pair_counts.get("holding_period_distribution", {}).items()):
+002777:         h_rows.append({
+002778:             "持有期間H": h,
+002779:             "v2.51逐筆資料列數": int(n),
+002780:             "v4.70.1是否有相同H前瞻標籤": h in {"1", "5", "20", "60"},
+002781:             "v4.70.1對應標籤": h_to_name(h),
+002782:             "v4.70.1精確H標籤狀態分布": "請見逐筆配對資料欄位 v470_本筆持有期間H精確標籤狀態",
+002783:         })
+002784:     pd.DataFrame(h_rows).to_csv(pair_dir / "04_持有期間與前瞻標籤可用性.csv", index=False, encoding="utf-8-sig")
+002785:     field_rows = []
+002786:     for c in FACTOR_24:
