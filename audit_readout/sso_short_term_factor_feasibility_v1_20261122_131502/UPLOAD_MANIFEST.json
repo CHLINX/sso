@@ -1,0 +1,74 @@
+{
+  "repository": "CHLINX/sso",
+  "audit_branch": "audit/sso-short-term-factor-feasibility-v1_20261122_131502_upload140209",
+  "source_report_directory": "/content/SSO_Short_Term_Factor_Feasibility_v1_20261122_131502",
+  "source_zip": "SSO_Short_Term_Factor_Feasibility_v1_20261122_131502.zip",
+  "source_zip_sha256": "f7bd9202cfeb4d68d90a69c76b81e3523e54bfae3766ebc21a3d1ca9bd2bb458",
+  "source_zip_bytes": 23656747,
+  "protected_main_sha_expected": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "protected_main_sha_observed_before_upload": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "files": [
+    {
+      "path": "audit_readout/sso_short_term_factor_feasibility_v1_20261122_131502/report/00_資料來源成本及研究限制.json",
+      "bytes": 8279,
+      "sha256": "1db3959dba3d98306f700b9829ae2d0ae3099da20faf61776280944fe9dd867b"
+    },
+    {
+      "path": "audit_readout/sso_short_term_factor_feasibility_v1_20261122_131502/report/01_因子與持有期間總覽.csv",
+      "bytes": 58840,
+      "sha256": "b47d02465bcf076e8f0cc5fe9f42f860c744114a3e8ae0b418297e2977a31f26"
+    },
+    {
+      "path": "audit_readout/sso_short_term_factor_feasibility_v1_20261122_131502/report/02_因子公式與可用性.csv",
+      "bytes": 1910,
+      "sha256": "4648ee6912e2960626d95c13f484dc139f524a31e9c5373a1a5fb3941b8dc9a2"
+    },
+    {
+      "path": "audit_readout/sso_short_term_factor_feasibility_v1_20261122_131502/report/03_逐日Spearman_IC.csv",
+      "bytes": 15547101,
+      "sha256": "a781d4979c94ceb022a3c6ef72d1b044fd1bc2a6edb1927d33dabd80e2478ffb"
+    },
+    {
+      "path": "audit_readout/sso_short_term_factor_feasibility_v1_20261122_131502/report/04_逐日十組分位績效.csv.gz",
+      "bytes": 15184311,
+      "sha256": "c0a4011f9bfb80fbad06c91c83ceb668fe7d84e26a37faa5ff9da4e959a8cabb"
+    },
+    {
+      "path": "audit_readout/sso_short_term_factor_feasibility_v1_20261122_131502/report/05_逐日Top10與全樣本比較.csv",
+      "bytes": 16369110,
+      "sha256": "ba93fa8d2b9a6f3c042b956d5dcd314ac84d8529fedba7277f5e04f19d9cc5f9"
+    },
+    {
+      "path": "audit_readout/sso_short_term_factor_feasibility_v1_20261122_131502/report/06_年度穩定性.csv",
+      "bytes": 53646,
+      "sha256": "98e84cb07f0d4f5af6c99b80403940af08cf64b3c1d2ba43606730670074091e"
+    },
+    {
+      "path": "audit_readout/sso_short_term_factor_feasibility_v1_20261122_131502/report/README.md",
+      "bytes": 2499,
+      "sha256": "7dd91bdf68d1aec5ef6f4b03e019c0c2a785448f4c1b7659a52174a1ff1c98c8"
+    },
+    {
+      "path": "audit_readout/sso_short_term_factor_feasibility_v1_20261122_131502/report/artifact_sha256_manifest.json",
+      "bytes": 1657,
+      "sha256": "aa60555c7d9951e9d06591f464a001c8f109e936e2ba83de1bd02752ddc964d5"
+    },
+    {
+      "path": "audit_readout/sso_short_term_factor_feasibility_v1_20261122_131502/report/封裝執行資訊.json",
+      "bytes": 342,
+      "sha256": "31bc7221dd0fec6eab5c6d2a5d303463ce47643c1983d4950dfd350a8912fae1"
+    },
+    {
+      "path": "audit_readout/sso_short_term_factor_feasibility_v1_20261122_131502/report/程式來源說明.txt",
+      "bytes": 329,
+      "sha256": "85d7bb66097298f855a8d65253f76543203db8a650de284e2ea630970ae0e59b"
+    },
+    {
+      "path": "audit_readout/sso_short_term_factor_feasibility_v1_20261122_131502/bundle/SSO_Short_Term_Factor_Feasibility_v1_20261122_131502.zip",
+      "bytes": 23656747,
+      "sha256": "f7bd9202cfeb4d68d90a69c76b81e3523e54bfae3766ebc21a3d1ca9bd2bb458"
+    }
+  ],
+  "uploaded_at": "2026-11-22T14:02:19+00:00",
+  "token_storage": "Colab Secret / environment / hidden prompt; token not persisted"
+}

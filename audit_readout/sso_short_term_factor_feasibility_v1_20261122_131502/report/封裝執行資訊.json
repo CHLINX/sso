@@ -1,0 +1,7 @@
+{
+  "finalized_at": "2026-11-22T13:43:49+00:00",
+  "report_directory": "/content/SSO_Short_Term_Factor_Feasibility_v1_20261122_131502",
+  "script_copy_present": false,
+  "recovery_mode": true,
+  "note": "若此資料夾由先前已完成分析但在封裝階段中止的執行產生，這裡只封裝既有結果，不重新計算因子。"
+}
