@@ -1,0 +1,58 @@
+{
+  "00_方法來源及執行限制.json": {
+    "bytes": 8736,
+    "sha256": "744ebc0e1c73f32b25e8bea1d78a257c18db3733febb410fb0e71da07981f041"
+  },
+  "01_開發期方向重現.csv": {
+    "bytes": 883,
+    "sha256": "010e9da72c666778001548592cc93aecb72465cd0ab3a7e65a8b1c1e43121917"
+  },
+  "02_訊號與進場時點定義.csv": {
+    "bytes": 3675,
+    "sha256": "b87d48167e277ced8965a8c1484007672d231103052d72a7446004e65b313c2c"
+  },
+  "03_逐日Timing_IC.csv.gz": {
+    "bytes": 797257,
+    "sha256": "58f4ae3557218412c48faf4e688878c289d8561e172811af7d303a4b13a222a1"
+  },
+  "04_分期Timing_IC_HAC_BH.csv": {
+    "bytes": 11216,
+    "sha256": "c3bd25a0a6d00b338353811fdce572a537cbb6e3911c4e8144cc7aa5fb04bf42"
+  },
+  "05_TopN成本績效總覽.csv": {
+    "bytes": 116925,
+    "sha256": "b82bec5f9e981937f395b8f56a59e28382e50a3960f91c677b9695af8b682f71"
+  },
+  "06_十分位績效單調性.csv": {
+    "bytes": 22050,
+    "sha256": "3a36febb7eb30405471a7c2edf808ce384176d45d5b42c2d5ce2f5be786ac556"
+  },
+  "07_年度穩定性.csv": {
+    "bytes": 236417,
+    "sha256": "4b7cd4e583cd4d590cb3c5b73672d6bf3917d37a2b5b533c9dac1029011c0824"
+  },
+  "08_逐日TopN成本績效.csv.gz": {
+    "bytes": 29298368,
+    "sha256": "9f3b887d27e8dbf3ee7b39381c9c8b2b3742c1c8b3c04b7e5048a93bfef8b561"
+  },
+  "09_逐日十分位績效.csv.gz": {
+    "bytes": 22829429,
+    "sha256": "1be7ee72fbd7e938c802c2b41f37b7fafff9a82b3ea324f0e0cb4702d2f2c96a"
+  },
+  "10_研究門檻檢查.csv": {
+    "bytes": 9719,
+    "sha256": "7d1ff213ae38f168845aa22457a965a59f102f57edd8d0cdc50414beb3d867ae"
+  },
+  "11_後段Top10進場時點對照.csv": {
+    "bytes": 5102,
+    "sha256": "8dd1f9ef24569aafdea53f7cd29fec5cb0629f93b23dce9ce8ac36bc842b0ffd"
+  },
+  "README.md": {
+    "bytes": 803,
+    "sha256": "131705243dff0a4d40de82dd285d178dd9556c89958183462e81729a56a1c3de"
+  },
+  "程式來源說明.txt": {
+    "bytes": 64,
+    "sha256": "d65d52742ae689d411f72cd33a70ace42633a45965a92b150f0c651c27e69997"
+  }
+}

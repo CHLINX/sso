@@ -1,0 +1,178 @@
+{
+  "version": "SSO_OVERNIGHT_SIGNAL_TIMING_VALIDATION_v1.0.1",
+  "runtime": "2026-11-22T16:21:55.305432+00:00",
+  "source": {
+    "source_path": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SSO_研究指標獨立驗證與前瞻分析_v2.31_20261116_121536/相對價格因子與前瞻報酬研究資料_v2.31.csv.gz",
+    "source_sha256": "113a4f7cd5c94d7bbd3cb78427963dde2a6c249d66a25a66fab2c408958de71c",
+    "source_bytes": 561268140,
+    "rows": 4464015,
+    "date_min": "2016-01-04",
+    "date_max": "2026-11-06",
+    "securities": 2438,
+    "market_dates": 5266,
+    "schema": {
+      "date": "日期",
+      "market": "市場",
+      "symbol": "股票代號",
+      "open": "影子開盤價",
+      "high": "影子最高價",
+      "low": "影子最低價",
+      "close": "影子收盤價",
+      "segment": "價格研究區段"
+    },
+    "missing_price_segment_rows": 0
+  },
+  "baseline_daily_ic_sha256": "a781d4979c94ceb022a3c6ef72d1b044fd1bc2a6edb1927d33dabd80e2478ffb",
+  "frozen_directions_validated": 8,
+  "factor_valid_rows": {
+    "F02_OVERNIGHT_REVERSAL": 4379964,
+    "F04_OVERNIGHT_REVERSAL_3": 4325436
+  },
+  "target_valid_rows": {
+    "OPEN_TO_CLOSE_D0": 4416544,
+    "CLOSE_TO_CLOSE_H1": 4379964,
+    "CLOSE_TO_CLOSE_H3": 4365476,
+    "CLOSE_TO_CLOSE_H5": 4353303,
+    "CLOSE_TO_CLOSE_H10": 4327439,
+    "NEXT_OPEN_TO_CLOSE_H1": 4409641,
+    "NEXT_OPEN_TO_CLOSE_H3": 4366195,
+    "NEXT_OPEN_TO_CLOSE_H5": 4353670,
+    "NEXT_OPEN_TO_CLOSE_H10": 4327630
+  },
+  "signal_time": "F02/F04 are known after the current session opening print; they do not use same-day close/high/low/volume in their formula",
+  "timing_models": [
+    {
+      "target": "OPEN_TO_CLOSE_D0",
+      "column": "RET_OPEN_TO_CLOSE_D0",
+      "horizon": 0,
+      "entry_timing": "signal day open reference",
+      "exit_timing": "signal day close",
+      "execution_quality": "OPTIMISTIC_OPEN_REFERENCE",
+      "signal_availability": "F02/F04 use current opening price + previous closes; known after current open print",
+      "slippage_model": "round-trip one-way slippage applied at entry and exit",
+      "entry_caveat": "OPEN_TO_CLOSE_D0 is an optimistic opening-reference proxy; CLOSE_TO_CLOSE assumes feasible same-day MOC order; NEXT_OPEN is delayed baseline"
+    },
+    {
+      "target": "CLOSE_TO_CLOSE_H1",
+      "column": "RET_CLOSE_TO_CLOSE_H1",
+      "horizon": 1,
+      "entry_timing": "signal day close auction",
+      "exit_timing": "close after 1 further market sessions",
+      "execution_quality": "MOC_PROXY",
+      "signal_availability": "F02/F04 use current opening price + previous closes; known after current open print",
+      "slippage_model": "round-trip one-way slippage applied at entry and exit",
+      "entry_caveat": "OPEN_TO_CLOSE_D0 is an optimistic opening-reference proxy; CLOSE_TO_CLOSE assumes feasible same-day MOC order; NEXT_OPEN is delayed baseline"
+    },
+    {
+      "target": "CLOSE_TO_CLOSE_H3",
+      "column": "RET_CLOSE_TO_CLOSE_H3",
+      "horizon": 3,
+      "entry_timing": "signal day close auction",
+      "exit_timing": "close after 3 further market sessions",
+      "execution_quality": "MOC_PROXY",
+      "signal_availability": "F02/F04 use current opening price + previous closes; known after current open print",
+      "slippage_model": "round-trip one-way slippage applied at entry and exit",
+      "entry_caveat": "OPEN_TO_CLOSE_D0 is an optimistic opening-reference proxy; CLOSE_TO_CLOSE assumes feasible same-day MOC order; NEXT_OPEN is delayed baseline"
+    },
+    {
+      "target": "CLOSE_TO_CLOSE_H5",
+      "column": "RET_CLOSE_TO_CLOSE_H5",
+      "horizon": 5,
+      "entry_timing": "signal day close auction",
+      "exit_timing": "close after 5 further market sessions",
+      "execution_quality": "MOC_PROXY",
+      "signal_availability": "F02/F04 use current opening price + previous closes; known after current open print",
+      "slippage_model": "round-trip one-way slippage applied at entry and exit",
+      "entry_caveat": "OPEN_TO_CLOSE_D0 is an optimistic opening-reference proxy; CLOSE_TO_CLOSE assumes feasible same-day MOC order; NEXT_OPEN is delayed baseline"
+    },
+    {
+      "target": "CLOSE_TO_CLOSE_H10",
+      "column": "RET_CLOSE_TO_CLOSE_H10",
+      "horizon": 10,
+      "entry_timing": "signal day close auction",
+      "exit_timing": "close after 10 further market sessions",
+      "execution_quality": "MOC_PROXY",
+      "signal_availability": "F02/F04 use current opening price + previous closes; known after current open print",
+      "slippage_model": "round-trip one-way slippage applied at entry and exit",
+      "entry_caveat": "OPEN_TO_CLOSE_D0 is an optimistic opening-reference proxy; CLOSE_TO_CLOSE assumes feasible same-day MOC order; NEXT_OPEN is delayed baseline"
+    },
+    {
+      "target": "NEXT_OPEN_TO_CLOSE_H1",
+      "column": "RET_NEXT_OPEN_TO_CLOSE_H1",
+      "horizon": 1,
+      "entry_timing": "next market session open",
+      "exit_timing": "close on Hth market session",
+      "execution_quality": "PRIOR_BASELINE",
+      "signal_availability": "F02/F04 use current opening price + previous closes; known after current open print",
+      "slippage_model": "round-trip one-way slippage applied at entry and exit",
+      "entry_caveat": "OPEN_TO_CLOSE_D0 is an optimistic opening-reference proxy; CLOSE_TO_CLOSE assumes feasible same-day MOC order; NEXT_OPEN is delayed baseline"
+    },
+    {
+      "target": "NEXT_OPEN_TO_CLOSE_H3",
+      "column": "RET_NEXT_OPEN_TO_CLOSE_H3",
+      "horizon": 3,
+      "entry_timing": "next market session open",
+      "exit_timing": "close on Hth market session",
+      "execution_quality": "PRIOR_BASELINE",
+      "signal_availability": "F02/F04 use current opening price + previous closes; known after current open print",
+      "slippage_model": "round-trip one-way slippage applied at entry and exit",
+      "entry_caveat": "OPEN_TO_CLOSE_D0 is an optimistic opening-reference proxy; CLOSE_TO_CLOSE assumes feasible same-day MOC order; NEXT_OPEN is delayed baseline"
+    },
+    {
+      "target": "NEXT_OPEN_TO_CLOSE_H5",
+      "column": "RET_NEXT_OPEN_TO_CLOSE_H5",
+      "horizon": 5,
+      "entry_timing": "next market session open",
+      "exit_timing": "close on Hth market session",
+      "execution_quality": "PRIOR_BASELINE",
+      "signal_availability": "F02/F04 use current opening price + previous closes; known after current open print",
+      "slippage_model": "round-trip one-way slippage applied at entry and exit",
+      "entry_caveat": "OPEN_TO_CLOSE_D0 is an optimistic opening-reference proxy; CLOSE_TO_CLOSE assumes feasible same-day MOC order; NEXT_OPEN is delayed baseline"
+    },
+    {
+      "target": "NEXT_OPEN_TO_CLOSE_H10",
+      "column": "RET_NEXT_OPEN_TO_CLOSE_H10",
+      "horizon": 10,
+      "entry_timing": "next market session open",
+      "exit_timing": "close on Hth market session",
+      "execution_quality": "PRIOR_BASELINE",
+      "signal_availability": "F02/F04 use current opening price + previous closes; known after current open print",
+      "slippage_model": "round-trip one-way slippage applied at entry and exit",
+      "entry_caveat": "OPEN_TO_CLOSE_D0 is an optimistic opening-reference proxy; CLOSE_TO_CLOSE assumes feasible same-day MOC order; NEXT_OPEN is delayed baseline"
+    }
+  ],
+  "portfolio": {
+    "top_n": [
+      1,
+      3,
+      5,
+      10,
+      20
+    ],
+    "fee_one_way": 0.001425,
+    "sell_tax": 0.003,
+    "slippage_one_way": [
+      0.001,
+      0.002,
+      0.003,
+      0.005
+    ],
+    "benchmark": "same-date complete-case eligible universe for each signal and timing target",
+    "cohort_not_account_backtest": true
+  },
+  "limitations": [
+    "OPEN_TO_CLOSE_D0 uses the official/shadow open as a reference even though the opening print reveals the signal; this is an optimistic execution proxy, not proof of actual fill.",
+    "CLOSE_TO_CLOSE assumes the signal observed after open can be routed to the same-day closing auction; auction cutoff, fill price and queue are not modelled.",
+    "NEXT_OPEN baseline retains the previous SSO timing convention and may be late for an opening-known signal.",
+    "Minimum commission, bid-ask spread, price-limit queue, partial fills and market impact are not modelled.",
+    "2024+ has been inspected in previous SSO research and is not a pristine holdout.",
+    "Historical point-in-time universe / delisted securities survivorship audit is incomplete.",
+    "Daily TopN results are independent cohorts, not a compounded capital account backtest."
+  ],
+  "ic_summary_rows": 81,
+  "top_summary_rows": 405,
+  "gate_rows": 81,
+  "holdout_gate_pass": 3,
+  "holdout_gate_tests": 27,
+  "status": "TIMING_DIAGNOSTIC_ONLY_NOT_TRADING_APPROVAL"
+}
