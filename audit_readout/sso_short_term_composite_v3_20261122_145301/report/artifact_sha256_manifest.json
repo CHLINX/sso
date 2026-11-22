@@ -1,0 +1,58 @@
+{
+  "00_研究方法與限制.json": {
+    "bytes": 3868,
+    "sha256": "edb3eb2a1e73d35b57f6e5b965879228895dbd588990214ec07bc42bf1a1c4ad"
+  },
+  "01_凍結方向與合成成分.csv": {
+    "bytes": 3259,
+    "sha256": "068d550efa4f468e80fbe56ca0e0554d73d236b6ea6c91aae03260b556b53455"
+  },
+  "02_各H合成成分權重.csv": {
+    "bytes": 4597,
+    "sha256": "e08eb6a7cf662e8adb2108e4126710d237ccb7151fa1d711348b94317b9eea05"
+  },
+  "03_開發期因子冗餘相關.csv": {
+    "bytes": 11083,
+    "sha256": "04dbd3828ebf650f2d46f31c286e741ba0147c82b59b8c46c723418677a73037"
+  },
+  "04_合成訊號逐期IC與FDR.csv": {
+    "bytes": 3178,
+    "sha256": "2d8c6d5debf6ad6ff5f809ac2cac852b2c1bdde8bd2688f5e2939470e60be4c9"
+  },
+  "05_每日合成IC.csv.gz": {
+    "bytes": 233801,
+    "sha256": "ddf8657cf7b257e6ee8d1d710fdbd7b14a13501e3724832bd379fe2bdd18685a"
+  },
+  "06_合成組合TopN績效.csv": {
+    "bytes": 33540,
+    "sha256": "b73165202bde9c3b8676cdbada0b76302ccfcdec199ce9e2e187afda70f569d8"
+  },
+  "07_合成組合十分位績效.csv": {
+    "bytes": 6412,
+    "sha256": "ebb29a714db17e55a4698bc875d5cd9ecfee14ecc77a987f860b9b4725f13bd2"
+  },
+  "08_年度穩定性.csv": {
+    "bytes": 65191,
+    "sha256": "3593bd3b7a72d427f38fdbe35905d6a554540bc472ac95d30be142c962149696"
+  },
+  "09_每日TopN績效.csv.gz": {
+    "bytes": 8726680,
+    "sha256": "24d67a331c52087606e6ea49bccc8bf43a5f11b60663076ec68978bccebaf5ed"
+  },
+  "10_每日十分位績效.csv.gz": {
+    "bytes": 6894253,
+    "sha256": "b2cd36cf551c3fcef8294d725ae016041decea87007ec7e9941e8766dd455e16"
+  },
+  "11_合成策略研究門檻.csv": {
+    "bytes": 3419,
+    "sha256": "f63c972ebb02f4ac960349f23a79a44db59715fe2eba727fc87a6c08cebd00c0"
+  },
+  "README.md": {
+    "bytes": 920,
+    "sha256": "e5844aa358f10ea87f942edf30177414b4772d333a34e6de22700c05cd165331"
+  },
+  "程式來源說明.txt": {
+    "bytes": 100,
+    "sha256": "28b7b36e6397ad226c942d5447f0ba2c5c74ab1b75a871903aa6a150d321762d"
+  }
+}
