@@ -1,0 +1,20 @@
+SSO H5 Independent Gate & Archive Trace v1.0 - Upload Recovery
+Original run ID: 20261122_085929
+Original output folder: /content/SSO_H5_Independent_Trace_v1_20261122_085929
+Original report folder: /content/SSO_H5_Independent_Trace_v1_20261122_085929/report
+Original bundle: 22_SSO_H5_Independent_Trace_20261122_085929.zip
+Bundle SHA256: 1fe3e9a1763094446ead60b7f462e5b64ace6407895ccb1f9226b5811d143018
+
+Recorded 22.py findings:
+- v2.50 source SHA256: PASS
+- ZIP CRC: PASS (22 members)
+- Official H5 gate recomputation: PASS
+- Independent comparison against 19.py: PASS
+- Formal-gate passing probability buckets: none
+- Archive scan: 229 ZIP archives, 47 code members, 892 metadata members
+- Archive source status: MODEL_LOGIC_FOUND_VERSION_LINK_UNPROVEN
+- Strong source candidates: 0; model-logic candidates: 1
+
+The upload-path TypeError from the original 22.py was corrected here by
+using pathlib.PurePosixPath for the GitHub repository path.
+This upload recovery does not change or rerun any model calculation.
