@@ -1,0 +1,34 @@
+{
+  "00_方法來源與執行限制.json": {
+    "bytes": 3477,
+    "sha256": "925671e3e95fa0ea34405f7944bf5ea5d219433740ac4e4a3fd1fceacc3d0eb7"
+  },
+  "01_兩種退出方法逐筆績效.csv": {
+    "bytes": 2060753,
+    "sha256": "91a76cf53afc5b6d7cc1e983343cbdbbb9d3e0c1a008fc0bc2c1463ada0c7af7"
+  },
+  "02_退出方法成本績效摘要.csv": {
+    "bytes": 15547,
+    "sha256": "44c6baa1c4bfd6375607046655e34489b6f646030950ecea6f89451a9d1b9a24"
+  },
+  "03_日期等權績效.csv": {
+    "bytes": 90169,
+    "sha256": "341b3834f52d3880a20ea7d9e3d6c4b568d6d77440abca548cfa9ffb8c39d36a"
+  },
+  "04_退出可得性及失敗原因.csv": {
+    "bytes": 3647,
+    "sha256": "6ebf718aa12899124f650a26124a8e88ebc73a5e54cd4a7ef0c896c9bba130df"
+  },
+  "05_唯一進場紀錄與成交量.csv": {
+    "bytes": 88746,
+    "sha256": "6f19645b5f16decc2d0a271ec12024f65f121f3181a97d797742543e2eb910be"
+  },
+  "06_原始Pilot績效摘要.csv": {
+    "bytes": 7361,
+    "sha256": "fe7119f230e80a6edba379456bcaee1acbe6b518fd57d0e490e371e0ded85c7e"
+  },
+  "README.md": {
+    "bytes": 1156,
+    "sha256": "456329d34088fe0dd5d4078ccd0b4d14a300953f439356ba81680db4f36dc98a"
+  }
+}
