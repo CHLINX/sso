@@ -1,0 +1,59 @@
+{
+  "status": "WAITING_FOR_PREOPEN_OR_CLOSE_WINDOW",
+  "phase": "waiting",
+  "run_id": "20261124_013700",
+  "signal_date": "2026-11-24",
+  "frozen_top10": 0,
+  "full_rank_rows": 0,
+  "trade_observation_rows": 0,
+  "minute_rows": 0,
+  "cumulative_signal_days": 0,
+  "minimum_review_signal_days": 30,
+  "snapshot_coverage": {
+    "signal_date": "2026-11-24",
+    "frozen_universe_size": 2435,
+    "valid_open_price_securities": 0,
+    "coverage": 0.0,
+    "minimum_required_coverage": 0.95,
+    "pass": false
+  },
+  "history_max_before_signal": "2026-11-18",
+  "history_validation": {
+    "signal_date": "2026-11-24",
+    "expected_previous_market_sessions": [
+      "2026-11-23",
+      "2026-11-20",
+      "2026-11-19"
+    ],
+    "history_latest_date": "2026-11-18",
+    "latest_date_matches_previous_session": false,
+    "minimum_history_session_coverage": 0.9,
+    "session_checks": [
+      {
+        "date": "2026-11-23",
+        "valid_ohlc_securities": 0,
+        "coverage": 0.0,
+        "minimum_required_coverage": 0.9,
+        "pass": false
+      },
+      {
+        "date": "2026-11-20",
+        "valid_ohlc_securities": 0,
+        "coverage": 0.0,
+        "minimum_required_coverage": 0.9,
+        "pass": false
+      },
+      {
+        "date": "2026-11-19",
+        "valid_ohlc_securities": 0,
+        "coverage": 0.0,
+        "minimum_required_coverage": 0.9,
+        "pass": false
+      }
+    ],
+    "pass": false,
+    "calendar_valid_until": "2027-01-31",
+    "calendar_source": "TWSE official market holiday schedule (2026-2027)"
+  },
+  "note": "A freeze-stage run precedes the entry observation; a close-stage run cannot recreate or alter the frozen list."
+}

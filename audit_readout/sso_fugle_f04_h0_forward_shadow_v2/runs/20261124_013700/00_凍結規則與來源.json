@@ -1,0 +1,128 @@
+{
+  "version": "SSO_F04_H0_FORWARD_SHADOW_VALIDATION_v2.0",
+  "run_id": "20261124_013700",
+  "run_at_taipei": "2026-11-24T01:37:00.003818+08:00",
+  "phase": "waiting",
+  "status": "WAITING_FOR_PREOPEN_OR_CLOSE_WINDOW",
+  "oos_start_date": "2026-11-24",
+  "target_signal_date": "2026-11-24",
+  "factor": "F04",
+  "factor_direction": "HIGH",
+  "formula": "-expm1(rolling_sum(last_3_overnight_log_returns))",
+  "factor_source_equivalence": "Same rolling 3 overnight-log formula and HIGH ranking as 6.py; today's open comes from pre-entry Fugle Snapshot Quotes, not end-of-day daily files.",
+  "top_n": 10,
+  "tie_break": "factor_score DESC, symbol ASC, market ASC",
+  "snapshot": {
+    "markets": [
+      "TSE",
+      "OTC"
+    ],
+    "type": "COMMONSTOCK",
+    "freeze_window_taipei": "09:00:00-09:00:55",
+    "fields_used": [
+      "symbol",
+      "openPrice"
+    ],
+    "snapshot_quotes": [],
+    "minimum_universe_open_price_coverage": 0.95,
+    "minimum_f04_eligible_history_intersection_coverage": 0.9
+  },
+  "entry_clocks": [
+    "09:01",
+    "09:05"
+  ],
+  "entry_selection": "first 1m bar at/after target time, max delay 5 minutes; OPEN is a price proxy",
+  "exit_primary": "latest 1m bar starting 13:20..13:24; use CLOSE",
+  "exit_secondary": "13:30 closing-auction 1m candle CLOSE",
+  "horizon": "H0 same signal date only",
+  "fee_one_way": 0.001425,
+  "sell_tax": 0.003,
+  "slippage_each_side": [
+    0.001,
+    0.002,
+    0.003,
+    0.005
+  ],
+  "slippage_bps_each_side": [
+    10,
+    20,
+    30,
+    50
+  ],
+  "missing_data": "NA; no zero imputation; a fixed equal-weight basket metric requires 10/10 valid prices",
+  "no_retraining": true,
+  "no_reranking_after_freeze": true,
+  "no_live_orders": true,
+  "history_source": {
+    "base": {
+      "path": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SSO_研究指標獨立驗證與前瞻分析_v2.31_20261116_121536/相對價格因子與前瞻報酬研究資料_v2.31.csv.gz",
+      "sha256": "113a4f7cd5c94d7bbd3cb78427963dde2a6c249d66a25a66fab2c408958de71c",
+      "rows": 4416544,
+      "universe_securities": 2435,
+      "date_min": "2016-01-04",
+      "date_max": "2026-11-06",
+      "schema": [
+        "日期",
+        "市場",
+        "股票代號",
+        "影子開盤價",
+        "影子最高價",
+        "影子最低價",
+        "影子收盤價",
+        "價格研究區段"
+      ]
+    },
+    "increment_files": 17,
+    "increment_rows": 18955,
+    "history_max_before_signal": "2026-11-18",
+    "three_previous_sessions_validation": {
+      "signal_date": "2026-11-24",
+      "expected_previous_market_sessions": [
+        "2026-11-23",
+        "2026-11-20",
+        "2026-11-19"
+      ],
+      "history_latest_date": "2026-11-18",
+      "latest_date_matches_previous_session": false,
+      "minimum_history_session_coverage": 0.9,
+      "session_checks": [
+        {
+          "date": "2026-11-23",
+          "valid_ohlc_securities": 0,
+          "coverage": 0.0,
+          "minimum_required_coverage": 0.9,
+          "pass": false
+        },
+        {
+          "date": "2026-11-20",
+          "valid_ohlc_securities": 0,
+          "coverage": 0.0,
+          "minimum_required_coverage": 0.9,
+          "pass": false
+        },
+        {
+          "date": "2026-11-19",
+          "valid_ohlc_securities": 0,
+          "coverage": 0.0,
+          "minimum_required_coverage": 0.9,
+          "pass": false
+        }
+      ],
+      "pass": false,
+      "calendar_valid_until": "2027-01-31",
+      "calendar_source": "TWSE official market holiday schedule (2026-2027)"
+    }
+  },
+  "fugle_snapshot_doc": "https://developer.fugle.tw/docs/data/http-api/snapshot/quotes/",
+  "fugle_snapshot_plan_note": "Fugle docs state Snapshot Quotes is Developer plan or above; if access denied the script blocks and does not use after-close data to reconstruct the ranking.",
+  "fugle_historical_candles_doc": "https://developer.fugle.tw/docs/data/http-api/historical/candles/",
+  "fugle_historical_update_note": "Historical candles complete by 16:30 after each trading day; close stage is gated to 16:35 or later.",
+  "main_sha_required": "aaabc2433fb5df2bb68af06461178305d6bd30d1",
+  "limitations": [
+    "Opening snapshot may omit securities without a valid openPrice; daily ranking is blocked below the 95% frozen-universe coverage gate.",
+    "The selected list is timestamped locally before the 09:01 entry observation; GitHub upload follows the freeze, so the commit time is not claimed as a pre-entry trusted timestamp.",
+    "Minute K OPEN/CLOSE values are price proxies, not guaranteed fills; no bid/ask queue, partial fills or market impact.",
+    "Both entry clocks and both exit methods are predeclared arms; do not select the best retrospectively.",
+    "This is a shadow test only, not a trading recommendation."
+  ]
+}
