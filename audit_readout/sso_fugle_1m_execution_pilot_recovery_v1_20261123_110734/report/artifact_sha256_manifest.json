@@ -1,0 +1,58 @@
+{
+  "files": {
+    "00_方法來源與執行限制.json": {
+      "bytes": 4064,
+      "sha256": "4e3589a99a9437bffee10040b92ee795aa964a508b8fd2bdd28b9ff4586f5884"
+    },
+    "01_凍結訊號TopN樣本.csv": {
+      "bytes": 68140,
+      "sha256": "51700533d8e8928c668b874a27c4ee9a1840cbabf84f7eb2716266c328bf85f6"
+    },
+    "02_Fugle請求紀錄.csv": {
+      "bytes": 3995,
+      "sha256": "12e9df7f1f2b90c657ee11ac02a5ccc57f06d0a0c6054b1cddeff76cce86a01f"
+    },
+    "03_Fugle一分K資料.csv.gz": {
+      "bytes": 2900473,
+      "sha256": "a32483845e28000634fb54c6e730cf9d0c35032233df9c81ab484ab4e0da8ff1"
+    },
+    "04_分鐘K品質檢查.csv": {
+      "bytes": 273993,
+      "sha256": "3622b93ed7e959c6f81cfc306328a7b1faf349854cfe00b4bf24414d2a03c3ff"
+    },
+    "05_分鐘與影子日線對照.csv": {
+      "bytes": 84708,
+      "sha256": "c9b8b9e418dce793e75cb5f71d13f9b67fa3396038411b664dd8ba6db7c89b18"
+    },
+    "06_09時後進場逐筆績效.csv": {
+      "bytes": 1084004,
+      "sha256": "bf8f96e2f384e6b3ef1fa66192b98ee10d9b18cd2ab00323fec1df6b3922c0ef"
+    },
+    "07_09時後進場績效摘要.csv": {
+      "bytes": 7723,
+      "sha256": "39562ca9d76dcb71ef0f52702db60ed815d3daa0f382facedd0d19418cea467a"
+    },
+    "08_未取得行情或請求異常.csv": {
+      "bytes": 4,
+      "sha256": "b42f2099187886def637d6aa840022266e05cb6c987a9394e708e23cd505eb46"
+    },
+    "09_RECOVERY_NOTE.json": {
+      "bytes": 1865,
+      "sha256": "e2018dedf14afd3bef178f7be2bb54bfbe56c7689e854b6d4d2594ec0b005076"
+    },
+    "6.py": {
+      "bytes": 43211,
+      "sha256": "228cb0aa160dd8049b637df34e11fb780b9e4c05c9a4ec4b1174026010552cc3"
+    },
+    "ERROR.txt": {
+      "bytes": 244,
+      "sha256": "c7ee2aac2e21a63ac3a7ef74bd009f44c3507074b39a8508a828f00df2cf183b"
+    },
+    "README.md": {
+      "bytes": 1402,
+      "sha256": "5aeee7fb2781d167311121e9d8ce322c4e225c56e82da71d7b957f4a086c7c1e"
+    }
+  },
+  "recovery_version": "SSO_FUGLE_1M_PILOT_RECOVERY_v1.0",
+  "source_6_py_sha256": "228cb0aa160dd8049b637df34e11fb780b9e4c05c9a4ec4b1174026010552cc3"
+}

@@ -1,0 +1,56 @@
+{
+  "recovery_version": "SSO_FUGLE_1M_PILOT_RECOVERY_v1.0",
+  "recovery_runtime_taipei": "2026-11-23T11:07:33.444155+08:00",
+  "original_run_directory": "/content/SSO_Fugle_1m_Execution_Pilot_v1_20261123_090619",
+  "original_error": "NameError: __file__ is not defined during shutil.copy2(Path(__file__), out / \"6.py\").",
+  "original_error_log_present": true,
+  "analysis_outputs_reused": true,
+  "fugle_api_called_again": false,
+  "all_fugle_request_and_analysis_outputs_preexisted": true,
+  "metrics": {
+    "request_count": 144,
+    "request_status_counts": {
+      "OK": 144
+    },
+    "successful_requests": 144,
+    "failed_requests": 0,
+    "minute_rows": 322570,
+    "symbols_in_bars": 144,
+    "bar_dates": 30,
+    "bar_start": "2026-09-21 09:00:00",
+    "bar_end": "2026-11-06 13:30:00",
+    "quality_rows": 4008,
+    "summary_rows": 30,
+    "summary_columns": [
+      "signal",
+      "entry_clock",
+      "horizon",
+      "selected_rows",
+      "valid_trades",
+      "coverage",
+      "signal_dates",
+      "mean_gross",
+      "median_gross",
+      "gross_positive_ratio",
+      "mean_net_10bp",
+      "positive_ratio_net_10bp",
+      "mean_net_20bp",
+      "positive_ratio_net_20bp",
+      "mean_net_30bp",
+      "positive_ratio_net_30bp",
+      "mean_net_50bp",
+      "positive_ratio_net_50bp"
+    ]
+  },
+  "source_6_py": {
+    "version": "v1.0.1",
+    "sha256": "228cb0aa160dd8049b637df34e11fb780b9e4c05c9a4ec4b1174026010552cc3",
+    "bytes": 43211,
+    "embedded_original_source": true
+  },
+  "recovery_script": {
+    "available": false,
+    "note": "The notebook execution wrapper did not expose a script file; the recovery source is delivered separately as 7.py."
+  },
+  "interpretation": "This recovery only completes provenance, manifest, ZIP and GitHub audit packaging. It does not alter the original analysis outputs or recalculate trades."
+}

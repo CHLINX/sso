@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/tmp/ipykernel_2685/2853899901.py", line 713, in main
+    shutil.copy2(Path(__file__), out / "6.py")
+                      ^^^^^^^^
+NameError: name '__file__' is not defined. Did you mean: '__name__'?

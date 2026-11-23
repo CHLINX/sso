@@ -1,0 +1,126 @@
+{
+  "version": "SSO_FUGLE_1M_EXECUTION_PRICE_PILOT_v1.0.1",
+  "runtime_taipei": "2026-11-23T09:12:54.796229+08:00",
+  "source": {
+    "path": "/content/drive/MyDrive/看股最速適/分析重跑_v1.2_20261026_155023/SSO_研究指標獨立驗證與前瞻分析_v2.31_20261116_121536/相對價格因子與前瞻報酬研究資料_v2.31.csv.gz",
+    "sha256": "113a4f7cd5c94d7bbd3cb78427963dde2a6c249d66a25a66fab2c408958de71c",
+    "rows": 4416544,
+    "securities": 2435,
+    "date_min": "2016-01-04",
+    "date_max": "2026-11-06",
+    "schema": {
+      "date": "日期",
+      "market": "市場",
+      "symbol": "股票代號",
+      "open": "影子開盤價",
+      "high": "影子最高價",
+      "low": "影子最低價",
+      "close": "影子收盤價",
+      "segment": "價格研究區段"
+    }
+  },
+  "baseline_daily_ic_sha256": "a781d4979c94ceb022a3c6ef72d1b044fd1bc2a6edb1927d33dabd80e2478ffb",
+  "provider": "Fugle / 富果行情 REST API (non-official independent validation layer)",
+  "provider_docs": "https://developer.fugle.tw/docs/data/http-api/historical/candles/",
+  "endpoint": "https://api.fugle.tw/marketdata/v1.0/stock/historical/candles/{symbol}",
+  "request": {
+    "timeframe": "1",
+    "from": "2026-09-21",
+    "to": "2026-11-06",
+    "fields": "open,high,low,close,volume",
+    "sort": "asc",
+    "date_range_less_than_one_year": true,
+    "planned_rate_per_minute": 57
+  },
+  "signal": {
+    "F02": "-(current shadow open / previous available shadow close - 1)",
+    "F04": "-expm1(sum of current and prior two available-session log(open / previous close))",
+    "directions": {
+      "F02": "HIGH",
+      "F04": "HIGH"
+    },
+    "overnight_pair": "50/50 mean of daily cross-sectional percentile ranks; both factors HIGH",
+    "selection": "Top 10 by frozen score per signal per date; no refit or weight optimization"
+  },
+  "entry_exit": {
+    "entry": "first 1-minute candle whose timestamp is >= 09:01 or >= 09:05 (within 10 minutes); use that candle OPEN as price proxy",
+    "exit": "13:30 separate closing-auction candle CLOSE on signal date + H market sessions",
+    "horizons": [
+      0,
+      1,
+      3,
+      5,
+      10
+    ],
+    "minute_bar_timestamp": "bar start time; 09:00 bar covers 09:00:00-09:00:59",
+    "execution_caveat": "OHLCV candle open/close is not a guaranteed order fill; no bid/ask queue, spread, depth, partial fills or impact"
+  },
+  "cost": {
+    "fee_one_way": 0.001425,
+    "sell_tax": 0.003,
+    "one_way_slippage_sensitivity": [
+      0.001,
+      0.002,
+      0.003,
+      0.005
+    ],
+    "formula": "(1+gross)*((1-slip)/(1+slip))*((1-fee)*(1-tax)/(1+fee))-1",
+    "not_included": [
+      "minimum commission",
+      "bid-ask spread beyond slippage assumption",
+      "queue position",
+      "partial fills",
+      "market impact"
+    ]
+  },
+  "sample": {
+    "signal_dates": [
+      "2026-09-21",
+      "2026-09-22",
+      "2026-09-23",
+      "2026-09-24",
+      "2026-09-29",
+      "2026-09-30",
+      "2026-10-01",
+      "2026-10-02",
+      "2026-10-05",
+      "2026-10-06",
+      "2026-10-07",
+      "2026-10-08",
+      "2026-10-12",
+      "2026-10-13",
+      "2026-10-14",
+      "2026-10-15",
+      "2026-10-16",
+      "2026-10-19",
+      "2026-10-20",
+      "2026-10-21"
+    ],
+    "signal_start": "2026-09-21",
+    "signal_end": "2026-10-21",
+    "minute_data_end": "2026-11-06",
+    "signal_days": 20,
+    "top_n_per_signal_day": 10,
+    "unique_symbols": 144
+  },
+  "data_quality_summary": {
+    "minute_rows": 322570,
+    "symbols_requested": 144,
+    "symbols_ok": 144,
+    "symbols_404": 0,
+    "symbols_other_failed": 0,
+    "symbol_days": 4008,
+    "symbol_days_with_1330": 2848,
+    "symbol_days_with_0900": 2137,
+    "duplicate_minute_timestamps": 0,
+    "invalid_ohlc_rows": 0,
+    "comparison_rows": 600,
+    "open_match_1pct_ratio": 1.0,
+    "high_match_1pct_ratio": 1.0,
+    "low_match_1pct_ratio": 1.0,
+    "close_match_1pct_ratio": 0.6916666666666667,
+    "trade_rows": 6000,
+    "valid_trade_rows": 2650
+  },
+  "status": "PILOT_DIAGNOSTIC_ONLY_NOT_TRADING_APPROVAL"
+}
