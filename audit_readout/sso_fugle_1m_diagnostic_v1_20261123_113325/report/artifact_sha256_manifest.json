@@ -1,0 +1,42 @@
+{
+  "00_方法來源與限制.json": {
+    "bytes": 3944,
+    "sha256": "d08880150a7142057becf64c26143f5b5ddc1932521c6ca8ba4c50e6dc73fc17"
+  },
+  "01_進出場可得性與失敗原因.csv": {
+    "bytes": 1538,
+    "sha256": "6cc2d30f399203219f5bda3fbf03d09fa25c61e6b1f2d6d4f153bce40474af4b"
+  },
+  "02_實際入場延遲分布.csv": {
+    "bytes": 627,
+    "sha256": "4ceb5097a661abefc5685b15f4041c2ff096e4cd0e9fd105f75f9c3307a21d7b"
+  },
+  "03_延遲限制下績效敏感度.csv": {
+    "bytes": 57666,
+    "sha256": "3506f082d36d7aa34b6f6538cf6787988126bb0de8d72212c6b199d905917c33"
+  },
+  "04_日期等權逐日績效.csv": {
+    "bytes": 389632,
+    "sha256": "3edfc37d0289b4a4a9322d4b7172c05d6d5b6d85b4f17ccd40610aba8a815a18"
+  },
+  "05_入場分鐘成交量分布.csv": {
+    "bytes": 507,
+    "sha256": "bae86b3d694262c371f527daf57fdc39a406f18cf0efc08629a2cb7e6a3fdd0b"
+  },
+  "06_分鐘與影子日線價格一致性.csv": {
+    "bytes": 165,
+    "sha256": "184c10e14c88fb1bf1f0a5785c5c6ea2bc311d94b05fed5e1002b5287c88c6d8"
+  },
+  "07_原始績效摘要_重列.csv": {
+    "bytes": 7361,
+    "sha256": "fe7119f230e80a6edba379456bcaee1acbe6b518fd57d0e490e371e0ded85c7e"
+  },
+  "08_逐選股日入場可得性.csv": {
+    "bytes": 243651,
+    "sha256": "03fbf81887f007c4e4b0aca5265011e3b0c2fdd527d38a3734b556c021b3b4fe"
+  },
+  "README.md": {
+    "bytes": 1998,
+    "sha256": "d7476e275ac22153513085facceab3ecdfe9a7d27d795a874de3d0c53090762c"
+  }
+}

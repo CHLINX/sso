@@ -1,0 +1,96 @@
+{
+  "version": "SSO_FUGLE_1M_COVERAGE_AND_FILL_DIAGNOSTIC_v1.0",
+  "runtime_taipei": "2026-11-23T11:33:36.157620+08:00",
+  "pilot_directory": "/content/SSO_Fugle_1m_Execution_Pilot_v1_20261123_090619",
+  "prior_audit_branch": "audit/sso-fugle-1m-recovery-v1_20261123_110734",
+  "prior_audit_commit": "dfe26755ea7df246d1e4af891c528c7495ceaeed",
+  "prior_audit_url": "https://github.com/CHLINX/sso/tree/audit/sso-fugle-1m-recovery-v1_20261123_110734/audit_readout/sso_fugle_1m_execution_pilot_recovery_v1_20261123_110734",
+  "inputs": {
+    "01_凍結訊號TopN樣本.csv": {
+      "bytes": 68140,
+      "sha256": "51700533d8e8928c668b874a27c4ee9a1840cbabf84f7eb2716266c328bf85f6"
+    },
+    "02_Fugle請求紀錄.csv": {
+      "bytes": 3995,
+      "sha256": "12e9df7f1f2b90c657ee11ac02a5ccc57f06d0a0c6054b1cddeff76cce86a01f"
+    },
+    "03_Fugle一分K資料.csv.gz": {
+      "bytes": 2900473,
+      "sha256": "a32483845e28000634fb54c6e730cf9d0c35032233df9c81ab484ab4e0da8ff1"
+    },
+    "04_分鐘K品質檢查.csv": {
+      "bytes": 273993,
+      "sha256": "3622b93ed7e959c6f81cfc306328a7b1faf349854cfe00b4bf24414d2a03c3ff"
+    },
+    "05_分鐘與影子日線對照.csv": {
+      "bytes": 84708,
+      "sha256": "c9b8b9e418dce793e75cb5f71d13f9b67fa3396038411b664dd8ba6db7c89b18"
+    },
+    "06_09時後進場逐筆績效.csv": {
+      "bytes": 1084004,
+      "sha256": "bf8f96e2f384e6b3ef1fa66192b98ee10d9b18cd2ab00323fec1df6b3922c0ef"
+    },
+    "07_09時後進場績效摘要.csv": {
+      "bytes": 7723,
+      "sha256": "39562ca9d76dcb71ef0f52702db60ed815d3daa0f382facedd0d19418cea467a"
+    }
+  },
+  "row_counts": {
+    "selected_rows": 600,
+    "trade_rows": 6000,
+    "unique_entry_rows": 1200,
+    "status_summary_rows": 30,
+    "delay_performance_rows": 150,
+    "daily_performance_rows": 2900
+  },
+  "minute_volume_join": {
+    "minute_volume_join": "PASS",
+    "minute_rows": 322570,
+    "entry_rows": 636,
+    "volume_matched": 636,
+    "volume_match_ratio": 0.53,
+    "volume_unit_note": "保留 Fugle 回傳原始單位；不轉換股數或金額。"
+  },
+  "data_quality": {
+    "symbol_days": 4008,
+    "symbols": 144,
+    "bar_dates": 30,
+    "symbol_days_has_0900": 2137,
+    "symbol_days_has_1330": 2848,
+    "symbol_days_no_1330": 1160,
+    "has_0900_ratio": 0.533183632734531,
+    "has_1330_ratio": 0.7105788423153693,
+    "duplicate_minute_timestamps": 0,
+    "invalid_ohlc_rows": 0,
+    "bars_per_symbol_day_mean": 80.48153692614771,
+    "bars_per_symbol_day_p10": 2.0,
+    "bars_per_symbol_day_median": 28.0,
+    "bars_per_symbol_day_p90": 249.30000000000018,
+    "daily_compare_rows": 600,
+    "open_match_1pct_count": 600,
+    "high_match_1pct_count": 600,
+    "low_match_1pct_count": 600,
+    "close_auction_rows_in_compare": 415,
+    "close_no_1330_rows_in_compare": 185,
+    "close_match_1pct_when_auction_bar_present": 1.0,
+    "api_request_status_counts": {
+      "OK": 144
+    },
+    "trade_status_counts": {
+      "NO_ENTRY_BAR_AFTER_TIME": 2820,
+      "OK": 2650,
+      "NO_1330_AUCTION_BAR": 478,
+      "NO_BARS": 52
+    },
+    "entry_delay_mean_min_all_rows": 1.3066037735849056
+  },
+  "interpretation_limits": [
+    "此診斷只重算既有 pilot 的覆蓋率、延遲、分鐘量與成本敏感度，不重抓行情、不重訓模型、不改凍結方向。",
+    "entry_price_proxy 是第一根符合時間條件的 1 分 K OPEN；它不是保證成交價。",
+    "13:30 bar 缺漏只標示為未觀察到該分鐘 K，不推定原因一定是無成交或 API 錯誤。",
+    "目前選股樣本未套用事前流動性篩選；低分鐘 K 數量可能造成選股與成交覆蓋偏差。",
+    "20 個訊號交易日屬小樣本，且資料期間已在既有 SSO 研究內被接觸，不是純粹未觸及 OOS。",
+    "手續費最低收費、價差、委託簿深度、排隊、部分成交、衝擊成本與複利帳戶均未完整模擬。"
+  ],
+  "status": "DIAGNOSTIC_ONLY_NOT_TRADING_APPROVAL"
+}

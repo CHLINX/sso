@@ -1,0 +1,5 @@
+﻿check,rows,match_count,match_ratio
+open_match_1pct,600,600,1.0
+high_match_1pct,600,600,1.0
+low_match_1pct,600,600,1.0
+close_match_1pct,600,415,0.6916666666666667
