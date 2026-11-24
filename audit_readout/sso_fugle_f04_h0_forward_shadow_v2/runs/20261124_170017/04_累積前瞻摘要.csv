@@ -1,0 +1,5 @@
+﻿entry_clock,exit_method,signal_days,complete_days,complete_day_coverage,mean_complete_daily_net_10bp,median_complete_daily_net_10bp,positive_complete_days_10bp,complete_day_win_rate_10bp,mean_daily_valid_only_net_10bp,review_threshold_signal_days,review_threshold_met
+09:01,LAST_CONTINUOUS_BAR_CLOSE_1320_1324,0,0,,,,0,,,30,False
+09:01,AUCTION_1330_CLOSE,0,0,,,,0,,,30,False
+09:05,LAST_CONTINUOUS_BAR_CLOSE_1320_1324,0,0,,,,0,,,30,False
+09:05,AUCTION_1330_CLOSE,0,0,,,,0,,,30,False
