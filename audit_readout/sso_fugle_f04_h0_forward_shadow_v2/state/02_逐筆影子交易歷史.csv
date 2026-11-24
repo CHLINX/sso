@@ -1,1 +1,1 @@
-﻿
+﻿signal_date,signal,rank,market,symbol,factor_score,entry_clock,max_entry_delay_min,entry_bar_datetime,entry_price_proxy,entry_delay_minutes,exit_method,exit_bar_datetime,exit_price_proxy,exit_gap_to_1325_min,status,gross_return,observed_at_taipei,attempt,price_source,fill_status,net_10bp,net_20bp,net_30bp,net_50bp

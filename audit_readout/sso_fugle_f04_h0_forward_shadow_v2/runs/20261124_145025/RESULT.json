@@ -1,0 +1,109 @@
+{
+  "status": "WAITING_FOR_PREOPEN_OR_CLOSE_WINDOW",
+  "phase": "waiting",
+  "run_id": "20261124_145025",
+  "signal_date": "2026-11-24",
+  "frozen_top10": 0,
+  "full_rank_rows": 0,
+  "trade_observation_rows": 0,
+  "minute_rows": 0,
+  "cumulative_signal_days": 0,
+  "minimum_review_signal_days": 30,
+  "snapshot_coverage": {
+    "signal_date": "2026-11-24",
+    "frozen_universe_size": 2435,
+    "valid_open_price_securities": 0,
+    "coverage": 0.0,
+    "minimum_required_coverage": 0.95,
+    "pass": false
+  },
+  "history_max_before_signal": "2026-11-23",
+  "history_validation": {
+    "signal_date": "2026-11-24",
+    "expected_previous_market_sessions": [
+      "2026-11-23",
+      "2026-11-20",
+      "2026-11-19"
+    ],
+    "history_latest_date": "2026-11-23",
+    "latest_date_matches_previous_session": true,
+    "minimum_history_session_coverage": 0.9,
+    "session_checks": [
+      {
+        "date": "2026-11-23",
+        "valid_ohlc_securities": 2375,
+        "coverage": 0.9753593429158111,
+        "minimum_required_coverage": 0.9,
+        "pass": true
+      },
+      {
+        "date": "2026-11-20",
+        "valid_ohlc_securities": 2380,
+        "coverage": 0.9774127310061602,
+        "minimum_required_coverage": 0.9,
+        "pass": true
+      },
+      {
+        "date": "2026-11-19",
+        "valid_ohlc_securities": 2373,
+        "coverage": 0.9745379876796715,
+        "minimum_required_coverage": 0.9,
+        "pass": true
+      }
+    ],
+    "pass": true,
+    "calendar_valid_until": "2027-01-31",
+    "calendar_source": "TWSE official market holiday schedule (2026-2027)"
+  },
+  "state_restore": {
+    "previous_branch": "audit/sso-fugle-f04-h0-shadow-v2_20261124_013700",
+    "diagnostics": [
+      {
+        "file": "01_凍結選股歷史.csv",
+        "status": "LOADED",
+        "bytes": 158,
+        "rows": 0,
+        "columns": [
+          "signal_date",
+          "signal",
+          "rank",
+          "market",
+          "symbol",
+          "factor_score",
+          "factor_direction",
+          "factor_definition",
+          "snapshot_open_price",
+          "snapshot_time",
+          "snapshot_coverage",
+          "frozen_at_taipei"
+        ]
+      },
+      {
+        "file": "02_逐筆影子交易歷史.csv",
+        "status": "EMPTY_FILE_RECOVERED_AS_ZERO_ROWS",
+        "bytes": 4,
+        "allow_empty_file": true,
+        "note": "舊版等待階段可能將無欄位空 DataFrame 輸出為零位元組；本版以固定 schema 空表復原。"
+      },
+      {
+        "file": "03_逐日績效歷史.csv",
+        "status": "EMPTY_FILE_RECOVERED_AS_ZERO_ROWS",
+        "bytes": 4,
+        "allow_empty_file": true,
+        "note": "舊版等待階段可能將無欄位空 DataFrame 輸出為零位元組；本版以固定 schema 空表復原。"
+      },
+      {
+        "file": "04_來源檔案雜湊歷史.csv",
+        "status": "LOADED",
+        "bytes": 2223,
+        "rows": 8,
+        "columns": [
+          "file",
+          "sha256",
+          "bytes"
+        ]
+      }
+    ]
+  },
+  "note": "A freeze-stage run precedes the entry observation; a close-stage run cannot recreate or alter the frozen list."
+}

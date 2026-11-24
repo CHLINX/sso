@@ -1,0 +1,37 @@
+{
+  "signal_date": "2026-11-24",
+  "expected_previous_market_sessions": [
+    "2026-11-23",
+    "2026-11-20",
+    "2026-11-19"
+  ],
+  "history_latest_date": "2026-11-23",
+  "latest_date_matches_previous_session": true,
+  "minimum_history_session_coverage": 0.9,
+  "session_checks": [
+    {
+      "date": "2026-11-23",
+      "valid_ohlc_securities": 2375,
+      "coverage": 0.9753593429158111,
+      "minimum_required_coverage": 0.9,
+      "pass": true
+    },
+    {
+      "date": "2026-11-20",
+      "valid_ohlc_securities": 2380,
+      "coverage": 0.9774127310061602,
+      "minimum_required_coverage": 0.9,
+      "pass": true
+    },
+    {
+      "date": "2026-11-19",
+      "valid_ohlc_securities": 2373,
+      "coverage": 0.9745379876796715,
+      "minimum_required_coverage": 0.9,
+      "pass": true
+    }
+  ],
+  "pass": true,
+  "calendar_valid_until": "2027-01-31",
+  "calendar_source": "TWSE official market holiday schedule (2026-2027)"
+}

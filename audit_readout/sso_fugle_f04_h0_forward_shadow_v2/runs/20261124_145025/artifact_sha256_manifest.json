@@ -1,0 +1,81 @@
+{
+  "run_id": "20261124_145025",
+  "files": {
+    "RESULT.json": {
+      "sha256": "88e1a9ac541a70f2d2f40eb623aca507b513bd5decc1a96010c21ba3ee4d89cb",
+      "bytes": 3156
+    },
+    "11_Fugle開盤全市場快照.csv": {
+      "sha256": "b42f2099187886def637d6aa840022266e05cb6c987a9394e708e23cd505eb46",
+      "bytes": 4
+    },
+    "08_當日開盤快照覆蓋率.json": {
+      "sha256": "63d1ff0523f971e7776427e7b236fedadad66067abd71237714237c1c9c09da8",
+      "bytes": 174
+    },
+    "09_前三個交易日日線連續性.json": {
+      "sha256": "68ac6f76b66af9c335c11e8a12aa233c1a0e21bf84178b8d1d126fdada9d7d3e",
+      "bytes": 943
+    },
+    "00_凍結規則與來源.json": {
+      "sha256": "d103b52742f6917cbe6220a7f298b2d1f148756dab9ecc671b075427f913edab",
+      "bytes": 6516
+    },
+    "05_Fugle歷史分鐘請求紀錄.csv": {
+      "sha256": "e9f935ac0ec6355dbcc44b870b1f350115ff4d3d06413fbe3c04107e8e847105",
+      "bytes": 62
+    },
+    "02_當日逐筆影子交易.csv": {
+      "sha256": "a41783706a1a6df3b670ebb17ec0a1b31bc9c46f1be35e95668ebefae6febfd0",
+      "bytes": 319
+    },
+    "README.md": {
+      "sha256": "3e629098d57c3c2a9434a11da7db30b6aaddb14233114fc02e457107c031697d",
+      "bytes": 910
+    },
+    "10_全市場F04排序.csv": {
+      "sha256": "b42f2099187886def637d6aa840022266e05cb6c987a9394e708e23cd505eb46",
+      "bytes": 4
+    },
+    "07_官方歷史來源雜湊.csv": {
+      "sha256": "0b9bb3cd4950f7be1d2c4671c569e7cb9212766aaa2cdc5d40ed39c73fae8e2f",
+      "bytes": 6093
+    },
+    "01_當日凍結Top10.csv": {
+      "sha256": "71b46f7c1ea9ce8c2506cda42be2928c296bbfc905c7ee55ca75c193a32a0d5f",
+      "bytes": 158
+    },
+    "03_當日績效摘要.csv": {
+      "sha256": "dcbf5d6fded5e154fe23f81dc3c5a20d39fd6a8a3e7534773e74096692d84717",
+      "bytes": 484
+    },
+    "state_schema.json": {
+      "sha256": "95c70f3c5516a7d5e77472d7a298561f8e18c8e5b161adadf0464e604629219f",
+      "bytes": 1950
+    },
+    "06_Fugle單日一分K.csv.gz": {
+      "sha256": "c3bfa025169c290f2303079cd3b2ba1345d8523aff80ca35414e0283f9c0b943",
+      "bytes": 76
+    },
+    "04_累積前瞻摘要.csv": {
+      "sha256": "04c386da45b95b1a85749b342c4018e45064af2bd61348839f0954bac92975c6",
+      "bytes": 485
+    },
+    "state/04_來源檔案雜湊歷史.csv": {
+      "sha256": "0630105519e5100bd6e40334b126f81660125b7717f5bd360b7a42cb8e520291",
+      "bytes": 2477
+    },
+    "state/01_凍結選股歷史.csv": {
+      "sha256": "71b46f7c1ea9ce8c2506cda42be2928c296bbfc905c7ee55ca75c193a32a0d5f",
+      "bytes": 158
+    },
+    "state/03_逐日績效歷史.csv": {
+      "sha256": "dcbf5d6fded5e154fe23f81dc3c5a20d39fd6a8a3e7534773e74096692d84717",
+      "bytes": 484
+    },
+    "state/02_逐筆影子交易歷史.csv": {
+      "sha256": "a41783706a1a6df3b670ebb17ec0a1b31bc9c46f1be35e95668ebefae6febfd0",
+      "bytes": 319
+    }
+  }
+}
