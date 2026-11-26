@@ -41,8 +41,8 @@ jobs:
       FUGLE_API: ${{ secrets.FUGLE_API }}
       FUGLE_API_KEY: ${{ secrets.FUGLE_API_KEY }}
       GITHUB_TOKEN: ${{ github.token }}
-      SSO_REPORT_ROOT: ${{ runner.temp }}/sso-f04-reports
-      SSO_INPUT_ROOT: ${{ runner.temp }}/sso-f04-input
+      SSO_REPORT_ROOT: /tmp/sso-f04-reports
+      SSO_INPUT_ROOT: /tmp/sso-f04-input
       GITHUB_EVENT_SCHEDULE: ${{ github.event.schedule }}
       DISPATCH_PHASE: ${{ inputs.phase || 'self-test' }}
     steps:
