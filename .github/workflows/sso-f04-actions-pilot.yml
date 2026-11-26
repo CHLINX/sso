@@ -91,6 +91,7 @@ jobs:
       - name: Run original F04 v2.0.1 self-test
         run: python actions/11.py --self-test
 
+      # Re-run after repository owner configured Actions Secrets; push phase remains self-test + read-only preflight only.
       - name: Read-only Google Drive and credential preflight
         id: drive_preflight
         run: python actions/drive_sync.py --preflight-only --output "$SSO_INPUT_ROOT"
