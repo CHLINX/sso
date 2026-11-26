@@ -1,0 +1,74 @@
+name: SSO F04 H0 Actions Pilot
+
+# Pilot only: push-triggered self-test on the isolated audit branch.
+# No scheduled/live freeze/close runs are enabled here.
+on:
+  push:
+    branches:
+      - "audit/sso-fugle-f04-actions-pilot_20261126"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sso-f04-actions-pilot-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  f04-self-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout isolated pilot branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: actions/requirements.txt
+
+      - name: Install pinned dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r actions/requirements.txt
+
+      - name: Run original F04 v2.0.1 self-test
+        run: python actions/11.py --self-test
+
+      - name: Write pilot execution receipt
+        if: success()
+        env:
+          GH_SHA: ${{ github.sha }}
+          GH_RUN_ID: ${{ github.run_id }}
+          GH_RUN_NUMBER: ${{ github.run_number }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from datetime import datetime, timezone
+          payload = {
+              "status": "SELF_TEST_PASS",
+              "workflow": "SSO F04 H0 Actions Pilot",
+              "source_version": "SSO_F04_H0_FORWARD_SHADOW_VALIDATION_v2.0.1",
+              "commit": os.environ["GH_SHA"],
+              "run_id": os.environ["GH_RUN_ID"],
+              "run_number": os.environ["GH_RUN_NUMBER"],
+              "created_at_utc": datetime.now(timezone.utc).isoformat(),
+              "scope": "SELF_TEST_ONLY_NO_MARKET_API_NO_DRIVE_NO_LIVE_RUN"
+          }
+          with open("actions-pilot-result.json", "w", encoding="utf-8") as f:
+              json.dump(payload, f, ensure_ascii=False, indent=2)
+          print(json.dumps(payload, ensure_ascii=False))
+          PY
+
+      - name: Upload test receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sso-f04-actions-pilot-receipt
+          path: actions-pilot-result.json
+          if-no-files-found: ignore
+          retention-days: 30
