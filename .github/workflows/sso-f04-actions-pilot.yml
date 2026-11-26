@@ -1,28 +1,80 @@
 name: SSO F04 H0 Actions Pilot
 
-# Pilot only: push-triggered self-test on the isolated audit branch.
-# No scheduled/live freeze/close runs are enabled here.
+# This workflow is deliberately staged in an audit branch first.
+# Scheduled events become active only after this file is merged to the default branch.
 on:
   push:
     branches:
       - "audit/sso-fugle-f04-actions-pilot_20261126"
+  workflow_dispatch:
+    inputs:
+      phase:
+        description: "self-test only, or run a real prospective phase after secrets are configured"
+        required: true
+        type: choice
+        default: self-test
+        options:
+          - self-test
+          - freeze
+          - close
+  schedule:
+    # 08:35 Taipei (00:35 UTC): preload Drive data before the 09:00:05 snapshot window.
+    - cron: "35 0 * * 1-5"
+    # 16:40 Taipei (08:40 UTC): close-stage historical minute candles.
+    - cron: "40 8 * * 1-5"
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
-  group: sso-f04-actions-pilot-${{ github.ref }}
+  group: sso-f04-h0-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
-  f04-self-test:
+  f04:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 60
+    env:
+      GOOGLE_DRIVE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS_JSON }}
+      SSO_BASE_FILE_ID: ${{ secrets.SSO_BASE_FILE_ID }}
+      SSO_INCREMENT_FOLDER_ID: ${{ secrets.SSO_INCREMENT_FOLDER_ID }}
+      FUGLE_API: ${{ secrets.FUGLE_API }}
+      FUGLE_API_KEY: ${{ secrets.FUGLE_API_KEY }}
+      GITHUB_TOKEN: ${{ github.token }}
+      SSO_REPORT_ROOT: ${{ runner.temp }}/sso-f04-reports
+      SSO_INPUT_ROOT: ${{ runner.temp }}/sso-f04-input
+      GITHUB_EVENT_SCHEDULE: ${{ github.event.schedule }}
+      DISPATCH_PHASE: ${{ inputs.phase || 'self-test' }}
     steps:
-      - name: Checkout isolated pilot branch
+      - name: Checkout isolated workflow source
         uses: actions/checkout@v4
         with:
           persist-credentials: false
+
+      - name: Select run phase
+        id: phase
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$GITHUB_EVENT_NAME" == "schedule" ]]; then
+            case "$GITHUB_EVENT_SCHEDULE" in
+              "35 0 * * 1-5") phase="freeze" ;;
+              "40 8 * * 1-5") phase="close" ;;
+              *) echo "Unknown schedule: $GITHUB_EVENT_SCHEDULE" >&2; exit 2 ;;
+            esac
+          elif [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
+            phase="$DISPATCH_PHASE"
+          else
+            phase="self-test"
+          fi
+          echo "phase=$phase" >> "$GITHUB_OUTPUT"
+          echo "[PHASE] $phase"
+
+      - name: Prepare runner directories
+        run: |
+          sudo mkdir -p /content
+          sudo chown "$USER":"$USER" /content
+          mkdir -p "$SSO_REPORT_ROOT" "$SSO_INPUT_ROOT"
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -39,36 +91,37 @@ jobs:
       - name: Run original F04 v2.0.1 self-test
         run: python actions/11.py --self-test
 
-      - name: Write pilot execution receipt
-        if: success()
-        env:
-          GH_SHA: ${{ github.sha }}
-          GH_RUN_ID: ${{ github.run_id }}
-          GH_RUN_NUMBER: ${{ github.run_number }}
-        run: |
-          python - <<'PY'
-          import json, os
-          from datetime import datetime, timezone
-          payload = {
-              "status": "SELF_TEST_PASS",
-              "workflow": "SSO F04 H0 Actions Pilot",
-              "source_version": "SSO_F04_H0_FORWARD_SHADOW_VALIDATION_v2.0.1",
-              "commit": os.environ["GH_SHA"],
-              "run_id": os.environ["GH_RUN_ID"],
-              "run_number": os.environ["GH_RUN_NUMBER"],
-              "created_at_utc": datetime.now(timezone.utc).isoformat(),
-              "scope": "SELF_TEST_ONLY_NO_MARKET_API_NO_DRIVE_NO_LIVE_RUN"
-          }
-          with open("actions-pilot-result.json", "w", encoding="utf-8") as f:
-              json.dump(payload, f, ensure_ascii=False, indent=2)
-          print(json.dumps(payload, ensure_ascii=False))
-          PY
+      - name: Read-only Google Drive and credential preflight
+        id: drive_preflight
+        run: python actions/drive_sync.py --preflight-only --output "$SSO_INPUT_ROOT"
 
-      - name: Upload test receipt
+      - name: Report staged configuration state
+        if: steps.drive_preflight.outputs.ready != 'true'
+        run: |
+          echo "::warning::F04 live phase is BLOCKED until the listed GitHub Actions Secrets are configured. No market API was called and no Top10 was frozen."
+          cat "$SSO_INPUT_ROOT/drive_sync_result.json"
+
+      - name: Download pinned base and official SSO increments (Drive read-only)
+        if: steps.phase.outputs.phase != 'self-test' && steps.drive_preflight.outputs.ready == 'true'
+        run: python actions/drive_sync.py --sync --output "$SSO_INPUT_ROOT"
+
+      - name: Run prospective F04 phase
+        if: steps.phase.outputs.phase != 'self-test' && steps.drive_preflight.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE_FILE="$SSO_INPUT_ROOT/data/base/相對價格因子與前瞻報酬研究資料_v2.31.csv.gz"
+          INC_DIR="$SSO_INPUT_ROOT/data/increments"
+          test -s "$BASE_FILE"
+          python actions/11.py             --base-data "$BASE_FILE"             --increment-dir "$INC_DIR"             --phase "${{ steps.phase.outputs.phase }}"
+
+      - name: Upload run diagnostics
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: sso-f04-actions-pilot-receipt
-          path: actions-pilot-result.json
+          name: sso-f04-actions-${{ steps.phase.outputs.phase }}-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/sso-f04-input/drive_sync_result.json
+            ${{ runner.temp }}/sso-f04-reports/**
           if-no-files-found: ignore
           retention-days: 30
