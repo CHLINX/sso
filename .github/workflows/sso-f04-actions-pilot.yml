@@ -97,9 +97,15 @@ jobs:
 
       - name: Report staged configuration state
         if: steps.drive_preflight.outputs.ready != 'true'
+        env:
+          RUN_PHASE: ${{ steps.phase.outputs.phase }}
         run: |
           echo "::warning::F04 live phase is BLOCKED until the listed GitHub Actions Secrets are configured. No market API was called and no Top10 was frozen."
           cat "$SSO_INPUT_ROOT/drive_sync_result.json"
+          if [[ "$RUN_PHASE" != "self-test" ]]; then
+            echo "::error::Refusing live F04 run because Drive/Fugle/GitHub configuration is incomplete."
+            exit 1
+          fi
 
       - name: Download pinned base and official SSO increments (Drive read-only)
         if: steps.phase.outputs.phase != 'self-test' && steps.drive_preflight.outputs.ready == 'true'
@@ -121,7 +127,7 @@ jobs:
         with:
           name: sso-f04-actions-${{ steps.phase.outputs.phase }}-${{ github.run_id }}
           path: |
-            ${{ runner.temp }}/sso-f04-input/drive_sync_result.json
-            ${{ runner.temp }}/sso-f04-reports/**
+            /tmp/sso-f04-input/drive_sync_result.json
+            /tmp/sso-f04-reports/**
           if-no-files-found: ignore
           retention-days: 30
