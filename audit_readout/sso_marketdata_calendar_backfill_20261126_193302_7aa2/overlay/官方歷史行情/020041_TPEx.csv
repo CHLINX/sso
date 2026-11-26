@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,020041,兆豐半導體氣候N,16.17,16.25,15.11,15.12,57000,43,884170,TPEX_afterTrading_otc_type_EW,-1.59
+2026-11-17,TPEX,020041,兆豐半導體氣候N,13.95,14.44,13.9,13.9,53000,20,755500,TPEX_afterTrading_otc_type_EW,-1.22
+2026-11-24,TPEX,020041,兆豐半導體氣候N,13.0,13.0,13.0,13.0,1000,1,13000,TPEX_afterTrading_otc_type_EW,1.18
+2026-11-25,TPEX,020041,兆豐半導體氣候N,12.76,12.76,11.82,12.0,90000,19,1131570,TPEX_afterTrading_otc_type_EW,-1.0
+2026-11-26,TPEX,020041,兆豐半導體氣候N,12.76,12.91,12.76,12.84,166000,10,2127250,TPEX_afterTrading_otc_type_EW,0.84

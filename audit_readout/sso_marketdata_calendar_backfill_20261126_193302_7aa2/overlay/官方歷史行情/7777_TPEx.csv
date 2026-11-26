@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,7777,能率亞洲,28.05,28.05,25.55,25.65,1459000,797,38733250,TPEX_afterTrading_otc_type_EW,-2.7
+2026-11-17,TPEX,7777,能率亞洲,25.1,25.85,24.6,25.25,750000,507,18894850,TPEX_afterTrading_otc_type_EW,-0.4
+2026-11-24,TPEX,7777,能率亞洲,23.25,23.25,23.25,23.25,93000,70,2162250,TPEX_afterTrading_otc_type_EW,2.1
+2026-11-25,TPEX,7777,能率亞洲,23.1,23.1,21.0,21.15,602000,389,13090300,TPEX_afterTrading_otc_type_EW,-2.1
+2026-11-26,TPEX,7777,能率亞洲,21.7,22.35,21.5,22.25,402000,291,8845300,TPEX_afterTrading_otc_type_EW,1.1

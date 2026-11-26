@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2887G,台新新光庚特一,44.2,44.25,43.9,43.9,42542,46,1875950,TWSE_MI_INDEX,0.1
+2026-11-17,TWSE,2887G,台新新光庚特一,43.85,43.9,43.85,43.9,45558,18,1998494,TWSE_MI_INDEX,0.0
+2026-11-24,TWSE,2887G,台新新光庚特一,43.55,43.55,43.25,43.3,95436,51,4134883,TWSE_MI_INDEX,0.6
+2026-11-25,TWSE,2887G,台新新光庚特一,43.1,43.1,42.8,43.1,82000,55,3521700,TWSE_MI_INDEX,0.2
+2026-11-26,TWSE,2887G,台新新光庚特一,43.0,43.4,42.9,43.1,303166,114,13075418,TWSE_MI_INDEX,0.0

@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6931,青松健康,35.65,35.9,34.4,34.4,102216,80,3604017,TWSE_MI_INDEX,1.15
+2026-11-17,TWSE,6931,青松健康,34.2,35.05,34.0,35.0,108522,87,3741399,TWSE_MI_INDEX,0.6
+2026-11-24,TWSE,6931,青松健康,34.85,35.5,34.2,35.1,55859,80,1945496,TWSE_MI_INDEX,0.55
+2026-11-25,TWSE,6931,青松健康,34.2,35.3,33.25,35.3,96279,79,3331983,TWSE_MI_INDEX,0.2
+2026-11-26,TWSE,6931,青松健康,36.45,36.45,35.05,35.5,32730,50,1160333,TWSE_MI_INDEX,0.2

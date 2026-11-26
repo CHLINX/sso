@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00982T,平衡兆豐台美動能,13.3,13.3,13.11,13.11,13100,49,172484,TWSE_MI_INDEX,0.56
+2026-11-17,TWSE,00982T,平衡兆豐台美動能,12.7,13.0,12.7,12.7,50700,36,650362,TWSE_MI_INDEX,0.41
+2026-11-24,TWSE,00982T,平衡兆豐台美動能,13.79,13.79,13.1,13.1,74675,39,988652,TWSE_MI_INDEX,0.99
+2026-11-25,TWSE,00982T,平衡兆豐台美動能,12.39,12.39,12.04,12.35,32518,28,398451,TWSE_MI_INDEX,0.75
+2026-11-26,TWSE,00982T,平衡兆豐台美動能,12.58,12.68,12.58,12.68,9776,15,123163,TWSE_MI_INDEX,0.33

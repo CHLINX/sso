@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6552,易華電,19.6,19.6,18.5,18.5,53454,55,1012610,TWSE_MI_INDEX,0.8
+2026-11-17,TWSE,6552,易華電,18.5,18.75,18.2,18.2,65460,70,1209252,TWSE_MI_INDEX,0.3
+2026-11-24,TWSE,6552,易華電,17.8,18.7,17.8,18.4,97421,108,1800390,TWSE_MI_INDEX,1.4
+2026-11-25,TWSE,6552,易華電,17.4,18.2,16.8,16.8,88549,99,1532597,TWSE_MI_INDEX,1.6
+2026-11-26,TWSE,6552,易華電,17.05,17.3,16.75,16.85,58420,130,992309,TWSE_MI_INDEX,0.05

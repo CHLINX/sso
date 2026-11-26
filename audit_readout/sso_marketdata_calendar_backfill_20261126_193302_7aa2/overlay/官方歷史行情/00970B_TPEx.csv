@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00970B,台新BBB投等債20+,8.99,8.99,8.97,8.98,228000,45,2047600,TPEX_afterTrading_otc_type_EW,
+2026-11-17,TPEX,00970B,台新BBB投等債20+,8.96,8.98,8.95,8.96,1035000,64,9283240,TPEX_afterTrading_otc_type_EW,-0.02
+2026-11-24,TPEX,00970B,台新BBB投等債20+,9.01,9.07,9.01,9.07,1488000,62,13471790,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-25,TPEX,00970B,台新BBB投等債20+,9.02,9.04,9.02,9.03,5715000,1151,51583310,TPEX_afterTrading_otc_type_EW,-0.04
+2026-11-26,TPEX,00970B,台新BBB投等債20+,9.04,9.12,9.04,9.08,2829000,87,25712210,TPEX_afterTrading_otc_type_EW,0.05

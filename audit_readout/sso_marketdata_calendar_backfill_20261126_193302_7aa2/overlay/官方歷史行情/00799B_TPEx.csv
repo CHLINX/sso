@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00799B,國泰A級醫療債,29.01,29.01,28.96,28.98,256000,27,7417120,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-17,TPEX,00799B,國泰A級醫療債,28.81,28.81,28.5,28.54,402000,33,11474610,TPEX_afterTrading_otc_type_EW,
+2026-11-24,TPEX,00799B,國泰A級醫療債,28.87,29.06,28.87,29.04,204000,21,5910940,TPEX_afterTrading_otc_type_EW,0.17
+2026-11-25,TPEX,00799B,國泰A級醫療債,29.03,29.1,29.01,29.07,341000,28,9917340,TPEX_afterTrading_otc_type_EW,0.03
+2026-11-26,TPEX,00799B,國泰A級醫療債,29.12,29.3,29.12,29.18,182000,13,5314080,TPEX_afterTrading_otc_type_EW,0.11

@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6649,台生材,35.4,35.4,35.15,35.15,2000,2,70550,TPEX_afterTrading_otc_type_EW,-0.3
+2026-11-17,TPEX,6649,台生材,35.0,35.15,34.3,35.0,8000,8,277900,TPEX_afterTrading_otc_type_EW,-0.15
+2026-11-24,TPEX,6649,台生材,30.1,31.45,30.0,30.4,27000,24,826100,TPEX_afterTrading_otc_type_EW,1.05
+2026-11-25,TPEX,6649,台生材,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,
+2026-11-26,TPEX,6649,台生材,30.35,30.35,29.25,29.8,5000,5,150000,TPEX_afterTrading_otc_type_EW,-0.6

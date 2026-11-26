@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00741B,富邦全球非投等債,37.41,37.66,37.41,37.6,117000,16,4404160,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-17,TPEX,00741B,富邦全球非投等債,37.47,37.54,37.42,37.49,162000,18,6073830,TPEX_afterTrading_otc_type_EW,
+2026-11-24,TPEX,00741B,富邦全球非投等債,36.99,37.31,36.99,37.31,55000,7,2051470,TPEX_afterTrading_otc_type_EW,0.06
+2026-11-25,TPEX,00741B,富邦全球非投等債,37.22,37.33,37.22,37.25,204000,15,7608970,TPEX_afterTrading_otc_type_EW,-0.06
+2026-11-26,TPEX,00741B,富邦全球非投等債,37.04,37.42,37.04,37.32,106000,10,3954670,TPEX_afterTrading_otc_type_EW,0.07

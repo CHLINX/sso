@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6794,向榮生技,65.8,69.4,65.8,67.5,6133030,120,386988901,TWSE_MI_INDEX,1.7
+2026-11-17,TWSE,6794,向榮生技,68.9,74.2,67.5,74.2,118169,87,8246586,TWSE_MI_INDEX,6.7
+2026-11-24,TWSE,6794,向榮生技,71.5,71.5,66.1,68.0,6196,12,428166,TWSE_MI_INDEX,3.0
+2026-11-25,TWSE,6794,向榮生技,66.0,67.5,63.0,63.6,33067,30,2127966,TWSE_MI_INDEX,4.4
+2026-11-26,TWSE,6794,向榮生技,65.0,66.8,64.7,65.7,22488,45,1480268,TWSE_MI_INDEX,2.1

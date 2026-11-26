@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,8487,愛爾達-創,64.7,64.7,62.5,63.2,14008,68,884794,TWSE_MI_INDEX,1.6
+2026-11-17,TWSE,8487,愛爾達-創,62.3,62.8,62.1,62.8,13117,48,819761,TWSE_MI_INDEX,0.4
+2026-11-24,TWSE,8487,愛爾達-創,57.1,58.0,57.1,58.0,33479,47,1936026,TWSE_MI_INDEX,0.8
+2026-11-25,TWSE,8487,愛爾達-創,57.0,58.6,56.9,58.3,20977,48,1215579,TWSE_MI_INDEX,0.3
+2026-11-26,TWSE,8487,愛爾達-創,59.9,60.4,58.3,58.3,21340,46,1265859,TWSE_MI_INDEX,0.0

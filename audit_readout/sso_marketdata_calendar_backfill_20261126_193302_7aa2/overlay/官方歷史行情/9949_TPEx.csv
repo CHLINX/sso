@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,9949,琉園,24.0,24.4,24.0,24.05,6000,4,144550,TPEX_afterTrading_otc_type_EW,-0.25
+2026-11-17,TPEX,9949,琉園,24.0,24.2,24.0,24.0,10000,9,240250,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-24,TPEX,9949,琉園,23.75,23.9,23.6,23.6,14000,13,332500,TPEX_afterTrading_otc_type_EW,0.1
+2026-11-25,TPEX,9949,琉園,23.5,23.6,23.1,23.55,15000,14,350500,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-26,TPEX,9949,琉園,23.5,23.8,23.5,23.8,2000,2,47300,TPEX_afterTrading_otc_type_EW,0.25

@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,9937,全國,54.2,54.2,53.4,54.1,59450,64,3208155,TWSE_MI_INDEX,0.1
+2026-11-17,TWSE,9937,全國,54.4,54.5,53.8,54.2,66113,71,3586685,TWSE_MI_INDEX,0.1
+2026-11-24,TWSE,9937,全國,53.7,54.1,53.4,53.8,48070,41,2579858,TWSE_MI_INDEX,0.1
+2026-11-25,TWSE,9937,全國,52.8,54.0,52.5,53.7,150196,101,8026411,TWSE_MI_INDEX,0.1
+2026-11-26,TWSE,9937,全國,53.9,53.9,53.7,53.9,44515,59,2395272,TWSE_MI_INDEX,0.2

@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00756B,群益投等新興公債,30.3,30.35,30.24,30.28,151000,29,4578930,TPEX_afterTrading_otc_type_EW,-0.02
+2026-11-17,TPEX,00756B,群益投等新興公債,29.91,29.91,29.69,29.69,120000,13,3570620,TPEX_afterTrading_otc_type_EW,
+2026-11-24,TPEX,00756B,群益投等新興公債,29.64,29.79,29.64,29.72,101000,19,2998910,TPEX_afterTrading_otc_type_EW,0.07
+2026-11-25,TPEX,00756B,群益投等新興公債,29.72,29.77,29.63,29.76,420000,54,12480970,TPEX_afterTrading_otc_type_EW,0.04
+2026-11-26,TPEX,00756B,群益投等新興公債,29.9,29.98,29.72,29.94,407000,54,12172530,TPEX_afterTrading_otc_type_EW,0.18

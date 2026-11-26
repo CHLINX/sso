@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,009820,元大納斯達克精選,9.46,9.46,9.36,9.38,3798957,753,35663129,TWSE_MI_INDEX,0.22
+2026-11-17,TWSE,009820,元大納斯達克精選,9.19,9.24,9.15,9.2,4989169,519,45894752,TWSE_MI_INDEX,0.18
+2026-11-24,TWSE,009820,元大納斯達克精選,9.0,9.1,8.96,8.99,4905519,970,44243389,TWSE_MI_INDEX,0.31
+2026-11-25,TWSE,009820,元大納斯達克精選,8.7,8.7,8.56,8.57,3716500,824,32040082,TWSE_MI_INDEX,0.42
+2026-11-26,TWSE,009820,元大納斯達克精選,8.7,8.76,8.69,8.76,2771269,436,24203589,TWSE_MI_INDEX,0.19

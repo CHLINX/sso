@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00867B,台新A-BBB電信債,29.05,29.05,28.95,28.95,402000,9,11638100,TPEX_afterTrading_otc_type_EW,
+2026-11-17,TPEX,00867B,台新A-BBB電信債,28.98,29.09,28.95,28.98,462000,13,13392900,TPEX_afterTrading_otc_type_EW,0.03
+2026-11-24,TPEX,00867B,台新A-BBB電信債,29.13,29.26,29.13,29.26,265000,7,7752250,TPEX_afterTrading_otc_type_EW,0.23
+2026-11-25,TPEX,00867B,台新A-BBB電信債,29.4,29.4,29.4,29.4,400000,16,11760000,TPEX_afterTrading_otc_type_EW,0.14
+2026-11-26,TPEX,00867B,台新A-BBB電信債,29.4,29.57,29.4,29.57,821000,22,24276800,TPEX_afterTrading_otc_type_EW,0.17

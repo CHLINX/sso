@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00884B,中信低碳新興債,28.28,28.4,28.28,28.37,202000,6,5730680,TPEX_afterTrading_otc_type_EW,0.04
+2026-11-17,TPEX,00884B,中信低碳新興債,28.18,28.18,28.16,28.16,200000,4,5634000,TPEX_afterTrading_otc_type_EW,-0.21
+2026-11-24,TPEX,00884B,中信低碳新興債,28.28,28.45,28.28,28.45,201000,5,5717280,TPEX_afterTrading_otc_type_EW,0.28
+2026-11-25,TPEX,00884B,中信低碳新興債,28.44,28.44,28.44,28.44,200000,4,5688000,TPEX_afterTrading_otc_type_EW,-0.01
+2026-11-26,TPEX,00884B,中信低碳新興債,28.5,28.52,28.39,28.43,1057000,38,30031230,TPEX_afterTrading_otc_type_EW,-0.01

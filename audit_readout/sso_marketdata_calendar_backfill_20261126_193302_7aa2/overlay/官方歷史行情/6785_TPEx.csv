@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6785,昱展新藥,80.3,81.6,77.1,77.1,29000,27,2290600,TPEX_afterTrading_otc_type_EW,-3.6
+2026-11-17,TPEX,6785,昱展新藥,76.0,76.6,73.8,75.9,56000,52,4219300,TPEX_afterTrading_otc_type_EW,-1.2
+2026-11-24,TPEX,6785,昱展新藥,65.6,65.6,65.6,65.6,37000,29,2427200,TPEX_afterTrading_otc_type_EW,5.9
+2026-11-25,TPEX,6785,昱展新藥,70.4,70.4,61.5,65.6,60000,53,3896600,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-26,TPEX,6785,昱展新藥,66.1,67.2,65.0,65.6,34000,34,2254900,TPEX_afterTrading_otc_type_EW,0.0

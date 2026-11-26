@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6203,海韻電,50.7,50.7,47.8,47.8,77000,67,3774350,TPEX_afterTrading_otc_type_EW,-2.15
+2026-11-17,TPEX,6203,海韻電,47.5,49.35,47.15,47.5,49000,41,2342550,TPEX_afterTrading_otc_type_EW,-0.3
+2026-11-24,TPEX,6203,海韻電,47.7,49.6,47.7,48.6,61000,54,2971350,TPEX_afterTrading_otc_type_EW,2.95
+2026-11-25,TPEX,6203,海韻電,48.6,48.6,45.1,46.45,34000,31,1576800,TPEX_afterTrading_otc_type_EW,-2.15
+2026-11-26,TPEX,6203,海韻電,46.4,46.45,45.8,46.45,23000,23,1063350,TPEX_afterTrading_otc_type_EW,0.0

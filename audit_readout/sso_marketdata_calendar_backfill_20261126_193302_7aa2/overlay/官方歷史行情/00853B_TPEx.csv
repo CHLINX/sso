@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00853B,統一美債10年Aa-A,26.74,26.82,26.74,26.81,1020000,32,27345650,TPEX_afterTrading_otc_type_EW,-0.04
+2026-11-17,TPEX,00853B,統一美債10年Aa-A,26.75,26.78,26.73,26.75,1061000,42,28402200,TPEX_afterTrading_otc_type_EW,-0.06
+2026-11-24,TPEX,00853B,統一美債10年Aa-A,26.95,27.19,26.95,27.16,1055000,36,28671770,TPEX_afterTrading_otc_type_EW,0.13
+2026-11-25,TPEX,00853B,統一美債10年Aa-A,27.08,27.19,27.08,27.16,1047000,32,28455610,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-26,TPEX,00853B,統一美債10年Aa-A,27.34,27.35,27.28,27.28,1015000,29,27750000,TPEX_afterTrading_otc_type_EW,0.12

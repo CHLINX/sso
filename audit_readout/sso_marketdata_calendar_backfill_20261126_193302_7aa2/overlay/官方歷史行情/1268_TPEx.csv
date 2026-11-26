@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,1268,漢來美食,169.5,169.5,168.0,169.0,13000,12,2193500,TPEX_afterTrading_otc_type_EW,-1.0
+2026-11-17,TPEX,1268,漢來美食,168.0,169.5,167.0,169.0,14000,14,2350000,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-24,TPEX,1268,漢來美食,165.0,172.0,165.0,170.0,39000,34,6607500,TPEX_afterTrading_otc_type_EW,10.0
+2026-11-25,TPEX,1268,漢來美食,165.0,167.5,164.0,167.5,7000,7,1162000,TPEX_afterTrading_otc_type_EW,-2.5
+2026-11-26,TPEX,1268,漢來美食,168.5,169.0,167.5,169.0,22000,15,3697500,TPEX_afterTrading_otc_type_EW,1.5

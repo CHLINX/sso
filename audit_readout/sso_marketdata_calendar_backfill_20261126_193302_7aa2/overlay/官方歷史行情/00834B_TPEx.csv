@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00834B,第一金金融債10+,33.21,33.21,33.21,33.21,100000,2,3321000,TPEX_afterTrading_otc_type_EW,0.07
+2026-11-17,TPEX,00834B,第一金金融債10+,33.15,33.15,33.15,33.15,100000,2,3315000,TPEX_afterTrading_otc_type_EW,-0.06
+2026-11-24,TPEX,00834B,第一金金融債10+,33.5,33.5,33.5,33.5,100000,2,3350000,TPEX_afterTrading_otc_type_EW,0.14
+2026-11-25,TPEX,00834B,第一金金融債10+,33.49,33.58,33.49,33.58,121000,5,4061390,TPEX_afterTrading_otc_type_EW,0.08
+2026-11-26,TPEX,00834B,第一金金融債10+,33.71,33.71,33.71,33.71,100000,2,3371000,TPEX_afterTrading_otc_type_EW,0.13

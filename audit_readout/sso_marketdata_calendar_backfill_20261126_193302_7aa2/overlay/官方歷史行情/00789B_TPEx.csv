@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00789B,復華公司債A3,46.09,46.09,46.07,46.08,210000,9,9676800,TPEX_afterTrading_otc_type_EW,0.04
+2026-11-17,TPEX,00789B,復華公司債A3,46.04,46.04,46.04,46.04,100000,4,4604000,TPEX_afterTrading_otc_type_EW,-0.04
+2026-11-24,TPEX,00789B,復華公司債A3,46.69,46.78,46.69,46.78,135000,8,6313050,TPEX_afterTrading_otc_type_EW,0.15
+2026-11-25,TPEX,00789B,復華公司債A3,46.78,46.78,46.74,46.74,101000,5,4724740,TPEX_afterTrading_otc_type_EW,-0.04
+2026-11-26,TPEX,00789B,復華公司債A3,47.1,47.16,47.09,47.16,142000,11,6695760,TPEX_afterTrading_otc_type_EW,0.42

@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,020037,元大金融高股息N,,,,,0,0,0,TWSE_MI_INDEX,0.0
+2026-11-17,TWSE,020037,元大金融高股息N,13.21,13.21,13.21,13.21,1000,1,13210,TWSE_MI_INDEX,0.0
+2026-11-24,TWSE,020037,元大金融高股息N,,,,,0,0,0,TWSE_MI_INDEX,0.0
+2026-11-25,TWSE,020037,元大金融高股息N,,,,,0,0,0,TWSE_MI_INDEX,0.0
+2026-11-26,TWSE,020037,元大金融高股息N,11.72,11.74,11.72,11.74,32000,2,375460,TWSE_MI_INDEX,0.0

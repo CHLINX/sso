@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,3317,尼克森,50.0,50.0,45.4,45.45,556000,434,26228000,TPEX_afterTrading_otc_type_EW,-4.65
+2026-11-17,TPEX,3317,尼克森,45.45,45.5,42.5,44.0,495000,427,21915250,TPEX_afterTrading_otc_type_EW,-1.45
+2026-11-24,TPEX,3317,尼克森,42.65,42.65,41.8,42.65,593000,433,25160450,TPEX_afterTrading_otc_type_EW,3.85
+2026-11-25,TPEX,3317,尼克森,41.75,41.75,38.5,39.2,367000,272,14645550,TPEX_afterTrading_otc_type_EW,-3.45
+2026-11-26,TPEX,3317,尼克森,39.5,41.35,39.5,40.35,448000,333,18096900,TPEX_afterTrading_otc_type_EW,1.15

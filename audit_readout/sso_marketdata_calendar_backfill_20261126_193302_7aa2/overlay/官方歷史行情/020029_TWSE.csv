@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,020029,元大ESG高股息N,19.12,19.12,18.8,18.8,4000,3,76040,TWSE_MI_INDEX,0.45
+2026-11-17,TWSE,020029,元大ESG高股息N,18.7,18.8,18.53,18.53,4000,4,74820,TWSE_MI_INDEX,0.27
+2026-11-24,TWSE,020029,元大ESG高股息N,18.06,18.08,18.06,18.08,8000,3,144540,TWSE_MI_INDEX,1.19
+2026-11-25,TWSE,020029,元大ESG高股息N,18.08,18.08,16.96,17.01,6000,5,104490,TWSE_MI_INDEX,1.07
+2026-11-26,TWSE,020029,元大ESG高股息N,,,,,0,0,0,TWSE_MI_INDEX,0.0

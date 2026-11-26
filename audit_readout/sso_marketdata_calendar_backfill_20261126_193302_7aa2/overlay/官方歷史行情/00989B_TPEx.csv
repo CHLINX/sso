@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00989B,台新美國非投等債,9.89,9.93,9.89,9.89,3964000,162,39265740,TPEX_afterTrading_otc_type_EW,
+2026-11-17,TPEX,00989B,台新美國非投等債,9.87,9.9,9.87,9.88,3410000,141,33713510,TPEX_afterTrading_otc_type_EW,-0.01
+2026-11-24,TPEX,00989B,台新美國非投等債,9.81,9.83,9.79,9.83,1206000,85,11832030,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-25,TPEX,00989B,台新美國非投等債,9.79,9.82,9.79,9.8,4705000,91,46092330,TPEX_afterTrading_otc_type_EW,-0.03
+2026-11-26,TPEX,00989B,台新美國非投等債,9.83,9.85,9.79,9.79,3193000,77,31329750,TPEX_afterTrading_otc_type_EW,-0.01

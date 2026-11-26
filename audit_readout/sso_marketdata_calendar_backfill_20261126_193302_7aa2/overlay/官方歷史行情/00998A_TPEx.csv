@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00998A,主動復華金融股息,16.67,16.89,16.67,16.81,6483000,990,109183130,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-17,TPEX,00998A,主動復華金融股息,16.75,16.75,16.6,16.71,3983000,661,66588840,TPEX_afterTrading_otc_type_EW,-0.1
+2026-11-24,TPEX,00998A,主動復華金融股息,16.13,16.35,15.88,15.9,6303000,1781,101141850,TPEX_afterTrading_otc_type_EW,0.18
+2026-11-25,TPEX,00998A,主動復華金融股息,15.9,15.91,15.74,15.76,3587000,1021,56589900,TPEX_afterTrading_otc_type_EW,-0.14
+2026-11-26,TPEX,00998A,主動復華金融股息,15.76,15.81,15.67,15.74,3775000,1023,59385670,TPEX_afterTrading_otc_type_EW,-0.02

@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,8102,傑霖科技,45.5,45.5,43.6,43.8,22000,19,977000,TPEX_afterTrading_otc_type_EW,-3.55
+2026-11-17,TPEX,8102,傑霖科技,43.8,43.8,43.8,43.8,2000,2,87600,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-24,TPEX,8102,傑霖科技,48.0,48.0,46.8,46.8,8000,7,379400,TPEX_afterTrading_otc_type_EW,2.9
+2026-11-25,TPEX,8102,傑霖科技,42.4,42.7,42.4,42.45,6000,6,255150,TPEX_afterTrading_otc_type_EW,-4.35
+2026-11-26,TPEX,8102,傑霖科技,42.45,42.45,40.3,40.3,2000,2,82750,TPEX_afterTrading_otc_type_EW,-2.15

@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6223,旺矽,4550.0,4600.0,4305.0,4305.0,1206000,1060,5308100000,TPEX_afterTrading_otc_type_EW,-365.0
+2026-11-17,TPEX,6223,旺矽,3930.0,4185.0,3880.0,3995.0,1476000,1357,5921520000,TPEX_afterTrading_otc_type_EW,-310.0
+2026-11-24,TPEX,6223,旺矽,4185.0,4185.0,4185.0,4185.0,77000,42,322245000,TPEX_afterTrading_otc_type_EW,380.0
+2026-11-25,TPEX,6223,旺矽,3805.0,4105.0,3770.0,3770.0,1450000,1286,5610860000,TPEX_afterTrading_otc_type_EW,-415.0
+2026-11-26,TPEX,6223,旺矽,3940.0,4135.0,3885.0,4115.0,1113000,1004,4512735000,TPEX_afterTrading_otc_type_EW,345.0

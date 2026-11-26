@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,4442,竣邦-KY,52.5,52.6,50.5,50.5,76000,46,3907600,TPEX_afterTrading_otc_type_EW,-1.8
+2026-11-17,TPEX,4442,竣邦-KY,50.2,50.8,49.95,50.8,22000,16,1102750,TPEX_afterTrading_otc_type_EW,0.3
+2026-11-24,TPEX,4442,竣邦-KY,51.0,52.4,51.0,52.4,43000,32,2235700,TPEX_afterTrading_otc_type_EW,2.1
+2026-11-25,TPEX,4442,竣邦-KY,50.7,51.5,50.5,50.7,12000,8,613400,TPEX_afterTrading_otc_type_EW,-1.7
+2026-11-26,TPEX,4442,竣邦-KY,50.8,51.3,50.6,50.8,33000,15,1677500,TPEX_afterTrading_otc_type_EW,0.1

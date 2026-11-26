@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,8042,金山電,123.0,123.5,112.5,112.5,5804000,4032,670279000,TPEX_afterTrading_otc_type_EW,-12.0
+2026-11-17,TPEX,8042,金山電,104.0,107.5,101.5,101.5,4914000,3445,507563500,TPEX_afterTrading_otc_type_EW,-11.0
+2026-11-24,TPEX,8042,金山電,85.8,85.8,85.8,85.8,580000,439,49764000,TPEX_afterTrading_otc_type_EW,7.8
+2026-11-25,TPEX,8042,金山電,81.1,83.0,77.3,77.3,923000,739,72617700,TPEX_afterTrading_otc_type_EW,-8.5
+2026-11-26,TPEX,8042,金山電,78.7,82.8,78.7,80.9,783000,673,63158800,TPEX_afterTrading_otc_type_EW,3.6

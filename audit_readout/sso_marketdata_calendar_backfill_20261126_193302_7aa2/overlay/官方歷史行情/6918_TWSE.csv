@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6918,愛派司,73.0,73.8,73.0,73.8,22893,62,1679486,TWSE_MI_INDEX,0.4
+2026-11-17,TWSE,6918,愛派司,74.4,74.4,72.6,73.0,15665,45,1145514,TWSE_MI_INDEX,0.8
+2026-11-24,TWSE,6918,愛派司,71.0,72.6,71.0,71.9,15451,25,1106591,TWSE_MI_INDEX,1.2
+2026-11-25,TWSE,6918,愛派司,70.4,71.5,69.1,69.1,43053,48,3008900,TWSE_MI_INDEX,2.8
+2026-11-26,TWSE,6918,愛派司,74.3,74.3,71.5,72.0,15262,32,1107978,TWSE_MI_INDEX,2.9

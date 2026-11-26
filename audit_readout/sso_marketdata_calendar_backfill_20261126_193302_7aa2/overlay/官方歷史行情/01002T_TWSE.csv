@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,01002T,土銀國泰R1,12.47,12.47,12.42,12.42,28000,5,348010,TWSE_MI_INDEX,0.0
+2026-11-17,TWSE,01002T,土銀國泰R1,12.41,12.41,12.4,12.4,29002,6,359677,TWSE_MI_INDEX,0.02
+2026-11-24,TWSE,01002T,土銀國泰R1,12.16,12.17,12.16,12.17,9000,2,109460,TWSE_MI_INDEX,0.01
+2026-11-25,TWSE,01002T,土銀國泰R1,,,,,0,0,0,TWSE_MI_INDEX,0.0
+2026-11-26,TWSE,01002T,土銀國泰R1,12.12,12.19,12.01,12.19,9000,6,109010,TWSE_MI_INDEX,0.0

@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6968,萬達寵物,39.8,39.8,38.65,38.65,42000,37,1634400,TPEX_afterTrading_otc_type_EW,-0.8
+2026-11-17,TPEX,6968,萬達寵物,38.5,38.8,38.0,38.5,43000,32,1649600,TPEX_afterTrading_otc_type_EW,-0.15
+2026-11-24,TPEX,6968,萬達寵物,36.65,38.0,36.05,38.0,53000,40,1969600,TPEX_afterTrading_otc_type_EW,1.55
+2026-11-25,TPEX,6968,萬達寵物,37.15,37.8,36.7,37.5,69000,33,2575700,TPEX_afterTrading_otc_type_EW,-0.5
+2026-11-26,TPEX,6968,萬達寵物,37.5,37.6,36.35,36.35,147000,75,5438550,TPEX_afterTrading_otc_type_EW,-1.15

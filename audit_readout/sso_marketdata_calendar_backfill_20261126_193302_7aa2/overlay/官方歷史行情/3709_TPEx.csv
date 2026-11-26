@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,3709,鑫聯大投控,61.5,61.5,58.0,58.0,283000,205,16942300,TPEX_afterTrading_otc_type_EW,-3.5
+2026-11-17,TPEX,3709,鑫聯大投控,57.8,58.0,54.8,56.2,424000,318,24126300,TPEX_afterTrading_otc_type_EW,-1.8
+2026-11-24,TPEX,3709,鑫聯大投控,51.9,52.4,51.4,51.4,721000,482,37393200,TPEX_afterTrading_otc_type_EW,3.75
+2026-11-25,TPEX,3709,鑫聯大投控,50.0,50.1,46.8,47.05,570000,342,27530100,TPEX_afterTrading_otc_type_EW,-4.35
+2026-11-26,TPEX,3709,鑫聯大投控,47.9,50.2,47.85,49.8,471000,305,23051450,TPEX_afterTrading_otc_type_EW,2.75

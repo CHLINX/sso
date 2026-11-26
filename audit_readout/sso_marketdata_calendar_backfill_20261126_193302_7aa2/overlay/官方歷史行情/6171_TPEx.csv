@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6171,大城地產,25.6,25.6,23.45,23.65,25000,23,598050,TPEX_afterTrading_otc_type_EW,-0.3
+2026-11-17,TPEX,6171,大城地產,23.35,23.65,23.3,23.55,25000,20,587050,TPEX_afterTrading_otc_type_EW,-0.1
+2026-11-24,TPEX,6171,大城地產,24.2,24.2,24.2,24.2,1000,1,24200,TPEX_afterTrading_otc_type_EW,0.7
+2026-11-25,TPEX,6171,大城地產,24.45,24.45,21.8,21.95,153000,89,3343450,TPEX_afterTrading_otc_type_EW,-2.25
+2026-11-26,TPEX,6171,大城地產,22.3,24.1,22.3,23.9,47000,41,1100950,TPEX_afterTrading_otc_type_EW,1.95

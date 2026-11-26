@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,8931,大汽電,40.6,41.0,39.7,39.7,92000,54,3715150,TPEX_afterTrading_otc_type_EW,-1.55
+2026-11-17,TPEX,8931,大汽電,39.85,39.85,39.25,39.7,8000,8,316350,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-24,TPEX,8931,大汽電,37.2,39.2,37.2,38.0,13000,9,497500,TPEX_afterTrading_otc_type_EW,1.35
+2026-11-25,TPEX,8931,大汽電,37.9,37.9,36.5,37.2,34000,15,1275150,TPEX_afterTrading_otc_type_EW,-0.8
+2026-11-26,TPEX,8931,大汽電,37.2,38.3,37.2,38.15,14000,9,524750,TPEX_afterTrading_otc_type_EW,0.95

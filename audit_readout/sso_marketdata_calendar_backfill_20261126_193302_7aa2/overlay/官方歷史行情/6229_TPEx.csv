@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6229,研通,23.2,23.8,22.55,22.55,309000,223,7174700,TPEX_afterTrading_otc_type_EW,-0.65
+2026-11-17,TPEX,6229,研通,22.45,23.3,21.6,22.0,299000,255,6677550,TPEX_afterTrading_otc_type_EW,-0.55
+2026-11-24,TPEX,6229,研通,19.85,20.55,19.45,19.7,131000,109,2627400,TPEX_afterTrading_otc_type_EW,0.75
+2026-11-25,TPEX,6229,研通,18.75,19.45,18.3,18.95,98000,65,1833050,TPEX_afterTrading_otc_type_EW,-0.75
+2026-11-26,TPEX,6229,研通,19.1,19.55,18.9,19.25,89000,65,1699600,TPEX_afterTrading_otc_type_EW,0.3

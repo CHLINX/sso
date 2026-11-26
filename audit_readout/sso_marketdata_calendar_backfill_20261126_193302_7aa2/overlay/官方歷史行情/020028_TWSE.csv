@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,020028,元大特選電動車N,16.45,16.45,16.11,16.11,5000,3,81660,TWSE_MI_INDEX,1.23
+2026-11-17,TWSE,020028,元大特選電動車N,15.48,15.65,15.4,15.4,3000,3,46530,TWSE_MI_INDEX,0.71
+2026-11-24,TWSE,020028,元大特選電動車N,15.12,15.12,15.12,15.12,1000,1,15120,TWSE_MI_INDEX,1.37
+2026-11-25,TWSE,020028,元大特選電動車N,14.38,14.6,14.11,14.6,42000,4,602380,TWSE_MI_INDEX,0.52
+2026-11-26,TWSE,020028,元大特選電動車N,15.38,15.53,15.38,15.53,7000,3,108090,TWSE_MI_INDEX,0.93

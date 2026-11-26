@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00754B,群益AAA-AA公司債,31.72,31.72,31.66,31.71,123000,8,3899420,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-17,TPEX,00754B,群益AAA-AA公司債,31.07,31.17,31.07,31.14,102000,6,3176740,TPEX_afterTrading_otc_type_EW,
+2026-11-24,TPEX,00754B,群益AAA-AA公司債,31.41,31.72,31.41,31.72,55000,6,1743420,TPEX_afterTrading_otc_type_EW,0.31
+2026-11-25,TPEX,00754B,群益AAA-AA公司債,31.61,31.65,31.6,31.65,118000,10,3731970,TPEX_afterTrading_otc_type_EW,-0.07
+2026-11-26,TPEX,00754B,群益AAA-AA公司債,31.93,31.93,31.74,31.77,125000,12,3972120,TPEX_afterTrading_otc_type_EW,0.12

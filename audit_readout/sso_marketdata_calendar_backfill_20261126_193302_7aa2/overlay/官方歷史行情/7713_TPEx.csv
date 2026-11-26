@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,7713,威力德生醫,70.5,71.5,70.5,70.5,4000,4,284000,TPEX_afterTrading_otc_type_EW,-0.1
+2026-11-17,TPEX,7713,威力德生醫,70.8,70.8,70.5,70.5,5000,4,353400,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-24,TPEX,7713,威力德生醫,71.5,71.5,71.5,71.5,3000,3,214500,TPEX_afterTrading_otc_type_EW,1.0
+2026-11-25,TPEX,7713,威力德生醫,71.0,71.0,71.0,71.0,5000,3,355000,TPEX_afterTrading_otc_type_EW,-0.5
+2026-11-26,TPEX,7713,威力德生醫,71.1,72.5,71.1,72.5,8000,7,573300,TPEX_afterTrading_otc_type_EW,1.5

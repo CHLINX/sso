@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00702,國泰標普低波高息,25.79,26.15,25.79,26.0,47917,106,1244911,TWSE_MI_INDEX,0.21
+2026-11-17,TWSE,00702,國泰標普低波高息,26.0,26.28,25.91,26.18,17127,87,447118,TWSE_MI_INDEX,0.18
+2026-11-24,TWSE,00702,國泰標普低波高息,25.44,25.51,25.44,25.5,52495,1021,1356373,TWSE_MI_INDEX,0.15
+2026-11-25,TWSE,00702,國泰標普低波高息,25.5,25.84,25.5,25.72,217270,163,5589880,TWSE_MI_INDEX,0.22
+2026-11-26,TWSE,00702,國泰標普低波高息,25.82,26.37,25.82,26.37,224230,95,5842906,TWSE_MI_INDEX,0.65

@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,5601,台聯櫃,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,
+2026-11-17,TPEX,5601,台聯櫃,30.1,30.1,30.1,30.1,5000,1,150500,TPEX_afterTrading_otc_type_EW,-0.55
+2026-11-24,TPEX,5601,台聯櫃,33.3,33.3,33.3,33.3,60000,18,1998000,TPEX_afterTrading_otc_type_EW,3.0
+2026-11-25,TPEX,5601,台聯櫃,33.3,33.3,33.3,33.3,4000,1,133200,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-26,TPEX,5601,台聯櫃,34.0,34.0,34.0,34.0,6000,1,204000,TPEX_afterTrading_otc_type_EW,0.7

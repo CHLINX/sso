@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00787B,元大10年IG醫療債,31.92,31.92,31.92,31.92,8000,1,255360,TPEX_afterTrading_otc_type_EW,0.03
+2026-11-17,TPEX,00787B,元大10年IG醫療債,31.89,31.89,31.86,31.86,2000,2,63750,TPEX_afterTrading_otc_type_EW,-0.06
+2026-11-24,TPEX,00787B,元大10年IG醫療債,32.3,32.32,32.3,32.32,2000,2,64620,TPEX_afterTrading_otc_type_EW,0.1
+2026-11-25,TPEX,00787B,元大10年IG醫療債,32.3,32.35,32.3,32.35,19000,6,613930,TPEX_afterTrading_otc_type_EW,0.03
+2026-11-26,TPEX,00787B,元大10年IG醫療債,32.59,32.66,32.52,32.52,12000,4,390450,TPEX_afterTrading_otc_type_EW,0.17

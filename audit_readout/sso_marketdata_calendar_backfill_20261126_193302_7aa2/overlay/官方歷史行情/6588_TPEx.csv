@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6588,東典光電,82.3,82.3,72.9,72.9,234000,199,17728200,TPEX_afterTrading_otc_type_EW,-8.0
+2026-11-17,TPEX,6588,東典光電,69.2,72.9,69.0,69.1,297000,246,20890800,TPEX_afterTrading_otc_type_EW,-3.8
+2026-11-24,TPEX,6588,東典光電,63.3,63.3,63.3,63.3,59000,42,3734700,TPEX_afterTrading_otc_type_EW,5.7
+2026-11-25,TPEX,6588,東典光電,62.8,64.8,57.0,59.2,355000,319,21620400,TPEX_afterTrading_otc_type_EW,-4.1
+2026-11-26,TPEX,6588,東典光電,61.2,64.3,60.6,61.2,306000,269,18976300,TPEX_afterTrading_otc_type_EW,2.0

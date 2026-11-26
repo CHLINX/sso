@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,7823,奧義賽博-KY創,78.9,84.7,78.9,80.1,433975,391,35800505,TWSE_MI_INDEX,3.1
+2026-11-17,TWSE,7823,奧義賽博-KY創,80.0,82.0,73.9,74.4,308252,245,23509605,TWSE_MI_INDEX,5.7
+2026-11-24,TWSE,7823,奧義賽博-KY創,69.0,70.9,64.9,64.9,50752,58,3350994,TWSE_MI_INDEX,0.1
+2026-11-25,TWSE,7823,奧義賽博-KY創,64.7,65.0,61.6,65.0,89794,79,5636027,TWSE_MI_INDEX,0.1
+2026-11-26,TWSE,7823,奧義賽博-KY創,66.2,66.2,63.3,63.5,51069,59,3272276,TWSE_MI_INDEX,1.5

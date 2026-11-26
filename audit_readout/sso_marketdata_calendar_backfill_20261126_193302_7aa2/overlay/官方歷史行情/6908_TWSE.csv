@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6908,宏碁遊戲-創,21.25,21.5,21.15,21.15,23264,26,496938,TWSE_MI_INDEX,0.65
+2026-11-17,TWSE,6908,宏碁遊戲-創,21.85,23.25,21.6,23.25,150269,150,3415221,TWSE_MI_INDEX,2.1
+2026-11-24,TWSE,6908,宏碁遊戲-創,23.0,23.1,21.8,22.7,42166,41,945864,TWSE_MI_INDEX,1.05
+2026-11-25,TWSE,6908,宏碁遊戲-創,22.65,22.65,21.25,21.35,23869,29,516494,TWSE_MI_INDEX,1.35
+2026-11-26,TWSE,6908,宏碁遊戲-創,22.3,23.05,22.3,22.95,15809,30,358488,TWSE_MI_INDEX,1.6

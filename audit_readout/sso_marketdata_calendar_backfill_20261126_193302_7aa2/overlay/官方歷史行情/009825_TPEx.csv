@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,009825,聯邦美國金融創新,9.47,9.47,9.4,9.4,194000,19,1827300,TPEX_afterTrading_otc_type_EW,-0.03
+2026-11-17,TPEX,009825,聯邦美國金融創新,9.11,9.29,9.11,9.28,354000,24,3252010,TPEX_afterTrading_otc_type_EW,-0.12
+2026-11-24,TPEX,009825,聯邦美國金融創新,8.95,8.96,8.94,8.94,40000,10,358120,TPEX_afterTrading_otc_type_EW,0.34
+2026-11-25,TPEX,009825,聯邦美國金融創新,8.8,8.8,8.7,8.7,42000,8,366130,TPEX_afterTrading_otc_type_EW,-0.24
+2026-11-26,TPEX,009825,聯邦美國金融創新,8.9,8.9,8.85,8.89,493000,28,4377710,TPEX_afterTrading_otc_type_EW,0.19

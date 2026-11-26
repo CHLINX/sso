@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,4168,醣聯,20.3,20.65,19.3,19.5,168000,99,3351100,TPEX_afterTrading_otc_type_EW,-0.8
+2026-11-17,TPEX,4168,醣聯,19.5,20.05,19.05,19.7,169000,104,3295500,TPEX_afterTrading_otc_type_EW,0.2
+2026-11-24,TPEX,4168,醣聯,18.5,18.6,18.05,18.05,109000,78,1993450,TPEX_afterTrading_otc_type_EW,0.5
+2026-11-25,TPEX,4168,醣聯,18.05,18.05,16.25,16.8,126000,82,2115950,TPEX_afterTrading_otc_type_EW,-1.25
+2026-11-26,TPEX,4168,醣聯,17.5,17.5,17.1,17.2,79000,64,1361150,TPEX_afterTrading_otc_type_EW,0.4

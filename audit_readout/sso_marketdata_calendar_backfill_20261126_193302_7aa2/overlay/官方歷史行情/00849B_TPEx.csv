@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00849B,中信EM主權債0-5,38.25,38.4,38.25,38.39,205000,7,7869660,TPEX_afterTrading_otc_type_EW,0.07
+2026-11-17,TPEX,00849B,中信EM主權債0-5,38.11,38.5,38.11,38.47,210000,6,8077050,TPEX_afterTrading_otc_type_EW,0.08
+2026-11-24,TPEX,00849B,中信EM主權債0-5,38.4,38.5,38.26,38.49,245000,46,9423070,TPEX_afterTrading_otc_type_EW,0.04
+2026-11-25,TPEX,00849B,中信EM主權債0-5,38.43,38.57,38.43,38.55,206000,7,7941880,TPEX_afterTrading_otc_type_EW,0.06
+2026-11-26,TPEX,00849B,中信EM主權債0-5,38.62,38.62,38.49,38.54,801000,21,30845990,TPEX_afterTrading_otc_type_EW,-0.01

@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,7642,昶瑞機電,53.8,55.8,53.8,55.0,3000,3,164600,TPEX_afterTrading_otc_type_EW,-0.5
+2026-11-17,TPEX,7642,昶瑞機電,53.8,54.7,53.2,54.7,4000,4,215000,TPEX_afterTrading_otc_type_EW,-0.3
+2026-11-24,TPEX,7642,昶瑞機電,53.0,53.0,53.0,53.0,13000,7,689000,TPEX_afterTrading_otc_type_EW,4.0
+2026-11-25,TPEX,7642,昶瑞機電,53.0,53.0,52.4,52.4,2000,2,105400,TPEX_afterTrading_otc_type_EW,-0.6
+2026-11-26,TPEX,7642,昶瑞機電,52.4,52.4,49.9,50.0,17000,14,855800,TPEX_afterTrading_otc_type_EW,-2.4

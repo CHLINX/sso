@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,4528,江興鍛,13.7,13.7,13.45,13.45,16000,14,216500,TPEX_afterTrading_otc_type_EW,-0.3
+2026-11-17,TPEX,4528,江興鍛,13.35,13.5,13.35,13.35,8000,8,107300,TPEX_afterTrading_otc_type_EW,-0.1
+2026-11-24,TPEX,4528,江興鍛,12.5,13.0,12.5,13.0,14000,12,180600,TPEX_afterTrading_otc_type_EW,0.95
+2026-11-25,TPEX,4528,江興鍛,12.35,12.45,12.35,12.45,4000,4,49700,TPEX_afterTrading_otc_type_EW,-0.55
+2026-11-26,TPEX,4528,江興鍛,12.55,12.6,12.15,12.3,18000,15,222350,TPEX_afterTrading_otc_type_EW,-0.15

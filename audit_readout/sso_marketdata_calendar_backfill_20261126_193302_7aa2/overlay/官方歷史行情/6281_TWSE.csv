@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6281,全國電,49.45,49.85,49.3,49.3,58480,74,2891771,TWSE_MI_INDEX,0.1
+2026-11-17,TWSE,6281,全國電,49.1,49.5,49.0,49.5,90041,118,4428669,TWSE_MI_INDEX,0.2
+2026-11-24,TWSE,6281,全國電,48.0,49.9,48.0,48.6,52127,81,2526208,TWSE_MI_INDEX,1.6
+2026-11-25,TWSE,6281,全國電,49.0,49.0,47.05,48.5,74078,97,3589677,TWSE_MI_INDEX,0.1
+2026-11-26,TWSE,6281,全國電,48.5,49.25,48.5,49.0,34404,67,1684915,TWSE_MI_INDEX,0.5

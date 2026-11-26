@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00985D,主動貝萊德優投等,9.81,9.83,9.81,9.81,393000,73,3857230,TPEX_afterTrading_otc_type_EW,-0.01
+2026-11-17,TPEX,00985D,主動貝萊德優投等,9.81,9.83,9.8,9.8,832000,75,8156850,TPEX_afterTrading_otc_type_EW,-0.01
+2026-11-24,TPEX,00985D,主動貝萊德優投等,9.87,9.93,9.86,9.9,1454000,99,14393160,TPEX_afterTrading_otc_type_EW,0.04
+2026-11-25,TPEX,00985D,主動貝萊德優投等,9.91,9.94,9.91,9.93,1103000,93,10941510,TPEX_afterTrading_otc_type_EW,0.03
+2026-11-26,TPEX,00985D,主動貝萊德優投等,10.0,10.02,9.96,9.98,797000,72,7952670,TPEX_afterTrading_otc_type_EW,0.05

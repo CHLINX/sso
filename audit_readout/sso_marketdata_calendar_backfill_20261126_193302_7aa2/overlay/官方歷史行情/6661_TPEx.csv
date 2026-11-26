@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6661,威健生技,15.8,15.8,14.8,14.8,9000,9,135600,TPEX_afterTrading_otc_type_EW,-0.5
+2026-11-17,TPEX,6661,威健生技,15.3,15.8,15.3,15.6,3000,3,46700,TPEX_afterTrading_otc_type_EW,0.8
+2026-11-24,TPEX,6661,威健生技,15.05,15.75,14.95,15.75,9000,8,136150,TPEX_afterTrading_otc_type_EW,1.2
+2026-11-25,TPEX,6661,威健生技,14.65,14.65,14.2,14.35,26000,17,373100,TPEX_afterTrading_otc_type_EW,-1.4
+2026-11-26,TPEX,6661,威健生技,14.15,14.3,14.0,14.0,25000,16,352350,TPEX_afterTrading_otc_type_EW,-0.35

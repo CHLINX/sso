@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,8080,泰霖,27.6,28.0,27.6,28.0,3000,2,83200,TPEX_afterTrading_otc_type_EW,-0.5
+2026-11-17,TPEX,8080,泰霖,27.95,28.0,27.6,27.6,37000,12,1027450,TPEX_afterTrading_otc_type_EW,-0.4
+2026-11-24,TPEX,8080,泰霖,26.6,26.7,26.25,26.25,5000,5,132650,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-25,TPEX,8080,泰霖,26.8,26.85,26.8,26.85,2000,2,53650,TPEX_afterTrading_otc_type_EW,0.6
+2026-11-26,TPEX,8080,泰霖,26.85,27.5,26.85,27.5,4000,4,108200,TPEX_afterTrading_otc_type_EW,0.65

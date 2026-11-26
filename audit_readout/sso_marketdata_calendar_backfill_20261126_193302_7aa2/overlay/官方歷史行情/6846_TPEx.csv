@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6846,綠茵,49.0,49.5,46.65,46.65,13000,11,622050,TPEX_afterTrading_otc_type_EW,-3.45
+2026-11-17,TPEX,6846,綠茵,46.0,47.5,46.0,47.4,15000,14,707700,TPEX_afterTrading_otc_type_EW,0.75
+2026-11-24,TPEX,6846,綠茵,44.75,47.8,44.75,47.3,7000,7,321450,TPEX_afterTrading_otc_type_EW,2.55
+2026-11-25,TPEX,6846,綠茵,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,
+2026-11-26,TPEX,6846,綠茵,46.0,47.0,46.0,47.0,2000,2,93000,TPEX_afterTrading_otc_type_EW,-0.15

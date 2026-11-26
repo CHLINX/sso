@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6844,諾貝兒,55.8,56.0,55.1,56.0,32000,27,1785700,TPEX_afterTrading_otc_type_EW,-0.8
+2026-11-17,TPEX,6844,諾貝兒,54.0,55.1,54.0,55.1,23000,20,1251700,TPEX_afterTrading_otc_type_EW,-0.9
+2026-11-24,TPEX,6844,諾貝兒,54.0,55.0,54.0,54.7,20000,18,1085200,TPEX_afterTrading_otc_type_EW,0.7
+2026-11-25,TPEX,6844,諾貝兒,54.6,54.6,53.0,53.0,24000,19,1277500,TPEX_afterTrading_otc_type_EW,-1.7
+2026-11-26,TPEX,6844,諾貝兒,53.0,53.0,52.0,52.0,3000,3,157000,TPEX_afterTrading_otc_type_EW,-1.0

@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,9926,新海,49.4,49.45,49.1,49.4,17234,26,851234,TWSE_MI_INDEX,0.2
+2026-11-17,TWSE,9926,新海,50.2,50.3,48.95,49.7,25125,29,1254536,TWSE_MI_INDEX,0.3
+2026-11-24,TWSE,9926,新海,49.0,49.0,49.0,49.0,1022,3,50088,TWSE_MI_INDEX,0.05
+2026-11-25,TWSE,9926,新海,48.7,49.0,48.3,49.0,42000,33,2035650,TWSE_MI_INDEX,0.0
+2026-11-26,TWSE,9926,新海,49.35,49.35,48.9,49.3,20335,36,1006961,TWSE_MI_INDEX,0.3

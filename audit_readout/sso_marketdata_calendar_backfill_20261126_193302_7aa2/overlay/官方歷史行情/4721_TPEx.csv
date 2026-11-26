@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,4721,美琪瑪,63.1,63.6,61.1,61.2,425000,317,26400700,TPEX_afterTrading_otc_type_EW,-2.8
+2026-11-17,TPEX,4721,美琪瑪,59.4,61.2,57.1,59.2,645000,428,38427000,TPEX_afterTrading_otc_type_EW,-2.0
+2026-11-24,TPEX,4721,美琪瑪,57.3,57.6,56.5,57.6,498000,341,28527600,TPEX_afterTrading_otc_type_EW,5.2
+2026-11-25,TPEX,4721,美琪瑪,55.9,56.2,52.5,54.1,260000,181,14147500,TPEX_afterTrading_otc_type_EW,-3.5
+2026-11-26,TPEX,4721,美琪瑪,56.1,56.2,55.1,56.2,261000,188,14558000,TPEX_afterTrading_otc_type_EW,2.1

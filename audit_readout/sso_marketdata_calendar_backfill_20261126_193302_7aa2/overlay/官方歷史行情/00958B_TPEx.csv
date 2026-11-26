@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00958B,永豐ESG銀行債15+,9.02,9.04,9.02,9.03,391000,35,3530090,TPEX_afterTrading_otc_type_EW,0.01
+2026-11-17,TPEX,00958B,永豐ESG銀行債15+,9.03,9.03,9.0,9.01,412000,21,3715020,TPEX_afterTrading_otc_type_EW,-0.02
+2026-11-24,TPEX,00958B,永豐ESG銀行債15+,9.04,9.08,9.02,9.06,554000,18,5018260,TPEX_afterTrading_otc_type_EW,
+2026-11-25,TPEX,00958B,永豐ESG銀行債15+,9.05,9.07,9.05,9.07,287000,29,2601710,TPEX_afterTrading_otc_type_EW,0.01
+2026-11-26,TPEX,00958B,永豐ESG銀行債15+,9.09,9.14,9.09,9.11,846000,20,7727030,TPEX_afterTrading_otc_type_EW,0.04

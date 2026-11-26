@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6945,圓祥生技,124.5,127.0,112.5,114.5,286000,228,34000500,TPEX_afterTrading_otc_type_EW,-3.5
+2026-11-17,TPEX,6945,圓祥生技,119.0,124.5,115.0,123.0,501000,379,60545000,TPEX_afterTrading_otc_type_EW,8.5
+2026-11-24,TPEX,6945,圓祥生技,99.3,99.3,92.3,96.3,203000,162,19531300,TPEX_afterTrading_otc_type_EW,5.7
+2026-11-25,TPEX,6945,圓祥生技,92.3,95.0,88.0,92.6,115000,112,10466700,TPEX_afterTrading_otc_type_EW,-3.7
+2026-11-26,TPEX,6945,圓祥生技,90.5,94.4,86.5,92.5,226000,196,20135500,TPEX_afterTrading_otc_type_EW,-0.1

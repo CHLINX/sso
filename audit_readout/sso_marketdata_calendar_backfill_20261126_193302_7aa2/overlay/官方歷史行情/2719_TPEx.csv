@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,2719,燦星旅,17.5,17.5,17.5,17.5,6000,2,105000,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-17,TPEX,2719,燦星旅,17.3,17.3,17.3,17.3,4000,3,69200,TPEX_afterTrading_otc_type_EW,-0.2
+2026-11-24,TPEX,2719,燦星旅,16.4,17.0,16.3,16.4,12000,12,200400,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-25,TPEX,2719,燦星旅,16.1,16.45,15.4,16.45,55000,36,875400,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-26,TPEX,2719,燦星旅,16.45,17.4,16.45,17.2,8000,8,135800,TPEX_afterTrading_otc_type_EW,0.75

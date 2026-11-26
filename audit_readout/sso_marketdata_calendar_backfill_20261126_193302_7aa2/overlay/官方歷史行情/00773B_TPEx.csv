@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00773B,中信優先金融債,34.94,34.99,34.91,34.96,285000,58,9961830,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-17,TPEX,00773B,中信優先金融債,34.81,34.81,34.74,34.77,565000,41,19642980,TPEX_afterTrading_otc_type_EW,
+2026-11-24,TPEX,00773B,中信優先金融債,35.0,35.26,35.0,35.2,1117000,115,39301400,TPEX_afterTrading_otc_type_EW,0.11
+2026-11-25,TPEX,00773B,中信優先金融債,35.2,35.24,35.16,35.21,939000,129,33067440,TPEX_afterTrading_otc_type_EW,0.01
+2026-11-26,TPEX,00773B,中信優先金融債,35.38,35.5,35.34,35.38,1436000,62,50851820,TPEX_afterTrading_otc_type_EW,0.17

@@ -1,0 +1,4 @@
+﻿trade_date,valid_ohlc_universe_keys,frozen_universe_size,coverage,minimum_required_coverage,pass
+2026-11-24,2388,2435,0.9806981519507186,0.9,True
+2026-11-25,2360,2435,0.9691991786447639,0.9,True
+2026-11-26,2375,2435,0.9753593429158111,0.9,True

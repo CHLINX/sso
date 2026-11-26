@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6492,生華科,29.5,29.55,28.3,28.9,223000,150,6426650,TPEX_afterTrading_otc_type_EW,-0.8
+2026-11-17,TPEX,6492,生華科,28.4,28.9,28.2,28.65,154000,87,4390250,TPEX_afterTrading_otc_type_EW,-0.25
+2026-11-24,TPEX,6492,生華科,25.9,27.3,25.9,26.7,247000,215,6543850,TPEX_afterTrading_otc_type_EW,1.7
+2026-11-25,TPEX,6492,生華科,26.3,26.85,25.6,26.0,279000,203,7289600,TPEX_afterTrading_otc_type_EW,-0.7
+2026-11-26,TPEX,6492,生華科,26.0,26.8,25.95,26.2,115000,91,3007050,TPEX_afterTrading_otc_type_EW,0.2

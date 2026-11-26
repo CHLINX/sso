@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,3718,中光電投控,47.4,47.85,44.2,44.2,1722000,1133,78593000,TPEX_afterTrading_otc_type_EW,-3.55
+2026-11-17,TPEX,3718,中光電投控,43.2,44.6,42.35,42.95,1496000,1104,65166250,TPEX_afterTrading_otc_type_EW,-1.25
+2026-11-24,TPEX,3718,中光電投控,40.6,40.95,40.15,40.95,1027000,762,41763350,TPEX_afterTrading_otc_type_EW,3.7
+2026-11-25,TPEX,3718,中光電投控,40.5,40.8,37.95,39.0,2353000,1997,92850350,TPEX_afterTrading_otc_type_EW,-1.95
+2026-11-26,TPEX,3718,中光電投控,39.1,40.35,38.95,39.75,1007000,815,39804050,TPEX_afterTrading_otc_type_EW,0.75

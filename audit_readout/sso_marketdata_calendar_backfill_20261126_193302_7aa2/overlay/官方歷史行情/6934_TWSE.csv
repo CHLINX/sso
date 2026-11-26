@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6934,心誠鎂,74.9,74.9,71.6,74.7,59863,79,4406694,TWSE_MI_INDEX,0.2
+2026-11-17,TWSE,6934,心誠鎂,74.8,78.1,73.0,78.0,39506,44,2969544,TWSE_MI_INDEX,3.3
+2026-11-24,TWSE,6934,心誠鎂,73.9,74.1,73.0,73.4,30800,31,2263336,TWSE_MI_INDEX,0.6
+2026-11-25,TWSE,6934,心誠鎂,73.4,73.4,69.3,69.3,35547,42,2508789,TWSE_MI_INDEX,4.1
+2026-11-26,TWSE,6934,心誠鎂,76.1,76.1,70.3,74.6,34501,44,2504564,TWSE_MI_INDEX,5.3

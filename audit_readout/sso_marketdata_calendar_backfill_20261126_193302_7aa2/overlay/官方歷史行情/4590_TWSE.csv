@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,4590,富田-創,70.6,70.6,68.4,68.4,158461,190,10980900,TWSE_MI_INDEX,2.5
+2026-11-17,TWSE,4590,富田-創,67.0,68.0,65.8,66.0,347733,294,23191937,TWSE_MI_INDEX,2.4
+2026-11-24,TWSE,4590,富田-創,64.8,65.7,63.5,64.7,193329,172,12528550,TWSE_MI_INDEX,4.4
+2026-11-25,TWSE,4590,富田-創,62.8,62.8,58.9,59.4,284303,252,17104275,TWSE_MI_INDEX,5.3
+2026-11-26,TWSE,4590,富田-創,60.0,62.4,60.0,62.3,85643,95,5265590,TWSE_MI_INDEX,2.9

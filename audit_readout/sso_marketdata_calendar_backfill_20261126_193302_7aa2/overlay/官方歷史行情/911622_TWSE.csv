@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,911622,泰聚亨-DR,3.57,3.7,3.57,3.65,16000,9,57440,TWSE_MI_INDEX,0.1
+2026-11-17,TWSE,911622,泰聚亨-DR,3.55,3.64,3.55,3.63,9000,8,32170,TWSE_MI_INDEX,0.02
+2026-11-24,TWSE,911622,泰聚亨-DR,3.65,3.66,3.58,3.61,18000,15,65450,TWSE_MI_INDEX,0.0
+2026-11-25,TWSE,911622,泰聚亨-DR,,,,,0,0,0,TWSE_MI_INDEX,0.0
+2026-11-26,TWSE,911622,泰聚亨-DR,3.49,3.64,3.49,3.64,97399,31,351408,TWSE_MI_INDEX,0.0

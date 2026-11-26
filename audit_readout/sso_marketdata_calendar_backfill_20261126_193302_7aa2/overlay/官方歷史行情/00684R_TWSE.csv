@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00684R,期元大美元指反1,14.54,14.54,14.49,14.49,122371,13,1773987,TWSE_MI_INDEX,0.13
+2026-11-17,TWSE,00684R,期元大美元指反1,14.47,14.5,14.47,14.5,7000,5,101350,TWSE_MI_INDEX,0.01
+2026-11-24,TWSE,00684R,期元大美元指反1,14.45,14.46,14.44,14.46,178731,26,2582631,TWSE_MI_INDEX,0.0
+2026-11-25,TWSE,00684R,期元大美元指反1,14.44,14.45,14.44,14.45,3000,2,43330,TWSE_MI_INDEX,0.01
+2026-11-26,TWSE,00684R,期元大美元指反1,14.49,14.52,14.49,14.52,4598,8,66626,TWSE_MI_INDEX,0.07

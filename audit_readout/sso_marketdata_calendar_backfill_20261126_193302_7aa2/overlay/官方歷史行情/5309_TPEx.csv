@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,5309,系統電,53.6,53.6,48.5,48.7,4277000,2622,214199600,TPEX_afterTrading_otc_type_EW,-4.9
+2026-11-17,TPEX,5309,系統電,47.6,47.8,45.1,46.25,4212000,2751,195706150,TPEX_afterTrading_otc_type_EW,-2.45
+2026-11-24,TPEX,5309,系統電,41.6,41.6,41.6,41.6,557000,215,23171200,TPEX_afterTrading_otc_type_EW,3.75
+2026-11-25,TPEX,5309,系統電,40.85,41.0,37.45,37.8,2470000,1691,95368450,TPEX_afterTrading_otc_type_EW,-3.8
+2026-11-26,TPEX,5309,系統電,38.7,40.35,38.65,39.85,1985000,1321,78468400,TPEX_afterTrading_otc_type_EW,2.05

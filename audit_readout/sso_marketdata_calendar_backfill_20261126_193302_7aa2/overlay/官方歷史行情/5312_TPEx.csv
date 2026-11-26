@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,5312,寶島科,90.3,91.0,89.5,89.5,42000,35,3788400,TPEX_afterTrading_otc_type_EW,-0.5
+2026-11-17,TPEX,5312,寶島科,89.5,90.0,88.7,89.9,21000,18,1880900,TPEX_afterTrading_otc_type_EW,0.4
+2026-11-24,TPEX,5312,寶島科,89.4,91.2,89.4,90.9,62000,45,5605100,TPEX_afterTrading_otc_type_EW,2.0
+2026-11-25,TPEX,5312,寶島科,90.0,90.8,89.7,89.7,43000,36,3871200,TPEX_afterTrading_otc_type_EW,-1.2
+2026-11-26,TPEX,5312,寶島科,91.0,91.0,90.1,90.3,20000,17,1808000,TPEX_afterTrading_otc_type_EW,0.6

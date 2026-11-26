@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00848B,中信新興亞洲債,33.18,33.18,33.18,33.18,200000,4,6636000,TPEX_afterTrading_otc_type_EW,-0.02
+2026-11-17,TPEX,00848B,中信新興亞洲債,33.29,33.29,33.15,33.15,201000,5,6663290,TPEX_afterTrading_otc_type_EW,-0.03
+2026-11-24,TPEX,00848B,中信新興亞洲債,33.15,33.45,33.15,33.45,202000,6,6756420,TPEX_afterTrading_otc_type_EW,0.2
+2026-11-25,TPEX,00848B,中信新興亞洲債,33.45,33.49,33.45,33.48,202000,5,6763900,TPEX_afterTrading_otc_type_EW,0.03
+2026-11-26,TPEX,00848B,中信新興亞洲債,33.54,33.54,33.43,33.44,825000,18,27603050,TPEX_afterTrading_otc_type_EW,-0.04

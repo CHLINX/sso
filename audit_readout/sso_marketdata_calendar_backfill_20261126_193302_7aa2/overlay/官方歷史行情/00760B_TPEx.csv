@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00760B,復華新興企業債,52.6,52.6,52.45,52.6,108000,7,5680200,TPEX_afterTrading_otc_type_EW,0.25
+2026-11-17,TPEX,00760B,復華新興企業債,52.4,52.6,52.25,52.25,8000,4,419750,TPEX_afterTrading_otc_type_EW,-0.35
+2026-11-24,TPEX,00760B,復華新興企業債,51.5,51.65,51.5,51.6,105000,8,5417850,TPEX_afterTrading_otc_type_EW,0.1
+2026-11-25,TPEX,00760B,復華新興企業債,51.45,51.6,51.35,51.6,116000,11,5982850,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-26,TPEX,00760B,復華新興企業債,51.75,51.75,51.6,51.6,101000,5,5211750,TPEX_afterTrading_otc_type_EW,0.0

@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6641,基士德-KY,,,,,749,23,12236,TWSE_MI_INDEX,0.0
+2026-11-17,TWSE,6641,基士德-KY,16.3,16.3,16.3,16.3,5172,12,84095,TWSE_MI_INDEX,0.0
+2026-11-24,TWSE,6641,基士德-KY,15.5,16.35,15.5,16.3,14598,17,234418,TWSE_MI_INDEX,1.3
+2026-11-25,TWSE,6641,基士德-KY,15.75,16.85,15.35,16.85,94001,85,1535015,TWSE_MI_INDEX,0.55
+2026-11-26,TWSE,6641,基士德-KY,16.8,16.85,16.3,16.5,24848,37,413514,TWSE_MI_INDEX,0.35

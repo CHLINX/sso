@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6173,信昌電,210.0,211.0,192.0,192.0,3120000,2334,611883500,TPEX_afterTrading_otc_type_EW,-21.0
+2026-11-17,TPEX,6173,信昌電,173.0,182.0,173.0,173.0,7074000,3231,1234813000,TPEX_afterTrading_otc_type_EW,-19.0
+2026-11-24,TPEX,6173,信昌電,151.0,151.0,151.0,151.0,205000,160,30955000,TPEX_afterTrading_otc_type_EW,13.5
+2026-11-25,TPEX,6173,信昌電,144.5,154.0,136.0,137.0,5793000,3859,819427500,TPEX_afterTrading_otc_type_EW,-14.0
+2026-11-26,TPEX,6173,信昌電,144.0,150.5,143.0,148.0,5039000,3788,739442000,TPEX_afterTrading_otc_type_EW,11.0

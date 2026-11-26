@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6697,東捷資訊,83.6,88.6,83.6,88.6,3767000,1909,328724000,TPEX_afterTrading_otc_type_EW,8.0
+2026-11-17,TPEX,6697,東捷資訊,83.8,84.0,79.8,79.8,2492000,1045,201398900,TPEX_afterTrading_otc_type_EW,-8.8
+2026-11-24,TPEX,6697,東捷資訊,55.4,58.4,55.2,57.4,1224000,876,69700700,TPEX_afterTrading_otc_type_EW,4.3
+2026-11-25,TPEX,6697,東捷資訊,53.1,56.9,51.7,53.0,681000,497,36874900,TPEX_afterTrading_otc_type_EW,-4.4
+2026-11-26,TPEX,6697,東捷資訊,53.0,53.2,47.7,47.7,425000,308,20727550,TPEX_afterTrading_otc_type_EW,-5.3

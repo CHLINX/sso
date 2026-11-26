@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,020025,統一亞洲半導體N,31.25,31.25,30.83,30.83,2000,2,62080,TPEX_afterTrading_otc_type_EW,-1.84
+2026-11-17,TPEX,020025,統一亞洲半導體N,29.7,30.0,29.64,29.64,31000,9,921340,TPEX_afterTrading_otc_type_EW,-1.19
+2026-11-24,TPEX,020025,統一亞洲半導體N,30.55,30.88,30.52,30.88,41000,6,1255140,TPEX_afterTrading_otc_type_EW,4.28
+2026-11-25,TPEX,020025,統一亞洲半導體N,27.78,27.78,27.45,27.45,15000,3,413770,TPEX_afterTrading_otc_type_EW,-3.43
+2026-11-26,TPEX,020025,統一亞洲半導體N,28.19,28.19,28.18,28.18,10000,2,281890,TPEX_afterTrading_otc_type_EW,0.73

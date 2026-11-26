@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00987D,主動統一美債量化,10.1,10.12,10.1,10.11,1305000,24,13196280,TPEX_afterTrading_otc_type_EW,0.01
+2026-11-17,TPEX,00987D,主動統一美債量化,10.11,10.12,10.09,10.12,4557000,57,46036920,TPEX_afterTrading_otc_type_EW,0.01
+2026-11-24,TPEX,00987D,主動統一美債量化,10.09,10.18,10.05,10.17,443000,15,4493990,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-25,TPEX,00987D,主動統一美債量化,10.17,10.19,10.16,10.18,6561000,57,66765730,TPEX_afterTrading_otc_type_EW,0.01
+2026-11-26,TPEX,00987D,主動統一美債量化,10.24,10.26,10.22,10.22,1810000,32,18516090,TPEX_afterTrading_otc_type_EW,0.04

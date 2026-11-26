@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00861,元大全球未來通訊,76.95,76.95,75.9,75.9,139752,308,10686715,TWSE_MI_INDEX,3.1
+2026-11-17,TWSE,00861,元大全球未來通訊,75.9,75.9,74.35,74.5,259566,215,19399083,TWSE_MI_INDEX,1.4
+2026-11-24,TWSE,00861,元大全球未來通訊,74.35,75.65,74.1,74.1,189911,181,14122915,TWSE_MI_INDEX,3.6
+2026-11-25,TWSE,00861,元大全球未來通訊,72.95,72.95,69.45,69.95,54203,219,3793814,TWSE_MI_INDEX,4.15
+2026-11-26,TWSE,00861,元大全球未來通訊,70.55,72.2,70.55,71.35,43942,201,3139933,TWSE_MI_INDEX,1.4

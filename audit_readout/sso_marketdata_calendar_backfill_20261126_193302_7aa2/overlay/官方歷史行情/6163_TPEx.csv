@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6163,華電網,44.0,44.5,41.2,41.2,13356000,8576,576754650,TPEX_afterTrading_otc_type_EW,-0.45
+2026-11-17,TPEX,6163,華電網,42.1,44.9,40.1,40.85,17265000,10420,731067700,TPEX_afterTrading_otc_type_EW,-0.35
+2026-11-24,TPEX,6163,華電網,32.75,32.8,32.7,32.8,564000,335,18492800,TPEX_afterTrading_otc_type_EW,2.95
+2026-11-25,TPEX,6163,華電網,32.7,35.3,31.7,31.85,5265000,3787,175798850,TPEX_afterTrading_otc_type_EW,-0.95
+2026-11-26,TPEX,6163,華電網,33.05,33.9,31.8,33.6,2332000,1519,76636300,TPEX_afterTrading_otc_type_EW,1.75

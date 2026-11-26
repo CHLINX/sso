@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2430,燦坤,17.35,17.35,16.8,17.0,59064,58,998202,TWSE_MI_INDEX,0.0
+2026-11-17,TWSE,2430,燦坤,16.8,17.05,16.8,17.0,26769,51,453289,TWSE_MI_INDEX,0.0
+2026-11-24,TWSE,2430,燦坤,16.65,17.3,16.6,17.0,60605,53,1025839,TWSE_MI_INDEX,0.4
+2026-11-25,TWSE,2430,燦坤,16.65,16.65,16.2,16.3,45652,74,749992,TWSE_MI_INDEX,0.7
+2026-11-26,TWSE,2430,燦坤,16.3,16.65,16.3,16.5,24106,86,398208,TWSE_MI_INDEX,0.2

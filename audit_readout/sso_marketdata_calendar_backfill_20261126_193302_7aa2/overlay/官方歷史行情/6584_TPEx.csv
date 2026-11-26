@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6584,南俊國際,307.5,312.0,289.0,291.0,826000,757,244675500,TPEX_afterTrading_otc_type_EW,-18.0
+2026-11-17,TPEX,6584,南俊國際,290.5,290.5,269.0,273.5,639000,536,177542500,TPEX_afterTrading_otc_type_EW,-17.5
+2026-11-24,TPEX,6584,南俊國際,253.0,253.0,253.0,253.0,19000,18,4807000,TPEX_afterTrading_otc_type_EW,23.0
+2026-11-25,TPEX,6584,南俊國際,247.5,272.0,247.5,268.0,1667000,1249,436560000,TPEX_afterTrading_otc_type_EW,15.0
+2026-11-26,TPEX,6584,南俊國際,275.0,294.5,275.0,294.5,1205000,877,347193000,TPEX_afterTrading_otc_type_EW,26.5

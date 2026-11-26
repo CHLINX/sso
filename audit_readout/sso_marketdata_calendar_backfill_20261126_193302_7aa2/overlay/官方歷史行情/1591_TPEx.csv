@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,1591,駿吉-KY,32.95,32.95,30.85,30.85,73000,59,2308900,TPEX_afterTrading_otc_type_EW,-1.85
+2026-11-17,TPEX,1591,駿吉-KY,30.75,31.15,29.35,30.3,122000,74,3702500,TPEX_afterTrading_otc_type_EW,-0.55
+2026-11-24,TPEX,1591,駿吉-KY,26.25,27.05,26.25,27.05,74000,62,1997150,TPEX_afterTrading_otc_type_EW,2.45
+2026-11-25,TPEX,1591,駿吉-KY,26.6,27.3,24.6,27.25,193000,129,5023550,TPEX_afterTrading_otc_type_EW,0.2
+2026-11-26,TPEX,1591,駿吉-KY,27.1,28.35,27.05,27.8,121000,107,3372200,TPEX_afterTrading_otc_type_EW,0.55

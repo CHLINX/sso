@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,8099,大世科,200.0,200.0,200.0,200.0,390000,217,78000000,TPEX_afterTrading_otc_type_EW,18.0
+2026-11-17,TPEX,8099,大世科,199.0,199.0,180.0,180.0,1327000,561,251128500,TPEX_afterTrading_otc_type_EW,-20.0
+2026-11-24,TPEX,8099,大世科,154.0,154.0,153.0,154.0,549000,362,84534000,TPEX_afterTrading_otc_type_EW,14.0
+2026-11-25,TPEX,8099,大世科,150.0,160.0,139.0,142.0,3767000,2868,564835500,TPEX_afterTrading_otc_type_EW,-12.0
+2026-11-26,TPEX,8099,大世科,143.5,147.5,128.0,133.5,3045000,2018,408848000,TPEX_afterTrading_otc_type_EW,-8.5

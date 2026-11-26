@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,4806,桂田文創,10.4,10.4,10.4,10.4,1000,1,10400,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-17,TPEX,4806,桂田文創,10.35,10.35,9.36,9.47,45000,31,437430,TPEX_afterTrading_otc_type_EW,-0.93
+2026-11-24,TPEX,4806,桂田文創,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,
+2026-11-25,TPEX,4806,桂田文創,9.74,9.74,9.74,9.74,1000,1,9740,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-26,TPEX,4806,桂田文創,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,

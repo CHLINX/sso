@@ -1,0 +1,39 @@
+Version=SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.18
+Run time=2026-11-26T19:33:02.468344+08:00
+v1.5.10 base source=/content/drive/MyDrive/看股最速適/SSO_Market_Data_Continuation_TWSE_TPEX_v1/v1.5.10_官方行情即時驗證與增量續接_20261112_180751_3bd3/SSO_Market_Data_Continuation_TWSE_TPEX_v1.5.10.py
+[SAFETY] v4.17、v2.31與既有增量全部唯讀；只寫入新的 v1.5.18 輸出目錄；不掃描巡田最速適；不推送 main。
+[FUNCTION TEST PASS] 日期與市場正規化
+[FUNCTION TEST PASS] 近30日窗口邊界與2026休市日
+[FUNCTION TEST PASS] 資料庫掃描僅納入窗口內日期
+[FUNCTION TEST PASS] 跨日／跨市場自然鍵與重複鍵防護
+[FUNCTION TEST PASS] 官方開休市日曆分類
+[FUNCTION TEST PASS] payload解析／OHLC驗證／CSV round-trip
+[FUNCTION TEST PASS] 官方下載函數介面（TWSE + TPEx 假資料）
+[F04 BASE FILTER TEST PASS] {"status": "PASS", "raw_pairs": 8, "eligible_pairs": 5, "excluded_rows": 3}
+[F04 COVERAGE TEST PASS] {"status": "PASS", "unique_coverage": 1.0, "conflict_detected": true}
+[SAME-DAY GATE TEST PASS] {"status": "PASS", "before_gate_end": "2026-11-17", "at_gate_end": "2026-11-18", "after_gate_end": "2026-11-18", "lookback_calendar_days": 30, "gate_hour_taipei": 17}
+[SAME-DAY GATE] Taipei=2026-11-26T19:33:02.468344+08:00; gate=17:00; includes_today=True; target_end=2026-11-26
+[DATABASE SCAN] 主資料庫：/content/drive/MyDrive/看股最速適/看股最速適_官方行情完整證券代號重建_v4_16_20261031_131511/官方行情總表_完整證券代號_v4.17.csv
+[DATABASE WINDOW] 僅統計 2026-10-28 至 2026-11-26，共 30 個日曆日。
+[DATABASE WINDOW PASS] 2026-10-28 .. 2026-11-26; market-date groups=38
+[CALENDAR PASS] 2026：rows=27 closed=24 explicit_open=3
+[UNSEALED V1.5.14 RECOVERY PASS] rows=4825; files=1; overlay-only=True
+[CALENDAR RESULT] expected sessions=22; missing market-days=6; partial suspects=0
+[CALENDAR POLICY] 僅依年度官方日曆或有證據的臨時休市公告排除；API空資料本身一律不推定休市。
+[BACKFILL 1/6] TWSE 2026-11-24; local baseline=1392
+[19:34:32] [DOWNLOAD + CHECK PASS] TWSE 2026-11-24：1,394 筆；唯一代號=1,394；零成交量=0.65%；OHLC缺值=0.79%；price_change缺值=0
+[BACKFILL 2/6] TWSE 2026-11-25; local baseline=1392
+[19:34:32] [DOWNLOAD + CHECK PASS] TWSE 2026-11-25：1,394 筆；唯一代號=1,394；零成交量=0.79%；OHLC缺值=1.00%；price_change缺值=0
+[BACKFILL 3/6] TWSE 2026-11-26; local baseline=1392
+[19:34:33] [DOWNLOAD + CHECK PASS] TWSE 2026-11-26：1,395 筆；唯一代號=1,395；零成交量=0.65%；OHLC缺值=1.08%；price_change缺值=0
+[BACKFILL 4/6] TPEX 2026-11-24; local baseline=1020
+[TPEX LEGACY PASS] 2026-11-24 rows=1020 type=EW
+[BACKFILL 5/6] TPEX 2026-11-25; local baseline=1020
+[TPEX LEGACY PASS] 2026-11-25 rows=1020 type=EW
+[BACKFILL 6/6] TPEX 2026-11-26; local baseline=1020
+[TPEX LEGACY PASS] 2026-11-26 rows=1021 type=EW
+[INCREMENT ROUNDTRIP PASS] rows=7244
+[F04 BASE UNIVERSE] {"raw_rows": 4464015, "raw_market_symbol_pairs_before_11py_filters": 2438, "rows_after_11py_filters": 4416544, "rows_excluded_by_11py_filters": 47471, "market_symbol_pairs_after_11py_filters": 2435, "expected_market_symbol_pairs": 2435, "base_max_date": "2026-11-06", "filter_contract": "Same as 11.py load_base: parse date; normalize market/code; require date, market, symbol, shadow open and close; symbol non-empty; shadow open/close > 0; reject duplicate (market,symbol,date)."}
+[F04 HISTORY GATE] {"required_dates": ["2026-11-24", "2026-11-25", "2026-11-26"], "coverage": [0.980698, 0.969199, 0.975359], "pass": true, "conflicts": 0}
+[SOURCE ARCHIVE PASS] origin=/content/SSO_LOCAL_PY_UPLOADS/12 (2).py; sha256=f994e6860ecbb42c9678047a93be199b09fb253f2d43acfe2bdb17d17bfa62e1; bytes=82312
+[ZIP PASS] v1.5.18_同日閘門與官方日曆核驗_20261126_193302_7aa2.zip; sha256=10eddf7783485389447e4dc6cffa9a0365f25f9aa5b7500466ff866c668a137c

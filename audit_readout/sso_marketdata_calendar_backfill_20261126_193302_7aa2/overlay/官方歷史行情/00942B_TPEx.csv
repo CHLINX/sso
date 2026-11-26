@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00942B,台新美A公司債20+,13.71,13.79,13.71,13.74,312000,61,4288110,TPEX_afterTrading_otc_type_EW,
+2026-11-17,TPEX,00942B,台新美A公司債20+,13.78,13.78,13.7,13.73,1262000,49,17321290,TPEX_afterTrading_otc_type_EW,-0.01
+2026-11-24,TPEX,00942B,台新美A公司債20+,13.58,13.97,13.58,13.95,344000,48,4793950,TPEX_afterTrading_otc_type_EW,0.06
+2026-11-25,TPEX,00942B,台新美A公司債20+,13.9,13.96,13.9,13.96,2453000,110,34198420,TPEX_afterTrading_otc_type_EW,0.01
+2026-11-26,TPEX,00942B,台新美A公司債20+,14.01,14.1,14.01,14.03,1310000,51,18415050,TPEX_afterTrading_otc_type_EW,0.07

@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,4419,皇家美食,44.6,44.6,44.6,44.6,1000,1,44600,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-17,TPEX,4419,皇家美食,45.0,45.0,45.0,45.0,1000,1,45000,TPEX_afterTrading_otc_type_EW,0.4
+2026-11-24,TPEX,4419,皇家美食,45.0,45.0,45.0,45.0,1000,1,45000,TPEX_afterTrading_otc_type_EW,-0.25
+2026-11-25,TPEX,4419,皇家美食,45.0,45.0,45.0,45.0,1000,1,45000,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-26,TPEX,4419,皇家美食,45.0,45.0,45.0,45.0,1000,1,45000,TPEX_afterTrading_otc_type_EW,0.0

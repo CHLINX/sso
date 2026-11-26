@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1472,三洋實業,90.5,90.5,87.7,88.5,63052,47,5599341,TWSE_MI_INDEX,0.7
+2026-11-17,TWSE,1472,三洋實業,89.3,89.4,88.2,88.6,32083,29,2847500,TWSE_MI_INDEX,0.1
+2026-11-24,TWSE,1472,三洋實業,88.0,88.0,87.6,87.8,49694,34,4368754,TWSE_MI_INDEX,0.2
+2026-11-25,TWSE,1472,三洋實業,87.8,87.9,87.2,87.5,32141,34,2814772,TWSE_MI_INDEX,0.3
+2026-11-26,TWSE,1472,三洋實業,88.0,89.2,88.0,88.6,16357,27,1446935,TWSE_MI_INDEX,1.1

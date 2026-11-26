@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6680,鑫創電子,49.2,49.2,46.5,47.9,4000,4,191600,TPEX_afterTrading_otc_type_EW,-1.3
+2026-11-17,TPEX,6680,鑫創電子,49.55,51.2,47.7,47.7,6000,6,296800,TPEX_afterTrading_otc_type_EW,-0.2
+2026-11-24,TPEX,6680,鑫創電子,49.6,51.4,48.05,48.05,118000,61,5853650,TPEX_afterTrading_otc_type_EW,-1.65
+2026-11-25,TPEX,6680,鑫創電子,49.45,49.5,47.85,48.1,88000,36,4263500,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-26,TPEX,6680,鑫創電子,50.7,50.7,50.7,50.7,1000,1,50700,TPEX_afterTrading_otc_type_EW,2.6

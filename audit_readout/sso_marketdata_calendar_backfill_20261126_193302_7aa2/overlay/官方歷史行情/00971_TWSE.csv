@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,00971,野村美國研發龍頭,18.2,18.2,17.65,17.67,148188,231,2629280,TWSE_MI_INDEX,0.2
+2026-11-17,TWSE,00971,野村美國研發龍頭,17.41,17.46,17.41,17.42,59102,165,1029951,TWSE_MI_INDEX,0.25
+2026-11-24,TWSE,00971,野村美國研發龍頭,17.17,17.5,17.07,17.11,228775,162,3933250,TWSE_MI_INDEX,0.57
+2026-11-25,TWSE,00971,野村美國研發龍頭,16.84,16.88,16.71,16.71,284439,146,4780405,TWSE_MI_INDEX,0.4
+2026-11-26,TWSE,00971,野村美國研發龍頭,16.7,16.97,16.7,16.95,96283,205,1626657,TWSE_MI_INDEX,0.24

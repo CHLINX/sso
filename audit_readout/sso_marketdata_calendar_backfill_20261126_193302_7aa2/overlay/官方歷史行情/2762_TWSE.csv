@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2762,世界健身-KY,77.6,77.8,76.2,76.2,23481,52,1808841,TWSE_MI_INDEX,1.0
+2026-11-17,TWSE,2762,世界健身-KY,75.1,76.5,75.0,75.0,114370,126,8633017,TWSE_MI_INDEX,1.2
+2026-11-24,TWSE,2762,世界健身-KY,75.4,76.5,75.4,76.5,61172,90,4664184,TWSE_MI_INDEX,2.3
+2026-11-25,TWSE,2762,世界健身-KY,75.1,75.8,74.4,75.0,62873,85,4716329,TWSE_MI_INDEX,1.5
+2026-11-26,TWSE,2762,世界健身-KY,76.9,76.9,74.9,75.9,125674,99,9463212,TWSE_MI_INDEX,0.9

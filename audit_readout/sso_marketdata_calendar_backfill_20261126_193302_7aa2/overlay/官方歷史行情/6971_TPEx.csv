@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6971,惠民實業,23.6,24.3,23.6,24.3,2000,2,47900,TPEX_afterTrading_otc_type_EW,-0.05
+2026-11-17,TPEX,6971,惠民實業,23.8,24.3,23.8,24.3,4000,4,96100,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-24,TPEX,6971,惠民實業,23.0,23.0,23.0,23.0,1000,1,23000,TPEX_afterTrading_otc_type_EW,1.85
+2026-11-25,TPEX,6971,惠民實業,21.1,21.7,20.8,21.05,57000,45,1200850,TPEX_afterTrading_otc_type_EW,-1.95
+2026-11-26,TPEX,6971,惠民實業,21.5,22.0,21.0,21.0,27000,20,576350,TPEX_afterTrading_otc_type_EW,-0.05

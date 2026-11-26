@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2897B,王道銀乙特,11.7,11.7,11.7,11.7,2854,4,33372,TWSE_MI_INDEX,0.0
+2026-11-17,TWSE,2897B,王道銀乙特,11.7,11.75,11.7,11.75,82000,13,959650,TWSE_MI_INDEX,0.05
+2026-11-24,TWSE,2897B,王道銀乙特,11.65,11.7,11.65,11.7,10000,3,116600,TWSE_MI_INDEX,0.2
+2026-11-25,TWSE,2897B,王道銀乙特,11.65,11.65,11.5,11.6,98462,20,1136912,TWSE_MI_INDEX,0.1
+2026-11-26,TWSE,2897B,王道銀乙特,11.5,11.7,11.5,11.7,6615,11,76271,TWSE_MI_INDEX,0.1

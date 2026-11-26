@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,009807,台新標普科技精選,15.24,15.33,15.24,15.25,19000,9,289870,TPEX_afterTrading_otc_type_EW,
+2026-11-17,TPEX,009807,台新標普科技精選,14.94,14.94,14.89,14.89,10000,7,149050,TPEX_afterTrading_otc_type_EW,-0.36
+2026-11-24,TPEX,009807,台新標普科技精選,14.57,14.68,14.57,14.66,56000,9,816790,TPEX_afterTrading_otc_type_EW,0.82
+2026-11-25,TPEX,009807,台新標普科技精選,14.07,14.14,13.98,13.98,208000,14,2927780,TPEX_afterTrading_otc_type_EW,-0.68
+2026-11-26,TPEX,009807,台新標普科技精選,13.98,14.24,13.98,14.24,92000,14,1295870,TPEX_afterTrading_otc_type_EW,0.26

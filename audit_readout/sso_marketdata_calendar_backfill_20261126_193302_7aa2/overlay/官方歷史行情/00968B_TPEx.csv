@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00968B,元大優息投等債,8.92,9.01,8.92,9.0,1121000,80,10067420,TPEX_afterTrading_otc_type_EW,0.01
+2026-11-17,TPEX,00968B,元大優息投等債,8.94,8.98,8.94,8.97,716000,68,6419320,TPEX_afterTrading_otc_type_EW,-0.03
+2026-11-24,TPEX,00968B,元大優息投等債,8.98,9.05,8.98,9.02,1702000,65,15387650,TPEX_afterTrading_otc_type_EW,0.02
+2026-11-25,TPEX,00968B,元大優息投等債,8.98,9.04,8.96,9.03,1116000,112,10079180,TPEX_afterTrading_otc_type_EW,0.01
+2026-11-26,TPEX,00968B,元大優息投等債,9.08,9.1,9.05,9.06,2566000,106,23294200,TPEX_afterTrading_otc_type_EW,0.03

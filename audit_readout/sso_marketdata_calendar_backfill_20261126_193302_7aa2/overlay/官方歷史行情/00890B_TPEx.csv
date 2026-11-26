@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00890B,凱基ESG BBB債15+,31.13,31.13,31.05,31.05,108000,4,3361410,TPEX_afterTrading_otc_type_EW,-0.1
+2026-11-17,TPEX,00890B,凱基ESG BBB債15+,30.85,30.9,30.81,30.81,102000,4,3151660,TPEX_afterTrading_otc_type_EW,
+2026-11-24,TPEX,00890B,凱基ESG BBB債15+,31.04,31.22,31.04,31.22,102000,3,3184080,TPEX_afterTrading_otc_type_EW,0.2
+2026-11-25,TPEX,00890B,凱基ESG BBB債15+,31.13,31.18,31.13,31.18,103000,4,3211470,TPEX_afterTrading_otc_type_EW,-0.04
+2026-11-26,TPEX,00890B,凱基ESG BBB債15+,31.31,31.31,31.3,31.3,101000,3,3161310,TPEX_afterTrading_otc_type_EW,0.12

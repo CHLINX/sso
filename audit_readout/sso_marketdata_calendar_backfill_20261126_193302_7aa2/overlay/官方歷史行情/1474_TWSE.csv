@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1474,弘裕,9.9,9.94,9.83,9.92,33321,46,330080,TWSE_MI_INDEX,0.02
+2026-11-17,TWSE,1474,弘裕,9.91,9.96,9.64,9.91,73751,87,722059,TWSE_MI_INDEX,0.01
+2026-11-24,TWSE,1474,弘裕,9.38,9.59,9.38,9.51,33399,29,316305,TWSE_MI_INDEX,0.27
+2026-11-25,TWSE,1474,弘裕,9.5,9.5,9.12,9.23,81821,57,757650,TWSE_MI_INDEX,0.28
+2026-11-26,TWSE,1474,弘裕,9.37,9.55,9.3,9.55,42526,53,399099,TWSE_MI_INDEX,0.32

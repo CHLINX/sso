@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,3685,元創精密,26.8,26.9,25.0,25.45,1415000,396,36021100,TPEX_afterTrading_otc_type_EW,-1.6
+2026-11-17,TPEX,3685,元創精密,25.2,26.45,24.5,25.75,1560000,458,39873350,TPEX_afterTrading_otc_type_EW,0.3
+2026-11-24,TPEX,3685,元創精密,25.9,27.0,25.6,26.4,2178000,444,56954000,TPEX_afterTrading_otc_type_EW,1.4
+2026-11-25,TPEX,3685,元創精密,25.8,26.15,25.1,25.3,1953000,441,50589800,TPEX_afterTrading_otc_type_EW,-1.1
+2026-11-26,TPEX,3685,元創精密,25.3,27.0,25.0,26.65,2142000,432,56537850,TPEX_afterTrading_otc_type_EW,1.35

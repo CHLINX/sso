@@ -1,0 +1,4 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-24,TWSE,009833,野村韓國科技30,10.36,10.4,9.99,10.08,2278960,512,23085066,TWSE_MI_INDEX,0.68
+2026-11-25,TWSE,009833,野村韓國科技30,9.48,9.5,9.24,9.25,1753046,270,16380040,TWSE_MI_INDEX,0.83
+2026-11-26,TWSE,009833,野村韓國科技30,9.52,9.58,9.35,9.44,5275151,204,49617996,TWSE_MI_INDEX,0.19

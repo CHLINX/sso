@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6727,亞泰金屬,356.0,362.0,331.5,331.5,822000,667,278301000,TPEX_afterTrading_otc_type_EW,-36.5
+2026-11-17,TPEX,6727,亞泰金屬,298.5,317.0,298.5,299.0,1840000,1293,557143500,TPEX_afterTrading_otc_type_EW,-32.5
+2026-11-24,TPEX,6727,亞泰金屬,266.0,266.0,266.0,266.0,31000,18,8246000,TPEX_afterTrading_otc_type_EW,24.0
+2026-11-25,TPEX,6727,亞泰金屬,255.5,280.5,239.5,248.5,1475000,1227,380293500,TPEX_afterTrading_otc_type_EW,-17.5
+2026-11-26,TPEX,6727,亞泰金屬,256.0,273.0,256.0,273.0,1251000,979,334712500,TPEX_afterTrading_otc_type_EW,24.5

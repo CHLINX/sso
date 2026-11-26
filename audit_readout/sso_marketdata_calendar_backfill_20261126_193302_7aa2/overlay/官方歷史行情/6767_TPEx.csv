@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,6767,台微醫,23.0,23.0,21.8,21.8,2000,2,44800,TPEX_afterTrading_otc_type_EW,-1.2
+2026-11-17,TPEX,6767,台微醫,22.0,22.5,22.0,22.5,4000,4,89500,TPEX_afterTrading_otc_type_EW,0.7
+2026-11-24,TPEX,6767,台微醫,21.0,22.1,20.8,22.1,8000,7,168000,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-25,TPEX,6767,台微醫,20.5,20.5,20.35,20.35,6000,5,122700,TPEX_afterTrading_otc_type_EW,-1.75
+2026-11-26,TPEX,6767,台微醫,20.8,20.8,20.1,20.1,2000,2,40900,TPEX_afterTrading_otc_type_EW,-0.25

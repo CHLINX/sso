@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,7714,創泓科技,161.0,167.0,152.0,153.0,422000,376,67524000,TPEX_afterTrading_otc_type_EW,-1.5
+2026-11-17,TPEX,7714,創泓科技,152.0,152.0,140.0,140.0,115000,109,16596000,TPEX_afterTrading_otc_type_EW,-13.0
+2026-11-24,TPEX,7714,創泓科技,136.5,136.5,133.0,136.5,68000,55,9243000,TPEX_afterTrading_otc_type_EW,12.0
+2026-11-25,TPEX,7714,創泓科技,135.0,137.0,126.5,128.0,77000,72,10037000,TPEX_afterTrading_otc_type_EW,-8.5
+2026-11-26,TPEX,7714,創泓科技,131.0,134.5,130.5,131.0,39000,38,5150000,TPEX_afterTrading_otc_type_EW,3.0

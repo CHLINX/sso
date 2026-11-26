@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00727B,國泰優選非投等債,39.59,39.68,39.57,39.68,127000,25,5035970,TPEX_afterTrading_otc_type_EW,0.13
+2026-11-17,TPEX,00727B,國泰優選非投等債,39.89,39.89,39.53,39.62,185000,15,7328780,TPEX_afterTrading_otc_type_EW,-0.06
+2026-11-24,TPEX,00727B,國泰優選非投等債,39.46,39.55,39.39,39.55,140000,14,5533450,TPEX_afterTrading_otc_type_EW,0.04
+2026-11-25,TPEX,00727B,國泰優選非投等債,39.41,39.49,39.4,39.41,130000,13,5129060,TPEX_afterTrading_otc_type_EW,-0.14
+2026-11-26,TPEX,00727B,國泰優選非投等債,39.58,39.58,39.34,39.41,142000,22,5596800,TPEX_afterTrading_otc_type_EW,0.0

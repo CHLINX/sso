@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,020036,元大金融配息N,11.84,11.84,11.45,11.45,9000,5,105240,TWSE_MI_INDEX,0.14
+2026-11-17,TWSE,020036,元大金融配息N,11.46,11.57,11.46,11.56,5000,5,57620,TWSE_MI_INDEX,0.11
+2026-11-24,TWSE,020036,元大金融配息N,10.65,10.69,10.64,10.69,10000,3,106520,TWSE_MI_INDEX,0.88
+2026-11-25,TWSE,020036,元大金融配息N,9.98,9.98,9.79,9.98,6000,6,59430,TWSE_MI_INDEX,0.71
+2026-11-26,TWSE,020036,元大金融配息N,10.19,10.19,10.19,10.19,2000,1,20380,TWSE_MI_INDEX,0.21

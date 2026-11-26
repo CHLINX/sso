@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2838A,聯邦銀甲特,51.8,51.9,51.8,51.9,39099,21,2025408,TWSE_MI_INDEX,0.0
+2026-11-17,TWSE,2838A,聯邦銀甲特,51.8,51.8,51.8,51.8,14013,11,725874,TWSE_MI_INDEX,0.1
+2026-11-24,TWSE,2838A,聯邦銀甲特,51.8,52.1,51.8,51.9,41241,20,2143758,TWSE_MI_INDEX,0.2
+2026-11-25,TWSE,2838A,聯邦銀甲特,51.7,51.7,51.6,51.7,59000,23,3045300,TWSE_MI_INDEX,0.2
+2026-11-26,TWSE,2838A,聯邦銀甲特,51.7,51.8,51.7,51.8,24164,14,1250266,TWSE_MI_INDEX,0.1

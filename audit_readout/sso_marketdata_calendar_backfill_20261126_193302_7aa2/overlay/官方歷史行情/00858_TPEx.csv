@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00858,永豐美國500大,36.47,36.47,36.16,36.16,500000,141,18120530,TPEX_afterTrading_otc_type_EW,-0.31
+2026-11-17,TPEX,00858,永豐美國500大,35.75,35.75,35.61,35.62,544000,122,19412210,TPEX_afterTrading_otc_type_EW,-0.54
+2026-11-24,TPEX,00858,永豐美國500大,35.3,35.5,34.7,34.88,598000,172,20871820,TPEX_afterTrading_otc_type_EW,0.92
+2026-11-25,TPEX,00858,永豐美國500大,34.6,34.6,34.27,34.31,340000,113,11696900,TPEX_afterTrading_otc_type_EW,-0.57
+2026-11-26,TPEX,00858,永豐美國500大,34.43,34.77,34.43,34.62,442000,79,15297200,TPEX_afterTrading_otc_type_EW,0.31

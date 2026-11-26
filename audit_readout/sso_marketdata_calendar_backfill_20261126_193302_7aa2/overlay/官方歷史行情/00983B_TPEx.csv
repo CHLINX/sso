@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00983B,大華優利美公債20,15.12,15.17,15.12,15.17,58000,12,878690,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-17,TPEX,00983B,大華優利美公債20,15.17,15.17,15.17,15.17,39000,2,591630,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-24,TPEX,00983B,大華優利美公債20,15.5,15.6,15.5,15.55,33000,9,513310,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-25,TPEX,00983B,大華優利美公債20,15.52,15.63,15.52,15.63,394000,20,6138890,TPEX_afterTrading_otc_type_EW,0.08
+2026-11-26,TPEX,00983B,大華優利美公債20,15.65,15.72,15.65,15.66,700000,36,10987740,TPEX_afterTrading_otc_type_EW,0.03

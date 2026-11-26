@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,00772B,中信高評級公司債,32.62,32.66,32.58,32.58,2571000,673,83861790,TPEX_afterTrading_otc_type_EW,-0.09
+2026-11-17,TPEX,00772B,中信高評級公司債,32.48,32.48,32.36,32.44,2865000,348,92915340,TPEX_afterTrading_otc_type_EW,
+2026-11-24,TPEX,00772B,中信高評級公司債,32.8,32.99,32.77,32.93,2484000,307,81722480,TPEX_afterTrading_otc_type_EW,0.13
+2026-11-25,TPEX,00772B,中信高評級公司債,32.92,32.95,32.83,32.93,3672000,450,120845090,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-26,TPEX,00772B,中信高評級公司債,33.15,33.28,33.04,33.1,2654000,312,87982360,TPEX_afterTrading_otc_type_EW,0.17

@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,7631,聚賢研發-創,110.5,110.5,104.0,105.5,62046,112,6637974,TWSE_MI_INDEX,8.5
+2026-11-17,TWSE,7631,聚賢研發-創,108.0,108.0,103.5,103.5,39885,73,4196835,TWSE_MI_INDEX,2.0
+2026-11-24,TWSE,7631,聚賢研發-創,100.0,102.5,98.2,102.5,36632,46,3658719,TWSE_MI_INDEX,8.2
+2026-11-25,TWSE,7631,聚賢研發-創,99.0,99.3,92.4,92.7,57316,63,5492356,TWSE_MI_INDEX,9.8
+2026-11-26,TWSE,7631,聚賢研發-創,94.6,95.3,92.0,92.7,105466,97,9858369,TWSE_MI_INDEX,0.0

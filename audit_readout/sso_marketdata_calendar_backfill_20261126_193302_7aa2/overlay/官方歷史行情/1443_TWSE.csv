@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,1443,立益物流,22.95,23.8,22.95,23.45,7680,19,179499,TWSE_MI_INDEX,0.1
+2026-11-17,TWSE,1443,立益物流,23.25,23.9,23.25,23.75,13984,27,329855,TWSE_MI_INDEX,0.3
+2026-11-24,TWSE,1443,立益物流,22.65,22.65,22.5,22.5,2084,7,47028,TWSE_MI_INDEX,0.4
+2026-11-25,TWSE,1443,立益物流,21.9,22.4,21.65,22.4,4009,13,87948,TWSE_MI_INDEX,0.1
+2026-11-26,TWSE,1443,立益物流,22.9,23.8,22.9,23.1,9114,62,212311,TWSE_MI_INDEX,0.7

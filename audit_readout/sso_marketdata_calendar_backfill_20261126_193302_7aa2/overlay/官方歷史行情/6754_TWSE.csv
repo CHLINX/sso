@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,6754,匯僑設計,40.05,40.1,39.1,39.1,33150,25,1317790,TWSE_MI_INDEX,0.85
+2026-11-17,TWSE,6754,匯僑設計,40.15,40.15,39.0,39.0,13690,20,542820,TWSE_MI_INDEX,0.1
+2026-11-24,TWSE,6754,匯僑設計,39.4,41.3,39.4,40.8,20437,27,821560,TWSE_MI_INDEX,3.25
+2026-11-25,TWSE,6754,匯僑設計,39.8,40.45,38.55,38.55,17428,24,683426,TWSE_MI_INDEX,2.25
+2026-11-26,TWSE,6754,匯僑設計,39.65,39.65,38.2,38.65,21852,37,840418,TWSE_MI_INDEX,0.1

@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,5871A,中租-KY甲特,99.4,99.4,99.3,99.3,37119,43,3687818,TWSE_MI_INDEX,0.2
+2026-11-17,TWSE,5871A,中租-KY甲特,99.2,99.2,98.6,98.6,143934,106,14223276,TWSE_MI_INDEX,0.7
+2026-11-24,TWSE,5871A,中租-KY甲特,99.0,99.1,99.0,99.0,79094,32,7831849,TWSE_MI_INDEX,0.8
+2026-11-25,TWSE,5871A,中租-KY甲特,99.0,99.0,98.4,98.4,26003,18,2562295,TWSE_MI_INDEX,0.6
+2026-11-26,TWSE,5871A,中租-KY甲特,98.6,98.9,98.6,98.8,21002,16,2073096,TWSE_MI_INDEX,0.4

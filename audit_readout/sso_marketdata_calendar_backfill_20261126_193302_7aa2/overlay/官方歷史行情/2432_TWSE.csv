@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TWSE,2432,倚天酷碁-創,28.2,28.4,28.0,28.05,88000,32,2481850,TWSE_MI_INDEX,0.15
+2026-11-17,TWSE,2432,倚天酷碁-創,28.15,28.15,27.75,27.85,46000,34,1287450,TWSE_MI_INDEX,0.2
+2026-11-24,TWSE,2432,倚天酷碁-創,27.15,27.85,27.15,27.4,66656,37,1829186,TWSE_MI_INDEX,0.35
+2026-11-25,TWSE,2432,倚天酷碁-創,26.9,27.05,25.5,26.0,102148,45,2712577,TWSE_MI_INDEX,1.4
+2026-11-26,TWSE,2432,倚天酷碁-創,26.45,27.15,26.05,27.15,40421,30,1062886,TWSE_MI_INDEX,1.15

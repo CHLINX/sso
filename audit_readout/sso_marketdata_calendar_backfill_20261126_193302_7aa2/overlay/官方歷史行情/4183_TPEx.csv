@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,4183,福永生技,14.25,14.4,14.25,14.4,7000,5,100400,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-17,TPEX,4183,福永生技,13.75,14.5,13.75,14.5,24000,8,344500,TPEX_afterTrading_otc_type_EW,0.1
+2026-11-24,TPEX,4183,福永生技,13.9,14.5,13.9,14.4,27000,21,386200,TPEX_afterTrading_otc_type_EW,1.2
+2026-11-25,TPEX,4183,福永生技,14.4,14.4,14.4,14.4,1000,1,14400,TPEX_afterTrading_otc_type_EW,0.0
+2026-11-26,TPEX,4183,福永生技,,,,,0,0,0,TPEX_afterTrading_otc_type_EW,

@@ -1,0 +1,6 @@
+﻿trade_date,market,instrument_code,instrument_name,open,high,low,close,volume,transaction_count,traded_value,source_archive_member,price_change
+2026-11-16,TPEX,3322,建舜電,8.4,8.5,7.85,7.85,847000,358,6839760,TPEX_afterTrading_otc_type_EW,-0.73
+2026-11-17,TPEX,3322,建舜電,7.6,8.01,7.51,7.9,277000,140,2148640,TPEX_afterTrading_otc_type_EW,0.05
+2026-11-24,TPEX,3322,建舜電,7.15,7.53,7.15,7.5,458000,242,3412340,TPEX_afterTrading_otc_type_EW,0.65
+2026-11-25,TPEX,3322,建舜電,7.17,7.17,6.77,6.79,218000,129,1495260,TPEX_afterTrading_otc_type_EW,-0.71
+2026-11-26,TPEX,3322,建舜電,6.52,7.16,6.52,6.84,420000,167,2883720,TPEX_afterTrading_otc_type_EW,0.05
