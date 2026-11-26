@@ -96,7 +96,7 @@ STATE_SELECTIONS = STATE_DIR / "01_凍結選股歷史.csv"
 STATE_TRADES = STATE_DIR / "02_逐筆影子交易歷史.csv"
 STATE_DAILY = STATE_DIR / "03_逐日績效歷史.csv"
 STATE_SOURCES = STATE_DIR / "04_來源檔案雜湊歷史.csv"
-REPORT_ROOT = Path("/content")
+REPORT_ROOT = Path(os.environ.get("SSO_REPORT_ROOT", "/content"))
 
 # Stable CSV schemas: even a zero-observation run must persist header-only state files.
 SELECTION_STATE_COLUMNS = [
@@ -1282,6 +1282,7 @@ def main(argv: Optional[List[str]] = None) -> Dict[str, Any]:
         history_validation = {"signal_date": signal_date, "pass": False, "error": str(e),
                               "history_latest_date": history_max}
 
+    REPORT_ROOT.mkdir(parents=True, exist_ok=True)
     out_dir = REPORT_ROOT / f"SSO_F04_H0_Forward_Shadow_v2_{run_id}"
     out_dir.mkdir(parents=True, exist_ok=False)
     (out_dir / "state").mkdir()
