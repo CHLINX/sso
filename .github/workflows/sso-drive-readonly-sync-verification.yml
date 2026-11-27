@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: sso-drive-readonly-sync-\${{ github.ref }}
+  group: sso-drive-readonly-sync-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -17,12 +17,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
-      GOOGLE_DRIVE_CREDENTIALS_JSON: \${{ secrets.GOOGLE_DRIVE_CREDENTIALS_JSON }}
-      SSO_BASE_FILE_ID: \${{ secrets.SSO_BASE_FILE_ID }}
-      SSO_INCREMENT_FOLDER_ID: \${{ secrets.SSO_INCREMENT_FOLDER_ID }}
-      FUGLE_API: \${{ secrets.FUGLE_API }}
-      FUGLE_API_KEY: \${{ secrets.FUGLE_API_KEY }}
-      GITHUB_TOKEN: \${{ github.token }}
+      GOOGLE_DRIVE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS_JSON }}
+      SSO_BASE_FILE_ID: ${{ secrets.SSO_BASE_FILE_ID }}
+      SSO_INCREMENT_FOLDER_ID: ${{ secrets.SSO_INCREMENT_FOLDER_ID }}
+      FUGLE_API: ${{ secrets.FUGLE_API }}
+      FUGLE_API_KEY: ${{ secrets.FUGLE_API_KEY }}
+      GITHUB_TOKEN: ${{ github.token }}
       OUTPUT_ROOT: /tmp/sso-drive-readonly-sync
 
     steps:
@@ -69,7 +69,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: sso-drive-readonly-sync-\${{ github.run_id }}
+          name: sso-drive-readonly-sync-${{ github.run_id }}
           path: |
             /tmp/sso-drive-readonly-sync/drive_sync_result.json
             /tmp/sso-drive-readonly-sync/input_validation.json
