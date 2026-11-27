@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Read-only Google Drive bootstrap for SSO F04 GitHub Actions."""
+"""Read-only Google Drive bootstrap with duplicate-name SHA256 resolution."""
 from __future__ import annotations
+
 import argparse
 import hashlib
 import json
 import os
 import re
 import sys
+import tempfile
 from pathlib import Path
 from typing import Any
-
-import requests
 
 BASE_NAME = "相對價格因子與前瞻報酬研究資料_v2.31.csv.gz"
 BASE_SHA256 = "113a4f7cd5c94d7bbd3cb78427963dde2a6c249d66a25a66fab2c408958de71c"
@@ -19,14 +19,15 @@ DRIVE_API = "https://www.googleapis.com/drive/v3"
 SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
 FOLDER_MIME = "application/vnd.google-apps.folder"
 INCREMENT_PREFIX = "全市場標準化增量_"
+MAX_BASE_CANDIDATES = 20
 
 
 def sha256_file(path: Path) -> str:
-    h = hashlib.sha256()
-    with path.open("rb") as f:
-        for chunk in iter(lambda: f.read(8 * 1024 * 1024), b""):
-            h.update(chunk)
-    return h.hexdigest()
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(8 * 1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def required_env() -> dict[str, str]:
@@ -39,8 +40,10 @@ def required_env() -> dict[str, str]:
     }
 
 
-def missing_config(cfg: dict[str, str]) -> list[str]:
-    return [key for key, value in cfg.items() if not value]
+def error_label(exc: Exception) -> str:
+    response = getattr(exc, "response", None)
+    status = getattr(response, "status_code", None)
+    return f"HTTP {status}" if status is not None else type(exc).__name__
 
 
 def make_session(cfg: dict[str, str]):
@@ -54,7 +57,7 @@ def make_session(cfg: dict[str, str]):
         from google.oauth2.service_account import Credentials
         from google.auth.transport.requests import AuthorizedSession
     except ImportError as exc:
-        raise RuntimeError("缺少 google-auth 套件；請先安裝 actions/requirements.txt") from exc
+        raise RuntimeError("缺少 google-auth 套件；請安裝 actions/requirements.txt") from exc
     credentials = Credentials.from_service_account_info(info, scopes=SCOPES)
     return AuthorizedSession(credentials), str(info["client_email"])
 
@@ -62,7 +65,10 @@ def make_session(cfg: dict[str, str]):
 def drive_get(session, url: str, params: dict[str, Any] | None = None, stream: bool = False):
     response = session.get(url, params=params or {}, timeout=(20, 120), stream=stream)
     if response.status_code in (401, 403):
-        raise RuntimeError(f"Google Drive 權限不足 HTTP {response.status_code}；請確認 Drive API 已啟用且 service account 有 Viewer 權限")
+        raise RuntimeError(
+            f"Google Drive 權限不足 HTTP {response.status_code}；"
+            "請確認 Drive API 已啟用且 service account 有 Viewer 權限"
+        )
     response.raise_for_status()
     return response
 
@@ -72,6 +78,118 @@ def get_metadata(session, file_id: str) -> dict[str, Any]:
         "fields": "id,name,mimeType,size,modifiedTime,md5Checksum",
         "supportsAllDrives": "true",
     }).json()
+
+
+def list_named_base_files(session) -> list[dict[str, Any]]:
+    """Enumerate every exact-name base file visible to the service account."""
+    results: list[dict[str, Any]] = []
+    page_token = None
+    query_name = BASE_NAME.replace("\\", "\\\\").replace("'", "\\'")
+    while True:
+        params = {
+            "q": f"name = '{query_name}' and trashed = false",
+            "pageSize": 1000,
+            "orderBy": "modifiedTime desc",
+            "corpora": "allDrives",
+            "includeItemsFromAllDrives": "true",
+            "supportsAllDrives": "true",
+            "fields": "nextPageToken,files(id,name,mimeType,size,modifiedTime,md5Checksum)",
+        }
+        if page_token:
+            params["pageToken"] = page_token
+        payload = drive_get(session, f"{DRIVE_API}/files", params).json()
+        results.extend(payload.get("files", []))
+        if len(results) > MAX_BASE_CANDIDATES:
+            raise RuntimeError(
+                f"同名基礎檔超過安全上限 {MAX_BASE_CANDIDATES}，停止自動辨識"
+            )
+        page_token = payload.get("nextPageToken")
+        if not page_token:
+            return results
+
+
+def download_file(session, file_id: str, target: Path) -> None:
+    target.parent.mkdir(parents=True, exist_ok=True)
+    temp = target.with_suffix(target.suffix + ".part")
+    response = drive_get(
+        session, f"{DRIVE_API}/files/{file_id}",
+        {"alt": "media", "supportsAllDrives": "true"}, stream=True,
+    )
+    try:
+        with temp.open("wb") as stream:
+            for chunk in response.iter_content(chunk_size=8 * 1024 * 1024):
+                if chunk:
+                    stream.write(chunk)
+        temp.replace(target)
+    finally:
+        response.close()
+        temp.unlink(missing_ok=True)
+
+
+def resolve_base_file(session, pinned_id: str, scratch: Path) -> dict[str, Any]:
+    """Try pinned ID and every discovered duplicate; only exact SHA256 is accepted."""
+    search_error = None
+    try:
+        listed = list_named_base_files(session)
+    except Exception as exc:
+        listed = []
+        search_error = error_label(exc)
+
+    candidate_ids: list[str] = []
+    if pinned_id:
+        candidate_ids.append(pinned_id)
+    for item in listed:
+        candidate_id = str(item.get("id", ""))
+        if candidate_id and candidate_id not in candidate_ids:
+            candidate_ids.append(candidate_id)
+
+    checks = []
+    verified_ids: list[str] = []
+    for index, candidate_id in enumerate(candidate_ids):
+        row: dict[str, Any] = {
+            "file_name_matches": False,
+            "download_ok": False,
+            "sha256_matches": False,
+        }
+        try:
+            metadata = get_metadata(session, candidate_id)
+            row["file_name_matches"] = (
+                metadata.get("name") == BASE_NAME
+                and metadata.get("mimeType") != FOLDER_MIME
+            )
+            if not row["file_name_matches"]:
+                row["result"] = "NAME_OR_TYPE_MISMATCH"
+            else:
+                target = scratch / f"base_candidate_{index}.csv.gz"
+                download_file(session, candidate_id, target)
+                actual_sha = sha256_file(target)
+                row["download_ok"] = True
+                row["sha256"] = actual_sha
+                row["sha256_matches"] = actual_sha == BASE_SHA256
+                row["bytes"] = target.stat().st_size
+                row["result"] = "SHA256_MATCH" if row["sha256_matches"] else "SHA256_MISMATCH"
+                if row["sha256_matches"]:
+                    verified_ids.append(candidate_id)
+                target.unlink(missing_ok=True)
+        except Exception as exc:
+            row["result"] = error_label(exc)
+        checks.append(row)
+
+    # Fail closed if the duplicate search failed: the script cannot prove it
+    # examined all visible exact-name candidates, even if the pinned ID matched.
+    selected_id = None
+    if not search_error and verified_ids:
+        selected_id = pinned_id if pinned_id in verified_ids else verified_ids[0]
+
+    return {
+        "ok": selected_id is not None,
+        "selected_id": selected_id,
+        "candidate_count": len(candidate_ids),
+        "verified_count": len(verified_ids),
+        "pinned_id_verified": pinned_id in verified_ids,
+        "search_error": search_error,
+        "candidate_checks": checks,
+    }
 
 
 def list_children(session, folder_id: str) -> list[dict[str, Any]]:
@@ -109,52 +227,42 @@ def walk_increment_files(session, root_id: str, max_files: int = 500, max_depth:
             name = str(item.get("name", ""))
             if item.get("mimeType") == FOLDER_MIME:
                 walk(str(item["id"]), rel + (name,), depth + 1)
-            elif name.startswith(INCREMENT_PREFIX) and (name.endswith(".csv") or name.endswith(".csv.gz")):
+            elif name.startswith(INCREMENT_PREFIX) and (
+                name.endswith(".csv") or name.endswith(".csv.gz")
+            ):
                 found.append((item, rel))
                 if len(found) > max_files:
                     raise RuntimeError(f"增量檔超過安全上限 {max_files}，停止下載")
 
     walk(root_id, tuple(), 0)
-    found.sort(key=lambda x: (str(x[0].get("name", "")), str(x[0].get("modifiedTime", ""))))
+    found.sort(key=lambda pair: (
+        str(pair[0].get("name", "")), str(pair[0].get("modifiedTime", ""))
+    ))
     return found
 
 
-def download_file(session, file_id: str, target: Path):
-    target.parent.mkdir(parents=True, exist_ok=True)
-    temp = target.with_suffix(target.suffix + ".part")
-    response = drive_get(session, f"{DRIVE_API}/files/{file_id}", {
-        "alt": "media", "supportsAllDrives": "true",
-    }, stream=True)
-    with temp.open("wb") as f:
-        for chunk in response.iter_content(chunk_size=8 * 1024 * 1024):
-            if chunk:
-                f.write(chunk)
-    temp.replace(target)
-
-
-def write_result(out: Path, payload: dict[str, Any], ready: bool | None = None):
+def write_result(out: Path, payload: dict[str, Any], ready: bool | None = None) -> None:
     out.mkdir(parents=True, exist_ok=True)
     (out / "drive_sync_result.json").write_text(
         json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
     )
     output = os.getenv("GITHUB_OUTPUT")
     if output and ready is not None:
-        with open(output, "a", encoding="utf-8") as f:
-            f.write(f"ready={'true' if ready else 'false'}\n")
+        with open(output, "a", encoding="utf-8") as stream:
+            stream.write(f"ready={'true' if ready else 'false'}\n")
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--preflight-only", action="store_true")
-    parser.add_argument("--sync", action="store_true")
+    mode = parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument("--preflight-only", action="store_true")
+    mode.add_argument("--sync", action="store_true")
     parser.add_argument("--output", default="/tmp/sso-f04-input")
     args = parser.parse_args()
-    if args.preflight_only == args.sync:
-        parser.error("請且只指定 --preflight-only 或 --sync")
 
     out = Path(args.output)
     cfg = required_env()
-    missing = missing_config(cfg)
+    missing = [key for key, value in cfg.items() if not value]
     if missing:
         payload = {
             "status": "CONFIGURATION_REQUIRED",
@@ -167,124 +275,140 @@ def main() -> int:
         return 0 if args.preflight_only else 2
 
     session, service_email = make_session(cfg)
+    base_resolution = None
+    base_error = None
+    folder_meta = None
+    folder_error = None
+    increments = []
+    listing_error = None
 
-    # Probe the pinned base file and increment folder independently so a single
-    # inaccessible resource cannot hide the status of the other one.
-    base_meta: dict[str, Any] | None = None
-    folder_meta: dict[str, Any] | None = None
-    increments: list[tuple[dict[str, Any], tuple[str, ...]]] = []
-    base_error: str | None = None
-    folder_error: str | None = None
-    listing_error: str | None = None
-
-    def error_label(exc: Exception) -> str:
-        status = getattr(getattr(exc, "response", None), "status_code", None)
-        return f"HTTP {status}" if status is not None else type(exc).__name__
-
-    try:
-        base_meta = get_metadata(session, cfg["SSO_BASE_FILE_ID"])
-        if base_meta.get("name") != BASE_NAME:
-            base_error = "ID 指向的檔名與固定 v2.31 基礎資料不符"
-        elif base_meta.get("mimeType") == FOLDER_MIME:
-            base_error = "ID 指向資料夾，不是基礎 CSV 檔案"
-    except Exception as exc:
-        base_error = error_label(exc)
-
-    try:
-        folder_meta = get_metadata(session, cfg["SSO_INCREMENT_FOLDER_ID"])
-        if folder_meta.get("mimeType") != FOLDER_MIME:
-            folder_error = "ID 指向的項目不是 Google Drive 資料夾"
-    except Exception as exc:
-        folder_error = error_label(exc)
-
-    if folder_meta is not None and folder_error is None:
+    with tempfile.TemporaryDirectory(prefix="sso-base-candidates-") as temp_dir:
         try:
-            increments = walk_increment_files(session, cfg["SSO_INCREMENT_FOLDER_ID"])
+            base_resolution = resolve_base_file(
+                session, cfg["SSO_BASE_FILE_ID"], Path(temp_dir)
+            )
         except Exception as exc:
-            listing_error = error_label(exc)
+            base_error = error_label(exc)
 
-    checks = {
-        "base_file": {
-            "ok": base_meta is not None and base_error is None,
-            "name": base_meta.get("name") if base_meta else None,
-            "mime_type": base_meta.get("mimeType") if base_meta else None,
-            "error": base_error,
-        },
-        "increment_folder": {
-            "ok": folder_meta is not None and folder_error is None,
-            "name": folder_meta.get("name") if folder_meta else None,
-            "mime_type": folder_meta.get("mimeType") if folder_meta else None,
-            "error": folder_error,
-        },
-        "increment_listing": {
-            "ok": folder_meta is not None and folder_error is None and listing_error is None,
-            "file_count": len(increments),
-            "error": listing_error or ("未執行：資料夾不可讀取" if folder_meta is None or folder_error else None),
-        },
-    }
-    ready = all(check["ok"] for check in checks.values())
+        try:
+            folder_meta = get_metadata(session, cfg["SSO_INCREMENT_FOLDER_ID"])
+            if folder_meta.get("mimeType") != FOLDER_MIME:
+                folder_error = "ID 指向的項目不是 Google Drive 資料夾"
+        except Exception as exc:
+            folder_error = error_label(exc)
 
-    if args.preflight_only:
-        payload = {
-            "status": "PREFLIGHT_PASS" if ready else "PREFLIGHT_FAILED",
-            "service_account": service_email,
-            "checks": checks,
-            "increment_file_count": len(increments),
-            "read_only": True,
-            "note": "只讀取檔案中繼資料與資料夾清單；不下載市場檔案、不呼叫 Fugle、不凍結 Top10。",
+        if folder_meta is not None and folder_error is None:
+            try:
+                increments = walk_increment_files(session, cfg["SSO_INCREMENT_FOLDER_ID"])
+            except Exception as exc:
+                listing_error = error_label(exc)
+
+        checks = {
+            "base_file": {
+                "ok": bool(base_resolution and base_resolution["ok"]),
+                "name": BASE_NAME,
+                "expected_sha256": BASE_SHA256,
+                "candidate_count": base_resolution.get("candidate_count", 0) if base_resolution else 0,
+                "verified_candidate_count": base_resolution.get("verified_count", 0) if base_resolution else 0,
+                "pinned_id_verified": base_resolution.get("pinned_id_verified", False) if base_resolution else False,
+                "search_error": base_resolution.get("search_error") if base_resolution else base_error,
+                "candidate_checks": base_resolution.get("candidate_checks", []) if base_resolution else [],
+                "error": base_error,
+            },
+            "increment_folder": {
+                "ok": folder_meta is not None and folder_error is None,
+                "name": folder_meta.get("name") if folder_meta else None,
+                "mime_type": folder_meta.get("mimeType") if folder_meta else None,
+                "error": folder_error,
+            },
+            "increment_listing": {
+                "ok": folder_meta is not None and folder_error is None and listing_error is None,
+                "file_count": len(increments),
+                "error": listing_error or (
+                    "未執行：資料夾不可讀取" if folder_meta is None or folder_error else None
+                ),
+            },
         }
-        write_result(out, payload, ready)
-        print(json.dumps(payload, ensure_ascii=False))
-        # Keep the workflow alive so the diagnostic artifact can be uploaded.
-        return 0
+        ready = all(row["ok"] for row in checks.values())
 
-    if not ready:
-        raise RuntimeError(f"唯讀預檢未通過：{json.dumps(checks, ensure_ascii=False)}")
+        if args.preflight_only:
+            payload = {
+                "status": "PREFLIGHT_PASS" if ready else "PREFLIGHT_FAILED",
+                "service_account": service_email,
+                "checks": checks,
+                "increment_file_count": len(increments),
+                "read_only": True,
+                "note": (
+                    "唯讀搜尋同名基礎檔、下載候選檔並驗證 SHA256，"
+                    "列增量資料夾清單；不下載行情增量、不呼叫 Fugle、不凍結 Top10。"
+                ),
+            }
+            write_result(out, payload, ready)
+            print(json.dumps(payload, ensure_ascii=False))
+            return 0
 
-    payload: dict[str, Any] = {
-        "status": "SYNC_STARTED",
-        "service_account": service_email,
-        "base_file": {k: base_meta.get(k) for k in ("name", "size", "modifiedTime", "md5Checksum")},
-        "increment_root": {k: folder_meta.get(k) for k in ("name", "modifiedTime")},
-        "increment_file_count": len(increments),
-        "increment_files": [
-            {"name": x[0]["name"], "modifiedTime": x[0].get("modifiedTime"),
-             "size": x[0].get("size"), "folder_path": list(x[1])}
-            for x in increments
-        ],
-        "read_only": True,
-    }
-    data_root = out / "data"
-    base_path = data_root / "base" / BASE_NAME
-    increment_dir = data_root / "increments"
-    download_file(session, cfg["SSO_BASE_FILE_ID"], base_path)
-    actual_sha = sha256_file(base_path)
-    if actual_sha != BASE_SHA256:
-        base_path.unlink(missing_ok=True)
-        raise RuntimeError(f"v2.31 基礎檔 SHA256 不符，拒絕執行：actual={actual_sha}; expected={BASE_SHA256}")
+        if not ready:
+            raise RuntimeError(f"唯讀預檢未通過：{json.dumps(checks, ensure_ascii=False)}")
 
-    downloaded = []
-    for item, folders in increments:
-        safe_parts = [re.sub(r"[^\w.\-() ]", "_", str(p)) for p in folders]
-        target = increment_dir.joinpath(*safe_parts, str(item["name"]))
-        download_file(session, str(item["id"]), target)
-        downloaded.append({
-            "name": item["name"], "path": str(target), "bytes": target.stat().st_size,
-            "sha256": sha256_file(target), "modifiedTime": item.get("modifiedTime"),
+        selected_id = base_resolution["selected_id"]
+        payload: dict[str, Any] = {
+            "status": "SYNC_STARTED",
+            "service_account": service_email,
+            "base_file": {
+                "name": BASE_NAME,
+                "expected_sha256": BASE_SHA256,
+                "verified_candidate_count": base_resolution["verified_count"],
+                "pinned_id_verified": base_resolution["pinned_id_verified"],
+            },
+            "increment_root": {k: folder_meta.get(k) for k in ("name", "modifiedTime")},
+            "increment_file_count": len(increments),
+            "increment_files": [
+                {
+                    "name": row[0]["name"],
+                    "modifiedTime": row[0].get("modifiedTime"),
+                    "size": row[0].get("size"),
+                    "folder_path": list(row[1]),
+                }
+                for row in increments
+            ],
+            "read_only": True,
+        }
+        data_root = out / "data"
+        base_path = data_root / "base" / BASE_NAME
+        increment_dir = data_root / "increments"
+        download_file(session, selected_id, base_path)
+        actual_sha = sha256_file(base_path)
+        if actual_sha != BASE_SHA256:
+            base_path.unlink(missing_ok=True)
+            raise RuntimeError(
+                f"v2.31 基礎檔 SHA256 不符，拒絕執行：actual={actual_sha}; expected={BASE_SHA256}"
+            )
+
+        downloaded = []
+        for item, folders in increments:
+            safe_parts = [re.sub(r"[^\w.\-() ]", "_", str(part)) for part in folders]
+            target = increment_dir.joinpath(*safe_parts, str(item["name"]))
+            download_file(session, str(item["id"]), target)
+            downloaded.append({
+                "name": item["name"],
+                "path": str(target),
+                "bytes": target.stat().st_size,
+                "sha256": sha256_file(target),
+                "modifiedTime": item.get("modifiedTime"),
+            })
+        payload.update({
+            "status": "SYNC_PASS",
+            "base_local_path": str(base_path),
+            "base_sha256": actual_sha,
+            "base_bytes": base_path.stat().st_size,
+            "increment_local_dir": str(increment_dir),
+            "downloaded_increment_files": downloaded,
+            "downloaded_increment_count": len(downloaded),
+            "total_increment_bytes": sum(row["bytes"] for row in downloaded),
         })
-    payload.update({
-        "status": "SYNC_PASS",
-        "base_local_path": str(base_path),
-        "base_sha256": actual_sha,
-        "base_bytes": base_path.stat().st_size,
-        "increment_local_dir": str(increment_dir),
-        "downloaded_increment_files": downloaded,
-        "downloaded_increment_count": len(downloaded),
-        "total_increment_bytes": sum(x["bytes"] for x in downloaded),
-    })
-    write_result(out, payload, True)
-    print(json.dumps({k: v for k, v in payload.items() if k != "increment_files"}, ensure_ascii=False))
-    return 0
+        write_result(out, payload, True)
+        print(json.dumps({k: v for k, v in payload.items() if k != "increment_files"}, ensure_ascii=False))
+        return 0
 
 
 if __name__ == "__main__":
