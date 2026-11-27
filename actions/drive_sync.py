@@ -167,17 +167,82 @@ def main() -> int:
         return 0 if args.preflight_only else 2
 
     session, service_email = make_session(cfg)
-    base_meta = get_metadata(session, cfg["SSO_BASE_FILE_ID"])
-    if base_meta.get("name") != BASE_NAME:
-        raise RuntimeError(f"SSO_BASE_FILE_ID 指向錯誤檔案：{base_meta.get('name')!r}")
-    if base_meta.get("mimeType") == FOLDER_MIME:
-        raise RuntimeError("SSO_BASE_FILE_ID 指向資料夾，不是基礎 CSV 檔案")
-    folder_meta = get_metadata(session, cfg["SSO_INCREMENT_FOLDER_ID"])
-    if folder_meta.get("mimeType") != FOLDER_MIME:
-        raise RuntimeError("SSO_INCREMENT_FOLDER_ID 不是 Google Drive 資料夾")
-    increments = walk_increment_files(session, cfg["SSO_INCREMENT_FOLDER_ID"])
+
+    # Probe the pinned base file and increment folder independently so a single
+    # inaccessible resource cannot hide the status of the other one.
+    base_meta: dict[str, Any] | None = None
+    folder_meta: dict[str, Any] | None = None
+    increments: list[tuple[dict[str, Any], tuple[str, ...]]] = []
+    base_error: str | None = None
+    folder_error: str | None = None
+    listing_error: str | None = None
+
+    def error_label(exc: Exception) -> str:
+        status = getattr(getattr(exc, "response", None), "status_code", None)
+        return f"HTTP {status}" if status is not None else type(exc).__name__
+
+    try:
+        base_meta = get_metadata(session, cfg["SSO_BASE_FILE_ID"])
+        if base_meta.get("name") != BASE_NAME:
+            base_error = "ID 指向的檔名與固定 v2.31 基礎資料不符"
+        elif base_meta.get("mimeType") == FOLDER_MIME:
+            base_error = "ID 指向資料夾，不是基礎 CSV 檔案"
+    except Exception as exc:
+        base_error = error_label(exc)
+
+    try:
+        folder_meta = get_metadata(session, cfg["SSO_INCREMENT_FOLDER_ID"])
+        if folder_meta.get("mimeType") != FOLDER_MIME:
+            folder_error = "ID 指向的項目不是 Google Drive 資料夾"
+    except Exception as exc:
+        folder_error = error_label(exc)
+
+    if folder_meta is not None and folder_error is None:
+        try:
+            increments = walk_increment_files(session, cfg["SSO_INCREMENT_FOLDER_ID"])
+        except Exception as exc:
+            listing_error = error_label(exc)
+
+    checks = {
+        "base_file": {
+            "ok": base_meta is not None and base_error is None,
+            "name": base_meta.get("name") if base_meta else None,
+            "mime_type": base_meta.get("mimeType") if base_meta else None,
+            "error": base_error,
+        },
+        "increment_folder": {
+            "ok": folder_meta is not None and folder_error is None,
+            "name": folder_meta.get("name") if folder_meta else None,
+            "mime_type": folder_meta.get("mimeType") if folder_meta else None,
+            "error": folder_error,
+        },
+        "increment_listing": {
+            "ok": folder_meta is not None and folder_error is None and listing_error is None,
+            "file_count": len(increments),
+            "error": listing_error or ("未執行：資料夾不可讀取" if folder_meta is None or folder_error else None),
+        },
+    }
+    ready = all(check["ok"] for check in checks.values())
+
+    if args.preflight_only:
+        payload = {
+            "status": "PREFLIGHT_PASS" if ready else "PREFLIGHT_FAILED",
+            "service_account": service_email,
+            "checks": checks,
+            "increment_file_count": len(increments),
+            "read_only": True,
+            "note": "只讀取檔案中繼資料與資料夾清單；不下載市場檔案、不呼叫 Fugle、不凍結 Top10。",
+        }
+        write_result(out, payload, ready)
+        print(json.dumps(payload, ensure_ascii=False))
+        # Keep the workflow alive so the diagnostic artifact can be uploaded.
+        return 0
+
+    if not ready:
+        raise RuntimeError(f"唯讀預檢未通過：{json.dumps(checks, ensure_ascii=False)}")
+
     payload: dict[str, Any] = {
-        "status": "PREFLIGHT_PASS" if args.preflight_only else "SYNC_STARTED",
+        "status": "SYNC_STARTED",
         "service_account": service_email,
         "base_file": {k: base_meta.get(k) for k in ("name", "size", "modifiedTime", "md5Checksum")},
         "increment_root": {k: folder_meta.get(k) for k in ("name", "modifiedTime")},
@@ -189,11 +254,6 @@ def main() -> int:
         ],
         "read_only": True,
     }
-    if args.preflight_only:
-        write_result(out, payload, True)
-        print(json.dumps(payload, ensure_ascii=False))
-        return 0
-
     data_root = out / "data"
     base_path = data_root / "base" / BASE_NAME
     increment_dir = data_root / "increments"
