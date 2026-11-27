@@ -10,6 +10,8 @@ import os
 import re
 import sys
 import tempfile
+import time
+import requests
 from pathlib import Path
 from typing import Any
 
@@ -63,14 +65,44 @@ def make_session(cfg: dict[str, str]):
 
 
 def drive_get(session, url: str, params: dict[str, Any] | None = None, stream: bool = False):
-    response = session.get(url, params=params or {}, timeout=(20, 120), stream=stream)
-    if response.status_code in (401, 403):
-        raise RuntimeError(
-            f"Google Drive 權限不足 HTTP {response.status_code}；"
-            "請確認 Drive API 已啟用且 service account 有 Viewer 權限"
-        )
-    response.raise_for_status()
-    return response
+    """Google Drive GET with bounded retries for transient network/API failures."""
+    max_attempts = 6
+    for attempt in range(max_attempts):
+        try:
+            response = session.get(
+                url, params=params or {}, timeout=(20, 120), stream=stream
+            )
+        except requests.exceptions.RequestException:
+            if attempt + 1 >= max_attempts:
+                raise
+            time.sleep(min(2 ** attempt, 16))
+            continue
+
+        if response.status_code in (401, 403):
+            status = response.status_code
+            response.close()
+            raise RuntimeError(
+                f"Google Drive 權限不足 HTTP {status}；"
+                "請確認 Drive API 已啟用且 service account 有 Viewer 權限"
+            )
+
+        if response.status_code == 429 or response.status_code in (500, 502, 503, 504):
+            status = response.status_code
+            if attempt + 1 >= max_attempts:
+                response.raise_for_status()
+            retry_after = response.headers.get("Retry-After", "")
+            try:
+                delay = min(max(float(retry_after), 0.0), 30.0) if retry_after else min(2 ** attempt, 16)
+            except ValueError:
+                delay = min(2 ** attempt, 16)
+            response.close()
+            time.sleep(delay)
+            continue
+
+        response.raise_for_status()
+        return response
+
+    raise RuntimeError("Google Drive GET 重試次數已用盡")
 
 
 def get_metadata(session, file_id: str) -> dict[str, Any]:
@@ -350,6 +382,15 @@ def main() -> int:
             return 0
 
         if not ready:
+            blocked_payload = {
+                "status": "SYNC_BLOCKED_PREFLIGHT",
+                "service_account": service_email,
+                "checks": checks,
+                "increment_file_count": len(increments),
+                "read_only": True,
+                "note": "唯讀預檢未通過，未進行正式同步；未呼叫 Fugle、未凍結 Top10。",
+            }
+            write_result(out, blocked_payload, False)
             raise RuntimeError(f"唯讀預檢未通過：{json.dumps(checks, ensure_ascii=False)}")
 
         selected_id = base_resolution["selected_id"]
