@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: sso-drive-readonly-sync-${{ github.ref }}
+  group: sso-drive-readonly-sync-\${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -17,12 +17,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     env:
-      GOOGLE_DRIVE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_DRIVE_CREDENTIALS_JSON }}
-      SSO_BASE_FILE_ID: ${{ secrets.SSO_BASE_FILE_ID }}
-      SSO_INCREMENT_FOLDER_ID: ${{ secrets.SSO_INCREMENT_FOLDER_ID }}
-      FUGLE_API: ${{ secrets.FUGLE_API }}
-      FUGLE_API_KEY: ${{ secrets.FUGLE_API_KEY }}
-      GITHUB_TOKEN: ${{ github.token }}
+      GOOGLE_DRIVE_CREDENTIALS_JSON: \${{ secrets.GOOGLE_DRIVE_CREDENTIALS_JSON }}
+      SSO_BASE_FILE_ID: \${{ secrets.SSO_BASE_FILE_ID }}
+      SSO_INCREMENT_FOLDER_ID: \${{ secrets.SSO_INCREMENT_FOLDER_ID }}
+      FUGLE_API: \${{ secrets.FUGLE_API }}
+      FUGLE_API_KEY: \${{ secrets.FUGLE_API_KEY }}
+      GITHUB_TOKEN: \${{ github.token }}
       OUTPUT_ROOT: /tmp/sso-drive-readonly-sync
 
     steps:
@@ -49,17 +49,29 @@ jobs:
           mkdir -p "$OUTPUT_ROOT"
           python actions/drive_sync.py --sync --output "$OUTPUT_ROOT"
 
+      - name: Validate actual v2.0.1 data ingestion (no market APIs)
+        run: |
+          set -euo pipefail
+          BASE_FILE="$OUTPUT_ROOT/data/base/相對價格因子與前瞻報酬研究資料_v2.31.csv.gz"
+          INC_DIR="$OUTPUT_ROOT/data/increments"
+          python actions/verify_inputs.py \
+            --base "$BASE_FILE" \
+            --increments "$INC_DIR" \
+            --output "$OUTPUT_ROOT/input_validation.json"
+
       - name: Confirm no live market phase was started
         if: always()
         run: |
-          echo "This workflow only downloads and hashes Drive source files."
-          echo "It does not invoke Fugle, run F04 ranking, freeze Top10, or place orders."
+          echo "This workflow only downloads, hashes, and parses Drive sources."
+          echo "It does not invoke Fugle, rank F04, freeze Top10, or place orders."
 
-      - name: Upload sync manifest only
+      - name: Upload validation manifests only
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: sso-drive-readonly-sync-${{ github.run_id }}
-          path: /tmp/sso-drive-readonly-sync/drive_sync_result.json
+          name: sso-drive-readonly-sync-\${{ github.run_id }}
+          path: |
+            /tmp/sso-drive-readonly-sync/drive_sync_result.json
+            /tmp/sso-drive-readonly-sync/input_validation.json
           if-no-files-found: ignore
           retention-days: 30
