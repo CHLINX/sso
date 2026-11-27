@@ -93,11 +93,13 @@ def list_named_base_files(session) -> list[dict[str, Any]]:
             "corpora": "allDrives",
             "includeItemsFromAllDrives": "true",
             "supportsAllDrives": "true",
-            "fields": "nextPageToken,files(id,name,mimeType,size,modifiedTime,md5Checksum)",
+            "fields": "nextPageToken,incompleteSearch,files(id,name,mimeType,size,modifiedTime,md5Checksum)",
         }
         if page_token:
             params["pageToken"] = page_token
         payload = drive_get(session, f"{DRIVE_API}/files", params).json()
+        if payload.get("incompleteSearch"):
+            raise RuntimeError("Google Drive 回報 incompleteSearch=true，無法保證已檢查所有同名檔")
         results.extend(payload.get("files", []))
         if len(results) > MAX_BASE_CANDIDATES:
             raise RuntimeError(
